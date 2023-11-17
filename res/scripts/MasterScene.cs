@@ -83,8 +83,11 @@ public partial class MasterScene : Node
         _loadedScenes.Add(sceneUID, scene.Instantiate());
     }
 
-    public void ActivateScene(string uid, bool includeLoad = false, bool forceReload = false)
+    public Node ActivateScene(string uid, bool includeLoad = false, bool forceReload = false)
     {
+        if (forceReload && _loadedScenes.ContainsKey(uid))
+            _loadedScenes.Remove(uid);
+
         if (!_loadedScenes.ContainsKey(uid))
         {
             if (!includeLoad)
@@ -98,6 +101,11 @@ public partial class MasterScene : Node
             RemoveChild(_loadedScenes[_activeScene]);
         _activeScene = uid;
         AddChild(_loadedScenes[_activeScene]);
+
+        if (_loadedScenes[_activeScene] is ILevel)
+            ((ILevel)_loadedScenes[_activeScene]).Reactivate();
+
+        return _loadedScenes[_activeScene];
     }
 
 
@@ -109,7 +117,7 @@ public partial class MasterScene : Node
     }
 
     public void ActivatePreviousScene()
-    {
+    {           
         ActivateScene(_lastScene, false);
     }
 

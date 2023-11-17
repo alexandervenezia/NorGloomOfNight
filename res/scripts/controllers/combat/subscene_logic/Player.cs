@@ -87,7 +87,9 @@ public partial class Player : Combatant
     public override void StartFight()
     {
         base.StartFight();
+        
         SyncDeck();
+        _internalDeck.OnDiscardChange -= OnDiscardChange;
         _internalDeck.OnDiscardChange += OnDiscardChange;
 
         _currentHealth = MasterScene.GetInstance().LoadPlayerHP();
@@ -96,6 +98,8 @@ public partial class Player : Combatant
 
         _internalDeck.ForceFullReshuffle();        
         _hand.DrawOpeningHand(_internalDeck);
+
+
     }
 
     public override void BeginTurn()
@@ -352,9 +356,15 @@ public partial class Player : Combatant
 
     public override void EndFight(EndState result)
     {
+        foreach (Card c in _hand.Cards)
+            _internalDeck.AddCard(c.Data);
+            
         base.EndFight(result);
         GD.Print("Fight Over - You emerge in " + result);
         _state = PlayerState.GAME_OVER;
+
+        
+
         ((CombatMain)GetParent()).EndFight(result);
     }
 

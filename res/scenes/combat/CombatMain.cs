@@ -122,6 +122,9 @@ public partial class CombatMain : Node
     {
         _isOver = true;
         GD.Print("Is over - " + result);
+
+        MasterScene.GetInstance().SetPlayerHP(GetPlayerHP());
+        MasterScene.GetInstance().CallDeferred("ActivatePreviousScene");
     }
 
 

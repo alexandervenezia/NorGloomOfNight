@@ -30,6 +30,7 @@ size = Vector2(10446, 152)
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8mid8")
+_prideUID = "uid://bk7mufkqeug2p"
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -38,11 +39,11 @@ position = Vector2(6029, 1017.38)
 shape = SubResource("RectangleShape2D_k4f1m")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-5916, -233.5)
+position = Vector2(-5820, -233.5)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2(18172, -1290.75)
+position = Vector2(18100, -1290.75)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
@@ -50,23 +51,23 @@ position = Vector2(13698.5, -2218)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
-position = Vector2(12652, -11478)
+position = Vector2(12564, -11478)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
-position = Vector2(9698, -11452)
+position = Vector2(9802, -11452)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-6384, -11458)
+position = Vector2(-6482, -11458)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-9338, -11432)
+position = Vector2(-9260, -11432)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
-position = Vector2(28868, -5702)
+position = Vector2(28774, -5702)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
@@ -115,7 +116,7 @@ _accelerationStrength = 0.03
 _gravityMult = 3.5
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
-position = Vector2(0, -650)
+position = Vector2(0, -600)
 zoom = Vector2(0.75, 0.75)
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
@@ -129,6 +130,7 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 125
 text = "FPS:"
 script = ExtResource("4_yy1ep")
+metadata/_edit_use_anchors_ = true
 
 [node name="Doors" type="Node2D" parent="."]
 
