@@ -96,11 +96,11 @@ position = Vector2(16072, 342)
 
 [node name="OverworldPlayer" parent="." instance=ExtResource("3_g155m")]
 z_index = 2
-position = Vector2(-808, 650)
+position = Vector2(19718, -3798)
 _walkSpeed = 3000.0
 _sprintSpeed = 5100.0
 _jumpSpeed = 2000.0
-_gravityFallMultiplier = 0.25
+_gravityFallMultiplier = 1.75
 _accelerationStrength = 0.03
 _gravityMult = 3.5
 

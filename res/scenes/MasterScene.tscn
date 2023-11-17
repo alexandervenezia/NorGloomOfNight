@@ -17,6 +17,7 @@
 script = ExtResource("1_smi8o")
 _packedSceneUIDs = ["uid://b6a77ow3dkibo", "uid://bk6mw4uwgd1yl"]
 _defaultSceneUID = "uid://b6a77ow3dkibo"
+_combatSceneUID = "uid://bk6mw4uwgd1yl"
 
 [node name="MasterDeck" type="Node" parent="."]
 script = ExtResource("2_ykx58")

@@ -12,6 +12,8 @@ public partial class MasterScene : Node
 {
     [Export] private Godot.Collections.Array<string> _packedSceneUIDs = new();
     [Export] private string _defaultSceneUID;
+    [Export] private string _combatSceneUID;
+    public string CombatSceneUID => _combatSceneUID;
     //[Export] private string _combatSceneUID;
     private Dictionary<string, Node> _loadedScenes;
     private string _activeScene = "";
@@ -87,8 +89,8 @@ public partial class MasterScene : Node
         }
 
         _lastScene = _activeScene;
-        if (_activeScene != "")
-            RemoveChild(_loadedScenes[_activeScene]);
+        //if (_activeScene != "")
+            //RemoveChild(_loadedScenes[_activeScene]);
         _activeScene = uid;
         AddChild(_loadedScenes[_activeScene]);
     }

@@ -29,6 +29,10 @@ public enum State
 
 public partial class Player : CharacterBody2D
 {
+	[Export] private int _maxHealth = 25;
+	public int MaxHealth => _maxHealth;
+	private int _currentHealth;
+	public int CurrentHealth => _currentHealth;
 	[Export] private float _walkSpeed = 500f;
 	[Export] private float _sprintSpeed = 1700f;
 	[Export] private float _jumpTime; // Time spent in upward acceleration
@@ -162,8 +166,9 @@ public partial class Player : CharacterBody2D
 				else
 				{
 					float gravM = _gravityFallMultiplier;
-					if (Input.IsActionPressed("ui_down"))
-						gravM = 1.75f;
+
+					if (Input.IsActionPressed("ui_select"))
+						gravM = 0.25f;
 
 					vel.Y += _gravityDefault * gravM * fDelta;
 				}

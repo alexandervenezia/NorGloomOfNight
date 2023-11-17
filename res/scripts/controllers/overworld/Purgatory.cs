@@ -12,10 +12,16 @@ public partial class Purgatory : Node2D, ILevel
         _player.EnemyAggroed += OnAggro;
     }
 
-    private async void OnAggro(ICombatable enemy)
+    private void OnAggro(ICombatable enemy)
     {
         // Either begin combat immediately or after cutscene
         // TODO: Begin combat here
+        MasterScene master = MasterScene.GetInstance();
+        master.SetEnemyIDs(enemy.GetEnemyIDs());
+        master.SetPlayerHP(15);
+        master.ActivateScene(master.CombatSceneUID, true, true);
+        // master.SetPlayerHP(_player.)
+        GD.Print("Aggroed");
     }
 
     public Player GetPlayer()
