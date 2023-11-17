@@ -9,6 +9,13 @@ public partial class Purgatory : Node2D, ILevel
     public override void _Ready()
     {
         _player = (Player)GetNode("OverworldPlayer");
+        _player.EnemyAggroed += OnAggro;
+    }
+
+    private async void OnAggro(ICombatable enemy)
+    {
+        // Either begin combat immediately or after cutscene
+        // TODO: Begin combat here
     }
 
     public Player GetPlayer()

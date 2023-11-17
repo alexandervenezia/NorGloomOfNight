@@ -5,6 +5,7 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Numerics;
+using System.Threading.Tasks;
 
 /*
 
@@ -17,6 +18,7 @@ Player movement:
 	When input is "right" character sprite should face right
 		
 */
+
 
 
 public enum State
@@ -42,6 +44,14 @@ public partial class Player : CharacterBody2D
 	private AnimatedSprite2D _playerSprite;
 	private CharacterBody2D _charcterBody;
 
+	public delegate void CombatStart(ICombatable enemy);
+	public event CombatStart EnemyAggroed;
+
+	private AudioStreamPlayer _walkSound;
+	private AudioStreamPlayer _runSound;
+	private AudioStreamPlayer _jumpSound;
+	private AudioStreamPlayer _landSound;
+
 	public override void _Ready()
 	{
 		_gravityDefault = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -50,6 +60,13 @@ public partial class Player : CharacterBody2D
 		_coyoteTimer = _coyoteBuffer;
 		// _playerSprite = GetNode<Sprite2D>("PlayerSkin");
 		_playerSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+
+		_walkSound = (AudioStreamPlayer)GetNode("WalkSound");
+		_runSound = (AudioStreamPlayer)GetNode("RunSound");
+		_jumpSound = (AudioStreamPlayer)GetNode("JumpSound");
+		_landSound = (AudioStreamPlayer)GetNode("LandSound");
+
+		PlayFootsteps();
 	}
 
 	public override void _Process(double delta)
@@ -59,6 +76,7 @@ public partial class Player : CharacterBody2D
 		if (IsIdle())
 		{
 			_playerSprite.Play("idle");
+			
 		}
 		else if (IsSprinting())
 		{
@@ -119,6 +137,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_jumpSound.Play();
 				}
 				break;
 
@@ -129,6 +148,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_jumpSound.Play();
 				}
 
 				vel.X = (float)Mathf.Lerp(vel.X, 0, 0.075);
@@ -137,10 +157,15 @@ public partial class Player : CharacterBody2D
 				if (vel.Y < 0)
 				{
 					vel.Y += _gravityDefault * fDelta;
+				
 				}
 				else
 				{
-					vel.Y += _gravityDefault * _gravityFallMultiplier * fDelta;
+					float gravM = _gravityFallMultiplier;
+					if (Input.IsActionPressed("ui_down"))
+						gravM = 1.75f;
+
+					vel.Y += _gravityDefault * gravM * fDelta;
 				}
 
 				break;
@@ -156,7 +181,7 @@ public partial class Player : CharacterBody2D
 		Godot.Vector2 movement = new();
 
 		movement.X = Input.GetAxis("ui_left", "ui_right");
-		movement.Y = Input.GetAxis("ui_down", "ui_select");
+
 		return movement;
 	}
 
@@ -232,4 +257,50 @@ public partial class Player : CharacterBody2D
 			_playerSprite.FlipH = false;
 		}
 	}
+
+	private void OnArea2DEntered(Area2D area)
+	{
+		if (area.GetOwnerOrNull<ICombatable>() is ICombatable)
+		{
+			EnemyAggroed?.Invoke(area.GetOwner<ICombatable>());
+		}
+	}
+
+	private async void PlayFootsteps()
+	{
+		bool onGround = IsOnFloor();
+		while (true)
+		{
+			if (!onGround && IsOnFloor())
+			{
+				_landSound.Play();
+			}
+			onGround = IsOnFloor();
+
+			if (Mathf.Abs(GetMovementInput().X) < 0.5f)
+			{
+				await Task.Delay(100);
+				continue;
+			}
+			if (IsJumping())
+			{
+				await Task.Delay(300);
+				continue;
+			}
+			if (IsSprinting())
+			{
+				_runSound.Play();
+				await Task.Delay(150);
+			}
+			else
+			{
+				_walkSound.Play();
+				await Task.Delay(700);
+			}
+
+		}
+	}
 }
+
+
+

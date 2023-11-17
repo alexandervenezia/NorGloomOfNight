@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://g80bp206jwbw"]
+[gd_scene load_steps=8 format=3 uid="uid://g80bp206jwbw"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Player.cs" id="1_tiyfm"]
 [ext_resource type="SpriteFrames" uid="uid://d2icecwt8r80n" path="res://res/scenes/characters/player/OverworldPlayerFrames.tres" id="1_vpm6o"]
+[ext_resource type="AudioStream" uid="uid://cnq5f1sjurq6" path="res://assets/audio/Walk.wav" id="3_oocse"]
+[ext_resource type="AudioStream" uid="uid://dcnd1fcq1c7qq" path="res://assets/audio/Run.wav" id="4_p6svo"]
+[ext_resource type="AudioStream" uid="uid://dtpp0cl6llar1" path="res://assets/audio/Jump 1.wav" id="5_nm4fh"]
+[ext_resource type="AudioStream" uid="uid://b6ewl8lsftyr1" path="res://assets/audio/Player Land.wav" id="6_tk2ai"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_207lw"]
 radius = 81.0
@@ -12,9 +16,37 @@ texture_filter = 6
 script = ExtResource("1_tiyfm")
 _coyoteBuffer = 0.3
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_207lw")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_vpm6o")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_207lw")
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oocse")
+volume_db = 2.0
+bus = &"SFX"
+
+[node name="RunSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p6svo")
+volume_db = -1.0
+max_polyphony = 2
+bus = &"SFX"
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nm4fh")
+volume_db = -1.0
+bus = &"SFX"
+
+[node name="LandSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tk2ai")
+volume_db = 4.0
+bus = &"SFX"
+
+[connection signal="area_entered" from="Area2D" to="." method="OnArea2DEntered"]

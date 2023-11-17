@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=19 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
 [ext_resource type="PackedScene" uid="uid://g80bp206jwbw" path="res://res/scenes/characters/player/OverworldPlayer.tscn" id="3_g155m"]
 [ext_resource type="Texture2D" uid="uid://dliwgg0bumx0s" path="res://res/scenes/overworld/purgatory/img/Hallway piece 1.PNG" id="4_5e3f8"]
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="4_wm0r4"]
+[ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_yy1ep"]
 [ext_resource type="Texture2D" uid="uid://bgo7loeositdr" path="res://res/scenes/overworld/purgatory/img/Hallway piece 2.PNG" id="5_n5mx7"]
 [ext_resource type="Texture2D" uid="uid://duwp8iosphge7" path="res://res/scenes/overworld/purgatory/img/Mailroom bg flat.PNG" id="6_x0fb6"]
 [ext_resource type="Texture2D" uid="uid://df1motfq4vj8s" path="res://res/scenes/overworld/purgatory/img/Room 1.PNG" id="7_u1ox0"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1r3yk4i5qgx" path="res://res/scenes/overworld/purgatory/img/Room 2.PNG" id="9_nhmri"]
 [ext_resource type="PackedScene" uid="uid://md0lwaor2nke" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/MediumPlatform.tscn" id="11_73qlx"]
 [ext_resource type="Texture2D" uid="uid://cftpbsyujo7sg" path="res://assets/black_dot.png" id="11_g3usj"]
+[ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -24,9 +26,6 @@ size = Vector2(7497.5, 216)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvv1h"]
 size = Vector2(10446, 152)
-
-[sub_resource type="Environment" id="Environment_4auyi"]
-background_mode = 3
 
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -101,13 +100,25 @@ position = Vector2(-808, 650)
 _walkSpeed = 3000.0
 _sprintSpeed = 5100.0
 _jumpSpeed = 2000.0
-_gravityFallMultiplier = 1.75
+_gravityFallMultiplier = 0.25
 _accelerationStrength = 0.03
 _gravityMult = 3.5
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -650)
 zoom = Vector2(0.75, 0.75)
+
+[node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
+offset_left = -2564.0
+offset_top = -1438.0
+offset_right = -1316.0
+offset_bottom = -1017.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 125
+text = "FPS:"
+script = ExtResource("4_yy1ep")
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -196,5 +207,6 @@ position = Vector2(16484, -3296)
 [node name="SmallPlatform7" parent="." instance=ExtResource("11_73qlx")]
 position = Vector2(17804, -3456)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4auyi")
+[node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
+position = Vector2(27476, -4252)
+scale = Vector2(1.5, 1.5)
