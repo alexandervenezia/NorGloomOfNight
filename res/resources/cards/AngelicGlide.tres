@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cuyob31ibyd5g"]
+
+[ext_resource type="Texture2D" uid="uid://cwlgc4t03a1se" path="res://res/scenes/combat/subscenes/Card/images/artwork/angelic_glide.png" id="1_ymgeq"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_yyxyy"]
+
+[resource]
+script = ExtResource("1_yyxyy")
+_name = "Angelic Glide"
+_description = ""
+_artwork = ExtResource("1_ymgeq")
+_type = 0
+_rarity = 2
+_actionPointCost = 0
+_movementPointCost = 1
+_target = 0
+_damageTypes = []
+_damageDice = []
+_drawEffects = [0, 2]
+_drawQuantities = [3, 1]
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []

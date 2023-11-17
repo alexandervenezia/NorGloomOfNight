@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cshcvcas2jerk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tdw5"]
+size = Vector2(1150, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kfju"]
+size = Vector2(343.5, 33)
+
+[node name="player_scene" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(72, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1.00002, 51)
+scale = Vector2(0.998264, 0.0771605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 51)
+shape = SubResource("RectangleShape2D_4tdw5")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(72, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(-346, -36)
+scale = Vector2(0.298177, 0.0509259)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-346, -36)
+shape = SubResource("RectangleShape2D_5kfju")

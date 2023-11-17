@@ -1,0 +1,24 @@
+[gd_scene load_steps=13 format=3 uid="uid://d204n4ckwe72x"]
+
+[ext_resource type="Script" path="res://res/scripts/MasterScene.cs" id="1_smi8o"]
+[ext_resource type="Script" path="res://res/scripts/controllers/combat/MasterDeck.cs" id="2_ykx58"]
+[ext_resource type="Resource" uid="uid://cuyob31ibyd5g" path="res://res/resources/cards/AngelicGlide.tres" id="3_k5w33"]
+[ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="4_oxfww"]
+[ext_resource type="Resource" uid="uid://bcjf232cowv26" path="res://res/resources/cards/DivineSmite.tres" id="5_54fyw"]
+[ext_resource type="Resource" uid="uid://c3x74yanv8dns" path="res://res/resources/cards/GodsUniform.tres" id="6_2hqoe"]
+[ext_resource type="Resource" uid="uid://cagkcsnwq2qr0" path="res://res/resources/cards/HellsGrasp.tres" id="7_g0tv5"]
+[ext_resource type="Resource" uid="uid://blnau2cu3smcr" path="res://res/resources/cards/HolyWater.tres" id="8_mm6l1"]
+[ext_resource type="Resource" uid="uid://b6qmnb6qex4ku" path="res://res/resources/cards/TacticalRoll.tres" id="9_w8voq"]
+[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="10_74qxg"]
+[ext_resource type="Resource" uid="uid://cn0adl2tnmo8n" path="res://res/resources/cards/ArrowStorm.tres" id="11_61ikk"]
+[ext_resource type="Resource" uid="uid://cfc5bwbj41lg6" path="res://res/resources/cards/ScatterShot.tres" id="12_ojmvo"]
+
+[node name="MasterScene" type="Node2D"]
+script = ExtResource("1_smi8o")
+_packedSceneUIDs = ["uid://b6a77ow3dkibo", "uid://bk6mw4uwgd1yl"]
+_defaultSceneUID = "uid://b6a77ow3dkibo"
+
+[node name="MasterDeck" type="Node" parent="."]
+script = ExtResource("2_ykx58")
+_cardTypes = [ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("5_54fyw"), ExtResource("6_2hqoe"), ExtResource("7_g0tv5"), ExtResource("8_mm6l1"), ExtResource("9_w8voq"), ExtResource("10_74qxg"), ExtResource("11_61ikk"), ExtResource("12_ojmvo")]
+_playerStarterDeck = Array[Resource]([ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("7_g0tv5"), ExtResource("7_g0tv5"), ExtResource("8_mm6l1"), ExtResource("10_74qxg"), ExtResource("9_w8voq"), ExtResource("10_74qxg"), ExtResource("12_ojmvo"), ExtResource("11_61ikk")])
