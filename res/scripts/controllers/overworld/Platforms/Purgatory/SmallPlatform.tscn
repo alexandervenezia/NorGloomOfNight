@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhrjd5inhxhuo"]
+
+[ext_resource type="Texture2D" uid="uid://dfy3740am0qwc" path="res://res/scenes/overworld/purgatory/img/Small platform.PNG" id="1_j25ns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3kii"]
+size = Vector2(266, 78)
+
+[node name="SmallPlatform" type="Node2D"]
+
+[node name="Platform" type="Sprite2D" parent="."]
+texture = ExtResource("1_j25ns")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6, -4)
+shape = SubResource("RectangleShape2D_m3kii")

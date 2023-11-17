@@ -20,6 +20,7 @@ public partial class Hand : Marker2D
     [Export] private float _handArc;
     [Export] private float _radius;
     private List<Card> _cards;
+    public List<Card> Cards => _cards;
 
     private int _selectedCardIndex;
     private bool _frozen;
@@ -35,9 +36,14 @@ public partial class Hand : Marker2D
 
     public void DrawOpeningHand(Deck deck)
     {
+        GD.Print("Deck size: " + deck.GetCardCount());
         CardData[] cards = deck.Draw(_openingHandSize);
+        
         foreach (CardData c in cards)
+        {
+            GD.Print(c);
             AddCards(c, 1);
+        }
 
         // for (int i = 0; i < _openingHandSize; i++)
     }

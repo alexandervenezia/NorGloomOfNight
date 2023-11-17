@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=23 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
 [ext_resource type="PackedScene" uid="uid://dqskjl6vsej8" path="res://res/scenes/combat/subscenes/Card/Card.tscn" id="3_6gjep"]
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Hand.cs" id="4_d0wjn"]
 [ext_resource type="PackedScene" uid="uid://cjvk42o3wxiyl" path="res://res/scenes/combat/subscenes/player/Player.tscn" id="4_rn6c5"]
+[ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_wlm2t"]
 [ext_resource type="PackedScene" uid="uid://de6otae1c7bon" path="res://res/scenes/combat/subscenes/deck/Deck.tscn" id="9_5f4rp"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="12_0sia7"]
 [ext_resource type="Script" path="res://res/scenes/combat/EndTurn.cs" id="12_atut3"]
@@ -35,7 +36,7 @@ radius = 32.0
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_gps4y")
-_enemyTypePaths = Array[String](["uid://iw7vaee7nlpc", "uid://6dpordjypq8l"])
+_enemyTypePaths = Array[String](["uid://iw7vaee7nlpc", "uid://6dpordjypq8l", "uid://bakphjas5nire"])
 
 [node name="Player" parent="." node_paths=PackedStringArray("_hand", "_targetLabel", "_actionPointLabel", "_movementPointLabel", "_deck", "_discard") instance=ExtResource("4_rn6c5")]
 position = Vector2(-628, 103)
@@ -52,6 +53,19 @@ scale = Vector2(0.67, 0.67)
 transform = Transform2D(0.67, 0, 0, 0.67, 0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="FPS" type="Label" parent="Camera2D"]
+offset_left = -960.0
+offset_top = -556.0
+offset_right = 288.0
+offset_bottom = -135.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "FPS:"
+script = ExtResource("4_wlm2t")
+metadata/_edit_use_anchors_ = true
 
 [node name="Hand" type="Marker2D" parent="."]
 position = Vector2(0, 1450)

@@ -1,0 +1,211 @@
+[gd_scene load_steps=19 format=3 uid="uid://b6a77ow3dkibo"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
+[ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
+[ext_resource type="PackedScene" uid="uid://g80bp206jwbw" path="res://res/scenes/characters/player/OverworldPlayer.tscn" id="3_g155m"]
+[ext_resource type="Texture2D" uid="uid://dliwgg0bumx0s" path="res://res/scenes/overworld/purgatory/img/Hallway piece 1.PNG" id="4_5e3f8"]
+[ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="4_wm0r4"]
+[ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_yy1ep"]
+[ext_resource type="Texture2D" uid="uid://bgo7loeositdr" path="res://res/scenes/overworld/purgatory/img/Hallway piece 2.PNG" id="5_n5mx7"]
+[ext_resource type="Texture2D" uid="uid://duwp8iosphge7" path="res://res/scenes/overworld/purgatory/img/Mailroom bg flat.PNG" id="6_x0fb6"]
+[ext_resource type="Texture2D" uid="uid://df1motfq4vj8s" path="res://res/scenes/overworld/purgatory/img/Room 1.PNG" id="7_u1ox0"]
+[ext_resource type="Texture2D" uid="uid://brbc3efcree06" path="res://res/scenes/overworld/purgatory/img/Staircase bg.PNG" id="8_lg4mg"]
+[ext_resource type="Texture2D" uid="uid://bj1r3yk4i5qgx" path="res://res/scenes/overworld/purgatory/img/Room 2.PNG" id="9_nhmri"]
+[ext_resource type="PackedScene" uid="uid://md0lwaor2nke" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/MediumPlatform.tscn" id="11_73qlx"]
+[ext_resource type="Texture2D" uid="uid://cftpbsyujo7sg" path="res://assets/black_dot.png" id="11_g3usj"]
+[ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
+size = Vector2(24438, 289.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_818ne"]
+size = Vector2(247, 4454.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e53ao"]
+size = Vector2(7497.5, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvv1h"]
+size = Vector2(10446, 152)
+
+[node name="Purgatory" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_8mid8")
+_prideUID = "uid://bk7mufkqeug2p"
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(6029, 1017.38)
+shape = SubResource("RectangleShape2D_k4f1m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-5820, -233.5)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(18100, -1290.75)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
+position = Vector2(13698.5, -2218)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
+position = Vector2(12564, -11478)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
+position = Vector2(9802, -11452)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-6482, -11458)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-9260, -11432)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2(28774, -5702)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-7884, -9178)
+shape = SubResource("RectangleShape2D_e53ao")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(11061, -9163.5)
+shape = SubResource("RectangleShape2D_e53ao")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
+position = Vector2(23600, -3442)
+shape = SubResource("RectangleShape2D_mvv1h")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls"]
+position = Vector2(21959.6, -6588)
+shape = SubResource("RectangleShape2D_818ne")
+
+[node name="Platforms" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("2_a1ok3")]
+position = Vector2(17246, -406)
+scale = Vector2(2.5, 2.5)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("2_a1ok3")]
+position = Vector2(15946, -1304)
+scale = Vector2(2.5, 2.5)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("2_a1ok3")]
+position = Vector2(14540, -2160)
+scale = Vector2(2.5, 2.5)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("2_a1ok3")]
+position = Vector2(16148, -3136)
+scale = Vector2(2.5, 2.5)
+
+[node name="OverworldPlayer" parent="." instance=ExtResource("3_g155m")]
+z_index = 2
+position = Vector2(19718, -3798)
+_walkSpeed = 3000.0
+_sprintSpeed = 5100.0
+_jumpSpeed = 2000.0
+_gravityFallMultiplier = 1.75
+_accelerationStrength = 0.03
+_gravityMult = 3.5
+
+[node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
+position = Vector2(0, -600)
+zoom = Vector2(0.75, 0.75)
+
+[node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
+offset_left = -2564.0
+offset_top = -1438.0
+offset_right = -1316.0
+offset_bottom = -1017.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 125
+text = "FPS:"
+script = ExtResource("4_yy1ep")
+metadata/_edit_use_anchors_ = true
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="DoorPair" parent="Doors" instance=ExtResource("4_wm0r4")]
+z_index = 2
+scale = Vector2(1.3, 1.3)
+_doorOnePos = Vector2i(2225, 350)
+_doorTwoPos = Vector2i(-6840, -7450)
+
+[node name="DoorPair2" parent="Doors" instance=ExtResource("4_wm0r4")]
+z_index = 2
+scale = Vector2(1.3, 1.3)
+_doorOnePos = Vector2i(5455, 350)
+_doorTwoPos = Vector2i(7820, -7450)
+
+[node name="image" type="Node2D" parent="."]
+
+[node name="HallwayPiece1" type="Sprite2D" parent="image"]
+texture = ExtResource("4_5e3f8")
+metadata/_edit_lock_ = true
+
+[node name="HallwayPiece2" type="Sprite2D" parent="image"]
+position = Vector2(9754, 0)
+texture = ExtResource("5_n5mx7")
+metadata/_edit_lock_ = true
+
+[node name="HallwayPiece3" type="Sprite2D" parent="image"]
+position = Vector2(17999, -4393)
+texture = ExtResource("5_n5mx7")
+metadata/_edit_lock_ = true
+
+[node name="MailroomBgFlat" type="Sprite2D" parent="image"]
+position = Vector2(25357, -5046)
+texture = ExtResource("6_x0fb6")
+
+[node name="Room1" type="Sprite2D" parent="image"]
+position = Vector2(-7866, -10058)
+texture = ExtResource("7_u1ox0")
+
+[node name="StaircaseBg" type="Sprite2D" parent="image"]
+position = Vector2(14858, -2197)
+texture = ExtResource("8_lg4mg")
+metadata/_edit_lock_ = true
+
+[node name="StaircaseBg2" type="Sprite2D" parent="image"]
+position = Vector2(16922, -2197)
+texture = ExtResource("8_lg4mg")
+metadata/_edit_lock_ = true
+
+[node name="Room2" type="Sprite2D" parent="image"]
+position = Vector2(11178, -10043.5)
+texture = ExtResource("9_nhmri")
+
+[node name="Sprite2D" type="Sprite2D" parent="image"]
+position = Vector2(13696, -874)
+scale = Vector2(254.25, 1753.13)
+texture = ExtResource("11_g3usj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="image"]
+position = Vector2(21957.1, -5244)
+scale = Vector2(254.25, 1753.13)
+texture = ExtResource("11_g3usj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="image"]
+position = Vector2(6004.78, 984.359)
+scale = Vector2(23909.6, 223.281)
+texture = ExtResource("11_g3usj")
+
+[node name="SmallPlatform" parent="." instance=ExtResource("11_73qlx")]
+position = Vector2(15320, 510)
+scale = Vector2(2.75, 2.75)
+
+[node name="SmallPlatform7" parent="." instance=ExtResource("11_73qlx")]
+position = Vector2(17804, -3456)
+
+[node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
+position = Vector2(27476, -4252)
+scale = Vector2(1.5, 1.5)

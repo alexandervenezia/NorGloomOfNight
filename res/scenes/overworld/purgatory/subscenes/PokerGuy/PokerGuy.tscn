@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bktomhq703uad"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Bosses/PokerGuy.cs" id="1_bm0ww"]
+[ext_resource type="SpriteFrames" uid="uid://b36ublg73homd" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/PokerFrames.tres" id="1_spedo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
+size = Vector2(3303, 1905)
+
+[node name="PokerGuy" type="Node2D"]
+script = ExtResource("1_bm0ww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_spedo")
+animation = &"combat"
+
+[node name="Aggro" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
+position = Vector2(-1269.5, -479.5)
+shape = SubResource("RectangleShape2D_qqlln")
