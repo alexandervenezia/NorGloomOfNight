@@ -11,6 +11,7 @@ public partial class TestLevel : Node2D
 
     public override void _Process(double delta)
     {
+        // TODO: REMOVE THIS
         if (Input.IsPhysicalKeyPressed(Key.Delete))
         {
             MasterScene master = (MasterScene)GetTree().Root.GetChild(0);
