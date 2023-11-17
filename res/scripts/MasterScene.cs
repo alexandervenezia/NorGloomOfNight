@@ -86,7 +86,9 @@ public partial class MasterScene : Node
     public Node ActivateScene(string uid, bool includeLoad = false, bool forceReload = false)
     {
         if (forceReload && _loadedScenes.ContainsKey(uid))
-            _loadedScenes.Remove(uid);
+		{
+			WipeScene(uid);
+		}
 
         if (!_loadedScenes.ContainsKey(uid))
         {

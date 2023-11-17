@@ -69,7 +69,7 @@ public partial class Player : Combatant
         GD.Print("Event detected");
         if (_internalDeck.GetDiscardCount() == 0)
         {
-            Card c = (Card)_discard.GetNodeOrNull("Top");
+            Card c = _discard.GetNodeOrNull<Card>("Top");
             if (c != null)
             {
                 _discard.RemoveChild(c);
