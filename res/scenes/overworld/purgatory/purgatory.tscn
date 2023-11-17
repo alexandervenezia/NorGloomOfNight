@@ -138,13 +138,13 @@ metadata/_edit_use_anchors_ = true
 z_index = 2
 scale = Vector2(1.3, 1.3)
 _doorOnePos = Vector2i(2225, 350)
-_doorTwoPos = Vector2i(-7150, -7450)
+_doorTwoPos = Vector2i(-6840, -7450)
 
 [node name="DoorPair2" parent="Doors" instance=ExtResource("4_wm0r4")]
 z_index = 2
 scale = Vector2(1.3, 1.3)
-_doorOnePos = Vector2i(5425, 350)
-_doorTwoPos = Vector2i(7500, -7450)
+_doorOnePos = Vector2i(5455, 350)
+_doorTwoPos = Vector2i(7820, -7450)
 
 [node name="image" type="Node2D" parent="."]
 
