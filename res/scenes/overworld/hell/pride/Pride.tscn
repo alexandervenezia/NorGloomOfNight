@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk7mufkqeug2p"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
+[ext_resource type="Texture2D" uid="uid://biudvmhk8p3xc" path="res://res/scenes/overworld/hell/pride/bg_temp.png" id="1_e1xb0"]
+[ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
+size = Vector2(1851.5, 330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4isc"]
+size = Vector2(12104, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1c8y"]
+size = Vector2(1146, 1468)
+
+[node name="Pride" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_7nkhc")
+_playerSpawn = Vector2(-13340, -736)
+
+[node name="BgTemp" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_e1xb0")
+
+[node name="Boi" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-13340, -736)
+texture = ExtResource("3_ffxcs")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-26760, -806)
+shape = SubResource("RectangleShape2D_xt4nr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-24980, -1086)
+shape = SubResource("RectangleShape2D_xt4nr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-18986, -1393)
+shape = SubResource("RectangleShape2D_g4isc")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-12373, -1970)
+shape = SubResource("RectangleShape2D_j1c8y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-28564, -1102)
+shape = SubResource("RectangleShape2D_xt4nr")

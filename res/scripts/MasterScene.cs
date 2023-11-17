@@ -83,22 +83,30 @@ public partial class MasterScene : Node
 		_loadedScenes.Add(sceneUID, scene.Instantiate());
 	}
 
-	public void ActivateScene(string uid, bool includeLoad = false, bool forceReload = false)
-	{
-		if (!_loadedScenes.ContainsKey(uid))
-		{
-			if (!includeLoad)
-				throw new Exception("ERROR: Attempted to active scene which has not been loaded");
-			LoadScene(uid);
-			GD.Print("Loading as activation");
-		}
+    public Node ActivateScene(string uid, bool includeLoad = false, bool forceReload = false)
+    {
+        if (forceReload && _loadedScenes.ContainsKey(uid))
+            _loadedScenes.Remove(uid);
 
-		_lastScene = _activeScene;
-		if (_activeScene != "")
-			RemoveChild(_loadedScenes[_activeScene]);
-		_activeScene = uid;
-		AddChild(_loadedScenes[_activeScene]);
-	}
+        if (!_loadedScenes.ContainsKey(uid))
+        {
+            if (!includeLoad)
+                throw new Exception("ERROR: Attempted to active scene which has not been loaded");
+            LoadScene(uid);
+            GD.Print("Loading as activation");
+        }
+
+        _lastScene = _activeScene;
+        if (_activeScene != "")
+            RemoveChild(_loadedScenes[_activeScene]);
+        _activeScene = uid;
+        AddChild(_loadedScenes[_activeScene]);
+
+        if (_loadedScenes[_activeScene] is ILevel)
+            ((ILevel)_loadedScenes[_activeScene]).Reactivate();
+
+        return _loadedScenes[_activeScene];
+    }
 
 
 	public void ActivateSceneAndWipeCurrent(string destUID)
@@ -108,10 +116,10 @@ public partial class MasterScene : Node
 		_lastScene = "";
 	}
 
-	public void ActivatePreviousScene()
-	{
-		ActivateScene(_lastScene, false);
-	}
+    public void ActivatePreviousScene()
+    {           
+        ActivateScene(_lastScene, false);
+    }
 
 	public void WipeScene(string uid)
 	{

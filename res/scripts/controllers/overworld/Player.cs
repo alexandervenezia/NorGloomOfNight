@@ -310,6 +310,11 @@ public partial class Player : CharacterBody2D
 
 		}
 	}
+
+	public void SetHealth(int hp)
+	{
+		_currentHealth = hp;
+	}
 }
 
 
