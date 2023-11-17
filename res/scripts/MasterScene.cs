@@ -63,6 +63,11 @@ public partial class MasterScene : Node
         return _playerHP;
     }
 
+    public bool IsInCombat()
+    {
+        return _activeScene == _combatSceneUID;
+    }
+
     /*
     TODO: Implement rewards for combat.
     public void SetPlayerReward();
@@ -89,8 +94,8 @@ public partial class MasterScene : Node
         }
 
         _lastScene = _activeScene;
-        //if (_activeScene != "")
-            //RemoveChild(_loadedScenes[_activeScene]);
+        if (_activeScene != "")
+            RemoveChild(_loadedScenes[_activeScene]);
         _activeScene = uid;
         AddChild(_loadedScenes[_activeScene]);
     }

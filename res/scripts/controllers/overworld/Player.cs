@@ -269,13 +269,18 @@ public partial class Player : CharacterBody2D
 		{
 			EnemyAggroed?.Invoke(area.GetOwner<ICombatable>());
 		}
-	}
+	}	
 
 	private async void PlayFootsteps()
 	{
 		bool onGround = IsOnFloor();
 		while (true)
 		{
+			if (MasterScene.GetInstance().IsInCombat())
+			{
+				await Task.Delay(250);
+				continue;
+			}
 			if (!onGround && IsOnFloor())
 			{
 				_landSound.Play();
