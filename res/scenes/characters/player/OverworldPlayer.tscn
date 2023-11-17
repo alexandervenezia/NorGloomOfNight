@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://g80bp206jwbw"]
 
-[ext_resource type="Script" path="res://res/scripts/controllers/platforming/Player.cs" id="1_tiyfm"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Player.cs" id="1_tiyfm"]
 [ext_resource type="SpriteFrames" uid="uid://d2icecwt8r80n" path="res://res/scenes/characters/player/OverworldPlayerFrames.tres" id="1_vpm6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_207lw"]

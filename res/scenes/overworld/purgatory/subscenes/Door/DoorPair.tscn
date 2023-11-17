@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://486veyqu4ba6"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Door/DoorPair.cs" id="1_1o41u"]
+[ext_resource type="Texture2D" uid="uid://cexyvfr7vfo3x" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorOpen.png" id="2_5ncut"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Door/Door.cs" id="3_t710n"]
+
+[node name="DoorPair" type="Node2D"]
+script = ExtResource("1_1o41u")
+_doorOnePos = Vector2i(100, 0)
+
+[node name="Door1" type="Sprite2D" parent="."]
+position = Vector2(0, -325)
+texture = ExtResource("2_5ncut")
+script = ExtResource("3_t710n")
+
+[node name="Door2" type="Sprite2D" parent="."]
+position = Vector2(0, -325)
+texture = ExtResource("2_5ncut")
+script = ExtResource("3_t710n")
