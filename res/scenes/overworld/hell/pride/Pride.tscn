@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=39 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://biudvmhk8p3xc" path="res://res/scenes/overworld/hell/pride/bg_temp.png" id="1_e1xb0"]
 [ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
+[ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -338,3 +339,6 @@ shape = SubResource("RectangleShape2D_2vesw")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-28564, -1102)
 shape = SubResource("RectangleShape2D_xt4nr")
+
+[node name="KerogWorld" parent="." instance=ExtResource("4_g25tj")]
+position = Vector2(-17670, -2312)
