@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://qgfm7rnaf6ti"]
+
+[ext_resource type="SpriteFrames" uid="uid://d1qxf1j13278r" path="res://res/scenes/overworld/hell/pride/Kerog/KerogOverworldFrames.tres" id="1_162p7"]
+[ext_resource type="Script" path="res://res/scripts/controllers/GroundEnemy.cs" id="1_mga26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42sw5"]
+size = Vector2(483.529, 1101.18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbdkk"]
+size = Vector2(662, 1151)
+
+[node name="KerogWorld" type="CharacterBody2D"]
+scale = Vector2(0.85, 0.85)
+script = ExtResource("1_mga26")
+FOV = 60.0
+_name = "Kerog"
+_id = 1
+_speed = 500.0
+_acceleration = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_162p7")
+
+[node name="PatrolMarkers" type="Node2D" parent="."]
+
+[node name="Left" type="Marker2D" parent="PatrolMarkers"]
+gizmo_extents = 250.0
+
+[node name="Right" type="Marker2D" parent="PatrolMarkers"]
+gizmo_extents = 250.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(75.8824, 70.5883)
+shape = SubResource("RectangleShape2D_42sw5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(57, 70.5)
+shape = SubResource("RectangleShape2D_cbdkk")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

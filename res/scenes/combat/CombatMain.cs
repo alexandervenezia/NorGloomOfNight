@@ -79,15 +79,6 @@ public partial class CombatMain : Node
     }
 
 
-    /* TEST - TODO REMOVE*/
-
-    public override void _Process(double delta)
-    {
-        if (Input.IsPhysicalKeyPressed(Key.Space))
-        {
-            ((MasterScene)GetTree().Root.GetChild(0)).ActivatePreviousScene();
-        }
-    }
 
 
     /*
@@ -124,7 +115,7 @@ public partial class CombatMain : Node
         GD.Print("Is over - " + result);
 
         MasterScene.GetInstance().SetPlayerHP(GetPlayerHP());
-        MasterScene.GetInstance().CallDeferred("ActivatePreviousScene");
+        MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
     }
 
 

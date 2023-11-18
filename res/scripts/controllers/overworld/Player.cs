@@ -267,7 +267,8 @@ public partial class Player : CharacterBody2D
 	{
 		if (area.GetOwnerOrNull<ICombatable>() is ICombatable)
 		{
-			EnemyAggroed?.Invoke(area.GetOwner<ICombatable>());
+			if (area.GetOwner<ICombatable>().IsEnabled())
+				EnemyAggroed?.Invoke(area.GetOwner<ICombatable>());
 		}
 	}	
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=66 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=67 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://biudvmhk8p3xc" path="res://res/scenes/overworld/hell/pride/bg_temp.png" id="1_e1xb0"]
 [ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
+[ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -610,3 +611,33 @@ shape = SubResource("RectangleShape2D_2vesw")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-28564, -1102)
 shape = SubResource("RectangleShape2D_xt4nr")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="KerogWorld" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-17239, -2120)
+_relativePatrolBounds = Vector2(-4000, 3000)
+
+[node name="KerogWorld2" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-16048, 7148.4)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="KerogWorld7" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-18240, 4258.33)
+_relativePatrolBounds = Vector2(-4500, 4500)
+
+[node name="KerogWorld6" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-9392, 3679.73)
+_relativePatrolBounds = Vector2(-1500, 1500)
+
+[node name="KerogWorld5" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-736, 3391.71)
+_relativePatrolBounds = Vector2(-1500, 1500)
+
+[node name="KerogWorld3" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-1840, -3811.07)
+_relativePatrolBounds = Vector2(-1000, 1000)
+
+[node name="KerogWorld4" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(16796, -2698)
+_relativePatrolBounds = Vector2(-1800, 1800)

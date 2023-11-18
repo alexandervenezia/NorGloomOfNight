@@ -56,7 +56,6 @@ public partial class Player : Combatant
         _state = PlayerState.SELECTING_CARD;
         _targetLabel.Visible = false;
         _sprite = (AnimatedSprite2D)GetNode<AnimatedSprite2D>("Player");
-        _internalDeck.OnDiscardChange += OnDiscardChange;
 
         _drawSound = (AudioStreamPlayer)GetNode("DrawSound");
         _selectSound = (AudioStreamPlayer)GetNode("SelectSound");
@@ -64,12 +63,12 @@ public partial class Player : Combatant
 
     }
 
-    private void OnDiscardChange()
+    private void OnDiscard()
     {
         GD.Print("Event detected");
         if (_internalDeck.GetDiscardCount() == 0)
         {
-            Card c = (Card)_discard.GetNodeOrNull("Top");
+            Card c = _discard.GetNodeOrNull<Card>("Top");
             if (c != null)
             {
                 _discard.RemoveChild(c);
@@ -86,17 +85,23 @@ public partial class Player : Combatant
 
     public override void StartFight()
     {
+        GD.Print("Starting fight");
         base.StartFight();
         
-        SyncDeck();
-        _internalDeck.OnDiscardChange -= OnDiscardChange;
-        _internalDeck.OnDiscardChange += OnDiscardChange;
+        SyncDeck();           
+        //_internalDeck.OnDiscardChange -= OnDiscard;
+        GD.Print("Reshuffling");
+        _internalDeck.ForceFullReshuffle();
+        GD.Print("Done Shuffling");
+        _internalDeck.OnDiscardChange += OnDiscard;
 
         _currentHealth = MasterScene.GetInstance().LoadPlayerHP();
         if (_currentHealth == 0) _currentHealth = MaxHealth;
         GD.Print(_currentHealth);
 
-        _internalDeck.ForceFullReshuffle();        
+        GD.Print(_discard);
+
+             
         _hand.DrawOpeningHand(_internalDeck);
 
 
@@ -363,7 +368,7 @@ public partial class Player : Combatant
         GD.Print("Fight Over - You emerge in " + result);
         _state = PlayerState.GAME_OVER;
 
-        
+        _internalDeck.OnDiscardChange -= OnDiscard;
 
         ((CombatMain)GetParent()).EndFight(result);
     }

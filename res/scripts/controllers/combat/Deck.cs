@@ -161,6 +161,7 @@ public class Deck
 
     public void ForceShuffle()
     {
+        GD.Print("ForceShuffle");
         Shuffle(_discard);
         foreach (CardData c in _discard)
         {
@@ -173,12 +174,14 @@ public class Deck
 
     public void ForceFullReshuffle()
     {
+        GD.Print("Forcing reshuffle");
         Discard(Draw(_mainDeck.Count()));
         ShuffleIfNecessary();
     }
 
     private void ShuffleIfNecessary()
     {
+        GD.Print("ShuffleIfINecessary");
         if (_mainDeck.Count <= 0)
         {
             Shuffle(_discard);
