@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://iw7vaee7nlpc"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_qjx0m"]
-[ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="2_l53pd"]
-[ext_resource type="Resource" uid="uid://cagkcsnwq2qr0" path="res://res/resources/cards/HellsGrasp.tres" id="3_is6ov"]
+[ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="2_kbjd2"]
+[ext_resource type="Resource" uid="uid://djp22yro3qat6" path="res://res/resources/cards/Stomp.tres" id="3_20lrt"]
 [ext_resource type="Texture2D" uid="uid://c5b8yr685m8ev" path="res://res/scenes/combat/subscenes/enemy/assets/Kerog_enemy.png" id="4_bainj"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="5_l6jft"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_p2fnk"]
@@ -20,12 +20,13 @@ shader_parameter/draining_factor = null
 [node name="Enemy" type="Area2D"]
 collision_layer = 4
 script = ExtResource("1_qjx0m")
-_deck = [ExtResource("2_l53pd"), ExtResource("3_is6ov")]
+_deck = [ExtResource("2_kbjd2"), ExtResource("3_20lrt"), ExtResource("3_20lrt")]
 _ID = 1
-_maxHealth = 9
-_startingActionPoints = 2
+_permanentResistances = [2, 1]
+_maxHealth = 10
+_startingActionPoints = 1
 _startingMovementPoints = 0
-_startingArmor = 3
+_startingArmor = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
