@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=67 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://biudvmhk8p3xc" path="res://res/scenes/overworld/hell/pride/bg_temp.png" id="1_e1xb0"]
@@ -613,4 +613,5 @@ position = Vector2(-28564, -1102)
 shape = SubResource("RectangleShape2D_xt4nr")
 
 [node name="KerogWorld" parent="." instance=ExtResource("4_g25tj")]
-position = Vector2(-17670, -2312)
+position = Vector2(-16828, -2120)
+_relativePatrolBounds = Vector2(-4000, 3000)
