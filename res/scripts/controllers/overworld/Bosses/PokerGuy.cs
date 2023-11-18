@@ -39,4 +39,6 @@ public partial class PokerGuy : Node2D, ICombatable
         return _enabled;
     }
 
+    public void Die() {}
+
 }

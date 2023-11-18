@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://djp22yro3qat6"]
+
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_pxo8a"]
+
+[resource]
+script = ExtResource("2_pxo8a")
+_name = "Stomp"
+_description = ""
+_type = 2
+_rarity = 0
+_actionPointCost = 1
+_movementPointCost = 0
+_target = 1
+_damageTypes = [6]
+_damageDice = ["1d4+2"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []

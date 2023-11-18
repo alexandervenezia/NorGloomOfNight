@@ -79,7 +79,7 @@ position = Vector2(11061, -9163.5)
 shape = SubResource("RectangleShape2D_e53ao")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
-position = Vector2(23600, -3442)
+position = Vector2(23442, -3442)
 shape = SubResource("RectangleShape2D_mvv1h")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls"]
@@ -117,7 +117,7 @@ _gravityMult = 3.5
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -600)
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.5, 0.5)
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
 offset_left = -2564.0

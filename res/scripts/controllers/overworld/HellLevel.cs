@@ -1,29 +1,20 @@
 using Godot;
 using Overworld;
 using System;
-using System.Security.AccessControl;
 
-public partial class Purgatory : Node2D, ILevel
+public partial class HellLevel : Node2D, ILevel
 {
-	[Export] private string _prideUID;
-	private Player _player;
-	public Player Player => _player;
-	private Vector2 _playerSpawn;
-
-	private ICombatable _enemyInCombat;
-
+	[Export] protected Vector2 _playerSpawn;
+	protected Player _player;
+	protected Player Player => _player;
+	protected ICombatable _enemyInCombat;
 	public override void _Ready()
 	{
-		_player = (Player)GetNodeOrNull("OverworldPlayer");
-		if (_player != null)
-			_player.EnemyAggroed += OnAggro;
-		_playerSpawn = _player.GlobalPosition;
+		GD.Print("Hello, Hell.");       
 	}
 
-	private async void OnAggro(ICombatable enemy)
+	protected async void OnAggro(ICombatable enemy)
 	{
-		GD.Print(enemy.IsEnabled());
-
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
@@ -45,24 +36,11 @@ public partial class Purgatory : Node2D, ILevel
 	{
 		_player = player;
 		_player.EnemyAggroed += OnAggro;
-	}
-
-	// TESTING TOOL
-	public override void _Process(double delta)
-	{
-		if (Input.IsKeyPressed(Key.Delete))
-		{
-			Node pride = MasterScene.GetInstance().ActivateScene(_prideUID, true, true);
-			_player.EnemyAggroed -= OnAggro;
-			RemoveChild(_player);
-			pride.AddChild(_player);
-			((Pride)pride).SetPlayer(_player);
-		}
+		_player.GlobalPosition = _playerSpawn;
 	}
 
 	public void Reactivate()
 	{
-
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
@@ -70,6 +48,10 @@ public partial class Purgatory : Node2D, ILevel
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
 		}
+		else
+		{
+			if (_enemyInCombat != null)
+				_enemyInCombat.Die();
+		}
 	}
-
 }
