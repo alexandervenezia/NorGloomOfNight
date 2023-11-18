@@ -1,7 +1,7 @@
 [gd_scene load_steps=68 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
-[ext_resource type="Texture2D" uid="uid://biudvmhk8p3xc" path="res://res/scenes/overworld/hell/pride/bg_temp.png" id="1_e1xb0"]
+[ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
 [ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 [ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
@@ -195,15 +195,14 @@ size = Vector2(4607.63, 864.5)
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
-_playerSpawn = Vector2(-13340, -736)
+_playerSpawn = Vector2(-22070.7, -2279.27)
 
 [node name="BgTemp" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
-texture = ExtResource("1_e1xb0")
+texture = ExtResource("2_ugo6q")
 metadata/_edit_lock_ = true
 
 [node name="Boi" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-13340, -736)
 texture = ExtResource("3_ffxcs")
 
@@ -668,3 +667,6 @@ _patrolRadius = 250.0
 _id = 2
 _speed = 500.0
 _acceleration = 100.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-22076.7, -2279.27)

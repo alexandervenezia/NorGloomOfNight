@@ -36,7 +36,7 @@ public partial class HellLevel : Node2D, ILevel
 	{
 		_player = player;
 		_player.EnemyAggroed += OnAggro;
-		_player.GlobalPosition = _playerSpawn;
+		_player.Position = _playerSpawn;
 	}
 
 	public void Reactivate()
@@ -53,5 +53,10 @@ public partial class HellLevel : Node2D, ILevel
 			if (_enemyInCombat != null)
 				_enemyInCombat.Die();
 		}
+	}
+
+	public void UseElevator()
+	{
+		
 	}
 }

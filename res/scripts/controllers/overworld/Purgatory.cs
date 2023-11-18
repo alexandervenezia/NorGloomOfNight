@@ -5,6 +5,7 @@ using System.Security.AccessControl;
 
 public partial class Purgatory : Node2D, ILevel
 {
+	[Export] private string[] _hellLevels;
 	[Export] private string _prideUID;
 	private Player _player;
 	public Player Player => _player;
@@ -33,7 +34,7 @@ public partial class Purgatory : Node2D, ILevel
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
-		
+
 	}
 
 	public Player GetPlayer()
@@ -62,7 +63,6 @@ public partial class Purgatory : Node2D, ILevel
 
 	public void Reactivate()
 	{
-
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
@@ -70,6 +70,15 @@ public partial class Purgatory : Node2D, ILevel
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
 		}
+	}
+
+	public async void UseElevator()
+	{
+		Node pride = MasterScene.GetInstance().ActivateScene(_prideUID, true, true);
+		_player.EnemyAggroed -= OnAggro;
+		RemoveChild(_player);
+		pride.AddChild(_player);
+		((Pride)pride).SetPlayer(_player);
 	}
 
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=26 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://md0lwaor2nke" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/MediumPlatform.tscn" id="11_73qlx"]
 [ext_resource type="Texture2D" uid="uid://cftpbsyujo7sg" path="res://assets/black_dot.png" id="11_g3usj"]
 [ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="15_lu01w"]
+[ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
+[ext_resource type="Shader" path="res://res/scenes/overworld/ElevatorOptionShader.gdshader" id="17_rmsci"]
+[ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -27,9 +32,17 @@ size = Vector2(7497.5, 216)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvv1h"]
 size = Vector2(10446, 152)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcs4p"]
+shader = ExtResource("16_5x30j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4andh"]
+shader = ExtResource("17_rmsci")
+shader_parameter/isHighlighted = null
+
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8mid8")
+_hellLevels = PackedStringArray("uid://bk7mufkqeug2p")
 _prideUID = "uid://bk7mufkqeug2p"
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -107,7 +120,7 @@ scale = Vector2(2.5, 2.5)
 
 [node name="OverworldPlayer" parent="." instance=ExtResource("3_g155m")]
 z_index = 2
-position = Vector2(19718, -3798)
+position = Vector2(-3600, 592)
 _walkSpeed = 3000.0
 _sprintSpeed = 5100.0
 _jumpSpeed = 2000.0
@@ -131,6 +144,65 @@ theme_override_font_sizes/font_size = 125
 text = "FPS:"
 script = ExtResource("4_yy1ep")
 metadata/_edit_use_anchors_ = true
+
+[node name="LevelSelect" type="Control" parent="OverworldPlayer/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(4, 4)
+mouse_filter = 1
+
+[node name="LevelSelectMenu" type="Panel" parent="OverworldPlayer/Camera2D/LevelSelect"]
+material = SubResource("ShaderMaterial_tcs4p")
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Option" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+material = SubResource("ShaderMaterial_4andh")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -477.0
+offset_top = -158.0
+offset_right = 477.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("18_qdqg5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -31.0
+offset_right = 500.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]Pride"
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -209,3 +281,13 @@ position = Vector2(17804, -3456)
 [node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
 position = Vector2(27476, -4252)
 scale = Vector2(1.5, 1.5)
+
+[node name="Elevator" type="Marker2D" parent="." node_paths=PackedStringArray("_levelSelect")]
+position = Vector2(-1770, 388)
+gizmo_extents = 229.0
+script = ExtResource("15_lu01w")
+_levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
+
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" method="OnMouseEntered"]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" method="OnMouseExited"]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" method="OnPressed"]
