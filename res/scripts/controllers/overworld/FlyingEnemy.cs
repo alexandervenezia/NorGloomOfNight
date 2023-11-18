@@ -4,6 +4,7 @@ using System;
 public partial class FlyingEnemy : Overworld.Enemy
 {
     [Export] float _aggroRadius;
+    [Export] float _deAggroRange;
     [Export] float _patrolRadius;
 
     private RayCast2D _raycast;
@@ -54,7 +55,7 @@ public partial class FlyingEnemy : Overworld.Enemy
             Vector2 accel = direction.Normalized() * _acceleration * 10f;
             Velocity += accel * (float)delta;
 
-            if (_spawnPoint.DistanceTo(_player.Position) > _aggroRadius-1.25f)
+            if (_spawnPoint.DistanceTo(_player.Position) > _deAggroRange)
                 _aggro = false;
         }
 
