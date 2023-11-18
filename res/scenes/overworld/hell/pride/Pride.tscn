@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=69 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
@@ -104,6 +104,9 @@ size = Vector2(289.031, 289.781)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14xen"]
 size = Vector2(863.031, 289.781)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si3bn"]
+size = Vector2(863.031, 608.891)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h52jn"]
 size = Vector2(1756, 289.781)
@@ -420,6 +423,10 @@ shape = SubResource("RectangleShape2D_14xen")
 position = Vector2(-24322, 6370)
 shape = SubResource("RectangleShape2D_14xen")
 
+[node name="CollisionShape2D102" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-26052, 7679.55)
+shape = SubResource("RectangleShape2D_si3bn")
+
 [node name="CollisionShape2D78" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-27650, 6366)
 shape = SubResource("RectangleShape2D_h52jn")
@@ -462,6 +469,10 @@ shape = SubResource("RectangleShape2D_f6iju")
 
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-130.25, 897.438)
+shape = SubResource("RectangleShape2D_ddlrs")
+
+[node name="CollisionShape2D103" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-418, -2850)
 shape = SubResource("RectangleShape2D_ddlrs")
 
 [node name="CollisionShape2D54" type="CollisionShape2D" parent="Walls"]
