@@ -10,19 +10,27 @@ using System.Linq;
 public partial class GroundEnemy : Enemy
 {
     [Export] Vector2 _relativePatrolBounds;
+    [Export] float FOV;
 
     private Marker2D _leftPatrolMarker;
     private Marker2D _rightPatrolMarker;
     private int _direction;
+    private int _facingDirection;
+
+    private RayCast2D _raycast;
+    private bool _aggro;
+    private Player _player;
+    
 
     public override void _Ready()
     {
         _direction = -1;
+        _raycast = GetNode<RayCast2D>("RayCast2D");
         base._Ready();
     }
 
-    public override void _Process(double delta)
-    {
+    public override void _PhysicsProcess(double delta)
+    {/*
         if (Engine.IsEditorHint())
         {
             UpdateMarkers();
@@ -37,30 +45,58 @@ public partial class GroundEnemy : Enemy
         accel *= Mathf.Log(_speed);
         
         if (Velocity.X > 0 != _direction > 0)
-            accel *= 5f;
-        
-
-
+            accel *= 5f;        
 
         Velocity += _direction * Vector2.Right * accel * (float)delta;
         if (Velocity.Length() > _speed)
             Velocity = Velocity.Normalized() * _speed;
 
-        base._Process(delta);
+        _player = GetOwner<ILevel>().GetPlayer();
+        Vector2 cast = Vector2.Zero;
+        if (_player != null)
+        {   
+            cast = _player.GlobalPosition - GlobalPosition;
+            _raycast.TargetPosition = cast * 2.5f;
+        }  
 
-        Orient();
         
+        if (_raycast.GetCollider() is Player && Mathf.Abs(Mathf.RadToDeg(cast.AngleTo(Velocity))) < FOV)
+        {
+            _aggro = true;
+            //GD.Print("HIT!");
+        }
+        else if (_raycast.GetCollider() is Player)
+        {
+            
+        }
+        else
+            _aggro = false;
+
+
+        if (_player.Position.X < _spawnPoint.X + _relativePatrolBounds.X || _player.Position.X > _spawnPoint.X + _relativePatrolBounds.Y)
+        {
+            _aggro = false;
+        }
         
+        if (_aggro)
+            _direction = _player.GlobalPosition.X > GlobalPosition.X ? 1 : -1;
+
+        base._Process(delta);        
+
+        Orient();    
+
+               */
         
     }
 
     private void Orient()
     {
-        if (Position.X < _spawnPoint.X + _relativePatrolBounds.X)
+        float buffer = 500f;
+        if (Position.X < _spawnPoint.X + _relativePatrolBounds.X+buffer)
         {
             _direction = 1;
         }
-        else if (Position.X > _spawnPoint.X + _relativePatrolBounds.Y)
+        else if (Position.X > _spawnPoint.X + _relativePatrolBounds.Y-buffer)
             _direction = -1;
 
         //Scale = new Vector2(Mathf.Abs(Scale.X)*direction, Scale.Y);

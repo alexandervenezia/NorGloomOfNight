@@ -12,6 +12,7 @@ size = Vector2(662, 1151)
 [node name="KerogWorld" type="CharacterBody2D"]
 scale = Vector2(0.85, 0.85)
 script = ExtResource("1_mga26")
+FOV = 60.0
 _name = "Kerog"
 _id = 1
 _speed = 500.0
@@ -30,12 +31,12 @@ gizmo_extents = 250.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(75.8824, 70.5883)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_42sw5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(57, 70.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cbdkk")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

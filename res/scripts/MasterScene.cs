@@ -118,9 +118,14 @@ public partial class MasterScene : Node
 		_lastScene = "";
 	}
 
-    public void ActivatePreviousScene()
+    public void ActivatePreviousScene(bool wipe=false)
     {           
         ActivateScene(_lastScene, false);
+		if (wipe)
+		{
+			WipeScene(_lastScene);
+			_lastScene = "";
+		}
     }
 
 	public void WipeScene(string uid)

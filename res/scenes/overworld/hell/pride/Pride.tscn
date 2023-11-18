@@ -612,6 +612,32 @@ shape = SubResource("RectangleShape2D_2vesw")
 position = Vector2(-28564, -1102)
 shape = SubResource("RectangleShape2D_xt4nr")
 
-[node name="KerogWorld" parent="." instance=ExtResource("4_g25tj")]
-position = Vector2(-16828, -2120)
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="KerogWorld" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-17239, -2120)
 _relativePatrolBounds = Vector2(-4000, 3000)
+
+[node name="KerogWorld2" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-16048, 7148.4)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="KerogWorld7" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-18240, 4258.33)
+_relativePatrolBounds = Vector2(-4500, 4500)
+
+[node name="KerogWorld6" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-9392, 3679.73)
+_relativePatrolBounds = Vector2(-1500, 1500)
+
+[node name="KerogWorld5" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-736, 3391.71)
+_relativePatrolBounds = Vector2(-1500, 1500)
+
+[node name="KerogWorld3" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(-1840, -3811.07)
+_relativePatrolBounds = Vector2(-1000, 1000)
+
+[node name="KerogWorld4" parent="Enemies" instance=ExtResource("4_g25tj")]
+position = Vector2(16796, -2698)
+_relativePatrolBounds = Vector2(-1800, 1800)
