@@ -83,32 +83,32 @@ public partial class MasterScene : Node
 		_loadedScenes.Add(sceneUID, scene.Instantiate());
 	}
 
-    public Node ActivateScene(string uid, bool includeLoad = false, bool forceReload = false)
-    {
-        if (forceReload && _loadedScenes.ContainsKey(uid))
+	public Node ActivateScene(string uid, bool includeLoad = false, bool forceReload = false)
+	{
+		if (forceReload && _loadedScenes.ContainsKey(uid))
 		{
 			WipeScene(uid);
 		}
 
-        if (!_loadedScenes.ContainsKey(uid))
-        {
-            if (!includeLoad)
-                throw new Exception("ERROR: Attempted to active scene which has not been loaded");
-            LoadScene(uid);
-            GD.Print("Loading as activation");
-        }
+		if (!_loadedScenes.ContainsKey(uid))
+		{
+			if (!includeLoad)
+				throw new Exception("ERROR: Attempted to active scene which has not been loaded");
+			LoadScene(uid);
+			GD.Print("Loading as activation");
+		}
 
-        _lastScene = _activeScene;
-        if (_activeScene != "")
-            RemoveChild(_loadedScenes[_activeScene]);
-        _activeScene = uid;
-        AddChild(_loadedScenes[_activeScene]);
+		_lastScene = _activeScene;
+		if (_activeScene != "")
+			RemoveChild(_loadedScenes[_activeScene]);
+		_activeScene = uid;
+		AddChild(_loadedScenes[_activeScene]);
 
-        if (_loadedScenes[_activeScene] is ILevel)
-            ((ILevel)_loadedScenes[_activeScene]).Reactivate();
+		if (_loadedScenes[_activeScene] is ILevel)
+			((ILevel)_loadedScenes[_activeScene]).Reactivate();
 
-        return _loadedScenes[_activeScene];
-    }
+		return _loadedScenes[_activeScene];
+	}
 
 
 	public void ActivateSceneAndWipeCurrent(string destUID)
@@ -118,15 +118,15 @@ public partial class MasterScene : Node
 		_lastScene = "";
 	}
 
-    public void ActivatePreviousScene(bool wipe=false)
-    {           
-        ActivateScene(_lastScene, false);
+	public void ActivatePreviousScene(bool wipe=false)
+	{           
+		ActivateScene(_lastScene, false);
 		if (wipe)
 		{
 			WipeScene(_lastScene);
 			_lastScene = "";
 		}
-    }
+	}
 
 	public void WipeScene(string uid)
 	{
