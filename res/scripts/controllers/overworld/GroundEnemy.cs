@@ -17,7 +17,6 @@ public partial class GroundEnemy : Enemy
 	private Marker2D _leftPatrolMarker;
 	private Marker2D _rightPatrolMarker;
 	private int _direction;
-	private int _facingDirection;
 
 	private RayCast2D _raycast;
 	private bool _aggro;
@@ -53,7 +52,8 @@ public partial class GroundEnemy : Enemy
 		if (Velocity.Length() > _speed)
 			Velocity = Velocity.Normalized() * _speed;
 
-		_player = GetOwner<ILevel>().GetPlayer();
+		if (_player == null)
+			_player = GetOwner<ILevel>().GetPlayer();
 		Vector2 cast = Vector2.Zero;
 		if (_player != null)
 		{   
@@ -88,7 +88,7 @@ public partial class GroundEnemy : Enemy
 		if (_aggro)
 			_direction = _player.GlobalPosition.X > GlobalPosition.X ? 1 : -1;
 
-		base._Process(delta);        
+		base._PhysicsProcess(delta);        
 
 		Orient();    
 

@@ -28,7 +28,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{        
 		MoveAndSlide();
 

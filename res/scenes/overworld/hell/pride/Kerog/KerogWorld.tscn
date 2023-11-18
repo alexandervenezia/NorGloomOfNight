@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://qgfm7rnaf6ti"]
 
 [ext_resource type="SpriteFrames" uid="uid://d1qxf1j13278r" path="res://res/scenes/overworld/hell/pride/Kerog/KerogOverworldFrames.tres" id="1_162p7"]
-[ext_resource type="Script" path="res://res/scripts/controllers/GroundEnemy.cs" id="1_mga26"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/GroundEnemy.cs" id="1_g2fwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42sw5"]
 size = Vector2(483.529, 1101.18)
@@ -11,7 +11,7 @@ size = Vector2(662, 1151)
 
 [node name="KerogWorld" type="CharacterBody2D"]
 scale = Vector2(0.85, 0.85)
-script = ExtResource("1_mga26")
+script = ExtResource("1_g2fwp")
 FOV = 60.0
 _name = "Kerog"
 _id = 1

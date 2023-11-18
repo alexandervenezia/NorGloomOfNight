@@ -70,7 +70,7 @@ public partial class Player : CharacterBody2D
 		_jumpSound = (AudioStreamPlayer)GetNode("JumpSound");
 		_landSound = (AudioStreamPlayer)GetNode("LandSound");
 
-		PlayFootsteps();
+		// PlayFootsteps();
 	}
 
 	public override void _Process(double delta)
@@ -85,6 +85,8 @@ public partial class Player : CharacterBody2D
 		else if (IsSprinting())
 		{
 			_playerSprite.Play("sprint");
+			if (!_runSound.Playing)
+				_runSound.Play();
 		}
 		else if (IsJumping())
 		{
@@ -93,6 +95,8 @@ public partial class Player : CharacterBody2D
 		else if (IsWalking())
 		{
 			_playerSprite.Play("walk");
+			if (!_walkSound.Playing)
+				_walkSound.Play();
 		}
 	}
 
@@ -272,6 +276,7 @@ public partial class Player : CharacterBody2D
 		}
 	}	
 
+	/*
 	private async void PlayFootsteps()
 	{
 		bool onGround = IsOnFloor();
@@ -310,7 +315,7 @@ public partial class Player : CharacterBody2D
 			}
 
 		}
-	}
+	}*/
 
 	public void SetHealth(int hp)
 	{
