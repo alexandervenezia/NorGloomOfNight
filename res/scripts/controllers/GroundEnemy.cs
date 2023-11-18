@@ -12,6 +12,8 @@ public partial class GroundEnemy : Enemy
     [Export] Vector2 _relativePatrolBounds;
     [Export] float FOV;
 
+    const float MAX_LOS = 15000;
+
     private Marker2D _leftPatrolMarker;
     private Marker2D _rightPatrolMarker;
     private int _direction;
@@ -30,7 +32,7 @@ public partial class GroundEnemy : Enemy
     }
 
     public override void _PhysicsProcess(double delta)
-    {/*
+    {
         if (Engine.IsEditorHint())
         {
             UpdateMarkers();
@@ -56,6 +58,11 @@ public partial class GroundEnemy : Enemy
         if (_player != null)
         {   
             cast = _player.GlobalPosition - GlobalPosition;
+            cast *= 2.5f;
+            if (cast.Length() > MAX_LOS)
+            {
+                cast = cast.Normalized() * MAX_LOS;
+            }
             _raycast.TargetPosition = cast * 2.5f;
         }  
 
@@ -85,7 +92,7 @@ public partial class GroundEnemy : Enemy
 
         Orient();    
 
-               */
+            
         
     }
 
