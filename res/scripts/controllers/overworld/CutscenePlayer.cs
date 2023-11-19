@@ -61,7 +61,7 @@ public partial class CutscenePlayer : ColorRect
             OnEnd?.Invoke();
             return;
         }
-        string fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);
+        string fullText = _dialoguePrefix + ParseLine(_data.SpeakerName + ":<br></narration>" + _data.Lines[_lineIndex]);
 
         _lineIndex++;
         _rendering = true;
