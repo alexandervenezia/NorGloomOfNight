@@ -437,6 +437,7 @@ texture = ExtResource("6_x0fb6")
 [node name="Room1" type="Sprite2D" parent="image"]
 position = Vector2(-7866, -10058)
 texture = ExtResource("7_u1ox0")
+flip_h = true
 
 [node name="StaircaseBg" type="Sprite2D" parent="image"]
 position = Vector2(14858, -2197)
