@@ -29,6 +29,14 @@ public enum State
 
 public partial class Player : CharacterBody2D
 {
+	private readonly IQuest[] _quests = {
+		new TalkToManager(),
+		new CollectCrown(),
+		new DeliverCrown(),
+
+	};
+	private IQuest _quest;
+	[Export] private Node2D _questUI;
 	[Export] private int _maxHealth = 25;
 	public int MaxHealth => _maxHealth;
 	private int _currentHealth;
@@ -70,7 +78,34 @@ public partial class Player : CharacterBody2D
 		_jumpSound = (AudioStreamPlayer)GetNode("JumpSound");
 		_landSound = (AudioStreamPlayer)GetNode("LandSound");
 
+		_quest = _quests[0];
+		UpdateQuestUI();
+		QuestManager.GetInstance().FlagChanged += QuestFlagUpdated;
+
+
 		// PlayFootsteps();
+	}
+
+	private void QuestFlagUpdated()
+	{
+		if (_quest.IsFinished())
+		{
+			_quest = _quests[Array.IndexOf(_quests, _quest) + 1];
+		}
+		UpdateQuestUI();
+
+	}
+
+	private void UpdateQuestUI()
+	{
+		if (_quest == null)
+		{
+			_questUI.GetNode<RichTextLabel>("QuestName").Text = "";
+			_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=75]Your work is done . . . for now.";
+		}
+
+		_questUI.GetNode<RichTextLabel>("QuestName").Text = "[right][font_size=200]" + _quest.GetName();
+		_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=75]" + _quest.GetNextStep();
 	}
 
 	public override void _Process(double delta)
@@ -80,7 +115,7 @@ public partial class Player : CharacterBody2D
 		if (IsIdle())
 		{
 			_playerSprite.Play("idle");
-			
+
 		}
 		else if (IsSprinting())
 		{
@@ -165,7 +200,7 @@ public partial class Player : CharacterBody2D
 				if (vel.Y < 0)
 				{
 					vel.Y += _gravityDefault * fDelta;
-				
+
 				}
 				else
 				{
@@ -274,7 +309,7 @@ public partial class Player : CharacterBody2D
 			if (area.GetOwner<ICombatable>().IsEnabled())
 				EnemyAggroed?.Invoke(area.GetOwner<ICombatable>());
 		}
-	}	
+	}
 
 	/*
 	private async void PlayFootsteps()

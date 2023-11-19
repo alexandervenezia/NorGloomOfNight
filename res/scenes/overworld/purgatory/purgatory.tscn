@@ -165,9 +165,10 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(16148, -3136)
 scale = Vector2(2.5, 2.5)
 
-[node name="OverworldPlayer" parent="." instance=ExtResource("3_g155m")]
+[node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI") instance=ExtResource("3_g155m")]
 z_index = 2
 position = Vector2(-3600, 592)
+_questUI = NodePath("Camera2D/QuestElement")
 _walkSpeed = 3000.0
 _sprintSpeed = 5100.0
 _jumpSpeed = 2000.0
@@ -180,10 +181,10 @@ position = Vector2(0, -600)
 zoom = Vector2(0.5, 0.5)
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
-offset_left = -2564.0
-offset_top = -1438.0
-offset_right = -1316.0
-offset_bottom = -1017.0
+offset_left = -3738.0
+offset_top = -2068.0
+offset_right = -2490.0
+offset_bottom = -1647.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -234,6 +235,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("18_qdqg5")
 _uid = "uid://bk7mufkqeug2p"
+_lockedUntilTutorialComplete = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride"]
 layout_mode = 1
@@ -289,6 +291,24 @@ mouse_filter = 1
 theme = ExtResource("18_1vjvr")
 bbcode_enabled = true
 text = "[center][font_size=50]Middle Management"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -128.0
+offset_right = 500.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]~ Hell ~"
 
 [node name="BackToPurgatory" type="Control" parent="OverworldPlayer/Camera2D"]
 visible = false
@@ -351,6 +371,34 @@ mouse_filter = 1
 theme = ExtResource("18_1vjvr")
 bbcode_enabled = true
 text = "[center][font_size=50]Purgatory"
+
+[node name="QuestElement" type="Node2D" parent="OverworldPlayer/Camera2D"]
+
+[node name="QuestName" type="RichTextLabel" parent="OverworldPlayer/Camera2D/QuestElement"]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 1780.0
+offset_top = -2074.0
+offset_right = 3780.0
+offset_bottom = -1824.0
+theme = ExtResource("18_1vjvr")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "[right][font_size=200]Quest Here"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuestCommand" type="RichTextLabel" parent="OverworldPlayer/Camera2D/QuestElement"]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 1788.0
+offset_top = -1830.0
+offset_right = 3788.0
+offset_bottom = -1409.0
+theme = ExtResource("18_1vjvr")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+bbcode_enabled = true
+text = "[right][font_size=75]Quest Here"
+metadata/_edit_use_anchors_ = true
 
 [node name="Doors" type="Node2D" parent="."]
 

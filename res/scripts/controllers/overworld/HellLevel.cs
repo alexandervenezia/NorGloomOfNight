@@ -52,8 +52,7 @@ public partial class HellLevel : Node2D, ILevel
 		}
 		else
 		{
-			if (_enemyInCombat != null)
-				_enemyInCombat.Die();
+			_enemyInCombat?.Die();
 		}
 	}
 

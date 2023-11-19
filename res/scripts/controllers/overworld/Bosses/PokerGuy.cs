@@ -1,4 +1,5 @@
 using Godot;
+using Overworld;
 using System;
 using System.Collections.Generic;
 
@@ -39,6 +40,10 @@ public partial class PokerGuy : Node2D, ICombatable
         return _enabled;
     }
 
-    public void Die() {}
+    public void Die() 
+    {
+        GD.Print("Poker Guy Died");
+        QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
+    }
 
 }

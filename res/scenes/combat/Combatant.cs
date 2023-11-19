@@ -173,7 +173,8 @@ public partial class Combatant : Area2D, ICombatant
 
             Vector2 textPos = Position + ((Node2D)(GetNode("HealthBar/Armor"))).Position + Vector2.Down * 100;
             GD.Print("Pos: " + textPos);
-            FloatingTextFactory.GetInstance().CreateFloatingText("[color=#666666]" + armorDamage.ToString() + "[/color]", textPos);
+            if (armorDamage > 0.1f)
+                FloatingTextFactory.GetInstance().CreateFloatingText("[color=#666666]" + armorDamage.ToString() + "[/color]", textPos);
         }    
 
         if (HasDebuff(DebuffType.EXPOSED))

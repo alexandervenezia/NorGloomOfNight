@@ -8,6 +8,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Systems.Combat;
 
 
@@ -110,10 +111,12 @@ public partial class CombatMain : Node
         return ((Player)GetNode("Player")).CurrentHealth;
     }
 
-    public void EndFight(EndState result)
+    public async void EndFight(EndState result)
     {
         _isOver = true;
         GD.Print("Is over - " + result);
+
+        await Task.Delay(2000); // This can be removed but it will cause non-fatal errors from the floating text's async lifetime function trying to tick after the FloatingTextFactory node is destroyed.
 
         MasterScene.GetInstance().SetPlayerHP(GetPlayerHP());
         MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);

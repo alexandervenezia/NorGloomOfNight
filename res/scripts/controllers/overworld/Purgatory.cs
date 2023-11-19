@@ -65,6 +65,7 @@ public partial class Purgatory : Node2D, ILevel
 
 	public void Reactivate()
 	{
+		GD.Print("Enemy: " + _enemyInCombat);
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
@@ -72,6 +73,8 @@ public partial class Purgatory : Node2D, ILevel
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
 		}
+		else
+			_enemyInCombat?.Die();
 	}
 
 	public async void UseElevator(string dest="")

@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpku0u2ogjvbb"]
+[gd_scene load_steps=10 format=3 uid="uid://dpku0u2ogjvbb"]
 
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Management.cs" id="1_6ryuy"]
 [ext_resource type="Texture2D" uid="uid://crm20xqyp1pyu" path="res://res/scenes/overworld/management/Slug_Girl.png" id="1_74e3u"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="2_4d8jk"]
+[ext_resource type="Resource" uid="uid://bu7gxhglnsuhl" path="res://res/resources/cutscenes/SupervisorCutscene.tres" id="2_343nj"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/CutscenePlayer.cs" id="3_1m6hv"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="3_7kjbo"]
+[ext_resource type="AudioStream" uid="uid://dy5m5f7oxljjf" path="res://assets/audio/key.ogg" id="5_i3os1"]
 
 [sub_resource type="Shader" id="Shader_07kwb"]
 code = "shader_type canvas_item;
@@ -30,7 +34,11 @@ void fragment() {
 shader = SubResource("Shader_07kwb")
 shader_parameter/isHighlighted = null
 
-[node name="Management_tscn" type="Node2D"]
+[node name="Management_tscn" type="Node2D" node_paths=PackedStringArray("_cutscenePlayer", "_returnButton")]
+script = ExtResource("1_6ryuy")
+_cutscene = ExtResource("2_343nj")
+_cutscenePlayer = NodePath("Camera2D/CutscenePlayer")
+_returnButton = NodePath("Pride")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1017.0
@@ -40,6 +48,30 @@ offset_bottom = 619.0
 color = Color(0.4, 0.290196, 0.101961, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CutscenePlayer" type="ColorRect" parent="Camera2D"]
+z_index = 2
+offset_left = 91.0
+offset_top = 60.0
+offset_right = 953.0
+offset_bottom = 534.0
+script = ExtResource("3_1m6hv")
+
+[node name="Dialogue" type="RichTextLabel" parent="Camera2D/CutscenePlayer"]
+z_index = 9
+layout_mode = 0
+offset_left = 11.0
+offset_top = 14.0
+offset_right = 848.0
+offset_bottom = 461.0
+theme = ExtResource("3_7kjbo")
+bbcode_enabled = true
+text = "[font_size=40][color=black]    "
+
+[node name="Click" type="AudioStreamPlayer" parent="Camera2D/CutscenePlayer"]
+stream = ExtResource("5_i3os1")
+volume_db = -1.5
+bus = &"UI"
 
 [node name="SlugGirl" type="Sprite2D" parent="."]
 z_index = 1
