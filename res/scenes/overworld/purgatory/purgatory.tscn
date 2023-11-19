@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=28 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="15_lu01w"]
 [ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
-[ext_resource type="Shader" path="res://res/scenes/overworld/ElevatorOptionShader.gdshader" id="17_rmsci"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
 
@@ -35,14 +34,62 @@ size = Vector2(10446, 152)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcs4p"]
 shader = ExtResource("16_5x30j")
 
+[sub_resource type="Shader" id="Shader_wc5ra"]
+code = "shader_type canvas_item;
+
+uniform float isHighlighted;
+const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
+const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
+
+float gradient(float x)
+{
+	return pow( 6.0*x*(1.0-x), 1 );
+}
+
+void fragment() {
+	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
+	
+	col.a = (1.0 - gradient(UV.y));
+	
+	
+	COLOR = col;
+}
+"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4andh"]
-shader = ExtResource("17_rmsci")
+shader = SubResource("Shader_wc5ra")
+shader_parameter/isHighlighted = null
+
+[sub_resource type="Shader" id="Shader_4bewk"]
+code = "shader_type canvas_item;
+
+uniform float isHighlighted;
+const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
+const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
+
+float gradient(float x)
+{
+	return pow( 6.0*x*(1.0-x), 1 );
+}
+
+void fragment() {
+	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
+	
+	col.a = (1.0 - gradient(UV.y));
+	
+	
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_noruu"]
+shader = SubResource("Shader_4bewk")
 shader_parameter/isHighlighted = null
 
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8mid8")
-_hellLevels = PackedStringArray("uid://bk7mufkqeug2p")
+_managementUID = "uid://dpku0u2ogjvbb"
 _prideUID = "uid://bk7mufkqeug2p"
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -146,6 +193,7 @@ script = ExtResource("4_yy1ep")
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelSelect" type="Control" parent="OverworldPlayer/Camera2D"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(4, 4)
@@ -168,7 +216,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Option" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+[node name="Pride" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
 material = SubResource("ShaderMaterial_4andh")
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 1
@@ -177,16 +225,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -477.0
-offset_top = -158.0
-offset_right = 477.0
-offset_bottom = -58.0
+offset_left = -500.0
+offset_top = -54.5
+offset_right = 500.0
+offset_bottom = 45.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("18_qdqg5")
+_uid = "uid://bk7mufkqeug2p"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option"]
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -194,15 +243,114 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -500.0
-offset_top = -31.0
+offset_top = -26.0
 offset_right = 500.0
-offset_bottom = 31.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("18_1vjvr")
 bbcode_enabled = true
 text = "[center][font_size=50]Pride"
+
+[node name="Management" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+material = SubResource("ShaderMaterial_noruu")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -259.0
+offset_right = 500.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("18_qdqg5")
+_uid = "uid://dpku0u2ogjvbb"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.0
+offset_right = 500.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]Middle Management"
+
+[node name="BackToPurgatory" type="Control" parent="OverworldPlayer/Camera2D"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(4, 4)
+mouse_filter = 1
+
+[node name="LevelSelectMenu" type="Panel" parent="OverworldPlayer/Camera2D/BackToPurgatory"]
+material = SubResource("ShaderMaterial_tcs4p")
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Purgatory" type="Button" parent="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu"]
+material = SubResource("ShaderMaterial_4andh")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -54.5
+offset_right = 500.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("18_qdqg5")
+_uid = "uid://b6a77ow3dkibo"
+_returnToPurgatory = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.0
+offset_right = 500.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]Purgatory"
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -288,6 +436,12 @@ gizmo_extents = 229.0
 script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 
-[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" method="OnMouseEntered"]
-[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" method="OnMouseExited"]
-[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Option" method="OnPressed"]
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnPressed" flags=18]
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" method="OnMouseEntered" flags=18]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" method="OnMouseExited" flags=18]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" method="OnPressed" flags=18]
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" method="OnMouseEntered" flags=18]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" method="OnMouseExited" flags=18]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" method="OnPressed" flags=18]

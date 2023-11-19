@@ -5,7 +5,7 @@ using System.Security.AccessControl;
 
 public partial class Purgatory : Node2D, ILevel
 {
-	[Export] private string[] _hellLevels;
+	[Export] private string _managementUID;
 	[Export] private string _prideUID;
 	private Player _player;
 	public Player Player => _player;
@@ -44,8 +44,10 @@ public partial class Purgatory : Node2D, ILevel
 
 	public void SetPlayer(Player player)
 	{
+		GD.Print("SetPLayer");
 		_player = player;
 		_player.EnemyAggroed += OnAggro;
+		_player.GlobalPosition = _playerSpawn;
 	}
 
 	// TESTING TOOL
@@ -72,13 +74,32 @@ public partial class Purgatory : Node2D, ILevel
 		}
 	}
 
-	public async void UseElevator()
+	public async void UseElevator(string dest="")
+	{		
+		//MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
+		
+		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, true);
+		
+		if (destination is HellLevel)
+		{
+			RemoveChild(_player);
+			_player.EnemyAggroed -= OnAggro;
+			destination.AddChild(_player);
+			SetOwnerRecursive(_player, destination);
+			_player.GetNode<Button>("Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory").Owner = destination;
+			((HellLevel)destination).SetPlayer(_player);
+
+			
+		}
+	}
+
+	private void SetOwnerRecursive(Node root, Node owner)
 	{
-		Node pride = MasterScene.GetInstance().ActivateScene(_prideUID, true, true);
-		_player.EnemyAggroed -= OnAggro;
-		RemoveChild(_player);
-		pride.AddChild(_player);
-		((Pride)pride).SetPlayer(_player);
+		foreach (Node n in root.GetChildren())
+		{
+			n.Owner = owner;
+			SetOwnerRecursive(n, owner);
+		}
 	}
 
 }

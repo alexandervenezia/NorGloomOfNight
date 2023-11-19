@@ -5,5 +5,5 @@ public interface ILevel
     public Player GetPlayer();
     public void SetPlayer(Player player);
     public void Reactivate();
-    public void UseElevator();
+    public void UseElevator(string dest="");
 }

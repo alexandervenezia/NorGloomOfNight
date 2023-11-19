@@ -12,8 +12,10 @@ void fragment() {
 	
 	col.a = gradient(UV.y);
 	
-	col = mix(col, vec4(0.7), step(0.99, UV.x));
-	col = mix(col, vec4(0.7), step(UV.x, 0.01));
+	//col = mix(col, vec4(0.7), step(0.99, UV.x));
+	//col = mix(col, vec4(0.7), step(UV.x, 0.01));
+	
+	col.a *= 0.65f;
 	
 	COLOR = col;
 }

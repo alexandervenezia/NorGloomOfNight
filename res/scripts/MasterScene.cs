@@ -100,7 +100,10 @@ public partial class MasterScene : Node
 
 		_lastScene = _activeScene;
 		if (_activeScene != "")
+		{
+			GD.Print("Removing " + _activeScene);
 			RemoveChild(_loadedScenes[_activeScene]);
+		}
 		_activeScene = uid;
 		AddChild(_loadedScenes[_activeScene]);
 

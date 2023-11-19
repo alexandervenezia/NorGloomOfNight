@@ -69,6 +69,7 @@ public partial class CombatMain : Node
         foreach (int e in enemyUIDs)
         {
             newEnemy = (Enemy)_enemyTypesByUID[e].Instantiate();
+            
             //RemoveChild(newEnemy);
             enemiesParentNode.AddChild(newEnemy);
             newEnemy.GlobalPosition = EnemySpawnPoints[count];

@@ -12,7 +12,7 @@ float gradient(float x)
 void fragment() {
 	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
 	
-	col.a = gradient(UV.y);
+	col.a = (1.0 - gradient(UV.y));
 	
 	
 	COLOR = col;

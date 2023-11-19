@@ -49,11 +49,24 @@ public partial class Combatant : Area2D, ICombatant
 
     public override void _Ready()
     {
-        _dmgPhysical = (AudioStreamPlayer)GetTree().Root.GetChild(0).GetNode("Combat/Audio/DmgPhysical");
-        _critPhysical = (AudioStreamPlayer)GetTree().Root.GetChild(0).GetNode("Combat/Audio/DmgPhysical");
-        _dmgMagic = (AudioStreamPlayer)GetTree().Root.GetChild(0).GetNode("Combat/Audio/DmgPhysical");
-        _critMagic = (AudioStreamPlayer)GetTree().Root.GetChild(0).GetNode("Combat/Audio/DmgPhysical");
-
+        CombatMain root = null;
+        Node n = this;
+        while (n is not CombatMain)
+            n = n.GetParent();
+        root = (CombatMain)n;
+        
+        _dmgPhysical = (AudioStreamPlayer)root.GetNode("Audio/DmgPhysical");
+        _critPhysical = (AudioStreamPlayer)root.GetNode("Audio/CritPhysical");
+        _dmgMagic = (AudioStreamPlayer)root.GetNode("Audio/DmgMagic");
+        _critMagic = (AudioStreamPlayer)root.GetNode("Audio/CritMagic");
+        
+        
+        /*
+        _dmgPhysical = (AudioStreamPlayer)GetOwner<CombatMain>().GetNode("Audio/DmgPhysical");
+        _critPhysical = (AudioStreamPlayer)GetOwner<CombatMain>().GetNode("Audio/CritPhysical");
+        _dmgMagic = (AudioStreamPlayer)GetOwner<CombatMain>().GetNode("Audio/DmgMagic");
+        _critMagic = (AudioStreamPlayer)GetOwner<CombatMain>().GetNode("Audio/CritMagic");
+        */
 
         _combatManager = CombatManager.GetInstance();
         _currentHealth = _maxHealth;

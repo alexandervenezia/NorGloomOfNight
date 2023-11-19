@@ -1,6 +1,7 @@
 using Godot;
 using Overworld;
 using System;
+using System.Runtime.CompilerServices;
 
 public partial class HellLevel : Node2D, ILevel
 {
@@ -37,6 +38,7 @@ public partial class HellLevel : Node2D, ILevel
 		_player = player;
 		_player.EnemyAggroed += OnAggro;
 		_player.Position = _playerSpawn;
+		GetNode<Elevator>("Elevator").SetLevelSelect(_player.GetNode<Control>("Camera2D/BackToPurgatory"));
 	}
 
 	public void Reactivate()
@@ -55,8 +57,26 @@ public partial class HellLevel : Node2D, ILevel
 		}
 	}
 
-	public void UseElevator()
+	public void UseElevator(string dest="")
 	{
-		
+		GD.Print(dest);
+		MasterScene.GetInstance().SetPlayerHP(GetPlayer().CurrentHealth);
+        // MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
+		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, false);
+
+		RemoveChild(_player);
+		_player.EnemyAggroed -= OnAggro;
+		destination.AddChild(_player);
+		SetOwnerRecursive(_player, destination);
+		((Purgatory)destination).SetPlayer(_player);
+	}
+
+	private void SetOwnerRecursive(Node root, Node owner)
+	{
+		foreach (Node n in root.GetChildren())
+		{
+			n.Owner = owner;
+			SetOwnerRecursive(n, owner);
+		}
 	}
 }

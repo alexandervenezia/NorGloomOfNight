@@ -19,14 +19,12 @@ sprite_frames = ExtResource("1_xn06a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-47.0589, 75.2941)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_42sw5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-36.4706, 91.0735)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cbdkk")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

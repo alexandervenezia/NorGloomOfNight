@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbjp0fx3kuyik"]
+
+[ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="1_exvyn"]
+[ext_resource type="Shader" path="res://res/scenes/overworld/ElevatorOptionShader.gdshader" id="2_ld2w0"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="3_8ihf6"]
+[ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="4_xwkcc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcs4p"]
+shader = ExtResource("1_exvyn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4andh"]
+shader = ExtResource("2_ld2w0")
+shader_parameter/isHighlighted = null
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(4, 4)
+mouse_filter = 1
+
+[node name="LevelSelectMenu" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_tcs4p")
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Option" type="Button" parent="LevelSelectMenu"]
+material = SubResource("ShaderMaterial_4andh")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -158.0
+offset_right = 500.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_8ihf6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelectMenu/Option"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.0
+offset_right = 500.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_xwkcc")
+bbcode_enabled = true
+text = "[center][font_size=50]Pride"
+
+[connection signal="mouse_entered" from="LevelSelectMenu/Option" to="LevelSelectMenu/Option" method="OnMouseEntered"]
+[connection signal="mouse_exited" from="LevelSelectMenu/Option" to="LevelSelectMenu/Option" method="OnMouseExited"]
+[connection signal="pressed" from="LevelSelectMenu/Option" to="LevelSelectMenu/Option" method="OnPressed"]

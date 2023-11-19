@@ -11,6 +11,12 @@ public partial class Elevator : Marker2D
     {
         _level = GetOwner<ILevel>();
     }
+
+    public void SetLevelSelect(Control lSelect)
+    {
+        _levelSelect = lSelect;
+    }
+
     public override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("ui_interact") && InRange())
@@ -24,6 +30,7 @@ public partial class Elevator : Marker2D
 
     private bool InRange()
     {
+        // GD.Print(((Node)_level).Name, _level.GetPlayer().GlobalPosition);
         return GlobalPosition.DistanceSquaredTo(_level.GetPlayer().GlobalPosition) < 50000;
     }
 }
