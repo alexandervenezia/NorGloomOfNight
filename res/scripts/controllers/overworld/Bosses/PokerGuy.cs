@@ -10,6 +10,9 @@ public partial class PokerGuy : Node2D, ICombatable
 
     private bool _enabled;
 
+    [Export] private int TEST;
+    [Export] private Cutscene _cutscene;
+
     public override void _Ready()
     {
         _enabled = true;
@@ -45,5 +48,15 @@ public partial class PokerGuy : Node2D, ICombatable
         GD.Print("Poker Guy Died");
         QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
     }
+
+    public bool HasIntroCutscene()
+	{
+		return true;
+	}
+
+	public Cutscene GetIntroCutscene()
+	{
+		return _cutscene;
+	}
 
 }

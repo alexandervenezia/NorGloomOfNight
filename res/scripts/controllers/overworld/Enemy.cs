@@ -69,4 +69,14 @@ public partial class Enemy : CharacterBody2D, ICombatable
 		QueueFree();
 	}
 
+	public bool HasIntroCutscene()
+	{
+		return false;
+	}
+
+	public Cutscene GetIntroCutscene()
+	{
+		return null;
+	}
+
 }

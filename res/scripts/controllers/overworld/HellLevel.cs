@@ -16,6 +16,11 @@ public partial class HellLevel : Node2D, ILevel
 
 	protected async void OnAggro(ICombatable enemy)
 	{
+		if (enemy.HasIntroCutscene())
+		{
+			await _player.PlayCutscene(enemy.GetIntroCutscene());
+		}
+
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
@@ -63,11 +68,14 @@ public partial class HellLevel : Node2D, ILevel
         // MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, false);
 
-		RemoveChild(_player);
-		_player.EnemyAggroed -= OnAggro;
-		destination.AddChild(_player);
-		SetOwnerRecursive(_player, destination);
-		((Purgatory)destination).SetPlayer(_player);
+		if (destination is Purgatory)
+		{
+			RemoveChild(_player);
+			_player.EnemyAggroed -= OnAggro;
+			destination.AddChild(_player);
+			SetOwnerRecursive(_player, destination);
+			((Purgatory)destination).SetPlayer(_player);
+		}
 		return destination;
 	}
 

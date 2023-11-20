@@ -17,7 +17,7 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
-    private const int MAX_PER_ROW = 4;
+    private const int MAX_PER_ROW = 6;
     private ColorRect _rect;
     private Node2D _cardNode;
     private Node2D _priceNode;

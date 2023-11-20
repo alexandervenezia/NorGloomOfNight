@@ -25,6 +25,11 @@ public partial class Purgatory : Node2D, ILevel
 	{
 		GD.Print(enemy.IsEnabled());
 
+		if (enemy.HasIntroCutscene())
+		{
+			await _player.PlayCutscene(enemy.GetIntroCutscene());
+		}
+
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
