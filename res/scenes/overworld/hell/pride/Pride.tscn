@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=73 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 [ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="6_b5q6i"]
+[ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="7_no0g4"]
+[ext_resource type="Resource" uid="uid://blnau2cu3smcr" path="res://res/resources/cards/HolyWater.tres" id="8_adj6g"]
+[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="9_yx607"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -687,3 +690,7 @@ position = Vector2(-22076.7, -2279.27)
 position = Vector2(-22150, -2032)
 gizmo_extents = 229.0
 script = ExtResource("6_b5q6i")
+
+[node name="ShopEntrance" parent="." instance=ExtResource("7_no0g4")]
+position = Vector2(19920, -3872)
+_startingStock = [ExtResource("8_adj6g"), ExtResource("8_adj6g"), ExtResource("9_yx607")]

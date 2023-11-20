@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=31 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -31,6 +31,16 @@ size = Vector2(7497.5, 216)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvv1h"]
 size = Vector2(10446, 152)
+
+[sub_resource type="Gradient" id="Gradient_o3sdl"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.572848, 0.794702)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ujr6k"]
+gradient = SubResource("Gradient_o3sdl")
+fill_from = Vector2(1, 0.5)
+fill_to = Vector2(0, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcs4p"]
 shader = ExtResource("16_5x30j")
@@ -180,6 +190,11 @@ _gravityMult = 3.5
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -600)
 zoom = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="OverworldPlayer/Camera2D"]
+position = Vector2(2384.75, -1944.34)
+scale = Vector2(48.0859, 8.94824)
+texture = SubResource("GradientTexture2D_ujr6k")
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
 offset_left = -3738.0
@@ -383,22 +398,22 @@ offset_right = 3780.0
 offset_bottom = -1824.0
 theme = ExtResource("18_1vjvr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 20
 bbcode_enabled = true
 text = "[right][font_size=200]Quest Here"
 metadata/_edit_use_anchors_ = true
 
 [node name="QuestCommand" type="RichTextLabel" parent="OverworldPlayer/Camera2D/QuestElement"]
 custom_minimum_size = Vector2(500, 0)
-offset_left = 1788.0
-offset_top = -1830.0
+offset_left = 1288.0
+offset_top = -1846.0
 offset_right = 3788.0
-offset_bottom = -1409.0
+offset_bottom = -1425.0
 theme = ExtResource("18_1vjvr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 15
 bbcode_enabled = true
-text = "[right][font_size=75]Quest Here"
+text = "[right][font_size=85]Quest Here"
 metadata/_edit_use_anchors_ = true
 
 [node name="Doors" type="Node2D" parent="."]
@@ -487,7 +502,7 @@ script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
-position = Vector2(-112, 26)
+position = Vector2(26416, -4394)
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]

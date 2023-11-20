@@ -10,8 +10,8 @@ public class CollectCrown : IQuest
     public CollectCrown()
     {
         _name = "Coronation";
-        _flavorText = "A [color=gold]Crown[/color] for the [color=purple]Queen[/color] [color=red]Below[color]. Odd: you would not have thought those [color=gold]Above[/color] would have spared so kind a thought for her.";
-        _command = "Head to the Mailroom and collect the [color=gold]Crown[/color] from <Poker Guy's name>.";
+        _flavorText = "A [color=gold]Crown[/color] for the [color=purple]Queen[/color] Below. Odd: you would not have thought those Above would have spared so kind a thought for her.";
+        _command = "Head to the Mailroom and collect the [color=gold]Crown[/color] from Ker Po.";
     }
     public void CompleteQuest(Player player)
     {

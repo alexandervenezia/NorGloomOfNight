@@ -190,7 +190,9 @@ public partial class CardData : Resource
 
     [ExportGroup("Meta")]
     [Export] private int _price;
+    [Export] private CardData _upgrade;
     public int Price => _price;
+    public CardData Upgrade => _upgrade;
     // public Dictionary<DebuffType, int> Debuffs;
     public List<Debuff> Debuffs;
 

@@ -4,6 +4,7 @@
 
 namespace Combat;
 
+using Data;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -116,6 +117,7 @@ public partial class CombatMain : Node
         _isOver = true;
         GD.Print("Is over - " + result);
 
+        MasterDeck.PlayerDeck.ForceFullReshuffle();
         await Task.Delay(2000); // This can be removed but it will cause non-fatal errors from the floating text's async lifetime function trying to tick after the FloatingTextFactory node is destroyed.
 
         MasterScene.GetInstance().SetPlayerHP(GetPlayerHP());

@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://5vvp8w5kwh45"]
+
+[ext_resource type="FontFile" uid="uid://cjm4wih0mk525" path="res://assets/fonts/Fenix/Fenix-Regular.ttf" id="1_ctax6"]
+
+[resource]
+default_font = ExtResource("1_ctax6")

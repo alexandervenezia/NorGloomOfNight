@@ -22,6 +22,9 @@ public partial class Shop : Node2D
     private Node2D _cardNode;
     private Node2D _priceNode;
     private LevelSelectOption _modifyDeckButton;
+    private LevelSelectOption _removeCardButton;
+    private LevelSelectOption _upgradeCardButton;
+    private Price _modifyPriceIcon;
     [Export] private PackedScene _cardResource;
     [Export] private PackedScene _coinResource;
     private List<CardData> _stock;
@@ -32,6 +35,8 @@ public partial class Shop : Node2D
 
     private int _storedZIndex;
 
+    private Card _active;
+
     public override void _Ready()
     {
         _rect = GetNode<ColorRect>("ColorRect");
@@ -39,6 +44,18 @@ public partial class Shop : Node2D
         _priceNode = _rect.GetNode<Node2D>("Prices");
         _modifyDeckButton = GetNode<LevelSelectOption>("ModifyDeck");
         _modifyDeckButton.OnButtonClicked += OnModifyCardButtonPressed;
+
+        _removeCardButton = GetNode<LevelSelectOption>("Remove");
+        _upgradeCardButton = GetNode<LevelSelectOption>("Upgrade");
+        _removeCardButton.Visible = false;
+        _upgradeCardButton.Visible = false;
+
+        _removeCardButton.OnButtonClicked += OnRemoveButtonPressed;
+        _upgradeCardButton.OnButtonClicked += OnUpgradeButtonPressed;
+
+        _modifyPriceIcon = GetNode<Price>("ModifyPrice");
+        _modifyPriceIcon.Visible = false;
+
         _state = ShopState.PURCHASING;
     }
 
@@ -48,12 +65,42 @@ public partial class Shop : Node2D
         {
             _state = ShopState.MODIFYING;
             _modifyDeckButton.GetNode<RichTextLabel>("RichTextLabel").Text = "[center][font_size=50]View Stock";
+
+            _removeCardButton.Visible = true;
+            _upgradeCardButton.Visible = true;
+            _modifyPriceIcon.Visible = true;
         }
         else
         {
             _state = ShopState.PURCHASING;
             _modifyDeckButton.GetNode<RichTextLabel>("RichTextLabel").Text = "[center][font_size=50]Modify Deck";
+
+            _removeCardButton.Visible = false;
+            _upgradeCardButton.Visible = false;
+            _modifyPriceIcon.Visible = false;
+            _active = null;
         }
+        UpdateSelection();
+    }
+
+    private void OnUpgradeButtonPressed()
+    {
+        if (_active == null)
+            return;
+
+        MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
+        MasterDeck.PlayerDeck.AddCard(_active.Data.Upgrade);
+        _active = null;
+        UpdateSelection();
+    }
+
+    private void OnRemoveButtonPressed()
+    {
+        if (_active == null)
+            return;
+
+        MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
+        _active = null;
         UpdateSelection();
     }
 
@@ -102,10 +149,24 @@ public partial class Shop : Node2D
 
         _selectedCard = highestZ;
 
+        if (_active != null)
+        {
+            _selectedCard = _active;
+        }
+            
+
         if (_selectedCard != null)
         {
             _storedZIndex = _selectedCard.ZIndex;
             _selectedCard.ZIndex = 91;
+        }
+
+        if (_state == ShopState.MODIFYING)
+        {
+            if (_selectedCard == null)
+                _modifyPriceIcon.SetPrice(0);
+            else
+                _modifyPriceIcon.SetPrice(_selectedCard.Data.Price);
         }
 
         if (Input.IsActionJustReleased("Select"))
@@ -120,10 +181,25 @@ public partial class Shop : Node2D
                     UpdateSelection();
                     //_selectedCard = null;
                 }
-                else if (_state == ShopState.MODIFYING)
-                {
-                    // TODO:
-                }
+            }
+            
+            if (_state == ShopState.MODIFYING)
+            {
+                if (_active == null)
+                    _active = _selectedCard;
+                else
+                    _active = null;
+            }
+        }
+
+        if (Input.IsActionJustReleased("Deselect"))
+        {
+            if (_state == ShopState.MODIFYING)
+            {
+                if (_active == null)
+                    _active = _selectedCard;
+                else
+                    _active = null;
             }
         }
 
@@ -176,8 +252,9 @@ public partial class Shop : Node2D
 
             if (_state == ShopState.PURCHASING)
             {
-                Node2D price = (Node2D)_coinResource.Instantiate();
+                Price price = (Price)_coinResource.Instantiate();                
                 _priceNode.AddChild(price);
+                price.SetPrice(card.Data.Price);
                 price.Position = new Vector2(x, y + 75);
                 price.GlobalScale = Vector2.One * 0.5f;
             }
