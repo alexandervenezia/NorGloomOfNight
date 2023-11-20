@@ -59,6 +59,7 @@ public partial class CutscenePlayer : ColorRect
         {
             Engine.TimeScale = 1f;
             Visible = false;
+            _data = null;
             OnEnd?.Invoke();
             return;
         }
