@@ -296,9 +296,15 @@ theme = ExtResource("4_08kbr")
 bbcode_enabled = true
 text = "[center][font_size=50]Modify Deck"
 
-[node name="ModifyPrice" parent="." instance=ExtResource("3_53ipl")]
+[node name="RemovePrice" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
-position = Vector2(1740, 934)
+position = Vector2(417, 892)
+scale = Vector2(0.5, 0.5)
+
+[node name="UpgradePrice" parent="." instance=ExtResource("3_53ipl")]
+z_index = 102
+position = Vector2(417, 1001)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="mouse_entered" from="Pride" to="Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="Pride" to="Pride" method="OnMouseExited" flags=18]

@@ -24,7 +24,8 @@ public partial class Shop : Node2D
     private LevelSelectOption _modifyDeckButton;
     private LevelSelectOption _removeCardButton;
     private LevelSelectOption _upgradeCardButton;
-    private Price _modifyPriceIcon;
+    private Price _removePriceIcon;
+    private Price _upgradePriceIcon;
     [Export] private PackedScene _cardResource;
     [Export] private PackedScene _coinResource;
     private List<CardData> _stock;
@@ -53,8 +54,12 @@ public partial class Shop : Node2D
         _removeCardButton.OnButtonClicked += OnRemoveButtonPressed;
         _upgradeCardButton.OnButtonClicked += OnUpgradeButtonPressed;
 
-        _modifyPriceIcon = GetNode<Price>("ModifyPrice");
-        _modifyPriceIcon.Visible = false;
+        _upgradePriceIcon = GetNode<Price>("UpgradePrice");
+        _removePriceIcon = GetNode<Price>("RemovePrice");
+
+        _upgradePriceIcon.Visible = false;
+        _removePriceIcon.Visible = false;
+
 
         _state = ShopState.PURCHASING;
     }
@@ -68,7 +73,8 @@ public partial class Shop : Node2D
 
             _removeCardButton.Visible = true;
             _upgradeCardButton.Visible = true;
-            _modifyPriceIcon.Visible = true;
+            _upgradePriceIcon.Visible = true;
+            _removePriceIcon.Visible = true;
         }
         else
         {
@@ -77,7 +83,8 @@ public partial class Shop : Node2D
 
             _removeCardButton.Visible = false;
             _upgradeCardButton.Visible = false;
-            _modifyPriceIcon.Visible = false;
+            _upgradePriceIcon.Visible = false;
+            _removePriceIcon.Visible = false;
             _active = null;
         }
         UpdateSelection();
@@ -86,6 +93,9 @@ public partial class Shop : Node2D
     private void OnUpgradeButtonPressed()
     {
         if (_active == null)
+            return;
+
+        if (_active.Data.Upgrade == null)
             return;
 
         MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
@@ -112,6 +122,16 @@ public partial class Shop : Node2D
             _stock.Add(c);
         }
         UpdateSelection();
+    }
+
+    private int GetUpgradeCost(CardData card)
+    {
+        return (int)(card.Rarity + 1) * 10;
+    }
+
+    private int GetRemoveCost(CardData card)
+    {
+        return 5;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -164,9 +184,15 @@ public partial class Shop : Node2D
         if (_state == ShopState.MODIFYING)
         {
             if (_selectedCard == null)
-                _modifyPriceIcon.SetPrice(0);
+            {
+                _upgradePriceIcon.SetPrice(0);
+                _removePriceIcon.SetPrice(0);
+            }
             else
-                _modifyPriceIcon.SetPrice(_selectedCard.Data.Price);
+            {
+                _upgradePriceIcon.SetPrice(GetUpgradeCost(_selectedCard.Data));
+                _removePriceIcon.SetPrice(GetRemoveCost(_selectedCard.Data));
+            }
         }
 
         if (Input.IsActionJustReleased("Select"))

@@ -502,7 +502,7 @@ script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
-position = Vector2(26416, -4394)
+position = Vector2(-794, 48)
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
