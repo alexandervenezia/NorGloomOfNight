@@ -309,6 +309,21 @@ public partial class Player : CharacterBody2D
 			if (area.GetOwner<ICombatable>().IsEnabled())
 				EnemyAggroed?.Invoke(area.GetOwner<ICombatable>());
 		}
+		if (area is ShopEntrance)
+		{			
+			GD.Print("Enter");
+			((ShopEntrance)area).Enter();
+		}
+	}
+
+	private void OnArea2DExited(Area2D area)
+	{
+		GD.Print("Test");
+		if (area is ShopEntrance)
+		{			
+			GD.Print("Exit");
+			((ShopEntrance)area).Exit();
+		}
 	}
 
 	/*

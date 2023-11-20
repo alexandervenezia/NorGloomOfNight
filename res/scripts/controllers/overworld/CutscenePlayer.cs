@@ -112,9 +112,9 @@ public partial class CutscenePlayer : ColorRect
                 _dialogue.Text = _dialogue.Text + text[charIndex];
                 if (text[charIndex] == '\n')
                 {
-                    delay = 750;
+                    delay = 500;
                 }
-                else if (text[charIndex] == '.' || text[charIndex] == '-')
+                else if (text[charIndex] == '.' || text[charIndex] == '—')
                     delay = 240;
                 else if (text[charIndex] == ',')
                     delay = 150;

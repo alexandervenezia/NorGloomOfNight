@@ -19,13 +19,15 @@ public partial class Elevator : Marker2D
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("ui_interact") && InRange())
+        bool inRange = InRange();
+        if (!inRange) _levelSelect.Visible = false;
+        if (Input.IsActionJustPressed("ui_interact"))
         {
-            // _level.UseElevator();
-
+            if (inRange)                
+                _levelSelect.Visible = !_levelSelect.Visible;
         }
 
-        _levelSelect.Visible = InRange();
+        
     }
 
     private bool InRange()

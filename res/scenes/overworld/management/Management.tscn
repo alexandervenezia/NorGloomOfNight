@@ -8,7 +8,7 @@
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="3_7kjbo"]
 [ext_resource type="AudioStream" uid="uid://dy5m5f7oxljjf" path="res://assets/audio/key.ogg" id="5_i3os1"]
 
-[sub_resource type="Shader" id="Shader_07kwb"]
+[sub_resource type="Shader" id="Shader_5iyii"]
 code = "shader_type canvas_item;
 
 uniform float isHighlighted;
@@ -31,7 +31,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pf13t"]
-shader = SubResource("Shader_07kwb")
+shader = SubResource("Shader_5iyii")
 shader_parameter/isHighlighted = null
 
 [node name="Management_tscn" type="Node2D" node_paths=PackedStringArray("_cutscenePlayer", "_returnButton")]
@@ -44,7 +44,7 @@ _returnButton = NodePath("Pride")
 offset_left = -1017.0
 offset_top = -574.0
 offset_right = 1046.0
-offset_bottom = 619.0
+offset_bottom = 622.87
 color = Color(0.4, 0.290196, 0.101961, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -52,18 +52,19 @@ color = Color(0.4, 0.290196, 0.101961, 1)
 [node name="CutscenePlayer" type="ColorRect" parent="Camera2D"]
 z_index = 2
 offset_left = 91.0
-offset_top = 60.0
+offset_top = -4.0
 offset_right = 953.0
 offset_bottom = 534.0
+color = Color(0.921569, 0.905882, 0.784314, 1)
 script = ExtResource("3_1m6hv")
 
 [node name="Dialogue" type="RichTextLabel" parent="Camera2D/CutscenePlayer"]
 z_index = 9
 layout_mode = 0
-offset_left = 11.0
-offset_top = 14.0
-offset_right = 848.0
-offset_bottom = 461.0
+offset_left = 40.0
+offset_top = 38.0
+offset_right = 823.0
+offset_bottom = 511.0
 theme = ExtResource("3_7kjbo")
 bbcode_enabled = true
 text = "[font_size=40][color=black]    "
@@ -97,6 +98,7 @@ mouse_filter = 1
 script = ExtResource("2_4d8jk")
 _uid = "uid://bk7mufkqeug2p"
 _returnToPurgatory = true
+_middleManagement = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Pride"]
 layout_mode = 1

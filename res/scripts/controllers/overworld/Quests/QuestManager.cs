@@ -26,6 +26,15 @@ public class QuestManager
             SignalFlagChange();
         }
     }
+    private bool _beatDog;
+    public bool FLAG_BEAT_DOG
+    {
+        get => _beatDog;
+        set {
+            _beatDog = value;
+            SignalFlagChange();
+        }
+    }
     private bool _flagDeliveredCrown;
     public bool FLAG_DELIVERED_CROWN
     {
@@ -51,8 +60,6 @@ public class QuestManager
 
     private void SignalFlagChange()
     {
-        GD.Print("Test");
-        GD.Print(FLAG_TALKED_TO_MANAGER);
         FlagChanged?.Invoke();
     }
 }

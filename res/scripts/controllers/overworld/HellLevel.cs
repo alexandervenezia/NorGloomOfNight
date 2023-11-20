@@ -56,7 +56,7 @@ public partial class HellLevel : Node2D, ILevel
 		}
 	}
 
-	public void UseElevator(string dest="")
+	public Node UseElevator(string dest="")
 	{
 		GD.Print(dest);
 		MasterScene.GetInstance().SetPlayerHP(GetPlayer().CurrentHealth);
@@ -68,6 +68,7 @@ public partial class HellLevel : Node2D, ILevel
 		destination.AddChild(_player);
 		SetOwnerRecursive(_player, destination);
 		((Purgatory)destination).SetPlayer(_player);
+		return destination;
 	}
 
 	private void SetOwnerRecursive(Node root, Node owner)

@@ -69,6 +69,7 @@ public partial class Purgatory : Node2D, ILevel
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
+			GD.Print("Respawn: " + _player.CurrentHealth);
 			_enemyInCombat?.Enable();
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
@@ -77,9 +78,11 @@ public partial class Purgatory : Node2D, ILevel
 			_enemyInCombat?.Die();
 	}
 
-	public async void UseElevator(string dest="")
+	public Node UseElevator(string dest="")
 	{		
 		//MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
+		
+		MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
 		
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, true);
 		
@@ -94,6 +97,8 @@ public partial class Purgatory : Node2D, ILevel
 
 			
 		}
+
+		return destination;
 	}
 
 	private void SetOwnerRecursive(Node root, Node owner)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=29 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -18,6 +18,7 @@
 [ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
+[ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -166,7 +167,7 @@ position = Vector2(16148, -3136)
 scale = Vector2(2.5, 2.5)
 
 [node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI") instance=ExtResource("3_g155m")]
-z_index = 2
+z_index = 5
 position = Vector2(-3600, 592)
 _questUI = NodePath("Camera2D/QuestElement")
 _walkSpeed = 3000.0
@@ -437,6 +438,7 @@ texture = ExtResource("6_x0fb6")
 [node name="Room1" type="Sprite2D" parent="image"]
 position = Vector2(-7866, -10058)
 texture = ExtResource("7_u1ox0")
+flip_h = true
 
 [node name="StaircaseBg" type="Sprite2D" parent="image"]
 position = Vector2(14858, -2197)
@@ -483,6 +485,9 @@ position = Vector2(-1770, 388)
 gizmo_extents = 229.0
 script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
+
+[node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
+position = Vector2(-112, 26)
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
