@@ -657,32 +657,14 @@ _relativePatrolBounds = Vector2(-1800, 1800)
 [node name="DevinWorld" parent="Enemies" instance=ExtResource("5_y1ghh")]
 position = Vector2(11392, -7024)
 motion_mode = 1
-_aggroRadius = 3000.0
-_deAggroRange = 6000.0
-_patrolRadius = 250.0
-_id = 2
-_speed = 500.0
-_acceleration = 100.0
 
 [node name="DevinWorld2" parent="Enemies" instance=ExtResource("5_y1ghh")]
 position = Vector2(-7776, 608)
 motion_mode = 1
-_aggroRadius = 3000.0
-_deAggroRange = 6000.0
-_patrolRadius = 250.0
-_id = 2
-_speed = 500.0
-_acceleration = 100.0
 
 [node name="DevinWorld3" parent="Enemies" instance=ExtResource("5_y1ghh")]
 position = Vector2(7376, 4512)
 motion_mode = 1
-_aggroRadius = 3000.0
-_deAggroRange = 6000.0
-_patrolRadius = 250.0
-_id = 2
-_speed = 500.0
-_acceleration = 100.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-22076.7, -2279.27)

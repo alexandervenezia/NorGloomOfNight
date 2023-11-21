@@ -17,8 +17,10 @@ public partial class CombatMain : Node
 {
     [ExportGroup("Right click .tscn -> get UID -> paste here. Blame Godot for having to use freaking strings because they still haven't fixed a bug reported over a year ago: https:[slashslash]github.com[slash]godotengine[slash]godot[slash]issues[slash]62916")]
     [Export] private Godot.Collections.Array<string> _enemyTypePaths;
+    [Export] private PackedScene _cardResource;
     private Dictionary<int, PackedScene> _enemyTypesByUID;
 
+    private Node2D _rewardsNode;
     private bool _isOver = false;
     public bool IsFightOver => _isOver;
 
@@ -29,6 +31,8 @@ public partial class CombatMain : Node
         new Vector2(-25, 50),
         new Vector2(525, 150)
     };
+
+    private List<Drop> _loot;
 
     private void PopulateEnemyArray(ref ICombatant[] enemies)
     {
@@ -95,8 +99,17 @@ public partial class CombatMain : Node
 
     public override void _Ready()
     {
+        _rewardsNode = GetNode<Node2D>("Rewards");
+
         ICombatant[] enemies = null;
         PopulateEnemyArray(ref enemies);
+
+        _loot = new();
+
+        foreach (Enemy e in enemies)
+        {
+            _loot.Add(e.GetDrop());
+        }
 
         Player player = (Player)GetNode("Player");
         CombatManager.GetInstance().NewFight(player, enemies);
@@ -118,11 +131,38 @@ public partial class CombatMain : Node
         GD.Print("Is over - " + result);
 
         MasterDeck.PlayerDeck.ForceFullReshuffle();
-        await Task.Delay(2000); // This can be removed but it will cause non-fatal errors from the floating text's async lifetime function trying to tick after the FloatingTextFactory node is destroyed.
+
+        bool rewardsFinished = false;
+        HandleRewards(ref rewardsFinished);
+
+        await Task.Delay(500); // Provide a pleasant pause after combat ends
+
+        while (!rewardsFinished)
+        {
+            await Task.Delay(100);
+        }
+        await Task.Delay(10000);
+
+        // await Task.Delay(2000); // This can be removed but it will cause non-fatal errors from the floating text's async lifetime function trying to tick after the FloatingTextFactory node is destroyed.
 
         MasterScene.GetInstance().SetPlayerHP(GetPlayerHP());
         MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
     }
 
+    private void HandleRewards(ref bool doneFlag_ref)
+    {
+        Card testCard = (Card)_cardResource.Instantiate();
+        testCard.UpdateData(MasterDeck.CardTypes[0]);
+        
+        _rewardsNode.AddChild(testCard);
+
+        foreach (Drop d in _loot)
+        {
+            GD.Print("Gold: " + d.Gold);
+            GD.Print("Card: " + d.Card);
+        }
+
+        doneFlag_ref = true;
+    }
 
 }

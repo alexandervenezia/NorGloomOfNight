@@ -21,6 +21,7 @@ public enum PlayerState
     SELECTING_TARGETS,
     DISCARDING_CARDS,
     RETURNING_CARDS,
+    WAIT,
     GAME_OVER
 }
 
@@ -45,6 +46,7 @@ public partial class Player : Combatant
     private List<ICombatant> _targeted = new();
     private int _toDiscard; // Refers to either discarding or returning
     private bool _firstTurn;
+    private bool _watchingAnimation_volatile = false; // Passed and changed by ref in other script
 
 
     public override void _Ready()
@@ -64,7 +66,7 @@ public partial class Player : Combatant
     }
 
     private void OnDiscard()
-    {
+    {       
         GD.Print("Event detected");
         if (_internalDeck.GetDiscardCount() == 0)
         {
@@ -111,6 +113,7 @@ public partial class Player : Combatant
     {
         GD.Print("Begin turn");
         base.BeginTurn();
+        _state = PlayerState.SELECTING_CARD;
 
         if (!_firstTurn)
             DrawCards(2); // _hand.AddCards(_internalDeck.Draw(2));
@@ -124,7 +127,7 @@ public partial class Player : Combatant
         _currentlyTargeting = null;
         _hand.Unfreeze();
         _targetLabel.Visible = false;
-        _state = PlayerState.SELECTING_CARD;
+        _state = PlayerState.WAIT;
         _targeted = new();
     }
 
@@ -136,6 +139,7 @@ public partial class Player : Combatant
 
     public override void _PhysicsProcess(double delta)
     {
+        
         Label deck = (Label)(_deck.GetNode("Cards"));
         deck.Text = _internalDeck.GetCardCount().ToString();
         Label discard = (Label)(_discard.GetNode("Cards"));
@@ -146,8 +150,13 @@ public partial class Player : Combatant
 
         if (Input.IsActionJustPressed("Select"))
         {
+            GD.Print(_state);
             switch (_state)
             {
+                case PlayerState.WAIT:
+                    if (_watchingAnimation_volatile)
+                        _state = PlayerState.SELECTING_CARD;
+                    break;
                 case PlayerState.RETURNING_CARDS:
                 case PlayerState.DISCARDING_CARDS:
                     _currentlyTargeting = _hand.GetSelectedCard();
@@ -239,6 +248,7 @@ public partial class Player : Combatant
     {
         _sprite.Play("attack");
         await card.BeginPlayAnimation(_discard);
+        _state = PlayerState.SELECTING_CARD;
         _combatManager.PlayCard(this, targets, card.Data);
         _internalDeck.Discard(card.Data);
 
@@ -318,6 +328,8 @@ public partial class Player : Combatant
 
     public async void OnEndTurnButtonInput(Viewport node, InputEvent e, int shapeID)
     {
+        if (_state == PlayerState.DISCARDING_CARDS || _state == PlayerState.RETURNING_CARDS || _state == PlayerState.WAIT)
+            return;
         if (e.IsActionPressed("Select"))
         {
             if (_isTurn)
@@ -328,11 +340,6 @@ public partial class Player : Combatant
                 this.EndTurn();
             }
         }
-    }
-
-    public void OnXButtonPressed()
-    {
-        EndTargeting();
     }
 
     public override void DrawCards(int n)

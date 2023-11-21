@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bakphjas5nire"]
+[gd_scene load_steps=11 format=3 uid="uid://bakphjas5nire"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_ocx0g"]
 [ext_resource type="Texture2D" uid="uid://b87qefj5m3tnm" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/Idle/0.png" id="4_cjswu"]
 [ext_resource type="Resource" uid="uid://mtor7au8b2cf" path="res://res/resources/cards/HolyWord+.tres" id="4_f8pau"]
 [ext_resource type="Resource" uid="uid://d3467tmndqlkr" path="res://res/resources/cards/FullHouse.tres" id="4_j2lk3"]
 [ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="4_k0la1"]
+[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="5_5wcge"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="5_r7tin"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_oawnf"]
 
@@ -23,6 +24,9 @@ collision_layer = 4
 script = ExtResource("1_ocx0g")
 _deck = [ExtResource("4_k0la1"), ExtResource("4_j2lk3"), ExtResource("4_f8pau")]
 _ID = 91
+_goldDrop = 25
+_percentChanceOfCardDrop = 100
+_cardDrops = Array[Resource]([ExtResource("5_5wcge")])
 _maxHealth = 25
 _startingActionPoints = 1
 _startingMovementPoints = 0

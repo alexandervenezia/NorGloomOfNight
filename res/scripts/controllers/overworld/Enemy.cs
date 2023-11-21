@@ -1,10 +1,12 @@
 namespace Overworld;
 
+using Data;
 using Godot;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Systems.Combat;
 
 
 
@@ -14,6 +16,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	[Export] protected int _id; // Must match UID of combat equivalent
 	[Export] protected float _speed;
 	[Export] protected float _acceleration;
+	
 
 	protected AnimatedSprite2D _sprite;
 	protected Vector2 _spawnPoint;
@@ -78,5 +81,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	{
 		return null;
 	}
+
+	
 
 }
