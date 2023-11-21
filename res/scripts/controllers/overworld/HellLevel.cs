@@ -48,6 +48,9 @@ public partial class HellLevel : Node2D, ILevel
 
 	public void Reactivate()
 	{
+		if (!IsInstanceValid((Node)_enemyInCombat))
+			_enemyInCombat = null;
+			
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		if (_player != null && _player.CurrentHealth <= 0)
 		{

@@ -8,11 +8,13 @@ using Data;
 using Godot;
 using Godot.NativeInterop;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Threading.Tasks;
 
 public partial class Card : Area2D
 {
+	private static Dictionary<CardRarity, Texture2D> _borderLookup;
 	private readonly Color COMMON_COL = new Color(1, 1, 1, 1);
 	private readonly Color UNCOMMON_COL = new Color(0.11f, 1, 0, 1);
 	private readonly Color RARE_COL = new Color(0, 0.44f, 0.86f, 1);
@@ -42,9 +44,25 @@ public partial class Card : Area2D
 
 	private ShaderMaterial _playerStampMat;
 
+	private static void InitializeBorderLookup()
+	{
+		GD.Print("Loading card borders");
+		_borderLookup = new();
+
+		string path = "res://res/scenes/combat/subscenes/Card/images/transparent_backgrounds/";
+		
+		_borderLookup.Add(CardRarity.COMMON, GD.Load<Texture2D>(path + "COMMON.png"));
+		_borderLookup.Add(CardRarity.UNCOMMON, GD.Load<Texture2D>(path + "UNCOMMON.png"));
+		_borderLookup.Add(CardRarity.RARE, GD.Load<Texture2D>(path + "RARE.png"));
+		_borderLookup.Add(CardRarity.EPIC, GD.Load<Texture2D>(path + "EPIC.png"));
+		_borderLookup.Add(CardRarity.LEGENDARY, GD.Load<Texture2D>(path + "LEGENDARY.png"));
+	}
 	
 	public void UpdateData(CardData data)
 	{
+		if (_borderLookup == null)
+			Card.InitializeBorderLookup();
+
 		_data = data;
 		((Sprite2D)GetNode("Art")).Texture = data.Artwork;
 		((RichTextLabel)GetNode("NameLabel")).Text = "[center][font_size=70]" + data.Name + "[/font_size][/center]";
@@ -133,7 +151,8 @@ public partial class Card : Area2D
 			_playerStampMat.SetShaderParameter("tint", rarityColor);
 
 		targetingStamp.Modulate = rarityColor;
-		((Node2D)GetNode("Background")).Modulate = rarityColor;
+		//((Node2D)GetNode("Background")).Modulate = rarityColor;
+		((Sprite2D)GetNode("Background")).Texture = _borderLookup[data.Rarity]; // GD.Load<Texture2D>("res://res/scenes/combat/subscenes/Card/images/transparent_backgrounds/RARE.png");
 
 		((Label)GetNode("ActionPointIcon/ActionPointNumber")).Text = data.ActionPointCost.ToString();
 
