@@ -242,10 +242,12 @@ public partial class Shop : Node2D
         foreach (Card c in _cardNode.GetChildren())
         {
             c.SetMouseOverStatus(c == _selectedCard);
+            /*
             if (c != _selectedCard)
             {
                 c.SetMouseOverStatus(false);
             }
+            */
 
             c.Scale = new Vector2(0.4f, 0.4f) * ((400f+c.Offset) / 475f);
         }

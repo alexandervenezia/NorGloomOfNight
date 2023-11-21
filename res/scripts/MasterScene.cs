@@ -21,6 +21,7 @@ public partial class MasterScene : Node
 
 	private List<int> _enemyIDs;
 	private int _playerHP;
+	private int _coinsFound;
 
 	private static MasterScene _instance;
 
@@ -61,6 +62,18 @@ public partial class MasterScene : Node
 	public int LoadPlayerHP()
 	{
 		return _playerHP;
+	}
+
+	public void AddCoins(int coins)
+	{
+		_coinsFound += coins;
+	}
+
+	public int CollectCoins()
+	{
+		int temp = _coinsFound;
+		_coinsFound = 0;
+		return temp;
 	}
 
 	public bool IsInCombat()

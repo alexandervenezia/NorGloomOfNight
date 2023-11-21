@@ -226,7 +226,7 @@ public partial class Player : Combatant
 
                         PlayCard(_targeted.ToArray(), _currentlyTargeting);
 
-                        EndTargeting();
+                        EndTargeting();                        
                         _selectSound.Play();
                     }
                     break;
@@ -241,6 +241,7 @@ public partial class Player : Combatant
         if (Input.IsActionJustPressed("Deselect") && _state == PlayerState.SELECTING_TARGETS)
         {
             EndTargeting();
+            _state = PlayerState.SELECTING_CARD;
         }
     }
 
@@ -360,7 +361,6 @@ public partial class Player : Combatant
     public override void ReturnCards(int n)
     {
         _state = PlayerState.RETURNING_CARDS;
-        GD.Print(_state);
         _toDiscard = n;
         _targetLabel.Visible = true;
         _targetLabel.Text = "[center][color=#BB5545]Return " + n + " cards to deck[/color]";

@@ -80,6 +80,7 @@ public partial class Purgatory : Node2D, ILevel
 			_enemyInCombat = null;
 		
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
+		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			GD.Print("Respawn: " + _player.CurrentHealth);

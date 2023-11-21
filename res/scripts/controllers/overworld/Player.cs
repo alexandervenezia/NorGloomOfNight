@@ -42,6 +42,8 @@ public partial class Player : CharacterBody2D
 	public int MaxHealth => _maxHealth;
 	private int _currentHealth;
 	public int CurrentHealth => _currentHealth;
+	private int _coins;
+	public int Coins => _coins;
 	[Export] private float _walkSpeed = 500f;
 	[Export] private float _sprintSpeed = 1700f;
 	[Export] private float _jumpTime; // Time spent in upward acceleration
@@ -361,6 +363,17 @@ public partial class Player : CharacterBody2D
 	public void SetHealth(int hp)
 	{
 		_currentHealth = hp;
+	}
+
+	public void AddCoins(int coins)
+	{
+		_coins += coins;
+		GD.Print(_coins, " coins");
+	}
+
+	public void RemoveCoins(int coins)
+	{
+		_coins -= coins;
 	}
 }
 
