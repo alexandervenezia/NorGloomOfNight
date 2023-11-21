@@ -37,6 +37,8 @@ public partial class Player : Combatant
     private AudioStreamPlayer _drawSound;
     private AudioStreamPlayer _selectSound;
     private AudioStreamPlayer _dropSound;
+    private AudioStreamPlayer _playSound;
+    private AudioStreamPlayer _hoverSound;
 
     private PlayerState _state;
     public PlayerState State => _state;
@@ -62,6 +64,8 @@ public partial class Player : Combatant
         _drawSound = (AudioStreamPlayer)GetNode("DrawSound");
         _selectSound = (AudioStreamPlayer)GetNode("SelectSound");
         _dropSound = (AudioStreamPlayer)GetNode("DropSound");
+        _playSound = (AudioStreamPlayer)GetNode("PlayCardSound");
+        _hoverSound = (AudioStreamPlayer)GetNode("MouseSound");
 
     }
 
@@ -248,12 +252,11 @@ public partial class Player : Combatant
     private async void PlayCard(ICombatant[] targets, Card card)
     {
         _sprite.Play("attack");
+        _playSound.Play();
         await card.BeginPlayAnimation(_discard);
         _state = PlayerState.SELECTING_CARD;
         _combatManager.PlayCard(this, targets, card.Data);
         _internalDeck.Discard(card.Data);
-
-        
 
         _actionPointLabel.Text = _actionPoints.ToString();
         _movementPointLabel.Text = _movementPoints.ToString();
