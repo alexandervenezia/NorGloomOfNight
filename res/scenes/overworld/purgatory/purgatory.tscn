@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=37 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -13,8 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://brbc3efcree06" path="res://res/scenes/overworld/purgatory/img/Staircase bg.PNG" id="8_lg4mg"]
 [ext_resource type="AudioStream" uid="uid://dy5m5f7oxljjf" path="res://assets/audio/key.ogg" id="9_htqbp"]
 [ext_resource type="Texture2D" uid="uid://bj1r3yk4i5qgx" path="res://res/scenes/overworld/purgatory/img/Room 2.PNG" id="9_nhmri"]
+[ext_resource type="FontFile" uid="uid://g3ct3ts30737" path="res://assets/fonts/Baskerville/LibreBaskerville-Regular.ttf" id="10_tw26m"]
 [ext_resource type="PackedScene" uid="uid://md0lwaor2nke" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/MediumPlatform.tscn" id="11_73qlx"]
 [ext_resource type="Texture2D" uid="uid://cftpbsyujo7sg" path="res://assets/black_dot.png" id="11_g3usj"]
+[ext_resource type="FontFile" uid="uid://cpas8aathdyao" path="res://assets/fonts/Baskerville/LibreBaskerville-Bold.ttf" id="11_uau85"]
+[ext_resource type="FontFile" uid="uid://thmue4emd3x5" path="res://assets/fonts/Baskerville/LibreBaskerville-Italic.ttf" id="12_s2ur5"]
 [ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="15_lu01w"]
 [ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
@@ -105,6 +108,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8mid8")
 _managementUID = "uid://dpku0u2ogjvbb"
 _prideUID = "uid://bk7mufkqeug2p"
+_journalID = "uid://24f70lj4w2nt"
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -157,7 +161,7 @@ position = Vector2(23442, -3442)
 shape = SubResource("RectangleShape2D_mvv1h")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls"]
-position = Vector2(21959.6, -6588)
+position = Vector2(21950, -6596)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -178,6 +182,14 @@ scale = Vector2(2.5, 2.5)
 [node name="Platform5" parent="Platforms" instance=ExtResource("2_a1ok3")]
 position = Vector2(16148, -3136)
 scale = Vector2(2.5, 2.5)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("2_a1ok3")]
+position = Vector2(17642, -3410)
+scale = Vector2(2.5, 2.5)
+
+[node name="MediumPlatform" parent="Platforms" instance=ExtResource("11_73qlx")]
+position = Vector2(15320, 510)
+scale = Vector2(2.75, 2.75)
 
 [node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI") instance=ExtResource("3_g155m")]
 z_index = 5
@@ -399,24 +411,28 @@ offset_left = 1780.0
 offset_top = -2074.0
 offset_right = 3780.0
 offset_bottom = -1824.0
-theme = ExtResource("18_1vjvr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("10_tw26m")
+theme_override_fonts/bold_font = ExtResource("11_uau85")
+theme_override_fonts/italics_font = ExtResource("12_s2ur5")
 bbcode_enabled = true
 text = "[right][font_size=200]Quest Here"
 metadata/_edit_use_anchors_ = true
 
 [node name="QuestCommand" type="RichTextLabel" parent="OverworldPlayer/Camera2D/QuestElement"]
 custom_minimum_size = Vector2(500, 0)
-offset_left = 1288.0
+offset_left = 282.0
 offset_top = -1846.0
-offset_right = 3788.0
+offset_right = 3782.0
 offset_bottom = -1425.0
-theme = ExtResource("18_1vjvr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("10_tw26m")
+theme_override_fonts/bold_font = ExtResource("11_uau85")
+theme_override_fonts/italics_font = ExtResource("12_s2ur5")
 bbcode_enabled = true
-text = "[right][font_size=85]Quest Here"
+text = "[right][font_size=125]Quest Here"
 metadata/_edit_use_anchors_ = true
 
 [node name="CutscenePlayer" type="ColorRect" parent="OverworldPlayer/Camera2D"]
@@ -435,7 +451,9 @@ offset_left = 1500.0
 offset_top = 78.0
 offset_right = 6196.0
 offset_bottom = 1228.0
-theme = ExtResource("18_1vjvr")
+theme_override_fonts/normal_font = ExtResource("10_tw26m")
+theme_override_fonts/bold_font = ExtResource("11_uau85")
+theme_override_fonts/italics_font = ExtResource("12_s2ur5")
 bbcode_enabled = true
 text = "[font_size=130][color=black]    "
 
@@ -503,7 +521,7 @@ scale = Vector2(254.25, 1753.13)
 texture = ExtResource("11_g3usj")
 
 [node name="Sprite2D3" type="Sprite2D" parent="image"]
-position = Vector2(21957.1, -5244)
+position = Vector2(21937.1, -5244)
 scale = Vector2(254.25, 1753.13)
 texture = ExtResource("11_g3usj")
 
@@ -511,13 +529,6 @@ texture = ExtResource("11_g3usj")
 position = Vector2(6004.78, 984.359)
 scale = Vector2(23909.6, 223.281)
 texture = ExtResource("11_g3usj")
-
-[node name="SmallPlatform" parent="." instance=ExtResource("11_73qlx")]
-position = Vector2(15320, 510)
-scale = Vector2(2.75, 2.75)
-
-[node name="SmallPlatform7" parent="." instance=ExtResource("11_73qlx")]
-position = Vector2(17804, -3456)
 
 [node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
 position = Vector2(27476, -4252)

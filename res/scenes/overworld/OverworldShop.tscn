@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iag32"]
 size = Vector2(1933, 271)
 
-[sub_resource type="Shader" id="Shader_rp16m"]
+[sub_resource type="Shader" id="Shader_lslmm"]
 code = "shader_type canvas_item;
 
 uniform float isHighlighted;
@@ -32,7 +32,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0hxfc"]
-shader = SubResource("Shader_rp16m")
+shader = SubResource("Shader_lslmm")
 shader_parameter/isHighlighted = null
 
 [sub_resource type="Shader" id="Shader_60nyj"]

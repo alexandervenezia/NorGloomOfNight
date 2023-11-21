@@ -65,9 +65,12 @@ public partial class CutscenePlayer : ColorRect
         }
         string fullText;
         if (_data.SpeakerName != "")
-            fullText = _dialoguePrefix + ParseLine(_data.SpeakerName + ":<br></narration>" + _data.Lines[_lineIndex]);
+            fullText = _dialoguePrefix + ParseLine(_data.SpeakerName + ":<br>[/color]" + _data.Lines[_lineIndex]);
         else
             fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);
+
+        // NOTE: This disables the "Speaker's name" component
+        fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);
 
         _lineIndex++;
         _rendering = true;
@@ -78,8 +81,8 @@ public partial class CutscenePlayer : ColorRect
     {
         string parsed = "";
 
-        parsed = raw.Replace("<narration>", "[color=#444444]");
-        parsed = parsed.Replace("</narration>", "[/color]");
+        parsed = raw.Replace("<narration>", "[i][color=#444444]");
+        parsed = parsed.Replace("</narration>", "[/color][/i]");
         parsed = parsed.Replace("<br>", "\n    ");
 
         return parsed;

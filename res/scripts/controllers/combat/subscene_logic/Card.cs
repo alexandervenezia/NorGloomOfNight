@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 public partial class Card : Area2D
 {
 	private static Dictionary<CardRarity, Texture2D> _borderLookup;
-	private readonly Color COMMON_COL = new Color(1, 1, 1, 1);
-	private readonly Color UNCOMMON_COL = new Color(0.11f, 1, 0, 1);
-	private readonly Color RARE_COL = new Color(0, 0.44f, 0.86f, 1);
-	private readonly Color EPIC_COL = new Color(0.64f, 0.21f, 0.93f, 1);
-	private readonly Color LEGENDARY_COL = new Color(1, 0.5f, 0, 1);
+	private readonly Color COMMON_COL = new Color("#FFFFD9");//new Color(1, 1, 1, 1);
+	private readonly Color UNCOMMON_COL = new Color("#49E362"); //new Color(0.11f, 1, 0, 1);
+	private readonly Color RARE_COL = new Color("#49ACE3"); //new Color(0, 0.44f, 0.86f, 1);
+	private readonly Color EPIC_COL = new Color("#971A95"); //new Color(0.64f, 0.21f, 0.93f, 1);
+	private readonly Color LEGENDARY_COL = new Color("#FEEE7D"); //new Color(1, 0.5f, 0, 1);
 
 	[Export] private float _maxOffset = 75f;
 
@@ -125,7 +125,7 @@ public partial class Card : Area2D
 
 		Color rarityColor = new Color(1, 0, 1, 1);
 		
-
+		
 		switch (data.Rarity)
 		{
 			case CardRarity.COMMON:

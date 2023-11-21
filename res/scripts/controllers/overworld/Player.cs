@@ -106,11 +106,11 @@ public partial class Player : CharacterBody2D
 		if (_quest == null)
 		{
 			_questUI.GetNode<RichTextLabel>("QuestName").Text = "";
-			_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=75]Your work is done . . . for now.";
+			_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=125]Your work is done . . . for now.";
 		}
 
 		_questUI.GetNode<RichTextLabel>("QuestName").Text = "[right][font_size=200]" + _quest.GetName();
-		_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=75]" + _quest.GetNextStep();
+		_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=125]" + _quest.GetNextStep();
 	}
 
 	public override void _Process(double delta)
@@ -138,6 +138,8 @@ public partial class Player : CharacterBody2D
 			if (!_walkSound.Playing)
 				_walkSound.Play();
 		}
+
+		//Shop shop = (Shop)_level.UseElevator(_shopUID);
 	}
 
 	public override void _PhysicsProcess(double delta)

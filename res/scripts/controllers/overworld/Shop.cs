@@ -17,7 +17,7 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
-    private const int MAX_PER_ROW = 6;
+    private const int MAX_PER_ROW = 7;
     private ColorRect _rect;
     private Node2D _cardNode;
     private Node2D _priceNode;
@@ -270,7 +270,7 @@ public partial class Shop : Node2D
         foreach (CardData c in active)
         {                        
             x = (int)((0.5 + index%Math.Min(active.Count(), MAX_PER_ROW)) * (width / Math.Min(active.Count(), MAX_PER_ROW)));
-            y = 200 + (int)( (1 + index/MAX_PER_ROW) * (height / 5f) );    
+            y = 180 + (int)( (1 + index/MAX_PER_ROW) * (height / 5f) );    
 
             Card card = (Card)_cardResource.Instantiate();
             card.UpdateData(c);

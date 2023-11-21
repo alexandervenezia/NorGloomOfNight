@@ -7,6 +7,7 @@ public partial class Purgatory : Node2D, ILevel
 {
 	[Export] private string _managementUID;
 	[Export] private string _prideUID;
+	[Export] private string _journalID;
 	private Player _player;
 	public Player Player => _player;
 	private Vector2 _playerSpawn;
@@ -55,7 +56,6 @@ public partial class Purgatory : Node2D, ILevel
 		_player.GlobalPosition = _playerSpawn;
 	}
 
-	// TESTING TOOL
 	public override void _Process(double delta)
 	{
 		if (Input.IsKeyPressed(Key.Delete))
@@ -65,6 +65,11 @@ public partial class Purgatory : Node2D, ILevel
 			RemoveChild(_player);
 			pride.AddChild(_player);
 			((Pride)pride).SetPlayer(_player);
+		}
+
+		if (Input.IsActionJustPressed("Escape"))
+		{
+			Journal journal = (Journal)UseElevator(_journalID);
 		}
 	}
 

@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 public partial class HellLevel : Node2D, ILevel
 {
 	[Export] protected Vector2 _playerSpawn;
+	[Export] protected string _journalID;
 	protected Player _player;
 	protected Player Player => _player;
 	protected ICombatable _enemyInCombat;
@@ -31,6 +32,14 @@ public partial class HellLevel : Node2D, ILevel
 		master.SetPlayerHP(_player.CurrentHealth);
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
 		
+	}
+
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("Escape"))
+		{
+			Journal journal = (Journal)UseElevator(_journalID);
+		}
 	}
 
 	public Player GetPlayer()
