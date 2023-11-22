@@ -69,6 +69,7 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer _landSound;
 
 	private bool _cutsceneFinished = false;
+	private bool _glideState = false;
 
 	public override void _Ready()
 	{
@@ -115,6 +116,12 @@ public partial class Player : CharacterBody2D
 		_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=125]" + _quest.GetNextStep();
 	}
 
+	public void FrameChange()
+	{
+		if (_playerSprite.Animation == "jump" && _playerSprite.Frame == _playerSprite.SpriteFrames.GetFrameCount("jump")-1)
+			_glideState = true;
+	}
+
 	public override void _Process(double delta)
 	{
 		ChangePlayerOrientation();
@@ -132,7 +139,17 @@ public partial class Player : CharacterBody2D
 		}
 		else if (IsJumping())
 		{
-			_playerSprite.Play("jump");
+			if (!_glideState)
+			{
+				_playerSprite.Play("jump");
+			}
+			else
+			{
+				if (Input.IsActionPressed("Jump"))
+					_playerSprite.Play("glide");
+				else
+					_playerSprite.Play("idle");
+			}
 		}
 		else if (IsWalking())
 		{
@@ -189,6 +206,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_glideState = false;
 					_jumpSound.Play();
 				}
 				break;
@@ -200,6 +218,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_glideState = false;
 					_jumpSound.Play();
 				}
 

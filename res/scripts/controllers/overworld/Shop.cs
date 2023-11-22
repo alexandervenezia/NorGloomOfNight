@@ -17,7 +17,7 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
-    private const int MAX_PER_ROW = 7;
+    private const int MAX_PER_ROW = 8;
     private ColorRect _rect;
     private Node2D _cardNode;
     private Node2D _priceNode;
@@ -290,7 +290,7 @@ public partial class Shop : Node2D
 
             _cardNode.AddChild(card);
             card.Position = new Vector2(x, y);
-            card.ApplyScale(new Vector2(0.25f, 0.25f));
+            card.ApplyScale(new Vector2(0.20f, 0.20f));
 
             index++;
         }
