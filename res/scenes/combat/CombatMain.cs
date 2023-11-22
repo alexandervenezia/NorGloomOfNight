@@ -26,6 +26,7 @@ public partial class CombatMain : Node2D
     [Export] private Godot.Collections.Array<string> _enemyTypePaths;
     [Export] private PackedScene _cardResource;
     [Export] private PackedScene _coinValueResource;
+    [Export] private string _music;
     private Dictionary<int, PackedScene> _enemyTypesByUID;
 
     private Node2D _rewardsNode;
@@ -161,6 +162,9 @@ public partial class CombatMain : Node2D
 
     public override void _Ready()
     {
+        MasterAudio.GetInstance().ClearQueue();
+        MasterAudio.GetInstance().PlaySong(_music);
+        
         _rewardsNode = GetNode<Node2D>("Rewards");
 
         ICombatant[] enemies = null;

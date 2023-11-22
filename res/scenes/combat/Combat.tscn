@@ -38,6 +38,7 @@ script = ExtResource("1_gps4y")
 _enemyTypePaths = Array[String](["uid://iw7vaee7nlpc", "uid://6dpordjypq8l", "uid://bakphjas5nire"])
 _cardResource = ExtResource("3_6gjep")
 _coinValueResource = ExtResource("3_xuif3")
+_music = "uid://bfxwb5au8ilmq"
 
 [node name="Player" parent="." node_paths=PackedStringArray("_hand", "_targetLabel", "_actionPointLabel", "_movementPointLabel", "_deck", "_discard") instance=ExtResource("4_rn6c5")]
 position = Vector2(-628, 103)
@@ -190,18 +191,22 @@ text = "Cancel"
 
 [node name="DmgPhysical" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("14_026us")
+volume_db = 1.0
 bus = &"SFX"
 
 [node name="CritPhysical" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("15_aosei")
+volume_db = 1.0
 bus = &"SFX"
 
 [node name="DmgMagic" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("16_c5ed2")
+volume_db = 1.0
 bus = &"SFX"
 
 [node name="CritMagic" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("17_dd106")
+volume_db = 1.0
 bus = &"SFX"
 
 [node name="Rewards" type="Node2D" parent="."]

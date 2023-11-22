@@ -11,6 +11,7 @@ public partial class Management : Node2D
 
     public override void _Ready()
     {
+        MasterAudio.GetInstance().SetNoRestart();
         _returnButton.Visible = false;
         _cutscenePlayer.SetCutscene(_cutscene);
         _cutscenePlayer.OnEnd += OnCutsceneEnd;

@@ -109,6 +109,8 @@ script = ExtResource("1_8mid8")
 _managementUID = "uid://dpku0u2ogjvbb"
 _prideUID = "uid://bk7mufkqeug2p"
 _journalID = "uid://24f70lj4w2nt"
+_introMusicUID = "uid://dt1l4htsvq7gg"
+_loopMusicUID = "uid://bhx2reexyplrf"
 
 [node name="Walls" type="StaticBody2D" parent="."]
 

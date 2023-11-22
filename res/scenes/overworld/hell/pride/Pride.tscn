@@ -204,6 +204,8 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
 _playerSpawn = Vector2(-22070.7, -2279.27)
 _journalID = "uid://24f70lj4w2nt"
+_introMusicUID = "uid://d1ix404tmx1jm"
+_loopMusicUID = "uid://cllm1liixd7f0"
 
 [node name="BgTemp" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -677,3 +679,4 @@ script = ExtResource("6_b5q6i")
 [node name="ShopEntrance" parent="." instance=ExtResource("7_no0g4")]
 position = Vector2(19920, -3872)
 _startingStock = [ExtResource("8_adj6g"), ExtResource("8_adj6g"), ExtResource("9_yx607")]
+_identifier = 1

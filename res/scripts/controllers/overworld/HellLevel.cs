@@ -7,6 +7,8 @@ public partial class HellLevel : Node2D, ILevel
 {
 	[Export] protected Vector2 _playerSpawn;
 	[Export] protected string _journalID;
+	[Export] private string _introMusicUID;
+	[Export] private string _loopMusicUID;
 	protected Player _player;
 	protected Player Player => _player;
 	protected ICombatable _enemyInCombat;
@@ -57,6 +59,13 @@ public partial class HellLevel : Node2D, ILevel
 
 	public void Reactivate()
 	{
+		if (!MasterAudio.GetInstance().GetNoRestart())
+		{
+			MasterAudio.GetInstance().ClearQueue();
+			MasterAudio.GetInstance().PlaySong(_introMusicUID);
+			MasterAudio.GetInstance().QueueSong(_loopMusicUID);
+		}
+
 		if (!IsInstanceValid((Node)_enemyInCombat))
 			_enemyInCombat = null;
 			
@@ -89,6 +98,8 @@ public partial class HellLevel : Node2D, ILevel
 			SetOwnerRecursive(_player, destination);
 			((Purgatory)destination).SetPlayer(_player);
 		}
+
+
 		return destination;
 	}
 

@@ -39,14 +39,17 @@ position = Vector2(-0.500025, 142.75)
 
 [node name="DrawSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_25uvg")
+volume_db = 1.0
 bus = &"UI"
 
 [node name="SelectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_dxykr")
+volume_db = 1.0
 bus = &"UI"
 
 [node name="DropSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_haymp")
+volume_db = 1.0
 bus = &"UI"
 
 [node name="PlayCardSound" type="AudioStreamPlayer" parent="."]

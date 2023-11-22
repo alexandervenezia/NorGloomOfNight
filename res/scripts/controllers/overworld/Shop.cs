@@ -40,6 +40,7 @@ public partial class Shop : Node2D
 
     public override void _Ready()
     {
+        MasterAudio.GetInstance().SetNoRestart();
         _rect = GetNode<ColorRect>("ColorRect");
         _cardNode = _rect.GetNode<Node2D>("Cards");
         _priceNode = _rect.GetNode<Node2D>("Prices");
