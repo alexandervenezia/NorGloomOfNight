@@ -346,6 +346,15 @@ public partial class Player : Combatant
         }
     }
 
+    public void OnXButtonPressed()
+    {
+        if (_state == PlayerState.SELECTING_TARGETS)
+        {
+            EndTargeting();
+            _state = PlayerState.SELECTING_CARD;
+        }
+    }
+
     public override void DrawCards(int n)
     {
         _drawSound.Play();
