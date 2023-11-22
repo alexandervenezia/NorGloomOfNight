@@ -76,6 +76,8 @@ public partial class HellLevel : Node2D, ILevel
 			_enemyInCombat?.Enable();
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
+
+			_player.Die();
 		}
 		else
 		{

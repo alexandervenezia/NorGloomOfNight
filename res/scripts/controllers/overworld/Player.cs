@@ -4,7 +4,6 @@ using Godot;
 using System;
 using System.ComponentModel;
 using System.Data;
-using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -342,16 +341,31 @@ public partial class Player : CharacterBody2D
 			GD.Print("Enter");
 			((ShopEntrance)area).Enter();
 		}
+		if (area is HealArea)
+		{
+			GD.Print("HealEnter");
+			((HealArea)area).Enter();
+		}
+		if (area is Spike)
+		{
+			GD.Print("SpikeEnter");
+			HandleSpikeHit(((Spike)area).Damage);
+		}
 	}
 
 	private void OnArea2DExited(Area2D area)
 	{
-		GD.Print("Test");
 		if (area is ShopEntrance)
 		{			
 			GD.Print("Exit");
 			((ShopEntrance)area).Exit();
 		}
+		if (area is HealArea)
+		{
+			GD.Print("HealExit");
+			((HealArea)area).Exit();
+		}
+
 	}
 
 	private void OnCutsceneEnd()
@@ -393,6 +407,26 @@ public partial class Player : CharacterBody2D
 	public void RemoveCoins(int coins)
 	{
 		_coins -= coins;
+	}
+
+	public void FullHeal()
+	{
+		_currentHealth = MaxHealth;
+		GD.Print("Healed! Health " + _currentHealth);
+	}
+
+	public void HandleSpikeHit(int dmg)
+	{
+		GD.Print("Hit spike.");
+		_currentHealth -= dmg;
+		if (_currentHealth <= 0) Die();
+		Velocity = new Vector2(-Velocity.X * 5, -Velocity.Y);
+	}
+
+	public void Die()
+	{
+		GD.Print("Player died - Die() stub called");
+		// TODO: Implement death screen
 	}
 }
 

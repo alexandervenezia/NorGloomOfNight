@@ -88,28 +88,34 @@ public partial class Purgatory : Node2D, ILevel
 		GD.Print("Enemy: " + _enemyInCombat);
 		if (!IsInstanceValid((Node)_enemyInCombat))
 			_enemyInCombat = null;
-		
+
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
+
+		if (_player.CurrentHealth == -1)
+			_player.FullHeal();
+
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			GD.Print("Respawn: " + _player.CurrentHealth);
 			_enemyInCombat?.Enable();
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
+
+			_player.Die();
 		}
 		else
 			_enemyInCombat?.Die();
 	}
 
-	public Node UseElevator(string dest="")
-	{		
+	public Node UseElevator(string dest = "")
+	{
 		//MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
-		
+
 		MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
-		
+
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, true);
-		
+
 		if (destination is HellLevel)
 		{
 			RemoveChild(_player);
@@ -117,7 +123,7 @@ public partial class Purgatory : Node2D, ILevel
 			destination.AddChild(_player);
 			SetOwnerRecursive(_player, destination);
 			_player.GetNode<Button>("Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory").Owner = destination;
-			((HellLevel)destination).SetPlayer(_player);			
+			((HellLevel)destination).SetPlayer(_player);
 		}
 
 		return destination;

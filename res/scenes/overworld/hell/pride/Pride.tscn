@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=75 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="7_no0g4"]
 [ext_resource type="Resource" uid="uid://blnau2cu3smcr" path="res://res/resources/cards/HolyWater.tres" id="8_adj6g"]
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="9_yx607"]
+[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="10_wdm8t"]
+[ext_resource type="PackedScene" uid="uid://cb5fb4m2d5w2f" path="res://res/scenes/overworld/Spike.tscn" id="11_16ymw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -680,3 +682,18 @@ script = ExtResource("6_b5q6i")
 position = Vector2(19920, -3872)
 _startingStock = [ExtResource("8_adj6g"), ExtResource("8_adj6g"), ExtResource("9_yx607")]
 _identifier = 1
+
+[node name="HealArea" parent="." instance=ExtResource("10_wdm8t")]
+position = Vector2(-12080, 5360)
+
+[node name="Spike" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-18560, 3120)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike2" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-16256, 3120)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike3" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-20864, 3120)
+scale = Vector2(0.5, 0.5)
