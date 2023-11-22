@@ -21,6 +21,7 @@ public partial class MasterScene : Node
 
 	private List<int> _enemyIDs;
 	private int _playerHP;
+	private int _coinsFound;
 
 	private static MasterScene _instance;
 
@@ -63,6 +64,18 @@ public partial class MasterScene : Node
 		return _playerHP;
 	}
 
+	public void AddCoins(int coins)
+	{
+		_coinsFound += coins;
+	}
+
+	public int CollectCoins()
+	{
+		int temp = _coinsFound;
+		_coinsFound = 0;
+		return temp;
+	}
+
 	public bool IsInCombat()
 	{
 		return _activeScene == _combatSceneUID;
@@ -100,7 +113,10 @@ public partial class MasterScene : Node
 
 		_lastScene = _activeScene;
 		if (_activeScene != "")
+		{
+			GD.Print("Removing " + _activeScene);
 			RemoveChild(_loadedScenes[_activeScene]);
+		}
 		_activeScene = uid;
 		AddChild(_loadedScenes[_activeScene]);
 

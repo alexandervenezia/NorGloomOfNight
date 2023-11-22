@@ -1,10 +1,12 @@
 namespace Overworld;
 
+using Data;
 using Godot;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Systems.Combat;
 
 
 
@@ -14,6 +16,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	[Export] protected int _id; // Must match UID of combat equivalent
 	[Export] protected float _speed;
 	[Export] protected float _acceleration;
+	
 
 	protected AnimatedSprite2D _sprite;
 	protected Vector2 _spawnPoint;
@@ -28,7 +31,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{        
 		MoveAndSlide();
 
@@ -68,5 +71,17 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	{
 		QueueFree();
 	}
+
+	public bool HasIntroCutscene()
+	{
+		return false;
+	}
+
+	public Cutscene GetIntroCutscene()
+	{
+		return null;
+	}
+
+	
 
 }

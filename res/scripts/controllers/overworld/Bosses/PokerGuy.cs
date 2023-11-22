@@ -1,4 +1,5 @@
 using Godot;
+using Overworld;
 using System;
 using System.Collections.Generic;
 
@@ -8,6 +9,9 @@ public partial class PokerGuy : Node2D, ICombatable
     private Area2D _area;   
 
     private bool _enabled;
+
+    [Export] private int TEST;
+    [Export] private Cutscene _cutscene;
 
     public override void _Ready()
     {
@@ -39,6 +43,20 @@ public partial class PokerGuy : Node2D, ICombatable
         return _enabled;
     }
 
-    public void Die() {}
+    public void Die() 
+    {
+        GD.Print("Poker Guy Died");
+        QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
+    }
+
+    public bool HasIntroCutscene()
+	{
+		return true;
+	}
+
+	public Cutscene GetIntroCutscene()
+	{
+		return _cutscene;
+	}
 
 }

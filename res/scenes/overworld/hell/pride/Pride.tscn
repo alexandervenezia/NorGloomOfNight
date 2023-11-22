@@ -1,9 +1,14 @@
-[gd_scene load_steps=67 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=73 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
-[ext_resource type="Texture2D" uid="uid://biudvmhk8p3xc" path="res://res/scenes/overworld/hell/pride/bg_temp.png" id="1_e1xb0"]
+[ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
 [ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
+[ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="6_b5q6i"]
+[ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="7_no0g4"]
+[ext_resource type="Resource" uid="uid://blnau2cu3smcr" path="res://res/resources/cards/HolyWater.tres" id="8_adj6g"]
+[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="9_yx607"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -104,6 +109,9 @@ size = Vector2(289.031, 289.781)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14xen"]
 size = Vector2(863.031, 289.781)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si3bn"]
+size = Vector2(863.031, 608.891)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h52jn"]
 size = Vector2(1756, 289.781)
 
@@ -194,15 +202,17 @@ size = Vector2(4607.63, 864.5)
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
-_playerSpawn = Vector2(-13340, -736)
+_playerSpawn = Vector2(-22070.7, -2279.27)
+_journalID = "uid://24f70lj4w2nt"
+_introMusicUID = "uid://d1ix404tmx1jm"
+_loopMusicUID = "uid://cllm1liixd7f0"
 
 [node name="BgTemp" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
-texture = ExtResource("1_e1xb0")
+texture = ExtResource("2_ugo6q")
 metadata/_edit_lock_ = true
 
 [node name="Boi" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-13340, -736)
 texture = ExtResource("3_ffxcs")
 
@@ -420,6 +430,10 @@ shape = SubResource("RectangleShape2D_14xen")
 position = Vector2(-24322, 6370)
 shape = SubResource("RectangleShape2D_14xen")
 
+[node name="CollisionShape2D102" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-26052, 7679.55)
+shape = SubResource("RectangleShape2D_si3bn")
+
 [node name="CollisionShape2D78" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-27650, 6366)
 shape = SubResource("RectangleShape2D_h52jn")
@@ -462,6 +476,10 @@ shape = SubResource("RectangleShape2D_f6iju")
 
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-130.25, 897.438)
+shape = SubResource("RectangleShape2D_ddlrs")
+
+[node name="CollisionShape2D103" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-418, -2850)
 shape = SubResource("RectangleShape2D_ddlrs")
 
 [node name="CollisionShape2D54" type="CollisionShape2D" parent="Walls"]
@@ -614,10 +632,6 @@ shape = SubResource("RectangleShape2D_xt4nr")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="KerogWorld" parent="Enemies" instance=ExtResource("4_g25tj")]
-position = Vector2(-17239, -2120)
-_relativePatrolBounds = Vector2(-4000, 3000)
-
 [node name="KerogWorld2" parent="Enemies" instance=ExtResource("4_g25tj")]
 position = Vector2(-16048, 7148.4)
 _relativePatrolBounds = Vector2(-2500, 2500)
@@ -641,3 +655,28 @@ _relativePatrolBounds = Vector2(-1000, 1000)
 [node name="KerogWorld4" parent="Enemies" instance=ExtResource("4_g25tj")]
 position = Vector2(16796, -2698)
 _relativePatrolBounds = Vector2(-1800, 1800)
+
+[node name="DevinWorld" parent="Enemies" instance=ExtResource("5_y1ghh")]
+position = Vector2(11392, -7024)
+motion_mode = 1
+
+[node name="DevinWorld2" parent="Enemies" instance=ExtResource("5_y1ghh")]
+position = Vector2(-7776, 608)
+motion_mode = 1
+
+[node name="DevinWorld3" parent="Enemies" instance=ExtResource("5_y1ghh")]
+position = Vector2(7376, 4512)
+motion_mode = 1
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-22076.7, -2279.27)
+
+[node name="Elevator" type="Marker2D" parent="."]
+position = Vector2(-22150, -2032)
+gizmo_extents = 229.0
+script = ExtResource("6_b5q6i")
+
+[node name="ShopEntrance" parent="." instance=ExtResource("7_no0g4")]
+position = Vector2(19920, -3872)
+_startingStock = [ExtResource("8_adj6g"), ExtResource("8_adj6g"), ExtResource("9_yx607")]
+_identifier = 1

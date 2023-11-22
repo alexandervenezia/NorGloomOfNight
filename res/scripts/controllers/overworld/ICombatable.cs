@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Godot;
 
 public interface ICombatable
 {
@@ -7,4 +8,6 @@ public interface ICombatable
     public void Enable();
     public bool IsEnabled();
     public void Die();
+    public bool HasIntroCutscene();
+    public Cutscene GetIntroCutscene();
 }

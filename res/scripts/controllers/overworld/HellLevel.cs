@@ -1,10 +1,14 @@
 using Godot;
 using Overworld;
 using System;
+using System.Runtime.CompilerServices;
 
 public partial class HellLevel : Node2D, ILevel
 {
 	[Export] protected Vector2 _playerSpawn;
+	[Export] protected string _journalID;
+	[Export] private string _introMusicUID;
+	[Export] private string _loopMusicUID;
 	protected Player _player;
 	protected Player Player => _player;
 	protected ICombatable _enemyInCombat;
@@ -15,6 +19,11 @@ public partial class HellLevel : Node2D, ILevel
 
 	protected async void OnAggro(ICombatable enemy)
 	{
+		if (enemy.HasIntroCutscene())
+		{
+			await _player.PlayCutscene(enemy.GetIntroCutscene());
+		}
+
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
@@ -27,6 +36,14 @@ public partial class HellLevel : Node2D, ILevel
 		
 	}
 
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("Escape"))
+		{
+			Journal journal = (Journal)UseElevator(_journalID);
+		}
+	}
+
 	public Player GetPlayer()
 	{
 		return _player;
@@ -36,12 +53,24 @@ public partial class HellLevel : Node2D, ILevel
 	{
 		_player = player;
 		_player.EnemyAggroed += OnAggro;
-		_player.GlobalPosition = _playerSpawn;
+		_player.Position = _playerSpawn;
+		GetNode<Elevator>("Elevator").SetLevelSelect(_player.GetNode<Control>("Camera2D/BackToPurgatory"));
 	}
 
 	public void Reactivate()
 	{
+		if (!MasterAudio.GetInstance().GetNoRestart())
+		{
+			MasterAudio.GetInstance().ClearQueue();
+			MasterAudio.GetInstance().PlaySong(_introMusicUID);
+			MasterAudio.GetInstance().QueueSong(_loopMusicUID);
+		}
+
+		if (!IsInstanceValid((Node)_enemyInCombat))
+			_enemyInCombat = null;
+			
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
+		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			_enemyInCombat?.Enable();
@@ -50,8 +79,36 @@ public partial class HellLevel : Node2D, ILevel
 		}
 		else
 		{
-			if (_enemyInCombat != null)
-				_enemyInCombat.Die();
+			_enemyInCombat?.Die();
+		}
+	}
+
+	public Node UseElevator(string dest="")
+	{
+		GD.Print(dest);
+		MasterScene.GetInstance().SetPlayerHP(GetPlayer().CurrentHealth);
+        // MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
+		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, false);
+
+		if (destination is Purgatory)
+		{
+			RemoveChild(_player);
+			_player.EnemyAggroed -= OnAggro;
+			destination.AddChild(_player);
+			SetOwnerRecursive(_player, destination);
+			((Purgatory)destination).SetPlayer(_player);
+		}
+
+
+		return destination;
+	}
+
+	private void SetOwnerRecursive(Node root, Node owner)
+	{
+		foreach (Node n in root.GetChildren())
+		{
+			n.Owner = owner;
+			SetOwnerRecursive(n, owner);
 		}
 	}
 }

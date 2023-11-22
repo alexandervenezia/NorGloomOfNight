@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=37 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -9,11 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://bgo7loeositdr" path="res://res/scenes/overworld/purgatory/img/Hallway piece 2.PNG" id="5_n5mx7"]
 [ext_resource type="Texture2D" uid="uid://duwp8iosphge7" path="res://res/scenes/overworld/purgatory/img/Mailroom bg flat.PNG" id="6_x0fb6"]
 [ext_resource type="Texture2D" uid="uid://df1motfq4vj8s" path="res://res/scenes/overworld/purgatory/img/Room 1.PNG" id="7_u1ox0"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/CutscenePlayer.cs" id="8_eebr5"]
 [ext_resource type="Texture2D" uid="uid://brbc3efcree06" path="res://res/scenes/overworld/purgatory/img/Staircase bg.PNG" id="8_lg4mg"]
+[ext_resource type="AudioStream" uid="uid://dy5m5f7oxljjf" path="res://assets/audio/key.ogg" id="9_htqbp"]
 [ext_resource type="Texture2D" uid="uid://bj1r3yk4i5qgx" path="res://res/scenes/overworld/purgatory/img/Room 2.PNG" id="9_nhmri"]
+[ext_resource type="FontFile" uid="uid://g3ct3ts30737" path="res://assets/fonts/Baskerville/LibreBaskerville-Regular.ttf" id="10_tw26m"]
 [ext_resource type="PackedScene" uid="uid://md0lwaor2nke" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/MediumPlatform.tscn" id="11_73qlx"]
 [ext_resource type="Texture2D" uid="uid://cftpbsyujo7sg" path="res://assets/black_dot.png" id="11_g3usj"]
+[ext_resource type="FontFile" uid="uid://cpas8aathdyao" path="res://assets/fonts/Baskerville/LibreBaskerville-Bold.ttf" id="11_uau85"]
+[ext_resource type="FontFile" uid="uid://thmue4emd3x5" path="res://assets/fonts/Baskerville/LibreBaskerville-Italic.ttf" id="12_s2ur5"]
 [ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="15_lu01w"]
+[ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
+[ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
+[ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
+[ext_resource type="Resource" uid="uid://b4grubao7sdb7" path="res://res/resources/cutscenes/KerPoCutscene.tres" id="20_i3ngi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -27,10 +38,79 @@ size = Vector2(7497.5, 216)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvv1h"]
 size = Vector2(10446, 152)
 
+[sub_resource type="Gradient" id="Gradient_o3sdl"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.572848, 0.794702)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ujr6k"]
+gradient = SubResource("Gradient_o3sdl")
+fill_from = Vector2(1, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcs4p"]
+shader = ExtResource("16_5x30j")
+
+[sub_resource type="Shader" id="Shader_wc5ra"]
+code = "shader_type canvas_item;
+
+uniform float isHighlighted;
+const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
+const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
+
+float gradient(float x)
+{
+	return pow( 6.0*x*(1.0-x), 1 );
+}
+
+void fragment() {
+	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
+	
+	col.a = (1.0 - gradient(UV.y));
+	
+	
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4andh"]
+shader = SubResource("Shader_wc5ra")
+shader_parameter/isHighlighted = null
+
+[sub_resource type="Shader" id="Shader_4bewk"]
+code = "shader_type canvas_item;
+
+uniform float isHighlighted;
+const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
+const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
+
+float gradient(float x)
+{
+	return pow( 6.0*x*(1.0-x), 1 );
+}
+
+void fragment() {
+	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
+	
+	col.a = (1.0 - gradient(UV.y));
+	
+	
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_noruu"]
+shader = SubResource("Shader_4bewk")
+shader_parameter/isHighlighted = null
+
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8mid8")
+_managementUID = "uid://dpku0u2ogjvbb"
 _prideUID = "uid://bk7mufkqeug2p"
+_journalID = "uid://24f70lj4w2nt"
+_introMusicUID = "uid://dt1l4htsvq7gg"
+_loopMusicUID = "uid://bhx2reexyplrf"
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -83,7 +163,7 @@ position = Vector2(23442, -3442)
 shape = SubResource("RectangleShape2D_mvv1h")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls"]
-position = Vector2(21959.6, -6588)
+position = Vector2(21950, -6596)
 shape = SubResource("RectangleShape2D_818ne")
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -105,9 +185,18 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(16148, -3136)
 scale = Vector2(2.5, 2.5)
 
-[node name="OverworldPlayer" parent="." instance=ExtResource("3_g155m")]
-z_index = 2
-position = Vector2(19718, -3798)
+[node name="Platform6" parent="Platforms" instance=ExtResource("2_a1ok3")]
+position = Vector2(17642, -3410)
+scale = Vector2(2.5, 2.5)
+
+[node name="MediumPlatform" parent="Platforms" instance=ExtResource("11_73qlx")]
+position = Vector2(15320, 510)
+scale = Vector2(2.75, 2.75)
+
+[node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI") instance=ExtResource("3_g155m")]
+z_index = 5
+position = Vector2(-4994, 612)
+_questUI = NodePath("Camera2D/QuestElement")
 _walkSpeed = 3000.0
 _sprintSpeed = 5100.0
 _jumpSpeed = 2000.0
@@ -119,11 +208,16 @@ _gravityMult = 3.5
 position = Vector2(0, -600)
 zoom = Vector2(0.5, 0.5)
 
+[node name="Sprite2D" type="Sprite2D" parent="OverworldPlayer/Camera2D"]
+position = Vector2(2384.75, -1944.34)
+scale = Vector2(48.0859, 8.94824)
+texture = SubResource("GradientTexture2D_ujr6k")
+
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
-offset_left = -2564.0
-offset_top = -1438.0
-offset_right = -1316.0
-offset_bottom = -1017.0
+offset_left = -3738.0
+offset_top = -2068.0
+offset_right = -2490.0
+offset_bottom = -1647.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -131,6 +225,244 @@ theme_override_font_sizes/font_size = 125
 text = "FPS:"
 script = ExtResource("4_yy1ep")
 metadata/_edit_use_anchors_ = true
+
+[node name="LevelSelect" type="Control" parent="OverworldPlayer/Camera2D"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(4, 4)
+mouse_filter = 1
+
+[node name="LevelSelectMenu" type="Panel" parent="OverworldPlayer/Camera2D/LevelSelect"]
+material = SubResource("ShaderMaterial_tcs4p")
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Pride" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+material = SubResource("ShaderMaterial_4andh")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -54.5
+offset_right = 500.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("18_qdqg5")
+_uid = "uid://bk7mufkqeug2p"
+_lockedUntilTutorialComplete = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.0
+offset_right = 500.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]Pride"
+
+[node name="Management" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+material = SubResource("ShaderMaterial_noruu")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -259.0
+offset_right = 500.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("18_qdqg5")
+_uid = "uid://dpku0u2ogjvbb"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.0
+offset_right = 500.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]Middle Management"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -128.0
+offset_right = 500.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]~ Hell ~"
+
+[node name="BackToPurgatory" type="Control" parent="OverworldPlayer/Camera2D"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(4, 4)
+mouse_filter = 1
+
+[node name="LevelSelectMenu" type="Panel" parent="OverworldPlayer/Camera2D/BackToPurgatory"]
+material = SubResource("ShaderMaterial_tcs4p")
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Purgatory" type="Button" parent="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu"]
+material = SubResource("ShaderMaterial_4andh")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -54.5
+offset_right = 500.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("18_qdqg5")
+_uid = "uid://b6a77ow3dkibo"
+_returnToPurgatory = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.0
+offset_right = 500.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]Purgatory"
+
+[node name="QuestElement" type="Node2D" parent="OverworldPlayer/Camera2D"]
+
+[node name="QuestName" type="RichTextLabel" parent="OverworldPlayer/Camera2D/QuestElement"]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 1780.0
+offset_top = -2074.0
+offset_right = 3780.0
+offset_bottom = -1824.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("10_tw26m")
+theme_override_fonts/bold_font = ExtResource("11_uau85")
+theme_override_fonts/italics_font = ExtResource("12_s2ur5")
+bbcode_enabled = true
+text = "[right][font_size=200]Quest Here"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuestCommand" type="RichTextLabel" parent="OverworldPlayer/Camera2D/QuestElement"]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 282.0
+offset_top = -1846.0
+offset_right = 3782.0
+offset_bottom = -1425.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("10_tw26m")
+theme_override_fonts/bold_font = ExtResource("11_uau85")
+theme_override_fonts/italics_font = ExtResource("12_s2ur5")
+bbcode_enabled = true
+text = "[right][font_size=125]Quest Here"
+metadata/_edit_use_anchors_ = true
+
+[node name="CutscenePlayer" type="ColorRect" parent="OverworldPlayer/Camera2D"]
+z_index = 2
+offset_left = -3854.0
+offset_top = 974.0
+offset_right = 3842.0
+offset_bottom = 2194.0
+color = Color(0.921569, 0.905882, 0.784314, 1)
+script = ExtResource("8_eebr5")
+
+[node name="Dialogue" type="RichTextLabel" parent="OverworldPlayer/Camera2D/CutscenePlayer"]
+z_index = 9
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 78.0
+offset_right = 6196.0
+offset_bottom = 1228.0
+theme_override_fonts/normal_font = ExtResource("10_tw26m")
+theme_override_fonts/bold_font = ExtResource("11_uau85")
+theme_override_fonts/italics_font = ExtResource("12_s2ur5")
+bbcode_enabled = true
+text = "[font_size=130][color=black]    "
+
+[node name="Click" type="AudioStreamPlayer" parent="OverworldPlayer/Camera2D/CutscenePlayer"]
+stream = ExtResource("9_htqbp")
+volume_db = -1.5
+bus = &"UI"
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -169,6 +501,7 @@ texture = ExtResource("6_x0fb6")
 [node name="Room1" type="Sprite2D" parent="image"]
 position = Vector2(-7866, -10058)
 texture = ExtResource("7_u1ox0")
+flip_h = true
 
 [node name="StaircaseBg" type="Sprite2D" parent="image"]
 position = Vector2(14858, -2197)
@@ -190,7 +523,7 @@ scale = Vector2(254.25, 1753.13)
 texture = ExtResource("11_g3usj")
 
 [node name="Sprite2D3" type="Sprite2D" parent="image"]
-position = Vector2(21957.1, -5244)
+position = Vector2(21937.1, -5244)
 scale = Vector2(254.25, 1753.13)
 texture = ExtResource("11_g3usj")
 
@@ -199,13 +532,26 @@ position = Vector2(6004.78, 984.359)
 scale = Vector2(23909.6, 223.281)
 texture = ExtResource("11_g3usj")
 
-[node name="SmallPlatform" parent="." instance=ExtResource("11_73qlx")]
-position = Vector2(15320, 510)
-scale = Vector2(2.75, 2.75)
-
-[node name="SmallPlatform7" parent="." instance=ExtResource("11_73qlx")]
-position = Vector2(17804, -3456)
-
 [node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
 position = Vector2(27476, -4252)
 scale = Vector2(1.5, 1.5)
+_cutscene = ExtResource("20_i3ngi")
+
+[node name="Elevator" type="Marker2D" parent="." node_paths=PackedStringArray("_levelSelect")]
+position = Vector2(-1770, 388)
+gizmo_extents = 229.0
+script = ExtResource("15_lu01w")
+_levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
+
+[node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
+position = Vector2(26234, -4434)
+
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnPressed" flags=18]
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" method="OnMouseEntered" flags=18]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" method="OnMouseExited" flags=18]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Management" method="OnPressed" flags=18]
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" method="OnMouseEntered" flags=18]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" method="OnMouseExited" flags=18]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory" method="OnPressed" flags=18]

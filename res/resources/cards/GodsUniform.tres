@@ -22,3 +22,4 @@ _buffDuration = [6]
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
+_price = 0

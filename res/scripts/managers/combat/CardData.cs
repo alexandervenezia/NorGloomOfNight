@@ -187,8 +187,15 @@ public partial class CardData : Resource
     // Debuff type/duration
     [Export] private Godot.Collections.Array<DebuffType> _debuffs = new();
     [Export] private Godot.Collections.Array<int> _debuffDuration = new(); // Turn based, not seconds
+
+    [ExportGroup("Meta")]
+    [Export] private int _price;
+    [Export] private CardData _upgrade;
+    public int Price => _price;
+    public CardData Upgrade => _upgrade;
     // public Dictionary<DebuffType, int> Debuffs;
     public List<Debuff> Debuffs;
+
 
 
     private int _uid;
