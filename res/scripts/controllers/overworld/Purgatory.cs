@@ -7,6 +7,9 @@ public partial class Purgatory : Node2D, ILevel
 {
 	[Export] private string _managementUID;
 	[Export] private string _prideUID;
+	[Export] private string _journalID;
+	[Export] private string _introMusicUID;
+	[Export] private string _loopMusicUID;
 	private Player _player;
 	public Player Player => _player;
 	private Vector2 _playerSpawn;
@@ -19,11 +22,17 @@ public partial class Purgatory : Node2D, ILevel
 		if (_player != null)
 			_player.EnemyAggroed += OnAggro;
 		_playerSpawn = _player.GlobalPosition;
+
 	}
 
 	private async void OnAggro(ICombatable enemy)
 	{
 		GD.Print(enemy.IsEnabled());
+
+		if (enemy.HasIntroCutscene())
+		{
+			await _player.PlayCutscene(enemy.GetIntroCutscene());
+		}
 
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
@@ -50,7 +59,6 @@ public partial class Purgatory : Node2D, ILevel
 		_player.GlobalPosition = _playerSpawn;
 	}
 
-	// TESTING TOOL
 	public override void _Process(double delta)
 	{
 		if (Input.IsKeyPressed(Key.Delete))
@@ -61,28 +69,53 @@ public partial class Purgatory : Node2D, ILevel
 			pride.AddChild(_player);
 			((Pride)pride).SetPlayer(_player);
 		}
+
+		if (Input.IsActionJustPressed("Escape"))
+		{
+			Journal journal = (Journal)UseElevator(_journalID);
+		}
 	}
 
 	public void Reactivate()
 	{
+		if (!MasterAudio.GetInstance().GetNoRestart())
+		{
+			MasterAudio.GetInstance().ClearQueue();
+			MasterAudio.GetInstance().PlaySong(_introMusicUID);
+			MasterAudio.GetInstance().QueueSong(_loopMusicUID);
+		}
+
 		GD.Print("Enemy: " + _enemyInCombat);
+		if (!IsInstanceValid((Node)_enemyInCombat))
+			_enemyInCombat = null;
+
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
+		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
+
+		if (_player.CurrentHealth == -1)
+			_player.FullHeal();
+
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
+			GD.Print("Respawn: " + _player.CurrentHealth);
 			_enemyInCombat?.Enable();
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
+
+			_player.Die();
 		}
 		else
 			_enemyInCombat?.Die();
 	}
 
-	public async void UseElevator(string dest="")
-	{		
+	public Node UseElevator(string dest = "")
+	{
 		//MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
-		
+
+		MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
+
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, true);
-		
+
 		if (destination is HellLevel)
 		{
 			RemoveChild(_player);
@@ -91,9 +124,9 @@ public partial class Purgatory : Node2D, ILevel
 			SetOwnerRecursive(_player, destination);
 			_player.GetNode<Button>("Camera2D/BackToPurgatory/LevelSelectMenu/Purgatory").Owner = destination;
 			((HellLevel)destination).SetPlayer(_player);
-
-			
 		}
+
+		return destination;
 	}
 
 	private void SetOwnerRecursive(Node root, Node owner)

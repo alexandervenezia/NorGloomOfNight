@@ -20,7 +20,8 @@ public partial class MasterScene : Node
 	private string _lastScene;
 
 	private List<int> _enemyIDs;
-	private int _playerHP;
+	private int _playerHP = -1;
+	private int _coinsFound;
 
 	private static MasterScene _instance;
 
@@ -61,6 +62,18 @@ public partial class MasterScene : Node
 	public int LoadPlayerHP()
 	{
 		return _playerHP;
+	}
+
+	public void AddCoins(int coins)
+	{
+		_coinsFound += coins;
+	}
+
+	public int CollectCoins()
+	{
+		int temp = _coinsFound;
+		_coinsFound = 0;
+		return temp;
 	}
 
 	public bool IsInCombat()
@@ -138,5 +151,10 @@ public partial class MasterScene : Node
 
 		_loadedScenes[uid].QueueFree();
 		_loadedScenes.Remove(uid);
+	}
+
+	public T GetActiveScene<T>()
+	{
+		return (T)(object)_loadedScenes[_activeScene];
 	}
 }

@@ -4,7 +4,7 @@ using Godot;
 using System;
 using System.ComponentModel;
 using System.Data;
-using System.Numerics;
+using System.Threading;
 using System.Threading.Tasks;
 
 /*
@@ -41,6 +41,8 @@ public partial class Player : CharacterBody2D
 	public int MaxHealth => _maxHealth;
 	private int _currentHealth;
 	public int CurrentHealth => _currentHealth;
+	private int _coins;
+	public int Coins => _coins;
 	[Export] private float _walkSpeed = 500f;
 	[Export] private float _sprintSpeed = 1700f;
 	[Export] private float _jumpTime; // Time spent in upward acceleration
@@ -55,6 +57,7 @@ public partial class Player : CharacterBody2D
 	private State _state;
 	private AnimatedSprite2D _playerSprite;
 	private CharacterBody2D _charcterBody;
+	private CutscenePlayer _cutscenePlayer;
 
 	public delegate void CombatStart(ICombatable enemy);
 	public event CombatStart EnemyAggroed;
@@ -64,14 +67,18 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer _jumpSound;
 	private AudioStreamPlayer _landSound;
 
+	private bool _cutsceneFinished = false;
+	private bool _glideState = false;
+
 	public override void _Ready()
 	{
 		_gravityDefault = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 		_gravityDefault *= _gravityMult;
 		_state = State.GROUNDED;
 		_coyoteTimer = _coyoteBuffer;
-		// _playerSprite = GetNode<Sprite2D>("PlayerSkin");
+				
 		_playerSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_cutscenePlayer = GetNode<CutscenePlayer>("Camera2D/CutscenePlayer");
 
 		_walkSound = (AudioStreamPlayer)GetNode("WalkSound");
 		_runSound = (AudioStreamPlayer)GetNode("RunSound");
@@ -81,7 +88,7 @@ public partial class Player : CharacterBody2D
 		_quest = _quests[0];
 		UpdateQuestUI();
 		QuestManager.GetInstance().FlagChanged += QuestFlagUpdated;
-
+		_cutscenePlayer.OnEnd += OnCutsceneEnd;
 
 		// PlayFootsteps();
 	}
@@ -101,11 +108,17 @@ public partial class Player : CharacterBody2D
 		if (_quest == null)
 		{
 			_questUI.GetNode<RichTextLabel>("QuestName").Text = "";
-			_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=75]Your work is done . . . for now.";
+			_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=125]Your work is done . . . for now.";
 		}
 
 		_questUI.GetNode<RichTextLabel>("QuestName").Text = "[right][font_size=200]" + _quest.GetName();
-		_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=75]" + _quest.GetNextStep();
+		_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=125]" + _quest.GetNextStep();
+	}
+
+	public void FrameChange()
+	{
+		if (_playerSprite.Animation == "jump" && _playerSprite.Frame == _playerSprite.SpriteFrames.GetFrameCount("jump")-1)
+			_glideState = true;
 	}
 
 	public override void _Process(double delta)
@@ -125,7 +138,17 @@ public partial class Player : CharacterBody2D
 		}
 		else if (IsJumping())
 		{
-			_playerSprite.Play("jump");
+			if (!_glideState)
+			{
+				_playerSprite.Play("jump");
+			}
+			else
+			{
+				if (Input.IsActionPressed("Jump"))
+					_playerSprite.Play("glide");
+				else
+					_playerSprite.Play("idle");
+			}
 		}
 		else if (IsWalking())
 		{
@@ -133,6 +156,8 @@ public partial class Player : CharacterBody2D
 			if (!_walkSound.Playing)
 				_walkSound.Play();
 		}
+
+		//Shop shop = (Shop)_level.UseElevator(_shopUID);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -180,6 +205,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_glideState = false;
 					_jumpSound.Play();
 				}
 				break;
@@ -191,6 +217,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_glideState = false;
 					_jumpSound.Play();
 				}
 
@@ -231,7 +258,7 @@ public partial class Player : CharacterBody2D
 
 	private bool GetJumpInput()
 	{
-		return Input.IsActionJustPressed("ui_select");
+		return Input.IsActionJustPressed("Jump");
 	}
 
 	private bool GetSprintInput()
@@ -309,52 +336,97 @@ public partial class Player : CharacterBody2D
 			if (area.GetOwner<ICombatable>().IsEnabled())
 				EnemyAggroed?.Invoke(area.GetOwner<ICombatable>());
 		}
+		if (area is ShopEntrance)
+		{			
+			GD.Print("Enter");
+			((ShopEntrance)area).Enter();
+		}
+		if (area is HealArea)
+		{
+			GD.Print("HealEnter");
+			((HealArea)area).Enter();
+		}
+		if (area is Spike)
+		{
+			GD.Print("SpikeEnter");
+			HandleSpikeHit(((Spike)area).Damage);
+		}
 	}
 
-	/*
-	private async void PlayFootsteps()
+	private void OnArea2DExited(Area2D area)
 	{
-		bool onGround = IsOnFloor();
-		while (true)
-		{
-			if (MasterScene.GetInstance().IsInCombat())
-			{
-				await Task.Delay(250);
-				continue;
-			}
-			if (!onGround && IsOnFloor())
-			{
-				_landSound.Play();
-			}
-			onGround = IsOnFloor();
-
-			if (Mathf.Abs(GetMovementInput().X) < 0.5f)
-			{
-				await Task.Delay(100);
-				continue;
-			}
-			if (IsJumping())
-			{
-				await Task.Delay(300);
-				continue;
-			}
-			if (IsSprinting())
-			{
-				_runSound.Play();
-				await Task.Delay(150);
-			}
-			else
-			{
-				_walkSound.Play();
-				await Task.Delay(700);
-			}
-
+		if (area is ShopEntrance)
+		{			
+			GD.Print("Exit");
+			((ShopEntrance)area).Exit();
 		}
-	}*/
+		if (area is HealArea)
+		{
+			GD.Print("HealExit");
+			((HealArea)area).Exit();
+		}
+
+	}
+
+	private void OnCutsceneEnd()
+	{
+		GD.Print("OnEnd");
+		_cutsceneFinished = true;
+	}
+
+	public async Task PlayCutscene(Cutscene cutscene)
+	{
+		_cutscenePlayer.Visible = true;
+		_cutsceneFinished = false;
+		_cutscenePlayer.SetCutscene(cutscene);
+
+		await Task.Run(() => {
+			_cutsceneFinished = false;
+
+			while (!_cutsceneFinished)
+			{
+				Thread.Sleep(100);
+			}		
+
+			});
+
+		_cutscenePlayer.Visible = false;
+	}
 
 	public void SetHealth(int hp)
 	{
 		_currentHealth = hp;
+	}
+
+	public void AddCoins(int coins)
+	{
+		_coins += coins;
+		GD.Print(_coins, " coins");
+	}
+
+	public void RemoveCoins(int coins)
+	{
+		_coins -= coins;
+	}
+
+	public void FullHeal()
+	{
+		_currentHealth = MaxHealth;
+		GD.Print("Healed! Health " + _currentHealth);
+	}
+
+	public void HandleSpikeHit(int dmg)
+	{
+		GD.Print("Hit spike.");
+		_currentHealth -= dmg;
+		if (_currentHealth <= 0) Die();
+		Velocity = new Vector2(-Velocity.X * 5, -Velocity.Y);
+	}
+
+	public void Die()
+	{
+		GD.Print("Player died - Die() stub called");
+		// TODO: Implement death screen
 	}
 }
 

@@ -21,9 +21,10 @@ shape = SubResource("CapsuleShape2D_207lw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_vpm6o")
-animation = &"idle"
+animation = &"jump"
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_207lw")
@@ -49,4 +50,6 @@ stream = ExtResource("6_tk2ai")
 volume_db = 4.0
 bus = &"SFX"
 
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="FrameChange"]
 [connection signal="area_entered" from="Area2D" to="." method="OnArea2DEntered"]
+[connection signal="area_exited" from="Area2D" to="." method="OnArea2DExited"]

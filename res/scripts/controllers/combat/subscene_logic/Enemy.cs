@@ -14,6 +14,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Threading.Tasks;
 using Systems.Combat;
 
+public struct Drop
+{
+	public int Gold;
+	public CardData Card; // Can be null
+}
 
 public partial class Enemy : Combatant
 {
@@ -25,6 +30,9 @@ public partial class Enemy : Combatant
 	[Export] private int _ID;
 	public int UID => _ID;
 	[Export] private Godot.Collections.Array<DamageType> _permanentResistances = new();
+	[Export] protected int _goldDrop;
+	[Export] protected int _percentChanceOfCardDrop;
+	[Export] protected Godot.Collections.Array<CardData> _cardDrops;
 
 	public override void _Ready()
 	{
@@ -295,6 +303,20 @@ public partial class Enemy : Combatant
 		base.TakeDamage(type, amount, critModifier, isCrit, autoResist);
 		if (_isDead)
 			Die();
+	}
+
+	public Drop GetDrop()
+	{
+		Drop drop;
+		drop.Gold = _goldDrop;
+
+		bool cardDropped = CombatManager.GetInstance().RNG.Next(100) < _percentChanceOfCardDrop;
+		if (cardDropped && _cardDrops.Count > 0)
+			drop.Card = _cardDrops[CombatManager.GetInstance().RNG.Next(_cardDrops.Count)];
+		else
+			drop.Card = null;
+
+		return drop;
 	}
 
 }

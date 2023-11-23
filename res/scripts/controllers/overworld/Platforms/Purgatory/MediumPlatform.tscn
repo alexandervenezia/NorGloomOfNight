@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://md0lwaor2nke"]
 
-[ext_resource type="Texture2D" uid="uid://hxso1g8ckib1" path="res://res/scenes/overworld/purgatory/img/Medium platform.PNG" id="1_ib81o"]
+[ext_resource type="Texture2D" uid="uid://bjtl4ockj2vqq" path="res://res/scenes/overworld/purgatory/img/Platform medium.PNG" id="1_8afaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3kii"]
 size = Vector2(340, 115)
@@ -8,7 +8,7 @@ size = Vector2(340, 115)
 [node name="MedPlatform" type="Node2D"]
 
 [node name="Platform" type="Sprite2D" parent="."]
-texture = ExtResource("1_ib81o")
+texture = ExtResource("1_8afaa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

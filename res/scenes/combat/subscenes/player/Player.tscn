@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjvk42o3wxiyl"]
+[gd_scene load_steps=12 format=3 uid="uid://cjvk42o3wxiyl"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Player.cs" id="1_vvg4x"]
 [ext_resource type="SpriteFrames" uid="uid://d0xuag4u0grsi" path="res://res/scenes/combat/subscenes/player/asset/animation/player_frames.tres" id="2_kg70c"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dj6erpmyku2qc" path="res://res/scenes/combat/audio/draw.ogg" id="5_25uvg"]
 [ext_resource type="AudioStream" uid="uid://cvldrv41gdld0" path="res://res/scenes/combat/audio/card_drop.ogg" id="6_dxykr"]
 [ext_resource type="AudioStream" uid="uid://vgspo8yd51si" path="res://res/scenes/combat/audio/drop_2.ogg" id="7_haymp"]
+[ext_resource type="AudioStream" uid="uid://cc5xe3eamoqgr" path="res://assets/audio/Card Draw.wav" id="8_khlrg"]
+[ext_resource type="AudioStream" uid="uid://be8aca58gqfm2" path="res://assets/audio/Card Hover.wav" id="9_cl4gm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u6yp"]
 radius = 57.0
@@ -37,12 +39,24 @@ position = Vector2(-0.500025, 142.75)
 
 [node name="DrawSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_25uvg")
+volume_db = 1.0
 bus = &"UI"
 
 [node name="SelectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_dxykr")
+volume_db = 1.0
 bus = &"UI"
 
 [node name="DropSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_haymp")
+volume_db = 1.0
+bus = &"UI"
+
+[node name="PlayCardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_khlrg")
+volume_db = -1.0
+bus = &"UI"
+
+[node name="MouseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_cl4gm")
 bus = &"UI"

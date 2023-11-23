@@ -31,6 +31,7 @@ public partial class CutscenePlayer : ColorRect
     public void SetCutscene(Cutscene cutscene)
     {
         Visible = true;
+        _lineIndex = 0;
         _data = cutscene;
         Engine.TimeScale = 0f;
         LoadNextLine();
@@ -58,10 +59,18 @@ public partial class CutscenePlayer : ColorRect
         {
             Engine.TimeScale = 1f;
             Visible = false;
+            _data = null;
             OnEnd?.Invoke();
             return;
         }
-        string fullText = _dialoguePrefix + ParseLine(_data.SpeakerName + ":<br></narration>" + _data.Lines[_lineIndex]);
+        string fullText;
+        if (_data.SpeakerName != "")
+            fullText = _dialoguePrefix + ParseLine(_data.SpeakerName + ":<br>[/color]" + _data.Lines[_lineIndex]);
+        else
+            fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);
+
+        // NOTE: This disables the "Speaker's name" component
+        fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);
 
         _lineIndex++;
         _rendering = true;
@@ -72,8 +81,8 @@ public partial class CutscenePlayer : ColorRect
     {
         string parsed = "";
 
-        parsed = raw.Replace("<narration>", "[color=#444444]");
-        parsed = parsed.Replace("</narration>", "[/color]");
+        parsed = raw.Replace("<narration>", "[i][color=#444444]");
+        parsed = parsed.Replace("</narration>", "[/color][/i]");
         parsed = parsed.Replace("<br>", "\n    ");
 
         return parsed;
@@ -112,9 +121,9 @@ public partial class CutscenePlayer : ColorRect
                 _dialogue.Text = _dialogue.Text + text[charIndex];
                 if (text[charIndex] == '\n')
                 {
-                    delay = 750;
+                    delay = 500;
                 }
-                else if (text[charIndex] == '.' || text[charIndex] == '-')
+                else if (text[charIndex] == '.' || text[charIndex] == '—')
                     delay = 240;
                 else if (text[charIndex] == ',')
                     delay = 150;
