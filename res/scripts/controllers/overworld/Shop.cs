@@ -110,6 +110,9 @@ public partial class Shop : Node2D
         if (_active == null)
             return;
 
+        if (_active.Data.UnremovableByPlayer)
+            return;
+
         MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
         _active = null;
         UpdateSelection();
