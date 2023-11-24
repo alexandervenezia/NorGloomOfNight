@@ -4,7 +4,6 @@ using Godot;
 using System;
 using System.ComponentModel;
 using System.Data;
-using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -422,7 +421,7 @@ public partial class Player : CharacterBody2D
 		GD.Print("Hit spike.");
 		_currentHealth -= dmg;
 		if (_currentHealth <= 0) Die();
-		Velocity = new Vector2(-Velocity.X * 5, -Velocity.Y);
+		Velocity = new Godot.Vector2(-Velocity.X * 5, -Velocity.Y);
 	}
 
 	public void Die()
