@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://bakphjas5nire"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_ocx0g"]
-[ext_resource type="Texture2D" uid="uid://b87qefj5m3tnm" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/Idle/0.png" id="4_cjswu"]
 [ext_resource type="Resource" uid="uid://mtor7au8b2cf" path="res://res/resources/cards/HolyWord+.tres" id="4_f8pau"]
 [ext_resource type="Resource" uid="uid://d3467tmndqlkr" path="res://res/resources/cards/FullHouse.tres" id="4_j2lk3"]
 [ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="4_k0la1"]
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="5_5wcge"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="5_r7tin"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_oawnf"]
+[ext_resource type="SpriteFrames" uid="uid://dvv37fwwd1ix" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/PokerGuyCombatAnimation.tres" id="6_wdeph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
 resource_local_to_scene = true
@@ -33,11 +33,12 @@ _startingMovementPoints = 0
 _defaultCritModifier = 1.5
 _startingArmor = 10
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(31, -35)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_cjswu")
+sprite_frames = ExtResource("6_wdeph")
+animation = &"hurt"
 
 [node name="HealthBar" parent="." instance=ExtResource("5_r7tin")]
 z_index = 1

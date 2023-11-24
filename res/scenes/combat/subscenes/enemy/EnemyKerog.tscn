@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_qjx0m"]
 [ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="2_kbjd2"]
 [ext_resource type="Resource" uid="uid://djp22yro3qat6" path="res://res/resources/cards/Stomp.tres" id="3_20lrt"]
-[ext_resource type="Texture2D" uid="uid://c5b8yr685m8ev" path="res://res/scenes/combat/subscenes/enemy/assets/Kerog_enemy.png" id="4_bainj"]
 [ext_resource type="Resource" uid="uid://cagkcsnwq2qr0" path="res://res/resources/cards/HellsGrasp.tres" id="4_qutwh"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="5_l6jft"]
+[ext_resource type="SpriteFrames" uid="uid://dh8oo3oofs8q8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/KerogCombatAnimation.tres" id="5_m71fg"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_p2fnk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
@@ -36,11 +36,11 @@ _startingArmor = 5
 y_sort_enabled = true
 shape = SubResource("CapsuleShape2D_shunw")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(12, -6)
 scale = Vector2(-0.2, 0.2)
-texture = ExtResource("4_bainj")
+sprite_frames = ExtResource("5_m71fg")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_l6jft")]
 material = SubResource("ShaderMaterial_do74u")
