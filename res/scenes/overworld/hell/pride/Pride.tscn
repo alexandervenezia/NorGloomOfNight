@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=77 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="9_yx607"]
 [ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="10_wdm8t"]
 [ext_resource type="PackedScene" uid="uid://cb5fb4m2d5w2f" path="res://res/scenes/overworld/Spike.tscn" id="11_16ymw"]
+[ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="12_46j0o"]
+[ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="13_afauk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -697,3 +699,8 @@ scale = Vector2(0.5, 0.5)
 [node name="Spike3" parent="." instance=ExtResource("11_16ymw")]
 position = Vector2(-20864, 3120)
 scale = Vector2(0.5, 0.5)
+
+[node name="FloatingTextFactory" type="Node2D" parent="."]
+script = ExtResource("12_46j0o")
+_theme = ExtResource("13_afauk")
+_fontSize = 50

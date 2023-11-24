@@ -4,6 +4,7 @@ using Godot;
 using System;
 using System.ComponentModel;
 using System.Data;
+using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -349,6 +350,7 @@ public partial class Player : CharacterBody2D
 		if (area is Spike)
 		{
 			GD.Print("SpikeEnter");
+			FloatingTextFactory.GetInstance().CreateFloatingText(((Spike)area).Damage.ToString(), Position-Godot.Vector2.Left*50, fontSize:150, color:"red");
 			HandleSpikeHit(((Spike)area).Damage);
 		}
 	}

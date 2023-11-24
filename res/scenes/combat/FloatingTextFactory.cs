@@ -8,17 +8,29 @@ public partial class FloatingTextFactory : Node2D
 {
     [Export] Theme _theme;
     [Export] int _fontSize = 30;
-    private static FloatingTextFactory _instance;
+    private static FloatingTextFactory _activeInstance;
     private Queue<RichTextLabel> _waitingQueue;
     public override void _Ready()
     {
-        _instance = this;
+
+        GD.Print("New instance of FLoatingText");
+        _activeInstance = this;
         _waitingQueue = new();
+
+        TreeEntered += OnEnterTree;
     }
+
+    private void OnEnterTree()
+    {
+        GD.Print("Entered tree - FloaingText");
+        _activeInstance = this;
+    }
+
+
 
     public static FloatingTextFactory GetInstance()
     {
-        return _instance;
+        return _activeInstance;
     }
 
     public void CreateFloatingCardText(bool isHeal, bool isCrit, bool isPoison, bool isResist, int armorAmount, int amount, Vector2 position)
@@ -28,19 +40,23 @@ public partial class FloatingTextFactory : Node2D
         string prefix = isCrit ? "Critical! " : "";
         if (isResist)
             prefix += "Resist! ";
-        string message = String.Format("[color={0}]{1}{2}[/color]", color, prefix, amount);
+        string message = String.Format("{1}{2}", color, prefix, amount);
 
         Vector2 offset = Vector2.Up * 100;
 
-        CreateFloatingText(message, position  + offset);
+        CreateFloatingText(message, position  + offset, color:color);
 
         if (armorAmount > 0)
-            CreateFloatingText(String.Format("[color=#888888][s]{0}[/s][/color]", armorAmount), position + offset*1.5f);
+            CreateFloatingText(String.Format("[s]{0}[/s]", armorAmount), position + offset*1.5f, color:"#888888");
     }
 
-    public void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200)
+    public void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200, int fontSize=-1, string color="#111111")
     {
-        message = String.Format("[center][font_size={0}]{1}[/font_size][/center]", _fontSize, message);
+        if (fontSize == -1)
+            fontSize = _fontSize;
+
+        message = String.Format("[center][font_size={0}][color={1}]{2}[/color][/font_size][/center]", fontSize, color, message);
+        GD.Print("Message", message);
 
         RichTextLabel floatingText;
 
