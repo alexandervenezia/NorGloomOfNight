@@ -350,7 +350,7 @@ public partial class Player : CharacterBody2D
 		if (area is Spike)
 		{
 			GD.Print("SpikeEnter");
-			FloatingTextFactory.GetInstance().CreateFloatingText(((Spike)area).Damage.ToString(), Position-Godot.Vector2.Left*50, fontSize:150, color:"red");
+			FloatingTextFactory.GetInstance().CreateFloatingText(((Spike)area).Damage.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red");
 			HandleSpikeHit(((Spike)area).Damage);
 		}
 	}
@@ -373,7 +373,7 @@ public partial class Player : CharacterBody2D
 	public void TakeDamage(int dmg, bool spawnText=true)
 	{
 		if (spawnText)
-			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50, fontSize:150, color:"red");
+			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red");
 		_currentHealth -= dmg;
 		if (_currentHealth <= 0)
 			Die();
