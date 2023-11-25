@@ -13,6 +13,7 @@ public partial class GrabbyHand : Area2D
     private bool _abortAttack;
     private Player _player;
     private Sprite2D _grabber;
+    private CollisionShape2D _collider;
     
 
     public override void _Ready()
@@ -20,6 +21,7 @@ public partial class GrabbyHand : Area2D
         AreaEntered += OnAreaEntered;
         AreaExited += OnAreaExited;
         _grabber = GetNode<Sprite2D>("Sprite2D");
+        _collider = GetNode<CollisionShape2D>("CollisionShape2D");
         GD.Print("GrabbyPos: ", _grabber.Position);
         Visible = false;
     }
@@ -33,6 +35,12 @@ public partial class GrabbyHand : Area2D
             GD.Print("Grabby time");
             GD.Print(_player.Velocity.X);
             _grabber.GlobalPosition = new Vector2(_player.GlobalPosition.X + _player.Velocity.X * _warningTimeMS / 1000f, _grabber.GlobalPosition.Y);
+
+            if (_grabber.GlobalPosition.X < GlobalPosition.X - _collider.Shape.GetRect().Size[0])
+                _grabber.GlobalPosition = new Vector2(GlobalPosition.X-_collider.Shape.GetRect().Size[0], _grabber.GlobalPosition.Y);
+            if (_grabber.GlobalPosition.X > GlobalPosition.X + _collider.Shape.GetRect().Size[0])
+                _grabber.GlobalPosition = new Vector2(GlobalPosition.X + _collider.Shape.GetRect().Size[0], _grabber.GlobalPosition.Y);
+            
             GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
             StartAttackProcess();
         }

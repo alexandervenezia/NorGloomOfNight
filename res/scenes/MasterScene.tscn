@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d204n4ckwe72x"]
+[gd_scene load_steps=21 format=3 uid="uid://d204n4ckwe72x"]
 
 [ext_resource type="Script" path="res://res/scripts/MasterScene.cs" id="1_smi8o"]
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/MasterDeck.cs" id="2_ykx58"]
@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="17_ltb3f"]
 [ext_resource type="Resource" uid="uid://djp22yro3qat6" path="res://res/resources/cards/Stomp.tres" id="18_30yo1"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MasterAudio.cs" id="19_pwt8m"]
+[ext_resource type="Script" path="res://res/scripts/controllers/combat/EnemyAssetLookup.cs" id="20_1tv6u"]
 
 [node name="MasterScene" type="Node2D"]
 script = ExtResource("1_smi8o")
@@ -38,5 +39,15 @@ _fadeTimeSeconds = 5.0
 _musicPath = "res://assets/audio/music/"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MasterAudio"]
+
+[node name="MasterAssetLoader" type="Node" parent="."]
+
+[node name="CombatEnemies" type="Node" parent="MasterAssetLoader"]
+script = ExtResource("20_1tv6u")
+Lookup = {
+1: "uid://dh8oo3oofs8q8",
+2: "uid://drx2u0bka0e2v",
+91: "uid://dvv37fwwd1ix"
+}
 
 [connection signal="finished" from="MasterAudio/AudioStreamPlayer" to="MasterAudio" method="MusicFinished"]

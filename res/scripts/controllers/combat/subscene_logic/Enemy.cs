@@ -38,6 +38,8 @@ public partial class Enemy : Combatant
 
 	public override void _Ready()
 	{
+		_sprite = GetNode<AnimatedSprite2D>("Sprite");
+		_sprite.SpriteFrames = EnemyAssetLookup.GetInstance().GetAsset(_ID);
 		base._Ready();
 		SetCollisionMaskValue(1, false);
 		SetCollisionMaskValue(SharedCollisionLayer, true);
@@ -62,7 +64,7 @@ public partial class Enemy : Combatant
 
 		_permanentResistances.Clear();
 
-		_sprite = GetNode<AnimatedSprite2D>("Sprite");
+		
 		_sprite.Play("default");
 	}
 

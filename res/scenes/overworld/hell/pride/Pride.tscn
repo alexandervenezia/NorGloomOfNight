@@ -1,8 +1,7 @@
-[gd_scene load_steps=84 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=83 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
-[ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 [ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="6_b5q6i"]
@@ -213,7 +212,7 @@ size = Vector2(1696, 640)
 size = Vector2(1488, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3ca"]
-size = Vector2(5552, 640)
+size = Vector2(6080, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6trc2"]
 size = Vector2(2192, 640)
@@ -231,10 +230,6 @@ position = Vector2(-150, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("2_ef77q")
 metadata/_edit_lock_ = true
-
-[node name="Boi" type="Sprite2D" parent="."]
-position = Vector2(-13340, -736)
-texture = ExtResource("3_ffxcs")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -712,6 +707,22 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-16256, 3120)
 scale = Vector2(0.5, 0.5)
 
+[node name="Spike4" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-4160, -5536)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike5" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-5600, -6368)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike6" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-7040, -6096)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike7" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-8640, -5808)
+scale = Vector2(0.5, 0.5)
+
 [node name="Spike3" parent="." instance=ExtResource("11_16ymw")]
 position = Vector2(-20864, 3120)
 scale = Vector2(0.5, 0.5)
@@ -755,7 +766,7 @@ position = Vector2(-22320, 7616)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
-position = Vector2(8, 0)
+position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_6u3ca")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby4"]
