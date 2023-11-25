@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class EnemyAssetLookup : Node
 {
@@ -15,13 +16,19 @@ public partial class EnemyAssetLookup : Node
         Frames = new();
         foreach (int id in Lookup.Keys)
         {
-            Frames.Add(id, GD.Load<SpriteFrames>(Lookup[id]));
+            // Frames.Add(id, GD.Load<SpriteFrames>(Lookup[id]));
+            ResourceLoader.LoadThreadedRequest(Lookup[id]);
         }
     }
 
     public SpriteFrames GetAsset(int id)
     {
+        if (!Frames.ContainsKey(id))
+        {
+            Frames.Add(id, (SpriteFrames)ResourceLoader.LoadThreadedGet(Lookup[id]));
+        }
         return Frames[id];
+        //return Frames[id];
     }
 
     public static EnemyAssetLookup GetInstance()

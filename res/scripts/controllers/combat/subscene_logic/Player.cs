@@ -60,6 +60,7 @@ public partial class Player : Combatant
         _state = PlayerState.SELECTING_CARD;
         _targetLabel.Visible = false;
         _sprite = (AnimatedSprite2D)GetNode<AnimatedSprite2D>("Player");
+        _sprite.SpriteFrames = EnemyAssetLookup.GetInstance().GetAsset(0);
 
         _drawSound = (AudioStreamPlayer)GetNode("DrawSound");
         _selectSound = (AudioStreamPlayer)GetNode("SelectSound");

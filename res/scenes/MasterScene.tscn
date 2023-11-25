@@ -42,9 +42,10 @@ _musicPath = "res://assets/audio/music/"
 
 [node name="MasterAssetLoader" type="Node" parent="."]
 
-[node name="CombatEnemies" type="Node" parent="MasterAssetLoader"]
+[node name="Combat" type="Node" parent="MasterAssetLoader"]
 script = ExtResource("20_1tv6u")
 Lookup = {
+0: "uid://d0xuag4u0grsi",
 1: "uid://dh8oo3oofs8q8",
 2: "uid://drx2u0bka0e2v",
 91: "uid://dvv37fwwd1ix"
