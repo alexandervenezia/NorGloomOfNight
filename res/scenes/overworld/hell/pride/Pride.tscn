@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=84 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -14,7 +14,8 @@
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="12_46j0o"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="13_afauk"]
 [ext_resource type="Texture2D" uid="uid://o3v05ium3g" path="res://res/scenes/overworld/hell/pride/Clear fixed camera bg.PNG" id="14_reeqw"]
-[ext_resource type="PackedScene" uid="uid://c1jmihpkce64o" path="res://res/scenes/overworld/hell/pride/Grabby/Grabby.tscn" id="15_q8c7f"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/GrabbyHand.cs" id="15_ps8to"]
+[ext_resource type="Texture2D" uid="uid://cn3a2dsqf2g61" path="res://res/scenes/overworld/hell/pride/Grabby/grippy_enemy.png" id="16_uxfrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -204,6 +205,18 @@ size = Vector2(572.5, 3160.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vesw"]
 size = Vector2(4607.63, 864.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
+size = Vector2(1696, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vuni"]
+size = Vector2(1488, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3ca"]
+size = Vector2(5552, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6trc2"]
+size = Vector2(2192, 640)
 
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -715,5 +728,47 @@ position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_reeqw")
 
-[node name="Grabby" parent="." instance=ExtResource("15_q8c7f")]
-position = Vector2(-17616, -1856)
+[node name="Grabby" type="Area2D" parent="."]
+position = Vector2(-8880, -1872)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby"]
+position = Vector2(112, 0)
+shape = SubResource("RectangleShape2D_qlov1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Grabby3" type="Area2D" parent="."]
+position = Vector2(-27504, 7648)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_6vuni")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby3"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Grabby4" type="Area2D" parent="."]
+position = Vector2(-22320, 7616)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_6u3ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby4"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Grabby2" type="Area2D" parent="."]
+position = Vector2(-8472, -2266)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
+position = Vector2(2048, 986)
+shape = SubResource("RectangleShape2D_6trc2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby2"]
+position = Vector2(1992, 986)
+texture = ExtResource("16_uxfrh")
