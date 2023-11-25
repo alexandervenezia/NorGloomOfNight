@@ -344,6 +344,7 @@ public partial class Player : CharacterBody2D
 		if (area is HealArea)
 		{
 			GD.Print("HealEnter");
+			FloatingTextFactory.GetInstance().CreateFloatingText("Full Heal!", Position-Godot.Vector2.Left*50, fontSize:150, color:"green");
 			((HealArea)area).Enter();
 		}
 		if (area is Spike)
@@ -367,6 +368,15 @@ public partial class Player : CharacterBody2D
 			((HealArea)area).Exit();
 		}
 
+	}
+
+	public void TakeDamage(int dmg, bool spawnText=true)
+	{
+		if (spawnText)
+			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50, fontSize:150, color:"red");
+		_currentHealth -= dmg;
+		if (_currentHealth <= 0)
+			Die();
 	}
 
 	private void OnCutsceneEnd()

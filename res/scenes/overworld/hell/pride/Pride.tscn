@@ -1,7 +1,7 @@
-[gd_scene load_steps=77 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=79 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
-[ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
+[ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
 [ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 [ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cb5fb4m2d5w2f" path="res://res/scenes/overworld/Spike.tscn" id="11_16ymw"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="12_46j0o"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="13_afauk"]
+[ext_resource type="Texture2D" uid="uid://o3v05ium3g" path="res://res/scenes/overworld/hell/pride/Clear fixed camera bg.PNG" id="14_reeqw"]
+[ext_resource type="PackedScene" uid="uid://c1jmihpkce64o" path="res://res/scenes/overworld/hell/pride/Grabby/Grabby.tscn" id="15_q8c7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -212,8 +214,9 @@ _introMusicUID = "uid://d1ix404tmx1jm"
 _loopMusicUID = "uid://cllm1liixd7f0"
 
 [node name="BgTemp" type="Sprite2D" parent="."]
+position = Vector2(-150, 0)
 scale = Vector2(4, 4)
-texture = ExtResource("2_ugo6q")
+texture = ExtResource("2_ef77q")
 metadata/_edit_lock_ = true
 
 [node name="Boi" type="Sprite2D" parent="."]
@@ -704,3 +707,13 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("12_46j0o")
 _theme = ExtResource("13_afauk")
 _fontSize = 50
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_reeqw")
+
+[node name="Grabby" parent="." instance=ExtResource("15_q8c7f")]
+position = Vector2(-17616, -1856)
