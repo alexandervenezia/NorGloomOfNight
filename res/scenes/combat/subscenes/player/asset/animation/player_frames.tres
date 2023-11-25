@@ -1,8 +1,31 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://d0xuag4u0grsi"]
+[gd_resource type="SpriteFrames" load_steps=27 format=3 uid="uid://d0xuag4u0grsi"]
 
 [ext_resource type="Texture2D" uid="uid://b05b7rpo1cmoc" path="res://res/scenes/combat/subscenes/player/asset/animation/player_attack.PNG" id="1_kre7l"]
-[ext_resource type="Texture2D" uid="uid://rjr0f4cvnrok" path="res://res/scenes/combat/subscenes/player/asset/animation/player_hurt.PNG" id="2_4g20g"]
 [ext_resource type="Texture2D" uid="uid://c41xwv8rv622u" path="res://res/scenes/combat/subscenes/player/asset/animation/player_neutral.PNG" id="3_ig0iq"]
+[ext_resource type="Texture2D" uid="uid://c0qfywnla1gcw" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0000.png" id="3_itgqj"]
+[ext_resource type="Texture2D" uid="uid://6iiajveh1c7e" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0001.png" id="4_6nw40"]
+[ext_resource type="Texture2D" uid="uid://h4omtevqfivd" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0002.png" id="5_lnalx"]
+[ext_resource type="Texture2D" uid="uid://tjsnuq7071fi" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0003.png" id="6_msu3l"]
+[ext_resource type="Texture2D" uid="uid://dhlookuo05bya" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0004.png" id="7_k1gno"]
+[ext_resource type="Texture2D" uid="uid://c234w0qdnmb6e" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0005.png" id="8_ax8u1"]
+[ext_resource type="Texture2D" uid="uid://bx3e3pv4uioqu" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0006.png" id="9_l3i2u"]
+[ext_resource type="Texture2D" uid="uid://boy2dyvugy3e1" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0007.png" id="10_08and"]
+[ext_resource type="Texture2D" uid="uid://cppl36v2pwpuo" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0008.png" id="11_kcoxq"]
+[ext_resource type="Texture2D" uid="uid://b0h2yr8eldt7x" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0009.png" id="12_vwalj"]
+[ext_resource type="Texture2D" uid="uid://c2u3b4cwa0tpv" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0010.png" id="13_3uo6q"]
+[ext_resource type="Texture2D" uid="uid://dgbmjq5usjffp" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0011.png" id="14_vob8q"]
+[ext_resource type="Texture2D" uid="uid://cs60jh26vjxsv" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0012.png" id="15_pqgov"]
+[ext_resource type="Texture2D" uid="uid://be5knb62wi58r" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0013.png" id="16_n2ldi"]
+[ext_resource type="Texture2D" uid="uid://c16lv7t6ogjs0" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0014.png" id="17_rquxy"]
+[ext_resource type="Texture2D" uid="uid://bkncswt2umbvy" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0015.png" id="18_43or6"]
+[ext_resource type="Texture2D" uid="uid://0wjptqln0v68" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0016.png" id="19_jhuj3"]
+[ext_resource type="Texture2D" uid="uid://dsv31np7hkmir" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0017.png" id="20_1367n"]
+[ext_resource type="Texture2D" uid="uid://bxhonr6omrbhd" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0018.png" id="21_40ek4"]
+[ext_resource type="Texture2D" uid="uid://0rbnnh0qwrvk" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0019.png" id="22_vjtcx"]
+[ext_resource type="Texture2D" uid="uid://d0tjm05mpw5oh" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0020.png" id="23_n1qqa"]
+[ext_resource type="Texture2D" uid="uid://2bnlmr88onh2" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0021.png" id="24_calvc"]
+[ext_resource type="Texture2D" uid="uid://r6jgaxy034hi" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0022.png" id="25_ckcj4"]
+[ext_resource type="Texture2D" uid="uid://tcieyoiylro3" path="res://assets/animations/PlayerCombat/Damaged/Player_Damaged_0023.png" id="26_i27p0"]
 
 [resource]
 animations = [{
@@ -19,14 +42,80 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_4g20g")
+"texture": ExtResource("3_itgqj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ig0iq")
+"texture": ExtResource("4_6nw40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lnalx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_msu3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k1gno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ax8u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l3i2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_08and")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kcoxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vwalj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3uo6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vob8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pqgov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_n2ldi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rquxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_43or6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jhuj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1367n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_40ek4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vjtcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_n1qqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_calvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ckcj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_i27p0")
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 1.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,

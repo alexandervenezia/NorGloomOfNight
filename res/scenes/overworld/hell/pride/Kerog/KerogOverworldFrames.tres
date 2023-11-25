@@ -1,14 +1,170 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://d1qxf1j13278r"]
+[gd_resource type="SpriteFrames" load_steps=41 format=3 uid="uid://d1qxf1j13278r"]
 
-[ext_resource type="Texture2D" uid="uid://c5b8yr685m8ev" path="res://res/scenes/combat/subscenes/enemy/assets/Kerog_enemy.png" id="1_em8w7"]
+[ext_resource type="Texture2D" uid="uid://gynf7hp276pg" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0000.png" id="1_70ucd"]
+[ext_resource type="Texture2D" uid="uid://mrabgt5kurp" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0001.png" id="2_miram"]
+[ext_resource type="Texture2D" uid="uid://dgqcp2u7y46j8" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0002.png" id="3_xcbfy"]
+[ext_resource type="Texture2D" uid="uid://dh2qwlg6gnoua" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0003.png" id="4_1fcbs"]
+[ext_resource type="Texture2D" uid="uid://blt5dyxcwlqkh" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0004.png" id="5_skxlv"]
+[ext_resource type="Texture2D" uid="uid://b07kpieltj6jj" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0005.png" id="6_f8umr"]
+[ext_resource type="Texture2D" uid="uid://de68l4oc1cjhs" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0006.png" id="7_a7ygn"]
+[ext_resource type="Texture2D" uid="uid://b3mp3mdkuu4s2" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0007.png" id="8_y5tiu"]
+[ext_resource type="Texture2D" uid="uid://dnu6f21k4wi35" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0008.png" id="9_avhxf"]
+[ext_resource type="Texture2D" uid="uid://bhhlrug4wf7j" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0009.png" id="10_adens"]
+[ext_resource type="Texture2D" uid="uid://dd668na3yisl3" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0010.png" id="11_1mca5"]
+[ext_resource type="Texture2D" uid="uid://da1kerl5fg6fa" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0011.png" id="12_vga4u"]
+[ext_resource type="Texture2D" uid="uid://dgaskxts242p2" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0012.png" id="13_ktoe0"]
+[ext_resource type="Texture2D" uid="uid://cf1uryup0n1jq" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0013.png" id="14_4l14t"]
+[ext_resource type="Texture2D" uid="uid://n0ec0fpvmrbe" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0014.png" id="15_4y2im"]
+[ext_resource type="Texture2D" uid="uid://bavimilpmts0y" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0015.png" id="16_wvae8"]
+[ext_resource type="Texture2D" uid="uid://dpfqvt7s2868m" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0016.png" id="17_7dg7m"]
+[ext_resource type="Texture2D" uid="uid://cyp8wt5bs0jhp" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0017.png" id="18_1so4f"]
+[ext_resource type="Texture2D" uid="uid://clccw0bo5o5gl" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0018.png" id="19_rwsa0"]
+[ext_resource type="Texture2D" uid="uid://ccfknjiwb3jyx" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0019.png" id="20_6kknf"]
+[ext_resource type="Texture2D" uid="uid://ora8htyhixl5" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0020.png" id="21_0g561"]
+[ext_resource type="Texture2D" uid="uid://bb2pf5lr4es88" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0021.png" id="22_ihwex"]
+[ext_resource type="Texture2D" uid="uid://ydglxf406el0" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0022.png" id="23_ixaab"]
+[ext_resource type="Texture2D" uid="uid://c0y8vr84yox1v" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0023.png" id="24_juok4"]
+[ext_resource type="Texture2D" uid="uid://dw4x3xdnc1xvo" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0024.png" id="25_wox8f"]
+[ext_resource type="Texture2D" uid="uid://ds3faho0fs84a" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0025.png" id="26_fmivh"]
+[ext_resource type="Texture2D" uid="uid://bmyew6ok7y4he" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0026.png" id="27_vvv7f"]
+[ext_resource type="Texture2D" uid="uid://ce31c5s2alrer" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0027.png" id="28_y8rff"]
+[ext_resource type="Texture2D" uid="uid://corklbagfeow7" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0028.png" id="29_1jdc2"]
+[ext_resource type="Texture2D" uid="uid://cve4nawgfx817" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0029.png" id="30_540j1"]
+[ext_resource type="Texture2D" uid="uid://2wacvvmu2l64" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0030.png" id="31_rnefl"]
+[ext_resource type="Texture2D" uid="uid://d2x5gpxsc7q7y" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0031.png" id="32_gx7up"]
+[ext_resource type="Texture2D" uid="uid://dm7r05ysld0s6" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0032.png" id="33_7gukp"]
+[ext_resource type="Texture2D" uid="uid://svhirn6bautt" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0033.png" id="34_11jnp"]
+[ext_resource type="Texture2D" uid="uid://bni0t7at17rop" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0034.png" id="35_om5mg"]
+[ext_resource type="Texture2D" uid="uid://cj8eddqkonpqj" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0035.png" id="36_25y34"]
+[ext_resource type="Texture2D" uid="uid://c6pc8hl0hyeaq" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0036.png" id="37_t7fi6"]
+[ext_resource type="Texture2D" uid="uid://dtogidrj868ye" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0037.png" id="38_0fgv7"]
+[ext_resource type="Texture2D" uid="uid://cphvat8o562e0" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0038.png" id="39_acn05"]
+[ext_resource type="Texture2D" uid="uid://c7ewwwphw7s1h" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0039.png" id="40_mnj46"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_em8w7")
+"texture": ExtResource("1_70ucd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_miram")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xcbfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1fcbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_skxlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f8umr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a7ygn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y5tiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_avhxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_adens")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1mca5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vga4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ktoe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4l14t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4y2im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wvae8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7dg7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1so4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rwsa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6kknf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0g561")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ihwex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ixaab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_juok4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wox8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fmivh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_vvv7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_y8rff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1jdc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_540j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_rnefl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gx7up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7gukp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_11jnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_om5mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_25y34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_t7fi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0fgv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_acn05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_mnj46")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 24.0
 }]

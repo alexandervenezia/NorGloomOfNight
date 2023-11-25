@@ -20,6 +20,7 @@ _acceleration = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_162p7")
+frame_progress = 0.764283
 
 [node name="PatrolMarkers" type="Node2D" parent="."]
 

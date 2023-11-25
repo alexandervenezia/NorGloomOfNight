@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_bdvvg"]
 [ext_resource type="Resource" uid="uid://bcjf232cowv26" path="res://res/resources/cards/DivineSmite.tres" id="2_no64v"]
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="3_q2nc2"]
-[ext_resource type="Texture2D" uid="uid://c62uot0wq3kxs" path="res://res/scenes/combat/subscenes/enemy/assets/Devin_enemy.png" id="4_f12nr"]
+[ext_resource type="SpriteFrames" uid="uid://drx2u0bka0e2v" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/DevinCombatAnimation.tres" id="4_vd88b"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="5_ihfo4"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_7uk2k"]
 
@@ -33,11 +33,11 @@ y_sort_enabled = true
 position = Vector2(15, -26)
 shape = SubResource("CapsuleShape2D_shunw")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(31, -35)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_f12nr")
+sprite_frames = ExtResource("4_vd88b")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_ihfo4")]
 material = SubResource("ShaderMaterial_do74u")

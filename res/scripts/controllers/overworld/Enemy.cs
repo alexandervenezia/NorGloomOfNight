@@ -29,6 +29,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 		_enabled = true;
 		_spawnPoint = Position;
 		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_sprite.Play("default");
 	}
 
 	public override void _PhysicsProcess(double delta)
