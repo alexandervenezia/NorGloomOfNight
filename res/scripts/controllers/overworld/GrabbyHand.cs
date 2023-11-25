@@ -15,14 +15,16 @@ public partial class GrabbyHand : Area2D
     private Sprite2D _grabber;
     private CollisionShape2D _collider;
     
+    private Vector2 _grabberSpawn;
 
     public override void _Ready()
     {
         AreaEntered += OnAreaEntered;
         AreaExited += OnAreaExited;
         _grabber = GetNode<Sprite2D>("Sprite2D");
+        _grabberSpawn = _grabber.GlobalPosition;
         _collider = GetNode<CollisionShape2D>("CollisionShape2D");
-        GD.Print("GrabbyPos: ", _grabber.Position);
+        GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
         Visible = false;
     }
 
@@ -30,21 +32,31 @@ public partial class GrabbyHand : Area2D
     {
         if (area.Owner is Player)
         {
-            _abortAttack = false;
             _player = (Player)area.Owner;
             GD.Print("Grabby time");
             GD.Print(_player.Velocity.X);
             _grabber.GlobalPosition = new Vector2(_player.GlobalPosition.X + _player.Velocity.X * _warningTimeMS / 1000f, _grabber.GlobalPosition.Y);
 
-            if (_grabber.GlobalPosition.X < GlobalPosition.X - _collider.Shape.GetRect().Size[0])
-                _grabber.GlobalPosition = new Vector2(GlobalPosition.X-_collider.Shape.GetRect().Size[0], _grabber.GlobalPosition.Y);
-            if (_grabber.GlobalPosition.X > GlobalPosition.X + _collider.Shape.GetRect().Size[0])
-                _grabber.GlobalPosition = new Vector2(GlobalPosition.X + _collider.Shape.GetRect().Size[0], _grabber.GlobalPosition.Y);
-            
+            GD.Print(_grabberSpawn.X);
+            GD.Print(_collider.Shape.GetRect().Abs().Size[0]);
+            GD.Print(_grabberSpawn.X - _collider.Shape.GetRect().Abs().Size[0]/4f);
+
+            if (_grabber.GlobalPosition.X < _grabberSpawn.X - _collider.Shape.GetRect().Abs().Size[0]/4f)
+                _grabber.GlobalPosition = new Vector2(_grabberSpawn.X-_collider.Shape.GetRect().Abs().Size[0]/4f, _grabber.GlobalPosition.Y);
+            if (_grabber.GlobalPosition.X > _grabberSpawn.X + _collider.Shape.GetRect().Abs().Size[0]/4f)
+                _grabber.GlobalPosition = new Vector2(_grabberSpawn.X + _collider.Shape.GetRect().Abs().Size[0]/4f, _grabber.GlobalPosition.Y);
+                
             GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
             StartAttackProcess();
         }
     }
+
+    /*
+    public override void _Process(double delta)
+    {
+        Visible = true;
+        _grabber.GlobalPosition = _grabber.GlobalPosition = new Vector2(_grabberSpawn.X+_collider.Shape.GetRect().Abs().Size[0]/4f, _grabber.GlobalPosition.Y);
+    }*/
 
     private void OnAreaExited(Area2D area)
     {
@@ -59,6 +71,8 @@ public partial class GrabbyHand : Area2D
         if (_abortAttack)
         {
             Visible = false;
+            _grabber.GlobalPosition = _grabberSpawn;
+            _abortAttack = false;
             return;
         }
 
@@ -71,22 +85,29 @@ public partial class GrabbyHand : Area2D
         GD.Print("Grabby attack range: ", _grabber.GlobalPosition.DistanceTo(_player.GlobalPosition));
 
         Visible = false;
-        _grabber.Position = Vector2.Zero;
-        GD.Print("GrabbyPos: ", _grabber.Position);
+        _grabber.GlobalPosition = _grabberSpawn;
+        GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
 
         await Task.Delay(1500);
         
         if (_abortAttack)
         {
             Visible = false;
+            _grabber.GlobalPosition = _grabberSpawn;
+            _abortAttack = false;
             return;
         }        
 
         GD.Print("Grabby time again");
         GD.Print(_player.Velocity.X);
         _grabber.GlobalPosition = new Vector2(_player.GlobalPosition.X + _player.Velocity.X * _warningTimeMS / 1000f, _grabber.GlobalPosition.Y);
+
+        if (_grabber.GlobalPosition.X < _grabberSpawn.X - _collider.Shape.GetRect().Abs().Size[0]/4f)
+            _grabber.GlobalPosition = new Vector2(_grabberSpawn.X - _collider.Shape.GetRect().Abs().Size[0]/4f, _grabber.GlobalPosition.Y);
+        if (_grabber.GlobalPosition.X > _grabberSpawn.X + _collider.Shape.GetRect().Abs().Size[0]/4f)
+            _grabber.GlobalPosition = new Vector2(_grabberSpawn.X + _collider.Shape.GetRect().Abs().Size[0]/4f, _grabber.GlobalPosition.Y);
+
         GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
-        StartAttackProcess();
         StartAttackProcess();
     }
 }

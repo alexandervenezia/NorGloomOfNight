@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=84 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -14,6 +14,7 @@
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="13_afauk"]
 [ext_resource type="Texture2D" uid="uid://o3v05ium3g" path="res://res/scenes/overworld/hell/pride/Clear fixed camera bg.PNG" id="14_reeqw"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/GrabbyHand.cs" id="15_ps8to"]
+[ext_resource type="Texture2D" uid="uid://cshm527npk7qm" path="res://res/scenes/overworld/hell/pride/spike.png" id="16_j4b8m"]
 [ext_resource type="Texture2D" uid="uid://cn3a2dsqf2g61" path="res://res/scenes/overworld/hell/pride/Grabby/grippy_enemy.png" id="16_uxfrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
@@ -206,16 +207,16 @@ size = Vector2(572.5, 3160.5)
 size = Vector2(4607.63, 864.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
-size = Vector2(1696, 640)
+size = Vector2(2016, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xms38"]
+size = Vector2(2656, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vuni"]
 size = Vector2(1488, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3ca"]
 size = Vector2(6080, 640)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6trc2"]
-size = Vector2(2192, 640)
 
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -708,19 +709,19 @@ position = Vector2(-16256, 3120)
 scale = Vector2(0.5, 0.5)
 
 [node name="Spike4" parent="." instance=ExtResource("11_16ymw")]
-position = Vector2(-4160, -5536)
+position = Vector2(-4160, -5578)
 scale = Vector2(0.5, 0.5)
 
 [node name="Spike5" parent="." instance=ExtResource("11_16ymw")]
-position = Vector2(-5600, -6368)
+position = Vector2(-5600, -6270)
 scale = Vector2(0.5, 0.5)
 
 [node name="Spike6" parent="." instance=ExtResource("11_16ymw")]
-position = Vector2(-7040, -6096)
+position = Vector2(-7040, -5982)
 scale = Vector2(0.5, 0.5)
 
 [node name="Spike7" parent="." instance=ExtResource("11_16ymw")]
-position = Vector2(-8640, -5808)
+position = Vector2(-8574, -5660)
 scale = Vector2(0.5, 0.5)
 
 [node name="Spike3" parent="." instance=ExtResource("11_16ymw")]
@@ -744,10 +745,21 @@ position = Vector2(-8880, -1872)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby"]
-position = Vector2(112, 0)
+position = Vector2(96, 0)
 shape = SubResource("RectangleShape2D_qlov1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Grabby2" type="Area2D" parent="."]
+position = Vector2(-6560, -1280)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
+position = Vector2(112, 0)
+shape = SubResource("RectangleShape2D_xms38")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby2"]
 texture = ExtResource("16_uxfrh")
 
 [node name="Grabby3" type="Area2D" parent="."]
@@ -772,14 +784,22 @@ shape = SubResource("RectangleShape2D_6u3ca")
 [node name="Sprite2D" type="Sprite2D" parent="Grabby4"]
 texture = ExtResource("16_uxfrh")
 
-[node name="Grabby2" type="Area2D" parent="."]
-position = Vector2(-8472, -2266)
-script = ExtResource("15_ps8to")
+[node name="Spike8" type="Sprite2D" parent="."]
+position = Vector2(-8572, -5696)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
-position = Vector2(2048, 986)
-shape = SubResource("RectangleShape2D_6trc2")
+[node name="Spike9" type="Sprite2D" parent="."]
+position = Vector2(-7040, -6016)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
 
-[node name="Sprite2D" type="Sprite2D" parent="Grabby2"]
-position = Vector2(1992, 986)
-texture = ExtResource("16_uxfrh")
+[node name="Spike10" type="Sprite2D" parent="."]
+position = Vector2(-5616, -6288)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
+
+[node name="Spike11" type="Sprite2D" parent="."]
+position = Vector2(-4160, -5648)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
