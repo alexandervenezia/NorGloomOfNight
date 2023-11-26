@@ -7,19 +7,6 @@ using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
 
-/*
-
-Player movement:
- - Walk left and right
- - Jump
-  * Gravity increases on descent
- - Crouching (ask Perplexer why this needs to be a thing)
- - Sprinting (ask Perplexer why this needs to be a thing)
-	When input is "right" character sprite should face right
-		
-*/
-
-
 
 public enum State
 {
@@ -370,13 +357,17 @@ public partial class Player : CharacterBody2D
 
 	}
 
-	public void TakeDamage(int dmg, bool spawnText=true)
+	public async void TakeDamage(int dmg, bool spawnText=true)
 	{
 		if (spawnText)
 			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red");
 		_currentHealth -= dmg;
 		if (_currentHealth <= 0)
 			Die();
+		
+		_playerSprite.SelfModulate = Colors.Red;
+		await Task.Delay(250);
+		_playerSprite.SelfModulate = Colors.White;
 	}
 
 	private void OnCutsceneEnd()
@@ -429,8 +420,7 @@ public partial class Player : CharacterBody2D
 	public void HandleSpikeHit(int dmg)
 	{
 		GD.Print("Hit spike.");
-		_currentHealth -= dmg;
-		if (_currentHealth <= 0) Die();
+		TakeDamage(dmg, false);
 		Velocity = new Godot.Vector2(-Velocity.X * 5, -Velocity.Y);
 	}
 
