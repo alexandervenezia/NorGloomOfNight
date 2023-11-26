@@ -71,7 +71,7 @@ public partial class FloatingTextFactory : Node2D
             RichTextLabel newLabel = new();
             newLabel.Theme = _theme;
             newLabel.Text = message;
-            newLabel.SetSize(new Vector2(600, 100), false);
+            newLabel.SetSize(new Vector2(600, 200), false);
             newLabel.BbcodeEnabled = true;
             
             newLabel.Position = position - new Vector2(300, 75);

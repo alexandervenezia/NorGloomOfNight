@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbwgebb7735on"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="1_1emru"]
+[ext_resource type="Texture2D" uid="uid://b87qefj5m3tnm" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/Idle/0.png" id="2_1m1vs"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_ix56f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shlqa"]
+size = Vector2(939, 982)
+
+[node name="NPC" type="Area2D"]
+script = ExtResource("1_1emru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1m1vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, -3)
+shape = SubResource("RectangleShape2D_shlqa")
+
+[node name="DialogueBubble" type="Polygon2D" parent="."]
+position = Vector2(-16, -481)
+polygon = PackedVector2Array(2, -4, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBubble"]
+offset_left = -488.0
+offset_top = -535.0
+offset_right = 129.0
+offset_bottom = -287.0
+theme = ExtResource("3_ix56f")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]
+
+. . ."

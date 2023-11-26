@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=50 format=3 uid="uid://dh8oo3oofs8q8"]
+[gd_resource type="SpriteFrames" load_steps=89 format=3 uid="uid://dh8oo3oofs8q8"]
 
 [ext_resource type="Texture2D" uid="uid://c41201tesvgd7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Attack/Kerog_Attack_0000.png" id="1_k4bdf"]
 [ext_resource type="Texture2D" uid="uid://bj2ulcrcr8bqx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Attack/Kerog_Attack_0001.png" id="2_qk8ya"]
@@ -24,31 +24,70 @@
 [ext_resource type="Texture2D" uid="uid://dnnosejc17x5u" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Attack/Kerog_Attack_0021.png" id="22_2vfep"]
 [ext_resource type="Texture2D" uid="uid://bqhcr8eullve2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Attack/Kerog_Attack_0022.png" id="23_axv6m"]
 [ext_resource type="Texture2D" uid="uid://dri1ykfrrnwa0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Attack/Kerog_Attack_0023.png" id="24_s3n38"]
-[ext_resource type="Texture2D" uid="uid://c5b8yr685m8ev" path="res://res/scenes/combat/subscenes/enemy/assets/Kerog_enemy.png" id="25_owvjs"]
+[ext_resource type="Texture2D" uid="uid://gynf7hp276pg" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0000.png" id="25_jb81d"]
 [ext_resource type="Texture2D" uid="uid://swcpe4pd5oge" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0000.png" id="26_jq1f8"]
+[ext_resource type="Texture2D" uid="uid://mrabgt5kurp" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0001.png" id="26_kr04d"]
+[ext_resource type="Texture2D" uid="uid://dgqcp2u7y46j8" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0002.png" id="27_x2i4t"]
 [ext_resource type="Texture2D" uid="uid://qwjxhmvnrhx4" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0001.png" id="27_xf81n"]
+[ext_resource type="Texture2D" uid="uid://dh2qwlg6gnoua" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0003.png" id="28_pb7in"]
 [ext_resource type="Texture2D" uid="uid://btsokkfsf61eg" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0002.png" id="28_tmpdc"]
 [ext_resource type="Texture2D" uid="uid://b3umq58pv53y7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0003.png" id="29_enxfa"]
+[ext_resource type="Texture2D" uid="uid://blt5dyxcwlqkh" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0004.png" id="29_qyajy"]
 [ext_resource type="Texture2D" uid="uid://dt4ehmaobvir1" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0004.png" id="30_6ai7q"]
+[ext_resource type="Texture2D" uid="uid://b07kpieltj6jj" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0005.png" id="30_hdqjv"]
+[ext_resource type="Texture2D" uid="uid://de68l4oc1cjhs" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0006.png" id="31_lal4l"]
 [ext_resource type="Texture2D" uid="uid://c87v0qjawy216" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0005.png" id="31_wodke"]
+[ext_resource type="Texture2D" uid="uid://b3mp3mdkuu4s2" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0007.png" id="32_0v3sd"]
 [ext_resource type="Texture2D" uid="uid://b42wpajh6bbnv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0006.png" id="32_styyw"]
+[ext_resource type="Texture2D" uid="uid://dnu6f21k4wi35" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0008.png" id="33_gl4ms"]
 [ext_resource type="Texture2D" uid="uid://brt4o5qtx8p5r" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0007.png" id="33_ka37d"]
+[ext_resource type="Texture2D" uid="uid://bhhlrug4wf7j" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0009.png" id="34_cmffw"]
 [ext_resource type="Texture2D" uid="uid://7x8hyoqq4q13" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0008.png" id="34_g5xfj"]
 [ext_resource type="Texture2D" uid="uid://bfou0rnfb3x6e" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0009.png" id="35_e6wkr"]
+[ext_resource type="Texture2D" uid="uid://dd668na3yisl3" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0010.png" id="35_yoxpg"]
+[ext_resource type="Texture2D" uid="uid://da1kerl5fg6fa" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0011.png" id="36_00te1"]
 [ext_resource type="Texture2D" uid="uid://cutyw060o6ohy" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0010.png" id="36_x348i"]
 [ext_resource type="Texture2D" uid="uid://vamfis0b8r8b" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0011.png" id="37_0kxwv"]
+[ext_resource type="Texture2D" uid="uid://dgaskxts242p2" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0012.png" id="37_xwgeb"]
+[ext_resource type="Texture2D" uid="uid://cf1uryup0n1jq" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0013.png" id="38_npjr1"]
 [ext_resource type="Texture2D" uid="uid://c3ainfewoma5j" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0012.png" id="38_wp2p7"]
 [ext_resource type="Texture2D" uid="uid://ctee4f7gg2suu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0013.png" id="39_kpxcl"]
+[ext_resource type="Texture2D" uid="uid://n0ec0fpvmrbe" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0014.png" id="39_t1ifm"]
+[ext_resource type="Texture2D" uid="uid://bavimilpmts0y" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0015.png" id="40_d6pf3"]
 [ext_resource type="Texture2D" uid="uid://b8q8jkpfg5d07" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0014.png" id="40_vndlj"]
 [ext_resource type="Texture2D" uid="uid://cxxoqdfa6jcd7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0015.png" id="41_4q4r8"]
+[ext_resource type="Texture2D" uid="uid://dpfqvt7s2868m" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0016.png" id="41_mw24u"]
 [ext_resource type="Texture2D" uid="uid://lfld7utkvfqg" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0016.png" id="42_64bp1"]
+[ext_resource type="Texture2D" uid="uid://cyp8wt5bs0jhp" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0017.png" id="42_pd73k"]
 [ext_resource type="Texture2D" uid="uid://brsm33b0fg6x3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0017.png" id="43_0fhb1"]
+[ext_resource type="Texture2D" uid="uid://clccw0bo5o5gl" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0018.png" id="43_uqy4e"]
 [ext_resource type="Texture2D" uid="uid://c5eidkshpyx3m" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0018.png" id="44_0s2a2"]
+[ext_resource type="Texture2D" uid="uid://ccfknjiwb3jyx" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0019.png" id="44_pupkh"]
 [ext_resource type="Texture2D" uid="uid://doonu5m2eqfcv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0019.png" id="45_ab18o"]
+[ext_resource type="Texture2D" uid="uid://ora8htyhixl5" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0020.png" id="45_canxv"]
+[ext_resource type="Texture2D" uid="uid://bb2pf5lr4es88" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0021.png" id="46_4rnhc"]
 [ext_resource type="Texture2D" uid="uid://bn6wf5poatu8a" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0020.png" id="46_qlslu"]
+[ext_resource type="Texture2D" uid="uid://ydglxf406el0" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0022.png" id="47_0mhon"]
 [ext_resource type="Texture2D" uid="uid://di2ovs6tmtoc7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0021.png" id="47_rixyy"]
+[ext_resource type="Texture2D" uid="uid://c0y8vr84yox1v" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0023.png" id="48_115k4"]
 [ext_resource type="Texture2D" uid="uid://c71aw2mjvwuem" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0022.png" id="48_ey0lq"]
+[ext_resource type="Texture2D" uid="uid://dw4x3xdnc1xvo" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0024.png" id="49_pfc3d"]
 [ext_resource type="Texture2D" uid="uid://cmeyugry1ybqu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0023.png" id="49_xwnfp"]
+[ext_resource type="Texture2D" uid="uid://ds3faho0fs84a" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0025.png" id="50_lpf8l"]
+[ext_resource type="Texture2D" uid="uid://bmyew6ok7y4he" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0026.png" id="51_f2mwy"]
+[ext_resource type="Texture2D" uid="uid://ce31c5s2alrer" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0027.png" id="52_x8k2n"]
+[ext_resource type="Texture2D" uid="uid://corklbagfeow7" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0028.png" id="53_ckwff"]
+[ext_resource type="Texture2D" uid="uid://cve4nawgfx817" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0029.png" id="54_r5umh"]
+[ext_resource type="Texture2D" uid="uid://2wacvvmu2l64" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0030.png" id="55_bjjxv"]
+[ext_resource type="Texture2D" uid="uid://d2x5gpxsc7q7y" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0031.png" id="56_shyss"]
+[ext_resource type="Texture2D" uid="uid://dm7r05ysld0s6" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0032.png" id="57_bcm3b"]
+[ext_resource type="Texture2D" uid="uid://svhirn6bautt" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0033.png" id="58_5rf3l"]
+[ext_resource type="Texture2D" uid="uid://bni0t7at17rop" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0034.png" id="59_ntfxs"]
+[ext_resource type="Texture2D" uid="uid://cj8eddqkonpqj" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0035.png" id="60_ws5ra"]
+[ext_resource type="Texture2D" uid="uid://c6pc8hl0hyeaq" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0036.png" id="61_3dagg"]
+[ext_resource type="Texture2D" uid="uid://dtogidrj868ye" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0037.png" id="62_xwjgu"]
+[ext_resource type="Texture2D" uid="uid://cphvat8o562e0" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0038.png" id="63_ux0s8"]
+[ext_resource type="Texture2D" uid="uid://c7ewwwphw7s1h" path="res://res/scenes/overworld/hell/pride/Kerog/WalkAnim/Kerog_Walk_0039.png" id="64_ytgab"]
 
 [resource]
 animations = [{
@@ -131,7 +170,124 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("25_owvjs")
+"texture": ExtResource("25_jb81d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kr04d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x2i4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pb7in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qyajy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hdqjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lal4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_0v3sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_gl4ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cmffw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yoxpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_00te1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_xwgeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_npjr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_t1ifm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_d6pf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mw24u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_pd73k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_uqy4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_pupkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_canxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_4rnhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0mhon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_115k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_pfc3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_lpf8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_f2mwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_x8k2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ckwff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_r5umh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_bjjxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_shyss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_bcm3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_5rf3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ntfxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ws5ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_3dagg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_xwjgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ux0s8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_ytgab")
 }],
 "loop": true,
 "name": &"default",

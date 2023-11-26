@@ -14,7 +14,7 @@ public partial class HellLevel : Node2D, ILevel
 	protected ICombatable _enemyInCombat;
 	public override void _Ready()
 	{
-		GD.Print("Hello, Hell.");       
+		GD.Print("Hello, Hell.");
 	}
 
 	protected async void OnAggro(ICombatable enemy)
@@ -33,7 +33,7 @@ public partial class HellLevel : Node2D, ILevel
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
-		
+
 	}
 
 	public override void _Process(double delta)
@@ -68,9 +68,10 @@ public partial class HellLevel : Node2D, ILevel
 
 		if (!IsInstanceValid((Node)_enemyInCombat))
 			_enemyInCombat = null;
-			
+
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
+		MasterScene.GetInstance().SetCombatBackground(1);
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			_enemyInCombat?.Enable();
@@ -85,11 +86,11 @@ public partial class HellLevel : Node2D, ILevel
 		}
 	}
 
-	public Node UseElevator(string dest="")
+	public Node UseElevator(string dest = "")
 	{
 		GD.Print(dest);
 		MasterScene.GetInstance().SetPlayerHP(GetPlayer().CurrentHealth);
-        // MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
+		// MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, false);
 
 		if (destination is Purgatory)

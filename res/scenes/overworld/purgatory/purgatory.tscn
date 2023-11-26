@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=41 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
 [ext_resource type="Resource" uid="uid://b4grubao7sdb7" path="res://res/resources/cutscenes/KerPoCutscene.tres" id="20_i3ngi"]
 [ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="26_wfr1f"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
+[ext_resource type="PackedScene" uid="uid://bbwgebb7735on" path="res://res/scenes/overworld/NPC.tscn" id="28_0cjw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -103,6 +105,9 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_noruu"]
 shader = SubResource("Shader_4bewk")
 shader_parameter/isHighlighted = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecjm0"]
+size = Vector2(254, 960)
 
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -549,6 +554,19 @@ position = Vector2(26234, -4434)
 
 [node name="HealArea" parent="." instance=ExtResource("26_wfr1f")]
 position = Vector2(-7414, -9826)
+
+[node name="ProgressBlocker" type="StaticBody2D" parent="."]
+position = Vector2(13658, 464)
+script = ExtResource("27_0n67v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProgressBlocker"]
+position = Vector2(37, -50)
+shape = SubResource("RectangleShape2D_ecjm0")
+
+[node name="NPC" parent="." instance=ExtResource("28_0cjw6")]
+position = Vector2(-184, 402)
+_dialogue = Array[String](["I am an NPC.", "Testing, testing."])
+_delayMS = 2000
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]

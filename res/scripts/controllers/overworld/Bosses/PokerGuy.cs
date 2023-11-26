@@ -23,7 +23,7 @@ public partial class PokerGuy : Node2D, ICombatable
 
     public List<int> GetEnemyIDs()
     {
-        return new List<int>{91, 1}; // TODO:
+        return new List<int>{91};
     }
 
     public void Disable()

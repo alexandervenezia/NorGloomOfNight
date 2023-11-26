@@ -1,8 +1,7 @@
-[gd_scene load_steps=77 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=84 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
-[ext_resource type="Texture2D" uid="uid://dgajjjjrws1vg" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideOutskirts_ArtReferencePride_Level_-_Outskirts.png" id="2_ugo6q"]
-[ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="3_ffxcs"]
+[ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 [ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="6_b5q6i"]
@@ -13,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://cb5fb4m2d5w2f" path="res://res/scenes/overworld/Spike.tscn" id="11_16ymw"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="12_46j0o"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="13_afauk"]
+[ext_resource type="Texture2D" uid="uid://o3v05ium3g" path="res://res/scenes/overworld/hell/pride/Clear fixed camera bg.PNG" id="14_reeqw"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/GrabbyHand.cs" id="15_ps8to"]
+[ext_resource type="Texture2D" uid="uid://cshm527npk7qm" path="res://res/scenes/overworld/hell/pride/spike.png" id="16_j4b8m"]
+[ext_resource type="Texture2D" uid="uid://cn3a2dsqf2g61" path="res://res/scenes/overworld/hell/pride/Grabby/grippy_enemy.png" id="16_uxfrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -203,6 +206,18 @@ size = Vector2(572.5, 3160.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vesw"]
 size = Vector2(4607.63, 864.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
+size = Vector2(2016, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xms38"]
+size = Vector2(2656, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vuni"]
+size = Vector2(1488, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3ca"]
+size = Vector2(6080, 640)
+
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
@@ -212,13 +227,10 @@ _introMusicUID = "uid://d1ix404tmx1jm"
 _loopMusicUID = "uid://cllm1liixd7f0"
 
 [node name="BgTemp" type="Sprite2D" parent="."]
+position = Vector2(-150, 0)
 scale = Vector2(4, 4)
-texture = ExtResource("2_ugo6q")
+texture = ExtResource("2_ef77q")
 metadata/_edit_lock_ = true
-
-[node name="Boi" type="Sprite2D" parent="."]
-position = Vector2(-13340, -736)
-texture = ExtResource("3_ffxcs")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -696,6 +708,22 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-16256, 3120)
 scale = Vector2(0.5, 0.5)
 
+[node name="Spike4" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-4160, -5578)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike5" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-5600, -6270)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike6" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-7040, -5982)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike7" parent="." instance=ExtResource("11_16ymw")]
+position = Vector2(-8574, -5660)
+scale = Vector2(0.5, 0.5)
+
 [node name="Spike3" parent="." instance=ExtResource("11_16ymw")]
 position = Vector2(-20864, 3120)
 scale = Vector2(0.5, 0.5)
@@ -704,3 +732,74 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("12_46j0o")
 _theme = ExtResource("13_afauk")
 _fontSize = 50
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_reeqw")
+
+[node name="Grabby" type="Area2D" parent="."]
+position = Vector2(-8880, -1872)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby"]
+position = Vector2(96, 0)
+shape = SubResource("RectangleShape2D_qlov1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Grabby2" type="Area2D" parent="."]
+position = Vector2(-6560, -1280)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
+position = Vector2(112, 0)
+shape = SubResource("RectangleShape2D_xms38")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby2"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Grabby3" type="Area2D" parent="."]
+position = Vector2(-27504, 7648)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_6vuni")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby3"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Grabby4" type="Area2D" parent="."]
+position = Vector2(-22320, 7616)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_6u3ca")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby4"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Spike8" type="Sprite2D" parent="."]
+position = Vector2(-8572, -5696)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
+
+[node name="Spike9" type="Sprite2D" parent="."]
+position = Vector2(-7040, -6016)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
+
+[node name="Spike10" type="Sprite2D" parent="."]
+position = Vector2(-5616, -6288)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
+
+[node name="Spike11" type="Sprite2D" parent="."]
+position = Vector2(-4160, -5648)
+scale = Vector2(4, -4)
+texture = ExtResource("16_j4b8m")
