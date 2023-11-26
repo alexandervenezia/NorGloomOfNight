@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dqskjl6vsej8"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Card.cs" id="1_q4dhy"]
-[ext_resource type="Texture2D" uid="uid://btu5t7qeg8uof" path="res://res/scenes/combat/subscenes/XButton.png" id="2_mfemj"]
+[ext_resource type="Texture2D" uid="uid://b1yuec1bdyki7" path="res://res/scenes/combat/subscenes/Card/images/artwork/holy_smite.png" id="2_45shd"]
 [ext_resource type="Texture2D" uid="uid://dgurbiof18wya" path="res://res/scenes/combat/subscenes/Card/images/card_background_trans.png" id="3_iu6l8"]
 [ext_resource type="Texture2D" uid="uid://cnul6kw3wr6b8" path="res://res/scenes/combat/subscenes/Card/images/background_solid_col.png" id="4_k15ia"]
 [ext_resource type="Theme" uid="uid://djnljen80b82f" path="res://assets/fonts/card_theme.tres" id="5_k86js"]
@@ -32,7 +32,7 @@ script = ExtResource("1_q4dhy")
 [node name="Art" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(0, -753.805)
-texture = ExtResource("2_mfemj")
+texture = ExtResource("2_45shd")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = 1
@@ -82,6 +82,7 @@ theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
+text = "1d4 + 1"
 threaded = true
 
 [node name="TargetsLabel" type="RichTextLabel" parent="."]
@@ -134,7 +135,6 @@ position = Vector2(281, -60)
 texture = ExtResource("9_xvclh")
 
 [node name="SingleStamp" type="Node2D" parent="."]
-visible = false
 
 [node name="EnemyStamp" type="Sprite2D" parent="SingleStamp"]
 position = Vector2(281, -60)
