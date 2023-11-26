@@ -62,6 +62,9 @@ public partial class FlyingEnemy : Overworld.Enemy
         if (Velocity.Length() > _speed)
             Velocity = Velocity.Normalized() * _speed;
 
+        if (_warningLabel != null)
+			_warningLabel.Visible = _aggro;
+
         base._PhysicsProcess(delta);
         Orient();
 

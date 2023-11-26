@@ -86,7 +86,12 @@ public partial class GroundEnemy : Enemy
 		}
 		
 		if (_aggro)
+		{
 			_direction = _player.GlobalPosition.X > GlobalPosition.X ? 1 : -1;
+			
+		}
+		if (_warningLabel != null)
+			_warningLabel.Visible = _aggro;
 
 		base._PhysicsProcess(delta);        
 

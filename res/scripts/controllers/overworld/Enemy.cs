@@ -25,6 +25,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	
 
 	protected AnimatedSprite2D _sprite;
+	protected Label _warningLabel;
 	protected Vector2 _spawnPoint;
 
 	private bool _enabled;
@@ -36,6 +37,10 @@ public partial class Enemy : CharacterBody2D, ICombatable
 		_spawnPoint = Position;
 		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_sprite.Play("default");
+
+		_warningLabel = GetNodeOrNull<Label>("Warning");
+		if (_warningLabel != null)
+			_warningLabel.Visible = false;
 	}
 
 	public override void _PhysicsProcess(double delta)

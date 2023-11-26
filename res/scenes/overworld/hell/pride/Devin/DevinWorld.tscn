@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://s1opn526goo4"]
+[gd_scene load_steps=6 format=3 uid="uid://s1opn526goo4"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/FlyingEnemy.cs" id="1_djcxm"]
 [ext_resource type="SpriteFrames" uid="uid://dxxh86rsob4o1" path="res://res/scenes/overworld/hell/pride/Devin/DevinFrames.tres" id="1_xn06a"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_tp07p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42sw5"]
 size = Vector2(564.706, 1101.18)
@@ -35,3 +36,22 @@ position = Vector2(-36.4706, 91.0735)
 shape = SubResource("RectangleShape2D_cbdkk")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Warning" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -1500.0
+offset_right = 257.0
+offset_bottom = -257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_tp07p")
+theme_override_colors/font_color = Color(1, 0.313726, 0.247059, 1)
+theme_override_font_sizes/font_size = 500
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1
