@@ -113,6 +113,7 @@ public partial class Purgatory : Node2D, ILevel
 		//MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
 
 		MasterScene.GetInstance().SetPlayerHP(_player.CurrentHealth);
+		MasterScene.GetInstance().SetCombatBackground(0);
 
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, true);
 

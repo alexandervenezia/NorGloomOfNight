@@ -165,6 +165,7 @@ public partial class CombatMain : Node2D
 
     public override void _Ready()
     {
+        GetNode<Background>("Background").SetBG(EnemyAssetLookup.GetInstance().GetCombatBackground(MasterScene.GetInstance().LoadCombatBackground()));
         MasterAudio.GetInstance().ClearQueue();
         MasterAudio.GetInstance().PlaySong(_music);
         

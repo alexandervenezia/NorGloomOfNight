@@ -20,6 +20,7 @@ public partial class MasterScene : Node
 	private string _lastScene;
 
 	private List<int> _enemyIDs;
+	private int _combatID;
 	private int _playerHP = -1;
 	private int _coinsFound;
 
@@ -73,6 +74,18 @@ public partial class MasterScene : Node
 	{
 		int temp = _coinsFound;
 		_coinsFound = 0;
+		return temp;
+	}
+
+	public void SetCombatBackground(int id)
+	{
+		_combatID = id;
+	}
+
+	public int LoadCombatBackground()
+	{
+		int temp = _combatID;
+		_combatID = 0;
 		return temp;
 	}
 

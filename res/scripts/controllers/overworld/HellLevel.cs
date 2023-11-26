@@ -71,6 +71,7 @@ public partial class HellLevel : Node2D, ILevel
 
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
+		MasterScene.GetInstance().SetCombatBackground(1);
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			_enemyInCombat?.Enable();
