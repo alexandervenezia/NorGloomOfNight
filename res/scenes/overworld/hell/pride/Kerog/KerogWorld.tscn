@@ -32,7 +32,7 @@ _fourthSlotSpawn = {}
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_162p7")
-frame_progress = 0.761879
+frame_progress = 0.491826
 
 [node name="PatrolMarkers" type="Node2D" parent="."]
 

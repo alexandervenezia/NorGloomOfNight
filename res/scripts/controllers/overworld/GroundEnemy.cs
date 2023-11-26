@@ -10,6 +10,7 @@ using System.Linq;
 public partial class GroundEnemy : Enemy
 {
 	[Export] Vector2 _relativePatrolBounds;
+	[Export] float _aggroSpeedBuff = 1.5f;
 	[Export] float FOV;
 
 	const float MAX_LOS = 15000;
@@ -30,6 +31,13 @@ public partial class GroundEnemy : Enemy
 		base._Ready();
 	}
 
+	private float AggroSpeedBuff()
+	{
+		if (_aggro)
+			return _aggroSpeedBuff;
+		return 1f;
+	}	
+
 	public override void _PhysicsProcess(double delta)
 	{
 		if (Engine.IsEditorHint())
@@ -49,8 +57,8 @@ public partial class GroundEnemy : Enemy
 			accel *= 5f;        
 
 		Velocity += _direction * Vector2.Right * accel * (float)delta;
-		if (Velocity.Length() > _speed)
-			Velocity = Velocity.Normalized() * _speed;
+		if (Velocity.Length() > _speed*AggroSpeedBuff())
+			Velocity = Velocity.Normalized() * _speed*AggroSpeedBuff();
 
 		if (_player == null)
 			_player = GetOwner<ILevel>().GetPlayer();
@@ -71,10 +79,6 @@ public partial class GroundEnemy : Enemy
 		{
 			_aggro = true;
 			//GD.Print("HIT!");
-		}
-		else if (_raycast.GetCollider() is Player)
-		{
-			
 		}
 		else
 			_aggro = false;
