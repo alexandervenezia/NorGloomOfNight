@@ -32,15 +32,15 @@ script = ExtResource("2_ykx58")
 _cardTypes = [ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("5_54fyw"), ExtResource("6_2hqoe"), ExtResource("7_g0tv5"), ExtResource("8_mm6l1"), ExtResource("9_w8voq"), ExtResource("10_74qxg"), ExtResource("11_61ikk"), ExtResource("12_ojmvo"), ExtResource("13_mmb0c"), ExtResource("14_0e3mq"), ExtResource("15_e2qys"), ExtResource("16_qcxcv"), ExtResource("17_ltb3f"), ExtResource("18_30yo1")]
 _playerStarterDeck = Array[Resource]([ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("4_oxfww"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("8_mm6l1"), ExtResource("8_mm6l1"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("12_ojmvo"), ExtResource("12_ojmvo"), ExtResource("10_74qxg")])
 _damageIcons = {
-0: "uid://cqi5d42bkbm5w",
-1: "uid://dvycat6airyjs",
-2: "uid://ixrpajpkl4yk",
-3: "uid://c8dwpibv3mpp6",
-4: "uid://dcvqobb78lgqa",
-5: "uid://bgex2g81dysku",
-6: "uid://bw3y6vdwvv4fn",
-7: "uid://cqnfsoo3ujpmp",
-8: "uid://cqi5d42bkbm5w"
+0: "uid://8i6gpgm402cf",
+1: "uid://c6pt012mwynxb",
+2: "uid://d3m5o0rxyelfp",
+3: "uid://bprhryh76jh4e",
+4: "uid://b2u5g3j4goxk1",
+5: "uid://bktrh43tnd0f0",
+6: "uid://dhxk74kf61tb6",
+7: "uid://fbk83844nkxt",
+8: "uid://56t8u07yqa6s"
 }
 
 [node name="MasterAudio" type="Node" parent="."]

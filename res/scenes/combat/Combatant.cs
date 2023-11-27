@@ -142,7 +142,7 @@ public partial class Combatant : Area2D, ICombatant
         {            
             _currentHealth += amount;
             _currentHealth = Math.Min(_currentHealth, _maxHealth);
-            FloatingTextFactory.GetInstance().CreateFloatingCardText(true, false, false, false, 0, amount, GlobalPosition);
+            FloatingTextFactory.GetInstance().CreateFloatingCardText(true, false, false, false, 0, amount, GlobalPosition, type);
             return;
         }
 
@@ -185,7 +185,7 @@ public partial class Combatant : Area2D, ICombatant
         if (_currentHealth <= 0)
             _isDead = true;
 
-        FloatingTextFactory.GetInstance().CreateFloatingCardText(false, isCrit, type==DamageType.POISON, isResisted > 0, 0, damage, GlobalPosition);
+        FloatingTextFactory.GetInstance().CreateFloatingCardText(false, isCrit, type==DamageType.POISON, isResisted > 0, 0, damage, GlobalPosition, type);
 
         GD.Print("\nFinal damage:");
         GD.Print("Final applied: " + damage);

@@ -1,3 +1,4 @@
+using Data;
 using Godot;
 using System;
 using System.Collections;
@@ -35,21 +36,25 @@ public partial class FloatingTextFactory : Node2D
         return _activeInstance;
     }
 
-    public void CreateFloatingCardText(bool isHeal, bool isCrit, bool isPoison, bool isResist, int armorAmount, int amount, Vector2 position)
+    public void CreateFloatingCardText(bool isHeal, bool isCrit, bool isPoison, bool isResist, int armorAmount, int amount, Vector2 position, DamageType type)
     {
         string color = isHeal ? "#33FF33" : "FF3333";
         color = isPoison ? "#FFBB22" : color;
         string prefix = isCrit ? "Critical! " : "";
         if (isResist)
             prefix += "Resist! ";
-        string message = String.Format("{1}{2}", color, prefix, amount);
+        
+        Texture2D icon = MasterDeck.GetDamageIcon(type);
+		string path = icon.ResourcePath;
+        
+        string message = String.Format("{1}{2} [img color=red width=65]{3}[/img]", color, prefix, amount, path);
 
         Vector2 offset = Vector2.Up * 100;
 
         CreateFloatingText(message, position  + offset, color:color);
 
-        if (armorAmount > 0)
-            CreateFloatingText(String.Format("[s]{0}[/s]", armorAmount), position + offset*1.5f, color:"#888888");
+        //if (armorAmount > 0)
+            //CreateFloatingText(String.Format("[s]{0}[/s]", armorAmount), position + offset*1.5f, color:"#888888");
     }
 
     public async void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200, int fontSize=-1, string color="#111111")
