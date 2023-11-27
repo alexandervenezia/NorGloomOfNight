@@ -317,7 +317,8 @@ public partial class Enemy : Combatant
 	public override void TakeDamage(DamageType type, int amount, double critModifier, bool isCrit, bool autoResist)
 	{
 		base.TakeDamage(type, amount, critModifier, isCrit, autoResist);
-		_sprite.Play("hurt");
+		if (type != DamageType.HEAL)
+            _sprite.Play("hurt");
 		if (_isDead)
 			Die();
 	}

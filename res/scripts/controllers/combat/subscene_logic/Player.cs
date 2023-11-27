@@ -141,7 +141,8 @@ public partial class Player : Combatant
     public override void TakeDamage(Data.DamageType type, int amount, double critModifier, bool isCrit, bool autoResist)
     {
         base.TakeDamage(type, amount, critModifier, isCrit, autoResist);
-        _sprite.Play("hurt");
+        if (type != DamageType.HEAL)
+            _sprite.Play("hurt");
     }
 
     public override void _PhysicsProcess(double delta)

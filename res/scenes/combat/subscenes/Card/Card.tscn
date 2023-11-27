@@ -76,7 +76,7 @@ threaded = true
 [node name="DamageLabel" type="RichTextLabel" parent="."]
 offset_left = -334.0
 offset_top = -233.0
-offset_right = 5.0
+offset_right = 28.0
 offset_bottom = -23.0
 theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)

@@ -18,6 +18,13 @@ public partial class MasterDeck : Node
 	[ExportGroup("Player Starter Deck")]
 	[Export] private Godot.Collections.Array<CardData> _playerStarterDeck;
 
+	[ExportGroup("Card Appearance")]
+	
+	//[Export] private Godot.Collections.Array<string> _damageIconTypes;
+	[Export] private Godot.Collections.Dictionary<DamageType, string> _damageIcons;
+	private static Dictionary<DamageType, string> _damageIconsStatic; // This is very dumb.
+	public static Dictionary<DamageType, Texture2D> DamageIcons;
+
 	public delegate void OnMasterDeckLoad();
 	public static event OnMasterDeckLoad OnLoad;
 
@@ -27,6 +34,15 @@ public partial class MasterDeck : Node
 	public override void _Ready()
 	{
 		_playerDeck = new();
+		DamageIcons = new();
+		_damageIconsStatic = new();
+
+		foreach (DamageType type in _damageIcons.Keys)
+		{
+			ResourceLoader.LoadThreadedRequest(_damageIcons[type]);
+			DamageIcons.Add(type, null);
+			_damageIconsStatic.Add(type, _damageIcons[type]);
+		}
 
 		foreach (CardData c in _cardTypes)
 		{
@@ -51,4 +67,15 @@ public partial class MasterDeck : Node
 		_cardTypes.Clear();
 		OnLoad?.Invoke();
 	}
+
+	public static Texture2D GetDamageIcon(DamageType type)
+	{
+		if (DamageIcons[type] == null)
+		{
+			DamageIcons[type] = (Texture2D)ResourceLoader.LoadThreadedGet(_damageIconsStatic[type]);
+		}
+
+		return DamageIcons[type];
+	}
+
 }
