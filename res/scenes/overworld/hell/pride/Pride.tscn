@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=112 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -212,6 +212,12 @@ size = Vector2(212.313, 3022.76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plhrq"]
 size = Vector2(238.625, 2911.52)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfoy0"]
+size = Vector2(567.25, 277.031)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7pov"]
+size = Vector2(871.625, 277.031)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15hv0"]
 size = Vector2(585.25, 6347.03)
 
@@ -233,11 +239,14 @@ size = Vector2(11238, 266.063)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2yuy"]
 size = Vector2(6457, 266.063)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_127f6"]
-size = Vector2(16995.8, 266.063)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb2c3"]
+size = Vector2(18742, 266.063)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gdem"]
 size = Vector2(44305.9, 266.063)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_127f6"]
+size = Vector2(14357.9, 266.063)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya23g"]
 size = Vector2(16126, 293.031)
@@ -281,9 +290,6 @@ size = Vector2(572.5, 3160.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vesw"]
 size = Vector2(4607.63, 864.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
-size = Vector2(2016, 640)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xms38"]
 size = Vector2(2656, 640)
 
@@ -292,6 +298,9 @@ size = Vector2(1488, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3ca"]
 size = Vector2(6080, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
+size = Vector2(2016, 640)
 
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -764,8 +773,16 @@ position = Vector2(31598, 3776)
 shape = SubResource("RectangleShape2D_rcrjv")
 
 [node name="CollisionShape2D116" type="CollisionShape2D" parent="Walls"]
-position = Vector2(31022, 2908)
-shape = SubResource("RectangleShape2D_rcrjv")
+position = Vector2(40232.4, 1189.48)
+shape = SubResource("RectangleShape2D_bfoy0")
+
+[node name="CollisionShape2D150" type="CollisionShape2D" parent="Walls"]
+position = Vector2(39372, 330)
+shape = SubResource("RectangleShape2D_bfoy0")
+
+[node name="CollisionShape2D151" type="CollisionShape2D" parent="Walls"]
+position = Vector2(38360.2, -540)
+shape = SubResource("RectangleShape2D_a7pov")
 
 [node name="CollisionShape2D125" type="CollisionShape2D" parent="Walls"]
 position = Vector2(31008, 2204)
@@ -800,15 +817,15 @@ position = Vector2(34450.5, -818)
 shape = SubResource("RectangleShape2D_b2yuy")
 
 [node name="CollisionShape2D119" type="CollisionShape2D" parent="Walls"]
-position = Vector2(50452.1, -836)
-shape = SubResource("RectangleShape2D_127f6")
+position = Vector2(49603, -836)
+shape = SubResource("RectangleShape2D_rb2c3")
 
 [node name="CollisionShape2D148" type="CollisionShape2D" parent="Walls"]
 position = Vector2(59729, -5718)
 shape = SubResource("RectangleShape2D_7gdem")
 
 [node name="CollisionShape2D120" type="CollisionShape2D" parent="Walls"]
-position = Vector2(70332, -838)
+position = Vector2(69056, -838)
 shape = SubResource("RectangleShape2D_127f6")
 
 [node name="CollisionShape2D123" type="CollisionShape2D" parent="Walls"]
@@ -1043,52 +1060,48 @@ Damage = 1
 position = Vector2(-10432, 1560)
 scale = Vector2(0.25, 0.25)
 
-[node name="Hands" type="Node" parent="."]
-
-[node name="Grabby" type="Area2D" parent="Hands"]
-position = Vector2(-4440, -936)
-scale = Vector2(0.5, 0.5)
+[node name="Grabby2" type="Area2D" parent="."]
+position = Vector2(-6560, -1280)
 script = ExtResource("15_ps8to")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hands/Grabby"]
-position = Vector2(96, 0)
-shape = SubResource("RectangleShape2D_qlov1")
-
-[node name="Sprite2D" type="Sprite2D" parent="Hands/Grabby"]
-texture = ExtResource("16_uxfrh")
-
-[node name="Grabby2" type="Area2D" parent="Hands"]
-position = Vector2(-3280, -640)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("15_ps8to")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hands/Grabby2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
 position = Vector2(112, 0)
 shape = SubResource("RectangleShape2D_xms38")
 
-[node name="Sprite2D" type="Sprite2D" parent="Hands/Grabby2"]
+[node name="Sprite2D" type="Sprite2D" parent="Grabby2"]
 texture = ExtResource("16_uxfrh")
 
-[node name="Grabby3" type="Area2D" parent="Hands"]
-position = Vector2(-13752, 3824)
-scale = Vector2(0.5, 0.5)
+[node name="Grabby3" type="Area2D" parent="."]
+position = Vector2(-27504, 7648)
 script = ExtResource("15_ps8to")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hands/Grabby3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
 position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_6vuni")
 
-[node name="Sprite2D" type="Sprite2D" parent="Hands/Grabby3"]
+[node name="Sprite2D" type="Sprite2D" parent="Grabby3"]
 texture = ExtResource("16_uxfrh")
 
-[node name="Grabby4" type="Area2D" parent="Hands"]
-position = Vector2(-11160, 3808)
-scale = Vector2(0.5, 0.5)
+[node name="Grabby4" type="Area2D" parent="Grabby3"]
+position = Vector2(5184, -32)
 script = ExtResource("15_ps8to")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hands/Grabby4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3/Grabby4"]
 position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_6u3ca")
 
-[node name="Sprite2D" type="Sprite2D" parent="Hands/Grabby4"]
+[node name="Sprite2D" type="Sprite2D" parent="Grabby3/Grabby4"]
 texture = ExtResource("16_uxfrh")
+
+[node name="Grabby" type="Area2D" parent="."]
+position = Vector2(-8880, -1872)
+script = ExtResource("15_ps8to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby"]
+position = Vector2(96, 0)
+shape = SubResource("RectangleShape2D_qlov1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Grabby"]
+texture = ExtResource("16_uxfrh")
+
+[node name="Hands" type="Node" parent="."]
