@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cmexmxoukylkm"]
+
+[ext_resource type="Texture2D" uid="uid://bgchk27iyokgo" path="res://res/scenes/combat/subscenes/Card/images/artwork/flamethrower.png" id="1_jffh5"]
+[ext_resource type="Resource" uid="uid://bhd1edqqudups" path="res://res/resources/cards/Flamethrower+.tres" id="2_ap152"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_l1n80"]
+
+[resource]
+script = ExtResource("2_l1n80")
+_name = "Flamethrower"
+_description = ""
+_artwork = ExtResource("1_jffh5")
+_type = 2
+_rarity = 3
+_actionPointCost = 1
+_movementPointCost = 0
+_target = 2
+_damageTypes = [2]
+_damageDice = ["1d6 + 2"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_upgrade = ExtResource("2_ap152")
+_unremovableByPlayer = false

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cs7ft4ge332cn"]
+
+[ext_resource type="Texture2D" uid="uid://bqq31uqvb0ys" path="res://res/scenes/combat/subscenes/Card/images/artwork/bless.png" id="1_t7oun"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_cilnx"]
+[ext_resource type="Resource" uid="uid://bolvp5q12hkgg" path="res://res/resources/cards/DivineProtection.tres" id="2_w4omx"]
+
+[resource]
+script = ExtResource("2_cilnx")
+_name = "Blessed+"
+_description = ""
+_artwork = ExtResource("1_t7oun")
+_type = 2
+_rarity = 3
+_actionPointCost = 1
+_movementPointCost = 0
+_target = 0
+_damageTypes = [8]
+_damageDice = ["2d4"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = [0, 0]
+_buffDuration = [1, 1]
+_resistanceType = [0, 1]
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_upgrade = ExtResource("2_w4omx")
+_unremovableByPlayer = false

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cuyob31ibyd5g"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cuyob31ibyd5g"]
 
 [ext_resource type="Texture2D" uid="uid://cwlgc4t03a1se" path="res://res/scenes/combat/subscenes/Card/images/artwork/angelic_glide.png" id="1_ymgeq"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_yyxyy"]
+[ext_resource type="Resource" uid="uid://d1opvt1c5rs2n" path="res://res/resources/cards/AngelicGlide+.tres" id="2_lo2cl"]
 
 [resource]
 script = ExtResource("1_yyxyy")
@@ -16,11 +17,12 @@ _target = 0
 _damageTypes = []
 _damageDice = []
 _drawEffects = [0, 2]
-_drawQuantities = [3, 1]
+_drawQuantities = [5, 1]
 _buffs = []
 _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 12
+_upgrade = ExtResource("2_lo2cl")
 _unremovableByPlayer = false

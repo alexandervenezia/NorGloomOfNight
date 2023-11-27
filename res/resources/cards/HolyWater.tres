@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://blnau2cu3smcr"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://blnau2cu3smcr"]
 
 [ext_resource type="Texture2D" uid="uid://cdp3khw6tb8jr" path="res://res/scenes/combat/subscenes/Card/images/artwork/holy_water.png" id="1_7dm1m"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_mq1jq"]
+[ext_resource type="Resource" uid="uid://3lf7uidd22gv" path="res://res/resources/cards/HolyWater+.tres" id="2_0vmk8"]
 
 [resource]
 script = ExtResource("1_mq1jq")
@@ -23,4 +24,5 @@ _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 0
+_upgrade = ExtResource("2_0vmk8")
 _unremovableByPlayer = false
