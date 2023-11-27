@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b6qmnb6qex4ku"]
 
+[ext_resource type="Texture2D" uid="uid://cxu3mlrqgsrw7" path="res://res/scenes/combat/subscenes/Card/images/artwork/tactical_roll.png" id="1_syo6d"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_vjo34"]
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_x3l5w"]
 
 [resource]
 script = ExtResource("1_vjo34")
 _name = "Tactical Roll"
 _description = ""
-_artwork = ExtResource("1_x3l5w")
+_artwork = ExtResource("1_syo6d")
 _type = 0
 _rarity = 2
 _actionPointCost = 0
@@ -16,9 +16,11 @@ _target = 0
 _damageTypes = []
 _damageDice = []
 _drawEffects = [0, 1]
-_drawQuantities = [5, 3]
+_drawQuantities = [5, 4]
 _buffs = []
 _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
+_price = 0
+_unremovableByPlayer = false

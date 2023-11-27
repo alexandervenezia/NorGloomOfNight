@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://c3x74yanv8dns"]
 
-[ext_resource type="Texture2D" uid="uid://dy8xeiqxwx2xp" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card2.png" id="1_gg6r0"]
+[ext_resource type="Texture2D" uid="uid://c1pfmi2xrerdi" path="res://res/scenes/combat/subscenes/Card/images/artwork/gods_uniform.png" id="1_kofnm"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_upqck"]
 
 [resource]
 script = ExtResource("1_upqck")
 _name = "God's Uniform"
 _description = ""
-_artwork = ExtResource("1_gg6r0")
+_artwork = ExtResource("1_kofnm")
 _type = 0
 _rarity = 2
 _actionPointCost = 0

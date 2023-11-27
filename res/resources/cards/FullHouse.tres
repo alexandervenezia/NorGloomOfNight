@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3467tmndqlkr"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d3467tmndqlkr"]
 
+[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_cwod2"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_iiyds"]
 
 [resource]
 script = ExtResource("2_iiyds")
 _name = "Full House"
 _description = ""
+_artwork = ExtResource("1_cwod2")
 _type = 2
 _rarity = 2
 _actionPointCost = 1
@@ -20,3 +22,5 @@ _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
+_price = 0
+_unremovableByPlayer = false

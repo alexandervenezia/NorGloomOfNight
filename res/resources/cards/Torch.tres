@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bvy4sxss5ocsq"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bvy4sxss5ocsq"]
 
+[ext_resource type="Texture2D" uid="uid://dhy4g76eyfodu" path="res://res/scenes/combat/subscenes/Card/images/artwork/torch.png" id="1_ojx8j"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_sdubc"]
 
 [resource]
 script = ExtResource("2_sdubc")
 _name = "Torch"
 _description = ""
+_artwork = ExtResource("1_ojx8j")
 _type = 2
 _rarity = 0
 _actionPointCost = 1
@@ -20,3 +22,5 @@ _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
+_price = 0
+_unremovableByPlayer = false

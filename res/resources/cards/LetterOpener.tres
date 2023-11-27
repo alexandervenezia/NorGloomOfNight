@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://bl13iumdm4bdd"]
 
-[ext_resource type="Texture2D" uid="uid://blxsauvyq1pr8" path="res://res/scenes/combat/subscenes/Card/images/artwork/sword_of_messenger.png" id="1_pfa0u"]
+[ext_resource type="Texture2D" uid="uid://bfkpcfiyykb4l" path="res://res/scenes/combat/subscenes/Card/images/artwork/letter_opener.png" id="1_tmpqo"]
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="2_4c1c0"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_md08n"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("2_md08n")
 _name = "Letter Opener"
 _description = ""
-_artwork = ExtResource("1_pfa0u")
+_artwork = ExtResource("1_tmpqo")
 _type = 2
 _rarity = 0
 _actionPointCost = 1
