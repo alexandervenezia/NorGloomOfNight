@@ -10,12 +10,15 @@ public partial class FloatingTextFactory : Node2D
     [Export] int _fontSize = 30;
     private static FloatingTextFactory _activeInstance;
     private Queue<RichTextLabel> _waitingQueue;
+
+    private Dictionary<Vector2, ulong> _spawnLocationDelays;
+
     public override void _Ready()
     {
-
         GD.Print("New instance of FLoatingText");
         _activeInstance = this;
         _waitingQueue = new();
+        _spawnLocationDelays = new();
 
         TreeEntered += OnEnterTree;
     }
@@ -23,9 +26,8 @@ public partial class FloatingTextFactory : Node2D
     private void OnEnterTree()
     {
         GD.Print("Entered tree - FloaingText");
-        _activeInstance = this;
+        _activeInstance = this;        
     }
-
 
 
     public static FloatingTextFactory GetInstance()
@@ -50,8 +52,19 @@ public partial class FloatingTextFactory : Node2D
             CreateFloatingText(String.Format("[s]{0}[/s]", armorAmount), position + offset*1.5f, color:"#888888");
     }
 
-    public void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200, int fontSize=-1, string color="#111111")
+    public async void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200, int fontSize=-1, string color="#111111")
     {
+        if (_spawnLocationDelays.ContainsKey(position))
+        {
+            if (_spawnLocationDelays[position] + 500 > Time.GetTicksMsec())
+                await Task.Delay((int)(_spawnLocationDelays[position] + 500 - Time.GetTicksMsec()));
+            
+            _spawnLocationDelays[position] = Time.GetTicksMsec();
+        }
+        else
+            _spawnLocationDelays.Add(position, Time.GetTicksMsec());
+
+        
         if (fontSize == -1)
             fontSize = _fontSize;
 
