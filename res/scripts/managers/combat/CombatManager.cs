@@ -210,6 +210,29 @@ public class CombatManager
 
     public void EndTurn(ICombatant current)
     {
+        /*
+        if (_player.IsDead())
+        {
+            _isOver = true;
+            _player.EndFight(EndState.DEFEAT);
+            return;
+        }
+
+        bool enemyAlive = false;
+        foreach (ICombatant enemy in _enemies)
+        {
+            enemyAlive = !enemy.IsDead();
+            if (enemyAlive)
+                break;
+        }
+
+        if (!enemyAlive)
+        {
+            _isOver = true;
+            _player.EndFight(EndState.VICTORY);
+            return;
+        }*/
+
         if (_moveOrder[_currentToMove] == current)
             AdvanceInitiative();
     }

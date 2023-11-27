@@ -1,3 +1,5 @@
+namespace Overworld;
+
 using Godot;
 using System;
 
@@ -6,6 +8,9 @@ public partial class FlyingEnemy : Overworld.Enemy
     [Export] float _aggroRadius;
     [Export] float _deAggroRange;
     [Export] float _patrolRadius;
+    [Export] float _aggroSpeedBuff = 1.5f;
+
+    const float MAX_LOS = 15000;
 
     private RayCast2D _raycast;
 	private bool _aggro;
@@ -18,11 +23,30 @@ public partial class FlyingEnemy : Overworld.Enemy
 		base._Ready();
 	}
 
+    private float AggroSpeedBuff()
+	{
+		if (_aggro)
+			return _aggroSpeedBuff;
+		return 1f;
+	}	
+
     private Vector2 destTest;
     public override void _PhysicsProcess(double delta)
     {        
         if (_player == null)
             _player = GetOwner<ILevel>().GetPlayer();
+
+        Vector2 cast = Vector2.Zero;
+        if (_player != null)
+        {   
+            cast = _player.GlobalPosition - GlobalPosition;
+            cast *= 2.5f;
+            if (cast.Length() > MAX_LOS)
+            {
+                cast = cast.Normalized() * MAX_LOS;
+            }
+            _raycast.TargetPosition = cast * 2.5f;
+        }  
 
         if (!_aggro)
         {    
@@ -39,9 +63,9 @@ public partial class FlyingEnemy : Overworld.Enemy
             Vector2 direction = rotated - Position;
 
             Vector2 accel = direction.Normalized() * _acceleration * 2f;
-            Velocity += accel * (float)delta;
+            Velocity += accel * (float)delta;            
 
-            if (_spawnPoint.DistanceTo(_player.Position) < _aggroRadius)
+            if (_raycast.GetCollider() is Player && _spawnPoint.DistanceTo(_player.Position) < _aggroRadius)
                 _aggro = true;
         }
         else
@@ -55,12 +79,15 @@ public partial class FlyingEnemy : Overworld.Enemy
             Vector2 accel = direction.Normalized() * _acceleration * 10f;
             Velocity += accel * (float)delta;
 
-            if (_spawnPoint.DistanceTo(_player.Position) > _deAggroRange)
+            if (_raycast.GetCollider() is not Player || _spawnPoint.DistanceTo(_player.Position) > _deAggroRange)
                 _aggro = false;
         }
 
-        if (Velocity.Length() > _speed)
-            Velocity = Velocity.Normalized() * _speed;
+        if (Velocity.Length() > _speed * AggroSpeedBuff())
+            Velocity = Velocity.Normalized() * _speed * AggroSpeedBuff();
+
+        if (_warningLabel != null)
+			_warningLabel.Visible = _aggro;
 
         base._PhysicsProcess(delta);
         Orient();

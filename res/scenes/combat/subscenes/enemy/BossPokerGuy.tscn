@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bakphjas5nire"]
+[gd_scene load_steps=10 format=3 uid="uid://bakphjas5nire"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_ocx0g"]
-[ext_resource type="Texture2D" uid="uid://b87qefj5m3tnm" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/Idle/0.png" id="4_cjswu"]
 [ext_resource type="Resource" uid="uid://mtor7au8b2cf" path="res://res/resources/cards/HolyWord+.tres" id="4_f8pau"]
 [ext_resource type="Resource" uid="uid://d3467tmndqlkr" path="res://res/resources/cards/FullHouse.tres" id="4_j2lk3"]
 [ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="4_k0la1"]
@@ -33,11 +32,11 @@ _startingMovementPoints = 0
 _defaultCritModifier = 1.5
 _startingArmor = 10
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(31, -35)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_cjswu")
+animation = &""
 
 [node name="HealthBar" parent="." instance=ExtResource("5_r7tin")]
 z_index = 1

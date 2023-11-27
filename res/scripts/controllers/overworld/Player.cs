@@ -4,22 +4,8 @@ using Godot;
 using System;
 using System.ComponentModel;
 using System.Data;
-using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
-
-/*
-
-Player movement:
- - Walk left and right
- - Jump
-  * Gravity increases on descent
- - Crouching (ask Perplexer why this needs to be a thing)
- - Sprinting (ask Perplexer why this needs to be a thing)
-	When input is "right" character sprite should face right
-		
-*/
-
 
 
 public enum State
@@ -42,7 +28,7 @@ public partial class Player : CharacterBody2D
 	public int MaxHealth => _maxHealth;
 	private int _currentHealth;
 	public int CurrentHealth => _currentHealth;
-	private int _coins;
+	private int _coins = 25; // TODO: Set to zero
 	public int Coins => _coins;
 	[Export] private float _walkSpeed = 500f;
 	[Export] private float _sprintSpeed = 1700f;
@@ -69,6 +55,7 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer _landSound;
 
 	private bool _cutsceneFinished = false;
+	private bool _glideState = false;
 
 	public override void _Ready()
 	{
@@ -115,8 +102,19 @@ public partial class Player : CharacterBody2D
 		_questUI.GetNode<RichTextLabel>("QuestCommand").Text = "[right][font_size=125]" + _quest.GetNextStep();
 	}
 
+	public void FrameChange()
+	{
+		if (_playerSprite.Animation == "jump" && _playerSprite.Frame == _playerSprite.SpriteFrames.GetFrameCount("jump")-1)
+			_glideState = true;
+	}
+
 	public override void _Process(double delta)
 	{
+		if (Engine.TimeScale < 0.01f)
+		{
+			return;
+		}
+
 		ChangePlayerOrientation();
 
 		if (IsIdle())
@@ -132,7 +130,17 @@ public partial class Player : CharacterBody2D
 		}
 		else if (IsJumping())
 		{
-			_playerSprite.Play("jump");
+			if (!_glideState)
+			{
+				_playerSprite.Play("jump");
+			}
+			else
+			{
+				if (Input.IsActionPressed("Jump"))
+					_playerSprite.Play("glide");
+				else
+					_playerSprite.Play("idle");
+			}
 		}
 		else if (IsWalking())
 		{
@@ -146,6 +154,13 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (Engine.TimeScale < 0.01f)
+		{
+			_playerSprite.Play("idle");
+			Velocity = new Vector2(0, Velocity.Y + _gravityDefault);
+			MoveAndCollide(Velocity * 0.01f);
+			return;
+		}
 		float fDelta = (float)delta;
 		Godot.Vector2 movementInput = GetMovementInput();
 
@@ -189,6 +204,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_glideState = false;
 					_jumpSound.Play();
 				}
 				break;
@@ -200,6 +216,7 @@ public partial class Player : CharacterBody2D
 				{
 					vel.Y = -_jumpSpeed;
 					_coyoteTimer = 0f;
+					_glideState = false;
 					_jumpSound.Play();
 				}
 
@@ -323,16 +340,46 @@ public partial class Player : CharacterBody2D
 			GD.Print("Enter");
 			((ShopEntrance)area).Enter();
 		}
+		if (area is HealArea)
+		{
+			GD.Print("HealEnter");
+			FloatingTextFactory.GetInstance().CreateFloatingText("Full Heal!", Position-Godot.Vector2.Left*50, fontSize:150, color:"green");
+			((HealArea)area).Enter();
+		}
+		if (area is Spike)
+		{
+			GD.Print("SpikeEnter");
+			FloatingTextFactory.GetInstance().CreateFloatingText(((Spike)area).Damage.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red");
+			HandleSpikeHit(((Spike)area).Damage);
+		}
 	}
 
 	private void OnArea2DExited(Area2D area)
 	{
-		GD.Print("Test");
 		if (area is ShopEntrance)
 		{			
 			GD.Print("Exit");
 			((ShopEntrance)area).Exit();
 		}
+		if (area is HealArea)
+		{
+			GD.Print("HealExit");
+			((HealArea)area).Exit();
+		}
+
+	}
+
+	public async void TakeDamage(int dmg, bool spawnText=true)
+	{
+		if (spawnText)
+			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red");
+		_currentHealth -= dmg;
+		if (_currentHealth <= 0)
+			Die();
+		
+		_playerSprite.SelfModulate = Colors.Red;
+		await Task.Delay(250);
+		_playerSprite.SelfModulate = Colors.White;
 	}
 
 	private void OnCutsceneEnd()
@@ -374,6 +421,25 @@ public partial class Player : CharacterBody2D
 	public void RemoveCoins(int coins)
 	{
 		_coins -= coins;
+	}
+
+	public void FullHeal()
+	{
+		_currentHealth = MaxHealth;
+		GD.Print("Healed! Health " + _currentHealth);
+	}
+
+	public void HandleSpikeHit(int dmg)
+	{
+		GD.Print("Hit spike.");
+		TakeDamage(dmg, false);
+		Velocity = new Godot.Vector2(-Velocity.X * 5, -Velocity.Y);
+	}
+
+	public void Die()
+	{
+		GD.Print("Player died - Die() stub called");
+		// TODO: Implement death screen
 	}
 }
 

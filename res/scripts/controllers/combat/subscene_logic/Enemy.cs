@@ -34,8 +34,12 @@ public partial class Enemy : Combatant
 	[Export] protected int _percentChanceOfCardDrop;
 	[Export] protected Godot.Collections.Array<CardData> _cardDrops;
 
+	private AnimatedSprite2D _sprite;
+
 	public override void _Ready()
 	{
+		_sprite = GetNode<AnimatedSprite2D>("Sprite");
+		_sprite.SpriteFrames = EnemyAssetLookup.GetInstance().GetAsset(_ID);
 		base._Ready();
 		SetCollisionMaskValue(1, false);
 		SetCollisionMaskValue(SharedCollisionLayer, true);
@@ -57,8 +61,8 @@ public partial class Enemy : Combatant
 		{
 			AddResistance(type, 9999); // If the fight goes on for beyond 9999 rounds, something is very wrong.
 		}
-
-		_permanentResistances.Clear();
+		
+		_sprite.Play("default");
 	}
 
 	public override void BeginTurn()
@@ -69,6 +73,14 @@ public partial class Enemy : Combatant
 
 		TakeTurn();
 
+	}
+
+	public override void _Process(double delta)
+	{
+		if (!_sprite.IsPlaying())
+		{
+			_sprite.Play("default");
+		}
 	}
 
 	private float CalcAverageDamage(CardData card, ICombatant player)
@@ -276,6 +288,7 @@ public partial class Enemy : Combatant
 			}
 
 			_combatManager.PlayCard(this, targets, cardToPlay);
+			_sprite.Play("attack");
 			_internalDeck.Discard(cardToPlay);
 
 			FloatingTextFactory.GetInstance().CreateFloatingText("[color=white]" + cardToPlay.Name + "[/color]", Position + Vector2.Up * 100, lifetime: 2500, 300);
@@ -301,6 +314,8 @@ public partial class Enemy : Combatant
 	public override void TakeDamage(DamageType type, int amount, double critModifier, bool isCrit, bool autoResist)
 	{
 		base.TakeDamage(type, amount, critModifier, isCrit, autoResist);
+		if (type != DamageType.HEAL)
+            _sprite.Play("hurt");
 		if (_isDead)
 			Die();
 	}

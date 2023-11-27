@@ -17,7 +17,7 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
-    private const int MAX_PER_ROW = 7;
+    private const int MAX_PER_ROW = 8;
     private ColorRect _rect;
     private Node2D _cardNode;
     private Node2D _priceNode;
@@ -26,6 +26,7 @@ public partial class Shop : Node2D
     private LevelSelectOption _upgradeCardButton;
     private Price _removePriceIcon;
     private Price _upgradePriceIcon;
+    private Price _playerCoinsIcon;
     [Export] private PackedScene _cardResource;
     [Export] private PackedScene _coinResource;
     private List<CardData> _stock;
@@ -57,6 +58,7 @@ public partial class Shop : Node2D
 
         _upgradePriceIcon = GetNode<Price>("UpgradePrice");
         _removePriceIcon = GetNode<Price>("RemovePrice");
+        _playerCoinsIcon = GetNode<Price>("PlayerCoins");
 
         _upgradePriceIcon.Visible = false;
         _removePriceIcon.Visible = false;
@@ -99,8 +101,12 @@ public partial class Shop : Node2D
         if (_active.Data.Upgrade == null)
             return;
 
+        if (MasterScene.GetInstance().TotalCoins < GetUpgradeCost(_active.Data))
+            return;
+
         MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
         MasterDeck.PlayerDeck.AddCard(_active.Data.Upgrade);
+        MasterScene.GetInstance().AddCoins(-GetUpgradeCost(_active.Data));
         _active = null;
         UpdateSelection();
     }
@@ -110,7 +116,14 @@ public partial class Shop : Node2D
         if (_active == null)
             return;
 
-        MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
+        if (_active.Data.UnremovableByPlayer)
+            return;
+        
+        if (MasterScene.GetInstance().TotalCoins < GetRemoveCost(_active.Data))
+            return;
+
+        MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);       
+        MasterScene.GetInstance().AddCoins(-GetRemoveCost(_active.Data));
         _active = null;
         UpdateSelection();
     }
@@ -202,10 +215,8 @@ public partial class Shop : Node2D
             {                
                 if (_state == ShopState.PURCHASING)
                 {
-                    _stock.Remove(_selectedCard.Data);
-                    CardBought?.Invoke(_selectedCard.Data);
+                    
                     BuyCard(_selectedCard.Data);
-                    UpdateSelection();
                     //_selectedCard = null;
                 }
             }
@@ -235,7 +246,16 @@ public partial class Shop : Node2D
 
     private void BuyCard(CardData card)
     {
+        if (MasterScene.GetInstance().TotalCoins < card.Price)
+            return;
+
+        _stock.Remove(_selectedCard.Data);
+        CardBought?.Invoke(_selectedCard.Data);
+
         MasterDeck.PlayerDeck.AddCard(card);
+        MasterScene.GetInstance().AddCoins(-card.Price);
+
+        UpdateSelection();
     }
 
     private void UpdateCardProtrusion()
@@ -256,6 +276,8 @@ public partial class Shop : Node2D
 
     private void UpdateSelection()
     {      
+        _playerCoinsIcon.GetNode<Label>("Label").Text = MasterScene.GetInstance().TotalCoins.ToString();
+        
         foreach (var child in _cardNode.GetChildren())
             child.QueueFree();
         foreach (var child in _priceNode.GetChildren())
@@ -290,7 +312,7 @@ public partial class Shop : Node2D
 
             _cardNode.AddChild(card);
             card.Position = new Vector2(x, y);
-            card.ApplyScale(new Vector2(0.25f, 0.25f));
+            card.ApplyScale(new Vector2(0.20f, 0.20f));
 
             index++;
         }

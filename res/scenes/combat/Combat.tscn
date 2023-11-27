@@ -1,12 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=25 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
 [ext_resource type="PackedScene" uid="uid://dqskjl6vsej8" path="res://res/scenes/combat/subscenes/Card/Card.tscn" id="3_6gjep"]
+[ext_resource type="PackedScene" uid="uid://bjin1bf2fmme" path="res://res/scenes/combat/subscenes/Card/NullCard2.tscn" id="3_lhf3j"]
 [ext_resource type="PackedScene" uid="uid://bnlrlncqe7voq" path="res://res/scenes/overworld/Price.tscn" id="3_xuif3"]
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Hand.cs" id="4_d0wjn"]
 [ext_resource type="PackedScene" uid="uid://cjvk42o3wxiyl" path="res://res/scenes/combat/subscenes/player/Player.tscn" id="4_rn6c5"]
 [ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_wlm2t"]
+[ext_resource type="Script" path="res://res/scenes/combat/subscenes/background/Background.cs" id="8_5rcct"]
 [ext_resource type="PackedScene" uid="uid://de6otae1c7bon" path="res://res/scenes/combat/subscenes/deck/Deck.tscn" id="9_5f4rp"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="12_0sia7"]
 [ext_resource type="Script" path="res://res/scenes/combat/EndTurn.cs" id="12_atut3"]
@@ -37,11 +39,13 @@ radius = 32.0
 script = ExtResource("1_gps4y")
 _enemyTypePaths = Array[String](["uid://iw7vaee7nlpc", "uid://6dpordjypq8l", "uid://bakphjas5nire"])
 _cardResource = ExtResource("3_6gjep")
+_nullCardResource = ExtResource("3_lhf3j")
 _coinValueResource = ExtResource("3_xuif3")
 _music = "uid://bfxwb5au8ilmq"
+_rejectButtonImg = ExtResource("16_qdhf3")
 
 [node name="Player" parent="." node_paths=PackedStringArray("_hand", "_targetLabel", "_actionPointLabel", "_movementPointLabel", "_deck", "_discard") instance=ExtResource("4_rn6c5")]
-position = Vector2(-628, 103)
+position = Vector2(-558, 143)
 _hand = NodePath("../Hand")
 _targetLabel = NodePath("../InfoLabel")
 _actionPointLabel = NodePath("../Energy/ActionPoint/Label")
@@ -51,8 +55,9 @@ _discard = NodePath("../Discard")
 _maxHealth = 25
 
 [node name="Background" parent="." instance=ExtResource("1_5pl1x")]
-scale = Vector2(0.67, 0.67)
-transform = Transform2D(0.67, 0, 0, 0.67, 0, 0)
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+script = ExtResource("8_5rcct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -148,7 +153,8 @@ offset_bottom = -269.0
 theme = ExtResource("12_0sia7")
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[center][color=#BB5545]Select Targets[/color]"
+text = "[center][color=#BB5545]Select Targets[/color]
+"
 
 [node name="EndTurn" type="Area2D" parent="."]
 position = Vector2(690, 475)

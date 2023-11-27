@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqskjl6vsej8"]
+[gd_scene load_steps=14 format=3 uid="uid://dqskjl6vsej8"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Card.cs" id="1_q4dhy"]
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="2_0qfpw"]
+[ext_resource type="Texture2D" uid="uid://b1yuec1bdyki7" path="res://res/scenes/combat/subscenes/Card/images/artwork/holy_smite.png" id="2_45shd"]
 [ext_resource type="Texture2D" uid="uid://dgurbiof18wya" path="res://res/scenes/combat/subscenes/Card/images/card_background_trans.png" id="3_iu6l8"]
 [ext_resource type="Texture2D" uid="uid://cnul6kw3wr6b8" path="res://res/scenes/combat/subscenes/Card/images/background_solid_col.png" id="4_k15ia"]
 [ext_resource type="Theme" uid="uid://djnljen80b82f" path="res://assets/fonts/card_theme.tres" id="5_k86js"]
-[ext_resource type="Texture2D" uid="uid://shtr3us4frvi" path="res://res/scenes/combat/subscenes/Card/images/movement_point_icon.png" id="5_lktgx"]
 [ext_resource type="Texture2D" uid="uid://1mxovo0dtleq" path="res://res/scenes/combat/subscenes/Card/images/snek_color.png" id="6_c8t6u"]
-[ext_resource type="SpriteFrames" uid="uid://bsv28668g8l7g" path="res://res/scenes/combat/subscenes/Card/animations/fire/fire_anim.tres" id="7_1fgaa"]
+[ext_resource type="Texture2D" uid="uid://cf6c28dvqjh7i" path="res://res/scenes/combat/subscenes/Card/images/MOVEMENT POINTS SYMBOL.png" id="7_bjlxu"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/Card/PlayerStamp.gdshader" id="9_eh8p3"]
 [ext_resource type="Texture2D" uid="uid://cdf18qqmux3gx" path="res://res/scenes/combat/subscenes/Card/images/PlayerStamp.png" id="9_xvclh"]
 [ext_resource type="Texture2D" uid="uid://bep574adcsjck" path="res://res/scenes/combat/subscenes/Card/images/EnemyStamp.png" id="10_kaadg"]
@@ -32,7 +31,7 @@ script = ExtResource("1_q4dhy")
 [node name="Art" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(0, -753.805)
-texture = ExtResource("2_0qfpw")
+texture = ExtResource("2_45shd")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = 1
@@ -59,7 +58,7 @@ theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[center]Name[/center]"
+text = "[center]Take No Card"
 threaded = true
 
 [node name="DescriptionLabel" type="RichTextLabel" parent="."]
@@ -71,19 +70,18 @@ theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[center]Description of the card - intended to be flavor text."
 threaded = true
 
 [node name="DamageLabel" type="RichTextLabel" parent="."]
 offset_left = -334.0
 offset_top = -233.0
-offset_right = 5.0
+offset_right = 28.0
 offset_bottom = -23.0
 theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[color=red]1d8 + 4[/color] [img=30]assets/placeholder/damage_icons/fire.png[/img]"
+text = "1d4 + 1"
 threaded = true
 
 [node name="TargetsLabel" type="RichTextLabel" parent="."]
@@ -95,7 +93,6 @@ theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[right]Target info here"
 threaded = true
 
 [node name="ActionPointIcon" type="Sprite2D" parent="."]
@@ -118,15 +115,8 @@ vertical_alignment = 1
 [node name="MovementPointIcon" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(368, -1003)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_lktgx")
-
-[node name="PlayAnimation" type="AnimatedSprite2D" parent="."]
-z_index = -1
-position = Vector2(2, -499)
-scale = Vector2(3, 3)
-sprite_frames = ExtResource("7_1fgaa")
-speed_scale = 0.5
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_bjlxu")
 
 [node name="SelfStamp" type="Node2D" parent="."]
 visible = false
@@ -137,7 +127,6 @@ position = Vector2(281, -60)
 texture = ExtResource("9_xvclh")
 
 [node name="SingleStamp" type="Node2D" parent="."]
-visible = false
 
 [node name="EnemyStamp" type="Sprite2D" parent="SingleStamp"]
 position = Vector2(281, -60)

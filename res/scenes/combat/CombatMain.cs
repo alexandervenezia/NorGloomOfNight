@@ -17,7 +17,7 @@ enum CombatRewardState
     NOT_OFFERED,
     PLAYER_CHOOSING,
     AWAITING_CONFIRMATION,
-    CHOICE_MADE
+    CHOICE_MADE,
 }
 
 public partial class CombatMain : Node2D
@@ -25,8 +25,10 @@ public partial class CombatMain : Node2D
     [ExportGroup("Right click .tscn -> get UID -> paste here. Blame Godot for having to use freaking strings because they still haven't fixed a bug reported over a year ago: https:[slashslash]github.com[slash]godotengine[slash]godot[slash]issues[slash]62916")]
     [Export] private Godot.Collections.Array<string> _enemyTypePaths;
     [Export] private PackedScene _cardResource;
+    [Export] private PackedScene _nullCardResource;
     [Export] private PackedScene _coinValueResource;
     [Export] private string _music;
+    [Export] private Texture2D _rejectButtonImg;
     private Dictionary<int, PackedScene> _enemyTypesByUID;
 
     private Node2D _rewardsNode;
@@ -35,6 +37,7 @@ public partial class CombatMain : Node2D
 
     private CombatRewardState _rewardState = CombatRewardState.NOT_OFFERED;
     private Card _selectedRewardCard;
+    private Card _rejectCard;
 
     public Vector2[] EnemySpawnPoints =
     {
@@ -162,6 +165,7 @@ public partial class CombatMain : Node2D
 
     public override void _Ready()
     {
+        GetNode<Background>("Background").SetBG(EnemyAssetLookup.GetInstance().GetCombatBackground(MasterScene.GetInstance().LoadCombatBackground()));
         MasterAudio.GetInstance().ClearQueue();
         MasterAudio.GetInstance().PlaySong(_music);
         
@@ -215,7 +219,7 @@ public partial class CombatMain : Node2D
             GD.Print("Reward chosen: " + _selectedRewardCard);
             GD.Print("Gold found: " + goldReward_ref);
 
-            if (IsInstanceValid(_selectedRewardCard))
+            if (IsInstanceValid(_selectedRewardCard) && _selectedRewardCard != _rejectCard)
             {
                 GD.Print(MasterDeck.PlayerDeck.GetCardCount());
                 MasterDeck.PlayerDeck.AddCard(_selectedRewardCard.Data);
@@ -229,8 +233,8 @@ public partial class CombatMain : Node2D
 
             MasterScene.GetInstance().AddCoins(goldReward_ref);        
         }
-
-        await Task.Delay(100);
+        else
+            await Task.Delay(2000);
 
         MasterScene.GetInstance().SetPlayerHP(GetPlayerHP());
         MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
@@ -254,7 +258,7 @@ public partial class CombatMain : Node2D
         Price price = (Price)_coinValueResource.Instantiate();
         _rewardsNode.AddChild(price);
         price.SetPrice(gold_ref);
-        price.Position = new Vector2(0, 100);
+        price.Position = new Vector2(0, 125);
 
         if (cardOptions.Count == 0)
         {
@@ -270,10 +274,19 @@ public partial class CombatMain : Node2D
             _rewardsNode.AddChild(card);
             card.ApplyScale(new Vector2(0.3f, 0.3f));
 
-            card.Position = new Vector2(i * 400 - ((cardOptions.Count-1)/2f) * 400f, 0);
+            card.Position = new Vector2(i * 400 - ((cardOptions.Count)/2f) * 400f, 0);
 
             i++;
         }            
+
+        if (cardOptions.Count > 0)
+        {
+            _rejectCard = (Card)_nullCardResource.Instantiate();
+            _rewardsNode.AddChild(_rejectCard);
+            _rejectCard.ApplyScale(new Vector2(0.3f, 0.3f));
+
+            _rejectCard.Position = new Vector2(i * 400 - ((cardOptions.Count)/2f) * 400f, 0);
+        }
 
         _rewardState = CombatRewardState.PLAYER_CHOOSING;
 

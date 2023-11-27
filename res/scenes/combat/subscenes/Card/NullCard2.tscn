@@ -1,0 +1,210 @@
+[gd_scene load_steps=14 format=3 uid="uid://bjin1bf2fmme"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Card.cs" id="1_8616y"]
+[ext_resource type="Texture2D" uid="uid://btu5t7qeg8uof" path="res://res/scenes/combat/subscenes/XButton.png" id="2_gj5tm"]
+[ext_resource type="Texture2D" uid="uid://dgurbiof18wya" path="res://res/scenes/combat/subscenes/Card/images/card_background_trans.png" id="3_sqwrf"]
+[ext_resource type="Texture2D" uid="uid://cnul6kw3wr6b8" path="res://res/scenes/combat/subscenes/Card/images/background_solid_col.png" id="4_flio4"]
+[ext_resource type="Theme" uid="uid://djnljen80b82f" path="res://assets/fonts/card_theme.tres" id="5_ynm5s"]
+[ext_resource type="Texture2D" uid="uid://1mxovo0dtleq" path="res://res/scenes/combat/subscenes/Card/images/snek_color.png" id="6_qqtb8"]
+[ext_resource type="Texture2D" uid="uid://shtr3us4frvi" path="res://res/scenes/combat/subscenes/Card/images/movement_point_icon.png" id="7_m72r3"]
+[ext_resource type="Shader" path="res://res/scenes/combat/subscenes/Card/PlayerStamp.gdshader" id="9_e7fsp"]
+[ext_resource type="Texture2D" uid="uid://cdf18qqmux3gx" path="res://res/scenes/combat/subscenes/Card/images/PlayerStamp.png" id="10_oyodn"]
+[ext_resource type="Texture2D" uid="uid://bep574adcsjck" path="res://res/scenes/combat/subscenes/Card/images/EnemyStamp.png" id="11_41jwr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gqjh"]
+size = Vector2(704, 1736)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5cahu"]
+shader = ExtResource("9_e7fsp")
+shader_parameter/tint = Vector3(1, 0, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4g8vr"]
+shader = ExtResource("9_e7fsp")
+shader_parameter/tint = Vector3(1, 0, 0.5)
+
+[node name="Card" type="Area2D"]
+disable_mode = 1
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_8616y")
+
+[node name="Art" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -753.805)
+texture = ExtResource("2_gj5tm")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -499)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("3_sqwrf")
+
+[node name="BackroundWhite" type="Sprite2D" parent="."]
+position = Vector2(0, -499)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("4_flio4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2, -127)
+shape = SubResource("RectangleShape2D_3gqjh")
+
+[node name="NameLabel" type="RichTextLabel" parent="."]
+offset_left = -306.0
+offset_top = -484.0
+offset_right = 310.0
+offset_bottom = -381.0
+theme = ExtResource("5_ynm5s")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Take No Card"
+threaded = true
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="."]
+offset_left = -306.0
+offset_top = -375.0
+offset_right = 306.0
+offset_bottom = -258.0
+theme = ExtResource("5_ynm5s")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+threaded = true
+
+[node name="DamageLabel" type="RichTextLabel" parent="."]
+offset_left = -334.0
+offset_top = -233.0
+offset_right = 5.0
+offset_bottom = -23.0
+theme = ExtResource("5_ynm5s")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+threaded = true
+
+[node name="TargetsLabel" type="RichTextLabel" parent="."]
+offset_left = 50.0
+offset_top = -233.0
+offset_right = 323.0
+offset_bottom = -23.0
+theme = ExtResource("5_ynm5s")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+threaded = true
+
+[node name="ActionPointIcon" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(-335, -980)
+texture = ExtResource("6_qqtb8")
+
+[node name="ActionPointNumber" type="Label" parent="ActionPointIcon"]
+offset_left = -65.0
+offset_top = -57.0
+offset_right = 55.0
+offset_bottom = 173.0
+theme = ExtResource("5_ynm5s")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovementPointIcon" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(368, -1003)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_m72r3")
+
+[node name="SelfStamp" type="Node2D" parent="."]
+visible = false
+
+[node name="PlayerStamp" type="Sprite2D" parent="SelfStamp"]
+material = SubResource("ShaderMaterial_5cahu")
+position = Vector2(281, -60)
+texture = ExtResource("10_oyodn")
+
+[node name="SingleStamp" type="Node2D" parent="."]
+visible = false
+
+[node name="EnemyStamp" type="Sprite2D" parent="SingleStamp"]
+position = Vector2(281, -60)
+texture = ExtResource("11_41jwr")
+
+[node name="DualStamp" type="Node2D" parent="."]
+visible = false
+
+[node name="EnemyStamp" type="Sprite2D" parent="DualStamp"]
+position = Vector2(281, -60)
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp2" type="Sprite2D" parent="DualStamp"]
+position = Vector2(150, -60)
+texture = ExtResource("11_41jwr")
+
+[node name="TripleStamp" type="Node2D" parent="."]
+visible = false
+
+[node name="EnemyStamp" type="Sprite2D" parent="TripleStamp"]
+position = Vector2(281, -60)
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp4" type="Sprite2D" parent="TripleStamp"]
+position = Vector2(150, -60)
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp2" type="Sprite2D" parent="TripleStamp"]
+position = Vector2(281, -191)
+texture = ExtResource("11_41jwr")
+
+[node name="QuadStamp" type="Node2D" parent="."]
+visible = false
+
+[node name="EnemyStamp" type="Sprite2D" parent="QuadStamp"]
+position = Vector2(281, -60)
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp4" type="Sprite2D" parent="QuadStamp"]
+position = Vector2(150, -60)
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp2" type="Sprite2D" parent="QuadStamp"]
+position = Vector2(281, -191)
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp5" type="Sprite2D" parent="QuadStamp"]
+position = Vector2(150, -191)
+texture = ExtResource("11_41jwr")
+
+[node name="AllStamp" type="Node2D" parent="."]
+visible = false
+
+[node name="PlayerStamp" type="Sprite2D" parent="AllStamp"]
+z_index = 1
+material = SubResource("ShaderMaterial_4g8vr")
+position = Vector2(225, -133)
+rotation = 0.523599
+texture = ExtResource("10_oyodn")
+
+[node name="EnemyStamp" type="Sprite2D" parent="AllStamp"]
+position = Vector2(260, -79)
+rotation = -0.366519
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp4" type="Sprite2D" parent="AllStamp"]
+position = Vector2(153, -98)
+rotation = 0.415388
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp2" type="Sprite2D" parent="AllStamp"]
+position = Vector2(286, -141)
+rotation = -0.249582
+texture = ExtResource("11_41jwr")
+
+[node name="EnemyStamp5" type="Sprite2D" parent="AllStamp"]
+position = Vector2(150, -191)
+rotation = -0.165806
+texture = ExtResource("11_41jwr")

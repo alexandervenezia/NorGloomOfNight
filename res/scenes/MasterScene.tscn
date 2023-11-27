@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d204n4ckwe72x"]
+[gd_scene load_steps=21 format=3 uid="uid://d204n4ckwe72x"]
 
 [ext_resource type="Script" path="res://res/scripts/MasterScene.cs" id="1_smi8o"]
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/MasterDeck.cs" id="2_ykx58"]
@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="17_ltb3f"]
 [ext_resource type="Resource" uid="uid://djp22yro3qat6" path="res://res/resources/cards/Stomp.tres" id="18_30yo1"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MasterAudio.cs" id="19_pwt8m"]
+[ext_resource type="Script" path="res://res/scripts/controllers/combat/EnemyAssetLookup.cs" id="20_1tv6u"]
 
 [node name="MasterScene" type="Node2D"]
 script = ExtResource("1_smi8o")
@@ -29,7 +30,18 @@ _combatSceneUID = "uid://bk6mw4uwgd1yl"
 [node name="MasterDeck" type="Node" parent="."]
 script = ExtResource("2_ykx58")
 _cardTypes = [ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("5_54fyw"), ExtResource("6_2hqoe"), ExtResource("7_g0tv5"), ExtResource("8_mm6l1"), ExtResource("9_w8voq"), ExtResource("10_74qxg"), ExtResource("11_61ikk"), ExtResource("12_ojmvo"), ExtResource("13_mmb0c"), ExtResource("14_0e3mq"), ExtResource("15_e2qys"), ExtResource("16_qcxcv"), ExtResource("17_ltb3f"), ExtResource("18_30yo1")]
-_playerStarterDeck = Array[Resource]([ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("4_oxfww"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("8_mm6l1"), ExtResource("8_mm6l1"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("12_ojmvo"), ExtResource("12_ojmvo")])
+_playerStarterDeck = Array[Resource]([ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("4_oxfww"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("8_mm6l1"), ExtResource("8_mm6l1"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("12_ojmvo"), ExtResource("12_ojmvo"), ExtResource("10_74qxg")])
+_damageIcons = {
+0: "uid://8i6gpgm402cf",
+1: "uid://c6pt012mwynxb",
+2: "uid://d3m5o0rxyelfp",
+3: "uid://bprhryh76jh4e",
+4: "uid://b2u5g3j4goxk1",
+5: "uid://bktrh43tnd0f0",
+6: "uid://dhxk74kf61tb6",
+7: "uid://fbk83844nkxt",
+8: "uid://56t8u07yqa6s"
+}
 
 [node name="MasterAudio" type="Node" parent="."]
 script = ExtResource("19_pwt8m")
@@ -38,5 +50,20 @@ _fadeTimeSeconds = 5.0
 _musicPath = "res://assets/audio/music/"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MasterAudio"]
+
+[node name="MasterAssetLoader" type="Node" parent="."]
+
+[node name="Combat" type="Node" parent="MasterAssetLoader"]
+script = ExtResource("20_1tv6u")
+Lookup = {
+0: "uid://d0xuag4u0grsi",
+1: "uid://dh8oo3oofs8q8",
+2: "uid://drx2u0bka0e2v",
+91: "uid://dvv37fwwd1ix"
+}
+Backgrounds = {
+0: "uid://wkaiw4al4ts8",
+1: "uid://bejriwo6em027"
+}
 
 [connection signal="finished" from="MasterAudio/AudioStreamPlayer" to="MasterAudio" method="MusicFinished"]

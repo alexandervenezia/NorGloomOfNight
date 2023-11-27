@@ -1,0 +1,324 @@
+[gd_resource type="SpriteFrames" load_steps=77 format=3 uid="uid://dvv37fwwd1ix"]
+
+[ext_resource type="Texture2D" uid="uid://b5y0x0r0f0wch" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/1.png" id="1_mj76w"]
+[ext_resource type="Texture2D" uid="uid://dbvs1bsxf68f" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/2.png" id="2_famov"]
+[ext_resource type="Texture2D" uid="uid://cfpyl6fnoewgx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/3.png" id="3_axhx1"]
+[ext_resource type="Texture2D" uid="uid://bqncm04fnomd8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/4.png" id="4_ly8ky"]
+[ext_resource type="Texture2D" uid="uid://4xbfs0wstsha" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/5.png" id="5_2srii"]
+[ext_resource type="Texture2D" uid="uid://dji78o23yqvdu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/6.png" id="6_1gobm"]
+[ext_resource type="Texture2D" uid="uid://b3pdbcyjm1m0c" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/7.png" id="7_8wejd"]
+[ext_resource type="Texture2D" uid="uid://dohhhy5pgw4tj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/8.png" id="8_x6b77"]
+[ext_resource type="Texture2D" uid="uid://b1kd0nffl41qd" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/9.png" id="9_7ckyx"]
+[ext_resource type="Texture2D" uid="uid://bjy2rya4nr5ak" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/10.png" id="10_nc7e6"]
+[ext_resource type="Texture2D" uid="uid://dfn1v63bvdvef" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/11.png" id="11_p8npp"]
+[ext_resource type="Texture2D" uid="uid://bcx7kwojn7e4o" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/12.png" id="12_ddhxj"]
+[ext_resource type="Texture2D" uid="uid://draw3o1qxr3lv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/13.png" id="13_c3hi2"]
+[ext_resource type="Texture2D" uid="uid://5laxr3k5ok7n" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/14.png" id="14_88htc"]
+[ext_resource type="Texture2D" uid="uid://crpa4cv84v08s" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/15.png" id="15_fjp83"]
+[ext_resource type="Texture2D" uid="uid://dgy3aa1gat332" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/16.png" id="16_ne25n"]
+[ext_resource type="Texture2D" uid="uid://dgb4fdj1lhp8s" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/17.png" id="17_lco3h"]
+[ext_resource type="Texture2D" uid="uid://dskvxj36i77kn" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/18.png" id="18_5d1xv"]
+[ext_resource type="Texture2D" uid="uid://b6fgj24gpdq54" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/19.png" id="19_k5lb0"]
+[ext_resource type="Texture2D" uid="uid://corooo1rr3dai" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/20.png" id="20_hruv7"]
+[ext_resource type="Texture2D" uid="uid://b3m1bkaroqrxc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/21.png" id="21_c6hfg"]
+[ext_resource type="Texture2D" uid="uid://bo38ffq6u74bb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/22.png" id="22_xdq6c"]
+[ext_resource type="Texture2D" uid="uid://b5yipavvs7ye3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/23.png" id="23_gis1t"]
+[ext_resource type="Texture2D" uid="uid://jhao8gx5kiom" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/24.png" id="24_1l3dl"]
+[ext_resource type="Texture2D" uid="uid://bo8ctfoxna3v2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/25.png" id="25_8vhcr"]
+[ext_resource type="Texture2D" uid="uid://b30jaaf6y2y7i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/26.png" id="26_jv3l7"]
+[ext_resource type="Texture2D" uid="uid://dan254xk40u5p" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/27.png" id="27_ibj4o"]
+[ext_resource type="Texture2D" uid="uid://c5pt6xyo6a8u7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/28.png" id="28_8jrj6"]
+[ext_resource type="Texture2D" uid="uid://djnxnbjf0eovs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/29.png" id="29_vt3ut"]
+[ext_resource type="Texture2D" uid="uid://cykfu7sr44km4" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/0.png" id="30_6p5fc"]
+[ext_resource type="Texture2D" uid="uid://hobc7ghplvw4" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/1.png" id="31_dmry2"]
+[ext_resource type="Texture2D" uid="uid://c0syckw0l1asx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/2.png" id="32_xbw0r"]
+[ext_resource type="Texture2D" uid="uid://b5d3sffe4c6mb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/3.png" id="33_6q2xe"]
+[ext_resource type="Texture2D" uid="uid://c43ipcijh8wq2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/4.png" id="34_5c5x5"]
+[ext_resource type="Texture2D" uid="uid://dw7mi5kc7mhp0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/5.png" id="35_dpx1y"]
+[ext_resource type="Texture2D" uid="uid://iv21n2n4h8b7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/6.png" id="36_4ym26"]
+[ext_resource type="Texture2D" uid="uid://cmjjfdhu5w74v" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/7.png" id="37_76dow"]
+[ext_resource type="Texture2D" uid="uid://corwcmen6cgn5" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/8.png" id="38_uh603"]
+[ext_resource type="Texture2D" uid="uid://d07jvdgkfmr5e" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/9.png" id="39_18vsv"]
+[ext_resource type="Texture2D" uid="uid://xgpuv5ybgxhg" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/10.png" id="40_ucji7"]
+[ext_resource type="Texture2D" uid="uid://bqh4q2xl6wauy" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/11.png" id="41_5hk5w"]
+[ext_resource type="Texture2D" uid="uid://c68tqam0uuo71" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/12.png" id="42_fvkci"]
+[ext_resource type="Texture2D" uid="uid://d3hg1387fcskd" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/13.png" id="43_dtcmh"]
+[ext_resource type="Texture2D" uid="uid://cn3vqg7op600o" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/14.png" id="44_4llei"]
+[ext_resource type="Texture2D" uid="uid://b2oj7uwo8ax0i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/15.png" id="45_6v70g"]
+[ext_resource type="Texture2D" uid="uid://chsx588yvebt2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/16.png" id="46_6ft0p"]
+[ext_resource type="Texture2D" uid="uid://cecydewpjq2lj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/17.png" id="47_1ium4"]
+[ext_resource type="Texture2D" uid="uid://feq0elnpb05b" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/18.png" id="48_mwvsn"]
+[ext_resource type="Texture2D" uid="uid://b3ym1wjc2on68" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/19.png" id="49_o7m1f"]
+[ext_resource type="Texture2D" uid="uid://2371yce7i4n7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/20.png" id="50_rqjaq"]
+[ext_resource type="Texture2D" uid="uid://cqumbcnu67bhp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/21.png" id="51_ijhmb"]
+[ext_resource type="Texture2D" uid="uid://bxd2v8t7bgcu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/22.png" id="52_oddf8"]
+[ext_resource type="Texture2D" uid="uid://dbkxa3yv6d5qi" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/23.png" id="53_eupwx"]
+[ext_resource type="Texture2D" uid="uid://liekvdp7kyuc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/24.png" id="54_n8b8x"]
+[ext_resource type="Texture2D" uid="uid://b6urec567kl04" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/25.png" id="55_hrn4u"]
+[ext_resource type="Texture2D" uid="uid://0olli2ue7lgp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/26.png" id="56_jrfvx"]
+[ext_resource type="Texture2D" uid="uid://xcxb840ssayl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/27.png" id="57_1cfpj"]
+[ext_resource type="Texture2D" uid="uid://b5ylavefubxe0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/28.png" id="58_35y0h"]
+[ext_resource type="Texture2D" uid="uid://73e85c4jqgbl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/29.png" id="59_w2pb4"]
+[ext_resource type="Texture2D" uid="uid://d16hx8fruqdyx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/30.png" id="60_qebro"]
+[ext_resource type="Texture2D" uid="uid://iy28uaxbaima" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/31.png" id="61_12i3b"]
+[ext_resource type="Texture2D" uid="uid://cs4sepqu4fwq8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/32.png" id="62_uhovk"]
+[ext_resource type="Texture2D" uid="uid://bkhflaugyt7sc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/33.png" id="63_7ld38"]
+[ext_resource type="Texture2D" uid="uid://dqyqqbbbvn36w" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/34.png" id="64_jq47b"]
+[ext_resource type="Texture2D" uid="uid://ctedw6c62pryj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0000.png" id="65_7rrmv"]
+[ext_resource type="Texture2D" uid="uid://cpdhfyfrd5x5t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0001.png" id="66_0aadh"]
+[ext_resource type="Texture2D" uid="uid://rwp6jaf84wgh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0002.png" id="67_58sdv"]
+[ext_resource type="Texture2D" uid="uid://bdj4l1e2jpvjs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0003.png" id="68_8pyvw"]
+[ext_resource type="Texture2D" uid="uid://cfur5if7sivfm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0004.png" id="69_k221n"]
+[ext_resource type="Texture2D" uid="uid://sqa6irfjvk6k" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0005.png" id="70_wh2c0"]
+[ext_resource type="Texture2D" uid="uid://c80rxm03omn4j" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0006.png" id="71_owxjf"]
+[ext_resource type="Texture2D" uid="uid://cli5fh0r4ys8b" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0007.png" id="72_kh62s"]
+[ext_resource type="Texture2D" uid="uid://dat05wu81ujql" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0008.png" id="73_10pli"]
+[ext_resource type="Texture2D" uid="uid://dtl8skwba44q7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0009.png" id="74_1iekg"]
+[ext_resource type="Texture2D" uid="uid://x6hb3d8jimsh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0010.png" id="75_x0t4o"]
+[ext_resource type="Texture2D" uid="uid://duh7fpr56eckl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Damaged/Poker_Combat_Damaged_0011.png" id="76_t84fn"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mj76w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_famov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axhx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ly8ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2srii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1gobm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8wejd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x6b77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ckyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nc7e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p8npp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ddhxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c3hi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_88htc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fjp83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ne25n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lco3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5d1xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_k5lb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hruv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_c6hfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xdq6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gis1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1l3dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8vhcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jv3l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ibj4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8jrj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vt3ut")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_6p5fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_dmry2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_xbw0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_6q2xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5c5x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_dpx1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4ym26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_76dow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_uh603")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_18vsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ucji7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5hk5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_fvkci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_dtcmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_4llei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_6v70g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6ft0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1ium4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_mwvsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_o7m1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_rqjaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ijhmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_oddf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_eupwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_n8b8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_hrn4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_jrfvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_1cfpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_35y0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_w2pb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_qebro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_12i3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_uhovk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_7ld38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_jq47b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_7rrmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_0aadh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_58sdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_8pyvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_k221n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_wh2c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_owxjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_kh62s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_10pli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_1iekg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_x0t4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_t84fn")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 24.0
+}]

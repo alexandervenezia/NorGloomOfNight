@@ -298,13 +298,17 @@ text = "[center][font_size=50]Modify Deck"
 
 [node name="RemovePrice" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
-position = Vector2(417, 892)
+position = Vector2(417, 895)
 scale = Vector2(0.5, 0.5)
 
 [node name="UpgradePrice" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
-position = Vector2(417, 1001)
+position = Vector2(417, 1004)
 scale = Vector2(0.5, 0.5)
+
+[node name="PlayerCoins" parent="." instance=ExtResource("3_53ipl")]
+z_index = 102
+position = Vector2(1757, 929)
 
 [connection signal="mouse_entered" from="Pride" to="Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="Pride" to="Pride" method="OnMouseExited" flags=18]

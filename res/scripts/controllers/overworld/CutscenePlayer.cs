@@ -39,7 +39,7 @@ public partial class CutscenePlayer : ColorRect
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("Select"))
+        if (Input.IsActionJustPressed("Select") || Input.IsActionJustPressed("Jump"))
         {
             if (_data != null)
             {

@@ -23,3 +23,4 @@ _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 12
+_unremovableByPlayer = false

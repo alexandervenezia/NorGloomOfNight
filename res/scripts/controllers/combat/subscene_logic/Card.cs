@@ -72,7 +72,9 @@ public partial class Card : Area2D
 
 		foreach (DamageType dt in data.Damage.Keys)
 		{
-			diceText += data.Damage[dt].ToString() + " " + dt + "\n";
+			Texture2D icon = MasterDeck.GetDamageIcon(dt);
+			string path = icon.ResourcePath;
+			diceText += data.Damage[dt].ToString() + " " + dt + " [img color=black width=65]" + path + "[/img]\n";
 		}
 		foreach (DrawEffect de in data.DrawEffects.Keys)
 		{
@@ -87,7 +89,6 @@ public partial class Card : Area2D
 		{
 			diceText += "[color=#772233]" + d.Type + ": " + d.Duration + "[/color]\n";
  		}
-
 		((RichTextLabel)GetNode("DamageLabel")).Text = "[font_size=50]" + diceText + "[/font_size]";
 
 		((RichTextLabel)GetNode("TargetsLabel")).Text = ""; // "[right][font_size=50]" + data.Target + "[/font_size][/right]";

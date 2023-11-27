@@ -1,3 +1,4 @@
+using Data;
 using Godot;
 using System;
 using System.Collections;
@@ -8,39 +9,72 @@ public partial class FloatingTextFactory : Node2D
 {
     [Export] Theme _theme;
     [Export] int _fontSize = 30;
-    private static FloatingTextFactory _instance;
+    private static FloatingTextFactory _activeInstance;
     private Queue<RichTextLabel> _waitingQueue;
+
+    private Dictionary<Vector2, ulong> _spawnLocationDelays;
+
     public override void _Ready()
     {
-        _instance = this;
+        GD.Print("New instance of FLoatingText");
+        _activeInstance = this;
         _waitingQueue = new();
+        _spawnLocationDelays = new();
+
+        TreeEntered += OnEnterTree;
     }
+
+    private void OnEnterTree()
+    {
+        GD.Print("Entered tree - FloaingText");
+        _activeInstance = this;        
+    }
+
 
     public static FloatingTextFactory GetInstance()
     {
-        return _instance;
+        return _activeInstance;
     }
 
-    public void CreateFloatingCardText(bool isHeal, bool isCrit, bool isPoison, bool isResist, int armorAmount, int amount, Vector2 position)
+    public void CreateFloatingCardText(bool isHeal, bool isCrit, bool isPoison, bool isResist, int armorAmount, int amount, Vector2 position, DamageType type)
     {
         string color = isHeal ? "#33FF33" : "FF3333";
         color = isPoison ? "#FFBB22" : color;
         string prefix = isCrit ? "Critical! " : "";
         if (isResist)
             prefix += "Resist! ";
-        string message = String.Format("[color={0}]{1}{2}[/color]", color, prefix, amount);
+        
+        Texture2D icon = MasterDeck.GetDamageIcon(type);
+		string path = icon.ResourcePath;
+        
+        string message = String.Format("{1}{2} [img color=red width=65]{3}[/img]", color, prefix, amount, path);
 
         Vector2 offset = Vector2.Up * 100;
 
-        CreateFloatingText(message, position  + offset);
+        CreateFloatingText(message, position  + offset, color:color);
 
-        if (armorAmount > 0)
-            CreateFloatingText(String.Format("[color=#888888][s]{0}[/s][/color]", armorAmount), position + offset*1.5f);
+        //if (armorAmount > 0)
+            //CreateFloatingText(String.Format("[s]{0}[/s]", armorAmount), position + offset*1.5f, color:"#888888");
     }
 
-    public void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200)
+    public async void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200, int fontSize=-1, string color="#111111")
     {
-        message = String.Format("[center][font_size={0}]{1}[/font_size][/center]", _fontSize, message);
+        if (_spawnLocationDelays.ContainsKey(position))
+        {
+            if (_spawnLocationDelays[position] + 500 > Time.GetTicksMsec())
+                await Task.Delay((int)(_spawnLocationDelays[position] + 500 - Time.GetTicksMsec()));
+            
+            _spawnLocationDelays[position] = Time.GetTicksMsec();
+        }
+        else
+            _spawnLocationDelays.Add(position, Time.GetTicksMsec());
+
+        
+        if (fontSize == -1)
+            fontSize = _fontSize;
+
+        message = String.Format("[center][font_size={0}][color={1}]{2}[/color][/font_size][/center]", fontSize, color, message);
+        GD.Print("Message", message);
 
         RichTextLabel floatingText;
 
@@ -55,7 +89,7 @@ public partial class FloatingTextFactory : Node2D
             RichTextLabel newLabel = new();
             newLabel.Theme = _theme;
             newLabel.Text = message;
-            newLabel.SetSize(new Vector2(600, 100), false);
+            newLabel.SetSize(new Vector2(600, 200), false);
             newLabel.BbcodeEnabled = true;
             
             newLabel.Position = position - new Vector2(300, 75);

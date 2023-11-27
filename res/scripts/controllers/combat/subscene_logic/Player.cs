@@ -46,6 +46,7 @@ public partial class Player : Combatant
     private Card _currentlyTargeting;
     private AnimatedSprite2D _sprite;
     private List<ICombatant> _targeted = new();
+    private TargetHighlighter _targetHighlight;
     private int _toDiscard; // Refers to either discarding or returning
     private bool _firstTurn;
     private bool _watchingAnimation_volatile = false; // Passed and changed by ref in other script
@@ -60,6 +61,8 @@ public partial class Player : Combatant
         _state = PlayerState.SELECTING_CARD;
         _targetLabel.Visible = false;
         _sprite = (AnimatedSprite2D)GetNode<AnimatedSprite2D>("Player");
+        _sprite.SpriteFrames = EnemyAssetLookup.GetInstance().GetAsset(0);
+        _targetHighlight = GetNode<TargetHighlighter>("TargetHighlighter");
 
         _drawSound = (AudioStreamPlayer)GetNode("DrawSound");
         _selectSound = (AudioStreamPlayer)GetNode("SelectSound");
@@ -138,11 +141,23 @@ public partial class Player : Combatant
     public override void TakeDamage(Data.DamageType type, int amount, double critModifier, bool isCrit, bool autoResist)
     {
         base.TakeDamage(type, amount, critModifier, isCrit, autoResist);
-        _sprite.Play("hurt");
+        if (type != DamageType.HEAL)
+            _sprite.Play("hurt");
     }
 
     public override void _PhysicsProcess(double delta)
-    {
+    {        
+        Enemy mousedOver = GetEnemyUnderMouse();
+        if (mousedOver == null)
+            _targetHighlight.Visible = false;
+        else
+        {
+            _targetHighlight.SetHue(new Vector4(1.0f, 0.0f, 0.0f, 1.0f));
+            _targetHighlight.Visible = true;
+            Rect2 rect = mousedOver.GetNode<CollisionShape2D>("CollisionShape2D").Shape.GetRect();
+            _targetHighlight.Size = rect.Size;
+            _targetHighlight.GlobalPosition = mousedOver.GlobalPosition - new Vector2(rect.Size[0]/2f, rect.Size[1]/2f);
+        }
         
         Label deck = (Label)(_deck.GetNode("Cards"));
         deck.Text = _internalDeck.GetCardCount().ToString();
@@ -247,6 +262,18 @@ public partial class Player : Combatant
             EndTargeting();
             _state = PlayerState.SELECTING_CARD;
         }
+
+        if (_state == PlayerState.SELECTING_TARGETS)
+        {
+            if (_currentlyTargeting.Data.Target == TargetType.SELF)
+            {
+                _targetHighlight.SetHue(new Vector4(0.0f, 0.5f, 1.0f, 1.0f));
+                _targetHighlight.Visible = true;
+                Rect2 rect = GetNode<CollisionShape2D>("CollisionShape2D").Shape.GetRect();
+                _targetHighlight.Size = rect.Size;
+                _targetHighlight.GlobalPosition = GlobalPosition - new Vector2(rect.Size[0]/2f, rect.Size[1]/2f);
+            }
+        }
     }
 
     private async void PlayCard(ICombatant[] targets, Card card)
@@ -260,6 +287,17 @@ public partial class Player : Combatant
 
         _actionPointLabel.Text = _actionPoints.ToString();
         _movementPointLabel.Text = _movementPoints.ToString();
+
+        bool enemyAlive = false;
+        foreach (ICombatant enemy in _combatManager.Enemies)
+        {
+            enemyAlive = !enemy.IsDead();
+            if (enemyAlive)
+                break;
+        }
+
+        if (!enemyAlive)
+            EndTurn();
     }
 
     /* Enemies are not supposed to overlap, so no need for z-checking.*/
@@ -346,6 +384,15 @@ public partial class Player : Combatant
         }
     }
 
+    public void OnXButtonPressed()
+    {
+        if (_state == PlayerState.SELECTING_TARGETS)
+        {
+            EndTargeting();
+            _state = PlayerState.SELECTING_CARD;
+        }
+    }
+
     public override void DrawCards(int n)
     {
         _drawSound.Play();
@@ -381,6 +428,11 @@ public partial class Player : Combatant
         _internalDeck.OnDiscardChange -= OnDiscard;
 
         ((CombatMain)GetParent()).EndFight(result);
+    }
+
+    public override  void EndTurn()
+    {        
+        base.EndTurn();
     }
 
 }

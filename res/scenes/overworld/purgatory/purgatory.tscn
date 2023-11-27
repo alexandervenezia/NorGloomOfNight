@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=42 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -19,12 +19,16 @@
 [ext_resource type="FontFile" uid="uid://cpas8aathdyao" path="res://assets/fonts/Baskerville/LibreBaskerville-Bold.ttf" id="11_uau85"]
 [ext_resource type="FontFile" uid="uid://thmue4emd3x5" path="res://assets/fonts/Baskerville/LibreBaskerville-Italic.ttf" id="12_s2ur5"]
 [ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
+[ext_resource type="PackedScene" uid="uid://6ifk1u4vqc2r" path="res://res/scenes/overworld/OverworldHealthBar.tscn" id="14_herhl"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="15_lu01w"]
 [ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
 [ext_resource type="Resource" uid="uid://b4grubao7sdb7" path="res://res/resources/cutscenes/KerPoCutscene.tres" id="20_i3ngi"]
+[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="26_wfr1f"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
+[ext_resource type="PackedScene" uid="uid://bbwgebb7735on" path="res://res/scenes/overworld/NPC.tscn" id="28_0cjw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -102,6 +106,9 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_noruu"]
 shader = SubResource("Shader_4bewk")
 shader_parameter/isHighlighted = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecjm0"]
+size = Vector2(254, 960)
 
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -215,9 +222,9 @@ texture = SubResource("GradientTexture2D_ujr6k")
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
 offset_left = -3738.0
-offset_top = -2068.0
+offset_top = -1460.0
 offset_right = -2490.0
-offset_bottom = -1647.0
+offset_bottom = -1039.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -464,6 +471,11 @@ stream = ExtResource("9_htqbp")
 volume_db = -1.5
 bus = &"UI"
 
+[node name="Node2D" parent="OverworldPlayer/Camera2D" instance=ExtResource("14_herhl")]
+z_index = 1
+position = Vector2(-3258, -1982)
+scale = Vector2(4, 4)
+
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="DoorPair" parent="Doors" instance=ExtResource("4_wm0r4")]
@@ -544,7 +556,23 @@ script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
-position = Vector2(26234, -4434)
+position = Vector2(26416, -4392)
+
+[node name="HealArea" parent="." instance=ExtResource("26_wfr1f")]
+position = Vector2(-7414, -9826)
+
+[node name="ProgressBlocker" type="StaticBody2D" parent="."]
+position = Vector2(13658, 464)
+script = ExtResource("27_0n67v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProgressBlocker"]
+position = Vector2(37, -50)
+shape = SubResource("RectangleShape2D_ecjm0")
+
+[node name="NPC" parent="." instance=ExtResource("28_0cjw6")]
+position = Vector2(-184, 402)
+_dialogue = Array[String](["I am an NPC.", "Testing, testing."])
+_delayMS = 2000
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
