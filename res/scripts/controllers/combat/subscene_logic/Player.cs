@@ -146,7 +146,7 @@ public partial class Player : Combatant
     }
 
     public override void _PhysicsProcess(double delta)
-    {
+    {        
         Enemy mousedOver = GetEnemyUnderMouse();
         if (mousedOver == null)
             _targetHighlight.Visible = false;
@@ -287,6 +287,17 @@ public partial class Player : Combatant
 
         _actionPointLabel.Text = _actionPoints.ToString();
         _movementPointLabel.Text = _movementPoints.ToString();
+
+        bool enemyAlive = false;
+        foreach (ICombatant enemy in _combatManager.Enemies)
+        {
+            enemyAlive = !enemy.IsDead();
+            if (enemyAlive)
+                break;
+        }
+
+        if (!enemyAlive)
+            EndTurn();
     }
 
     /* Enemies are not supposed to overlap, so no need for z-checking.*/
@@ -417,6 +428,11 @@ public partial class Player : Combatant
         _internalDeck.OnDiscardChange -= OnDiscard;
 
         ((CombatMain)GetParent()).EndFight(result);
+    }
+
+    public override  void EndTurn()
+    {        
+        base.EndTurn();
     }
 
 }

@@ -61,9 +61,6 @@ public partial class Enemy : Combatant
 		{
 			AddResistance(type, 9999); // If the fight goes on for beyond 9999 rounds, something is very wrong.
 		}
-
-		_permanentResistances.Clear();
-
 		
 		_sprite.Play("default");
 	}

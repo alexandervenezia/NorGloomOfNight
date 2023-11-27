@@ -2,6 +2,7 @@ using Combat;
 using Data;
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 public partial class HealthBar : Sprite2D
@@ -68,7 +69,22 @@ public partial class HealthBar : Sprite2D
         foreach (BuffType b in _parent.Buffs.Keys)
         {
             if (_parent.Buffs[b] > 0)
+            {
                 text += b + " : " + _parent.Buffs[b] + "\n";
+            }
+        }
+
+        Dictionary<DamageType, int> resistances = _parent.GetResistances();
+        foreach (DamageType resistance in resistances.Keys)
+        {
+            if (resistances[resistance] >= 999) // permanent resistance
+            {
+                text += "RESIST " + resistance + "\n";
+            }
+            else if (resistances[resistance] > 0)
+            {
+                text += "RESIST " + resistance + " : " + resistances[resistance] + "\n";
+            }
         }
         text += "[/color]";
         buffs.Text = text;
