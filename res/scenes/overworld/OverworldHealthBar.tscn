@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://6ifk1u4vqc2r"]
+
+[ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="1_jy5rx"]
+[ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/HealthBar.cs" id="2_gihfs"]
+[ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="5_yh1c5"]
+[ext_resource type="Texture2D" uid="uid://cbcd7ii17wlwp" path="res://res/scenes/combat/subscenes/health_bar/heart.png" id="6_515wu"]
+[ext_resource type="Texture2D" uid="uid://bpufutaq2rhco" path="res://assets/UI/CoinRotated.png" id="6_x1dlu"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="7_3ullj"]
+[ext_resource type="Script" path="res://res/scenes/combat/subscenes/health_bar/Health.cs" id="7_ak2r3"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/CoinUICounter.cs" id="7_pvodo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apwcl"]
+resource_local_to_scene = true
+shader = ExtResource("1_jy5rx")
+shader_parameter/health_factor = 0.4
+shader_parameter/draining_factor = 0.1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_msekc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="HealthBar" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_apwcl")
+position = Vector2(-1, 6)
+scale = Vector2(160, 12)
+texture = SubResource("CanvasTexture_msekc")
+script = ExtResource("2_gihfs")
+_overworld = true
+
+[node name="Health" type="Sprite2D" parent="."]
+position = Vector2(-94, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_515wu")
+script = ExtResource("7_ak2r3")
+_overworld = true
+
+[node name="Label2" type="Label" parent="Health"]
+offset_left = -50.0
+offset_top = -42.0
+offset_right = 52.0
+offset_bottom = 50.0
+theme = ExtResource("5_yh1c5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 70
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buffs" type="Node2D" parent="."]
+position = Vector2(-73, 16)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Buffs"]
+offset_left = -41.0
+offset_right = 73.0
+offset_bottom = 73.0
+bbcode_enabled = true
+
+[node name="Debuffs" type="Node2D" parent="."]
+position = Vector2(72, 16)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Debuffs"]
+offset_left = -71.0
+offset_right = 53.0
+offset_bottom = 69.0
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+
+[node name="CoinRotated" type="Sprite2D" parent="."]
+position = Vector2(-96, 75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_x1dlu")
+script = ExtResource("7_pvodo")
+
+[node name="Label" type="Label" parent="CoinRotated"]
+offset_left = 177.0
+offset_top = -192.0
+offset_right = 529.0
+offset_bottom = 192.0
+theme = ExtResource("7_3ullj")
+theme_override_colors/font_color = Color(1, 0.701961, 0.309804, 1)
+theme_override_font_sizes/font_size = 300
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

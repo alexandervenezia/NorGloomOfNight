@@ -12,17 +12,37 @@ public partial class HealthBar : Sprite2D
     private RichTextLabel debuffs;
     private float _currentHealthTrack;
 
+    [Export] private bool _overworld;
+
     public override void _Ready()
     {
-        _parent = (Combatant)GetParent().GetParent();
+        if (!_overworld)
+            _parent = (Combatant)GetParent().GetParent();
+
         buffs = (RichTextLabel)GetNode("../Buffs/RichTextLabel");
         debuffs = (RichTextLabel)GetNode("../Debuffs/RichTextLabel");
         _currentHealthTrack = -1;
     }
     public override void _Process(double delta)
     {
-        if (_currentHealthTrack < 0) _currentHealthTrack = (float)_parent.GetHealth() / (float)_parent.MaxHealth;
-        float currentHealth = (float)_parent.GetHealth() / (float)_parent.MaxHealth;
+        float cHealth = 0;
+        float mHealth = 0;
+
+        if (_overworld)
+        {
+            cHealth = MasterScene.GetInstance().GetActiveScene<ILevel>().GetPlayer().CurrentHealth;
+            mHealth = MasterScene.GetInstance().GetActiveScene<ILevel>().GetPlayer().MaxHealth;
+        }
+        else
+        {
+            cHealth = (float)_parent.GetHealth();
+            mHealth = (float)_parent.MaxHealth;
+        }
+
+        if (_currentHealthTrack < 0)
+            _currentHealthTrack = cHealth / mHealth;
+
+        float currentHealth = cHealth / mHealth;
 
         if (Mathf.Abs(currentHealth-_currentHealthTrack) < 0.01f)
         {
@@ -39,6 +59,9 @@ public partial class HealthBar : Sprite2D
         ShaderMaterial mat = (ShaderMaterial)Material;
         mat.SetShaderParameter("health_factor", currentHealth);
         mat.SetShaderParameter("draining_factor", drain);
+
+        if (_overworld)
+            return;
 
         string text = "[color=#22BB22]";
 

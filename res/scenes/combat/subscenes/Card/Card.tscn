@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dgurbiof18wya" path="res://res/scenes/combat/subscenes/Card/images/card_background_trans.png" id="3_iu6l8"]
 [ext_resource type="Texture2D" uid="uid://cnul6kw3wr6b8" path="res://res/scenes/combat/subscenes/Card/images/background_solid_col.png" id="4_k15ia"]
 [ext_resource type="Theme" uid="uid://djnljen80b82f" path="res://assets/fonts/card_theme.tres" id="5_k86js"]
-[ext_resource type="Texture2D" uid="uid://shtr3us4frvi" path="res://res/scenes/combat/subscenes/Card/images/movement_point_icon.png" id="5_lktgx"]
 [ext_resource type="Texture2D" uid="uid://1mxovo0dtleq" path="res://res/scenes/combat/subscenes/Card/images/snek_color.png" id="6_c8t6u"]
+[ext_resource type="Texture2D" uid="uid://cf6c28dvqjh7i" path="res://res/scenes/combat/subscenes/Card/images/MOVEMENT POINTS SYMBOL.png" id="7_bjlxu"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/Card/PlayerStamp.gdshader" id="9_eh8p3"]
 [ext_resource type="Texture2D" uid="uid://cdf18qqmux3gx" path="res://res/scenes/combat/subscenes/Card/images/PlayerStamp.png" id="9_xvclh"]
 [ext_resource type="Texture2D" uid="uid://bep574adcsjck" path="res://res/scenes/combat/subscenes/Card/images/EnemyStamp.png" id="10_kaadg"]
@@ -115,8 +115,8 @@ vertical_alignment = 1
 [node name="MovementPointIcon" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(368, -1003)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_lktgx")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_bjlxu")
 
 [node name="SelfStamp" type="Node2D" parent="."]
 visible = false

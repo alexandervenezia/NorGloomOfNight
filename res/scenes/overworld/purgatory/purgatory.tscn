@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=42 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -19,6 +19,7 @@
 [ext_resource type="FontFile" uid="uid://cpas8aathdyao" path="res://assets/fonts/Baskerville/LibreBaskerville-Bold.ttf" id="11_uau85"]
 [ext_resource type="FontFile" uid="uid://thmue4emd3x5" path="res://assets/fonts/Baskerville/LibreBaskerville-Italic.ttf" id="12_s2ur5"]
 [ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
+[ext_resource type="PackedScene" uid="uid://6ifk1u4vqc2r" path="res://res/scenes/overworld/OverworldHealthBar.tscn" id="14_herhl"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="15_lu01w"]
 [ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
@@ -221,9 +222,9 @@ texture = SubResource("GradientTexture2D_ujr6k")
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
 offset_left = -3738.0
-offset_top = -2068.0
+offset_top = -1460.0
 offset_right = -2490.0
-offset_bottom = -1647.0
+offset_bottom = -1039.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -469,6 +470,11 @@ text = "[font_size=130][color=black]    "
 stream = ExtResource("9_htqbp")
 volume_db = -1.5
 bus = &"UI"
+
+[node name="Node2D" parent="OverworldPlayer/Camera2D" instance=ExtResource("14_herhl")]
+z_index = 1
+position = Vector2(-3258, -1982)
+scale = Vector2(4, 4)
 
 [node name="Doors" type="Node2D" parent="."]
 
