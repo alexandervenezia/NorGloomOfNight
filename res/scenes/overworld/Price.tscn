@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnlrlncqe7voq"]
 
-[ext_resource type="Texture2D" uid="uid://claq1pmx0h26c" path="res://res/scenes/overworld/coin.png" id="1_dhi6j"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Price.cs" id="1_gy8rs"]
+[ext_resource type="Texture2D" uid="uid://bpufutaq2rhco" path="res://assets/UI/CoinRotated.png" id="2_au3u3"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="2_ufg7b"]
 
 [node name="Price" type="Node2D"]
 script = ExtResource("1_gy8rs")
 
 [node name="Coin" type="Sprite2D" parent="."]
-texture = ExtResource("1_dhi6j")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_au3u3")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -99.0

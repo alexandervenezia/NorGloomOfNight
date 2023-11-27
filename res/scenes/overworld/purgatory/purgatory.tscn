@@ -556,7 +556,7 @@ script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
-position = Vector2(26234, -4434)
+position = Vector2(26416, -4392)
 
 [node name="HealArea" parent="." instance=ExtResource("26_wfr1f")]
 position = Vector2(-7414, -9826)
