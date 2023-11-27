@@ -91,6 +91,7 @@ public partial class HellLevel : Node2D, ILevel
 		GD.Print(dest);
 		MasterScene.GetInstance().SetPlayerHP(GetPlayer().CurrentHealth);
 		// MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
+		MasterScene.GetInstance().TotalCoins = _player.Coins;
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, false);
 
 		if (destination is Purgatory)

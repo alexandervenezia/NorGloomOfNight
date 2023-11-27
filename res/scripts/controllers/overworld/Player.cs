@@ -28,7 +28,7 @@ public partial class Player : CharacterBody2D
 	public int MaxHealth => _maxHealth;
 	private int _currentHealth;
 	public int CurrentHealth => _currentHealth;
-	private int _coins;
+	private int _coins = 25; // TODO: Set to zero
 	public int Coins => _coins;
 	[Export] private float _walkSpeed = 500f;
 	[Export] private float _sprintSpeed = 1700f;

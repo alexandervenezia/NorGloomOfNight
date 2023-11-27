@@ -209,6 +209,7 @@ public partial class Combatant : Area2D, ICombatant
 
     public virtual void ApplyBuff(Buff buff)
     {
+        GD.Print("Buffed: " + buff);
         switch (buff.Type)
         {
             case BuffType.ARMOR:

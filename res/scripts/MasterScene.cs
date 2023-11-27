@@ -23,6 +23,7 @@ public partial class MasterScene : Node
 	private int _combatID;
 	private int _playerHP = -1;
 	private int _coinsFound;
+	public int TotalCoins;
 
 	private static MasterScene _instance;
 
@@ -68,6 +69,7 @@ public partial class MasterScene : Node
 	public void AddCoins(int coins)
 	{
 		_coinsFound += coins;
+		TotalCoins += coins;
 	}
 
 	public int CollectCoins()
