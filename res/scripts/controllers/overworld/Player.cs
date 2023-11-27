@@ -110,6 +110,11 @@ public partial class Player : CharacterBody2D
 
 	public override void _Process(double delta)
 	{
+		if (Engine.TimeScale < 0.01f)
+		{
+			return;
+		}
+
 		ChangePlayerOrientation();
 
 		if (IsIdle())
@@ -149,6 +154,13 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (Engine.TimeScale < 0.01f)
+		{
+			_playerSprite.Play("idle");
+			Velocity = new Vector2(0, Velocity.Y + _gravityDefault);
+			MoveAndCollide(Velocity * 0.01f);
+			return;
+		}
 		float fDelta = (float)delta;
 		Godot.Vector2 movementInput = GetMovementInput();
 

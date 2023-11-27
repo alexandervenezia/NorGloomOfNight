@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjin1bf2fmme"]
+[gd_scene load_steps=14 format=3 uid="uid://bjin1bf2fmme"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Card.cs" id="1_8616y"]
 [ext_resource type="Texture2D" uid="uid://btu5t7qeg8uof" path="res://res/scenes/combat/subscenes/XButton.png" id="2_gj5tm"]
@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://djnljen80b82f" path="res://assets/fonts/card_theme.tres" id="5_ynm5s"]
 [ext_resource type="Texture2D" uid="uid://1mxovo0dtleq" path="res://res/scenes/combat/subscenes/Card/images/snek_color.png" id="6_qqtb8"]
 [ext_resource type="Texture2D" uid="uid://shtr3us4frvi" path="res://res/scenes/combat/subscenes/Card/images/movement_point_icon.png" id="7_m72r3"]
-[ext_resource type="SpriteFrames" uid="uid://bsv28668g8l7g" path="res://res/scenes/combat/subscenes/Card/animations/fire/fire_anim.tres" id="8_1abqk"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/Card/PlayerStamp.gdshader" id="9_e7fsp"]
 [ext_resource type="Texture2D" uid="uid://cdf18qqmux3gx" path="res://res/scenes/combat/subscenes/Card/images/PlayerStamp.png" id="10_oyodn"]
 [ext_resource type="Texture2D" uid="uid://bep574adcsjck" path="res://res/scenes/combat/subscenes/Card/images/EnemyStamp.png" id="11_41jwr"]
@@ -119,13 +118,6 @@ z_index = 2
 position = Vector2(368, -1003)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_m72r3")
-
-[node name="PlayAnimation" type="AnimatedSprite2D" parent="."]
-z_index = -1
-position = Vector2(2, -499)
-scale = Vector2(3, 3)
-sprite_frames = ExtResource("8_1abqk")
-speed_scale = 0.5
 
 [node name="SelfStamp" type="Node2D" parent="."]
 visible = false
