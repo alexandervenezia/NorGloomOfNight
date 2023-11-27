@@ -54,6 +54,17 @@ _combatSceneUID = "uid://bk6mw4uwgd1yl"
 script = ExtResource("2_ykx58")
 _cardTypes = [ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("5_54fyw"), ExtResource("6_2hqoe"), ExtResource("7_g0tv5"), ExtResource("8_mm6l1"), ExtResource("9_w8voq"), ExtResource("10_74qxg"), ExtResource("11_61ikk"), ExtResource("12_ojmvo"), ExtResource("13_mmb0c"), ExtResource("14_0e3mq"), ExtResource("15_e2qys"), ExtResource("16_qcxcv"), ExtResource("17_ltb3f"), ExtResource("18_30yo1"), ExtResource("19_srgrw"), ExtResource("20_36klc"), ExtResource("21_o1k0n"), ExtResource("22_57w0x"), ExtResource("23_ywilg"), ExtResource("24_hj1um"), ExtResource("25_1i0ki"), ExtResource("26_u72s6"), ExtResource("27_rjos7"), ExtResource("28_8nyrv"), ExtResource("29_l0u1g"), ExtResource("30_64le0"), ExtResource("31_54m87"), ExtResource("32_0phqa"), ExtResource("33_xfjrp"), ExtResource("34_kslyc"), ExtResource("35_pwhau"), ExtResource("36_sxqpd"), ExtResource("37_i4fxk"), ExtResource("38_y7lju"), ExtResource("39_arjxv"), ExtResource("40_e3kil"), ExtResource("41_va67q")]
 _playerStarterDeck = Array[Resource]([ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("3_k5w33"), ExtResource("4_oxfww"), ExtResource("4_oxfww"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("14_0e3mq"), ExtResource("8_mm6l1"), ExtResource("8_mm6l1"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("16_qcxcv"), ExtResource("12_ojmvo"), ExtResource("12_ojmvo"), ExtResource("10_74qxg")])
+_damageIcons = {
+0: "uid://cqi5d42bkbm5w",
+1: "uid://dvycat6airyjs",
+2: "uid://ixrpajpkl4yk",
+3: "uid://c8dwpibv3mpp6",
+4: "uid://dcvqobb78lgqa",
+5: "uid://bgex2g81dysku",
+6: "uid://bw3y6vdwvv4fn",
+7: "uid://cqnfsoo3ujpmp",
+8: "uid://ce7dx7btstf5s"
+}
 
 [node name="MasterAudio" type="Node" parent="."]
 script = ExtResource("19_pwt8m")
