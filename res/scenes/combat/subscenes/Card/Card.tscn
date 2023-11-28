@@ -97,7 +97,7 @@ threaded = true
 
 [node name="ActionPointIcon" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-335, -980)
+position = Vector2(-335, -1028)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_ek21b")
 
@@ -115,7 +115,7 @@ vertical_alignment = 1
 
 [node name="MovementPointIcon" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(368, -1003)
+position = Vector2(351, -1020)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_bjlxu")
 

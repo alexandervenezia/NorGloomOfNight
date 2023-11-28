@@ -6,7 +6,3 @@
 script = ExtResource("1_0y0sd")
 SpeakerName = ""
 Lines = PackedStringArray("    [color=blue]Po:[/color]<br>    “Little one!” <narration>bellows the perpetually boisterous Po.</narration> “Back so soon? But you finished your rounds only an hour ago!”<br>    <narration>Incorrect, as it happens; Ker and Po have as poor a grasp on time as anyone in Purgatory, to say nothing of their tendency to become distracted by games of cards.</narration>", "    <narration>Ker takes the opportunity to peek at Po’s cards.</narration>", "    [color=blue]Po:[/color]<br>    “No, no, no,” <narration> laments Po, shaking his head in ponderous mourning.</narration> “You, on a hell route? [color=blue]You?![/color]. They’ll chew you up! They’ll spit you out! They’ll blow you away like a fly and swat you like a leaf! You can’t possible take the [color=#ba8c1e]Crown[/color] to [color=purple]Pride.[/color]”", "    <narration>You really need the crown.</narration>", "    [color=blue]Po:[/color]<br>    “You’re still here?! Really?”<br><narration>    . . . . </narration><br>    <narration>Po heaves a heavy sigh.</narration> “All right, little one. If you’re so sure you’re ready to take on hell, you can warm up on me!”", "    <narration>Po rises to his feet, balling his fists. Ker sighs and stares at the fluorescent ceiling lights.</narration>")
-FLAG_TALKED_TO_MANAGER = false
-FLAG_ACQUIRED_CROWN = false
-FLAG_BEAT_DOG = false
-FLAG_DELIVERED_CROWN = false
