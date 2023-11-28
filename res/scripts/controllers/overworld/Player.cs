@@ -342,14 +342,13 @@ public partial class Player : CharacterBody2D
 		}
 		if (area is HealArea)
 		{
-			GD.Print("HealEnter");
-			FloatingTextFactory.GetInstance().CreateFloatingText("Full Heal!", Position-Godot.Vector2.Left*50, fontSize:150, color:"green");
+			GD.Print("HealEnter");			
 			((HealArea)area).Enter();
 		}
 		if (area is Spike)
 		{
 			GD.Print("SpikeEnter");
-			FloatingTextFactory.GetInstance().CreateFloatingText(((Spike)area).Damage.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red");
+			FloatingTextFactory.GetInstance().CreateFloatingText(((Spike)area).Damage.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red", sizeMult:5f);
 			HandleSpikeHit(((Spike)area).Damage);
 		}
 	}
@@ -372,7 +371,7 @@ public partial class Player : CharacterBody2D
 	public async void TakeDamage(int dmg, bool spawnText=true)
 	{
 		if (spawnText)
-			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red");
+			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red", sizeMult:5f);
 		_currentHealth -= dmg;
 		if (_currentHealth <= 0)
 			Die();
@@ -423,8 +422,11 @@ public partial class Player : CharacterBody2D
 		_coins -= coins;
 	}
 
-	public void FullHeal()
+	public void FullHeal(bool msg=false)
 	{
+		if (msg)
+			FloatingTextFactory.GetInstance().CreateFloatingText("Full Heal!", Position-Godot.Vector2.Left*50, fontSize:150, color:"green", sizeMult:5f);
+
 		_currentHealth = MaxHealth;
 		GD.Print("Healed! Health " + _currentHealth);
 	}

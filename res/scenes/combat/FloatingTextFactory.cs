@@ -57,7 +57,7 @@ public partial class FloatingTextFactory : Node2D
             //CreateFloatingText(String.Format("[s]{0}[/s]", armorAmount), position + offset*1.5f, color:"#888888");
     }
 
-    public async void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200, int fontSize=-1, string color="#111111")
+    public async void CreateFloatingText(string message, Vector2 position, int lifetime=1000, int height=200, int fontSize=-1, string color="#111111", float sizeMult=1)
     {
         if (_spawnLocationDelays.ContainsKey(position))
         {
@@ -80,7 +80,7 @@ public partial class FloatingTextFactory : Node2D
 
         if (_waitingQueue.TryPeek(out RichTextLabel label))
         {
-            Refresh(label, message, position - new Vector2(300, 75));
+            Refresh(label, message, position - new Vector2(300, 75) * sizeMult);
             floatingText = label;
             _waitingQueue.Dequeue();
         }
@@ -89,10 +89,10 @@ public partial class FloatingTextFactory : Node2D
             RichTextLabel newLabel = new();
             newLabel.Theme = _theme;
             newLabel.Text = message;
-            newLabel.SetSize(new Vector2(600, 200), false);
+            newLabel.SetSize(new Vector2(600, 200) * sizeMult, false);
             newLabel.BbcodeEnabled = true;
             
-            newLabel.Position = position - new Vector2(300, 75);
+            newLabel.Position = position - new Vector2(300, 75) * sizeMult;
             floatingText = newLabel;
         }
 

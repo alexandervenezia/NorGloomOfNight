@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw7twakv1byy7"]
+
+[ext_resource type="Shader" path="res://res/scenes/MainMenu/Button.gdshader" id="1_raxqj"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="2_fh0j4"]
+[ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="3_jdk15"]
+[ext_resource type="Texture2D" uid="uid://cl5g1vaq6dkm3" path="res://res/scenes/MainMenu/assets/MenuBackground.png" id="4_wa3d5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4ocg"]
+shader = ExtResource("1_raxqj")
+shader_parameter/isHighlighted = null
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="ModifyDeck" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_v4ocg")
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 460.0
+offset_top = 860.0
+offset_right = 1460.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_fh0j4")
+_externallyControlled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ModifyDeck"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.0
+offset_right = 500.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("3_jdk15")
+bbcode_enabled = true
+text = "[center][font_size=50]Modify Deck"
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wa3d5")
+
+[connection signal="mouse_entered" from="ModifyDeck" to="ModifyDeck" method="OnMouseEntered" flags=18]
+[connection signal="mouse_exited" from="ModifyDeck" to="ModifyDeck" method="OnMouseExited" flags=18]
+[connection signal="pressed" from="ModifyDeck" to="ModifyDeck" method="OnPressed" flags=18]

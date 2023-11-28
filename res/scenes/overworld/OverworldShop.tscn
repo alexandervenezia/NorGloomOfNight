@@ -87,7 +87,7 @@ void fragment() {
 shader = SubResource("Shader_71vnv")
 shader_parameter/isHighlighted = null
 
-[sub_resource type="Shader" id="Shader_g3gf7"]
+[sub_resource type="Shader" id="Shader_8oxal"]
 code = "shader_type canvas_item;
 
 uniform float isHighlighted;
@@ -110,7 +110,7 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_42rml"]
-shader = SubResource("Shader_g3gf7")
+shader = SubResource("Shader_8oxal")
 shader_parameter/isHighlighted = null
 
 [node name="Shop" type="Node2D"]
