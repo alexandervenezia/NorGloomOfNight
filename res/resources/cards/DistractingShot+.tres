@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b2wno5ad43vcf"]
+
+[ext_resource type="Texture2D" uid="uid://vsjd0ivvjwig" path="res://res/scenes/combat/subscenes/Card/images/artwork/distracting_shot.png" id="1_rs5a7"]
+[ext_resource type="Resource" uid="uid://3m58y0fqob28" path="res://res/resources/cards/DistractingShot++.tres" id="2_l7voi"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="3_po0ls"]
+
+[resource]
+script = ExtResource("3_po0ls")
+_name = "Distracting Shot+"
+_description = ""
+_artwork = ExtResource("1_rs5a7")
+_type = 0
+_rarity = 3
+_actionPointCost = 1
+_movementPointCost = 1
+_target = 0
+_damageTypes = [7]
+_damageDice = ["2"]
+_drawEffects = [0]
+_drawQuantities = [2]
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = [1]
+_debuffDuration = [2]
+_price = 12
+_upgrade = ExtResource("2_l7voi")
+_unremovableByPlayer = false

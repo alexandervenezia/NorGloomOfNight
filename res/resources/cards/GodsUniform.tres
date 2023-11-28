@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c3x74yanv8dns"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c3x74yanv8dns"]
 
 [ext_resource type="Texture2D" uid="uid://c1pfmi2xrerdi" path="res://res/scenes/combat/subscenes/Card/images/artwork/gods_uniform.png" id="1_kofnm"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_upqck"]
+[ext_resource type="Resource" uid="uid://cddtpum1wq5mk" path="res://res/resources/cards/GodsUniform+.tres" id="2_d21gy"]
 
 [resource]
 script = ExtResource("1_upqck")
@@ -18,9 +19,10 @@ _damageDice = []
 _drawEffects = [0]
 _drawQuantities = [2]
 _buffs = [1]
-_buffDuration = [6]
+_buffDuration = [8]
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 0
+_upgrade = ExtResource("2_d21gy")
 _unremovableByPlayer = false
