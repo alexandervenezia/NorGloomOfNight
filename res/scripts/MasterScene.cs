@@ -45,6 +45,15 @@ public partial class MasterScene : Node
 		_lastScene = "";
 	}
 
+	public void ResetVars()
+	{
+		LoadEnemyIDs();
+		_playerHP = 25;
+		CollectCoins();
+		MasterDeck.ResetPlayerDeck();
+
+	}
+
 	public List<int> LoadEnemyIDs()
 	{
 		return _enemyIDs;
@@ -115,7 +124,9 @@ public partial class MasterScene : Node
 	{
 		if (forceReload && _loadedScenes.ContainsKey(uid))
 		{
+			GD.Print("\n\nWiping " + uid);
 			WipeScene(uid);
+
 		}
 
 		if (!_loadedScenes.ContainsKey(uid))

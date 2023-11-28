@@ -4,6 +4,7 @@ using System;
 public partial class ChangeSceneButton : Button
 {
     [Export] private string _destinationScene;
+    [Export] private bool _loadLastScene;
 
     public override void _Ready()
     {
@@ -12,6 +13,16 @@ public partial class ChangeSceneButton : Button
 
     private void OnPressed()
     {
-        MasterScene.GetInstance().ActivateScene(_destinationScene, true, true);
+        if (_loadLastScene)
+        {
+            GD.Print("Loading last");
+            MasterScene.GetInstance().ActivatePreviousScene(true);
+            return;
+        }
+        if (_destinationScene != null)
+        {
+            GD.Print("Dest");
+            MasterScene.GetInstance().ActivateScene(_destinationScene, true, true);
+        }
     }
 }

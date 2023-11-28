@@ -30,9 +30,10 @@ public partial class GrabbyHand : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
-        if (area.Owner is Player)
+        GD.Print("Entered");
+        if (area.GetParent() is Player)
         {
-            _player = (Player)area.Owner;
+            _player = (Player)area.GetParent();
             GD.Print("Grabby time");
             GD.Print(_player.Velocity.X);
             _grabber.GlobalPosition = new Vector2(_player.GlobalPosition.X + _player.Velocity.X * _warningTimeMS / 1000f, _grabber.GlobalPosition.Y);

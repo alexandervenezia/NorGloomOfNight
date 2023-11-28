@@ -1,11 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bw7twakv1byy7"]
+[gd_scene load_steps=18 format=3 uid="uid://bw7twakv1byy7"]
 
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="1_js6kk"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="2_wo3dn"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_4m3dj"]
-[ext_resource type="Texture2D" uid="uid://cl5g1vaq6dkm3" path="res://res/scenes/MainMenu/assets/MenuBackground.png" id="4_wa3d5"]
-[ext_resource type="Texture2D" uid="uid://da6o6alkdjhjx" path="res://res/scenes/MainMenu/assets/Nor Gloom Of Night.png" id="5_urau3"]
+[ext_resource type="Texture2D" uid="uid://vi0yjaxkgoqg" path="res://res/scenes/MainMenu/assets/Title screen bg updated 2.png" id="4_qmyrk"]
+[ext_resource type="Texture2D" uid="uid://b5hkvlaw06ph8" path="res://res/scenes/MainMenu/assets/NOR GLOOM OF NIGHT title.png" id="5_6lnj2"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="6_mdm88"]
+[ext_resource type="Texture2D" uid="uid://dytl26e35towi" path="res://res/scenes/MainMenu/assets/GitHub Lost souls label.png" id="7_67vmm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4ocg"]
 
@@ -83,9 +84,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 703.0
-offset_top = 678.0
+offset_top = 609.0
 offset_right = 1203.0
-offset_bottom = 778.0
+offset_bottom = 709.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -126,9 +127,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 702.0
-offset_top = 804.0
+offset_top = 735.0
 offset_right = 1202.0
-offset_bottom = 904.0
+offset_bottom = 835.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -169,9 +170,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 702.0
-offset_top = 929.0
+offset_top = 860.0
 offset_right = 1202.0
-offset_bottom = 1029.0
+offset_bottom = 960.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -205,14 +206,19 @@ text = "[center][font_size=45]Credits"
 [node name="MenuBackground" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_wa3d5")
+texture = ExtResource("4_qmyrk")
 metadata/_edit_lock_ = true
 
 [node name="NorGloomOfNight" type="Sprite2D" parent="."]
-position = Vector2(960, 333)
-texture = ExtResource("5_urau3")
+position = Vector2(960, 387)
+texture = ExtResource("5_6lnj2")
 
 [node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1813, 958)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_mdm88")
+
+[node name="GitHubLostSoulsLabel" type="Sprite2D" parent="."]
+position = Vector2(1807, 1040)
+texture = ExtResource("7_67vmm")

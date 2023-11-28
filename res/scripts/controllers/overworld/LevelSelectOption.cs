@@ -23,7 +23,7 @@ public partial class LevelSelectOption : Button
         Enabled = true;
         _level = GetOwnerOrNull<ILevel>();
         _purgatory = _level;
-        (Material as ShaderMaterial).SetShaderParameter("isHighlighted", 0f);
+        (Material as ShaderMaterial).SetShaderParameter("isHighlighted", 0f);        
     }
     public void OnMouseEntered()
     {

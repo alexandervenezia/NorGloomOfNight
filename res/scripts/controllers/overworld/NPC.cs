@@ -46,7 +46,7 @@ public partial class NPC : Area2D
 
     public void OnAreaEntered(Area2D area)
     {
-        if (area.Owner is Player)
+        if (area.GetParent() is Player)
         {
             GD.Print("Entered");
             _playerInArea = true;
@@ -55,7 +55,7 @@ public partial class NPC : Area2D
 
     public void OnAreaExited(Area2D area)
     {
-        if (area.Owner is Player)
+        if (area.GetParent() is Player)
         {
             GD.Print("Exited");
             _playerInArea = false;

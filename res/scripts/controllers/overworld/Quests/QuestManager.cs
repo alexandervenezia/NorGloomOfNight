@@ -62,4 +62,12 @@ public class QuestManager
     {
         FlagChanged?.Invoke();
     }
+
+    public void Reset()
+    {
+        _flagTalkedToManager = false;
+        _flagAcquiredCrown = false;
+        _flagDeliveredCrown = false;
+        _beatDog = false;
+    }
 }

@@ -39,6 +39,8 @@ public partial class Player : CharacterBody2D
 	[Export] private float _coyoteBuffer = 0.5f; // In seconds
 	[Export] private float _gravityMult = 3;
 
+	[Export] private string _gameOverScene;
+
 	private float _coyoteTimer;
 	private float _gravityDefault;
 	private State _state;
@@ -232,7 +234,7 @@ public partial class Player : CharacterBody2D
 				{
 					float gravM = _gravityFallMultiplier;
 
-					if (Input.IsActionPressed("ui_select"))
+					if (Input.IsActionPressed("Jump"))
 						gravM = 0.25f;
 
 					vel.Y += _gravityDefault * gravM * fDelta;
@@ -450,6 +452,10 @@ public partial class Player : CharacterBody2D
 	public void Die()
 	{
 		GD.Print("Player died - Die() stub called");
+		MasterAudio.GetInstance().ClearQueue();
+		MasterScene.GetInstance().ResetVars();
+		//MasterScene.GetInstance().GetActiveScene<ILevel>().UseElevator(_gameOverScene);
+		MasterScene.GetInstance().CallDeferred("ActivateScene", _gameOverScene, true, true);
 		// TODO: Implement death screen
 	}
 }

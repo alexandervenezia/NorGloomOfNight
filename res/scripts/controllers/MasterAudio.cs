@@ -48,19 +48,32 @@ public partial class MasterAudio : Node
 
     public async void PlaySong(string musicUID)
     {
-        GD.Print(musicUID);
+        GD.Print("Play order received for UID: ", musicUID);
+        
         if (_musicPlayer.Playing)
         {
             GD.Print("Fading");
             Tween fadeOut = GetTree().CreateTween();
             fadeOut.TweenProperty(_musicPlayer, "volume_db", -50f, _fadeTimeSeconds);
-            await Task.Delay(1000 * (int)_fadeTimeSeconds);
+
+            bool doneTweening = false;
+
+            fadeOut.Finished += () => {
+                doneTweening = true;
+            };
+
+            while (!doneTweening)
+            {
+                // await Task.Delay(1000 * (int)_fadeTimeSeconds);
+                await Task.Delay(50);
+            }
         }
         _musicPlayer.VolumeDb = _volume;
         //_musicPlayer.Stream = GD.Load<AudioStream>(musicUID);
         _musicPlayer.Stream = _preloaded[musicUID];
         GD.Print("Now playing - ", _musicPlayer.Stream.ResourcePath);
-        _musicPlayer.Play();
+        _musicPlayer.Play(fromPosition:0f);
+        GD.Print(_musicPlayer.VolumeDb);
     }
 
     public void ClearQueue()
@@ -70,14 +83,17 @@ public partial class MasterAudio : Node
 
     public void QueueSong(string musicUID)
     {
+        GD.Print("Queue order received for UID: ", musicUID);
         _queue.Enqueue(musicUID);
     }
 
     public void MusicFinished()
     {
+        GD.Print("Music finished");
         string result;
         if (_queue.TryDequeue(out result))
         {
+            GD.Print("Found song in queue");
             PlaySong(result);
         }
     }
