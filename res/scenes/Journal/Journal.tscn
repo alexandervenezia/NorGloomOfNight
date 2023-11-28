@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://24f70lj4w2nt"]
+[gd_scene load_steps=16 format=3 uid="uid://24f70lj4w2nt"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Journal.cs" id="1_ki4kg"]
 [ext_resource type="Texture2D" uid="uid://bkq6ihend887o" path="res://res/scenes/Journal/assets/Clipboard only.png" id="2_k8ppc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/JournalLine.cs" id="6_qqbgm"]
 [ext_resource type="Texture2D" uid="uid://b24yuipd2e6dx" path="res://res/scenes/Journal/assets/Pause button UI.png" id="6_yp5oo"]
 [ext_resource type="Texture2D" uid="uid://cebx3fmpx1brp" path="res://res/scenes/Journal/assets/X UI.png" id="7_hbs3q"]
+[ext_resource type="Texture2D" uid="uid://dq67ltw1khijt" path="res://res/scenes/Journal/assets/Pause.png" id="9_evd08"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vbjid"]
 
@@ -103,7 +104,7 @@ text = "[center][font_size=45]Back to Work"
 metadata/_edit_lock_ = true
 
 [node name="ViewDeck" type="Area2D" parent="."]
-position = Vector2(0, -276)
+position = Vector2(0, -133)
 scale = Vector2(0.15, 0.15)
 script = ExtResource("6_qqbgm")
 
@@ -127,9 +128,10 @@ offset_bottom = -313.0
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
 text = "[center][color=#111][font_size=150]Deck"
+metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Area2D" parent="."]
-position = Vector2(0, -76)
+position = Vector2(0, 67)
 scale = Vector2(0.15, 0.15)
 script = ExtResource("6_qqbgm")
 
@@ -155,7 +157,7 @@ bbcode_enabled = true
 text = "[center][color=#111][font_size=150]Settings"
 
 [node name="Exit" type="Area2D" parent="."]
-position = Vector2(0, 124)
+position = Vector2(0, 267)
 scale = Vector2(0.15, 0.15)
 script = ExtResource("6_qqbgm")
 
@@ -178,4 +180,9 @@ offset_right = 1573.0
 offset_bottom = -313.0
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
-text = "[center][color=#111][font_size=150]Exit"
+text = "[center][color=#111][font_size=150]Exit Game"
+
+[node name="Pause" type="Sprite2D" parent="."]
+position = Vector2(0, -316)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_evd08")

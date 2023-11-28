@@ -82,8 +82,7 @@ bbcode_enabled = true
 text = "[center][font_size=45]Back to Work"
 metadata/_edit_lock_ = true
 
-[node name="BackToWork2" type="Button" parent="."]
-visible = false
+[node name="MainMenu" type="Button" parent="."]
 z_index = 100
 material = SubResource("ShaderMaterial_35mf3")
 custom_minimum_size = Vector2(500, 100)
@@ -98,10 +97,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_6fhoo")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_coyqk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kwvjm")
 script = ExtResource("3_c563f")
-_destinationScene = "uid://bw7twakv1byy7"
+_destinationScene = "uid://d204n4ckwe72x"
+_reloadMasterScene = true
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BackToWork2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
