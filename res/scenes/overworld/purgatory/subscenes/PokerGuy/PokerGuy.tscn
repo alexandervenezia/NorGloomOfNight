@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bktomhq703uad"]
+[gd_scene load_steps=5 format=3 uid="uid://bktomhq703uad"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Bosses/PokerGuy.cs" id="1_bm0ww"]
 [ext_resource type="SpriteFrames" uid="uid://b36ublg73homd" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/PokerFrames.tres" id="1_spedo"]
+[ext_resource type="Resource" uid="uid://b4grubao7sdb7" path="res://res/resources/cutscenes/KerPoCutscene.tres" id="2_0b7ke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
 size = Vector2(1269, 1905)
 
 [node name="PokerGuy" type="Node2D"]
 script = ExtResource("1_bm0ww")
+_introCutscene = ExtResource("2_0b7ke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_spedo")

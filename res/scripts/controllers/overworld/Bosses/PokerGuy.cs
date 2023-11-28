@@ -9,9 +9,7 @@ public partial class PokerGuy : Node2D, ICombatable
     private Area2D _area;   
 
     private bool _enabled;
-
-    [Export] private int TEST;
-    [Export] private Cutscene _cutscene;
+    [Export] private Cutscene _introCutscene;
 
     public override void _Ready()
     {
@@ -56,7 +54,7 @@ public partial class PokerGuy : Node2D, ICombatable
 
 	public Cutscene GetIntroCutscene()
 	{
-		return _cutscene;
+		return _introCutscene;
 	}
 
 }

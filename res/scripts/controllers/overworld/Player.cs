@@ -351,6 +351,15 @@ public partial class Player : CharacterBody2D
 			FloatingTextFactory.GetInstance().CreateFloatingText(((Spike)area).Damage.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red", sizeMult:5f);
 			HandleSpikeHit(((Spike)area).Damage);
 		}
+		if (area is CutsceneZone)
+		{
+			GD.Print("Cutscene zone");
+			if ((area as CutsceneZone).ShouldRun())
+			{
+				PlayCutscene((area as CutsceneZone).Cutscene);
+				(area as CutsceneZone).Burned = true;
+			}
+		}
 	}
 
 	private void OnArea2DExited(Area2D area)
