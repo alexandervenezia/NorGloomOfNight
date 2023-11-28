@@ -46,8 +46,9 @@ public partial class FloatingTextFactory : Node2D
         
         Texture2D icon = MasterDeck.GetDamageIcon(type);
 		string path = icon.ResourcePath;
+        string col = isHeal ? "green" : "red";
         
-        string message = String.Format("{1}{2} [img color=red width=65]{3}[/img]", color, prefix, amount, path);
+        string message = String.Format("{1}{2} [img color="+col+" width=65]{3}[/img]", color, prefix, amount, path);
 
         Vector2 offset = Vector2.Up * 100;
 
