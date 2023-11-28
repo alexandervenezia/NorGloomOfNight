@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl5g1vaq6dkm3"
-path="res://.godot/imported/MenuBackground.png-e15e662723dd71697797d3c714e6a17d.ctex"
+uid="uid://da6o6alkdjhjx"
+path="res://.godot/imported/Nor Gloom Of Night.png-e5aaa8903245a343df04545a7d5b05f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/scenes/MainMenu/assets/MenuBackground.png"
-dest_files=["res://.godot/imported/MenuBackground.png-e15e662723dd71697797d3c714e6a17d.ctex"]
+source_file="res://res/scenes/MainMenu/assets/Nor Gloom Of Night.png"
+dest_files=["res://.godot/imported/Nor Gloom Of Night.png-e5aaa8903245a343df04545a7d5b05f6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl5g1vaq6dkm3"
-path="res://.godot/imported/MenuBackground.png-e15e662723dd71697797d3c714e6a17d.ctex"
+uid="uid://btr646ng3kcbb"
+path="res://.godot/imported/lost souls logo ver 5.1.png-c00cae656c86465bbdaf0fa67f793cbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/scenes/MainMenu/assets/MenuBackground.png"
-dest_files=["res://.godot/imported/MenuBackground.png-e15e662723dd71697797d3c714e6a17d.ctex"]
+source_file="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png"
+dest_files=["res://.godot/imported/lost souls logo ver 5.1.png-c00cae656c86465bbdaf0fa67f793cbe.ctex"]
 
 [params]
 
