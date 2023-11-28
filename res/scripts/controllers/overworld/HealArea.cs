@@ -19,7 +19,7 @@ public partial class HealArea : Area2D
 		{
 			if (Input.IsActionJustPressed("ui_interact"))
 			{
-				_level.GetPlayer().FullHeal();
+				_level.GetPlayer().FullHeal(true);
 			}
 		}
 	}

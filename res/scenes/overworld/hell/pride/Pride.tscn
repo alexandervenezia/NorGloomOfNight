@@ -984,7 +984,7 @@ _startingStock = [ExtResource("8_adj6g"), ExtResource("8_adj6g"), ExtResource("9
 _identifier = 1
 
 [node name="HealArea" parent="." instance=ExtResource("10_wdm8t")]
-position = Vector2(-12080, 5360)
+position = Vector2(-3088, -2144)
 
 [node name="HealArea2" parent="." instance=ExtResource("10_wdm8t")]
 position = Vector2(64880, 7958)
@@ -1082,15 +1082,15 @@ shape = SubResource("RectangleShape2D_6vuni")
 [node name="Sprite2D" type="Sprite2D" parent="Grabby3"]
 texture = ExtResource("16_uxfrh")
 
-[node name="Grabby4" type="Area2D" parent="Grabby3"]
-position = Vector2(5184, -32)
+[node name="Grabby4" type="Area2D" parent="."]
+position = Vector2(-22320, 7616)
 script = ExtResource("15_ps8to")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3/Grabby4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
 position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_6u3ca")
 
-[node name="Sprite2D" type="Sprite2D" parent="Grabby3/Grabby4"]
+[node name="Sprite2D" type="Sprite2D" parent="Grabby4"]
 texture = ExtResource("16_uxfrh")
 
 [node name="Grabby" type="Area2D" parent="."]
