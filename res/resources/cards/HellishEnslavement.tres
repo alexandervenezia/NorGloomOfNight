@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://co0kox2bspho1"]
+
+[ext_resource type="Texture2D" uid="uid://c7wqn4bb1qxks" path="res://res/scenes/combat/subscenes/Card/images/artwork/hellish_enslavement.png" id="1_koegg"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_dmiq8"]
+
+[resource]
+script = ExtResource("2_dmiq8")
+_name = "Hellish Enslavement"
+_description = ""
+_artwork = ExtResource("1_koegg")
+_type = 0
+_rarity = 4
+_actionPointCost = 2
+_movementPointCost = 0
+_target = 1
+_damageTypes = [1]
+_damageDice = ["2d8 + 2"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = [2, 4]
+_debuffDuration = [2, 2]
+_price = 0
+_unremovableByPlayer = false

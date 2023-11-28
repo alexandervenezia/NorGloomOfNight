@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://xp8y7tx4tr30"]
+
+[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_k1yd5"]
+[ext_resource type="Resource" uid="uid://5118kdcbem78" path="res://res/resources/cards/RockThrow+.tres" id="2_uticj"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="3_toyha"]
+
+[resource]
+script = ExtResource("3_toyha")
+_name = "Rock Throw"
+_description = ""
+_artwork = ExtResource("1_k1yd5")
+_type = 2
+_rarity = 0
+_actionPointCost = 1
+_movementPointCost = 0
+_target = 1
+_damageTypes = [6]
+_damageDice = ["1d4 + 2"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_upgrade = ExtResource("2_uticj")
+_unremovableByPlayer = false

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bolvp5q12hkgg"]
+
+[ext_resource type="Texture2D" uid="uid://cmyc4robirbnx" path="res://res/scenes/combat/subscenes/Card/images/artwork/divine_protection.png" id="1_n4cdr"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_p0hg4"]
+
+[resource]
+script = ExtResource("2_p0hg4")
+_name = "Divine Protection"
+_description = ""
+_artwork = ExtResource("1_n4cdr")
+_type = 2
+_rarity = 4
+_actionPointCost = 2
+_movementPointCost = 0
+_target = 0
+_damageTypes = [8]
+_damageDice = ["2d4"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = [0, 0, 0, 0, 0]
+_buffDuration = [2, 2, 2, 2, 2]
+_resistanceType = [0, 1, 2, 3, 4]
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_unremovableByPlayer = false

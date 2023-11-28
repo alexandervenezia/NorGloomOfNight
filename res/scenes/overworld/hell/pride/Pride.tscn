@@ -291,16 +291,16 @@ size = Vector2(572.5, 3160.5)
 size = Vector2(4607.63, 864.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xms38"]
-size = Vector2(2656, 640)
+size = Vector2(2064, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vuni"]
-size = Vector2(1488, 640)
+size = Vector2(1476, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3ca"]
 size = Vector2(6080, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
-size = Vector2(2016, 640)
+size = Vector2(1468, 640)
 
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -1065,7 +1065,7 @@ position = Vector2(-6560, -1280)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
-position = Vector2(112, 0)
+position = Vector2(94, -16)
 shape = SubResource("RectangleShape2D_xms38")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby2"]
@@ -1076,7 +1076,7 @@ position = Vector2(-27504, 7648)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
-position = Vector2(24, 0)
+position = Vector2(56, 0)
 shape = SubResource("RectangleShape2D_6vuni")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby3"]
@@ -1098,7 +1098,7 @@ position = Vector2(-8880, -1872)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby"]
-position = Vector2(96, 0)
+position = Vector2(124, 0)
 shape = SubResource("RectangleShape2D_qlov1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby"]

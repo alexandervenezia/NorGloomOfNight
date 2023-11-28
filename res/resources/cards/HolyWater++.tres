@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c1qverj4pi516"]
+
+[ext_resource type="Texture2D" uid="uid://cdp3khw6tb8jr" path="res://res/scenes/combat/subscenes/Card/images/artwork/holy_water.png" id="1_0dvve"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_loysg"]
+
+[resource]
+script = ExtResource("2_loysg")
+_name = "Holy Water++"
+_description = ""
+_artwork = ExtResource("1_0dvve")
+_type = 0
+_rarity = 4
+_actionPointCost = 0
+_movementPointCost = 1
+_target = 0
+_damageTypes = [8]
+_damageDice = ["2d4"]
+_drawEffects = [0]
+_drawQuantities = [3]
+_buffs = [4]
+_buffDuration = [null]
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_unremovableByPlayer = false

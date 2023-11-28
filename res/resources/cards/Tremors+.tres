@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dxdrp1npxmk15"]
+
+[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_p4q61"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_brcmc"]
+[ext_resource type="Resource" uid="uid://djffw8e3yd63s" path="res://res/resources/cards/Tremors++.tres" id="2_vvux0"]
+
+[resource]
+script = ExtResource("2_brcmc")
+_name = "Tremors+"
+_description = ""
+_artwork = ExtResource("1_p4q61")
+_type = 2
+_rarity = 3
+_actionPointCost = 2
+_movementPointCost = 0
+_target = 5
+_damageTypes = [6]
+_damageDice = ["2d6"]
+_drawEffects = [0]
+_drawQuantities = [1]
+_buffs = [3]
+_buffDuration = [1]
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_upgrade = ExtResource("2_vvux0")
+_unremovableByPlayer = false

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c6pel68nd1b8l"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c6pel68nd1b8l"]
 
 [ext_resource type="Texture2D" uid="uid://blxsauvyq1pr8" path="res://res/scenes/combat/subscenes/Card/images/artwork/sword_of_messenger.png" id="1_0hy1l"]
+[ext_resource type="Resource" uid="uid://otvtyvxgw73v" path="res://res/resources/cards/SwordOfMessenger+.tres" id="2_2g3ha"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_dpe2k"]
 
 [resource]
@@ -23,4 +24,5 @@ _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 25
+_upgrade = ExtResource("2_2g3ha")
 _unremovableByPlayer = false

@@ -1,13 +1,14 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://mtor7au8b2cf"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://mtor7au8b2cf"]
 
-[ext_resource type="Texture2D" uid="uid://b1yuec1bdyki7" path="res://res/scenes/combat/subscenes/Card/images/artwork/holy_smite.png" id="1_ljepm"]
+[ext_resource type="Texture2D" uid="uid://chh6amgdwg0xe" path="res://res/scenes/combat/subscenes/Card/images/artwork/holy_word.png" id="1_cp1fi"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_d73ep"]
+[ext_resource type="Resource" uid="uid://b3v11poxe3sqo" path="res://res/resources/cards/HolyWord++.tres" id="2_efavq"]
 
 [resource]
 script = ExtResource("2_d73ep")
 _name = "Holy Word+"
 _description = ""
-_artwork = ExtResource("1_ljepm")
+_artwork = ExtResource("1_cp1fi")
 _type = 2
 _rarity = 1
 _actionPointCost = 1
@@ -22,3 +23,6 @@ _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
+_price = 0
+_upgrade = ExtResource("2_efavq")
+_unremovableByPlayer = false

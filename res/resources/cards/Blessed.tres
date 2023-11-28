@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://he6fbgb3ossq"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://he6fbgb3ossq"]
 
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_4nxem"]
 [ext_resource type="Texture2D" uid="uid://bqq31uqvb0ys" path="res://res/scenes/combat/subscenes/Card/images/artwork/bless.png" id="1_d6rg6"]
+[ext_resource type="Resource" uid="uid://clx41bjslshln" path="res://res/resources/cards/Blessed+.tres" id="2_8l5qy"]
 
 [resource]
 script = ExtResource("1_4nxem")
@@ -23,4 +24,5 @@ _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 0
+_upgrade = ExtResource("2_8l5qy")
 _unremovableByPlayer = false
