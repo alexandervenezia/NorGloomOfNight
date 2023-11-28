@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ihr4lu6kduol"]
+
+[ext_resource type="Texture2D" uid="uid://duh56hf21uvtq" path="res://res/scenes/combat/subscenes/Card/images/artwork/sparks.png" id="1_0xn0r"]
+[ext_resource type="Resource" uid="uid://dpkvq8l2op4l6" path="res://res/resources/cards/Sparks++.tres" id="2_8wa7m"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_vx2pk"]
+
+[resource]
+script = ExtResource("2_vx2pk")
+_name = "Sparks+"
+_description = ""
+_artwork = ExtResource("1_0xn0r")
+_type = 2
+_rarity = 2
+_actionPointCost = 1
+_movementPointCost = 0
+_target = 2
+_damageTypes = [4, 2]
+_damageDice = ["1d4", "1d4"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_upgrade = ExtResource("2_8wa7m")
+_unremovableByPlayer = false

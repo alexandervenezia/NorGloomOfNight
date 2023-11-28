@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_gcfpc")
-_name = "Gods Fury"
+_name = "Bolt"
 _description = ""
 _artwork = ExtResource("1_oubtx")
 _type = 2

@@ -6,16 +6,16 @@
 
 [resource]
 script = ExtResource("2_57q48")
-_name = "Hellish Enslavement"
+_name = "Hells Grasp"
 _description = ""
 _artwork = ExtResource("1_2xklw")
 _type = 0
-_rarity = 4
+_rarity = 3
 _actionPointCost = 2
 _movementPointCost = 0
 _target = 1
 _damageTypes = [1]
-_damageDice = ["2d8 + 2"]
+_damageDice = ["2d6 + 1"]
 _drawEffects = []
 _drawQuantities = []
 _buffs = []
