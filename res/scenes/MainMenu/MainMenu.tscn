@@ -82,10 +82,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 702.0
-offset_top = 679.0
-offset_right = 1202.0
-offset_bottom = 779.0
+offset_left = 703.0
+offset_top = 678.0
+offset_right = 1203.0
+offset_bottom = 778.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -104,9 +104,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
+offset_left = -237.0
 offset_top = -32.0
-offset_right = 500.0
+offset_right = 244.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -115,7 +115,6 @@ theme = ExtResource("3_4m3dj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center][font_size=45]New Game"
-metadata/_edit_lock_ = true
 
 [node name="Settings" type="Button" parent="."]
 z_index = 100
@@ -148,9 +147,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
+offset_left = -238.0
 offset_top = -32.0
-offset_right = 500.0
+offset_right = 238.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -159,7 +158,6 @@ theme = ExtResource("3_4m3dj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center][font_size=45]Settings"
-metadata/_edit_lock_ = true
 
 [node name="Credits" type="Button" parent="."]
 z_index = 100
@@ -192,9 +190,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
+offset_left = -238.0
 offset_top = -32.0
-offset_right = 500.0
+offset_right = 238.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -203,7 +201,6 @@ theme = ExtResource("3_4m3dj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center][font_size=45]Credits"
-metadata/_edit_lock_ = true
 
 [node name="MenuBackground" type="Sprite2D" parent="."]
 position = Vector2(960, 540)

@@ -17,7 +17,8 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
-    private const int MAX_PER_ROW = 8;
+    private const float SCROLL_SPEED = 400f;
+    private const int MAX_PER_ROW = 4;
     private ColorRect _rect;
     private Node2D _cardNode;
     private Node2D _priceNode;
@@ -36,6 +37,8 @@ public partial class Shop : Node2D
     public event CardBoughtInformer CardBought;
 
     private int _storedZIndex;
+
+    private float _scroll;
 
     private Card _active;
 
@@ -90,7 +93,7 @@ public partial class Shop : Node2D
             _removePriceIcon.Visible = false;
             _active = null;
         }
-        UpdateSelection();
+        UpdateSelection(true);
     }
 
     private void OnUpgradeButtonPressed()
@@ -241,6 +244,32 @@ public partial class Shop : Node2D
             }
         }
 
+        float scrollDelta = 0;
+        if (Input.IsActionPressed("ui_up_scroll"))
+        {
+            scrollDelta += (float)delta * SCROLL_SPEED;
+        }
+        if (Input.IsActionPressed("ui_down_scroll"))
+        {
+            scrollDelta -= (float)delta * SCROLL_SPEED;
+        }
+
+        if (Input.IsActionJustReleased("ui_up_scroll"))
+        {
+            scrollDelta += (float)delta * SCROLL_SPEED * 3f;
+        }
+
+        if (Input.IsActionJustReleased("ui_down_scroll"))
+        {
+            scrollDelta -= (float)delta * SCROLL_SPEED * 3f;
+        }
+
+        if (_scroll >= 0)
+            scrollDelta = Mathf.Min(scrollDelta, 0f);
+
+        UpdateScroll(scrollDelta);
+        _scroll += scrollDelta;
+
         UpdateCardProtrusion();
     }
 
@@ -256,6 +285,19 @@ public partial class Shop : Node2D
         MasterScene.GetInstance().AddCoins(-card.Price);
 
         UpdateSelection();
+    }
+
+    private void UpdateScroll(float scrollDelta)
+    {
+        foreach (Card c in _cardNode.GetChildren())
+        {
+            c.Position = new Vector2(c.Position.X, c.Position.Y + scrollDelta);
+        }
+
+        foreach (Price p in _priceNode.GetChildren())
+        {
+            p.Position = new Vector2(p.Position.X, p.Position.Y + scrollDelta);
+        }
     }
 
     private void UpdateCardProtrusion()
@@ -274,8 +316,11 @@ public partial class Shop : Node2D
         }
     }
 
-    private void UpdateSelection()
+    private void UpdateSelection(bool refreshScroll=false)
     {      
+        if (refreshScroll)
+            _scroll = 0f;
+
         _playerCoinsIcon.GetNode<Label>("Label").Text = MasterScene.GetInstance().TotalCoins.ToString();
         
         foreach (var child in _cardNode.GetChildren())
@@ -316,5 +361,8 @@ public partial class Shop : Node2D
 
             index++;
         }
+
+        GD.Print("Scroll: " + _scroll);
+        UpdateScroll(_scroll);
     }
 }
