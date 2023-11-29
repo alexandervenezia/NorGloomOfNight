@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj1r3yk4i5qgx"
-path="res://.godot/imported/Room 2.PNG-29dc3ff9d468843ab2d37b2b21bb551c.ctex"
+path.s3tc="res://.godot/imported/Room 2.PNG-29dc3ff9d468843ab2d37b2b21bb551c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/purgatory/img/Room 2.PNG"
-dest_files=["res://.godot/imported/Room 2.PNG-29dc3ff9d468843ab2d37b2b21bb551c.ctex"]
+dest_files=["res://.godot/imported/Room 2.PNG-29dc3ff9d468843ab2d37b2b21bb551c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

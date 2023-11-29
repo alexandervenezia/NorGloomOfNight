@@ -37,7 +37,7 @@ radius = 32.0
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_gps4y")
-_enemyTypePaths = Array[String](["uid://iw7vaee7nlpc", "uid://6dpordjypq8l", "uid://bakphjas5nire"])
+_enemyTypePaths = Array[String](["uid://iw7vaee7nlpc", "uid://6dpordjypq8l", "uid://bakphjas5nire", "uid://b73bmqkou4vv7", "uid://bhgwcft6ty4ut", "uid://cgtat65qxyutk", "uid://dwm4agvvih08d"])
 _cardResource = ExtResource("3_6gjep")
 _nullCardResource = ExtResource("3_lhf3j")
 _coinValueResource = ExtResource("3_xuif3")

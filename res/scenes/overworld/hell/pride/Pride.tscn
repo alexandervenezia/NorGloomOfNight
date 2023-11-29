@@ -1,8 +1,7 @@
-[gd_scene load_steps=124 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=128 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
-[ext_resource type="Texture2D" uid="uid://d2x2xxs7wnjst" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideCASTLE_ArtReferencePride Level - Castle.png" id="2_gvcpw"]
 [ext_resource type="Texture2D" uid="uid://bil8e3t3otquk" path="res://res/scenes/overworld/hell/pride/Castle Background.PNG" id="3_wg328"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 [ext_resource type="Texture2D" uid="uid://cdoj1vv18gm7f" path="res://res/scenes/overworld/hell/pride/Castle healing .PNG" id="5_kr7o0"]
@@ -25,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://3t7x27ikdpwk" path="res://res/scenes/overworld/hell/pride/pillar3.PNG" id="23_crqxj"]
 [ext_resource type="Texture2D" uid="uid://cqe03bpqhd3gk" path="res://res/scenes/overworld/hell/pride/pillar4.PNG" id="24_cs7og"]
 [ext_resource type="Texture2D" uid="uid://xv1p2xj2b0ae" path="res://res/scenes/overworld/hell/pride/pillar5.PNG" id="25_5wymd"]
+[ext_resource type="PackedScene" uid="uid://bvsg6mu2aw32q" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyWorld.tscn" id="26_dpclw"]
+[ext_resource type="PackedScene" uid="uid://ccpj5bs32vahr" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceWorld.tscn" id="27_5rng0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -137,11 +138,20 @@ size = Vector2(1754, 296.891)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mlai"]
 size = Vector2(1109.88, 274.891)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sfmt"]
+size = Vector2(512, 334.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kj55"]
+size = Vector2(544, 224)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08vjf"]
 size = Vector2(2542.13, 401)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqovn"]
 size = Vector2(108, 1666.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l3f8"]
+size = Vector2(544, 272)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x30q0"]
 size = Vector2(868, 290.563)
@@ -327,12 +337,6 @@ _playerSpawn = Vector2(-22070.7, -2279.27)
 _journalID = "uid://24f70lj4w2nt"
 _introMusicUID = "uid://d1ix404tmx1jm"
 _loopMusicUID = "uid://cllm1liixd7f0"
-
-[node name="Castle_TempBG_Leveldesign" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(57790, 6)
-scale = Vector2(4, 4)
-texture = ExtResource("2_gvcpw")
 
 [node name="CastleBackground" type="Sprite2D" parent="."]
 position = Vector2(57776, 0)
@@ -659,12 +663,12 @@ position = Vector2(-27306, 4356)
 shape = SubResource("RectangleShape2D_1mlai")
 
 [node name="CollisionShape2D57" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-6911, 2918)
-shape = SubResource("RectangleShape2D_08vjf")
+position = Vector2(-6912, 2951.25)
+shape = SubResource("RectangleShape2D_7sfmt")
 
 [node name="CollisionShape2D86" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-2290, 6656)
-shape = SubResource("RectangleShape2D_08vjf")
+position = Vector2(-2288, 6640)
+shape = SubResource("RectangleShape2D_7kj55")
 
 [node name="CollisionShape2D152" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-5469.06, 22798)
@@ -683,8 +687,8 @@ position = Vector2(-5476, 20844)
 shape = SubResource("RectangleShape2D_08vjf")
 
 [node name="CollisionShape2D87" type="CollisionShape2D" parent="Walls"]
-position = Vector2(884, 7522)
-shape = SubResource("RectangleShape2D_08vjf")
+position = Vector2(880, 7512)
+shape = SubResource("RectangleShape2D_0l3f8")
 
 [node name="CollisionShape2D88" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-708, 6940)
@@ -1117,6 +1121,10 @@ motion_mode = 1
 position = Vector2(3668, 5204)
 motion_mode = 1
 
+[node name="SluggyWorld" parent="Enemies" instance=ExtResource("26_dpclw")]
+position = Vector2(-27572, 6048)
+_relativePatrolBounds = Vector2(-1000, 1000)
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-22076.7, -2279.27)
 
@@ -1388,3 +1396,11 @@ texture = ExtResource("22_s1vqe")
 position = Vector2(17594, 366)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
+
+[node name="LeatherfaceWorld" parent="." instance=ExtResource("27_5rng0")]
+position = Vector2(36752, 1248)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="LeatherfaceWorld2" parent="." instance=ExtResource("27_5rng0")]
+position = Vector2(46672, -1904)
+_relativePatrolBounds = Vector2(-2500, 2500)

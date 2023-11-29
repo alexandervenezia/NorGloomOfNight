@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmeyugry1ybqu"
-path="res://.godot/imported/Kerog_damage_0023.png-5ccd42c950d7629f1258beb77ee5b12d.ctex"
+path.s3tc="res://.godot/imported/Kerog_damage_0023.png-5ccd42c950d7629f1258beb77ee5b12d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Damaged/Kerog_damage_0023.png"
-dest_files=["res://.godot/imported/Kerog_damage_0023.png-5ccd42c950d7629f1258beb77ee5b12d.ctex"]
+dest_files=["res://.godot/imported/Kerog_damage_0023.png-5ccd42c950d7629f1258beb77ee5b12d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

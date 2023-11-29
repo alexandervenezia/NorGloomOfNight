@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br1k0dmbcsaw"
-path="res://.godot/imported/Devin_Flying_0024.png-2419fea6ab41a16ca154f365b9210164.ctex"
+path.s3tc="res://.godot/imported/Devin_Flying_0024.png-2419fea6ab41a16ca154f365b9210164.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0024.png"
-dest_files=["res://.godot/imported/Devin_Flying_0024.png-2419fea6ab41a16ca154f365b9210164.ctex"]
+dest_files=["res://.godot/imported/Devin_Flying_0024.png-2419fea6ab41a16ca154f365b9210164.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

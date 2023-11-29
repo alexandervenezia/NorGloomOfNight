@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccinvk3lcf1c7"
-path="res://.godot/imported/Wall pattern.PNG-bab4c8ed8c0243770d3494f8ac2e7fdc.ctex"
+path.s3tc="res://.godot/imported/Wall pattern.PNG-bab4c8ed8c0243770d3494f8ac2e7fdc.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/purgatory/img/Wall pattern.PNG"
-dest_files=["res://.godot/imported/Wall pattern.PNG-bab4c8ed8c0243770d3494f8ac2e7fdc.ctex"]
+dest_files=["res://.godot/imported/Wall pattern.PNG-bab4c8ed8c0243770d3494f8ac2e7fdc.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

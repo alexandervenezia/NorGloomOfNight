@@ -5,18 +5,20 @@
 [ext_resource type="Resource" uid="uid://b4grubao7sdb7" path="res://res/resources/cutscenes/KerPoCutscene.tres" id="2_0b7ke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
-size = Vector2(1269, 1905)
+size = Vector2(2336, 1905)
 
 [node name="PokerGuy" type="Node2D"]
 script = ExtResource("1_bm0ww")
 _introCutscene = ExtResource("2_0b7ke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -479)
+scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("1_spedo")
 animation = &"combat"
 
 [node name="Aggro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
-position = Vector2(-252.5, -479.5)
+position = Vector2(-38, -479.5)
 shape = SubResource("RectangleShape2D_qqlln")

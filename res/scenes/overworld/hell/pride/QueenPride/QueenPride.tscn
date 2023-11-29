@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bry8sdy0obqtp"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Enemy.cs" id="1_yo25h"]
+[ext_resource type="SpriteFrames" uid="uid://cpobpuyh1fysh" path="res://res/scenes/overworld/hell/pride/QueenPride/PrideFrames.tres" id="2_hluvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
+size = Vector2(2336, 1905)
+
+[node name="Pride" type="Node2D"]
+script = ExtResource("1_yo25h")
+_name = "Cerberus"
+_id = 92
+_firstSlotSpawn = {}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -479)
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("2_hluvy")
+
+[node name="Aggro" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
+position = Vector2(-38, -479.5)
+shape = SubResource("RectangleShape2D_qqlln")

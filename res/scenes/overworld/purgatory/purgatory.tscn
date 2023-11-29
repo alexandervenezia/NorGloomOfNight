@@ -552,7 +552,7 @@ scale = Vector2(23909.6, 223.281)
 texture = ExtResource("11_g3usj")
 
 [node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
-position = Vector2(27476, -4252)
+position = Vector2(27476, -3874)
 scale = Vector2(1.5, 1.5)
 
 [node name="Elevator" type="Marker2D" parent="." node_paths=PackedStringArray("_levelSelect")]

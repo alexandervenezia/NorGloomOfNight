@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkq6ihend887o"
-path="res://.godot/imported/Clipboard only.png-1858f6d8ddd1850b8ba8767a6c1945a6.ctex"
+path.s3tc="res://.godot/imported/Clipboard only.png-1858f6d8ddd1850b8ba8767a6c1945a6.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/Journal/assets/Clipboard only.png"
-dest_files=["res://.godot/imported/Clipboard only.png-1858f6d8ddd1850b8ba8767a6c1945a6.ctex"]
+dest_files=["res://.godot/imported/Clipboard only.png-1858f6d8ddd1850b8ba8767a6c1945a6.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

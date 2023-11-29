@@ -449,6 +449,11 @@ public partial class Player : CharacterBody2D
 		Velocity = new Godot.Vector2(-Velocity.X * 5, -Velocity.Y);
 	}
 
+	public void DebugTeleport(Vector2 dest)
+	{
+		Position += dest;
+	}
+
 	public void Die()
 	{
 		GD.Print("Player died - Die() stub called");

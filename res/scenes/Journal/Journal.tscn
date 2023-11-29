@@ -122,13 +122,12 @@ shape = SubResource("RectangleShape2D_mn30x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ViewDeck"]
 offset_left = -1553.0
-offset_top = -527.0
+offset_top = -153.0
 offset_right = 1573.0
-offset_bottom = -313.0
+offset_bottom = 221.0
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
-text = "[center][color=#111][font_size=150]Deck"
-metadata/_edit_use_anchors_ = true
+text = "[center][color=#111][font_size=250]Deck"
 
 [node name="Settings" type="Area2D" parent="."]
 position = Vector2(0, 67)
@@ -149,12 +148,12 @@ shape = SubResource("RectangleShape2D_mn30x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Settings"]
 offset_left = -1553.0
-offset_top = -527.0
+offset_top = -153.667
 offset_right = 1573.0
-offset_bottom = -313.0
+offset_bottom = 266.333
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
-text = "[center][color=#111][font_size=150]Settings"
+text = "[center][color=#111][font_size=250]Settings"
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(0, 267)
@@ -175,12 +174,12 @@ shape = SubResource("RectangleShape2D_mn30x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Exit"]
 offset_left = -1553.0
-offset_top = -527.0
+offset_top = -153.667
 offset_right = 1573.0
-offset_bottom = -313.0
+offset_bottom = 233.333
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
-text = "[center][color=#111][font_size=150]Exit Game"
+text = "[center][color=#111][font_size=250]Exit Game"
 
 [node name="Pause" type="Sprite2D" parent="."]
 position = Vector2(0, -316)

@@ -1,0 +1,130 @@
+[gd_resource type="SpriteFrames" load_steps=31 format=3 uid="uid://cpobpuyh1fysh"]
+
+[ext_resource type="Texture2D" uid="uid://bvpv6r7llcidh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0000.png" id="1_7dwrk"]
+[ext_resource type="Texture2D" uid="uid://borht1pur2pi5" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0001.png" id="2_7p1oa"]
+[ext_resource type="Texture2D" uid="uid://sybsfo68o11i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0002.png" id="3_lifkb"]
+[ext_resource type="Texture2D" uid="uid://ckep1kn7txls7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0003.png" id="4_a351k"]
+[ext_resource type="Texture2D" uid="uid://buqb7buxenwqk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0004.png" id="5_4mm02"]
+[ext_resource type="Texture2D" uid="uid://cknki46sov5w6" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0005.png" id="6_3h728"]
+[ext_resource type="Texture2D" uid="uid://cftqw6gmvbih1" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0006.png" id="7_g5lkr"]
+[ext_resource type="Texture2D" uid="uid://c3vsfk2u1pdqp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0007.png" id="8_68p7o"]
+[ext_resource type="Texture2D" uid="uid://b85m32aeupxfh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0008.png" id="9_e745m"]
+[ext_resource type="Texture2D" uid="uid://cdlmigtjhtang" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0009.png" id="10_tkhnp"]
+[ext_resource type="Texture2D" uid="uid://cmw133qhvejwd" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0010.png" id="11_5a34u"]
+[ext_resource type="Texture2D" uid="uid://xt1cjs12tahr" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0011.png" id="12_lwvur"]
+[ext_resource type="Texture2D" uid="uid://bkr8x5ktudr0e" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0012.png" id="13_d11jd"]
+[ext_resource type="Texture2D" uid="uid://c3lif8ypuxqte" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0013.png" id="14_pm68s"]
+[ext_resource type="Texture2D" uid="uid://d3htrbq1mvtnb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0014.png" id="15_lw5um"]
+[ext_resource type="Texture2D" uid="uid://c8y0x3k5grpnt" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0015.png" id="16_5ofo0"]
+[ext_resource type="Texture2D" uid="uid://c56addw5bgkgx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0016.png" id="17_gcijk"]
+[ext_resource type="Texture2D" uid="uid://c47ekw71b36kl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0017.png" id="18_qevg7"]
+[ext_resource type="Texture2D" uid="uid://dqq0e30xsymba" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0018.png" id="19_yj6mi"]
+[ext_resource type="Texture2D" uid="uid://cd3gdab6xbch0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0019.png" id="20_k6ehi"]
+[ext_resource type="Texture2D" uid="uid://b2oavwxwjpcx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0020.png" id="21_sgagq"]
+[ext_resource type="Texture2D" uid="uid://drqk3mciqfjkk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0021.png" id="22_j8t0w"]
+[ext_resource type="Texture2D" uid="uid://gm68hi3i7rft" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0022.png" id="23_typ0e"]
+[ext_resource type="Texture2D" uid="uid://ck71m4hbe7eli" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0023.png" id="24_7pp1j"]
+[ext_resource type="Texture2D" uid="uid://br1k0dmbcsaw" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0024.png" id="25_mufd2"]
+[ext_resource type="Texture2D" uid="uid://bkgr6iw6fv7rp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0025.png" id="26_4r6q3"]
+[ext_resource type="Texture2D" uid="uid://bmsmnqy11d8ny" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0026.png" id="27_fiqsf"]
+[ext_resource type="Texture2D" uid="uid://h3abmh1dlnwn" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0027.png" id="28_5rglj"]
+[ext_resource type="Texture2D" uid="uid://dobrfe446l2rw" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0028.png" id="29_xjuxk"]
+[ext_resource type="Texture2D" uid="uid://bei6tvcidtq51" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0029.png" id="30_8w234"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dwrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7p1oa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lifkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a351k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4mm02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3h728")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g5lkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_68p7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e745m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tkhnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5a34u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lwvur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d11jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pm68s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lw5um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5ofo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gcijk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qevg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yj6mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k6ehi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sgagq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j8t0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_typ0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7pp1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mufd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4r6q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fiqsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5rglj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xjuxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_8w234")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]

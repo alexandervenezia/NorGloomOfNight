@@ -48,7 +48,6 @@ public partial class Purgatory : Node2D, ILevel
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
 		// Either begin combat immediately or after cutscene
-		// TODO: Begin combat here
 		MasterScene master = MasterScene.GetInstance();
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);
@@ -71,7 +70,7 @@ public partial class Purgatory : Node2D, ILevel
 
 	public override void _Process(double delta)
 	{
-		if (Input.IsKeyPressed(Key.Delete))
+		if (OS.IsDebugBuild() && Input.IsKeyPressed(Key.Delete))
 		{
 			Node pride = MasterScene.GetInstance().ActivateScene(_prideUID, true, true);
 			_player.EnemyAggroed -= OnAggro;

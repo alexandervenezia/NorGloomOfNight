@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw5dpt61kts8k"
-path="res://.godot/imported/Kerog_Attack_0013.png-f232f9bfb7e8ab4ee45e5d34b82b85ca.ctex"
+path.s3tc="res://.godot/imported/Kerog_Attack_0013.png-f232f9bfb7e8ab4ee45e5d34b82b85ca.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/Kerog/Attack/Kerog_Attack_0013.png"
-dest_files=["res://.godot/imported/Kerog_Attack_0013.png-f232f9bfb7e8ab4ee45e5d34b82b85ca.ctex"]
+dest_files=["res://.godot/imported/Kerog_Attack_0013.png-f232f9bfb7e8ab4ee45e5d34b82b85ca.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

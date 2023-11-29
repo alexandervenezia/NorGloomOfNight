@@ -40,7 +40,8 @@ public partial class Enemy : CharacterBody2D, ICombatable
 
 		_warningLabel = GetNodeOrNull<Label>("Warning");
 		if (_warningLabel != null)
-			_warningLabel.Visible = false;
+			_warningLabel.Visible = true;
+
 	}
 
 	public override void _PhysicsProcess(double delta)
