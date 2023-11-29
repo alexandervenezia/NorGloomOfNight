@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgtat65qxyutk"]
+[gd_scene load_steps=8 format=3 uid="uid://cgtat65qxyutk"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_pgb03"]
 [ext_resource type="Resource" uid="uid://inykh8q3cnsq" path="res://res/resources/cards/DivineSmite+.tres" id="2_1luwv"]
+[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="3_pxhxj"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="7_cko4m"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="8_y4q4u"]
 
@@ -30,6 +31,7 @@ _startingArmor = 1
 y_sort_enabled = true
 position = Vector2(-98.6667, -35)
 scale = Vector2(1.25, 1.25)
+sprite_frames = ExtResource("3_pxhxj")
 
 [node name="HealthBar" parent="." instance=ExtResource("7_cko4m")]
 z_index = 1

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://iw7vaee7nlpc"]
+[gd_scene load_steps=10 format=3 uid="uid://iw7vaee7nlpc"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_qjx0m"]
 [ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="2_kbjd2"]
 [ext_resource type="Resource" uid="uid://djp22yro3qat6" path="res://res/resources/cards/Stomp.tres" id="3_20lrt"]
 [ext_resource type="Resource" uid="uid://cagkcsnwq2qr0" path="res://res/resources/cards/HellsGrasp.tres" id="4_qutwh"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="5_l6jft"]
+[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="5_p8ssy"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_p2fnk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
@@ -39,6 +40,7 @@ shape = SubResource("CapsuleShape2D_shunw")
 y_sort_enabled = true
 position = Vector2(12, -6)
 scale = Vector2(-0.5, 0.5)
+sprite_frames = ExtResource("5_p8ssy")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_l6jft")]
 material = SubResource("ShaderMaterial_do74u")

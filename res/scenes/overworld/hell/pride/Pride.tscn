@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=135 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="30_u83yh"]
 [ext_resource type="Resource" uid="uid://5cia644ch3cd" path="res://res/resources/cutscenes/PipCutscene.tres" id="31_yoly0"]
 [ext_resource type="Resource" uid="uid://qrkpsc32vgin" path="res://res/resources/cutscenes/CerberusOutroCutscene.tres" id="32_cvc36"]
+[ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="33_dpfwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -336,9 +337,11 @@ size = Vector2(6080, 640)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
 size = Vector2(1468, 640)
 
-[node name="Pride" type="Node2D"]
+[node name="Pride" type="Node2D" node_paths=PackedStringArray("_backgroundMarkers")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
+_backgroundIDs = Array[int]([2, 3])
+_backgroundMarkers = [NodePath("BackgroundChangeMarkers/Gatehouse"), NodePath("BackgroundChangeMarkers/Pride")]
 _playerSpawn = Vector2(-22070.7, -2279.27)
 _journalID = "uid://24f70lj4w2nt"
 _introMusicUID = "uid://bcwav3q4c5png"
@@ -1439,3 +1442,43 @@ position = Vector2(22992, 7440)
 scale = Vector2(3, 3)
 Cutscene = ExtResource("32_cvc36")
 FLAG_BEAT_DOG = true
+
+[node name="HealDoor1" parent="." instance=ExtResource("33_dpfwx")]
+scale = Vector2(1.8, 1.8)
+_doorOnePos = Vector2i(-6855, 2970)
+_doorTwoPos = Vector2i(-2600, 12225)
+_showDoorOne = true
+_showDoorTwo = true
+
+[node name="ColorRect" type="ColorRect" parent="HealDoor1"]
+z_index = -1
+offset_left = -5458.0
+offset_top = 10356.0
+offset_right = -907.0
+offset_bottom = 14649.0
+color = Color(0, 0, 0, 1)
+
+[node name="HealDoor2" parent="." instance=ExtResource("33_dpfwx")]
+scale = Vector2(1.8, 1.8)
+_doorOnePos = Vector2i(33000, 4410)
+_doorTwoPos = Vector2i(23700, 12405)
+_showDoorOne = true
+_showDoorTwo = true
+
+[node name="ColorRect2" type="ColorRect" parent="HealDoor2"]
+z_index = -1
+offset_left = 21182.2
+offset_top = 10257.8
+offset_right = 25733.2
+offset_bottom = 14550.8
+color = Color(0, 0, 0, 1)
+
+[node name="BackgroundChangeMarkers" type="Node2D" parent="."]
+
+[node name="Gatehouse" type="Marker2D" parent="BackgroundChangeMarkers"]
+position = Vector2(18016, 7792)
+gizmo_extents = 1000.0
+
+[node name="Pride" type="Marker2D" parent="BackgroundChangeMarkers"]
+position = Vector2(67952, -1936)
+gizmo_extents = 1000.0

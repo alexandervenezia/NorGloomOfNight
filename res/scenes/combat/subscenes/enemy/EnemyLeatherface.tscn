@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhgwcft6ty4ut"]
+[gd_scene load_steps=9 format=3 uid="uid://bhgwcft6ty4ut"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_wlg8l"]
 [ext_resource type="Resource" uid="uid://bcjf232cowv26" path="res://res/resources/cards/DivineSmite.tres" id="2_66lrr"]
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="3_kcbn3"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="4_ie0h5"]
+[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="4_k8rwb"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_f43yq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
@@ -36,6 +37,7 @@ shape = SubResource("CapsuleShape2D_shunw")
 y_sort_enabled = true
 position = Vector2(-3, -109)
 scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("4_k8rwb")
 
 [node name="HealthBar" parent="." instance=ExtResource("4_ie0h5")]
 material = SubResource("ShaderMaterial_do74u")

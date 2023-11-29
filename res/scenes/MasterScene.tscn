@@ -133,7 +133,9 @@ Lookup = {
 }
 Backgrounds = {
 0: "uid://wkaiw4al4ts8",
-1: "uid://bejriwo6em027"
+1: "uid://bejriwo6em027",
+2: "uid://o1jr4chul382",
+3: "uid://bejriwo6em027"
 }
 
 [connection signal="finished" from="MasterAudio/AudioStreamPlayer" to="MasterAudio" method="MusicFinished"]
