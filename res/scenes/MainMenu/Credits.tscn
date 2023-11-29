@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6thwoiv7wpds"]
+[gd_scene load_steps=13 format=3 uid="uid://c6thwoiv7wpds"]
 
 [ext_resource type="Texture2D" uid="uid://cl5g1vaq6dkm3" path="res://res/scenes/MainMenu/assets/MenuBackground.png" id="1_5a61t"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="2_wo2cs"]
+[ext_resource type="Shader" path="res://res/scenes/MainMenu/Credits.gdshader" id="3_bdaw0"]
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="3_oxvy7"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="4_j0bgj"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="5_vw65y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqkqw"]
+shader = ExtResource("3_bdaw0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4ocg"]
 
@@ -52,10 +56,11 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_wo2cs")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 235.0
+material = SubResource("ShaderMaterial_jqkqw")
+offset_left = -52.0
 offset_top = 5.0
-offset_right = 1675.0
-offset_bottom = 1177.0
+offset_right = 1980.0
+offset_bottom = 18005.0
 mouse_filter = 1
 color = Color(0.137255, 0.137255, 0.137255, 1)
 
