@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwm4agvvih08d"]
+[gd_scene load_steps=11 format=3 uid="uid://dwm4agvvih08d"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_7g3oc"]
-[ext_resource type="Resource" uid="uid://inykh8q3cnsq" path="res://res/resources/cards/DivineSmite+.tres" id="2_wufbi"]
+[ext_resource type="Resource" uid="uid://bcjf232cowv26" path="res://res/resources/cards/DivineSmite.tres" id="2_sd4mm"]
+[ext_resource type="Resource" uid="uid://dxdv0f51ras64" path="res://res/resources/cards/PridesResolve.tres" id="3_isins"]
+[ext_resource type="Resource" uid="uid://duf4fn06ukls" path="res://res/resources/cards/Stab.tres" id="4_4pqy1"]
+[ext_resource type="Resource" uid="uid://djp22yro3qat6" path="res://res/resources/cards/Stomp.tres" id="5_qqbcm"]
+[ext_resource type="Resource" uid="uid://bolvp5q12hkgg" path="res://res/resources/cards/DivineProtection.tres" id="6_fk55o"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="7_171uv"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="8_o6sj7"]
 
@@ -19,10 +23,15 @@ height = 933.714
 scale = Vector2(0.65, 0.65)
 collision_layer = 4
 script = ExtResource("1_7g3oc")
-_deck = [ExtResource("2_wufbi")]
+_deck = [ExtResource("2_sd4mm"), ExtResource("3_isins"), ExtResource("4_4pqy1"), ExtResource("5_qqbcm"), ExtResource("6_fk55o")]
 _ID = 93
-_goldDrop = 1
-_maxHealth = 5
+_goldDrop = 100
+_percentChanceOfCardDrop = 100
+_cardDrops = Array[Resource]([ExtResource("3_isins")])
+_maxHealth = 45
+_startingActionPoints = 2
+_startingMovementPoints = 0
+_startingArmor = 10
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true

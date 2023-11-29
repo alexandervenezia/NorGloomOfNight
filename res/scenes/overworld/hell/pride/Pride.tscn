@@ -1144,7 +1144,11 @@ position = Vector2(36752, 1248)
 _relativePatrolBounds = Vector2(-2500, 2500)
 
 [node name="LeatherfaceWorld2" parent="Enemies" instance=ExtResource("27_5rng0")]
-position = Vector2(46672, -1904)
+position = Vector2(46682, -1684)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="LeatherfaceWorld3" parent="Enemies" instance=ExtResource("27_5rng0")]
+position = Vector2(55112, -1678)
 _relativePatrolBounds = Vector2(-2500, 2500)
 
 [node name="SidWorld" parent="Enemies" instance=ExtResource("27_g4pnk")]
@@ -1393,7 +1397,8 @@ texture = ExtResource("16_uxfrh")
 position = Vector2(22784, 8272)
 
 [node name="Pride" parent="." instance=ExtResource("29_2pin4")]
-position = Vector2(77374, -2932)
+position = Vector2(77864, -3164)
+scale = Vector2(1.3, 1.3)
 
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)
@@ -1402,7 +1407,7 @@ Cutscene = ExtResource("31_yoly0")
 
 [node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(22992, 7440)
-scale = Vector2(3.03665, 2.29927)
+scale = Vector2(6.074, 4.598)
 Cutscene = ExtResource("32_cvc36")
 FLAG_BEAT_DOG = true
 

@@ -16,6 +16,9 @@ _id = 93
 _firstSlotSpawn = {
 93: 100
 }
+_secondSlotSpawn = {}
+_thirdSlotSpawn = {}
+_fourthSlotSpawn = {}
 _introCutscene = ExtResource("2_ftawh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
