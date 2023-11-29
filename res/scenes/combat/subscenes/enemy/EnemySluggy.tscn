@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b73bmqkou4vv7"]
+[gd_scene load_steps=8 format=3 uid="uid://b73bmqkou4vv7"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_0xdnb"]
 [ext_resource type="Resource" uid="uid://bhvwaau1l2n0e" path="res://res/resources/cards/Toxic Spike.tres" id="2_j2gkd"]
+[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="3_71l53"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="4_fqoko"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_f42au"]
 
@@ -40,6 +41,7 @@ shape = SubResource("CapsuleShape2D_shunw")
 y_sort_enabled = true
 position = Vector2(11, -35)
 scale = Vector2(0.376, 0.376)
+sprite_frames = ExtResource("3_71l53")
 
 [node name="HealthBar" parent="." instance=ExtResource("4_fqoko")]
 material = SubResource("ShaderMaterial_do74u")

@@ -25,6 +25,8 @@ public partial class MasterScene : Node
 	private int _coinsFound;
 	public int TotalCoins;
 
+	private int _playerMaxHP = -1;
+
 	private static MasterScene _instance;
 
 	public static MasterScene GetInstance()
@@ -48,7 +50,7 @@ public partial class MasterScene : Node
 	public void ResetVars()
 	{
 		LoadEnemyIDs();
-		_playerHP = 25;
+		_playerHP = _playerMaxHP;
 		CollectCoins();
 		MasterDeck.ResetPlayerDeck();
 
@@ -67,6 +69,9 @@ public partial class MasterScene : Node
 
 	public void SetPlayerHP(int hp)
 	{
+		if (_playerMaxHP == -1)
+			_playerMaxHP = hp;
+
 		_playerHP = hp;
 	}
 
