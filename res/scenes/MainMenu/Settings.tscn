@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://byg6nypf333lj"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="2_qnvx5"]
+[ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="2_rip1t"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="4_wy64s"]
+[ext_resource type="Texture2D" uid="uid://cl5g1vaq6dkm3" path="res://res/scenes/MainMenu/assets/MenuBackground.png" id="5_al52y"]
+[ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="7_qv3ny"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4ocg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wss3x"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.356863, 0.639216, 0.717647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4h56"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12549, 0.247059, 0.333333, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n724u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udywp"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_al52y")
+metadata/_edit_lock_ = true
+
+[node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="."]
+position = Vector2(1813, 958)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_qv3ny")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 235.0
+offset_top = 5.0
+offset_right = 1675.0
+offset_bottom = 1177.0
+mouse_filter = 1
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="Back" type="Button" parent="ColorRect"]
+z_index = 100
+material = SubResource("ShaderMaterial_v4ocg")
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = 368.0
+offset_right = 247.0
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("2_rip1t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wss3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p4h56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
+script = ExtResource("2_qnvx5")
+_destinationScene = "uid://bw7twakv1byy7"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/Back"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -33.0
+offset_right = 238.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_wy64s")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]Back"

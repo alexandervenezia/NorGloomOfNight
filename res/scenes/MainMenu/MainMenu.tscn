@@ -1,0 +1,224 @@
+[gd_scene load_steps=18 format=3 uid="uid://bw7twakv1byy7"]
+
+[ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="1_js6kk"]
+[ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="2_wo3dn"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_4m3dj"]
+[ext_resource type="Texture2D" uid="uid://vi0yjaxkgoqg" path="res://res/scenes/MainMenu/assets/Title screen bg updated 2.png" id="4_qmyrk"]
+[ext_resource type="Texture2D" uid="uid://b5hkvlaw06ph8" path="res://res/scenes/MainMenu/assets/NOR GLOOM OF NIGHT title.png" id="5_6lnj2"]
+[ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="6_mdm88"]
+[ext_resource type="Texture2D" uid="uid://dytl26e35towi" path="res://res/scenes/MainMenu/assets/GitHub Lost souls label.png" id="7_67vmm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4ocg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wss3x"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.356863, 0.639216, 0.717647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4h56"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12549, 0.247059, 0.333333, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n724u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udywp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shlc3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ftyr"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.356863, 0.639216, 0.717647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0ch0"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12549, 0.247059, 0.333333, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27l4e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o8y7q"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="NewGame" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_v4ocg")
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 703.0
+offset_top = 609.0
+offset_right = 1203.0
+offset_bottom = 709.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("1_js6kk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wss3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p4h56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
+script = ExtResource("2_wo3dn")
+_destinationScene = "uid://b6a77ow3dkibo"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NewGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -32.0
+offset_right = 244.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("3_4m3dj")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]New Game"
+
+[node name="Settings" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_shlc3")
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 702.0
+offset_top = 735.0
+offset_right = 1202.0
+offset_bottom = 835.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("1_js6kk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ftyr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f0ch0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_27l4e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o8y7q")
+script = ExtResource("2_wo3dn")
+_destinationScene = "uid://byg6nypf333lj"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -32.0
+offset_right = 238.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("3_4m3dj")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]Settings"
+
+[node name="Credits" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_shlc3")
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 702.0
+offset_top = 860.0
+offset_right = 1202.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("1_js6kk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ftyr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f0ch0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_27l4e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o8y7q")
+script = ExtResource("2_wo3dn")
+_destinationScene = "uid://c6thwoiv7wpds"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -32.0
+offset_right = 238.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("3_4m3dj")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]Credits"
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_qmyrk")
+metadata/_edit_lock_ = true
+
+[node name="NorGloomOfNight" type="Sprite2D" parent="."]
+position = Vector2(960, 387)
+texture = ExtResource("5_6lnj2")
+
+[node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1813, 958)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_mdm88")
+
+[node name="GitHubLostSoulsLabel" type="Sprite2D" parent="."]
+position = Vector2(1807, 1040)
+texture = ExtResource("7_67vmm")

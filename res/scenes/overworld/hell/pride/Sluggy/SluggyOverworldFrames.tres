@@ -1,0 +1,130 @@
+[gd_resource type="SpriteFrames" load_steps=31 format=3 uid="uid://deiun403jddj3"]
+
+[ext_resource type="Texture2D" uid="uid://dc4li2iyw5pm0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0000.png" id="1_m0hg2"]
+[ext_resource type="Texture2D" uid="uid://u82kql1nhv4q" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0001.png" id="2_cq5hc"]
+[ext_resource type="Texture2D" uid="uid://suegn5trgtix" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0002.png" id="3_oh6sv"]
+[ext_resource type="Texture2D" uid="uid://b1i1202enasar" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0003.png" id="4_scege"]
+[ext_resource type="Texture2D" uid="uid://f72v1jwpgxsw" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0004.png" id="5_ajflb"]
+[ext_resource type="Texture2D" uid="uid://b21iio83y4fxl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0005.png" id="6_5hh7l"]
+[ext_resource type="Texture2D" uid="uid://cr7aht0vohd8p" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0006.png" id="7_kqktt"]
+[ext_resource type="Texture2D" uid="uid://dc75awmofdi5r" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0007.png" id="8_sxo1x"]
+[ext_resource type="Texture2D" uid="uid://cg7flvcuo4qfs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0008.png" id="9_2bpc8"]
+[ext_resource type="Texture2D" uid="uid://drxdaxtry1w8p" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0009.png" id="10_350mr"]
+[ext_resource type="Texture2D" uid="uid://4bicq2b0yujw" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0010.png" id="11_joqsc"]
+[ext_resource type="Texture2D" uid="uid://c1sgg8shyufo" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0011.png" id="12_cecpn"]
+[ext_resource type="Texture2D" uid="uid://coiaus6dvqivl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0012.png" id="13_ru5a8"]
+[ext_resource type="Texture2D" uid="uid://dvxb6k6emx8rw" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0013.png" id="14_0ekev"]
+[ext_resource type="Texture2D" uid="uid://cur8hnbt3amoi" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0014.png" id="15_ir02b"]
+[ext_resource type="Texture2D" uid="uid://c7jmyd6l0gx5m" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0015.png" id="16_xtkg7"]
+[ext_resource type="Texture2D" uid="uid://cpgc1yfxjbejr" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0016.png" id="17_s2ag0"]
+[ext_resource type="Texture2D" uid="uid://bqyfrdun1feyx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0017.png" id="18_ht7uf"]
+[ext_resource type="Texture2D" uid="uid://25ud2ddwnp3u" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0018.png" id="19_1qps2"]
+[ext_resource type="Texture2D" uid="uid://dc8x1xhuwfxqg" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0019.png" id="20_7lmev"]
+[ext_resource type="Texture2D" uid="uid://cshbwsomfbbgr" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0020.png" id="21_5aqyf"]
+[ext_resource type="Texture2D" uid="uid://cxnhvi65wb57q" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0021.png" id="22_183p8"]
+[ext_resource type="Texture2D" uid="uid://bp3kcbfxqh7j8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0022.png" id="23_js2cx"]
+[ext_resource type="Texture2D" uid="uid://cmbev4i1q3rom" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0023.png" id="24_baynq"]
+[ext_resource type="Texture2D" uid="uid://0d4hxj4ge41n" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0024.png" id="25_8nefp"]
+[ext_resource type="Texture2D" uid="uid://cnrwt0yscgbup" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0025.png" id="26_ig6h0"]
+[ext_resource type="Texture2D" uid="uid://phuntjlqfw2v" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0026.png" id="27_5tg72"]
+[ext_resource type="Texture2D" uid="uid://ddi6tf0eu74r2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0027.png" id="28_gk4ch"]
+[ext_resource type="Texture2D" uid="uid://d1owxe14eisfh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0028.png" id="29_1q8aq"]
+[ext_resource type="Texture2D" uid="uid://cxbnbi76qp87n" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sluggy/Idle/Slug Guy_walk_0029.png" id="30_m4vtf"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m0hg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cq5hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oh6sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_scege")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ajflb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5hh7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kqktt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sxo1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2bpc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_350mr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_joqsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cecpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ru5a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0ekev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ir02b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xtkg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s2ag0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ht7uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1qps2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7lmev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5aqyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_183p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_js2cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_baynq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8nefp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ig6h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5tg72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gk4ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1q8aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_m4vtf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

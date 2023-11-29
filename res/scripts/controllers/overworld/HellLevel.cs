@@ -6,11 +6,11 @@ using System.Runtime.CompilerServices;
 public partial class HellLevel : Node2D, ILevel
 {
 	[Export] protected Vector2 _playerSpawn;
-	[Export] protected string _journalID;
+	[Export] protected string _journalID; // No longer used
 	[Export] private string _introMusicUID;
 	[Export] private string _loopMusicUID;
 	protected Player _player;
-	protected Player Player => _player;
+	protected Journal _journal;
 	protected ICombatable _enemyInCombat;
 	public override void _Ready()
 	{
@@ -40,7 +40,10 @@ public partial class HellLevel : Node2D, ILevel
 	{
 		if (Input.IsActionJustPressed("Escape"))
 		{
-			Journal journal = (Journal)UseElevator(_journalID);
+			if (!_journal.Visible)
+				_journal.Open();				
+			else
+				_journal.Close();
 		}
 	}
 
@@ -52,6 +55,8 @@ public partial class HellLevel : Node2D, ILevel
 	public void SetPlayer(Player player)
 	{
 		_player = player;
+		_journal = _player.GetNode<Camera2D>("Camera2D").GetNode<Journal>("Journal");
+		_journal.Visible = false;
 		_player.EnemyAggroed += OnAggro;
 		_player.Position = _playerSpawn;
 		GetNode<Elevator>("Elevator").SetLevelSelect(_player.GetNode<Control>("Camera2D/BackToPurgatory"));

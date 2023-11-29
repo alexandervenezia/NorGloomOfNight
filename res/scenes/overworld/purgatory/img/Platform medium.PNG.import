@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjtl4ockj2vqq"
-path="res://.godot/imported/Platform medium.PNG-a2799a62f61dc0191afdbb2f309fae1e.ctex"
+path.s3tc="res://.godot/imported/Platform medium.PNG-a2799a62f61dc0191afdbb2f309fae1e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/purgatory/img/Platform medium.PNG"
-dest_files=["res://.godot/imported/Platform medium.PNG-a2799a62f61dc0191afdbb2f309fae1e.ctex"]
+dest_files=["res://.godot/imported/Platform medium.PNG-a2799a62f61dc0191afdbb2f309fae1e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

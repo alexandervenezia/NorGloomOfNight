@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmjjfdhu5w74v"
-path="res://.godot/imported/7.png-018fae46d03036e6947e542446bd11eb.ctex"
+path.s3tc="res://.godot/imported/7.png-018fae46d03036e6947e542446bd11eb.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Idle/7.png"
-dest_files=["res://.godot/imported/7.png-018fae46d03036e6947e542446bd11eb.ctex"]
+dest_files=["res://.godot/imported/7.png-018fae46d03036e6947e542446bd11eb.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

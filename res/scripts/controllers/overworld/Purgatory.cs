@@ -7,7 +7,7 @@ public partial class Purgatory : Node2D, ILevel
 {
 	[Export] private string _managementUID;
 	[Export] private string _prideUID;
-	[Export] private string _journalID;
+	[Export] private string _journalID; // No longer used
 	[Export] private string _introMusicUID;
 	[Export] private string _loopMusicUID;
 	private Player _player;
@@ -16,9 +16,19 @@ public partial class Purgatory : Node2D, ILevel
 
 	private ICombatable _enemyInCombat;
 
+	private Journal _journal;
+
 	public override void _Ready()
 	{
+		GD.Print("Initial audio");
+		MasterAudio.GetInstance().ClearQueue();
+		MasterAudio.GetInstance().PlaySong(_introMusicUID);
+		MasterAudio.GetInstance().QueueSong(_loopMusicUID);
+
 		_player = (Player)GetNodeOrNull("OverworldPlayer");
+		_journal = _player.GetNode<Camera2D>("Camera2D").GetNode<Journal>("Journal");
+		_journal.Visible = false;
+
 		if (_player != null)
 			_player.EnemyAggroed += OnAggro;
 		_playerSpawn = _player.GlobalPosition;
@@ -38,7 +48,6 @@ public partial class Purgatory : Node2D, ILevel
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
 		// Either begin combat immediately or after cutscene
-		// TODO: Begin combat here
 		MasterScene master = MasterScene.GetInstance();
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);
@@ -61,7 +70,7 @@ public partial class Purgatory : Node2D, ILevel
 
 	public override void _Process(double delta)
 	{
-		if (Input.IsKeyPressed(Key.Delete))
+		if (OS.IsDebugBuild() && Input.IsKeyPressed(Key.Delete))
 		{
 			Node pride = MasterScene.GetInstance().ActivateScene(_prideUID, true, true);
 			_player.EnemyAggroed -= OnAggro;
@@ -72,14 +81,19 @@ public partial class Purgatory : Node2D, ILevel
 
 		if (Input.IsActionJustPressed("Escape"))
 		{
-			Journal journal = (Journal)UseElevator(_journalID);
+			if (!_journal.Visible)
+				_journal.Open();				
+			else
+				_journal.Close();
 		}
 	}
 
 	public void Reactivate()
 	{		
+		GD.Print("Reactivating Purgatory");
 		if (!MasterAudio.GetInstance().GetNoRestart())
 		{
+			GD.Print("Audio should play");
 			MasterAudio.GetInstance().ClearQueue();
 			MasterAudio.GetInstance().PlaySong(_introMusicUID);
 			MasterAudio.GetInstance().QueueSong(_loopMusicUID);

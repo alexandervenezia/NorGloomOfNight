@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=44 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -20,15 +20,17 @@
 [ext_resource type="FontFile" uid="uid://thmue4emd3x5" path="res://assets/fonts/Baskerville/LibreBaskerville-Italic.ttf" id="12_s2ur5"]
 [ext_resource type="PackedScene" uid="uid://bktomhq703uad" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/PokerGuy.tscn" id="13_n7yjn"]
 [ext_resource type="PackedScene" uid="uid://6ifk1u4vqc2r" path="res://res/scenes/overworld/OverworldHealthBar.tscn" id="14_herhl"]
+[ext_resource type="PackedScene" uid="uid://24f70lj4w2nt" path="res://res/scenes/Journal/Journal.tscn" id="15_60gpt"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="15_lu01w"]
 [ext_resource type="Shader" path="res://res/scenes/ElevatorShader.gdshader" id="16_5x30j"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
-[ext_resource type="Resource" uid="uid://b4grubao7sdb7" path="res://res/resources/cutscenes/KerPoCutscene.tres" id="20_i3ngi"]
 [ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="26_wfr1f"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
 [ext_resource type="PackedScene" uid="uid://bbwgebb7735on" path="res://res/scenes/overworld/NPC.tscn" id="28_0cjw6"]
+[ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
+[ext_resource type="Resource" uid="uid://3qmogeo45ns3" path="res://res/resources/cutscenes/KerPoCutsceneEnd.tres" id="30_up1a5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -116,8 +118,8 @@ script = ExtResource("1_8mid8")
 _managementUID = "uid://dpku0u2ogjvbb"
 _prideUID = "uid://bk7mufkqeug2p"
 _journalID = "uid://24f70lj4w2nt"
-_introMusicUID = "uid://dt1l4htsvq7gg"
-_loopMusicUID = "uid://bhx2reexyplrf"
+_introMusicUID = "uid://bov4p35dowy3b"
+_loopMusicUID = "uid://cjd6hk6cpgr6l"
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -210,14 +212,15 @@ _jumpSpeed = 2000.0
 _gravityFallMultiplier = 1.75
 _accelerationStrength = 0.03
 _gravityMult = 3.5
+_gameOverScene = "uid://cjtyftqstb1xo"
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -600)
 zoom = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="OverworldPlayer/Camera2D"]
-position = Vector2(2384.75, -1944.34)
-scale = Vector2(48.0859, 8.94824)
+position = Vector2(1595.75, -1820.34)
+scale = Vector2(72.7422, 12.8232)
 texture = SubResource("GradientTexture2D_ujr6k")
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
@@ -476,6 +479,10 @@ z_index = 1
 position = Vector2(-3258, -1982)
 scale = Vector2(4, 4)
 
+[node name="Journal" parent="OverworldPlayer/Camera2D" instance=ExtResource("15_60gpt")]
+z_index = 100
+scale = Vector2(4, 4)
+
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="DoorPair" parent="Doors" instance=ExtResource("4_wm0r4")]
@@ -545,9 +552,8 @@ scale = Vector2(23909.6, 223.281)
 texture = ExtResource("11_g3usj")
 
 [node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
-position = Vector2(27476, -4252)
+position = Vector2(27476, -3874)
 scale = Vector2(1.5, 1.5)
-_cutscene = ExtResource("20_i3ngi")
 
 [node name="Elevator" type="Marker2D" parent="." node_paths=PackedStringArray("_levelSelect")]
 position = Vector2(-1770, 388)
@@ -556,7 +562,8 @@ script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
-position = Vector2(26416, -4392)
+position = Vector2(26036, -4526)
+scale = Vector2(1.25, 1.25)
 
 [node name="HealArea" parent="." instance=ExtResource("26_wfr1f")]
 position = Vector2(-7414, -9826)
@@ -573,6 +580,12 @@ shape = SubResource("RectangleShape2D_ecjm0")
 position = Vector2(-184, 402)
 _dialogue = Array[String](["I am an NPC.", "Testing, testing."])
 _delayMS = 2000
+
+[node name="CutsceneZone" parent="." instance=ExtResource("29_ef0ed")]
+position = Vector2(27032, -4252)
+scale = Vector2(2.5, 2)
+Cutscene = ExtResource("30_up1a5")
+FLAG_ACQUIRED_CROWN = true
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b6tkmyiff6yj3"]
+
+[ext_resource type="Texture2D" uid="uid://cxu3mlrqgsrw7" path="res://res/scenes/combat/subscenes/Card/images/artwork/tactical_roll.png" id="1_uaqcd"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_w07cq"]
+
+[resource]
+script = ExtResource("2_w07cq")
+_name = "Tactical Roll++"
+_description = ""
+_artwork = ExtResource("1_uaqcd")
+_type = 0
+_rarity = 4
+_actionPointCost = 0
+_movementPointCost = 1
+_target = 0
+_damageTypes = []
+_damageDice = []
+_drawEffects = [0, 1]
+_drawQuantities = [7, 4]
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_unremovableByPlayer = false

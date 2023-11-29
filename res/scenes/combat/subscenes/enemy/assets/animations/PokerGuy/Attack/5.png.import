@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4xbfs0wstsha"
-path="res://.godot/imported/5.png-5958e9ff45c263481e9d198f9996120c.ctex"
+path.s3tc="res://.godot/imported/5.png-5958e9ff45c263481e9d198f9996120c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/PokerGuy/Attack/5.png"
-dest_files=["res://.godot/imported/5.png-5958e9ff45c263481e9d198f9996120c.ctex"]
+dest_files=["res://.godot/imported/5.png-5958e9ff45c263481e9d198f9996120c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

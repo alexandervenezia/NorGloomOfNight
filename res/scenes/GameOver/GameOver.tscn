@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjtyftqstb1xo"]
+
+[ext_resource type="Texture2D" uid="uid://b3ht66g2arc3k" path="res://res/scenes/GameOver/Game Over.png" id="1_oqdca"]
+[ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="2_rosf0"]
+[ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="3_c563f"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="4_a0x1a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35mf3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emfm8"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.356863, 0.639216, 0.717647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fhoo"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12549, 0.247059, 0.333333, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_coyqk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kwvjm"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="GameOver" type="Sprite2D" parent="."]
+position = Vector2(940, 272)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_oqdca")
+
+[node name="BackToWork" type="Button" parent="."]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_35mf3")
+custom_minimum_size = Vector2(500, 100)
+offset_left = 710.0
+offset_top = 750.0
+offset_right = 1210.0
+offset_bottom = 850.0
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("2_rosf0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_emfm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6fhoo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_coyqk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kwvjm")
+script = ExtResource("3_c563f")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BackToWork"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -32.0
+offset_right = 244.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_a0x1a")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]Back to Work"
+metadata/_edit_lock_ = true
+
+[node name="MainMenu" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_35mf3")
+custom_minimum_size = Vector2(500, 100)
+offset_left = 710.0
+offset_top = 900.0
+offset_right = 1210.0
+offset_bottom = 1000.0
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("2_rosf0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_emfm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6fhoo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_coyqk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kwvjm")
+script = ExtResource("3_c563f")
+_destinationScene = "uid://d204n4ckwe72x"
+_reloadMasterScene = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -32.0
+offset_right = 244.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_a0x1a")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]Main Menu"
+metadata/_edit_lock_ = true

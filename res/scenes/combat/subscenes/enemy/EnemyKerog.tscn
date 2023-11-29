@@ -38,8 +38,8 @@ shape = SubResource("CapsuleShape2D_shunw")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(12, -6)
-scale = Vector2(-0.2, 0.2)
+scale = Vector2(-0.5, 0.5)
 
 [node name="HealthBar" parent="." instance=ExtResource("5_l6jft")]
 material = SubResource("ShaderMaterial_do74u")
-position = Vector2(0, 147)
+position = Vector2(0, 179)

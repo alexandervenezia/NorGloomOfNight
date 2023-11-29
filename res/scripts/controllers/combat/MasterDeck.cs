@@ -31,11 +31,14 @@ public partial class MasterDeck : Node
 	private static Systems.Combat.Deck _playerDeck;
 	public static Systems.Combat.Deck PlayerDeck => _playerDeck;
 
+	private static List<CardData> _playerStarterDeckStatic; // This is dumb. Don't use static classes. Singletons work way better with Godot export fields.
+
 	public override void _Ready()
 	{
 		_playerDeck = new();
 		DamageIcons = new();
 		_damageIconsStatic = new();
+		_playerStarterDeckStatic = new();
 
 		foreach (DamageType type in _damageIcons.Keys)
 		{
@@ -62,9 +65,10 @@ public partial class MasterDeck : Node
 		foreach (CardData c in starterDeck)
 		{			
 			_playerDeck.AddCard(c);
+			_playerStarterDeckStatic.Add(c);
 		}
 
-		_cardTypes.Clear();
+		// _cardTypes.Clear();
 		OnLoad?.Invoke();
 	}
 
@@ -76,6 +80,16 @@ public partial class MasterDeck : Node
 		}
 
 		return DamageIcons[type];
+	}
+
+	public static void ResetPlayerDeck()
+	{
+		_playerDeck = new();
+
+		foreach (CardData c in _playerStarterDeckStatic)
+		{			
+			_playerDeck.AddCard(c);
+		}
 	}
 
 }

@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc2ff470ovbn7"
-path="res://.godot/imported/Mailroom Boss BG.PNG-85f3f94b13c57d166d70b14496a5cb60.ctex"
+path.s3tc="res://.godot/imported/Mailroom Boss BG.PNG-85f3f94b13c57d166d70b14496a5cb60.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/purgatory/img/Mailroom Boss BG.PNG"
-dest_files=["res://.godot/imported/Mailroom Boss BG.PNG-85f3f94b13c57d166d70b14496a5cb60.ctex"]
+dest_files=["res://.godot/imported/Mailroom Boss BG.PNG-85f3f94b13c57d166d70b14496a5cb60.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

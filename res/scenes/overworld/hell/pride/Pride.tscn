@@ -1,11 +1,13 @@
-[gd_scene load_steps=112 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=129 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
-[ext_resource type="Texture2D" uid="uid://d2x2xxs7wnjst" path="res://res/scenes/overworld/hell/pride/LevelDesign_PrideCASTLE_ArtReferencePride Level - Castle.png" id="2_gvcpw"]
+[ext_resource type="Texture2D" uid="uid://bil8e3t3otquk" path="res://res/scenes/overworld/hell/pride/Castle Background.PNG" id="3_wg328"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
+[ext_resource type="Texture2D" uid="uid://cdoj1vv18gm7f" path="res://res/scenes/overworld/hell/pride/Castle healing .PNG" id="5_kr7o0"]
 [ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="6_b5q6i"]
+[ext_resource type="Texture2D" uid="uid://b653dhnflji1s" path="res://res/scenes/overworld/hell/pride/Cave healing.PNG" id="6_t80vn"]
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="7_no0g4"]
 [ext_resource type="Resource" uid="uid://blnau2cu3smcr" path="res://res/resources/cards/HolyWater.tres" id="8_adj6g"]
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="9_yx607"]
@@ -16,6 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://o3v05ium3g" path="res://res/scenes/overworld/hell/pride/Clear fixed camera bg.PNG" id="14_reeqw"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/GrabbyHand.cs" id="15_ps8to"]
 [ext_resource type="Texture2D" uid="uid://cn3a2dsqf2g61" path="res://res/scenes/overworld/hell/pride/Grabby/grippy_enemy.png" id="16_uxfrh"]
+[ext_resource type="Texture2D" uid="uid://4k2ex1gsnyg0" path="res://res/scenes/overworld/hell/pride/Caste Platforms.PNG" id="17_t6ar1"]
+[ext_resource type="Texture2D" uid="uid://o3mmd1fah5uf" path="res://res/scenes/overworld/hell/pride/pillar1.PNG" id="21_miqr8"]
+[ext_resource type="Texture2D" uid="uid://cs4ccbiu82b5h" path="res://res/scenes/overworld/hell/pride/pillar2.PNG" id="22_s1vqe"]
+[ext_resource type="Texture2D" uid="uid://3t7x27ikdpwk" path="res://res/scenes/overworld/hell/pride/pillar3.PNG" id="23_crqxj"]
+[ext_resource type="Texture2D" uid="uid://cqe03bpqhd3gk" path="res://res/scenes/overworld/hell/pride/pillar4.PNG" id="24_cs7og"]
+[ext_resource type="Texture2D" uid="uid://xv1p2xj2b0ae" path="res://res/scenes/overworld/hell/pride/pillar5.PNG" id="25_5wymd"]
+[ext_resource type="PackedScene" uid="uid://bvsg6mu2aw32q" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyWorld.tscn" id="26_dpclw"]
+[ext_resource type="PackedScene" uid="uid://ccpj5bs32vahr" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceWorld.tscn" id="27_5rng0"]
+[ext_resource type="PackedScene" uid="uid://lf5jtfh5yjge" path="res://res/scenes/overworld/hell/pride/Sid/SidWorld.tscn" id="27_g4pnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -128,8 +139,20 @@ size = Vector2(1754, 296.891)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mlai"]
 size = Vector2(1109.88, 274.891)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sfmt"]
+size = Vector2(512, 334.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kj55"]
+size = Vector2(544, 224)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08vjf"]
-size = Vector2(554, 280.001)
+size = Vector2(2542.13, 401)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqovn"]
+size = Vector2(108, 1666.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l3f8"]
+size = Vector2(544, 272)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x30q0"]
 size = Vector2(868, 290.563)
@@ -206,6 +229,12 @@ size = Vector2(581.25, 291.031)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2xxw"]
 size = Vector2(292.625, 289.516)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx2hk"]
+size = Vector2(292.625, 562.758)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mtsp"]
+size = Vector2(6094.6, 249.379)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w88l"]
 size = Vector2(212.313, 3022.76)
 
@@ -264,7 +293,7 @@ size = Vector2(8628, 266.063)
 size = Vector2(148, 1147.03)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn60q"]
-size = Vector2(9225, 656)
+size = Vector2(10872, 458)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hptts"]
 size = Vector2(2304, 596.5)
@@ -279,7 +308,7 @@ size = Vector2(870.25, 578.5)
 size = Vector2(577.125, 578.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqutm"]
-size = Vector2(1440.56, 13437.3)
+size = Vector2(1440.56, 13613.3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qgja"]
 size = Vector2(2593.13, 578.5)
@@ -291,35 +320,113 @@ size = Vector2(572.5, 3160.5)
 size = Vector2(4607.63, 864.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xms38"]
-size = Vector2(2656, 640)
+size = Vector2(2064, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vuni"]
-size = Vector2(1488, 640)
+size = Vector2(1476, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u3ca"]
 size = Vector2(6080, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlov1"]
-size = Vector2(2016, 640)
+size = Vector2(1468, 640)
 
 [node name="Pride" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
 _playerSpawn = Vector2(-22070.7, -2279.27)
 _journalID = "uid://24f70lj4w2nt"
-_introMusicUID = "uid://d1ix404tmx1jm"
-_loopMusicUID = "uid://cllm1liixd7f0"
+_introMusicUID = "uid://bcwav3q4c5png"
+_loopMusicUID = "uid://c2yi1m6vo7vfm"
 
-[node name="Castle_TempBG_Leveldesign" type="Sprite2D" parent="."]
-position = Vector2(57790, 6)
+[node name="CastleBackground" type="Sprite2D" parent="."]
+position = Vector2(57776, 0)
 scale = Vector2(4, 4)
-texture = ExtResource("2_gvcpw")
+texture = ExtResource("3_wg328")
 metadata/_edit_lock_ = true
 
 [node name="OutskirtsBackground" type="Sprite2D" parent="."]
 position = Vector2(-150, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("2_ef77q")
+metadata/_edit_lock_ = true
+
+[node name="CastleHealing" type="Sprite2D" parent="."]
+position = Vector2(41948, 22200)
+texture = ExtResource("5_kr7o0")
+metadata/_edit_lock_ = true
+
+[node name="CaveHealing" type="Sprite2D" parent="."]
+position = Vector2(-5476, 21820)
+texture = ExtResource("6_t80vn")
+metadata/_edit_lock_ = true
+
+[node name="PillarsBEHIND" type="Node" parent="."]
+
+[node name="Pillar1" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(40100.5, 1965)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("21_miqr8")
+
+[node name="Pillar3" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(34459, 382)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("22_s1vqe")
+
+[node name="Pillar4" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(23313, 374)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("22_s1vqe")
+
+[node name="Pillar5" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(20873, -2811)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("23_crqxj")
+
+[node name="Pillar7" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(26531, -2793)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("23_crqxj")
+
+[node name="Pillar11" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(18680, -1191)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("24_cs7og")
+
+[node name="Pillar9" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(15653, 1965)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar14" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(19218, 370)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar15" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(21996, 1949)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar16" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(30172, 1969)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar18" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(32656, 1960)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar20" type="Sprite2D" parent="PillarsBEHIND"]
+position = Vector2(35175, 1975)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("25_5wymd")
+
+[node name="CastePlatforms" type="Sprite2D" parent="."]
+position = Vector2(57780, 2)
+scale = Vector2(4, 4)
+texture = ExtResource("17_t6ar1")
 metadata/_edit_lock_ = true
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -557,16 +664,32 @@ position = Vector2(-27306, 4356)
 shape = SubResource("RectangleShape2D_1mlai")
 
 [node name="CollisionShape2D57" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-6911, 2918)
-shape = SubResource("RectangleShape2D_08vjf")
+position = Vector2(-6912, 2951.25)
+shape = SubResource("RectangleShape2D_7sfmt")
 
 [node name="CollisionShape2D86" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-2290, 6656)
+position = Vector2(-2288, 6640)
+shape = SubResource("RectangleShape2D_7kj55")
+
+[node name="CollisionShape2D152" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-5469.06, 22798)
+shape = SubResource("RectangleShape2D_08vjf")
+
+[node name="CollisionShape2D154" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-4188, 21829.3)
+shape = SubResource("RectangleShape2D_fqovn")
+
+[node name="CollisionShape2D155" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-6784, 21818)
+shape = SubResource("RectangleShape2D_fqovn")
+
+[node name="CollisionShape2D153" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-5476, 20844)
 shape = SubResource("RectangleShape2D_08vjf")
 
 [node name="CollisionShape2D87" type="CollisionShape2D" parent="Walls"]
-position = Vector2(884, 7522)
-shape = SubResource("RectangleShape2D_08vjf")
+position = Vector2(880, 7512)
+shape = SubResource("RectangleShape2D_0l3f8")
 
 [node name="CollisionShape2D88" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-708, 6940)
@@ -712,6 +835,19 @@ shape = SubResource("RectangleShape2D_ak1ce")
 position = Vector2(51605.7, 4359.24)
 shape = SubResource("RectangleShape2D_h2xxw")
 
+[node name="CollisionShape2D156" type="CollisionShape2D" parent="Walls"]
+position = Vector2(51024, 5906.62)
+shape = SubResource("RectangleShape2D_nx2hk")
+
+[node name="CollisionShape2D158" type="CollisionShape2D" parent="Walls"]
+position = Vector2(57364, 5880)
+shape = SubResource("RectangleShape2D_nx2hk")
+
+[node name="CollisionShape2D157" type="CollisionShape2D" parent="Walls"]
+position = Vector2(54210, 6052)
+scale = Vector2(1.066, 1)
+shape = SubResource("RectangleShape2D_5mtsp")
+
 [node name="CollisionShape2D132" type="CollisionShape2D" parent="Walls"]
 position = Vector2(53912, 4072)
 shape = SubResource("RectangleShape2D_h2xxw")
@@ -853,7 +989,7 @@ position = Vector2(28776, 5096.48)
 shape = SubResource("RectangleShape2D_7w2wu")
 
 [node name="CollisionShape2D104" type="CollisionShape2D" parent="Walls"]
-position = Vector2(23255, 4554)
+position = Vector2(23300, 4734)
 shape = SubResource("RectangleShape2D_qn60q")
 
 [node name="CollisionShape2D92" type="CollisionShape2D" parent="Walls"]
@@ -897,7 +1033,7 @@ position = Vector2(23051.4, -3568)
 shape = SubResource("RectangleShape2D_xenxf")
 
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="Walls"]
-position = Vector2(24059.7, -2308.64)
+position = Vector2(24059.7, -2220.65)
 shape = SubResource("RectangleShape2D_iqutm")
 
 [node name="CollisionShape2D43" type="CollisionShape2D" parent="Walls"]
@@ -927,6 +1063,22 @@ shape = SubResource("RectangleShape2D_2vesw")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-28540, -1062)
 shape = SubResource("RectangleShape2D_xt4nr")
+
+[node name="CollisionShape2D159" type="CollisionShape2D" parent="Walls"]
+position = Vector2(41952.9, 23178)
+shape = SubResource("RectangleShape2D_08vjf")
+
+[node name="CollisionShape2D160" type="CollisionShape2D" parent="Walls"]
+position = Vector2(43234, 22209.3)
+shape = SubResource("RectangleShape2D_fqovn")
+
+[node name="CollisionShape2D161" type="CollisionShape2D" parent="Walls"]
+position = Vector2(40656, 22204)
+shape = SubResource("RectangleShape2D_fqovn")
+
+[node name="CollisionShape2D162" type="CollisionShape2D" parent="Walls"]
+position = Vector2(41946, 21224)
+shape = SubResource("RectangleShape2D_08vjf")
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -970,6 +1122,10 @@ motion_mode = 1
 position = Vector2(3668, 5204)
 motion_mode = 1
 
+[node name="SluggyWorld" parent="Enemies" instance=ExtResource("26_dpclw")]
+position = Vector2(-27572, 6048)
+_relativePatrolBounds = Vector2(-1000, 1000)
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-22076.7, -2279.27)
 
@@ -984,10 +1140,10 @@ _startingStock = [ExtResource("8_adj6g"), ExtResource("8_adj6g"), ExtResource("9
 _identifier = 1
 
 [node name="HealArea" parent="." instance=ExtResource("10_wdm8t")]
-position = Vector2(-12080, 5360)
+position = Vector2(-5896, 22064)
 
 [node name="HealArea2" parent="." instance=ExtResource("10_wdm8t")]
-position = Vector2(64880, 7958)
+position = Vector2(41536, 22410)
 
 [node name="FloatingTextFactory" type="Node2D" parent="."]
 script = ExtResource("12_46j0o")
@@ -1060,12 +1216,108 @@ Damage = 1
 position = Vector2(-10432, 1560)
 scale = Vector2(0.25, 0.25)
 
+[node name="MetalSpike4" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(21192, 4163)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike10" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(25806, 3002)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike11" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(26087, 3003)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike12" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(26381, 3002)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike13" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(26673, 3002)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike14" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(26959, 3006)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike15" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(27243, 3004)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike16" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(27529, 3004)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike17" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(27821, 3004)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike18" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(28105, 3004)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike19" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(28393, 3004)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike20" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(30411, 660)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike21" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(30987, 1244)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike23" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(31559, 1816)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike22" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(29831, 86)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike24" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(24576, -1925)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike25" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(24654, -2099)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike26" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(24498, -2095)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike5" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(19468, 4158)
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike6" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(24156, 3758)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike7" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(24152, 4046)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike8" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(24158, 3468)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+
+[node name="MetalSpike9" parent="Spikes" instance=ExtResource("11_16ymw")]
+position = Vector2(24156, 3182)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+
 [node name="Grabby2" type="Area2D" parent="."]
 position = Vector2(-6560, -1280)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
-position = Vector2(112, 0)
+position = Vector2(94, -16)
 shape = SubResource("RectangleShape2D_xms38")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby2"]
@@ -1076,21 +1328,21 @@ position = Vector2(-27504, 7648)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
-position = Vector2(24, 0)
+position = Vector2(56, 0)
 shape = SubResource("RectangleShape2D_6vuni")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby3"]
 texture = ExtResource("16_uxfrh")
 
-[node name="Grabby4" type="Area2D" parent="Grabby3"]
-position = Vector2(5184, -32)
+[node name="Grabby4" type="Area2D" parent="."]
+position = Vector2(-22320, 7616)
 script = ExtResource("15_ps8to")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3/Grabby4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
 position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_6u3ca")
 
-[node name="Sprite2D" type="Sprite2D" parent="Grabby3/Grabby4"]
+[node name="Sprite2D" type="Sprite2D" parent="Grabby4"]
 texture = ExtResource("16_uxfrh")
 
 [node name="Grabby" type="Area2D" parent="."]
@@ -1098,10 +1350,62 @@ position = Vector2(-8880, -1872)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby"]
-position = Vector2(96, 0)
+position = Vector2(124, 0)
 shape = SubResource("RectangleShape2D_qlov1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby"]
 texture = ExtResource("16_uxfrh")
 
-[node name="Hands" type="Node" parent="."]
+[node name="PillarsFRONT" type="Node" parent="."]
+
+[node name="Pillar8" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(28764, -2772)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("23_crqxj")
+
+[node name="Pillar6" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(22191, -2807)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("23_crqxj")
+
+[node name="Pillar17" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(31297, 1969)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar19" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(33924, 1955)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar10" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(33181, -2807)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("23_crqxj")
+
+[node name="Pillar12" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(14516, 1930)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("25_5wymd")
+
+[node name="Pillar2" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(36015, 384)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("22_s1vqe")
+
+[node name="Pillar13" type="Sprite2D" parent="PillarsFRONT"]
+position = Vector2(17594, 366)
+scale = Vector2(3.35, 3.35)
+texture = ExtResource("25_5wymd")
+
+[node name="LeatherfaceWorld" parent="." instance=ExtResource("27_5rng0")]
+position = Vector2(36752, 1248)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="LeatherfaceWorld2" parent="." instance=ExtResource("27_5rng0")]
+position = Vector2(46672, -1904)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="SidWorld" parent="." instance=ExtResource("27_g4pnk")]
+position = Vector2(-16752, -2112)
+_relativePatrolBounds = Vector2(-2000, 2000)

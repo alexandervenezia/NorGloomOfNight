@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://c8jvh06yi0frh"]
+
+[ext_resource type="Texture2D" uid="uid://c0vf4cxq2t0dp" path="res://res/scenes/combat/subscenes/enemy/assets/Cerberus_enemy.png" id="1_gke0q"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gke0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]

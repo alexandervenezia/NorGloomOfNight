@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://lf5jtfh5yjge"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/GroundEnemy.cs" id="1_86h0n"]
+[ext_resource type="SpriteFrames" uid="uid://ba64747tac201" path="res://res/scenes/overworld/hell/pride/Sid/SidFrames.tres" id="2_882xp"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_s6tok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42sw5"]
+size = Vector2(483.529, 935.296)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckqup"]
+radius = 346.529
+height = 1174.29
+
+[node name="SidWorld" type="CharacterBody2D"]
+scale = Vector2(0.85, 0.85)
+script = ExtResource("1_86h0n")
+FOV = 60.0
+_name = "Sid"
+_id = 5
+_speed = 500.0
+_acceleration = 100.0
+_firstSlotSpawn = {
+5: 100
+}
+_secondSlotSpawn = {
+1: 60,
+2: 40
+}
+_thirdSlotSpawn = {
+2: 30
+}
+_fourthSlotSpawn = {}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_882xp")
+frame_progress = 0.302332
+
+[node name="PatrolMarkers" type="Node2D" parent="."]
+
+[node name="Left" type="Marker2D" parent="PatrolMarkers"]
+gizmo_extents = 250.0
+
+[node name="Right" type="Marker2D" parent="PatrolMarkers"]
+gizmo_extents = 250.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(75.8824, 153.53)
+shape = SubResource("RectangleShape2D_42sw5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(57, 135.206)
+shape = SubResource("CapsuleShape2D_ckqup")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Warning" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -1500.0
+offset_right = 257.0
+offset_bottom = -257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_s6tok")
+theme_override_colors/font_color = Color(1, 0.313726, 0.247059, 1)
+theme_override_font_sizes/font_size = 500
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -11,7 +11,7 @@ public partial class ProgressBlocker : StaticBody2D
 
     private void OnFlagChange()
     {
-        if (QuestManager.GetInstance().FLAG_TALKED_TO_MANAGER)
+        if (QuestManager.GetInstance().FLAG_TALKED_TO_MANAGER && IsInstanceValid(this))
         {
             GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
         }

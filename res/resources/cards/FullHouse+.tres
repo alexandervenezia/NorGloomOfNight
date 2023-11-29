@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bkj4iuvsutbtd"]
+
+[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_gdkux"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_o04sv"]
+[ext_resource type="Resource" uid="uid://qesk5kmt5sxy" path="res://res/resources/cards/FullHouse++.tres" id="2_twe0i"]
+
+[resource]
+script = ExtResource("2_o04sv")
+_name = "Full House"
+_description = ""
+_artwork = ExtResource("1_gdkux")
+_type = 2
+_rarity = 2
+_actionPointCost = 1
+_movementPointCost = 0
+_target = 1
+_damageTypes = [6, 0]
+_damageDice = ["2", "3"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = [3]
+_buffDuration = [1]
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_upgrade = ExtResource("2_twe0i")
+_unremovableByPlayer = false

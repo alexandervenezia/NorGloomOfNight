@@ -1,20 +1,21 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cagkcsnwq2qr0"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cagkcsnwq2qr0"]
 
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_11otx"]
-[ext_resource type="Texture2D" uid="uid://cgckme6dljrlw" path="res://res/scenes/combat/subscenes/Card/images/artwork/hellish_grasp.png" id="1_jue7i"]
+[ext_resource type="Texture2D" uid="uid://cgckme6dljrlw" path="res://res/scenes/combat/subscenes/Card/images/artwork/hells_grasp.png" id="1_oitug"]
+[ext_resource type="Resource" uid="uid://fd8m1rbhp44u" path="res://res/resources/cards/HellsGrasp+.tres" id="2_wvet8"]
 
 [resource]
 script = ExtResource("1_11otx")
 _name = "Hell's Grasp"
 _description = ""
-_artwork = ExtResource("1_jue7i")
+_artwork = ExtResource("1_oitug")
 _type = 0
 _rarity = 1
 _actionPointCost = 2
 _movementPointCost = 0
 _target = 1
 _damageTypes = [1]
-_damageDice = ["1d4"]
+_damageDice = ["1d10"]
 _drawEffects = []
 _drawQuantities = []
 _buffs = []
@@ -23,4 +24,5 @@ _resistanceType = []
 _debuffs = [2]
 _debuffDuration = [1]
 _price = 0
+_upgrade = ExtResource("2_wvet8")
 _unremovableByPlayer = false

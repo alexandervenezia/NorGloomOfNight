@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhgwcft6ty4ut"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_wlg8l"]
+[ext_resource type="Resource" uid="uid://bcjf232cowv26" path="res://res/resources/cards/DivineSmite.tres" id="2_66lrr"]
+[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="3_kcbn3"]
+[ext_resource type="SpriteFrames" uid="uid://cn6qbklq3pm5t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Leatherface/LeatherfaceCombatAnimation.tres" id="4_6edg6"]
+[ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="4_ie0h5"]
+[ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_f43yq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
+radius = 129.0
+height = 384.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
+resource_local_to_scene = true
+shader = ExtResource("5_f43yq")
+shader_parameter/health_factor = 0.4
+shader_parameter/draining_factor = null
+
+[node name="EnemyLeatherface" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_wlg8l")
+_deck = [ExtResource("2_66lrr"), ExtResource("3_kcbn3")]
+_ID = 4
+_goldDrop = 5
+_maxHealth = 6
+_startingActionPoints = 2
+_startingMovementPoints = 0
+_startingArmor = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(15, -56)
+shape = SubResource("CapsuleShape2D_shunw")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, -109)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("4_6edg6")
+
+[node name="HealthBar" parent="." instance=ExtResource("4_ie0h5")]
+material = SubResource("ShaderMaterial_do74u")
+position = Vector2(16, 155)

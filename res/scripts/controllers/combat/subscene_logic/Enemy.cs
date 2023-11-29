@@ -315,7 +315,7 @@ public partial class Enemy : Combatant
 	{
 		base.TakeDamage(type, amount, critModifier, isCrit, autoResist);
 		if (type != DamageType.HEAL)
-            _sprite.Play("hurt");
+			_sprite.Play("hurt");
 		if (_isDead)
 			Die();
 	}

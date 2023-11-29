@@ -31,8 +31,9 @@ _thirdSlotSpawn = {
 _fourthSlotSpawn = {}
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = ExtResource("1_162p7")
-frame_progress = 0.527204
+frame_progress = 0.39202
 
 [node name="PatrolMarkers" type="Node2D" parent="."]
 
@@ -55,7 +56,6 @@ shape = SubResource("RectangleShape2D_cbdkk")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="Warning" type="Label" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

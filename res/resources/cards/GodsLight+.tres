@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b1xcyk0gx4uj5"]
+
+[ext_resource type="Texture2D" uid="uid://dy8xeiqxwx2xp" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card2.png" id="1_unjlr"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_lg20w"]
+[ext_resource type="Resource" uid="uid://msfjjc3i5ym3" path="res://res/resources/cards/GodsLight++.tres" id="2_qdv6w"]
+
+[resource]
+script = ExtResource("2_lg20w")
+_name = "God's Light+"
+_description = ""
+_artwork = ExtResource("1_unjlr")
+_type = 0
+_rarity = 3
+_actionPointCost = 2
+_movementPointCost = 0
+_target = 1
+_damageTypes = [0]
+_damageDice = ["2d4"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = [5]
+_debuffDuration = [0]
+_price = 0
+_upgrade = ExtResource("2_qdv6w")
+_unremovableByPlayer = false

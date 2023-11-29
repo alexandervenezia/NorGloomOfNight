@@ -1,0 +1,187 @@
+[gd_scene load_steps=16 format=3 uid="uid://24f70lj4w2nt"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Journal.cs" id="1_ki4kg"]
+[ext_resource type="Texture2D" uid="uid://bkq6ihend887o" path="res://res/scenes/Journal/assets/Clipboard only.png" id="2_k8ppc"]
+[ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="3_bd3e3"]
+[ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="4_h2fiq"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="5_jqsyg"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/JournalLine.cs" id="6_qqbgm"]
+[ext_resource type="Texture2D" uid="uid://b24yuipd2e6dx" path="res://res/scenes/Journal/assets/Pause button UI.png" id="6_yp5oo"]
+[ext_resource type="Texture2D" uid="uid://cebx3fmpx1brp" path="res://res/scenes/Journal/assets/X UI.png" id="7_hbs3q"]
+[ext_resource type="Texture2D" uid="uid://dq67ltw1khijt" path="res://res/scenes/Journal/assets/Pause.png" id="9_evd08"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbjid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7pmd"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.356863, 0.639216, 0.717647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc6jj"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12549, 0.247059, 0.333333, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ky6pl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24wos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn30x"]
+size = Vector2(3306.67, 553.333)
+
+[node name="Journal" type="Node2D"]
+script = ExtResource("1_ki4kg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1079.0
+color = Color(0.176471, 0.188235, 0.25098, 1)
+
+[node name="ClipboardOnly" type="Sprite2D" parent="."]
+position = Vector2(0, -57)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k8ppc")
+
+[node name="BackToWork" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_vbjid")
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 426.0
+offset_right = 250.0
+offset_bottom = 526.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("3_bd3e3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t7pmd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mc6jj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ky6pl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_24wos")
+script = ExtResource("4_h2fiq")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BackToWork"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -32.0
+offset_right = 244.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("5_jqsyg")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]Back to Work"
+metadata/_edit_lock_ = true
+
+[node name="ViewDeck" type="Area2D" parent="."]
+position = Vector2(0, -133)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("6_qqbgm")
+
+[node name="UI" type="Sprite2D" parent="ViewDeck"]
+texture = ExtResource("6_yp5oo")
+
+[node name="X" type="Sprite2D" parent="ViewDeck"]
+position = Vector2(-1473.33, 13.333)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("7_hbs3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewDeck"]
+position = Vector2(6.6665, -23.3336)
+shape = SubResource("RectangleShape2D_mn30x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ViewDeck"]
+offset_left = -1553.0
+offset_top = -153.0
+offset_right = 1573.0
+offset_bottom = 221.0
+theme = ExtResource("5_jqsyg")
+bbcode_enabled = true
+text = "[center][color=#111][font_size=250]Deck"
+
+[node name="Settings" type="Area2D" parent="."]
+position = Vector2(0, 67)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("6_qqbgm")
+
+[node name="UI" type="Sprite2D" parent="Settings"]
+texture = ExtResource("6_yp5oo")
+
+[node name="X" type="Sprite2D" parent="Settings"]
+position = Vector2(-1473.33, 13.333)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("7_hbs3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings"]
+position = Vector2(6.6665, -23.3336)
+shape = SubResource("RectangleShape2D_mn30x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings"]
+offset_left = -1553.0
+offset_top = -153.667
+offset_right = 1573.0
+offset_bottom = 266.333
+theme = ExtResource("5_jqsyg")
+bbcode_enabled = true
+text = "[center][color=#111][font_size=250]Settings"
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(0, 267)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("6_qqbgm")
+
+[node name="UI" type="Sprite2D" parent="Exit"]
+texture = ExtResource("6_yp5oo")
+
+[node name="X" type="Sprite2D" parent="Exit"]
+position = Vector2(-1473.33, 13.333)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("7_hbs3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(6.6665, -23.3336)
+shape = SubResource("RectangleShape2D_mn30x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Exit"]
+offset_left = -1553.0
+offset_top = -153.667
+offset_right = 1573.0
+offset_bottom = 233.333
+theme = ExtResource("5_jqsyg")
+bbcode_enabled = true
+text = "[center][color=#111][font_size=250]Exit Game"
+
+[node name="Pause" type="Sprite2D" parent="."]
+position = Vector2(0, -316)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_evd08")

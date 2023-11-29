@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bio1nt2ae7svv"]
+
+[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_haaje"]
+[ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_xxofa"]
+
+[resource]
+script = ExtResource("2_xxofa")
+_name = "Kill Shot+"
+_description = ""
+_artwork = ExtResource("1_haaje")
+_type = 2
+_rarity = 4
+_actionPointCost = 2
+_movementPointCost = 0
+_target = 1
+_damageTypes = [7]
+_damageDice = ["2d20 + 5"]
+_drawEffects = []
+_drawQuantities = []
+_buffs = []
+_buffDuration = []
+_resistanceType = []
+_debuffs = []
+_debuffDuration = []
+_price = 0
+_unremovableByPlayer = false

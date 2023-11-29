@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn3a2dsqf2g61"
-path="res://.godot/imported/grippy_enemy.png-6def071333d3f8cef2c4011f62594fbf.ctex"
+path.s3tc="res://.godot/imported/grippy_enemy.png-6def071333d3f8cef2c4011f62594fbf.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/hell/pride/Grabby/grippy_enemy.png"
-dest_files=["res://.godot/imported/grippy_enemy.png-6def071333d3f8cef2c4011f62594fbf.ctex"]
+dest_files=["res://.godot/imported/grippy_enemy.png-6def071333d3f8cef2c4011f62594fbf.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

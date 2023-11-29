@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cpobpuyh1fysh"]
+
+[ext_resource type="Texture2D" uid="uid://4efnckb30mnc" path="res://res/scenes/combat/subscenes/enemy/assets/Lucille_enemy.png" id="1_pkqk4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pkqk4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]

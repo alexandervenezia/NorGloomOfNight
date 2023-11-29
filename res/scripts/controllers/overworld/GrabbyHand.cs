@@ -30,9 +30,12 @@ public partial class GrabbyHand : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
-        if (area.Owner is Player)
+        
+        GD.Print("Entered");
+        if (area.GetParent() is Player)
         {
-            _player = (Player)area.Owner;
+            _abortAttack = false;
+            _player = (Player)area.GetParent();
             GD.Print("Grabby time");
             GD.Print(_player.Velocity.X);
             _grabber.GlobalPosition = new Vector2(_player.GlobalPosition.X + _player.Velocity.X * _warningTimeMS / 1000f, _grabber.GlobalPosition.Y);
@@ -60,7 +63,11 @@ public partial class GrabbyHand : Area2D
 
     private void OnAreaExited(Area2D area)
     {
-        _abortAttack = true;
+        if (area.GetParent() is Player)
+        {
+            _abortAttack = true;
+            GD.Print("Exit");
+        }
     }
 
     private async void StartAttackProcess()
@@ -70,6 +77,7 @@ public partial class GrabbyHand : Area2D
 
         if (_abortAttack)
         {
+            GD.Print("Aborting attack");
             Visible = false;
             _grabber.GlobalPosition = _grabberSpawn;
             _abortAttack = false;
@@ -92,6 +100,7 @@ public partial class GrabbyHand : Area2D
         
         if (_abortAttack)
         {
+            GD.Print("Aborted re-attack");
             Visible = false;
             _grabber.GlobalPosition = _grabberSpawn;
             _abortAttack = false;
@@ -108,6 +117,8 @@ public partial class GrabbyHand : Area2D
             _grabber.GlobalPosition = new Vector2(_grabberSpawn.X + _collider.Shape.GetRect().Abs().Size[0]/4f, _grabber.GlobalPosition.Y);
 
         GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
-        StartAttackProcess();
+
+        if (!_abortAttack)
+            StartAttackProcess();
     }
 }

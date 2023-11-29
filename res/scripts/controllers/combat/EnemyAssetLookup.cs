@@ -17,6 +17,8 @@ public partial class EnemyAssetLookup : Node
     {
         _instance = this;
         Frames = new();
+
+        
         foreach (int id in Lookup.Keys)
         {
             // Frames.Add(id, GD.Load<SpriteFrames>(Lookup[id]));

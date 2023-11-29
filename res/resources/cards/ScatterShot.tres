@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cfc5bwbj41lg6"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cfc5bwbj41lg6"]
 
 [ext_resource type="Texture2D" uid="uid://eq7dr4vuuelx" path="res://res/scenes/combat/subscenes/Card/images/artwork/scattershot.png" id="1_0sgmh"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_6gw2p"]
+[ext_resource type="Resource" uid="uid://b6q163dw83ler" path="res://res/resources/cards/ScatterShot+.tres" id="2_wf7ia"]
 
 [resource]
 script = ExtResource("2_6gw2p")
@@ -23,4 +24,5 @@ _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 0
+_upgrade = ExtResource("2_wf7ia")
 _unremovableByPlayer = false

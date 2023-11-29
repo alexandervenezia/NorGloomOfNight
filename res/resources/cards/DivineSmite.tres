@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bcjf232cowv26"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bcjf232cowv26"]
 
 [ext_resource type="Texture2D" uid="uid://b1yuec1bdyki7" path="res://res/scenes/combat/subscenes/Card/images/artwork/holy_smite.png" id="1_0csvu"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="1_jfu4y"]
+[ext_resource type="Resource" uid="uid://inykh8q3cnsq" path="res://res/resources/cards/DivineSmite+.tres" id="2_wxwpr"]
 
 [resource]
 script = ExtResource("1_jfu4y")
@@ -23,4 +24,5 @@ _resistanceType = []
 _debuffs = []
 _debuffDuration = []
 _price = 0
+_upgrade = ExtResource("2_wxwpr")
 _unremovableByPlayer = false
