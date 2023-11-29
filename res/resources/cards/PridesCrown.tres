@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b36mco8oh3sqg"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b36mco8oh3sqg"]
 
+[ext_resource type="Texture2D" uid="uid://yq1jfpgg6ugd" path="res://res/scenes/combat/subscenes/Card/images/artwork/pride_crown.png" id="1_gf6hd"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="3_gq57i"]
 
 [resource]
 script = ExtResource("3_gq57i")
 _name = "Crown of Pride"
 _description = ""
+_artwork = ExtResource("1_gf6hd")
 _type = 3
 _rarity = 4
 _actionPointCost = 0
