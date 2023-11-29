@@ -1,3 +1,6 @@
+namespace Overworld;
+
+using Data;
 using Godot;
 using Overworld;
 using System;
@@ -5,6 +8,7 @@ using System.Collections.Generic;
 
 public partial class PokerGuy : Node2D, ICombatable
 {
+    [Export] private Data.CardData _crownOfPride;
     private AnimatedSprite2D _sprite;
     private Area2D _area;   
 
@@ -45,6 +49,7 @@ public partial class PokerGuy : Node2D, ICombatable
     {
         GD.Print("Poker Guy Died");
         QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
+        MasterDeck.PlayerDeck.AddCard(_crownOfPride);
     }
 
     public bool HasIntroCutscene()

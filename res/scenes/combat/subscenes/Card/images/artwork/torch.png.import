@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhy4g76eyfodu"
-path="res://.godot/imported/torch.png-6da95f7612b224db762cf259bcf706db.ctex"
+path.s3tc="res://.godot/imported/torch.png-6da95f7612b224db762cf259bcf706db.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/Card/images/artwork/torch.png"
-dest_files=["res://.godot/imported/torch.png-6da95f7612b224db762cf259bcf706db.ctex"]
+dest_files=["res://.godot/imported/torch.png-6da95f7612b224db762cf259bcf706db.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
