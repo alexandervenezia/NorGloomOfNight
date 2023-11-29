@@ -23,7 +23,7 @@ height = 933.714
 scale = Vector2(0.65, 0.65)
 collision_layer = 4
 script = ExtResource("1_7g3oc")
-_deck = [ExtResource("2_sd4mm"), ExtResource("3_isins"), ExtResource("4_4pqy1"), ExtResource("5_qqbcm"), ExtResource("6_fk55o")]
+_deck = [ExtResource("2_sd4mm"), ExtResource("3_isins"), ExtResource("4_4pqy1"), ExtResource("5_qqbcm"), ExtResource("6_fk55o"), ExtResource("5_qqbcm"), ExtResource("2_sd4mm"), ExtResource("4_4pqy1"), ExtResource("4_4pqy1")]
 _ID = 93
 _goldDrop = 100
 _percentChanceOfCardDrop = 100
@@ -31,7 +31,7 @@ _cardDrops = Array[Resource]([ExtResource("3_isins")])
 _maxHealth = 45
 _startingActionPoints = 2
 _startingMovementPoints = 0
-_startingArmor = 10
+_startingArmor = 12
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
