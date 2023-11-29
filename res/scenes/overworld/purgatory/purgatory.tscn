@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=46 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -26,12 +26,13 @@
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
-[ext_resource type="Resource" uid="uid://b36mco8oh3sqg" path="res://res/resources/cards/PridesCrown.tres" id="25_0wofh"]
 [ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="26_wfr1f"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
 [ext_resource type="PackedScene" uid="uid://bbwgebb7735on" path="res://res/scenes/overworld/NPC.tscn" id="28_0cjw6"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
 [ext_resource type="Resource" uid="uid://3qmogeo45ns3" path="res://res/resources/cutscenes/KerPoCutsceneEnd.tres" id="30_up1a5"]
+[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://res/scenes/combat/subscenes/enemy/assets/Eyeball Guy.png" id="32_f58um"]
+[ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://res/scenes/combat/subscenes/enemy/assets/Creep.png" id="33_gxyyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -558,7 +559,6 @@ texture = ExtResource("11_g3usj")
 [node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
 position = Vector2(27476, -3874)
 scale = Vector2(1.5, 1.5)
-_crownOfPride = ExtResource("25_0wofh")
 
 [node name="Elevator" type="Marker2D" parent="." node_paths=PackedStringArray("_levelSelect")]
 position = Vector2(-1770, 388)
@@ -582,7 +582,7 @@ position = Vector2(37, -50)
 shape = SubResource("RectangleShape2D_ecjm0")
 
 [node name="NPC" parent="." instance=ExtResource("28_0cjw6")]
-position = Vector2(-184, 402)
+position = Vector2(-7758, -9754)
 _dialogue = Array[String](["I am an NPC.", "Testing, testing."])
 _delayMS = 2000
 
@@ -591,6 +591,16 @@ position = Vector2(27032, -4252)
 scale = Vector2(2.5, 2)
 Cutscene = ExtResource("30_up1a5")
 FLAG_ACQUIRED_CROWN = true
+
+[node name="EyeballGuy" type="Sprite2D" parent="."]
+position = Vector2(-7720, -9712)
+scale = Vector2(0.376952, 0.376952)
+texture = ExtResource("32_f58um")
+
+[node name="Creep" type="Sprite2D" parent="."]
+position = Vector2(12150, -9670)
+scale = Vector2(0.527344, 0.527344)
+texture = ExtResource("33_gxyyq")
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
