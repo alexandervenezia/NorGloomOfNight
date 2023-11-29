@@ -1128,7 +1128,15 @@ position = Vector2(3668, 5204)
 motion_mode = 1
 
 [node name="SluggyWorld" parent="Enemies" instance=ExtResource("26_dpclw")]
-position = Vector2(-27572, 6048)
+position = Vector2(-27506, 6054)
+_relativePatrolBounds = Vector2(-1000, 1000)
+
+[node name="SluggyWorld3" parent="Enemies" instance=ExtResource("26_dpclw")]
+position = Vector2(-12068, 8046)
+_relativePatrolBounds = Vector2(-700, 2700)
+
+[node name="SluggyWorld2" parent="Enemies" instance=ExtResource("26_dpclw")]
+position = Vector2(-27364, 4044)
 _relativePatrolBounds = Vector2(-1000, 1000)
 
 [node name="LeatherfaceWorld" parent="Enemies" instance=ExtResource("27_5rng0")]
@@ -1394,7 +1402,7 @@ Cutscene = ExtResource("31_yoly0")
 
 [node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(22992, 7440)
-scale = Vector2(3, 3)
+scale = Vector2(3.03665, 2.29927)
 Cutscene = ExtResource("32_cvc36")
 FLAG_BEAT_DOG = true
 

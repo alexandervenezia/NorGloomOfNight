@@ -14,7 +14,7 @@ height = 1458.82
 [node name="LeatherfaceWorld" type="CharacterBody2D"]
 scale = Vector2(0.85, 0.85)
 script = ExtResource("1_2op68")
-_aggroSpeedBuff = 2.0
+_aggroSpeedBuff = 4.0
 FOV = 70.0
 _name = "Leatherface"
 _id = 4
@@ -34,7 +34,7 @@ _fourthSlotSpawn = {}
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-2, 2)
 sprite_frames = ExtResource("2_55o0i")
-frame_progress = 0.854065
+frame_progress = 0.609652
 
 [node name="PatrolMarkers" type="Node2D" parent="."]
 

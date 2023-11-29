@@ -20,6 +20,7 @@ collision_layer = 4
 script = ExtResource("1_0xdnb")
 _deck = [ExtResource("2_j2gkd")]
 _ID = 3
+_permanentResistances = [3]
 _goldDrop = 5
 _percentChanceOfCardDrop = 60
 _cardDrops = [ExtResource("2_j2gkd")]
