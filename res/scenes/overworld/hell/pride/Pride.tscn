@@ -1476,18 +1476,18 @@ _relativePatrolBounds = Vector2(-2500, 2500)
 position = Vector2(-16752, -2112)
 _relativePatrolBounds = Vector2(-2000, 2000)
 
-[node name="Cerberus" parent="." instance=ExtResource("28_atlgc")]
+[node name="Cerberus2" parent="." instance=ExtResource("28_atlgc")]
 position = Vector2(22784, 8272)
 
-[node name="Pride" parent="." instance=ExtResource("29_2pin4")]
+[node name="Pride2" parent="." instance=ExtResource("29_2pin4")]
 position = Vector2(77104, -2896)
 
-[node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
+[node name="CutsceneZone3" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)
 scale = Vector2(1, 4)
 Cutscene = ExtResource("31_yoly0")
 
-[node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
+[node name="CutsceneZone4" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(22992, 7440)
 scale = Vector2(3, 3)
 Cutscene = ExtResource("32_cvc36")
