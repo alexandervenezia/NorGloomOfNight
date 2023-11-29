@@ -1131,8 +1131,40 @@ position = Vector2(3668, 5204)
 motion_mode = 1
 
 [node name="SluggyWorld" parent="Enemies" instance=ExtResource("26_dpclw")]
-position = Vector2(-27572, 6048)
+position = Vector2(-27506, 6054)
 _relativePatrolBounds = Vector2(-1000, 1000)
+
+[node name="SluggyWorld3" parent="Enemies" instance=ExtResource("26_dpclw")]
+position = Vector2(-12068, 8046)
+_relativePatrolBounds = Vector2(-700, 2700)
+
+[node name="SluggyWorld2" parent="Enemies" instance=ExtResource("26_dpclw")]
+position = Vector2(-27364, 4044)
+_relativePatrolBounds = Vector2(-1000, 1000)
+
+[node name="LeatherfaceWorld" parent="Enemies" instance=ExtResource("27_5rng0")]
+position = Vector2(36752, 1248)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="LeatherfaceWorld2" parent="Enemies" instance=ExtResource("27_5rng0")]
+position = Vector2(46682, -1684)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="LeatherfaceWorld3" parent="Enemies" instance=ExtResource("27_5rng0")]
+position = Vector2(55112, -1678)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="SidWorld" parent="Enemies" instance=ExtResource("27_g4pnk")]
+position = Vector2(34762, 7994)
+_relativePatrolBounds = Vector2(-3500, 3500)
+
+[node name="SidWorld2" parent="Enemies" instance=ExtResource("27_g4pnk")]
+position = Vector2(45870, 4802)
+_relativePatrolBounds = Vector2(-3700, 3700)
+
+[node name="SidWorld3" parent="Enemies" instance=ExtResource("27_g4pnk")]
+position = Vector2(69542, 4658)
+_relativePatrolBounds = Vector2(-3700, 3700)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-22076.7, -2279.27)
@@ -1363,6 +1395,24 @@ shape = SubResource("RectangleShape2D_qlov1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Grabby"]
 texture = ExtResource("16_uxfrh")
+
+[node name="Cerberus" parent="." instance=ExtResource("28_atlgc")]
+position = Vector2(22784, 8272)
+
+[node name="Pride" parent="." instance=ExtResource("29_2pin4")]
+position = Vector2(77864, -3164)
+scale = Vector2(1.3, 1.3)
+
+[node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(16208, 7200)
+scale = Vector2(1, 4)
+Cutscene = ExtResource("31_yoly0")
+
+[node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(22992, 7440)
+scale = Vector2(6.074, 4.598)
+Cutscene = ExtResource("32_cvc36")
+FLAG_BEAT_DOG = true
 
 [node name="PillarsFRONT" type="Node" parent="."]
 

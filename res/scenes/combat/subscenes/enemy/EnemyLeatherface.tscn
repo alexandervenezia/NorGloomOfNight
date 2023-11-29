@@ -1,8 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhgwcft6ty4ut"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_wlg8l"]
-[ext_resource type="Resource" uid="uid://bcjf232cowv26" path="res://res/resources/cards/DivineSmite.tres" id="2_66lrr"]
-[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="3_kcbn3"]
+[ext_resource type="Resource" uid="uid://wx4osec25bsp" path="res://res/resources/cards/Slash.tres" id="2_gh664"]
+[ext_resource type="Resource" uid="uid://c1yn05oitqoe0" path="res://res/resources/cards/Demon Fury.tres" id="3_j4xej"]
+[ext_resource type="Resource" uid="uid://cagkcsnwq2qr0" path="res://res/resources/cards/HellsGrasp.tres" id="4_228i8"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="4_ie0h5"]
 [ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="4_k8rwb"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_f43yq"]
@@ -20,13 +21,13 @@ shader_parameter/draining_factor = null
 [node name="EnemyLeatherface" type="Area2D"]
 collision_layer = 4
 script = ExtResource("1_wlg8l")
-_deck = [ExtResource("2_66lrr"), ExtResource("3_kcbn3")]
+_deck = [ExtResource("2_gh664"), ExtResource("3_j4xej"), ExtResource("4_228i8"), ExtResource("3_j4xej")]
 _ID = 4
 _goldDrop = 5
-_maxHealth = 6
+_cardDrops = Array[Resource]([])
+_maxHealth = 20
 _startingActionPoints = 2
 _startingMovementPoints = 0
-_startingArmor = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true

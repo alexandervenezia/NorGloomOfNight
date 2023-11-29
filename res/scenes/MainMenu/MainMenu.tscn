@@ -115,7 +115,7 @@ mouse_filter = 1
 theme = ExtResource("3_4m3dj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center][font_size=45]New Game"
+text = "[center][font_size=45]Clock In"
 
 [node name="Settings" type="Button" parent="."]
 z_index = 100

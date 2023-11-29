@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgtat65qxyutk"]
+[gd_scene load_steps=10 format=3 uid="uid://cgtat65qxyutk"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_pgb03"]
-[ext_resource type="Resource" uid="uid://inykh8q3cnsq" path="res://res/resources/cards/DivineSmite+.tres" id="2_1luwv"]
-[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="3_pxhxj"]
+[ext_resource type="Resource" uid="uid://d3txmj2gwdgn2" path="res://res/resources/cards/Bite.tres" id="2_jj3bh"]
+[ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="3_8cunf"]
+[ext_resource type="Resource" uid="uid://wx4osec25bsp" path="res://res/resources/cards/Slash.tres" id="4_s21x0"]
+[ext_resource type="Resource" uid="uid://c86s5btoni4j8" path="res://res/resources/cards/KeenEye.tres" id="5_l1gsm"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="7_cko4m"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="8_y4q4u"]
 
@@ -20,18 +22,19 @@ height = 682.667
 scale = Vector2(0.75, 0.75)
 collision_layer = 4
 script = ExtResource("1_pgb03")
-_deck = [ExtResource("2_1luwv")]
+_deck = [ExtResource("2_jj3bh"), ExtResource("2_jj3bh"), ExtResource("3_8cunf"), ExtResource("4_s21x0"), ExtResource("5_l1gsm")]
 _ID = 92
-_goldDrop = 666
-_maxHealth = 10
-_startingActionPoints = 1
-_startingArmor = 1
+_permanentResistances = [0]
+_goldDrop = 60
+_percentChanceOfCardDrop = 100
+_cardDrops = Array[Resource]([ExtResource("5_l1gsm")])
+_maxHealth = 40
+_startingMovementPoints = 0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-98.6667, -35)
 scale = Vector2(1.25, 1.25)
-sprite_frames = ExtResource("3_pxhxj")
 
 [node name="HealthBar" parent="." instance=ExtResource("7_cko4m")]
 z_index = 1
