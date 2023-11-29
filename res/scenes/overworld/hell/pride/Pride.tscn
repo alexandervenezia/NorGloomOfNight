@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=130 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://xv1p2xj2b0ae" path="res://res/scenes/overworld/hell/pride/pillar5.PNG" id="25_5wymd"]
 [ext_resource type="PackedScene" uid="uid://bvsg6mu2aw32q" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyWorld.tscn" id="26_dpclw"]
 [ext_resource type="PackedScene" uid="uid://ccpj5bs32vahr" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceWorld.tscn" id="27_5rng0"]
+[ext_resource type="PackedScene" uid="uid://cntf8nwl10u0m" path="res://res/scenes/overworld/hell/pride/Cerberus/Cerberus.tscn" id="27_8vcdk"]
+[ext_resource type="PackedScene" uid="uid://bry8sdy0obqtp" path="res://res/scenes/overworld/hell/pride/QueenPride/QueenPride.tscn" id="28_swfvb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -1404,3 +1406,11 @@ _relativePatrolBounds = Vector2(-2500, 2500)
 [node name="LeatherfaceWorld2" parent="." instance=ExtResource("27_5rng0")]
 position = Vector2(46672, -1904)
 _relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="Cerberus" parent="." instance=ExtResource("27_8vcdk")]
+position = Vector2(24312, 8240)
+scale = Vector2(1.5, 1.5)
+
+[node name="Pride" parent="." instance=ExtResource("28_swfvb")]
+position = Vector2(79642, -3078)
+scale = Vector2(1.3, 1.3)
