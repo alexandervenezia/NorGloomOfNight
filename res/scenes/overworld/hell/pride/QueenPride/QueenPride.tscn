@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cpobpuyh1fysh" path="res://res/scenes/overworld/hell/pride/QueenPride/PrideFrames.tres" id="2_hluvy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
-size = Vector2(2336, 1905)
+size = Vector2(4464, 2992)
 
 [node name="Pride" type="Node2D"]
 script = ExtResource("1_yo25h")
@@ -20,5 +20,5 @@ sprite_frames = ExtResource("2_hluvy")
 [node name="Aggro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
-position = Vector2(-38, -479.5)
+position = Vector2(-328, 64)
 shape = SubResource("RectangleShape2D_qqlln")
