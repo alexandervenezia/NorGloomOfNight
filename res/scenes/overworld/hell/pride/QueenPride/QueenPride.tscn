@@ -1,16 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bry8sdy0obqtp"]
+[gd_scene load_steps=6 format=3 uid="uid://bry8sdy0obqtp"]
 
-[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Enemy.cs" id="1_yo25h"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Bosses/PrideBoss.cs" id="1_8hhxw"]
+[ext_resource type="Resource" uid="uid://cw62tlbvhb78u" path="res://res/resources/cutscenes/PrideIntroCutscene.tres" id="2_ftawh"]
 [ext_resource type="SpriteFrames" uid="uid://cpobpuyh1fysh" path="res://res/scenes/overworld/hell/pride/QueenPride/PrideFrames.tres" id="2_hluvy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
-size = Vector2(4464, 2992)
+size = Vector2(3408, 3528)
 
-[node name="Pride" type="Node2D"]
-script = ExtResource("1_yo25h")
-_name = "Pride"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glj0n"]
+
+[node name="Pride" type="CharacterBody2D"]
+script = ExtResource("1_8hhxw")
+_name = "Lucille"
 _id = 93
-_firstSlotSpawn = {}
+_firstSlotSpawn = {
+93: 100
+}
+_introCutscene = ExtResource("2_ftawh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -479)
@@ -20,5 +26,8 @@ sprite_frames = ExtResource("2_hluvy")
 [node name="Aggro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
-position = Vector2(-328, 64)
+position = Vector2(-8, 332)
 shape = SubResource("RectangleShape2D_qqlln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_glj0n")

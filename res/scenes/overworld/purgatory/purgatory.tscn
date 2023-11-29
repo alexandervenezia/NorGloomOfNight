@@ -218,12 +218,14 @@ _gameOverScene = "uid://cjtyftqstb1xo"
 position = Vector2(0, -600)
 zoom = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="OverworldPlayer/Camera2D"]
+[node name="QuestGradient" type="Sprite2D" parent="OverworldPlayer/Camera2D"]
+z_index = 10
 position = Vector2(1595.75, -1820.34)
 scale = Vector2(72.7422, 12.8232)
 texture = SubResource("GradientTexture2D_ujr6k")
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
+z_index = 10
 offset_left = -3738.0
 offset_top = -1460.0
 offset_right = -2490.0
@@ -416,6 +418,7 @@ bbcode_enabled = true
 text = "[center][font_size=50]Purgatory"
 
 [node name="QuestElement" type="Node2D" parent="OverworldPlayer/Camera2D"]
+z_index = 15
 
 [node name="QuestName" type="RichTextLabel" parent="OverworldPlayer/Camera2D/QuestElement"]
 custom_minimum_size = Vector2(500, 0)
@@ -475,7 +478,7 @@ volume_db = -1.5
 bus = &"UI"
 
 [node name="Node2D" parent="OverworldPlayer/Camera2D" instance=ExtResource("14_herhl")]
-z_index = 1
+z_index = 10
 position = Vector2(-3258, -1982)
 scale = Vector2(4, 4)
 

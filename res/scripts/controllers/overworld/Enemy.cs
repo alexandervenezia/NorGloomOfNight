@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using Systems.Combat;
 
 
@@ -22,6 +23,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	[Export] protected Godot.Collections.Dictionary<int, int> _secondSlotSpawn;
 	[Export] protected Godot.Collections.Dictionary<int, int> _thirdSlotSpawn;
 	[Export] protected Godot.Collections.Dictionary<int, int> _fourthSlotSpawn;
+	[Export] protected Cutscene _introCutscene;
 	
 
 	protected AnimatedSprite2D _sprite;
@@ -66,16 +68,20 @@ public partial class Enemy : CharacterBody2D, ICombatable
 			return -1;
 
 		int returnID = -1;
+
+		int sum = 0;
+
 		foreach (int id in dict.Keys)
 		{
 			if (id <= 0)
 				continue;
 			
-			if (RNG.Next(0, 100) < dict[id])
+			if (RNG.Next(0, 100-sum) < dict[id])
 			{
 				returnID = id;
 				break;
 			}
+			sum -= dict[id];			
 		}
 
 		GD.Print(returnID);
@@ -121,20 +127,20 @@ public partial class Enemy : CharacterBody2D, ICombatable
 		return _enabled;
 	}
 
-	public void Die()
+	public virtual void Die()
 	{
 		QueueFree();
 	}
 
 	public bool HasIntroCutscene()
 	{
-		return false;
+		return _introCutscene != null;
 	}
 
 
 	public Cutscene GetIntroCutscene()
 	{
-		return null;
+		return _introCutscene;
 	}
 
 

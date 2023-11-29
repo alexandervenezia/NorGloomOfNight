@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=134 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -27,6 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://bvsg6mu2aw32q" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyWorld.tscn" id="26_dpclw"]
 [ext_resource type="PackedScene" uid="uid://ccpj5bs32vahr" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceWorld.tscn" id="27_5rng0"]
 [ext_resource type="PackedScene" uid="uid://lf5jtfh5yjge" path="res://res/scenes/overworld/hell/pride/Sid/SidWorld.tscn" id="27_g4pnk"]
+[ext_resource type="PackedScene" uid="uid://cntf8nwl10u0m" path="res://res/scenes/overworld/hell/pride/Cerberus/Cerberus.tscn" id="28_atlgc"]
+[ext_resource type="PackedScene" uid="uid://bry8sdy0obqtp" path="res://res/scenes/overworld/hell/pride/QueenPride/QueenPride.tscn" id="29_2pin4"]
+[ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="30_u83yh"]
+[ext_resource type="Resource" uid="uid://5cia644ch3cd" path="res://res/resources/cutscenes/PipCutscene.tres" id="31_yoly0"]
+[ext_resource type="Resource" uid="uid://qrkpsc32vgin" path="res://res/resources/cutscenes/CerberusOutroCutscene.tres" id="32_cvc36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -1359,41 +1364,49 @@ texture = ExtResource("16_uxfrh")
 [node name="PillarsFRONT" type="Node" parent="."]
 
 [node name="Pillar8" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(28764, -2772)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("23_crqxj")
 
 [node name="Pillar6" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(22191, -2807)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("23_crqxj")
 
 [node name="Pillar17" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(31297, 1969)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
 
 [node name="Pillar19" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(33924, 1955)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
 
 [node name="Pillar10" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(33181, -2807)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("23_crqxj")
 
 [node name="Pillar12" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(14516, 1930)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
 
 [node name="Pillar2" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(36015, 384)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("22_s1vqe")
 
 [node name="Pillar13" type="Sprite2D" parent="PillarsFRONT"]
+z_index = 6
 position = Vector2(17594, 366)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
@@ -1409,3 +1422,20 @@ _relativePatrolBounds = Vector2(-2500, 2500)
 [node name="SidWorld" parent="." instance=ExtResource("27_g4pnk")]
 position = Vector2(-16752, -2112)
 _relativePatrolBounds = Vector2(-2000, 2000)
+
+[node name="Cerberus" parent="." instance=ExtResource("28_atlgc")]
+position = Vector2(22784, 8272)
+
+[node name="Pride" parent="." instance=ExtResource("29_2pin4")]
+position = Vector2(77104, -2896)
+
+[node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(16208, 7200)
+scale = Vector2(1, 4)
+Cutscene = ExtResource("31_yoly0")
+
+[node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(22992, 7440)
+scale = Vector2(3, 3)
+Cutscene = ExtResource("32_cvc36")
+FLAG_BEAT_DOG = true

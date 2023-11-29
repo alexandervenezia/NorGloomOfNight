@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c184qoklhcr83"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Cutscene.cs" id="1_utx2n"]
+
+[resource]
+script = ExtResource("1_utx2n")
+SpeakerName = "[color=#666611]Your Supervisor"
+Lines = PackedStringArray("<narration>The once towering beast shrinks down to the ground, keeping its eyes off of you at all costs. It whimpers as it cowers away, limping towards the large keep in the distance.</narration>", "<narration> The path ahead looks clear now. Time to deliver that [color=#ba8c1e]Crown[/color]!")

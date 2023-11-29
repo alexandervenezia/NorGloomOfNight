@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_jh52r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42sw5"]
-size = Vector2(790.588, 1270.59)
+size = Vector2(508.235, 1157.65)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_552n0"]
 radius = 320.0
@@ -34,7 +34,7 @@ _fourthSlotSpawn = {}
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-2, 2)
 sprite_frames = ExtResource("2_55o0i")
-frame_progress = 0.0947658
+frame_progress = 0.128412
 
 [node name="PatrolMarkers" type="Node2D" parent="."]
 
@@ -45,7 +45,8 @@ gizmo_extents = 250.0
 gizmo_extents = 250.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(28.2353, 192.941)
+position = Vector2(9.41176, 211.765)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_42sw5")
 
 [node name="Area2D" type="Area2D" parent="."]

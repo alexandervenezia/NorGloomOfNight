@@ -1,14 +1,106 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://c8jvh06yi0frh"]
+[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://c8jvh06yi0frh"]
 
-[ext_resource type="Texture2D" uid="uid://c0vf4cxq2t0dp" path="res://res/scenes/combat/subscenes/enemy/assets/Cerberus_enemy.png" id="1_gke0q"]
+[ext_resource type="Texture2D" uid="uid://b6em33o2j2bmy" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0000.png" id="1_n57ct"]
+[ext_resource type="Texture2D" uid="uid://dwvtgqcfx7wfe" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0001.png" id="2_2cxbb"]
+[ext_resource type="Texture2D" uid="uid://c775suqdr256q" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0002.png" id="3_kjg64"]
+[ext_resource type="Texture2D" uid="uid://dixlfgt2rkfpt" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0003.png" id="4_ee020"]
+[ext_resource type="Texture2D" uid="uid://boxqlxm72sqsf" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0004.png" id="5_yscpr"]
+[ext_resource type="Texture2D" uid="uid://bm54dbyk63rha" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0005.png" id="6_km5tg"]
+[ext_resource type="Texture2D" uid="uid://bck6ayfntk7fu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0006.png" id="7_a3p8n"]
+[ext_resource type="Texture2D" uid="uid://bxhmqpekvm3a0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0007.png" id="8_878r0"]
+[ext_resource type="Texture2D" uid="uid://b15gwgchsh6w3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0008.png" id="9_ohpjy"]
+[ext_resource type="Texture2D" uid="uid://cisufwrw1cvk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0009.png" id="10_58d1o"]
+[ext_resource type="Texture2D" uid="uid://cbi0sjqkgdego" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0010.png" id="11_un1hw"]
+[ext_resource type="Texture2D" uid="uid://oqg3vbntati8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0011.png" id="12_483n5"]
+[ext_resource type="Texture2D" uid="uid://b3i8rvqrqb57k" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0012.png" id="13_2ro4y"]
+[ext_resource type="Texture2D" uid="uid://dmh4bs2mub6fm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0013.png" id="14_nchum"]
+[ext_resource type="Texture2D" uid="uid://dt0afsqdojt24" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0014.png" id="15_ycgm8"]
+[ext_resource type="Texture2D" uid="uid://bykc6wp31cgrm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0015.png" id="16_jv3jw"]
+[ext_resource type="Texture2D" uid="uid://bajff6436ab6t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0016.png" id="17_4qe8l"]
+[ext_resource type="Texture2D" uid="uid://dbqhjvn5dkdxv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0017.png" id="18_jhypf"]
+[ext_resource type="Texture2D" uid="uid://bm3yd2c6v0sxk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0018.png" id="19_oa6po"]
+[ext_resource type="Texture2D" uid="uid://cvsfguwql6ohy" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0019.png" id="20_7vi25"]
+[ext_resource type="Texture2D" uid="uid://ct66mlabp3a8l" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0020.png" id="21_scn65"]
+[ext_resource type="Texture2D" uid="uid://c67a3bnbqtnnv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0021.png" id="22_x6oyw"]
+[ext_resource type="Texture2D" uid="uid://d1lqc3r3ws38g" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0022.png" id="23_ikuvu"]
+[ext_resource type="Texture2D" uid="uid://1lcthgm4gvqs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0023.png" id="24_2t7qf"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gke0q")
+"texture": ExtResource("1_n57ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2cxbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kjg64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ee020")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yscpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_km5tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a3p8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_878r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ohpjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_58d1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_un1hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_483n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2ro4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nchum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ycgm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jv3jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4qe8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jhypf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_oa6po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7vi25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_scn65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_x6oyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ikuvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2t7qf")
 }],
 "loop": true,
 "name": &"default",
-"speed": 24.0
+"speed": 12.0
 }]

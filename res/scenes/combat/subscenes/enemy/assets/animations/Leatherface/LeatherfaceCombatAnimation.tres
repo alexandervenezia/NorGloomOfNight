@@ -178,7 +178,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("30_cxhr8")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 24.0
 }, {
@@ -350,7 +350,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("84_23rj2")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 24.0
 }]

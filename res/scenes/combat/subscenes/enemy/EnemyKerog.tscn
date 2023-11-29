@@ -8,8 +8,8 @@
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_p2fnk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
-radius = 77.0
-height = 268.0
+radius = 91.0
+height = 324.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
 resource_local_to_scene = true

@@ -41,7 +41,7 @@ public partial class CombatMain : Node2D
 
     public Vector2[] EnemySpawnPoints =
     {
-        new Vector2(325, -100),
+        new Vector2(400, -25),
         new Vector2(-230, -150),
         new Vector2(-25, 50),
         new Vector2(525, 150)

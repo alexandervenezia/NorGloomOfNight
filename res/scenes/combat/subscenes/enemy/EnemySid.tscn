@@ -7,7 +7,7 @@
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_eymhu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
-radius = 115.0
+radius = 104.0
 height = 352.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
@@ -29,14 +29,13 @@ _startingArmor = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(15, -26)
 shape = SubResource("CapsuleShape2D_shunw")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(31, -35)
+position = Vector2(-1, -25)
 scale = Vector2(0.5, 0.5)
 
 [node name="HealthBar" parent="." instance=ExtResource("4_40c5m")]
 material = SubResource("ShaderMaterial_do74u")
-position = Vector2(0, 147)
+position = Vector2(9, 174)

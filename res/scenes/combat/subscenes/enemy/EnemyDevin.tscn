@@ -29,12 +29,12 @@ _startingArmor = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(15, -26)
+position = Vector2(0, -26)
 shape = SubResource("CapsuleShape2D_shunw")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(31, -35)
+position = Vector2(19, -35)
 scale = Vector2(0.5, 0.5)
 
 [node name="HealthBar" parent="." instance=ExtResource("5_ihfo4")]

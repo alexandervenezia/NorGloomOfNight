@@ -8,11 +8,11 @@ public partial class Pride : HellLevel
 	{
 		base._Process(delta);
 
-		if (OS.IsDebugBuild() && Input.IsKeyPressed(Key.Delete))
+		if (OS.IsDebugBuild() && Input.IsKeyPressed(Key.R))
 		{
 			QuestManager.GetInstance().FLAG_TALKED_TO_MANAGER = true;
 			QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
-			QuestManager.GetInstance().FLAG_BEAT_DOG = true;
+			// QuestManager.GetInstance().FLAG_BEAT_DOG = true;
 
 			if (Input.IsActionJustPressed("Select"))
 			{

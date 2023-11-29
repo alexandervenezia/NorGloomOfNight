@@ -86,7 +86,7 @@ public class CombatManager
 
     public void NewFight(ICombatant player, ICombatant[] enemies)
     {
-        GD.Print("Fight has begun");
+        GD.Print("Fight has begun with " + enemies.Length + " enemies.");
 
         _isOver = false;
 

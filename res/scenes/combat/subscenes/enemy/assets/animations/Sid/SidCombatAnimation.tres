@@ -1,29 +1,53 @@
-[gd_resource type="SpriteFrames" load_steps=57 format=3 uid="uid://cefoj6uurka1o"]
+[gd_resource type="SpriteFrames" load_steps=81 format=3 uid="uid://cefoj6uurka1o"]
 
 [ext_resource type="Texture2D" uid="uid://cj1nc7lu56nr0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0000.png" id="1_7bsn6"]
+[ext_resource type="Texture2D" uid="uid://ckdoykglftnk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0000.png" id="1_m5g6i"]
+[ext_resource type="Texture2D" uid="uid://kbrftqgbvc0a" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0001.png" id="2_1sfhx"]
 [ext_resource type="Texture2D" uid="uid://c5j8h2or17t1k" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0001.png" id="2_j5jic"]
 [ext_resource type="Texture2D" uid="uid://clc2xmx3ooyxk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0002.png" id="3_igw3g"]
+[ext_resource type="Texture2D" uid="uid://ddlg8ur2n624" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0002.png" id="3_rahv6"]
+[ext_resource type="Texture2D" uid="uid://dke1u1dv56hu7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0003.png" id="4_cis4x"]
 [ext_resource type="Texture2D" uid="uid://bjhxyld1rd5jx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0003.png" id="4_tiafw"]
 [ext_resource type="Texture2D" uid="uid://pq50nmw8snp3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0004.png" id="5_82net"]
+[ext_resource type="Texture2D" uid="uid://cn8iie543g2je" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0004.png" id="5_m6m2o"]
+[ext_resource type="Texture2D" uid="uid://clx2t082hmb7i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0005.png" id="6_77tfl"]
 [ext_resource type="Texture2D" uid="uid://db4nwx2b5ehvj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0005.png" id="6_xnuw6"]
+[ext_resource type="Texture2D" uid="uid://b5sef4wppjgto" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0006.png" id="7_273xe"]
 [ext_resource type="Texture2D" uid="uid://eyg6q3qll5vf" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0006.png" id="7_sotoo"]
+[ext_resource type="Texture2D" uid="uid://b0ihafrrrlmje" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0007.png" id="8_c8t7o"]
 [ext_resource type="Texture2D" uid="uid://beq6k6e3x4tr" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0007.png" id="8_n1vr6"]
 [ext_resource type="Texture2D" uid="uid://bfnvojh3qe5w8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0008.png" id="9_7vxpv"]
+[ext_resource type="Texture2D" uid="uid://bwvjo6adhdv2c" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0008.png" id="9_iha22"]
 [ext_resource type="Texture2D" uid="uid://xgstdcihbfwf" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0009.png" id="10_iahk2"]
+[ext_resource type="Texture2D" uid="uid://bm14lugkdxrh6" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0009.png" id="10_rfon3"]
+[ext_resource type="Texture2D" uid="uid://b2quk60x2e8lt" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0010.png" id="11_aelfr"]
 [ext_resource type="Texture2D" uid="uid://0lp3rk066usm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0010.png" id="11_ubvvg"]
 [ext_resource type="Texture2D" uid="uid://dctbd0drdel0y" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0011.png" id="12_lgxp6"]
+[ext_resource type="Texture2D" uid="uid://4se8r05ok32i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0011.png" id="12_rshg8"]
 [ext_resource type="Texture2D" uid="uid://dygkrvvtweuet" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0012.png" id="13_u4vq6"]
+[ext_resource type="Texture2D" uid="uid://bqaw8qu4llfo6" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0012.png" id="13_wq8fv"]
+[ext_resource type="Texture2D" uid="uid://v01cglex3tox" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0013.png" id="14_cc7gp"]
 [ext_resource type="Texture2D" uid="uid://b62g3r2vw1sxh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0013.png" id="14_fano7"]
+[ext_resource type="Texture2D" uid="uid://c70kycjr3wyo0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0014.png" id="15_fufhw"]
 [ext_resource type="Texture2D" uid="uid://bm7tj7idrjqds" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0014.png" id="15_jryre"]
+[ext_resource type="Texture2D" uid="uid://b7nnkmes8l8w2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0015.png" id="16_jwj8r"]
 [ext_resource type="Texture2D" uid="uid://ci2hewnv4xs7o" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0015.png" id="16_ompwj"]
 [ext_resource type="Texture2D" uid="uid://cndsetij01l5i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0016.png" id="17_60f8e"]
+[ext_resource type="Texture2D" uid="uid://g55vnoqikgtf" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0016.png" id="17_vejqn"]
 [ext_resource type="Texture2D" uid="uid://cqfqan7mxn05a" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0017.png" id="18_5dbkx"]
+[ext_resource type="Texture2D" uid="uid://bofwhcbs5at6n" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0017.png" id="18_oewfb"]
 [ext_resource type="Texture2D" uid="uid://vbfao8rm8n76" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0018.png" id="19_agt8d"]
+[ext_resource type="Texture2D" uid="uid://d1np5dltofrs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0018.png" id="19_lutrj"]
+[ext_resource type="Texture2D" uid="uid://dxwf686tof8mm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0019.png" id="20_tc45p"]
 [ext_resource type="Texture2D" uid="uid://buqejtt5bdb5h" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0019.png" id="20_ys3me"]
 [ext_resource type="Texture2D" uid="uid://dcsvnv6ot6a73" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0020.png" id="21_sd8l4"]
+[ext_resource type="Texture2D" uid="uid://cm6gwr5xpn2xy" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0020.png" id="21_sytj5"]
 [ext_resource type="Texture2D" uid="uid://cqytn66hs5b75" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0021.png" id="22_5310k"]
+[ext_resource type="Texture2D" uid="uid://dihs3shhnrv8d" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0021.png" id="22_wpqrm"]
 [ext_resource type="Texture2D" uid="uid://ygg3eemtdkps" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0022.png" id="23_smdlr"]
+[ext_resource type="Texture2D" uid="uid://baxywjqkt87dk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0022.png" id="23_uvgm2"]
 [ext_resource type="Texture2D" uid="uid://bpmu874cx46rs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0023.png" id="24_bgx14"]
+[ext_resource type="Texture2D" uid="uid://cc15awq2blc72" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Attack/SId_attack_0023.png" id="24_keou5"]
 [ext_resource type="Texture2D" uid="uid://ccblogkjpe4r3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0024.png" id="25_walru"]
 [ext_resource type="Texture2D" uid="uid://r8n1gxhqdja2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0025.png" id="26_xsqoi"]
 [ext_resource type="Texture2D" uid="uid://k6s0guxow15t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Idle/Sid_walk_0026.png" id="27_5pct4"]
@@ -61,9 +85,78 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7bsn6")
+"texture": ExtResource("1_m5g6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1sfhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rahv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cis4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m6m2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_77tfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_273xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c8t7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iha22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rfon3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aelfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rshg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wq8fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cc7gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fufhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jwj8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vejqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oewfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lutrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tc45p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sytj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wpqrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uvgm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_keou5")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 24.0
 }, {
@@ -241,7 +334,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("56_8egw7")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 24.0
 }]

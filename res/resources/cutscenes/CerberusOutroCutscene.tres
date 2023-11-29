@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://qrkpsc32vgin"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Cutscene.cs" id="1_k5s4c"]
+
+[resource]
+script = ExtResource("1_k5s4c")
+SpeakerName = "[color=#666611]Your Supervisor"
+Lines = PackedStringArray("<narration>An ear-shattering roar hits your eardrums. A strange suspicion overcomes you that you may have just found the source of the noise.</narration>")

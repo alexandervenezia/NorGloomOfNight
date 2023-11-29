@@ -20,7 +20,7 @@ public partial class Player : CharacterBody2D
 		new TalkToManager(),
 		new CollectCrown(),
 		new DeliverCrown(),
-
+		new EmptyQuest()
 	};
 	private IQuest _quest;
 	[Export] private Node2D _questUI;
