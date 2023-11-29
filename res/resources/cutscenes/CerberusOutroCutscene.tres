@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_k5s4c")
 SpeakerName = "[color=#666611]Your Supervisor"
-Lines = PackedStringArray("<narration>An ear-shattering roar hits your eardrums. A strange suspicion overcomes you that you may have just found the source of the noise.</narration>")
+Lines = PackedStringArray("<narration>The once towering beast shrinks down to the ground, keeping its eyes off of you at all costs. It whimpers as it cowers away, limping back inside the castle before you, seeking safety in its walls.</narration>", "<narration> The path ahead looks clear now. Time to deliver that [color=#ba8c1e]Crown[/color]!")
