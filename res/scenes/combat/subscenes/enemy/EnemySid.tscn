@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgklhba6235vu"]
+[gd_scene load_steps=10 format=3 uid="uid://dgklhba6235vu"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_capha"]
 [ext_resource type="Resource" uid="uid://wx4osec25bsp" path="res://res/resources/cards/Slash.tres" id="2_30nme"]
