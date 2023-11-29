@@ -1385,7 +1385,7 @@ texture = ExtResource("16_uxfrh")
 position = Vector2(22784, 8272)
 
 [node name="Pride" parent="." instance=ExtResource("29_2pin4")]
-position = Vector2(77104, -2896)
+position = Vector2(77374, -2932)
 
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)
