@@ -7,7 +7,7 @@ public partial class Cerberus : Enemy
 {
 	public override void Die()
 	{
-        GD.Print("Cerberus Died");
+		GD.Print("Cerberus Died");
 		QuestManager.GetInstance().FLAG_BEAT_DOG = true;
 		QueueFree();
 	}

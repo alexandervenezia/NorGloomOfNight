@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://iw7vaee7nlpc"]
+[gd_scene load_steps=8 format=3 uid="uid://iw7vaee7nlpc"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_qjx0m"]
 [ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="2_kbjd2"]
 [ext_resource type="Resource" uid="uid://djp22yro3qat6" path="res://res/resources/cards/Stomp.tres" id="3_20lrt"]
-[ext_resource type="Resource" uid="uid://cagkcsnwq2qr0" path="res://res/resources/cards/HellsGrasp.tres" id="4_qutwh"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="5_l6jft"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_p2fnk"]
 
@@ -23,9 +22,9 @@ script = ExtResource("1_qjx0m")
 _deck = [ExtResource("2_kbjd2"), ExtResource("3_20lrt"), ExtResource("3_20lrt")]
 _ID = 1
 _permanentResistances = [2, 1]
-_goldDrop = 10
-_percentChanceOfCardDrop = 100
-_cardDrops = Array[Resource]([ExtResource("4_qutwh")])
+_goldDrop = 8
+_percentChanceOfCardDrop = 55
+_cardDrops = Array[Resource]([ExtResource("2_kbjd2")])
 _maxHealth = 10
 _startingActionPoints = 1
 _startingMovementPoints = 0

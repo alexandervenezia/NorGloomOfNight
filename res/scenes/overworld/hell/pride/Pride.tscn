@@ -1131,6 +1131,26 @@ motion_mode = 1
 position = Vector2(-27572, 6048)
 _relativePatrolBounds = Vector2(-1000, 1000)
 
+[node name="LeatherfaceWorld" parent="Enemies" instance=ExtResource("27_5rng0")]
+position = Vector2(36752, 1248)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="LeatherfaceWorld2" parent="Enemies" instance=ExtResource("27_5rng0")]
+position = Vector2(46672, -1904)
+_relativePatrolBounds = Vector2(-2500, 2500)
+
+[node name="SidWorld" parent="Enemies" instance=ExtResource("27_g4pnk")]
+position = Vector2(34762, 7994)
+_relativePatrolBounds = Vector2(-3500, 3500)
+
+[node name="SidWorld2" parent="Enemies" instance=ExtResource("27_g4pnk")]
+position = Vector2(45870, 4802)
+_relativePatrolBounds = Vector2(-3700, 3700)
+
+[node name="SidWorld3" parent="Enemies" instance=ExtResource("27_g4pnk")]
+position = Vector2(69542, 4658)
+_relativePatrolBounds = Vector2(-3700, 3700)
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-22076.7, -2279.27)
 
@@ -1361,6 +1381,23 @@ shape = SubResource("RectangleShape2D_qlov1")
 [node name="Sprite2D" type="Sprite2D" parent="Grabby"]
 texture = ExtResource("16_uxfrh")
 
+[node name="Cerberus" parent="." instance=ExtResource("28_atlgc")]
+position = Vector2(22784, 8272)
+
+[node name="Pride" parent="." instance=ExtResource("29_2pin4")]
+position = Vector2(77104, -2896)
+
+[node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(16208, 7200)
+scale = Vector2(1, 4)
+Cutscene = ExtResource("31_yoly0")
+
+[node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(22992, 7440)
+scale = Vector2(3, 3)
+Cutscene = ExtResource("32_cvc36")
+FLAG_BEAT_DOG = true
+
 [node name="PillarsFRONT" type="Node" parent="."]
 
 [node name="Pillar8" type="Sprite2D" parent="PillarsFRONT"]
@@ -1410,32 +1447,3 @@ z_index = 6
 position = Vector2(17594, 366)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
-
-[node name="LeatherfaceWorld" parent="." instance=ExtResource("27_5rng0")]
-position = Vector2(36752, 1248)
-_relativePatrolBounds = Vector2(-2500, 2500)
-
-[node name="LeatherfaceWorld2" parent="." instance=ExtResource("27_5rng0")]
-position = Vector2(46672, -1904)
-_relativePatrolBounds = Vector2(-2500, 2500)
-
-[node name="SidWorld" parent="." instance=ExtResource("27_g4pnk")]
-position = Vector2(-16752, -2112)
-_relativePatrolBounds = Vector2(-2000, 2000)
-
-[node name="Cerberus" parent="." instance=ExtResource("28_atlgc")]
-position = Vector2(22784, 8272)
-
-[node name="Pride" parent="." instance=ExtResource("29_2pin4")]
-position = Vector2(77104, -2896)
-
-[node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
-position = Vector2(16208, 7200)
-scale = Vector2(1, 4)
-Cutscene = ExtResource("31_yoly0")
-
-[node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
-position = Vector2(22992, 7440)
-scale = Vector2(3, 3)
-Cutscene = ExtResource("32_cvc36")
-FLAG_BEAT_DOG = true

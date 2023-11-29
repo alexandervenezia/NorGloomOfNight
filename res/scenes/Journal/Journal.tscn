@@ -127,7 +127,7 @@ offset_right = 1573.0
 offset_bottom = 221.0
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
-text = "[center][color=#111][font_size=250]Deck"
+text = "[center][color=#111][font_size=250]Inventory"
 
 [node name="Settings" type="Area2D" parent="."]
 position = Vector2(0, 67)
