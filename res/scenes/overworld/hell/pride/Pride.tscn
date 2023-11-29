@@ -336,8 +336,8 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
 _playerSpawn = Vector2(-22070.7, -2279.27)
 _journalID = "uid://24f70lj4w2nt"
-_introMusicUID = "uid://d1ix404tmx1jm"
-_loopMusicUID = "uid://cllm1liixd7f0"
+_introMusicUID = "uid://bcwav3q4c5png"
+_loopMusicUID = "uid://c2yi1m6vo7vfm"
 
 [node name="CastleBackground" type="Sprite2D" parent="."]
 position = Vector2(57776, 0)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bov4p35dowy3b"
+path="res://.godot/imported/Purgatory - Intro.mp3-c2016bee8869a64f282f927cd7d23f68.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Purgatory - Intro.mp3"
+dest_files=["res://.godot/imported/Purgatory - Intro.mp3-c2016bee8869a64f282f927cd7d23f68.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

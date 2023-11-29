@@ -41,7 +41,7 @@ _enemyTypePaths = Array[String](["uid://iw7vaee7nlpc", "uid://6dpordjypq8l", "ui
 _cardResource = ExtResource("3_6gjep")
 _nullCardResource = ExtResource("3_lhf3j")
 _coinValueResource = ExtResource("3_xuif3")
-_music = "uid://bfxwb5au8ilmq"
+_music = "uid://dx6xjve5fnmpr"
 _rejectButtonImg = ExtResource("16_qdhf3")
 
 [node name="Player" parent="." node_paths=PackedStringArray("_hand", "_targetLabel", "_actionPointLabel", "_movementPointLabel", "_deck", "_discard") instance=ExtResource("4_rn6c5")]
