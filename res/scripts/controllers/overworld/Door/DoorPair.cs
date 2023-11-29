@@ -9,6 +9,9 @@ public partial class DoorPair : Node2D
     [Export] private Vector2I _doorOnePos;
     [Export] private Vector2I _doorTwoPos;
 
+    [Export] private bool _showDoorOne;
+    [Export] private bool _showDoorTwo;
+
     private Sprite2D _doorOne;
     private Sprite2D _doorTwo;
 
@@ -24,8 +27,8 @@ public partial class DoorPair : Node2D
             ((Door)(_doorOne)).SetPair((Door)_doorTwo);
             ((Door)(_doorTwo)).SetPair((Door)_doorOne);
 
-            _doorOne.Visible = false;
-            _doorOne.Visible = false;
+            _doorOne.Visible = _showDoorOne;
+            _doorOne.Visible = _showDoorTwo;
         }
     }
 

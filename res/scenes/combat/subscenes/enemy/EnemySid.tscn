@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://duf4fn06ukls" path="res://res/resources/cards/Stab.tres" id="3_7ebsc"]
 [ext_resource type="Resource" uid="uid://b6qmnb6qex4ku" path="res://res/resources/cards/TacticalRoll.tres" id="4_6ag0n"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="4_40c5m"]
+[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="4_72g7w"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_eymhu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
@@ -38,6 +39,7 @@ shape = SubResource("CapsuleShape2D_shunw")
 y_sort_enabled = true
 position = Vector2(-1, -25)
 scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("4_72g7w")
 
 [node name="HealthBar" parent="." instance=ExtResource("4_40c5m")]
 material = SubResource("ShaderMaterial_do74u")
