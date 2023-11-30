@@ -401,8 +401,8 @@ scale = Vector2(3.25, 3.25)
 texture = ExtResource("23_crqxj")
 
 [node name="Pillar11" type="Sprite2D" parent="PillarsBEHIND"]
-position = Vector2(18680, -1191)
-scale = Vector2(3.25, 3.25)
+position = Vector2(18675, -1183)
+scale = Vector2(3.07874, 3.21658)
 texture = ExtResource("24_cs7og")
 
 [node name="Pillar9" type="Sprite2D" parent="PillarsBEHIND"]
@@ -1161,7 +1161,7 @@ _relativePatrolBounds = Vector2(-1000, 1000)
 
 [node name="LeatherfaceWorld" parent="Enemies" instance=ExtResource("27_5rng0")]
 z_index = 1
-position = Vector2(36752, 1248)
+position = Vector2(36668, 1494)
 _relativePatrolBounds = Vector2(-2500, 2500)
 
 [node name="LeatherfaceWorld2" parent="Enemies" instance=ExtResource("27_5rng0")]
@@ -1182,11 +1182,11 @@ _relativePatrolBounds = Vector2(-3500, 3500)
 [node name="SidWorld2" parent="Enemies" instance=ExtResource("27_g4pnk")]
 z_index = 1
 position = Vector2(45870, 4802)
-_relativePatrolBounds = Vector2(-3700, 3700)
+_relativePatrolBounds = Vector2(-3300, 3400)
 
 [node name="SidWorld3" parent="Enemies" instance=ExtResource("27_g4pnk")]
 z_index = 1
-position = Vector2(69542, 4658)
+position = Vector2(68546, 4780)
 _relativePatrolBounds = Vector2(-3700, 3700)
 
 [node name="Cerberus" parent="Enemies" instance=ExtResource("28_atlgc")]
