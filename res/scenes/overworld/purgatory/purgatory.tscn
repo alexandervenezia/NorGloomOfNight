@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=49 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -26,6 +26,7 @@
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
+[ext_resource type="Resource" uid="uid://b36mco8oh3sqg" path="res://res/resources/cards/PridesCrown.tres" id="25_bma53"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
 [ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="28_g3kh2"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
@@ -564,6 +565,7 @@ texture = ExtResource("11_g3usj")
 [node name="PokerGuy" parent="." instance=ExtResource("13_n7yjn")]
 position = Vector2(27476, -3874)
 scale = Vector2(1.5, 1.5)
+_crownOfPride = ExtResource("25_bma53")
 
 [node name="Elevator" type="Marker2D" parent="." node_paths=PackedStringArray("_levelSelect")]
 position = Vector2(-1770, 388)

@@ -17,6 +17,7 @@ shader_parameter/health_factor = 0.4
 shader_parameter/draining_factor = null
 
 [node name="Enemy" type="Area2D"]
+scale = Vector2(0.5, 0.5)
 collision_layer = 4
 script = ExtResource("1_0xdnb")
 _deck = [ExtResource("2_j2gkd")]
@@ -46,3 +47,4 @@ sprite_frames = ExtResource("3_71l53")
 [node name="HealthBar" parent="." instance=ExtResource("4_fqoko")]
 material = SubResource("ShaderMaterial_do74u")
 position = Vector2(10, 84)
+scale = Vector2(2, 2)

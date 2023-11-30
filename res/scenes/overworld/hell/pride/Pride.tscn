@@ -340,7 +340,8 @@ size = Vector2(1468, 640)
 [node name="Pride" type="Node2D" node_paths=PackedStringArray("_backgroundMarkers")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
-_backgroundMarkers = []
+_backgroundIDs = Array[int]([2, 3])
+_backgroundMarkers = [NodePath("BackgroundChangeMarkers/Gatehouse"), NodePath("BackgroundChangeMarkers/Pride")]
 _playerSpawn = Vector2(-22070.7, -2279.27)
 _journalID = "uid://24f70lj4w2nt"
 _introMusicUID = "uid://bcwav3q4c5png"
@@ -1165,6 +1166,9 @@ _relativePatrolBounds = Vector2(-3700, 3700)
 position = Vector2(69542, 4658)
 _relativePatrolBounds = Vector2(-3700, 3700)
 
+[node name="Cerberus" parent="Enemies" instance=ExtResource("28_atlgc")]
+position = Vector2(22784, 8272)
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-22076.7, -2279.27)
 
@@ -1389,9 +1393,6 @@ shape = SubResource("RectangleShape2D_qlov1")
 [node name="Sprite2D" type="Sprite2D" parent="Grabby"]
 texture = ExtResource("16_uxfrh")
 
-[node name="Cerberus" parent="." instance=ExtResource("28_atlgc")]
-position = Vector2(22784, 8272)
-
 [node name="Pride" parent="." instance=ExtResource("29_2pin4")]
 position = Vector2(77940, -3128)
 scale = Vector2(1.3, 1.3)
@@ -1456,28 +1457,6 @@ z_index = 6
 position = Vector2(17594, 366)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
-
-[node name="LeatherfaceWorld" parent="." instance=ExtResource("27_5rng0")]
-position = Vector2(36752, 1248)
-_relativePatrolBounds = Vector2(-2500, 2500)
-
-[node name="LeatherfaceWorld2" parent="." instance=ExtResource("27_5rng0")]
-position = Vector2(46672, -1904)
-_relativePatrolBounds = Vector2(-2500, 2500)
-
-[node name="Cerberus2" parent="." instance=ExtResource("28_atlgc")]
-position = Vector2(22784, 8272)
-
-[node name="CutsceneZone3" parent="." instance=ExtResource("30_u83yh")]
-position = Vector2(16208, 7200)
-scale = Vector2(1, 4)
-Cutscene = ExtResource("31_yoly0")
-
-[node name="CutsceneZone4" parent="." instance=ExtResource("30_u83yh")]
-position = Vector2(22992, 7440)
-scale = Vector2(3, 3)
-Cutscene = ExtResource("32_cvc36")
-FLAG_BEAT_DOG = true
 
 [node name="HR_NPC_Cave" parent="." instance=ExtResource("33_5ymb0")]
 position = Vector2(-5712, 22094)

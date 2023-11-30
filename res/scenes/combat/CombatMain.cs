@@ -40,9 +40,9 @@ public partial class CombatMain : Node2D
     private Card _rejectCard;
 
     public Vector2[] EnemySpawnPoints =
-    {
+    {        
+        new Vector2(350, -75),
         new Vector2(400, -25),
-        new Vector2(-230, -150),
         new Vector2(-25, 50),
         new Vector2(525, 150)
     };

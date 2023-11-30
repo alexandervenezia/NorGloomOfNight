@@ -20,6 +20,7 @@ radius = 225.0
 height = 604.0
 
 [node name="Enemy" type="Area2D"]
+scale = Vector2(0.8, 0.8)
 collision_layer = 4
 script = ExtResource("1_ocx0g")
 _deck = [ExtResource("4_k0la1"), ExtResource("4_j2lk3"), ExtResource("4_f8pau"), ExtResource("4_j2lk3"), ExtResource("4_j2lk3"), ExtResource("4_f8pau")]
