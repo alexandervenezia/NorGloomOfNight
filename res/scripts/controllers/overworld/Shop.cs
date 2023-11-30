@@ -18,7 +18,7 @@ public enum ShopState
 public partial class Shop : Node2D
 {
     [Export] private bool _isInventory;
-    private const float SCROLL_SPEED = 400f;
+    private const float SCROLL_SPEED = 800f;
     private const int MAX_PER_ROW = 4;
     private ColorRect _rect;
     private Node2D _cardNode;
