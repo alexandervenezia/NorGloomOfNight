@@ -89,6 +89,8 @@ public partial class MasterDeck : Node
 		foreach (CardData c in _playerStarterDeckStatic)
 		{			
 			_playerDeck.AddCard(c);
+
+			GD.Print(c);
 		}
 	}
 
