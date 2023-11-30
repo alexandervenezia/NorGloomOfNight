@@ -1,304 +1,332 @@
-[gd_resource type="SpriteFrames" load_steps=72 format=3 uid="uid://cfe52by1r6o2t"]
+[gd_resource type="SpriteFrames" load_steps=79 format=3 uid="uid://cfe52by1r6o2t"]
 
-[ext_resource type="Texture2D" uid="uid://beffebs0gmqfn" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0000.png" id="1_7g047"]
-[ext_resource type="Texture2D" uid="uid://doo6gusu03c5x" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0001.png" id="2_356vs"]
-[ext_resource type="Texture2D" uid="uid://b2kmnbnumilrp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0002.png" id="3_dcurm"]
-[ext_resource type="Texture2D" uid="uid://bcokepq8o5vvb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0003.png" id="4_seydh"]
-[ext_resource type="Texture2D" uid="uid://vs11b8ekhd2v" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0004.png" id="5_rpwmn"]
-[ext_resource type="Texture2D" uid="uid://c1hyg3ipu41mf" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0005.png" id="6_kbix3"]
-[ext_resource type="Texture2D" uid="uid://cu0scdpu6o0y7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0006.png" id="7_wpsuw"]
-[ext_resource type="Texture2D" uid="uid://btbo6fbgpawn7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0007.png" id="8_oocql"]
-[ext_resource type="Texture2D" uid="uid://j0nlkxlxpj88" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0008.png" id="9_qx1q5"]
-[ext_resource type="Texture2D" uid="uid://dd22yk3wjl1p" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0009.png" id="10_05o3c"]
-[ext_resource type="Texture2D" uid="uid://dfjot664hhdt0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0010.png" id="11_beh5k"]
-[ext_resource type="Texture2D" uid="uid://dwgyq3gg3o3ws" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0011.png" id="12_3mtou"]
-[ext_resource type="Texture2D" uid="uid://qlirl64mc1d1" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0012.png" id="13_7otaq"]
-[ext_resource type="Texture2D" uid="uid://cmwdijuf4crlj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0013.png" id="14_ji4xj"]
-[ext_resource type="Texture2D" uid="uid://c7yyx435yo38i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0014.png" id="15_kkmhn"]
-[ext_resource type="Texture2D" uid="uid://cpc5qa3nwva0e" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0015.png" id="16_o223e"]
-[ext_resource type="Texture2D" uid="uid://btch1hwuutbrm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Attack/Devin_Attack_0016.png" id="17_mc5nd"]
-[ext_resource type="Texture2D" uid="uid://bvpv6r7llcidh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0000.png" id="18_sbaww"]
-[ext_resource type="Texture2D" uid="uid://borht1pur2pi5" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0001.png" id="19_20a7q"]
-[ext_resource type="Texture2D" uid="uid://sybsfo68o11i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0002.png" id="20_bqgsr"]
-[ext_resource type="Texture2D" uid="uid://ckep1kn7txls7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0003.png" id="21_qcrjl"]
-[ext_resource type="Texture2D" uid="uid://buqb7buxenwqk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0004.png" id="22_v57k7"]
-[ext_resource type="Texture2D" uid="uid://cknki46sov5w6" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0005.png" id="23_s624s"]
-[ext_resource type="Texture2D" uid="uid://cftqw6gmvbih1" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0006.png" id="24_exxof"]
-[ext_resource type="Texture2D" uid="uid://c3vsfk2u1pdqp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0007.png" id="25_l45ff"]
-[ext_resource type="Texture2D" uid="uid://b85m32aeupxfh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0008.png" id="26_ri21r"]
-[ext_resource type="Texture2D" uid="uid://cdlmigtjhtang" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0009.png" id="27_78gnl"]
-[ext_resource type="Texture2D" uid="uid://cmw133qhvejwd" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0010.png" id="28_48v5p"]
-[ext_resource type="Texture2D" uid="uid://xt1cjs12tahr" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0011.png" id="29_ctbfl"]
-[ext_resource type="Texture2D" uid="uid://bkr8x5ktudr0e" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0012.png" id="30_k8yts"]
-[ext_resource type="Texture2D" uid="uid://c3lif8ypuxqte" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0013.png" id="31_vufy4"]
-[ext_resource type="Texture2D" uid="uid://d3htrbq1mvtnb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0014.png" id="32_eqs10"]
-[ext_resource type="Texture2D" uid="uid://c8y0x3k5grpnt" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0015.png" id="33_esly2"]
-[ext_resource type="Texture2D" uid="uid://c56addw5bgkgx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0016.png" id="34_worv3"]
-[ext_resource type="Texture2D" uid="uid://c47ekw71b36kl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0017.png" id="35_4jnbu"]
-[ext_resource type="Texture2D" uid="uid://dqq0e30xsymba" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0018.png" id="36_6qsqh"]
-[ext_resource type="Texture2D" uid="uid://cd3gdab6xbch0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0019.png" id="37_8k64c"]
-[ext_resource type="Texture2D" uid="uid://b2oavwxwjpcx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0020.png" id="38_1kwrt"]
-[ext_resource type="Texture2D" uid="uid://drqk3mciqfjkk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0021.png" id="39_bpby7"]
-[ext_resource type="Texture2D" uid="uid://gm68hi3i7rft" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0022.png" id="40_8x7h6"]
-[ext_resource type="Texture2D" uid="uid://ck71m4hbe7eli" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0023.png" id="41_gxosi"]
-[ext_resource type="Texture2D" uid="uid://br1k0dmbcsaw" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0024.png" id="42_jjqkd"]
-[ext_resource type="Texture2D" uid="uid://bkgr6iw6fv7rp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0025.png" id="43_uqa0r"]
-[ext_resource type="Texture2D" uid="uid://bmsmnqy11d8ny" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0026.png" id="44_kl7l3"]
-[ext_resource type="Texture2D" uid="uid://h3abmh1dlnwn" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0027.png" id="45_b45ic"]
-[ext_resource type="Texture2D" uid="uid://dobrfe446l2rw" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0028.png" id="46_sij7h"]
-[ext_resource type="Texture2D" uid="uid://bei6tvcidtq51" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Idle/Devin_Flying_0029.png" id="47_rjtse"]
-[ext_resource type="Texture2D" uid="uid://cpsyarrgigwex" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0000.png" id="48_gcl03"]
-[ext_resource type="Texture2D" uid="uid://b4cxaiwj81a5t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0001.png" id="49_d3q0w"]
-[ext_resource type="Texture2D" uid="uid://ywxl6y3kjap3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0002.png" id="50_vx108"]
-[ext_resource type="Texture2D" uid="uid://bw322yi3dbkuf" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0003.png" id="51_rko3t"]
-[ext_resource type="Texture2D" uid="uid://k70jvdlpja2s" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0004.png" id="52_7git0"]
-[ext_resource type="Texture2D" uid="uid://cvof2bssucafi" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0005.png" id="53_n5j53"]
-[ext_resource type="Texture2D" uid="uid://cgahagl0xk2x7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0006.png" id="54_08upn"]
-[ext_resource type="Texture2D" uid="uid://3j72fwqe14hm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0007.png" id="55_7xxms"]
-[ext_resource type="Texture2D" uid="uid://enujr05ro8h8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0008.png" id="56_awbfe"]
-[ext_resource type="Texture2D" uid="uid://bqvfft42higm5" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0009.png" id="57_31jpc"]
-[ext_resource type="Texture2D" uid="uid://dtmfs0i88jk36" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0010.png" id="58_somlo"]
-[ext_resource type="Texture2D" uid="uid://c4r0evdith5ki" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0011.png" id="59_fxb1v"]
-[ext_resource type="Texture2D" uid="uid://7r77beyifd0y" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0012.png" id="60_usxy1"]
-[ext_resource type="Texture2D" uid="uid://d4lg3in3x3ii0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0013.png" id="61_rx0j1"]
-[ext_resource type="Texture2D" uid="uid://berspgjhnwkc0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0014.png" id="62_fb3cd"]
-[ext_resource type="Texture2D" uid="uid://edfcc783pphu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0015.png" id="63_3mtbc"]
-[ext_resource type="Texture2D" uid="uid://cm1fyhb57x1g8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0016.png" id="64_tar1o"]
-[ext_resource type="Texture2D" uid="uid://ct4sqnqcy868o" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0017.png" id="65_fsabj"]
-[ext_resource type="Texture2D" uid="uid://c7hfgu80j3jv7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0018.png" id="66_h7m5b"]
-[ext_resource type="Texture2D" uid="uid://dvo3rvsrjqty4" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0019.png" id="67_qrojx"]
-[ext_resource type="Texture2D" uid="uid://njel4a5jegah" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0020.png" id="68_2xjs8"]
-[ext_resource type="Texture2D" uid="uid://cwdprxot3vhkn" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0021.png" id="69_hpvxj"]
-[ext_resource type="Texture2D" uid="uid://dxf4ugjxdu2k" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0022.png" id="70_huig2"]
-[ext_resource type="Texture2D" uid="uid://b2stoej1aj1wq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Devin/Damaged/Devin_damaged_0023.png" id="71_k835e"]
+[ext_resource type="Texture2D" uid="uid://bj3hsthnmqtaj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0000.png" id="1_vmgq3"]
+[ext_resource type="Texture2D" uid="uid://ds06nn2rlfnqk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0001.png" id="2_wc8ss"]
+[ext_resource type="Texture2D" uid="uid://svueaprm0fna" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0002.png" id="3_6sgu4"]
+[ext_resource type="Texture2D" uid="uid://b3belv2vrhfx4" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0003.png" id="4_plnhw"]
+[ext_resource type="Texture2D" uid="uid://dngxx2paux72h" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0004.png" id="5_8c3de"]
+[ext_resource type="Texture2D" uid="uid://1styfkyjmkh6" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0005.png" id="6_wap1e"]
+[ext_resource type="Texture2D" uid="uid://com0byr388eeq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0006.png" id="7_lcd38"]
+[ext_resource type="Texture2D" uid="uid://dfrwjg1psc6qp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0007.png" id="8_7hwvy"]
+[ext_resource type="Texture2D" uid="uid://bv1tlnw0qt7o3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0008.png" id="9_bwvwf"]
+[ext_resource type="Texture2D" uid="uid://dj00ea7nmwg7p" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0009.png" id="10_q6g8q"]
+[ext_resource type="Texture2D" uid="uid://cnlumfcqxnpou" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0010.png" id="11_cvmrj"]
+[ext_resource type="Texture2D" uid="uid://djc5jnwhtlt4k" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0011.png" id="12_8jagj"]
+[ext_resource type="Texture2D" uid="uid://11r35cxmxn07" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0012.png" id="13_wiair"]
+[ext_resource type="Texture2D" uid="uid://cpljup6k670gg" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0013.png" id="14_wap45"]
+[ext_resource type="Texture2D" uid="uid://v11mvi86hdco" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0014.png" id="15_flhun"]
+[ext_resource type="Texture2D" uid="uid://dxr4s0r4xp8da" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0015.png" id="16_6ouqy"]
+[ext_resource type="Texture2D" uid="uid://bdy8atpcl1qpn" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0016.png" id="17_jllhi"]
+[ext_resource type="Texture2D" uid="uid://mukdi5x1eeye" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0017.png" id="18_7huhc"]
+[ext_resource type="Texture2D" uid="uid://c2mgdlgsfhcgc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0018.png" id="19_pas5w"]
+[ext_resource type="Texture2D" uid="uid://dx20vniuf1hwv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0019.png" id="20_7xm7i"]
+[ext_resource type="Texture2D" uid="uid://34fwgdaefdga" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0020.png" id="21_a05s1"]
+[ext_resource type="Texture2D" uid="uid://l85py60scddk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0021.png" id="22_h11w3"]
+[ext_resource type="Texture2D" uid="uid://bewoukart3dao" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0022.png" id="23_bign2"]
+[ext_resource type="Texture2D" uid="uid://cnt7wyr8qcbnc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0023.png" id="24_358gs"]
+[ext_resource type="Texture2D" uid="uid://fmrooenpv2tk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0024.png" id="25_mdp5w"]
+[ext_resource type="Texture2D" uid="uid://cjebv310l61jb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0025.png" id="26_nutn7"]
+[ext_resource type="Texture2D" uid="uid://nrx3bff68sre" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0026.png" id="27_wufgj"]
+[ext_resource type="Texture2D" uid="uid://cbivgalvy6hps" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0027.png" id="28_3tcvw"]
+[ext_resource type="Texture2D" uid="uid://haey3wtckcbr" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0028.png" id="29_6hf1m"]
+[ext_resource type="Texture2D" uid="uid://qygcgfow82fs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Attack/Cerberus_attack_0029.png" id="30_6e1ev"]
+[ext_resource type="Texture2D" uid="uid://b6em33o2j2bmy" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0000.png" id="31_dgkuf"]
+[ext_resource type="Texture2D" uid="uid://dwvtgqcfx7wfe" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0001.png" id="32_4fcof"]
+[ext_resource type="Texture2D" uid="uid://c775suqdr256q" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0002.png" id="33_1wh8a"]
+[ext_resource type="Texture2D" uid="uid://dixlfgt2rkfpt" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0003.png" id="34_3sjx6"]
+[ext_resource type="Texture2D" uid="uid://boxqlxm72sqsf" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0004.png" id="35_14b7m"]
+[ext_resource type="Texture2D" uid="uid://bm54dbyk63rha" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0005.png" id="36_yilu7"]
+[ext_resource type="Texture2D" uid="uid://bck6ayfntk7fu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0006.png" id="37_mruk3"]
+[ext_resource type="Texture2D" uid="uid://bxhmqpekvm3a0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0007.png" id="38_p7lhm"]
+[ext_resource type="Texture2D" uid="uid://b15gwgchsh6w3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0008.png" id="39_xt7ej"]
+[ext_resource type="Texture2D" uid="uid://cisufwrw1cvk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0009.png" id="40_2ys0j"]
+[ext_resource type="Texture2D" uid="uid://cbi0sjqkgdego" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0010.png" id="41_eatxy"]
+[ext_resource type="Texture2D" uid="uid://oqg3vbntati8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0011.png" id="42_qixwa"]
+[ext_resource type="Texture2D" uid="uid://b3i8rvqrqb57k" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0012.png" id="43_5r4aq"]
+[ext_resource type="Texture2D" uid="uid://dmh4bs2mub6fm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0013.png" id="44_qpqio"]
+[ext_resource type="Texture2D" uid="uid://dt0afsqdojt24" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0014.png" id="45_hgkxv"]
+[ext_resource type="Texture2D" uid="uid://bykc6wp31cgrm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0015.png" id="46_31q53"]
+[ext_resource type="Texture2D" uid="uid://bajff6436ab6t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0016.png" id="47_ytn7u"]
+[ext_resource type="Texture2D" uid="uid://dbqhjvn5dkdxv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0017.png" id="48_ve2un"]
+[ext_resource type="Texture2D" uid="uid://bm3yd2c6v0sxk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0018.png" id="49_turmu"]
+[ext_resource type="Texture2D" uid="uid://cvsfguwql6ohy" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0019.png" id="50_tb23o"]
+[ext_resource type="Texture2D" uid="uid://ct66mlabp3a8l" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0020.png" id="51_haxh1"]
+[ext_resource type="Texture2D" uid="uid://c67a3bnbqtnnv" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0021.png" id="52_65pyj"]
+[ext_resource type="Texture2D" uid="uid://d1lqc3r3ws38g" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0022.png" id="53_3pob8"]
+[ext_resource type="Texture2D" uid="uid://1lcthgm4gvqs" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Idle/Cerberus_idle_0023.png" id="54_s2mbi"]
+[ext_resource type="Texture2D" uid="uid://cmq4ourvugir3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0000.png" id="121_24bsj"]
+[ext_resource type="Texture2D" uid="uid://br17s1pjyeei3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0001.png" id="122_iwge1"]
+[ext_resource type="Texture2D" uid="uid://c83wn1wfsrc02" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0002.png" id="123_kv6ur"]
+[ext_resource type="Texture2D" uid="uid://swqf7to3ev45" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0003.png" id="124_ps3my"]
+[ext_resource type="Texture2D" uid="uid://ckc4roa4rye5r" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0004.png" id="125_shonw"]
+[ext_resource type="Texture2D" uid="uid://bqlmy214fpyrc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0005.png" id="126_s0pip"]
+[ext_resource type="Texture2D" uid="uid://dayq3p5yxge6l" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0006.png" id="127_p3u8g"]
+[ext_resource type="Texture2D" uid="uid://djtudnp3il02l" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0007.png" id="128_yq0vd"]
+[ext_resource type="Texture2D" uid="uid://jee2wjoasuia" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0008.png" id="129_8rq1e"]
+[ext_resource type="Texture2D" uid="uid://dbvthyhiydfej" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0009.png" id="130_geu70"]
+[ext_resource type="Texture2D" uid="uid://c4aolfnqjkcqg" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0010.png" id="131_ru2f1"]
+[ext_resource type="Texture2D" uid="uid://csatardnre1nk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0011.png" id="132_768q7"]
+[ext_resource type="Texture2D" uid="uid://ll6fitlxi322" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0012.png" id="133_mg3wa"]
+[ext_resource type="Texture2D" uid="uid://cujtp8d7f612r" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0013.png" id="134_vxjkw"]
+[ext_resource type="Texture2D" uid="uid://bpdsgybvklrys" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0014.png" id="135_8pha6"]
+[ext_resource type="Texture2D" uid="uid://s3ecn74u0srb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0015.png" id="136_3if3w"]
+[ext_resource type="Texture2D" uid="uid://djnfqs2fv45uh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0016.png" id="137_26ek8"]
+[ext_resource type="Texture2D" uid="uid://ch0kubgqm1cgk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0017.png" id="138_6s8a7"]
+[ext_resource type="Texture2D" uid="uid://l4lyu0f2t1i4" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0018.png" id="139_da1sx"]
+[ext_resource type="Texture2D" uid="uid://cuk8fqeln3tll" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0019.png" id="140_0upy1"]
+[ext_resource type="Texture2D" uid="uid://brf5upnobcseg" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0020.png" id="141_lsnlx"]
+[ext_resource type="Texture2D" uid="uid://bve6d3dusr8ip" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0021.png" id="142_ptxca"]
+[ext_resource type="Texture2D" uid="uid://mioxylvlpx0x" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0022.png" id="143_umjhp"]
+[ext_resource type="Texture2D" uid="uid://dnbohbqgd74rt" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/Damaged/Cerberus_damaged_0023.png" id="144_0ov6a"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7g047")
+"texture": ExtResource("1_vmgq3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_356vs")
+"texture": ExtResource("2_wc8ss")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_dcurm")
+"texture": ExtResource("3_6sgu4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_seydh")
+"texture": ExtResource("4_plnhw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rpwmn")
+"texture": ExtResource("5_8c3de")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_kbix3")
+"texture": ExtResource("6_wap1e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_wpsuw")
+"texture": ExtResource("7_lcd38")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_oocql")
+"texture": ExtResource("8_7hwvy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_qx1q5")
+"texture": ExtResource("9_bwvwf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_05o3c")
+"texture": ExtResource("10_q6g8q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_beh5k")
+"texture": ExtResource("11_cvmrj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_3mtou")
+"texture": ExtResource("12_8jagj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_7otaq")
+"texture": ExtResource("13_wiair")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_ji4xj")
+"texture": ExtResource("14_wap45")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_kkmhn")
+"texture": ExtResource("15_flhun")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_o223e")
+"texture": ExtResource("16_6ouqy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_mc5nd")
+"texture": ExtResource("17_jllhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7huhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pas5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7xm7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_a05s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_h11w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bign2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_358gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mdp5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_nutn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wufgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3tcvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_6hf1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6e1ev")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 24.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_sbaww")
+"texture": ExtResource("31_dgkuf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_20a7q")
+"texture": ExtResource("32_4fcof")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_bqgsr")
+"texture": ExtResource("33_1wh8a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_qcrjl")
+"texture": ExtResource("34_3sjx6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_v57k7")
+"texture": ExtResource("35_14b7m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_s624s")
+"texture": ExtResource("36_yilu7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_exxof")
+"texture": ExtResource("37_mruk3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_l45ff")
+"texture": ExtResource("38_p7lhm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_ri21r")
+"texture": ExtResource("39_xt7ej")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_78gnl")
+"texture": ExtResource("40_2ys0j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_48v5p")
+"texture": ExtResource("41_eatxy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_ctbfl")
+"texture": ExtResource("42_qixwa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_k8yts")
+"texture": ExtResource("43_5r4aq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_vufy4")
+"texture": ExtResource("44_qpqio")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_eqs10")
+"texture": ExtResource("45_hgkxv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_esly2")
+"texture": ExtResource("46_31q53")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_worv3")
+"texture": ExtResource("47_ytn7u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_4jnbu")
+"texture": ExtResource("48_ve2un")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_6qsqh")
+"texture": ExtResource("49_turmu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_8k64c")
+"texture": ExtResource("50_tb23o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_1kwrt")
+"texture": ExtResource("51_haxh1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_bpby7")
+"texture": ExtResource("52_65pyj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_8x7h6")
+"texture": ExtResource("53_3pob8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_gxosi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_jjqkd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_uqa0r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_kl7l3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_b45ic")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_sij7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_rjtse")
+"texture": ExtResource("54_s2mbi")
 }],
 "loop": true,
 "name": &"default",
-"speed": 24.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("48_gcl03")
+"texture": ExtResource("121_24bsj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_d3q0w")
+"texture": ExtResource("122_iwge1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_vx108")
+"texture": ExtResource("123_kv6ur")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_rko3t")
+"texture": ExtResource("124_ps3my")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_7git0")
+"texture": ExtResource("125_shonw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("53_n5j53")
+"texture": ExtResource("126_s0pip")
 }, {
 "duration": 1.0,
-"texture": ExtResource("54_08upn")
+"texture": ExtResource("127_p3u8g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("55_7xxms")
+"texture": ExtResource("128_yq0vd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("56_awbfe")
+"texture": ExtResource("129_8rq1e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_31jpc")
+"texture": ExtResource("130_geu70")
 }, {
 "duration": 1.0,
-"texture": ExtResource("58_somlo")
+"texture": ExtResource("131_ru2f1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("59_fxb1v")
+"texture": ExtResource("132_768q7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("60_usxy1")
+"texture": ExtResource("133_mg3wa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("61_rx0j1")
+"texture": ExtResource("134_vxjkw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("62_fb3cd")
+"texture": ExtResource("135_8pha6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("63_3mtbc")
+"texture": ExtResource("136_3if3w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("64_tar1o")
+"texture": ExtResource("137_26ek8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("65_fsabj")
+"texture": ExtResource("138_6s8a7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("66_h7m5b")
+"texture": ExtResource("139_da1sx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("67_qrojx")
+"texture": ExtResource("140_0upy1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("68_2xjs8")
+"texture": ExtResource("141_lsnlx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("69_hpvxj")
+"texture": ExtResource("142_ptxca")
 }, {
 "duration": 1.0,
-"texture": ExtResource("70_huig2")
+"texture": ExtResource("143_umjhp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("71_k835e")
+"texture": ExtResource("144_0ov6a")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 24.0
 }]

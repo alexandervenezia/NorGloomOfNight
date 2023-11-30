@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 public partial class CutscenePlayer : ColorRect
 {
+    private Camera2D _camera;
     private Random RNG;
     private int _lineIndex;
     private Cutscene _data;
@@ -12,7 +13,11 @@ public partial class CutscenePlayer : ColorRect
     private AudioStreamPlayer _clickSound;
     private string _dialoguePrefix;
     private bool _rendering = false;
+    private bool _panning = false;
     private bool _skipped = false;
+
+    private Vector2I _cameraOffset;
+    
 
     public delegate void CutsceneEndingInformer();
     public event CutsceneEndingInformer OnEnd;
@@ -26,6 +31,10 @@ public partial class CutscenePlayer : ColorRect
         _lineIndex = 0;
         Visible = false;
         RNG = new();
+
+        _camera = GetNodeOrNull<Camera2D>("..");
+        if (_camera == null)
+            GD.Print("WARNING: _camera of CutscenePlayer is null; panning not supported");
     }
 
     public void SetCutscene(Cutscene cutscene)
@@ -41,7 +50,7 @@ public partial class CutscenePlayer : ColorRect
     {
         if (Input.IsActionJustPressed("Select") || Input.IsActionJustPressed("Jump"))
         {
-            if (_data != null)
+            if (_data != null && !_panning)
             {
                 if (_rendering)
                 {
@@ -64,13 +73,21 @@ public partial class CutscenePlayer : ColorRect
             return;
         }
         string fullText;
+
+        if (_data.Lines[_lineIndex].StartsWith("<pan"))
+        {
+            HandlePan(_data.Lines[_lineIndex]);
+            _lineIndex++;
+            return;
+        }
+
         if (_data.SpeakerName != "")
             fullText = _dialoguePrefix + ParseLine(_data.SpeakerName + ":<br>[/color]" + _data.Lines[_lineIndex]);
         else
             fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);
 
         // NOTE: This disables the "Speaker's name" component
-        fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);
+        fullText = _dialoguePrefix + ParseLine(_data.Lines[_lineIndex]);        
 
         _lineIndex++;
         _rendering = true;
@@ -86,6 +103,52 @@ public partial class CutscenePlayer : ColorRect
         parsed = parsed.Replace("<br>", "\n    ");
 
         return parsed;
+    }
+
+    private async void HandlePan(string command)
+    {
+        _panning = true;
+        string parsed = command;
+        parsed = parsed.Replace("<", "");
+        parsed = parsed.Replace(">", "");
+        parsed = parsed.Split("=")[1].StripEdges();
+
+        int x, y;
+        float duration;
+
+        string[] coords = parsed.Split("x");
+
+        if (coords[0].StartsWith("return"))
+        {
+            x = 0; //-_cameraOffset.X;
+            y = 0; //-_cameraOffset.Y;
+            duration = coords[1].ToFloat();
+        }
+        else
+        {
+            x = coords[0].ToInt() + (int)_camera.Position.X;
+            y = coords[1].ToInt() + (int)_camera.Position.Y;
+            duration = coords[2].ToFloat();
+        }
+
+        Tween pan = GetTree().CreateTween();
+        pan.SetParallel(true);
+        //pan.SetSpeedScale(1f);
+        pan.TweenProperty(_camera, "position:x", x, duration);
+        pan.TweenProperty(_camera, "position:y", y, duration);
+        pan.Play();
+
+        GD.Print(x, "; ", y, "; ", duration);
+
+        while (pan.CustomStep(0.016))
+        {            
+            await Task.Delay(16);
+        }
+
+        _cameraOffset = _cameraOffset + new Vector2I(x, y);
+
+        _panning = false;
+        LoadNextLine();
     }
 
     private async void RenderTextAnimation(string text)

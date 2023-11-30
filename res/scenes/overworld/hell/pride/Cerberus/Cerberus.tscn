@@ -1,24 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cntf8nwl10u0m"]
+[gd_scene load_steps=6 format=3 uid="uid://cntf8nwl10u0m"]
 
-[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Enemy.cs" id="1_xsese"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Bosses/Cerberus.cs" id="1_yduwu"]
 [ext_resource type="SpriteFrames" uid="uid://c8jvh06yi0frh" path="res://res/scenes/overworld/hell/pride/Cerberus/CerberusFrames.tres" id="2_adg2l"]
+[ext_resource type="Resource" uid="uid://c184qoklhcr83" path="res://res/resources/cutscenes/CerberusIntroCutscene.tres" id="2_my3vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
-size = Vector2(6066, 2029)
+size = Vector2(3128, 2029)
 
-[node name="Cerberus" type="Node2D"]
-script = ExtResource("1_xsese")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k64dc"]
+
+[node name="Cerberus" type="CharacterBody2D"]
+script = ExtResource("1_yduwu")
 _name = "Cerberus"
 _id = 92
-_firstSlotSpawn = {}
+_firstSlotSpawn = {
+92: 100
+}
+_introCutscene = ExtResource("2_my3vs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -479)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_adg2l")
 
 [node name="Aggro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
-position = Vector2(179, -605.5)
+position = Vector2(156, -605.5)
 shape = SubResource("RectangleShape2D_qqlln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k64dc")

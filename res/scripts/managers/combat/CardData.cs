@@ -211,7 +211,13 @@ public partial class CardData : Resource
 
     public void Activate()
     {
-          Damage = new();
+        if (Name == "Full House")
+        {
+            GD.Print("Card Data Start - Full House");
+
+        }
+
+        Damage = new();
         DrawEffects = new();
         Buffs = new();
         Debuffs = new();
@@ -233,6 +239,7 @@ public partial class CardData : Resource
             {
                 dice.flat = int.Parse(parts[0].Trim());
                 Damage.Add(t, dice);
+                i++;
                 continue;
             }
 
@@ -322,6 +329,12 @@ public partial class CardData : Resource
 
         // _debuffs.Clear();
         // _debuffDuration.Clear();
+
+        if (Name == "Full House")
+        {
+            GD.Print("Card Data Start - Full House");
+
+        }
     }
 
     // Operator overrides for easy comparisons of card data. Don't worry about the implementation here unless you really think it's bugged.

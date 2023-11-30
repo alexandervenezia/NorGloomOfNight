@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dffsyqy2wwdfy"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="1_1te63"]
+[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="2_beysk"]
+[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/Eyeball Guy.png" id="3_fomqs"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="4_woovp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shlqa"]
+size = Vector2(512, 800)
+
+[node name="NPC" type="Area2D"]
+position = Vector2(279, 307)
+script = ExtResource("1_1te63")
+_dialogue = Array[String](["I am an NPC.", "Testing, testing."])
+_delayMS = 2000
+
+[node name="HealArea" parent="." instance=ExtResource("2_beysk")]
+position = Vector2(-100, 152)
+
+[node name="EyeballGuy" type="Sprite2D" parent="."]
+position = Vector2(-80, 78)
+scale = Vector2(0.376952, 0.376952)
+texture = ExtResource("3_fomqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-86, 94)
+shape = SubResource("RectangleShape2D_shlqa")
+
+[node name="DialogueBubble" type="Polygon2D" parent="."]
+position = Vector2(-197, -78)
+polygon = PackedVector2Array(2, -4, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBubble"]
+offset_left = -488.0
+offset_top = -535.0
+offset_right = 129.0
+offset_bottom = -287.0
+theme = ExtResource("4_woovp")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]
+
+. . ."
+metadata/_edit_use_anchors_ = true

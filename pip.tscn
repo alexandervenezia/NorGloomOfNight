@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://mqh6rowsdl1i"]
+
+[ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="1_mse3y"]
+
+[node name="Pip" type="AnimatedSprite2D"]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_mse3y")

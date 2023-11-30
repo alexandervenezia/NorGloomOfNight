@@ -23,6 +23,6 @@ _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
-_price = 0
+_price = 20
 _upgrade = ExtResource("2_0vmk8")
 _unremovableByPlayer = false

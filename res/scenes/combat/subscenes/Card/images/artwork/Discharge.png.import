@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv4gvlbd306rx"
-path="res://.godot/imported/Discharge.png-c79963c51535b973ff68e7533c916457.ctex"
+path.s3tc="res://.godot/imported/Discharge.png-c79963c51535b973ff68e7533c916457.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/Card/images/artwork/Discharge.png"
-dest_files=["res://.godot/imported/Discharge.png-c79963c51535b973ff68e7533c916457.ctex"]
+dest_files=["res://.godot/imported/Discharge.png-c79963c51535b973ff68e7533c916457.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

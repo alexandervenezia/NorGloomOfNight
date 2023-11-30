@@ -32,7 +32,10 @@ public partial class JournalLine : Area2D
         if (Input.IsActionJustPressed("Select"))
         {
             if (_xButton.Visible)
+            {
                 OnLineClicked?.Invoke();
+                _xButton.Visible = false;
+            }
         }
     }
 

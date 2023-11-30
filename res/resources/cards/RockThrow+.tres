@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://5118kdcbem78"]
 
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_mhe22"]
+[ext_resource type="Texture2D" uid="uid://dxehvfd68ro6n" path="res://res/scenes/combat/subscenes/Card/images/artwork/rock_throw.png" id="1_hx6md"]
 [ext_resource type="Resource" uid="uid://d2ptd71fj7djh" path="res://res/resources/cards/RockThrow++.tres" id="2_6yupa"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_a01g7"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("2_a01g7")
 _name = "Rock Throw+"
 _description = ""
-_artwork = ExtResource("1_mhe22")
+_artwork = ExtResource("1_hx6md")
 _type = 2
 _rarity = 1
 _actionPointCost = 1

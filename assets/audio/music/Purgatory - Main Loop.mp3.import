@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Purgatory - Main Loop.mp3-5389abc8204a552a349
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

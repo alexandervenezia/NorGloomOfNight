@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://20u3u0j7h4xj"]
+
+[ext_resource type="Texture2D" uid="uid://cn3a2dsqf2g61" path="res://res/scenes/overworld/hell/pride/Grabby/grippy_enemy.png" id="1_kvhqn"]
+[ext_resource type="Texture2D" uid="uid://duqjbyy6mp8b2" path="res://res/scenes/overworld/hell/pride/Grabby/grippy_closed.png" id="2_h0be0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h0be0")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kvhqn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kvhqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h0be0")
+}],
+"loop": true,
+"name": &"showcase",
+"speed": 2.0
+}]

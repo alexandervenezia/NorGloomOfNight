@@ -70,7 +70,7 @@ public partial class Purgatory : Node2D, ILevel
 
 	public override void _Process(double delta)
 	{
-		if (OS.IsDebugBuild() && Input.IsKeyPressed(Key.Delete))
+		if (OS.IsDebugBuild() && Input.IsKeyPressed(Key.R))
 		{
 			Node pride = MasterScene.GetInstance().ActivateScene(_prideUID, true, true);
 			_player.EnemyAggroed -= OnAggro;
@@ -119,7 +119,10 @@ public partial class Purgatory : Node2D, ILevel
 			_player.Die();
 		}
 		else
+		{
 			_enemyInCombat?.Die();
+			_enemyInCombat = null;
+		}
 	}
 
 	public Node UseElevator(string dest = "")

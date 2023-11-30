@@ -1,10 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://bw7twakv1byy7"]
+[gd_scene load_steps=21 format=3 uid="uid://bw7twakv1byy7"]
 
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="1_js6kk"]
+[ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/MainMenu.cs" id="1_visdm"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="2_wo3dn"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_4m3dj"]
-[ext_resource type="Texture2D" uid="uid://vi0yjaxkgoqg" path="res://res/scenes/MainMenu/assets/Title screen bg updated 2.png" id="4_qmyrk"]
+[ext_resource type="Script" path="res://res/scenes/MainMenu/ExitGame.cs" id="4_2hi36"]
 [ext_resource type="Texture2D" uid="uid://b5hkvlaw06ph8" path="res://res/scenes/MainMenu/assets/NOR GLOOM OF NIGHT title.png" id="5_6lnj2"]
+[ext_resource type="Texture2D" uid="uid://d0ok3krhmgw01" path="res://res/scenes/MainMenu/assets/Title screen border.png" id="5_dxjwr"]
+[ext_resource type="Texture2D" uid="uid://cacfyfaji28nl" path="res://res/scenes/MainMenu/assets/Title screen bg.png" id="6_0c2tu"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="6_mdm88"]
 [ext_resource type="Texture2D" uid="uid://dytl26e35towi" path="res://res/scenes/MainMenu/assets/GitHub Lost souls label.png" id="7_67vmm"]
 
@@ -73,20 +76,22 @@ corner_radius_bottom_left = 25
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o8y7q"]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_visdm")
+_music = "uid://cjd6hk6cpgr6l"
 
 [node name="NewGame" type="Button" parent="."]
 z_index = 100
 material = SubResource("ShaderMaterial_v4ocg")
-custom_minimum_size = Vector2(500, 100)
+custom_minimum_size = Vector2(375, 75)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 703.0
-offset_top = 609.0
-offset_right = 1203.0
-offset_bottom = 709.0
+offset_left = 765.0
+offset_top = 608.0
+offset_right = 1140.0
+offset_bottom = 683.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -106,30 +111,75 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -237.0
-offset_top = -32.0
+offset_top = -20.0
 offset_right = 244.0
-offset_bottom = 30.0
+offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("3_4m3dj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center][font_size=45]New Game"
+text = "[center][font_size=35
+]Clock In"
+metadata/_edit_lock_ = true
 
-[node name="Settings" type="Button" parent="."]
+[node name="Exit" type="Button" parent="."]
 z_index = 100
-material = SubResource("ShaderMaterial_shlc3")
-custom_minimum_size = Vector2(500, 100)
+material = SubResource("ShaderMaterial_v4ocg")
+custom_minimum_size = Vector2(187.5, 75)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 702.0
-offset_top = 735.0
-offset_right = 1202.0
-offset_bottom = 835.0
+offset_left = 6.0
+offset_top = 985.0
+offset_right = 194.0
+offset_bottom = 1060.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("1_js6kk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wss3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p4h56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
+script = ExtResource("4_2hi36")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -20.0
+offset_right = 113.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("3_4m3dj")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=35]Exit"
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_shlc3")
+custom_minimum_size = Vector2(375, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 765.0
+offset_top = 737.0
+offset_right = 1140.0
+offset_bottom = 812.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -149,30 +199,32 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -238.0
-offset_top = -32.0
+offset_top = -20.0
 offset_right = 238.0
-offset_bottom = 30.0
+offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("3_4m3dj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center][font_size=45]Settings"
+text = "[center][font_size=35]Settings
+"
+metadata/_edit_lock_ = true
 
 [node name="Credits" type="Button" parent="."]
 z_index = 100
 material = SubResource("ShaderMaterial_shlc3")
-custom_minimum_size = Vector2(500, 100)
+custom_minimum_size = Vector2(375, 75)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 702.0
-offset_top = 860.0
-offset_right = 1202.0
-offset_bottom = 960.0
+offset_left = 765.0
+offset_top = 858.0
+offset_right = 1140.0
+offset_bottom = 933.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -192,25 +244,27 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -238.0
-offset_top = -32.0
+offset_top = -20.0
 offset_right = 238.0
-offset_bottom = 30.0
+offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("3_4m3dj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[center][font_size=45]Credits"
+text = "[center][font_size=35]Credits"
+metadata/_edit_lock_ = true
 
 [node name="MenuBackground" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_qmyrk")
+texture = ExtResource("6_0c2tu")
 metadata/_edit_lock_ = true
 
 [node name="NorGloomOfNight" type="Sprite2D" parent="."]
-position = Vector2(960, 387)
+position = Vector2(957, 538)
+scale = Vector2(1.31929, 1.31929)
 texture = ExtResource("5_6lnj2")
 
 [node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="."]
@@ -218,6 +272,11 @@ visible = false
 position = Vector2(1813, 958)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_mdm88")
+
+[node name="TitleScreenBorder" type="Sprite2D" parent="."]
+position = Vector2(957.625, 543.5)
+scale = Vector2(1.44873, 1.47418)
+texture = ExtResource("5_dxjwr")
 
 [node name="GitHubLostSoulsLabel" type="Sprite2D" parent="."]
 position = Vector2(1807, 1040)

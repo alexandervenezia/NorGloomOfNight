@@ -119,6 +119,9 @@ public partial class FloatingTextFactory : Node2D
         
         alphaTween.TweenProperty(label, "modulate:a", 0, waitSeconds);
         await Task.Delay(wait);
+
+        if (!IsInstanceValid(this) || IsQueuedForDeletion())
+            return;
         
         RemoveChild(label);
         _waitingQueue.Enqueue(label);

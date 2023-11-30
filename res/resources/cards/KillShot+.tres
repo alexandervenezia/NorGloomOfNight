@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bio1nt2ae7svv"]
 
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_haaje"]
+[ext_resource type="Texture2D" uid="uid://d3ac8wj5op8k3" path="res://res/scenes/combat/subscenes/Card/images/artwork/killshot.png" id="1_3kphc"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_xxofa"]
 
 [resource]
 script = ExtResource("2_xxofa")
 _name = "Kill Shot+"
 _description = ""
-_artwork = ExtResource("1_haaje")
+_artwork = ExtResource("1_3kphc")
 _type = 2
 _rarity = 4
 _actionPointCost = 2

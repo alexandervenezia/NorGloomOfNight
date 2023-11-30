@@ -47,6 +47,8 @@ size = Vector2(3306.67, 553.333)
 
 [node name="Journal" type="Node2D"]
 script = ExtResource("1_ki4kg")
+_inventoryUID = "uid://bj4hsghr8uitx"
+_mainMenuUID = "uid://d204n4ckwe72x"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -127,7 +129,7 @@ offset_right = 1573.0
 offset_bottom = 221.0
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
-text = "[center][color=#111][font_size=250]Deck"
+text = "[center][color=#111][font_size=250]Inventory"
 
 [node name="Settings" type="Area2D" parent="."]
 position = Vector2(0, 67)
@@ -179,7 +181,7 @@ offset_right = 1573.0
 offset_bottom = 233.333
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
-text = "[center][color=#111][font_size=250]Exit Game"
+text = "[center][color=#111][font_size=250]Clock Out"
 
 [node name="Pause" type="Sprite2D" parent="."]
 position = Vector2(0, -316)

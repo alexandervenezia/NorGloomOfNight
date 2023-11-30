@@ -1,13 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgklhba6235vu"]
+[gd_scene load_steps=10 format=3 uid="uid://dgklhba6235vu"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_capha"]
-[ext_resource type="Resource" uid="uid://bcjf232cowv26" path="res://res/resources/cards/DivineSmite.tres" id="2_cal4w"]
-[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="3_v3qul"]
+[ext_resource type="Resource" uid="uid://wx4osec25bsp" path="res://res/resources/cards/Slash.tres" id="2_30nme"]
+[ext_resource type="Resource" uid="uid://duf4fn06ukls" path="res://res/resources/cards/Stab.tres" id="3_7ebsc"]
+[ext_resource type="Resource" uid="uid://b6qmnb6qex4ku" path="res://res/resources/cards/TacticalRoll.tres" id="4_6ag0n"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="4_40c5m"]
+[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="4_72g7w"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_eymhu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
-radius = 115.0
+radius = 104.0
 height = 352.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
@@ -19,24 +21,26 @@ shader_parameter/draining_factor = null
 [node name="Enemy" type="Area2D"]
 collision_layer = 4
 script = ExtResource("1_capha")
-_deck = [ExtResource("2_cal4w"), ExtResource("3_v3qul")]
+_deck = [ExtResource("2_30nme"), ExtResource("2_30nme"), ExtResource("3_7ebsc")]
 _ID = 5
-_goldDrop = 5
-_maxHealth = 6
+_goldDrop = 15
+_percentChanceOfCardDrop = 40
+_cardDrops = Array[Resource]([ExtResource("4_6ag0n")])
+_maxHealth = 13
 _startingActionPoints = 2
 _startingMovementPoints = 0
 _startingArmor = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(15, -26)
 shape = SubResource("CapsuleShape2D_shunw")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(31, -35)
+position = Vector2(-1, -25)
 scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("4_72g7w")
 
 [node name="HealthBar" parent="." instance=ExtResource("4_40c5m")]
 material = SubResource("ShaderMaterial_do74u")
-position = Vector2(0, 147)
+position = Vector2(9, 174)

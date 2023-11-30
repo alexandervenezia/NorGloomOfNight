@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://cgtat65qxyutk"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_pgb03"]
-[ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="2_73lps"]
-[ext_resource type="Resource" uid="uid://d3467tmndqlkr" path="res://res/resources/cards/FullHouse.tres" id="3_x0c11"]
-[ext_resource type="Resource" uid="uid://mtor7au8b2cf" path="res://res/resources/cards/HolyWord+.tres" id="4_b106e"]
-[ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="5_vlpha"]
-[ext_resource type="SpriteFrames" uid="uid://cfe52by1r6o2t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Cerberus/CerberusCombatAnimation.tres" id="6_41nkd"]
+[ext_resource type="Resource" uid="uid://d3txmj2gwdgn2" path="res://res/resources/cards/Bite.tres" id="2_jj3bh"]
+[ext_resource type="Resource" uid="uid://bvy4sxss5ocsq" path="res://res/resources/cards/Torch.tres" id="3_8cunf"]
+[ext_resource type="Resource" uid="uid://wx4osec25bsp" path="res://res/resources/cards/Slash.tres" id="4_s21x0"]
+[ext_resource type="Resource" uid="uid://c86s5btoni4j8" path="res://res/resources/cards/KeenEye.tres" id="5_l1gsm"]
+[ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="6_oecpp"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="7_cko4m"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="8_y4q4u"]
 
@@ -16,37 +16,35 @@ shader_parameter/health_factor = 0.4
 shader_parameter/draining_factor = null
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
-radius = 225.0
-height = 604.0
+radius = 277.333
+height = 682.667
 
 [node name="Enemy" type="Area2D"]
+scale = Vector2(0.7, 0.7)
 collision_layer = 4
 script = ExtResource("1_pgb03")
-_deck = [ExtResource("2_73lps"), ExtResource("3_x0c11"), ExtResource("4_b106e")]
+_deck = [ExtResource("2_jj3bh"), ExtResource("2_jj3bh"), ExtResource("3_8cunf"), ExtResource("4_s21x0"), ExtResource("5_l1gsm")]
 _ID = 92
-_goldDrop = 25
+_permanentResistances = [0]
+_goldDrop = 60
 _percentChanceOfCardDrop = 100
-_cardDrops = Array[Resource]([ExtResource("5_vlpha")])
-_maxHealth = 25
-_startingActionPoints = 1
+_cardDrops = Array[Resource]([ExtResource("5_l1gsm")])
+_maxHealth = 40
 _startingMovementPoints = 0
-_defaultCritModifier = 1.5
-_startingArmor = 10
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(31, -35)
-scale = Vector2(0.75, 0.75)
-sprite_frames = ExtResource("6_41nkd")
-animation = &"attack"
+position = Vector2(-98.6667, -72.1429)
+scale = Vector2(1.25, 1.25)
+sprite_frames = ExtResource("6_oecpp")
 
 [node name="HealthBar" parent="." instance=ExtResource("7_cko4m")]
 z_index = 1
 material = SubResource("ShaderMaterial_do74u")
-position = Vector2(15, 266)
+position = Vector2(-0.666669, 302.857)
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(15, -26)
+position = Vector2(-14.6667, -32.8571)
 shape = SubResource("CapsuleShape2D_shunw")

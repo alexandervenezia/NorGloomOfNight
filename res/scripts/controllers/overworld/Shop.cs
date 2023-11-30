@@ -17,7 +17,8 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
-    private const float SCROLL_SPEED = 400f;
+    [Export] private bool _isInventory;
+    private const float SCROLL_SPEED = 800f;
     private const int MAX_PER_ROW = 4;
     private ColorRect _rect;
     private Node2D _cardNode;
@@ -64,10 +65,15 @@ public partial class Shop : Node2D
         _playerCoinsIcon = GetNode<Price>("PlayerCoins");
 
         _upgradePriceIcon.Visible = false;
-        _removePriceIcon.Visible = false;
-
+        _removePriceIcon.Visible = false;      
 
         _state = ShopState.PURCHASING;
+
+        if (_isInventory)
+        {
+            _state = ShopState.MODIFYING;     
+            UpdateSelection();       
+        }
     }
 
     private void OnModifyCardButtonPressed()
@@ -106,6 +112,8 @@ public partial class Shop : Node2D
 
         if (MasterScene.GetInstance().TotalCoins < GetUpgradeCost(_active.Data))
             return;
+
+        GD.Print("OnUpgradeButtonPressed called");
 
         MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
         MasterDeck.PlayerDeck.AddCard(_active.Data.Upgrade);
@@ -244,6 +252,11 @@ public partial class Shop : Node2D
             }
         }
 
+        if (_isInventory)
+        {
+            delta = 1f/Engine.PhysicsTicksPerSecond;
+        }
+
         float scrollDelta = 0;
         if (Input.IsActionPressed("ui_up_scroll"))
         {
@@ -280,6 +293,8 @@ public partial class Shop : Node2D
 
         _stock.Remove(_selectedCard.Data);
         CardBought?.Invoke(_selectedCard.Data);
+
+        GD.Print("BuyCard called");
 
         MasterDeck.PlayerDeck.AddCard(card);
         MasterScene.GetInstance().AddCoins(-card.Price);
@@ -340,7 +355,7 @@ public partial class Shop : Node2D
         foreach (CardData c in active)
         {                        
             x = (int)((0.5 + index%Math.Min(active.Count(), MAX_PER_ROW)) * (width / Math.Min(active.Count(), MAX_PER_ROW)));
-            y = 180 + (int)( (1 + index/MAX_PER_ROW) * (height / 5f) );    
+            y = 50 + (int)( (1 + index/MAX_PER_ROW) * (height / 2.2f) );    
 
             Card card = (Card)_cardResource.Instantiate();
             card.UpdateData(c);
@@ -351,8 +366,8 @@ public partial class Shop : Node2D
                 Price price = (Price)_coinResource.Instantiate();                
                 _priceNode.AddChild(price);
                 price.SetPrice(card.Data.Price);
-                price.Position = new Vector2(x, y + 75);
-                price.GlobalScale = Vector2.One * 0.5f;
+                price.Position = new Vector2(x, y + 35);
+                price.GlobalScale = Vector2.One * 0.3f;
             }
 
             _cardNode.AddChild(card);

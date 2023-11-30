@@ -8,17 +8,17 @@ public class EmptyQuest : IQuest
 
     public string GetFlavorText()
     {
-        throw new System.NotImplementedException();
+        return "";
     }
 
     public string GetName()
     {
-        throw new System.NotImplementedException();
+        return "Triumph";
     }
 
     public string GetNextStep()
     {
-        throw new System.NotImplementedException();
+        return "Your task is complete. Yet your work is never done.";
     }
 
     public bool IsFinished()

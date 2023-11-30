@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://xpju4ii8ew01"]
 
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_0lj1k"]
+[ext_resource type="Texture2D" uid="uid://bogdnlmg01ous" path="res://res/scenes/combat/subscenes/Card/images/artwork/tremors.png" id="1_nnsjj"]
 [ext_resource type="Resource" uid="uid://dxdrp1npxmk15" path="res://res/resources/cards/Tremors+.tres" id="2_u7yyo"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="3_fk821"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("3_fk821")
 _name = "Tremors"
 _description = ""
-_artwork = ExtResource("1_0lj1k")
+_artwork = ExtResource("1_nnsjj")
 _type = 2
 _rarity = 2
 _actionPointCost = 2
@@ -23,6 +23,6 @@ _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
-_price = 0
+_price = 19
 _upgrade = ExtResource("2_u7yyo")
 _unremovableByPlayer = false

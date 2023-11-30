@@ -29,6 +29,7 @@ public partial class HellLevel : Node2D, ILevel
 		GD.Print("Aggroed");
 		// Either begin combat immediately or after cutscene
 		// TODO: Begin combat here
+		MasterScene.GetInstance().SetCombatBackground(GetBackgroundID());
 		MasterScene master = MasterScene.GetInstance();
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);
@@ -62,6 +63,11 @@ public partial class HellLevel : Node2D, ILevel
 		GetNode<Elevator>("Elevator").SetLevelSelect(_player.GetNode<Control>("Camera2D/BackToPurgatory"));
 	}
 
+	protected virtual int GetBackgroundID()
+	{
+		return 1;
+	} 
+
 	public void Reactivate()
 	{
 		if (!MasterAudio.GetInstance().GetNoRestart())
@@ -76,7 +82,7 @@ public partial class HellLevel : Node2D, ILevel
 
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
-		MasterScene.GetInstance().SetCombatBackground(1);
+		
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			_enemyInCombat?.Enable();
@@ -88,6 +94,7 @@ public partial class HellLevel : Node2D, ILevel
 		else
 		{
 			_enemyInCombat?.Die();
+			_enemyInCombat = null;
 		}
 	}
 
@@ -96,7 +103,7 @@ public partial class HellLevel : Node2D, ILevel
 		GD.Print(dest);
 		MasterScene.GetInstance().SetPlayerHP(GetPlayer().CurrentHealth);
 		// MasterScene.GetInstance().CallDeferred("ActivatePreviousScene", true);
-		MasterScene.GetInstance().TotalCoins = _player.Coins;
+		MasterScene.GetInstance().TotalCoins = _player.Coins;		
 		Node destination = MasterScene.GetInstance().ActivateScene(dest, true, false);
 
 		if (destination is Purgatory)

@@ -16,13 +16,22 @@ script = ExtResource("1_djcxm")
 _aggroRadius = 3000.0
 _deAggroRange = 6000.0
 _patrolRadius = 250.0
+_aggroSpeedBuff = 2.0
 _name = "Devin"
 _id = 2
-_speed = 500.0
-_acceleration = 100.0
+_speed = 600.0
+_acceleration = 300.0
 _firstSlotSpawn = {
 2: 100
 }
+_secondSlotSpawn = {
+1: 40,
+2: 40
+}
+_thirdSlotSpawn = {
+3: 40
+}
+_fourthSlotSpawn = {}
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-2, 2)

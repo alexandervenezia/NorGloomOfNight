@@ -23,6 +23,6 @@ _buffDuration = [8]
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
-_price = 0
+_price = 20
 _upgrade = ExtResource("2_d21gy")
 _unremovableByPlayer = false

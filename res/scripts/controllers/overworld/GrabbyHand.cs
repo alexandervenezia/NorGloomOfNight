@@ -12,16 +12,18 @@ public partial class GrabbyHand : Area2D
     [Export] private int _damage = 5;
     private bool _abortAttack;
     private Player _player;
-    private Sprite2D _grabber;
+    private AnimatedSprite2D _grabber;
     private CollisionShape2D _collider;
     
     private Vector2 _grabberSpawn;
+
+    private bool _runningAsync;
 
     public override void _Ready()
     {
         AreaEntered += OnAreaEntered;
         AreaExited += OnAreaExited;
-        _grabber = GetNode<Sprite2D>("Sprite2D");
+        _grabber = GetNode<AnimatedSprite2D>("Sprite2D");
         _grabberSpawn = _grabber.GlobalPosition;
         _collider = GetNode<CollisionShape2D>("CollisionShape2D");
         GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
@@ -32,9 +34,9 @@ public partial class GrabbyHand : Area2D
     {
         
         GD.Print("Entered");
-        if (area.GetParent() is Player)
+        if (area.GetParent() is Player && !_runningAsync)
         {
-            _abortAttack = false;
+            //_abortAttack = false;
             _player = (Player)area.GetParent();
             GD.Print("Grabby time");
             GD.Print(_player.Velocity.X);
@@ -52,14 +54,11 @@ public partial class GrabbyHand : Area2D
             GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
             StartAttackProcess();
         }
+        else if (area.GetParent() is Player)
+        {
+            _abortAttack = false;
+        }
     }
-
-    /*
-    public override void _Process(double delta)
-    {
-        Visible = true;
-        _grabber.GlobalPosition = _grabber.GlobalPosition = new Vector2(_grabberSpawn.X+_collider.Shape.GetRect().Abs().Size[0]/4f, _grabber.GlobalPosition.Y);
-    }*/
 
     private void OnAreaExited(Area2D area)
     {
@@ -72,17 +71,21 @@ public partial class GrabbyHand : Area2D
 
     private async void StartAttackProcess()
     {
-        Visible = true;
+        _runningAsync = true;
+        _grabber.Play("default");
+        Visible = true;        
         await Task.Delay(_warningTimeMS);
 
+        /*
         if (_abortAttack)
         {
             GD.Print("Aborting attack");
             Visible = false;
             _grabber.GlobalPosition = _grabberSpawn;
             _abortAttack = false;
+            _runningAsync = false;
             return;
-        }
+        }*/
 
         if (_grabber.GlobalPosition.DistanceTo(_player.GlobalPosition) < _attackRange)
         {
@@ -92,18 +95,20 @@ public partial class GrabbyHand : Area2D
 
         GD.Print("Grabby attack range: ", _grabber.GlobalPosition.DistanceTo(_player.GlobalPosition));
 
+        _grabber.Play("closed");
+        await Task.Delay(500);
+
         Visible = false;
         _grabber.GlobalPosition = _grabberSpawn;
         GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
 
-        await Task.Delay(1500);
+        await Task.Delay(1000);
         
         if (_abortAttack)
         {
             GD.Print("Aborted re-attack");
-            Visible = false;
-            _grabber.GlobalPosition = _grabberSpawn;
             _abortAttack = false;
+            _runningAsync = false;
             return;
         }        
 
@@ -118,6 +123,7 @@ public partial class GrabbyHand : Area2D
 
         GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
 
+        _runningAsync = false;
         if (!_abortAttack)
             StartAttackProcess();
     }

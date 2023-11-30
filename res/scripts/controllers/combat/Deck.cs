@@ -33,6 +33,7 @@ public class Deck
 
     public void AddCard(CardData card)
     {
+        GD.Print("Card added! " + card);
         if (_cards.ContainsKey(card))
             _cards[card]++;
         else

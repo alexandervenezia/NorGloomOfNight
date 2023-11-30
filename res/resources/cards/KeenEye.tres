@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://c86s5btoni4j8"]
 
-[ext_resource type="Texture2D" uid="uid://dy8xeiqxwx2xp" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card2.png" id="1_n3b6t"]
+[ext_resource type="Texture2D" uid="uid://bsl1x2srv5eb1" path="res://res/scenes/combat/subscenes/Card/images/artwork/eagle_eye.png" id="1_64l26"]
 [ext_resource type="Resource" uid="uid://dyvfvvr4coiru" path="res://res/resources/cards/KeenEye+.tres" id="2_6lege"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="3_clpvg"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("3_clpvg")
 _name = "Keen Eye"
 _description = ""
-_artwork = ExtResource("1_n3b6t")
+_artwork = ExtResource("1_64l26")
 _type = 2
 _rarity = 2
 _actionPointCost = 1

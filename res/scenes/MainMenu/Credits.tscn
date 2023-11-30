@@ -1,11 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6thwoiv7wpds"]
+[gd_scene load_steps=29 format=3 uid="uid://c6thwoiv7wpds"]
 
-[ext_resource type="Texture2D" uid="uid://cl5g1vaq6dkm3" path="res://res/scenes/MainMenu/assets/MenuBackground.png" id="1_5a61t"]
+[ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/Credits.cs" id="1_dt5wu"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="2_wo2cs"]
 [ext_resource type="Shader" path="res://res/scenes/MainMenu/Credits.gdshader" id="3_bdaw0"]
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="3_oxvy7"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="4_j0bgj"]
+[ext_resource type="Texture2D" uid="uid://b5hkvlaw06ph8" path="res://res/scenes/MainMenu/assets/NOR GLOOM OF NIGHT title.png" id="5_4ycxu"]
+[ext_resource type="SpriteFrames" uid="uid://cpobpuyh1fysh" path="res://res/scenes/overworld/hell/pride/QueenPride/PrideFrames.tres" id="5_gmv38"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="5_vw65y"]
+[ext_resource type="SpriteFrames" uid="uid://b36ublg73homd" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/PokerFrames.tres" id="6_fveo1"]
+[ext_resource type="Theme" uid="uid://djnljen80b82f" path="res://assets/fonts/card_theme.tres" id="6_pdlbh"]
+[ext_resource type="SpriteFrames" uid="uid://c8jvh06yi0frh" path="res://res/scenes/overworld/hell/pride/Cerberus/CerberusFrames.tres" id="7_djhg3"]
+[ext_resource type="Theme" uid="uid://dfieef5xnsvti" path="res://assets/fonts/IrishGrover/IrishGrover.tres" id="7_pqx5m"]
+[ext_resource type="SpriteFrames" uid="uid://dxxh86rsob4o1" path="res://res/scenes/overworld/hell/pride/Devin/DevinFrames.tres" id="7_qkgon"]
+[ext_resource type="SpriteFrames" uid="uid://ctvchwiw4nfd5" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceOverworldFrames.tres" id="8_3lkyg"]
+[ext_resource type="SpriteFrames" uid="uid://d1qxf1j13278r" path="res://res/scenes/overworld/hell/pride/Kerog/KerogOverworldFrames.tres" id="9_fs6dy"]
+[ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="9_xlli2"]
+[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/Eyeball Guy.png" id="10_4b8v1"]
+[ext_resource type="SpriteFrames" uid="uid://deiun403jddj3" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyOverworldFrames.tres" id="11_a8cc3"]
+[ext_resource type="Texture2D" uid="uid://crm20xqyp1pyu" path="res://res/scenes/overworld/management/Slug_Girl.png" id="11_y52ho"]
+[ext_resource type="SpriteFrames" uid="uid://20u3u0j7h4xj" path="res://res/scenes/overworld/hell/pride/Grabby/GrabbyFrames.tres" id="13_hotx8"]
+[ext_resource type="SpriteFrames" uid="uid://ba64747tac201" path="res://res/scenes/overworld/hell/pride/Sid/SidFrames.tres" id="15_l72n1"]
+[ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="19_wxvxc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqkqw"]
 shader = ExtResource("3_bdaw0")
@@ -42,42 +58,466 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udywp"]
 
-[node name="MainMenu" type="Node2D"]
-
-[node name="MenuBackground" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_5a61t")
-metadata/_edit_lock_ = true
-
-[node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="."]
-position = Vector2(1813, 958)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_wo2cs")
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_dt5wu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_jqkqw")
-offset_left = -52.0
-offset_top = 5.0
-offset_right = 1980.0
-offset_bottom = 18005.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_top = -550.0
+offset_right = 960.0
+offset_bottom = 12450.0
+grow_horizontal = 2
 mouse_filter = 1
 color = Color(0.137255, 0.137255, 0.137255, 1)
 
-[node name="Back" type="Button" parent="ColorRect"]
-z_index = 100
-material = SubResource("ShaderMaterial_v4ocg")
-custom_minimum_size = Vector2(500, 100)
-layout_mode = 1
+[node name="TextOffset" type="Marker2D" parent="ColorRect"]
+position = Vector2(0, 1000)
+
+[node name="Header" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 1818.0
+offset_right = 1920.0
+offset_bottom = 1914.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Project Lead"
+
+[node name="Content" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 1893.0
+offset_right = 1920.0
+offset_bottom = 1989.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Perplexer"
+
+[node name="Content2" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 2193.0
+offset_right = 1920.0
+offset_bottom = 2289.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Blunderguy"
+
+[node name="Content3" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 2493.0
+offset_right = 1920.0
+offset_bottom = 2589.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Perplexer"
+
+[node name="Content4" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 2793.0
+offset_right = 1920.0
+offset_bottom = 2889.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Mskas"
+
+[node name="Content5" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3093.0
+offset_right = 1920.0
+offset_bottom = 3189.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Sandra"
+
+[node name="Content6" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3393.0
+offset_right = 1920.0
+offset_bottom = 3521.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Spineless
+Mskas"
+
+[node name="Content7" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3693.0
+offset_right = 1920.0
+offset_bottom = 3893.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Mskas
+Spineless
+Sandra"
+
+[node name="Content8" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3993.0
+offset_right = 1920.0
+offset_bottom = 4146.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Mskas
+Spineless"
+
+[node name="Content9" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 4293.0
+offset_right = 1920.0
+offset_bottom = 4389.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Mskas"
+
+[node name="Content10" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 4593.0
+offset_right = 1920.0
+offset_bottom = 4689.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Timu"
+
+[node name="Content11" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 4893.0
+offset_right = 1920.0
+offset_bottom = 4989.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Arru"
+
+[node name="Content12" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 5193.0
+offset_right = 1920.0
+offset_bottom = 5289.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Blunderguy"
+
+[node name="Content13" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 5493.0
+offset_right = 1920.0
+offset_bottom = 5604.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Blunderguy
+Sandra"
+
+[node name="Content14" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 5793.0
+offset_right = 1920.0
+offset_bottom = 5889.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Blunderguy"
+
+[node name="Content15" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 6093.0
+offset_right = 1920.0
+offset_bottom = 6286.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Perplexer
+Sense
+Space Nerd"
+
+[node name="Content16" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 6393.0
+offset_right = 1920.0
+offset_bottom = 6489.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Spencer"
+
+[node name="Content17" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 6993.0
+offset_right = 1920.0
+offset_bottom = 7089.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Github Game Off 2023"
+
+[node name="Content18" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 7793.0
+offset_right = 1920.0
+offset_bottom = 7889.0
+theme = ExtResource("5_vw65y")
+bbcode_enabled = true
+text = "[font_size=40][center][color=#AAA]Lost Souls"
+
+[node name="Header2" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 2118.0
+offset_right = 1920.0
+offset_bottom = 2214.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Programming Lead"
+
+[node name="Header3" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 2418.0
+offset_right = 1920.0
+offset_bottom = 2514.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Gameplay & Level Design"
+
+[node name="Header4" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 2718.0
+offset_right = 1920.0
+offset_bottom = 2814.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Art Lead"
+
+[node name="Header5" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3018.0
+offset_right = 1920.0
+offset_bottom = 3114.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Environmental Artist"
+
+[node name="Header6" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3318.0
+offset_right = 1920.0
+offset_bottom = 3414.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Character Design"
+
+[node name="Header7" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3618.0
+offset_right = 1920.0
+offset_bottom = 3714.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Concept Art"
+
+[node name="Header8" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 3918.0
+offset_right = 1920.0
+offset_bottom = 4014.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]UI"
+
+[node name="Header9" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 4218.0
+offset_right = 1920.0
+offset_bottom = 4314.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Animation"
+
+[node name="Header10" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 4518.0
+offset_right = 1920.0
+offset_bottom = 4614.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Music & Sound Design"
+
+[node name="Header11" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 4818.0
+offset_right = 1920.0
+offset_bottom = 4914.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Writing Lead"
+
+[node name="Header12" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 5118.0
+offset_right = 1920.0
+offset_bottom = 5214.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Writer"
+
+[node name="Header13" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 5418.0
+offset_right = 1920.0
+offset_bottom = 5514.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Additional Art & UI"
+
+[node name="Header14" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 5718.0
+offset_right = 1920.0
+offset_bottom = 5814.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Card Art"
+
+[node name="Header15" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 6018.0
+offset_right = 1920.0
+offset_bottom = 6114.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Additional Programming & Scripting"
+
+[node name="Header16" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 6318.0
+offset_right = 1920.0
+offset_bottom = 6414.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Additional Writing"
+
+[node name="Header17" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 6918.0
+offset_right = 1920.0
+offset_bottom = 7014.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Created For"
+
+[node name="Header18" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 7718.0
+offset_right = 1920.0
+offset_bottom = 7832.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]A Game By"
+
+[node name="Header19" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 8718.0
+offset_right = 1920.0
+offset_bottom = 8832.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Thanks for playing!"
+
+[node name="NorGloomOfNightTitle" type="Sprite2D" parent="ColorRect/TextOffset"]
+position = Vector2(960, 1536)
+texture = ExtResource("5_4ycxu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 343.0
+offset_right = 1920.0
+offset_bottom = 920.0
+theme = ExtResource("6_pdlbh")
+bbcode_enabled = true
+text = "[color=gold][font_size=55][center]Neither snow nor rain nor heat nor gloom of night stays these couriers
+from the swift completion of their appointed rounds.
+
+ - Herodotus"
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/TextOffset"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -253.0
-offset_top = 368.0
-offset_right = 247.0
-offset_bottom = 468.0
+offset_left = 573.0
+offset_top = 282.0
+offset_right = 1347.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.701961, 0.701961, 0.701961, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/TextOffset"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 573.0
+offset_top = 687.0
+offset_right = 1347.0
+offset_bottom = 691.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.701961, 0.701961, 0.701961, 1)
+
+[node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="ColorRect/TextOffset"]
+position = Vector2(960, 8165)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_wo2cs")
+
+[node name="CharacterOffset" type="Marker2D" parent="ColorRect"]
+
+[node name="Right" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(1582, 2850)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("5_gmv38")
+autoplay = "default"
+
+[node name="Left" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(338, 3319)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("6_fveo1")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Left2" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(338, 4319)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("7_qkgon")
+autoplay = "default"
+
+[node name="Left3" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(338, 5319)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("8_3lkyg")
+autoplay = "default"
+
+[node name="Left4" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(338, 6319)
+sprite_frames = ExtResource("9_xlli2")
+autoplay = "default"
+
+[node name="Left5" type="Sprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(338, 7319)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_4b8v1")
+
+[node name="Left6" type="Sprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(338, 8319)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_y52ho")
+
+[node name="Right2" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(1582, 3850)
+sprite_frames = ExtResource("7_djhg3")
+autoplay = "default"
+
+[node name="Right3" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(1582, 4850)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("9_fs6dy")
+autoplay = "default"
+
+[node name="Right4" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(1582, 5850)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("11_a8cc3")
+autoplay = "default"
+
+[node name="Right5" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(1582, 6850)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("13_hotx8")
+animation = &"showcase"
+autoplay = "showcase"
+
+[node name="Right6" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(1582, 7850)
+scale = Vector2(0.75, 0.75)
+sprite_frames = ExtResource("15_l72n1")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/CharacterOffset"]
+position = Vector2(960, 1975)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_wxvxc")
+
+[node name="Back" type="Button" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_v4ocg")
+custom_minimum_size = Vector2(250, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 455.0
+offset_right = 125.0
+offset_bottom = 530.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -89,7 +529,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
 script = ExtResource("4_j0bgj")
 _destinationScene = "uid://bw7twakv1byy7"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/Back"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Back"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,9 +537,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -238.0
-offset_top = -33.0
+offset_top = -29.0
 offset_right = 238.0
-offset_bottom = 33.0
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -107,3 +547,6 @@ theme = ExtResource("5_vw65y")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center][font_size=45]Back"
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
