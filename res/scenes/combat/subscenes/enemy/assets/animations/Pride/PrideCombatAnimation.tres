@@ -1,23 +1,307 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://c1oq7s843f4qi"]
+[gd_resource type="SpriteFrames" load_steps=73 format=3 uid="uid://c1oq7s843f4qi"]
 
-[ext_resource type="Texture2D" uid="uid://4efnckb30mnc" path="res://res/scenes/combat/subscenes/enemy/assets/Lucille_enemy.png" id="1_ohut5"]
+[ext_resource type="Texture2D" uid="uid://oo51l2xqydi2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0000.png" id="1_8l212"]
+[ext_resource type="Texture2D" uid="uid://c8x0b4ol46pmq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0000.png" id="1_httrc"]
+[ext_resource type="Texture2D" uid="uid://c5hru2a8qdayq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0001.png" id="2_8j3l0"]
+[ext_resource type="Texture2D" uid="uid://plv8e2y2q15s" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0001.png" id="2_68ocg"]
+[ext_resource type="Texture2D" uid="uid://2j3xqqe7mk7a" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0002.png" id="3_orewu"]
+[ext_resource type="Texture2D" uid="uid://dmtg8sbjopmcq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0002.png" id="3_ulajw"]
+[ext_resource type="Texture2D" uid="uid://dbr1fcqaj6mlx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0003.png" id="4_g62bj"]
+[ext_resource type="Texture2D" uid="uid://du4i3qdjl6qw7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0003.png" id="4_pd3o2"]
+[ext_resource type="Texture2D" uid="uid://c6oh5u5ae6xtx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0004.png" id="5_ig7o7"]
+[ext_resource type="Texture2D" uid="uid://b2c00j75jmfba" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0004.png" id="5_pa8iw"]
+[ext_resource type="Texture2D" uid="uid://ckfhywgnfgkm1" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0005.png" id="6_pq7ir"]
+[ext_resource type="Texture2D" uid="uid://c1b12md0smdn3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0005.png" id="6_uuw2a"]
+[ext_resource type="Texture2D" uid="uid://bparcyfe52hk2" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0006.png" id="7_06db2"]
+[ext_resource type="Texture2D" uid="uid://bt0eb7bhmik3i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0006.png" id="7_skpvj"]
+[ext_resource type="Texture2D" uid="uid://dpleq2yrnqvqh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0007.png" id="8_1b01i"]
+[ext_resource type="Texture2D" uid="uid://cf0anijr5lfva" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0007.png" id="8_inm0w"]
+[ext_resource type="Texture2D" uid="uid://khgk5eln7cqi" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0008.png" id="9_potjb"]
+[ext_resource type="Texture2D" uid="uid://rt4k5pf54ib" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0008.png" id="9_xkrr4"]
+[ext_resource type="Texture2D" uid="uid://blig0gu0glkht" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0009.png" id="10_tm7q3"]
+[ext_resource type="Texture2D" uid="uid://ckjufcnlyn0hu" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0009.png" id="10_vrkgl"]
+[ext_resource type="Texture2D" uid="uid://c36kw1uobmuii" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0010.png" id="11_by1l2"]
+[ext_resource type="Texture2D" uid="uid://1sd74l8irj8g" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0010.png" id="11_gvrtq"]
+[ext_resource type="Texture2D" uid="uid://d3a1ystfkhcq8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0011.png" id="12_hoxsf"]
+[ext_resource type="Texture2D" uid="uid://dm860imfgdkf6" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0011.png" id="12_nom21"]
+[ext_resource type="Texture2D" uid="uid://165vbgd1g1ae" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0012.png" id="13_xedch"]
+[ext_resource type="Texture2D" uid="uid://ctvxccslnwo5m" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0012.png" id="13_y8ta0"]
+[ext_resource type="Texture2D" uid="uid://d0kebkla8bygm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0013.png" id="14_bxj3l"]
+[ext_resource type="Texture2D" uid="uid://2feh83aty5bh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0013.png" id="14_tbufe"]
+[ext_resource type="Texture2D" uid="uid://qbwm05uf6fd8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0014.png" id="15_lpaum"]
+[ext_resource type="Texture2D" uid="uid://d1nw0vjtmtlj7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0014.png" id="15_tiv2e"]
+[ext_resource type="Texture2D" uid="uid://b02vidrnsy7cd" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0015.png" id="16_5rlcp"]
+[ext_resource type="Texture2D" uid="uid://nsf5hmix5gpb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0015.png" id="16_l0jxb"]
+[ext_resource type="Texture2D" uid="uid://dmub5yahpthdc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0016.png" id="17_6oklr"]
+[ext_resource type="Texture2D" uid="uid://c7rjm05xu47ya" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0016.png" id="17_gpqkx"]
+[ext_resource type="Texture2D" uid="uid://dj86naqqvqk3u" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0017.png" id="18_gf7mc"]
+[ext_resource type="Texture2D" uid="uid://u5n5d23am347" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0017.png" id="18_k5ooo"]
+[ext_resource type="Texture2D" uid="uid://fwwiij13wn85" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0018.png" id="19_a8cy8"]
+[ext_resource type="Texture2D" uid="uid://ctcl3ewj2snqd" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0018.png" id="19_rst8c"]
+[ext_resource type="Texture2D" uid="uid://becoi1dn1uvbe" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0019.png" id="20_b0lsj"]
+[ext_resource type="Texture2D" uid="uid://fqcl5dcs1hon" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0019.png" id="20_vcqkr"]
+[ext_resource type="Texture2D" uid="uid://cje1b0i33jv6i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0020.png" id="21_e31pi"]
+[ext_resource type="Texture2D" uid="uid://cwiiu5s61n033" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0020.png" id="21_gjgv8"]
+[ext_resource type="Texture2D" uid="uid://chh5pefs2o2js" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0021.png" id="22_1vglm"]
+[ext_resource type="Texture2D" uid="uid://c31hbcbpjao0t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0021.png" id="22_tewe4"]
+[ext_resource type="Texture2D" uid="uid://ckumxd03m620l" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0022.png" id="23_05hvq"]
+[ext_resource type="Texture2D" uid="uid://borwh61xlm05r" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0022.png" id="23_laaku"]
+[ext_resource type="Texture2D" uid="uid://ctndvj8h75dlq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0023.png" id="24_if1a7"]
+[ext_resource type="Texture2D" uid="uid://depphckv1f25g" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0023.png" id="24_ygen1"]
+[ext_resource type="Texture2D" uid="uid://dg4vlyqy0y3lq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0000.png" id="73_f6p67"]
+[ext_resource type="Texture2D" uid="uid://dbepcjyo5shtm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0001.png" id="74_opaqa"]
+[ext_resource type="Texture2D" uid="uid://fdp1svq71f6y" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0002.png" id="75_yoyl7"]
+[ext_resource type="Texture2D" uid="uid://qgfldf4g0g25" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0003.png" id="76_lth01"]
+[ext_resource type="Texture2D" uid="uid://cpc8mlliynh44" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0004.png" id="77_o5uxi"]
+[ext_resource type="Texture2D" uid="uid://pe6c0i2jd8bk" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0005.png" id="78_hn17m"]
+[ext_resource type="Texture2D" uid="uid://561ytdwaqsqm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0006.png" id="79_6ga5a"]
+[ext_resource type="Texture2D" uid="uid://cwc5xqq0phms0" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0007.png" id="80_sfslt"]
+[ext_resource type="Texture2D" uid="uid://b0qrl43pvoxyl" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0008.png" id="81_pww47"]
+[ext_resource type="Texture2D" uid="uid://clkf0qb7dr8im" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0009.png" id="82_1fv1d"]
+[ext_resource type="Texture2D" uid="uid://t6enp5fblhke" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0010.png" id="83_12w4p"]
+[ext_resource type="Texture2D" uid="uid://datpetj43khua" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0011.png" id="84_0077u"]
+[ext_resource type="Texture2D" uid="uid://rb6prelkt6ag" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0012.png" id="85_ffm6i"]
+[ext_resource type="Texture2D" uid="uid://dxcqerufcbvr8" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0013.png" id="86_fjnwf"]
+[ext_resource type="Texture2D" uid="uid://uq3scqcma474" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0014.png" id="87_mam1k"]
+[ext_resource type="Texture2D" uid="uid://bbq6n8h0neoat" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0015.png" id="88_4cs6b"]
+[ext_resource type="Texture2D" uid="uid://dluosypec8rkp" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0016.png" id="89_e2kwu"]
+[ext_resource type="Texture2D" uid="uid://bndrtj68kc5fm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0017.png" id="90_ei0fa"]
+[ext_resource type="Texture2D" uid="uid://10m8gg3ds4yq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0018.png" id="91_1ayur"]
+[ext_resource type="Texture2D" uid="uid://d4jetry1ux30q" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0019.png" id="92_wm775"]
+[ext_resource type="Texture2D" uid="uid://bhnjs8o8hsxlt" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0020.png" id="93_tr1c0"]
+[ext_resource type="Texture2D" uid="uid://d2uph6r7eynkj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0021.png" id="94_0p5vn"]
+[ext_resource type="Texture2D" uid="uid://b47geufepqdgj" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0022.png" id="95_70eps"]
+[ext_resource type="Texture2D" uid="uid://bvvneydp104p3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Damaged/Pride_damaged_0023.png" id="96_4rmkl"]
 
 [resource]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8l212")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_68ocg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_orewu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g62bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pa8iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pq7ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_06db2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_inm0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xkrr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vrkgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_by1l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hoxsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_y8ta0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tbufe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lpaum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5rlcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gpqkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gf7mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_a8cy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vcqkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gjgv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1vglm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_laaku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_if1a7")
+}],
 "loop": false,
 "name": &"attack",
 "speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ohut5")
+"texture": ExtResource("1_httrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8j3l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ulajw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pd3o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ig7o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uuw2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_skpvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1b01i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_potjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tm7q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gvrtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nom21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xedch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bxj3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tiv2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_l0jxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6oklr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_k5ooo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rst8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_b0lsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e31pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tewe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_05hvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ygen1")
 }],
 "loop": true,
 "name": &"default",
 "speed": 24.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_f6p67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_opaqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_yoyl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_lth01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_o5uxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_hn17m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_6ga5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_sfslt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_pww47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_1fv1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_12w4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_0077u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_ffm6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_fjnwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_mam1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_4cs6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_e2kwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_ei0fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_1ayur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_wm775")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_tr1c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_0p5vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_70eps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_4rmkl")
+}],
 "loop": false,
 "name": &"hurt",
 "speed": 24.0

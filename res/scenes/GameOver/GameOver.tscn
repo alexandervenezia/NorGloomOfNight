@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjtyftqstb1xo"]
+[gd_scene load_steps=11 format=3 uid="uid://cjtyftqstb1xo"]
 
 [ext_resource type="Texture2D" uid="uid://b3ht66g2arc3k" path="res://res/scenes/GameOver/Game Over.png" id="1_oqdca"]
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="2_rosf0"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="3_c563f"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="4_a0x1a"]
+[ext_resource type="Texture2D" uid="uid://16fipipyk3tp" path="res://res/scenes/GameOver/ded.png" id="5_hqjqv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_35mf3"]
 
@@ -120,3 +121,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[center][font_size=45]Main Menu"
 metadata/_edit_lock_ = true
+
+[node name="Ded" type="Sprite2D" parent="."]
+position = Vector2(960, 505)
+texture = ExtResource("5_hqjqv")
