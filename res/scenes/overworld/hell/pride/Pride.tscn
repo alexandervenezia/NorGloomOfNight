@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://xv1p2xj2b0ae" path="res://res/scenes/overworld/hell/pride/pillar5.PNG" id="25_5wymd"]
 [ext_resource type="PackedScene" uid="uid://bvsg6mu2aw32q" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyWorld.tscn" id="26_dpclw"]
 [ext_resource type="PackedScene" uid="uid://ccpj5bs32vahr" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceWorld.tscn" id="27_5rng0"]
-[ext_resource type="SpriteFrames" uid="uid://20u3u0j7h4xj" path="res://res/scenes/overworld/hell/pride/Grabby/GrabbyFrames.tres" id="27_efq1q"]
+[ext_resource type="SpriteFrames" path="res://res/scenes/overworld/hell/pride/Grabby/GrabbyFrames.tres" id="27_efq1q"]
 [ext_resource type="PackedScene" uid="uid://lf5jtfh5yjge" path="res://res/scenes/overworld/hell/pride/Sid/SidWorld.tscn" id="27_g4pnk"]
 [ext_resource type="PackedScene" uid="uid://cntf8nwl10u0m" path="res://res/scenes/overworld/hell/pride/Cerberus/Cerberus.tscn" id="28_atlgc"]
 [ext_resource type="PackedScene" uid="uid://bry8sdy0obqtp" path="res://res/scenes/overworld/hell/pride/QueenPride/QueenPride.tscn" id="29_2pin4"]
@@ -122,7 +122,7 @@ size = Vector2(10082.5, 859.125)
 size = Vector2(6051.26, 859.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_536pd"]
-size = Vector2(5187.26, 803.563)
+size = Vector2(5187.26, 849.781)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwo2l"]
 size = Vector2(842, 849.563)
@@ -613,7 +613,7 @@ position = Vector2(-23415, 4653.22)
 shape = SubResource("RectangleShape2D_fwo2l")
 
 [node name="CollisionShape2D74" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-5748.37, 6654)
+position = Vector2(-5760, 6647.11)
 shape = SubResource("RectangleShape2D_536pd")
 
 [node name="CollisionShape2D63" type="CollisionShape2D" parent="Walls"]
