@@ -260,7 +260,7 @@ public partial class CombatMain : Node2D
 		Price price = (Price)_coinValueResource.Instantiate();
 		_rewardsNode.AddChild(price);
 		price.SetPrice(gold_ref);
-		price.Position = new Vector2(0, 125);
+		price.Position = new Vector2(0, 100);
 
 		if (cardOptions.Count == 0)
 		{

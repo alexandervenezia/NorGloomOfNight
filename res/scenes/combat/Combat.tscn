@@ -223,6 +223,7 @@ volume_db = 1.0
 bus = &"SFX"
 
 [node name="Rewards" type="Node2D" parent="."]
+position = Vector2(0, -1)
 
 [node name="QuestGradient" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.52549)
