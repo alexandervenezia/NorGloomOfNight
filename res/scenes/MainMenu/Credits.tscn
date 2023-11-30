@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6thwoiv7wpds"]
+[gd_scene load_steps=29 format=3 uid="uid://c6thwoiv7wpds"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/Credits.cs" id="1_dt5wu"]
+[ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="2_wo2cs"]
 [ext_resource type="Shader" path="res://res/scenes/MainMenu/Credits.gdshader" id="3_bdaw0"]
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="3_oxvy7"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="4_j0bgj"]
@@ -421,6 +422,11 @@ offset_bottom = 691.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.701961, 0.701961, 0.701961, 1)
+
+[node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="ColorRect/TextOffset"]
+position = Vector2(960, 8165)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_wo2cs")
 
 [node name="CharacterOffset" type="Marker2D" parent="ColorRect"]
 
