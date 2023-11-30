@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=46 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://bbwgebb7735on" path="res://res/scenes/overworld/NPC.tscn" id="28_0cjw6"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
 [ext_resource type="Resource" uid="uid://3qmogeo45ns3" path="res://res/resources/cutscenes/KerPoCutsceneEnd.tres" id="30_up1a5"]
+[ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="33_2l0j1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -591,6 +592,11 @@ position = Vector2(27032, -4252)
 scale = Vector2(2.5, 2)
 Cutscene = ExtResource("30_up1a5")
 FLAG_ACQUIRED_CROWN = true
+
+[node name="FloatingTextFactory" type="Node2D" parent="."]
+script = ExtResource("33_2l0j1")
+_theme = ExtResource("18_1vjvr")
+_fontSize = 50
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
