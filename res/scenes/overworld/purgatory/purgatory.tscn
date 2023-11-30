@@ -40,11 +40,11 @@
 [ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="31_1ucbg"]
 [ext_resource type="Resource" uid="uid://dgckoph83bovr" path="res://res/resources/cards/Sparks.tres" id="32_4uqdy"]
 [ext_resource type="Resource" uid="uid://cho1urgipfpeg" path="res://res/resources/cards/KillShot.tres" id="33_650he"]
-[ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://res/scenes/combat/subscenes/enemy/assets/Creep.png" id="33_gxyyq"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="34_5ep4q"]
 [ext_resource type="Resource" uid="uid://doee82i4iixls" path="res://res/resources/cards/GodsLight.tres" id="34_5xlx7"]
 [ext_resource type="Resource" uid="uid://c3x74yanv8dns" path="res://res/resources/cards/GodsUniform.tres" id="35_d0osv"]
 [ext_resource type="Resource" uid="uid://r2yjeslnymxq" path="res://res/resources/cards/DistractingShot.tres" id="36_kbv1o"]
+[ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://assets/npcs/Creep.png" id="41_rsf3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -679,13 +679,13 @@ _dialogue = Array[String](["Don't get comfortable."])
 [node name="Creep_NPC" type="Area2D" parent="."]
 position = Vector2(12166, -9670)
 script = ExtResource("29_rtxg4")
-_dialogue = Array[String](["[i] heavy breathing..."])
+_dialogue = Array[String](["*heavy breathing*d"])
 _delayMS = 2000
 
 [node name="Creep" type="Sprite2D" parent="Creep_NPC"]
 position = Vector2(-16, 0)
 scale = Vector2(0.527344, 0.527344)
-texture = ExtResource("33_gxyyq")
+texture = ExtResource("41_rsf3d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Creep_NPC"]
 position = Vector2(-20, 0)
