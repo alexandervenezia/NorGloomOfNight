@@ -1,8 +1,11 @@
+namespace Overworld;
+
 using Godot;
 using System;
 
 public partial class Journal : Node2D
 {
+	[Export] private string _inventoryUID;
 	private ChangeSceneButton _returnButton;
 	private JournalLine _openDeck;
 	private JournalLine _openSettings;
@@ -47,6 +50,7 @@ public partial class Journal : Node2D
 	private void OpenDeck()
 	{
 		GD.Print("Deck opened");
+		Shop shop = (Shop)MasterScene.GetInstance().GetActiveScene<ILevel>().UseElevator(_inventoryUID);
 	}
 
 	private void OpenSettings()

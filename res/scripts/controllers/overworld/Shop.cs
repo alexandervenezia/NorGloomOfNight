@@ -17,6 +17,7 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
+    [Export] private bool _isInventory;
     private const float SCROLL_SPEED = 400f;
     private const int MAX_PER_ROW = 4;
     private ColorRect _rect;
@@ -64,10 +65,15 @@ public partial class Shop : Node2D
         _playerCoinsIcon = GetNode<Price>("PlayerCoins");
 
         _upgradePriceIcon.Visible = false;
-        _removePriceIcon.Visible = false;
-
+        _removePriceIcon.Visible = false;      
 
         _state = ShopState.PURCHASING;
+
+        if (_isInventory)
+        {
+            _state = ShopState.MODIFYING;     
+            UpdateSelection();       
+        }
     }
 
     private void OnModifyCardButtonPressed()
@@ -242,6 +248,11 @@ public partial class Shop : Node2D
                 else
                     _active = null;
             }
+        }
+
+        if (_isInventory)
+        {
+            delta = 1f/Engine.PhysicsTicksPerSecond;
         }
 
         float scrollDelta = 0;
