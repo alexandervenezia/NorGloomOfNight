@@ -4,55 +4,55 @@
 
 Demo proof of concept prototype made during the GAME OFF: 2023 game jam, by team lost souls.
 
-Project Lead
+Project Lead - 
 Perplexer
 
-Programming Lead
+Programming Lead - 
 Blunderguy
 
-Gameplay & Level Design
+Gameplay & Level Design - 
 Perplexer
 
-Art Lead
+Art Lead - 
 Mskas
 
-Environmental Artist
+Environmental Artist - 
 Sandra
 
-Character Design
-Spineless
+Character Design - 
+Spineless,
 Mskas
 
-Concept Art
-Mskas
-Spineless
+Concept Art - 
+Mskas,
+Spineless,
 Sandra
 
-Ui
-Mskas
+Ui - 
+Mskas,
 Spineless
 
-Animation
+Animation - 
 Mskas
 
-Music & Sound Design
+Music & Sound Design - 
 Timu
 
-Writing Lead
+Writing Lead - 
 Arru
 
-Writer
+Writer - 
 Blunderguy
 
-Additional Art & UI
-Blunderguy
+Additional Art & UI - 
+Blunderguy,
 Sandra
 
-Additional Programming
-Perplexer
-Sense
+Additional Programming - 
+Perplexer,
+Sense,
 Space Nerd
 
-Additional Writing
+Additional Writing - 
 Spencer
 
