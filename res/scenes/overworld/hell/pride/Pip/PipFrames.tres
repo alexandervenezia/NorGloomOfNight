@@ -1,0 +1,127 @@
+[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://c1gdpd3mxicgm"]
+
+[ext_resource type="Texture2D" uid="uid://b74dqt05v87to" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0000.png" id="1_vqdfa"]
+[ext_resource type="Texture2D" uid="uid://b5lhgvl6sdlqb" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0001.png" id="2_ebdro"]
+[ext_resource type="Texture2D" uid="uid://d1jm11l7ud3e8" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0002.png" id="3_yn680"]
+[ext_resource type="Texture2D" uid="uid://bfrhfgt3orhix" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0003.png" id="4_35m0f"]
+[ext_resource type="Texture2D" uid="uid://bfbr76cunm5ch" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0004.png" id="5_6vxro"]
+[ext_resource type="Texture2D" uid="uid://doi3b706vfvt8" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0005.png" id="6_v7qyj"]
+[ext_resource type="Texture2D" uid="uid://d0vq246mmucaj" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0006.png" id="7_un05f"]
+[ext_resource type="Texture2D" uid="uid://bpp2ctlg7gdse" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0007.png" id="8_fma18"]
+[ext_resource type="Texture2D" uid="uid://b243i5iuccbpb" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0008.png" id="9_ffsax"]
+[ext_resource type="Texture2D" uid="uid://0eeare0c6pe2" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0009.png" id="10_47wkc"]
+[ext_resource type="Texture2D" uid="uid://c2mel1eyfgjpo" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0010.png" id="11_bmy0i"]
+[ext_resource type="Texture2D" uid="uid://dkcp1wcstsgou" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0011.png" id="12_umswn"]
+[ext_resource type="Texture2D" uid="uid://dois613oxjh48" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0012.png" id="13_1uswp"]
+[ext_resource type="Texture2D" uid="uid://cclwixjuo5xde" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0013.png" id="14_4rpgm"]
+[ext_resource type="Texture2D" uid="uid://dd8fd7g11gvd2" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0014.png" id="15_tiw57"]
+[ext_resource type="Texture2D" uid="uid://btbqq5rfyychf" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0015.png" id="16_ywboj"]
+[ext_resource type="Texture2D" uid="uid://bmv3jtnbkqs7i" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0016.png" id="17_j2tlp"]
+[ext_resource type="Texture2D" uid="uid://busfgm5pdwpe" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0017.png" id="18_5up8t"]
+[ext_resource type="Texture2D" uid="uid://dkklpgku3p4nt" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0018.png" id="19_qccge"]
+[ext_resource type="Texture2D" uid="uid://f7lyt38j1bge" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0019.png" id="20_va743"]
+[ext_resource type="Texture2D" uid="uid://ds28i84i35hy3" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0020.png" id="21_1acns"]
+[ext_resource type="Texture2D" uid="uid://dmrkm2xwepdv6" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0021.png" id="22_4ludg"]
+[ext_resource type="Texture2D" uid="uid://cia611cp36pbr" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0022.png" id="23_w6pwv"]
+[ext_resource type="Texture2D" uid="uid://bpy3pu0gst03t" path="res://res/scenes/overworld/hell/pride/Pip/animation/Pip_Animation_0023.png" id="24_cffhk"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vqdfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ebdro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yn680")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_35m0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6vxro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v7qyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_un05f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fma18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ffsax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_47wkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bmy0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_umswn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1uswp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4rpgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tiw57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ywboj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_j2tlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5up8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qccge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_va743")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1acns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4ludg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_w6pwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cffhk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]

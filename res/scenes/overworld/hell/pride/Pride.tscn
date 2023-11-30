@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=136 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -33,6 +33,8 @@
 [ext_resource type="Resource" uid="uid://qrkpsc32vgin" path="res://res/resources/cutscenes/CerberusOutroCutscene.tres" id="32_cvc36"]
 [ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="33_5ymb0"]
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="33_dpfwx"]
+[ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="34_2hdk6"]
+[ext_resource type="Script" path="res://Pip.cs" id="35_ao0lc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -1504,3 +1506,11 @@ gizmo_extents = 1000.0
 [node name="Pride" type="Marker2D" parent="BackgroundChangeMarkers"]
 position = Vector2(67952, -1936)
 gizmo_extents = 1000.0
+
+[node name="PipWorking" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PipWorking"]
+position = Vector2(15760, 5384)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("34_2hdk6")
+script = ExtResource("35_ao0lc")
