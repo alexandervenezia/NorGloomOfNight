@@ -1,12 +1,104 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cpobpuyh1fysh"]
+[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://cpobpuyh1fysh"]
 
-[ext_resource type="Texture2D" uid="uid://4efnckb30mnc" path="res://res/scenes/combat/subscenes/enemy/assets/Lucille_enemy.png" id="1_pkqk4"]
+[ext_resource type="Texture2D" uid="uid://c8x0b4ol46pmq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0000.png" id="1_3smnx"]
+[ext_resource type="Texture2D" uid="uid://c5hru2a8qdayq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0001.png" id="2_2sc21"]
+[ext_resource type="Texture2D" uid="uid://dmtg8sbjopmcq" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0002.png" id="3_cg4v6"]
+[ext_resource type="Texture2D" uid="uid://du4i3qdjl6qw7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0003.png" id="4_rp1ud"]
+[ext_resource type="Texture2D" uid="uid://c6oh5u5ae6xtx" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0004.png" id="5_wumi6"]
+[ext_resource type="Texture2D" uid="uid://c1b12md0smdn3" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0005.png" id="6_p0lxb"]
+[ext_resource type="Texture2D" uid="uid://bt0eb7bhmik3i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0006.png" id="7_h7l0g"]
+[ext_resource type="Texture2D" uid="uid://dpleq2yrnqvqh" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0007.png" id="8_2lua2"]
+[ext_resource type="Texture2D" uid="uid://khgk5eln7cqi" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0008.png" id="9_a2fb4"]
+[ext_resource type="Texture2D" uid="uid://blig0gu0glkht" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0009.png" id="10_5fo2x"]
+[ext_resource type="Texture2D" uid="uid://1sd74l8irj8g" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0010.png" id="11_hw5dv"]
+[ext_resource type="Texture2D" uid="uid://dm860imfgdkf6" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0011.png" id="12_pqv41"]
+[ext_resource type="Texture2D" uid="uid://165vbgd1g1ae" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0012.png" id="13_4mprx"]
+[ext_resource type="Texture2D" uid="uid://d0kebkla8bygm" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0013.png" id="14_skljr"]
+[ext_resource type="Texture2D" uid="uid://d1nw0vjtmtlj7" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0014.png" id="15_2jxfa"]
+[ext_resource type="Texture2D" uid="uid://nsf5hmix5gpb" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0015.png" id="16_vro8a"]
+[ext_resource type="Texture2D" uid="uid://dmub5yahpthdc" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0016.png" id="17_myp0v"]
+[ext_resource type="Texture2D" uid="uid://u5n5d23am347" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0017.png" id="18_fql1q"]
+[ext_resource type="Texture2D" uid="uid://ctcl3ewj2snqd" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0018.png" id="19_1ids1"]
+[ext_resource type="Texture2D" uid="uid://becoi1dn1uvbe" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0019.png" id="20_ncesj"]
+[ext_resource type="Texture2D" uid="uid://cje1b0i33jv6i" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0020.png" id="21_gni03"]
+[ext_resource type="Texture2D" uid="uid://c31hbcbpjao0t" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0021.png" id="22_hh5aa"]
+[ext_resource type="Texture2D" uid="uid://ckumxd03m620l" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0022.png" id="23_n5dl1"]
+[ext_resource type="Texture2D" uid="uid://depphckv1f25g" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0023.png" id="24_m6jex"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_pkqk4")
+"texture": ExtResource("1_3smnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2sc21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cg4v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rp1ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wumi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p0lxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h7l0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2lua2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a2fb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5fo2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hw5dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pqv41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4mprx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_skljr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2jxfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vro8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_myp0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fql1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1ids1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ncesj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gni03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hh5aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_n5dl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m6jex")
 }],
 "loop": true,
 "name": &"default",

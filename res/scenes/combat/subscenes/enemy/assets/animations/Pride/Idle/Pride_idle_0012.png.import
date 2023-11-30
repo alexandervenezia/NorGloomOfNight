@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://165vbgd1g1ae"
-path="res://.godot/imported/Pride_idle_0012.png-c47aae56976858ec4c4a7114b8cb832f.ctex"
+path.s3tc="res://.godot/imported/Pride_idle_0012.png-c47aae56976858ec4c4a7114b8cb832f.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Idle/Pride_idle_0012.png"
-dest_files=["res://.godot/imported/Pride_idle_0012.png-c47aae56976858ec4c4a7114b8cb832f.ctex"]
+dest_files=["res://.godot/imported/Pride_idle_0012.png-c47aae56976858ec4c4a7114b8cb832f.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

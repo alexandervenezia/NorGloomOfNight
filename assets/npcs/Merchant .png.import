@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6vccoo8p1fxa"
-path="res://.godot/imported/Eyeball Guy.png-001747214b7a16a9d0065a55f4dc1cc7.ctex"
+uid="uid://dn4577wf4lhh0"
+path="res://.godot/imported/Merchant .png-02e780eea68bafe1992d771eb5617f67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Eyeball Guy.png"
-dest_files=["res://.godot/imported/Eyeball Guy.png-001747214b7a16a9d0065a55f4dc1cc7.ctex"]
+source_file="res://assets/npcs/Merchant .png"
+dest_files=["res://.godot/imported/Merchant .png-02e780eea68bafe1992d771eb5617f67.ctex"]
 
 [params]
 

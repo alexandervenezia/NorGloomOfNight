@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq16r6v1i74bi"
-path="res://.godot/imported/Creep.png-0a688a0756c818a32aee239f7046085c.ctex"
+uid="uid://1qn40hr44nwg"
+path="res://.godot/imported/ScaleLevel.png-d07a444bf22be2c038ddd40ada931f03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/scenes/combat/subscenes/enemy/assets/Creep.png"
-dest_files=["res://.godot/imported/Creep.png-0a688a0756c818a32aee239f7046085c.ctex"]
+source_file="res://res/scenes/MainMenu/assets/ScaleLevel.png"
+dest_files=["res://.godot/imported/ScaleLevel.png-d07a444bf22be2c038ddd40ada931f03.ctex"]
 
 [params]
 

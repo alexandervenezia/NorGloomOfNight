@@ -23,7 +23,7 @@ _introCutscene = ExtResource("2_ftawh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -479)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_hluvy")
 
 [node name="Aggro" type="Area2D" parent="."]

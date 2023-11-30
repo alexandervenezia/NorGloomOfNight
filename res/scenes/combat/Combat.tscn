@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=32 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
@@ -17,8 +17,11 @@
 [ext_resource type="AudioStream" uid="uid://cfsptp38y7lk1" path="res://res/scenes/combat/audio/Dmg nrm.wav" id="14_026us"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="14_46n5p"]
 [ext_resource type="Texture2D" uid="uid://bvlw1ypur7h5y" path="res://res/scenes/combat/subscenes/Card/images/Snake and apple updated.png" id="14_mte4r"]
+[ext_resource type="Texture2D" uid="uid://c2nrbs8rbx1j1" path="res://res/scenes/combat/subscenes/Instructions/Combat instructions.png" id="15_5w263"]
 [ext_resource type="AudioStream" uid="uid://r1s28ufw3838" path="res://res/scenes/combat/audio/Dmg Nrm Crit.wav" id="15_aosei"]
+[ext_resource type="Script" path="res://res/scripts/controllers/combat/CombatInstructions.cs" id="16_b2kkf"]
 [ext_resource type="AudioStream" uid="uid://clu8iavaomujq" path="res://res/scenes/combat/audio/Dmg Mag.wav" id="16_c5ed2"]
+[ext_resource type="Theme" uid="uid://dfieef5xnsvti" path="res://assets/fonts/IrishGrover/IrishGrover.tres" id="16_icain"]
 [ext_resource type="Texture2D" uid="uid://btu5t7qeg8uof" path="res://res/scenes/combat/subscenes/XButton.png" id="16_qdhf3"]
 [ext_resource type="AudioStream" uid="uid://6nbaw18ep3i5" path="res://res/scenes/combat/audio/Dmg Mag Crit.wav" id="17_dd106"]
 [ext_resource type="Texture2D" uid="uid://wjxj3k8humbl" path="res://res/scenes/combat/subscenes/Card/images/Cancel.png" id="18_617ga"]
@@ -56,10 +59,10 @@ _coinValueResource = ExtResource("3_xuif3")
 _music = "uid://dx6xjve5fnmpr"
 _rejectButtonImg = ExtResource("16_qdhf3")
 
-[node name="Player" parent="." node_paths=PackedStringArray("_hand", "_targetLabel", "_actionPointLabel", "_movementPointLabel", "_deck", "_discard") instance=ExtResource("4_rn6c5")]
+[node name="Player" parent="." node_paths=PackedStringArray("_hand", "_combatInstructions", "_actionPointLabel", "_movementPointLabel", "_deck", "_discard") instance=ExtResource("4_rn6c5")]
 position = Vector2(-558, 143)
 _hand = NodePath("../Hand")
-_targetLabel = NodePath("../InfoLabel")
+_combatInstructions = NodePath("../CombatInstructions")
 _actionPointLabel = NodePath("../Energy/ActionPoint/Label")
 _movementPointLabel = NodePath("../Energy/MovementPoint/Label")
 _deck = NodePath("../Deck")
@@ -159,15 +162,27 @@ position = Vector2(661, 401)
 scale = Vector2(10.6875, 4.57422)
 texture = SubResource("GradientTexture2D_hidsq")
 
-[node name="InfoLabel" type="RichTextLabel" parent="."]
-offset_left = -587.0
-offset_top = -439.0
-offset_right = 586.0
-offset_bottom = -269.0
-theme = ExtResource("12_0sia7")
+[node name="CombatInstructions" type="Sprite2D" parent="."]
+position = Vector2(8, -681)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_5w263")
+script = ExtResource("16_b2kkf")
+
+[node name="InfoLabel" type="RichTextLabel" parent="CombatInstructions"]
+offset_left = -964.0
+offset_top = -94.0
+offset_right = 958.0
+offset_bottom = 286.0
+theme = ExtResource("16_icain")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.560784)
+theme_override_colors/font_outline_color = Color(0.592157, 0.792157, 0.862745, 1)
+theme_override_constants/shadow_offset_x = 25
+theme_override_constants/shadow_offset_y = 25
+theme_override_constants/shadow_outline_size = 35
+theme_override_constants/outline_size = 35
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[center][color=#BB5545]Select Targets[/color]
+text = "[font_size=200][center][color=#111145]Select Targets[/color]
 "
 
 [node name="EndTurn" type="Area2D" parent="."]

@@ -36,8 +36,8 @@ _startingArmor = 12
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-138.231, -160)
-scale = Vector2(0.75, 0.75)
+position = Vector2(-172.308, -246.154)
+scale = Vector2(0.88647, 0.88647)
 sprite_frames = ExtResource("7_qtvb0")
 animation = &"attack"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=147 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -40,6 +40,10 @@
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="33_dpfwx"]
 [ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="34_2hdk6"]
 [ext_resource type="Script" path="res://Pip.cs" id="35_ao0lc"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="41_25wxu"]
+[ext_resource type="Texture2D" uid="uid://dn4577wf4lhh0" path="res://assets/npcs/Merchant .png" id="42_w24qw"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="43_bnbyh"]
+[ext_resource type="Texture2D" uid="uid://c8bftanflcy25" path="res://assets/npcs/Wanderer_npc.png" id="44_evg8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -333,13 +337,19 @@ size = Vector2(572.5, 3160.5)
 size = Vector2(4607.63, 864.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xms38"]
-size = Vector2(2400, 640)
+size = Vector2(2194, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64r0a"]
-size = Vector2(1962, 640)
+size = Vector2(1348, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve0ld"]
-size = Vector2(6464, 640)
+size = Vector2(6120, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x35di"]
+size = Vector2(512, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmm1t"]
+size = Vector2(1678, 2714)
 
 [node name="Pride" type="Node2D" node_paths=PackedStringArray("_backgroundMarkers")]
 scale = Vector2(0.5, 0.5)
@@ -1202,7 +1212,7 @@ gizmo_extents = 229.0
 script = ExtResource("6_b5q6i")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("7_no0g4")]
-position = Vector2(19920, -3872)
+position = Vector2(20068, -3576)
 _startingStock = [ExtResource("20_iwwuw"), ExtResource("21_dysgv"), ExtResource("22_fnuvt"), ExtResource("23_3ui1q"), ExtResource("24_a21pa"), ExtResource("25_3sgq1"), ExtResource("26_28ilh")]
 _identifier = 1
 
@@ -1378,7 +1388,7 @@ position = Vector2(-6560, -1280)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
-position = Vector2(96, -16)
+position = Vector2(83, -16)
 shape = SubResource("RectangleShape2D_xms38")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby2"]
@@ -1389,7 +1399,7 @@ position = Vector2(-8800, -1856)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
-position = Vector2(43, -16)
+position = Vector2(6, -16)
 shape = SubResource("RectangleShape2D_64r0a")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby3"]
@@ -1400,7 +1410,7 @@ position = Vector2(-27482, 7642)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
-position = Vector2(43, -16)
+position = Vector2(36, -16)
 shape = SubResource("RectangleShape2D_64r0a")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby4"]
@@ -1411,14 +1421,14 @@ position = Vector2(-22640, 7632)
 script = ExtResource("15_ps8to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby5"]
-position = Vector2(336, -16)
+position = Vector2(368, -16)
 shape = SubResource("RectangleShape2D_ve0ld")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby5"]
 sprite_frames = ExtResource("27_efq1q")
 
 [node name="Pride" parent="." instance=ExtResource("29_2pin4")]
-position = Vector2(77940, -3128)
+position = Vector2(78064, -3138)
 scale = Vector2(1.3, 1.3)
 
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
@@ -1539,3 +1549,71 @@ position = Vector2(15760, 5384)
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("34_2hdk6")
 script = ExtResource("35_ao0lc")
+
+[node name="Merchant_NPC" type="Area2D" parent="."]
+position = Vector2(21302, -3784)
+script = ExtResource("41_25wxu")
+_dialogue = Array[String](["Please, Good Sir, Enter my shop."])
+_delayMS = 2000
+
+[node name="Merchant" type="Sprite2D" parent="Merchant_NPC"]
+position = Vector2(-16, 0)
+scale = Vector2(0.527344, 0.527344)
+texture = ExtResource("42_w24qw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant_NPC"]
+position = Vector2(-20, 0)
+shape = SubResource("RectangleShape2D_x35di")
+
+[node name="DialogueBubble" type="Polygon2D" parent="Merchant_NPC"]
+position = Vector2(-226, -362)
+polygon = PackedVector2Array(2, -4, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Merchant_NPC/DialogueBubble"]
+offset_left = -480.0
+offset_top = -529.0
+offset_right = 137.0
+offset_bottom = -281.0
+theme = ExtResource("43_bnbyh")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]
+
+. . ."
+metadata/_edit_use_anchors_ = true
+
+[node name="Wanderer_NPC" type="Area2D" parent="."]
+position = Vector2(-18798, -1968)
+script = ExtResource("41_25wxu")
+_dialogue = Array[String](["Oh, prides castle? Just keep going...", "The caves below will take you there...", "If you head straight though, you'll hit old man riggies shop...", "Bye n", ""])
+_delayMS = 2000
+
+[node name="Wanderer" type="Sprite2D" parent="Wanderer_NPC"]
+position = Vector2(604, -966)
+scale = Vector2(2, 2)
+texture = ExtResource("44_evg8a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wanderer_NPC"]
+position = Vector2(496, -853)
+shape = SubResource("RectangleShape2D_hmm1t")
+
+[node name="DialogueBubble" type="Polygon2D" parent="Wanderer_NPC"]
+position = Vector2(-682, -1152)
+rotation = 3.14159
+polygon = PackedVector2Array(-370, -33.9999, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Wanderer_NPC/DialogueBubble"]
+offset_left = 136.0
+offset_top = -272.0
+offset_right = 753.0
+offset_bottom = -23.9995
+scale = Vector2(-1, -1)
+theme = ExtResource("43_bnbyh")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]
+
+. . ."
+metadata/_edit_use_anchors_ = true
