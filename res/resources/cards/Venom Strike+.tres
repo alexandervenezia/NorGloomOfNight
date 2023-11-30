@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bk2p47n2jn822"]
 
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_oek7k"]
+[ext_resource type="Texture2D" uid="uid://bk7y2sicj3ys" path="res://res/scenes/combat/subscenes/Card/images/artwork/poison_strike.png" id="1_21exh"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_lsg05"]
 
 [resource]
 script = ExtResource("2_lsg05")
 _name = "Venom Strike+"
 _description = ""
-_artwork = ExtResource("1_oek7k")
+_artwork = ExtResource("1_21exh")
 _type = 2
 _rarity = 4
 _actionPointCost = 1

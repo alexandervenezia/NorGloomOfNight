@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://djffw8e3yd63s"]
 
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_ldqtb"]
+[ext_resource type="Texture2D" uid="uid://bogdnlmg01ous" path="res://res/scenes/combat/subscenes/Card/images/artwork/tremors.png" id="1_otj5n"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_c20k0"]
 
 [resource]
 script = ExtResource("2_c20k0")
 _name = "Tremors++"
 _description = ""
-_artwork = ExtResource("1_ldqtb")
+_artwork = ExtResource("1_otj5n")
 _type = 2
 _rarity = 4
 _actionPointCost = 2

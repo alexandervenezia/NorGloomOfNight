@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://msfjjc3i5ym3"]
 
-[ext_resource type="Texture2D" uid="uid://dy8xeiqxwx2xp" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card2.png" id="1_7wxxc"]
+[ext_resource type="Texture2D" uid="uid://i1lnmiuwh6fa" path="res://res/scenes/combat/subscenes/Card/images/artwork/gods_light.png" id="1_8odmh"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_cmu73"]
 
 [resource]
 script = ExtResource("2_cmu73")
 _name = "God's Light++"
 _description = ""
-_artwork = ExtResource("1_7wxxc")
+_artwork = ExtResource("1_8odmh")
 _type = 0
 _rarity = 4
 _actionPointCost = 2

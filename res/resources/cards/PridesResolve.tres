@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dxdv0f51ras64"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dxdv0f51ras64"]
 
+[ext_resource type="Texture2D" uid="uid://hqan1wq12dfb" path="res://res/scenes/combat/subscenes/Card/images/artwork/PridesResolve.png" id="1_qtw5k"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_itoch"]
 
 [resource]
 script = ExtResource("2_itoch")
 _name = "Pride's Resolve"
 _description = ""
+_artwork = ExtResource("1_qtw5k")
 _type = 2
 _rarity = 4
 _actionPointCost = 0

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://xmdaofe11l2t"]
 
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_kvm7i"]
+[ext_resource type="Texture2D" uid="uid://ckw3kevxm7r5c" path="res://res/scenes/combat/subscenes/Card/images/artwork/poison_spike.png" id="1_s7mxc"]
 [ext_resource type="Resource" uid="uid://d0csq15s5ut7i" path="res://res/resources/cards/Toxic Spike++.tres" id="2_tmj6f"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_vv5r6"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("2_vv5r6")
 _name = "Toxic Spike++"
 _description = ""
-_artwork = ExtResource("1_kvm7i")
+_artwork = ExtResource("1_s7mxc")
 _type = 2
 _rarity = 1
 _actionPointCost = 1

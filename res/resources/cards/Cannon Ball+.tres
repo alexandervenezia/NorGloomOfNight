@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://3owg8lsqpog"]
 
-[ext_resource type="Texture2D" uid="uid://dfad8mude76tx" path="res://res/scenes/combat/subscenes/Card/images/artwork/test_card.png" id="1_2uc53"]
+[ext_resource type="Texture2D" uid="uid://cv1hr0rrsdlc4" path="res://res/scenes/combat/subscenes/Card/images/artwork/cannon_ball.png" id="1_ap3j4"]
 [ext_resource type="Script" path="res://res/scripts/managers/combat/CardData.cs" id="2_b3eac"]
 
 [resource]
 script = ExtResource("2_b3eac")
 _name = "Cannon Ball+"
 _description = ""
-_artwork = ExtResource("1_2uc53")
+_artwork = ExtResource("1_ap3j4")
 _type = 2
 _rarity = 4
 _actionPointCost = 1
