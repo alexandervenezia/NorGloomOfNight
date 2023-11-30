@@ -28,7 +28,7 @@ public enum PlayerState
 public partial class Player : Combatant
 {
 	[Export] Hand _hand;
-	[Export] RichTextLabel _targetLabel;
+	[Export] CombatInstructions _combatInstructions;
 	[Export] Label _actionPointLabel;
 	[Export] Label _movementPointLabel;
 	[Export] Node2D _deck;
@@ -42,6 +42,8 @@ public partial class Player : Combatant
 
 	private PlayerState _state;
 	public PlayerState State => _state;
+
+	private RichTextLabel _instructionsLabel;
 
 	private Card _currentlyTargeting;
 	private AnimatedSprite2D _sprite;
@@ -59,7 +61,8 @@ public partial class Player : Combatant
 		base._Ready();
 		_toDiscard = 0;
 		_state = PlayerState.SELECTING_CARD;
-		_targetLabel.Visible = false;
+		_combatInstructions.Disable();
+		_instructionsLabel = _combatInstructions.GetNode<RichTextLabel>("InfoLabel");
 		_sprite = (AnimatedSprite2D)GetNode<AnimatedSprite2D>("Player");
 		_sprite.SpriteFrames = EnemyAssetLookup.GetInstance().GetAsset(0);
 		_targetHighlight = GetNode<TargetHighlighter>("TargetHighlighter");
@@ -133,7 +136,7 @@ public partial class Player : Combatant
 	{
 		_currentlyTargeting = null;
 		_hand.Unfreeze();
-		_targetLabel.Visible = false;
+		_combatInstructions.Disable();
 		_state = PlayerState.WAIT;
 		_targeted = new();
 	}
@@ -185,13 +188,13 @@ public partial class Player : Combatant
 						if (_state == PlayerState.DISCARDING_CARDS)
 						{
 							_internalDeck.Discard(_hand.RemoveCard(_currentlyTargeting, true, _discard));
-							_targetLabel.Text = "[center][color=#BB5545]Discard " + (_toDiscard - 1) + " cards[/color]";
+							_instructionsLabel.Text = "[font_size=200][center][color=#111145]Discard " + (_toDiscard - 1) + " cards[/color]";
 							_dropSound.Play();
 						}
 						else if (_state == PlayerState.RETURNING_CARDS)
 						{
 							_internalDeck.AddCard(_hand.RemoveCard(_currentlyTargeting, delete:true));
-							_targetLabel.Text = "[center][color=#BB5545]Return " + (_toDiscard - 1) + " cards to deck[/color]";
+							_instructionsLabel.Text = "[font_size=200][center][color=#111145]Return " + (_toDiscard - 1) + " cards to deck[/color]";
 							_dropSound.Play();
 						}
 
@@ -200,7 +203,7 @@ public partial class Player : Combatant
 						if (_toDiscard <= 0)
 						{
 							_state = PlayerState.SELECTING_CARD;
-							_targetLabel.Visible = false;
+							_combatInstructions.Disable();
 						}
 					}
 					break;
@@ -211,11 +214,12 @@ public partial class Player : Combatant
 					if (_currentlyTargeting != null && CanPlay(_currentlyTargeting))
 					{
 						_state = PlayerState.SELECTING_TARGETS;
-						_targetLabel.Visible = true;
+						
+						_combatInstructions.Enable();
 						if (_currentlyTargeting.Data.Target == TargetType.SELF)
-							_targetLabel.Text = "[center][color=#BB5545]Click to Confirm[/color]";
+							_instructionsLabel.Text = "[font_size=200][center][color=#111145]Click to Confirm[/color]";
 						else
-							_targetLabel.Text = "[center][color=#BB5545]Select Targets[/color]";
+							_instructionsLabel.Text = "[font_size=200][center][color=#111145]Select Targets[/color]";
 						_hand.Freeze();
 						_currentlyTargeting.ZIndex += 99;
 						_selectSound.Play();
@@ -404,16 +408,16 @@ public partial class Player : Combatant
 	{
 		_state = PlayerState.DISCARDING_CARDS;
 		_toDiscard = n;
-		_targetLabel.Visible = true;
-		_targetLabel.Text = "[center][color=#BB5545]Discard " + n + " cards[/color]";
+		_combatInstructions.Enable();
+		_instructionsLabel.Text = "[font_size=200][center][color=#111145]Discard " + n + " cards[/color]";
 	}
 
 	public override void ReturnCards(int n)
 	{
 		_state = PlayerState.RETURNING_CARDS;
 		_toDiscard = n;
-		_targetLabel.Visible = true;
-		_targetLabel.Text = "[center][color=#BB5545]Return " + n + " cards to deck[/color]";
+		_combatInstructions.Enable();
+		_instructionsLabel.Text = "[font_size=200][center][color=#111145]Return " + n + " cards to deck[/color]";
 	}
 
 	public override void EndFight(EndState result)
