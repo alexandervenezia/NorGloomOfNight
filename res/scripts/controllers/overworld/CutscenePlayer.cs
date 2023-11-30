@@ -126,8 +126,8 @@ public partial class CutscenePlayer : ColorRect
         }
         else
         {
-            x = coords[0].ToInt();
-            y = coords[1].ToInt();
+            x = coords[0].ToInt() + (int)_camera.Position.X;
+            y = coords[1].ToInt() + (int)_camera.Position.Y;
             duration = coords[2].ToFloat();
         }
 
