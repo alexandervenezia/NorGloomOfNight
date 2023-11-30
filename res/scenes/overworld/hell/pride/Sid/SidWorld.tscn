@@ -14,12 +14,12 @@ height = 1174.29
 [node name="SidWorld" type="CharacterBody2D"]
 scale = Vector2(0.85, 0.85)
 script = ExtResource("1_86h0n")
-_aggroSpeedBuff = 3.0
+_aggroSpeedBuff = 5.0
 FOV = 60.0
 _name = "Sid"
 _id = 5
 _speed = 800.0
-_acceleration = 50.0
+_acceleration = 100.0
 _firstSlotSpawn = {
 5: 100
 }
@@ -36,7 +36,7 @@ _fourthSlotSpawn = {}
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_882xp")
-frame_progress = 0.65029
+frame_progress = 0.0649539
 
 [node name="PatrolMarkers" type="Node2D" parent="."]
 

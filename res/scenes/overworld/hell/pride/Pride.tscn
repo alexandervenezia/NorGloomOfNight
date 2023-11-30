@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="7_no0g4"]
 [ext_resource type="Resource" uid="uid://blnau2cu3smcr" path="res://res/resources/cards/HolyWater.tres" id="8_adj6g"]
 [ext_resource type="Resource" uid="uid://c6pel68nd1b8l" path="res://res/resources/cards/SwordOfMessenger.tres" id="9_yx607"]
-[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="10_wdm8t"]
 [ext_resource type="PackedScene" uid="uid://cb5fb4m2d5w2f" path="res://res/scenes/overworld/Spike.tscn" id="11_16ymw"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="12_46j0o"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="13_afauk"]
@@ -32,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="30_u83yh"]
 [ext_resource type="Resource" uid="uid://5cia644ch3cd" path="res://res/resources/cutscenes/PipCutscene.tres" id="31_yoly0"]
 [ext_resource type="Resource" uid="uid://qrkpsc32vgin" path="res://res/resources/cutscenes/CerberusOutroCutscene.tres" id="32_cvc36"]
+[ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="33_5ymb0"]
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="33_dpfwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
@@ -340,8 +340,7 @@ size = Vector2(1468, 640)
 [node name="Pride" type="Node2D" node_paths=PackedStringArray("_backgroundMarkers")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
-_backgroundIDs = Array[int]([2, 3])
-_backgroundMarkers = [NodePath("BackgroundChangeMarkers/Gatehouse"), NodePath("BackgroundChangeMarkers/Pride")]
+_backgroundMarkers = []
 _playerSpawn = Vector2(-22070.7, -2279.27)
 _journalID = "uid://24f70lj4w2nt"
 _introMusicUID = "uid://bcwav3q4c5png"
@@ -1135,8 +1134,8 @@ position = Vector2(-27506, 6054)
 _relativePatrolBounds = Vector2(-1000, 1000)
 
 [node name="SluggyWorld3" parent="Enemies" instance=ExtResource("26_dpclw")]
-position = Vector2(-12068, 8046)
-_relativePatrolBounds = Vector2(-700, 2700)
+position = Vector2(-12062, 8056)
+_relativePatrolBounds = Vector2(-400, 2400)
 
 [node name="SluggyWorld2" parent="Enemies" instance=ExtResource("26_dpclw")]
 position = Vector2(-27364, 4044)
@@ -1178,12 +1177,6 @@ script = ExtResource("6_b5q6i")
 position = Vector2(19920, -3872)
 _startingStock = [ExtResource("8_adj6g"), ExtResource("8_adj6g"), ExtResource("9_yx607")]
 _identifier = 1
-
-[node name="HealArea" parent="." instance=ExtResource("10_wdm8t")]
-position = Vector2(-5896, 22064)
-
-[node name="HealArea2" parent="." instance=ExtResource("10_wdm8t")]
-position = Vector2(41536, 22410)
 
 [node name="FloatingTextFactory" type="Node2D" parent="."]
 script = ExtResource("12_46j0o")
@@ -1400,7 +1393,7 @@ texture = ExtResource("16_uxfrh")
 position = Vector2(22784, 8272)
 
 [node name="Pride" parent="." instance=ExtResource("29_2pin4")]
-position = Vector2(77864, -3164)
+position = Vector2(77940, -3128)
 scale = Vector2(1.3, 1.3)
 
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
@@ -1472,15 +1465,8 @@ _relativePatrolBounds = Vector2(-2500, 2500)
 position = Vector2(46672, -1904)
 _relativePatrolBounds = Vector2(-2500, 2500)
 
-[node name="SidWorld" parent="." instance=ExtResource("27_g4pnk")]
-position = Vector2(-16752, -2112)
-_relativePatrolBounds = Vector2(-2000, 2000)
-
 [node name="Cerberus2" parent="." instance=ExtResource("28_atlgc")]
 position = Vector2(22784, 8272)
-
-[node name="Pride2" parent="." instance=ExtResource("29_2pin4")]
-position = Vector2(77104, -2896)
 
 [node name="CutsceneZone3" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)
@@ -1493,27 +1479,32 @@ scale = Vector2(3, 3)
 Cutscene = ExtResource("32_cvc36")
 FLAG_BEAT_DOG = true
 
+[node name="HR_NPC_Cave" parent="." instance=ExtResource("33_5ymb0")]
+position = Vector2(-5712, 22094)
+_dialogue = Array[String](["I hate remote calls."])
+
+[node name="HR_NPC_Castle" parent="." instance=ExtResource("33_5ymb0")]
+position = Vector2(41662, 22568)
+_dialogue = Array[String](["Jobs not done", "You good? Get goin."])
+
 [node name="HealDoor1" parent="." instance=ExtResource("33_dpfwx")]
 scale = Vector2(1.8, 1.8)
 _doorOnePos = Vector2i(-6855, 2970)
 _doorTwoPos = Vector2i(-2600, 12225)
-_showDoorOne = true
-_showDoorTwo = true
 
 [node name="ColorRect" type="ColorRect" parent="HealDoor1"]
 z_index = -1
-offset_left = -5458.0
-offset_top = 10356.0
-offset_right = -907.0
-offset_bottom = 14649.0
+offset_left = -5140.0
+offset_top = 10291.1
+offset_right = -589.0
+offset_bottom = 14584.1
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="HealDoor2" parent="." instance=ExtResource("33_dpfwx")]
 scale = Vector2(1.8, 1.8)
 _doorOnePos = Vector2i(33000, 4410)
 _doorTwoPos = Vector2i(23700, 12405)
-_showDoorOne = true
-_showDoorTwo = true
 
 [node name="ColorRect2" type="ColorRect" parent="HealDoor2"]
 z_index = -1
@@ -1522,6 +1513,7 @@ offset_top = 10257.8
 offset_right = 25733.2
 offset_bottom = 14550.8
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="BackgroundChangeMarkers" type="Node2D" parent="."]
 

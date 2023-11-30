@@ -16,8 +16,8 @@ script = ExtResource("1_1c862")
 FOV = 60.0
 _name = "Sluggy"
 _id = 1
-_speed = 500.0
-_acceleration = 100.0
+_speed = 300.0
+_acceleration = 300.0
 _firstSlotSpawn = {
 3: 100
 }
@@ -38,7 +38,7 @@ _fourthSlotSpawn = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-1, 1)
 sprite_frames = ExtResource("2_dpg20")
-frame_progress = 0.878161
+frame_progress = 0.42565
 
 [node name="PatrolMarkers" type="Node2D" parent="."]
 

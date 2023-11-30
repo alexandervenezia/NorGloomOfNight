@@ -16,9 +16,9 @@ public partial class Pride : HellLevel
 	private Dictionary<int, Marker2D> _nonStupidChangeMarkers;
 
 
-    public override void _Ready()
-    {
-        base._Ready();
+	public override void _Ready()
+	{
+		base._Ready();
 
 		GD.Print("Running Pride Ready()");
 
@@ -29,9 +29,9 @@ public partial class Pride : HellLevel
 			GD.Print(_backgroundMarkers[i]);
 			_nonStupidChangeMarkers.Add(_backgroundIDs[i], _backgroundMarkers[i]);
 		}
-    }
+	}
 
-    public override void _Process(double delta)
+	public override void _Process(double delta)
 	{
 		base._Process(delta);
 

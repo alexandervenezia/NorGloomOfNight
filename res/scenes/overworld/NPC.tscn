@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_ix56f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shlqa"]
-size = Vector2(939, 982)
+size = Vector2(368, 800)
 
 [node name="NPC" type="Area2D"]
 script = ExtResource("1_1emru")

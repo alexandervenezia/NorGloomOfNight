@@ -79,28 +79,6 @@ stream = ExtResource("5_i3os1")
 volume_db = -1.5
 bus = &"UI"
 
-[node name="SpeakerName" type="ColorRect" parent="Camera2D/CutscenePlayer"]
-z_index = -1
-layout_mode = 0
-offset_left = 1245.0
-offset_top = -82.0
-offset_right = 1778.0
-offset_bottom = 10.0
-color = Color(0.0627451, 0.0627451, 0.0627451, 1)
-
-[node name="Name" type="RichTextLabel" parent="Camera2D/CutscenePlayer/SpeakerName"]
-z_index = 9
-layout_mode = 0
-offset_left = 37.0
-offset_top = 9.0
-offset_right = 492.0
-offset_bottom = 81.0
-theme_override_fonts/normal_font = ExtResource("4_m7vli")
-theme_override_fonts/bold_font = ExtResource("5_dqfsd")
-theme_override_fonts/italics_font = ExtResource("6_6qoo2")
-bbcode_enabled = true
-text = "[center][font_size=50][color=white]Your Supervisor:"
-
 [node name="SlugGirl" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(-522, 130)
