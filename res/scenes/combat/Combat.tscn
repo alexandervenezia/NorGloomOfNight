@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=27 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
@@ -13,14 +13,16 @@
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="12_0sia7"]
 [ext_resource type="Script" path="res://res/scenes/combat/EndTurn.cs" id="12_atut3"]
 [ext_resource type="Texture2D" uid="uid://cmd0yww32e0eg" path="res://res/scenes/combat/subscenes/EndTurn.png" id="12_y8ifr"]
-[ext_resource type="Texture2D" uid="uid://d0yvuuqs8usan" path="res://res/scenes/combat/subscenes/Card/images/action_point_icon.png" id="13_ey1xf"]
+[ext_resource type="Texture2D" uid="uid://cf6c28dvqjh7i" path="res://res/scenes/combat/subscenes/Card/images/MOVEMENT POINTS SYMBOL.png" id="13_srpdn"]
 [ext_resource type="AudioStream" uid="uid://cfsptp38y7lk1" path="res://res/scenes/combat/audio/Dmg nrm.wav" id="14_026us"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="14_46n5p"]
-[ext_resource type="Texture2D" uid="uid://shtr3us4frvi" path="res://res/scenes/combat/subscenes/Card/images/movement_point_icon.png" id="14_epm16"]
+[ext_resource type="Texture2D" uid="uid://bvlw1ypur7h5y" path="res://res/scenes/combat/subscenes/Card/images/Snake and apple updated.png" id="14_mte4r"]
 [ext_resource type="AudioStream" uid="uid://r1s28ufw3838" path="res://res/scenes/combat/audio/Dmg Nrm Crit.wav" id="15_aosei"]
 [ext_resource type="AudioStream" uid="uid://clu8iavaomujq" path="res://res/scenes/combat/audio/Dmg Mag.wav" id="16_c5ed2"]
 [ext_resource type="Texture2D" uid="uid://btu5t7qeg8uof" path="res://res/scenes/combat/subscenes/XButton.png" id="16_qdhf3"]
 [ext_resource type="AudioStream" uid="uid://6nbaw18ep3i5" path="res://res/scenes/combat/audio/Dmg Mag Crit.wav" id="17_dd106"]
+[ext_resource type="Texture2D" uid="uid://wjxj3k8humbl" path="res://res/scenes/combat/subscenes/Card/images/Cancel.png" id="18_617ga"]
+[ext_resource type="Texture2D" uid="uid://bwve8o8s016n8" path="res://res/scenes/combat/subscenes/Card/images/Group 63.png" id="23_uyb8k"]
 
 [sub_resource type="Gradient" id="Gradient_t2vwa"]
 interpolation_mode = 2
@@ -87,8 +89,8 @@ _radius = 900.0
 y_sort_enabled = true
 
 [node name="Deck" parent="." instance=ExtResource("9_5f4rp")]
-position = Vector2(842, 379)
-scale = Vector2(0.35, 0.325)
+position = Vector2(837, 444)
+scale = Vector2(0.16, 0.149)
 
 [node name="Cards" type="Label" parent="Deck"]
 offset_left = -57.1433
@@ -115,31 +117,32 @@ text = "10"
 
 [node name="MovementPoint" type="Sprite2D" parent="Energy"]
 position = Vector2(690, 314)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("14_epm16")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_srpdn")
 
 [node name="Label" type="Label" parent="Energy/MovementPoint"]
-offset_left = -28.0
-offset_top = -52.0
-offset_right = 29.0
-offset_bottom = 88.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 17.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 100
 text = "1"
 
 [node name="ActionPoint" type="Sprite2D" parent="Energy"]
 position = Vector2(690, 392)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("13_ey1xf")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_mte4r")
 
 [node name="Label" type="Label" parent="Energy/ActionPoint"]
-offset_left = -24.0
-offset_top = -68.0
-offset_right = 33.0
-offset_bottom = 72.0
+offset_left = -33.3335
+offset_top = -6.66675
+offset_right = 23.6665
+offset_bottom = 133.333
 theme_override_font_sizes/font_size = 100
 text = "3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Energy"]
+visible = false
 z_index = -1
 position = Vector2(661, 401)
 scale = Vector2(10.6875, 4.57422)
@@ -173,25 +176,17 @@ _theme = ExtResource("12_0sia7")
 _fontSize = 50
 
 [node name="XButton" type="TextureButton" parent="."]
-offset_left = 783.0
-offset_top = 129.0
-offset_right = 1039.0
-offset_bottom = 385.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("16_qdhf3")
+offset_left = 772.0
+offset_top = 197.0
+offset_right = 1296.0
+offset_bottom = 371.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("18_617ga")
 
-[node name="Label" type="Label" parent="XButton"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 176.0
-offset_right = 244.0
-offset_bottom = 254.0
-theme = ExtResource("12_0sia7")
-theme_override_colors/font_color = Color(0.815686, 0.172549, 0.207843, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 75
-text = "Cancel"
+[node name="Group63" type="Sprite2D" parent="XButton"]
+position = Vector2(273.333, 70.0001)
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("23_uyb8k")
 
 [node name="Audio" type="Node2D" parent="."]
 
