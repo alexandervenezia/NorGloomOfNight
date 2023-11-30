@@ -153,6 +153,7 @@ theme_override_font_sizes/font_size = 100
 text = "3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Energy"]
+visible = false
 z_index = -1
 position = Vector2(661, 401)
 scale = Vector2(10.6875, 4.57422)
@@ -224,6 +225,7 @@ bus = &"SFX"
 [node name="Rewards" type="Node2D" parent="."]
 
 [node name="QuestGradient" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
 z_index = -1
 position = Vector2(810, 348)
 scale = Vector2(19.6245, 6.34662)
