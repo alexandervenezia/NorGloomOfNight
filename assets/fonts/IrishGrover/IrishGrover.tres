@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dfieef5xnsvti"]
+
+[ext_resource type="FontFile" uid="uid://cj0rinf2hr40v" path="res://assets/fonts/IrishGrover/IrishGrover.ttf" id="1_nxsxe"]
+
+[resource]
+default_font = ExtResource("1_nxsxe")

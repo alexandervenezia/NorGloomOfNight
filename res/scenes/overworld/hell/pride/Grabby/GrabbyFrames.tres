@@ -20,4 +20,15 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kvhqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h0be0")
+}],
+"loop": true,
+"name": &"showcase",
+"speed": 2.0
 }]
