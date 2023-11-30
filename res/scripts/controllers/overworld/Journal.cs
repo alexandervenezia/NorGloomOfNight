@@ -2,10 +2,13 @@ namespace Overworld;
 
 using Godot;
 using System;
+using System.Threading.Tasks;
+
 
 public partial class Journal : Node2D
 {
 	[Export] private string _inventoryUID;
+	[Export] private string _mainMenuUID;
 	private ChangeSceneButton _returnButton;
 	private JournalLine _openDeck;
 	private JournalLine _openSettings;
@@ -26,13 +29,28 @@ public partial class Journal : Node2D
 		_openSettings.OnLineClicked += OpenSettings;
 
 		_exit = GetNode<JournalLine>("Exit");
-		_exit.OnLineClicked += () => {
-			GetTree().Quit();
-		};
+		_exit.OnLineClicked += MainMenu;
+		
 	}
 	public override void _Process(double delta)
 	{
 
+	}
+
+	public async void MainMenu()
+	{		
+		MasterScene oldMaster = MasterScene.GetInstance();
+		MasterScene newMaster = GD.Load<PackedScene>(_mainMenuUID).Instantiate<MasterScene>();
+
+		await Task.Delay(500);
+		Engine.TimeScale = 1f;
+		
+		GD.Print("Assigning");
+
+		GetTree().Root.AddChild(newMaster);
+		oldMaster.Free();
+		
+		return;
 	}
 
 	public void Open()
