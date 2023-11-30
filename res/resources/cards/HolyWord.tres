@@ -23,6 +23,6 @@ _buffDuration = []
 _resistanceType = []
 _debuffs = []
 _debuffDuration = []
-_price = 0
+_price = 8
 _upgrade = ExtResource("2_rin3w")
 _unremovableByPlayer = false
