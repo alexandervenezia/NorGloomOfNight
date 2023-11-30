@@ -29,7 +29,7 @@
 [ext_resource type="Resource" uid="uid://b6qmnb6qex4ku" path="res://res/resources/cards/TacticalRoll.tres" id="26_28ilh"]
 [ext_resource type="PackedScene" uid="uid://bvsg6mu2aw32q" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyWorld.tscn" id="26_dpclw"]
 [ext_resource type="PackedScene" uid="uid://ccpj5bs32vahr" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceWorld.tscn" id="27_5rng0"]
-[ext_resource type="SpriteFrames" path="res://res/scenes/overworld/hell/pride/Grabby/GrabbyFrames.tres" id="27_efq1q"]
+[ext_resource type="SpriteFrames" uid="uid://20u3u0j7h4xj" path="res://res/scenes/overworld/hell/pride/Grabby/GrabbyFrames.tres" id="27_efq1q"]
 [ext_resource type="PackedScene" uid="uid://lf5jtfh5yjge" path="res://res/scenes/overworld/hell/pride/Sid/SidWorld.tscn" id="27_g4pnk"]
 [ext_resource type="PackedScene" uid="uid://cntf8nwl10u0m" path="res://res/scenes/overworld/hell/pride/Cerberus/Cerberus.tscn" id="28_atlgc"]
 [ext_resource type="PackedScene" uid="uid://bry8sdy0obqtp" path="res://res/scenes/overworld/hell/pride/QueenPride/QueenPride.tscn" id="29_2pin4"]

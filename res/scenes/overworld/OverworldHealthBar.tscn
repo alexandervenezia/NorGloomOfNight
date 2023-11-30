@@ -68,16 +68,16 @@ theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 
 [node name="CoinRotated" type="Sprite2D" parent="."]
-position = Vector2(-96, 75)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-97, 60)
+scale = Vector2(0.126, 0.126)
 texture = ExtResource("6_x1dlu")
 script = ExtResource("7_pvodo")
 
 [node name="Label" type="Label" parent="CoinRotated"]
-offset_left = 177.0
-offset_top = -192.0
-offset_right = 529.0
-offset_bottom = 192.0
+offset_left = 198.413
+offset_top = -182.54
+offset_right = 550.413
+offset_bottom = 201.46
 theme = ExtResource("7_3ullj")
 theme_override_colors/font_color = Color(1, 0.701961, 0.309804, 1)
 theme_override_font_sizes/font_size = 300
