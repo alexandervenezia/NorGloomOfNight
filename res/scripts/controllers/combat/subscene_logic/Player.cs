@@ -61,7 +61,7 @@ public partial class Player : Combatant
 		base._Ready();
 		_toDiscard = 0;
 		_state = PlayerState.SELECTING_CARD;
-		_combatInstructions.Disable();
+		//_combatInstructions.Disable();
 		_instructionsLabel = _combatInstructions.GetNode<RichTextLabel>("InfoLabel");
 		_sprite = (AnimatedSprite2D)GetNode<AnimatedSprite2D>("Player");
 		_sprite.SpriteFrames = EnemyAssetLookup.GetInstance().GetAsset(0);

@@ -170,9 +170,9 @@ script = ExtResource("16_b2kkf")
 
 [node name="InfoLabel" type="RichTextLabel" parent="CombatInstructions"]
 offset_left = -964.0
-offset_top = -194.0
+offset_top = -94.0
 offset_right = 958.0
-offset_bottom = 186.0
+offset_bottom = 286.0
 theme = ExtResource("16_icain")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.560784)
 theme_override_colors/font_outline_color = Color(0.592157, 0.792157, 0.862745, 1)
