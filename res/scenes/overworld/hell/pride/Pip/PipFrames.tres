@@ -121,7 +121,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("24_cffhk")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 12.0
 }]
