@@ -3,18 +3,19 @@ using System;
 
 public partial class Credits : Node2D
 {
-    private const int SCROLL_SPEED = -50;
+    private const float SCROLL_SPEED = -100f;
 
     private ColorRect _credits;
-    private int _progress = 0;
+    private float _progress = 0;
     public override void _Ready()
     {
-        _progress = 0;
+        _progress = -550;
         _credits = GetNode<ColorRect>("ColorRect");
+        GD.Print("Time scale: ", Engine.TimeScale);
     }
     public override void _Process(double delta)
     {
-        //_progress += (int)(delta * SCROLL_SPEED);
-        //_credits.Position = new Vector2(0, _progress);
+        _progress += (float)(delta * SCROLL_SPEED);
+        _credits.Position = new Vector2(_credits.Position.X, _progress);
     }
 }

@@ -72,7 +72,6 @@ offset_bottom = 12450.0
 grow_horizontal = 2
 mouse_filter = 1
 color = Color(0.137255, 0.137255, 0.137255, 1)
-metadata/_edit_lock_ = true
 
 [node name="TextOffset" type="Marker2D" parent="ColorRect"]
 position = Vector2(0, 1000)
@@ -429,26 +428,31 @@ color = Color(0.701961, 0.701961, 0.701961, 1)
 position = Vector2(1582, 2850)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("5_gmv38")
+autoplay = "default"
 
 [node name="Left" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(338, 3319)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("6_fveo1")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="Left2" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(338, 4319)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("7_qkgon")
+autoplay = "default"
 
 [node name="Left3" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(338, 5319)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("8_3lkyg")
+autoplay = "default"
 
 [node name="Left4" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(338, 6319)
 sprite_frames = ExtResource("9_xlli2")
+autoplay = "default"
 
 [node name="Left5" type="Sprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(338, 7319)
@@ -463,27 +467,32 @@ texture = ExtResource("11_y52ho")
 [node name="Right2" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(1582, 3850)
 sprite_frames = ExtResource("7_djhg3")
+autoplay = "default"
 
 [node name="Right3" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(1582, 4850)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("9_fs6dy")
+autoplay = "default"
 
 [node name="Right4" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(1582, 5850)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("11_a8cc3")
+autoplay = "default"
 
 [node name="Right5" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(1582, 6850)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("13_hotx8")
 animation = &"showcase"
+autoplay = "showcase"
 
 [node name="Right6" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(1582, 7850)
 scale = Vector2(0.75, 0.75)
 sprite_frames = ExtResource("15_l72n1")
+autoplay = "default"
 
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(960, 1975)
