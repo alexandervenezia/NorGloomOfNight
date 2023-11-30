@@ -355,7 +355,7 @@ public partial class Shop : Node2D
         foreach (CardData c in active)
         {                        
             x = (int)((0.5 + index%Math.Min(active.Count(), MAX_PER_ROW)) * (width / Math.Min(active.Count(), MAX_PER_ROW)));
-            y = 180 + (int)( (1 + index/MAX_PER_ROW) * (height / 5f) );    
+            y = 50 + (int)( (1 + index/MAX_PER_ROW) * (height / 2.2f) );    
 
             Card card = (Card)_cardResource.Instantiate();
             card.UpdateData(c);
@@ -366,8 +366,8 @@ public partial class Shop : Node2D
                 Price price = (Price)_coinResource.Instantiate();                
                 _priceNode.AddChild(price);
                 price.SetPrice(card.Data.Price);
-                price.Position = new Vector2(x, y + 75);
-                price.GlobalScale = Vector2.One * 0.5f;
+                price.Position = new Vector2(x, y + 35);
+                price.GlobalScale = Vector2.One * 0.3f;
             }
 
             _cardNode.AddChild(card);

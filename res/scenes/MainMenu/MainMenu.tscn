@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://bw7twakv1byy7"]
+[gd_scene load_steps=21 format=3 uid="uid://bw7twakv1byy7"]
 
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="1_js6kk"]
+[ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/MainMenu.cs" id="1_visdm"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="2_wo3dn"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="3_4m3dj"]
 [ext_resource type="Script" path="res://res/scenes/MainMenu/ExitGame.cs" id="4_2hi36"]
@@ -75,6 +76,8 @@ corner_radius_bottom_left = 25
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o8y7q"]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_visdm")
+_music = "uid://cjd6hk6cpgr6l"
 
 [node name="NewGame" type="Button" parent="."]
 z_index = 100
