@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=47 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -26,12 +26,12 @@
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="18_1vjvr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="18_qdqg5"]
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
-[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="26_wfr1f"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
-[ext_resource type="PackedScene" uid="uid://bbwgebb7735on" path="res://res/scenes/overworld/NPC.tscn" id="28_0cjw6"]
+[ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="28_g3kh2"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="29_rtxg4"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="30_a5nkd"]
 [ext_resource type="Resource" uid="uid://3qmogeo45ns3" path="res://res/resources/cutscenes/KerPoCutsceneEnd.tres" id="30_up1a5"]
-[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://res/scenes/combat/subscenes/enemy/assets/Eyeball Guy.png" id="32_f58um"]
 [ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://res/scenes/combat/subscenes/enemy/assets/Creep.png" id="33_gxyyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
@@ -113,6 +113,9 @@ shader_parameter/isHighlighted = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecjm0"]
 size = Vector2(254, 960)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shlqa"]
+size = Vector2(512, 800)
 
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -526,6 +529,7 @@ texture = ExtResource("6_x0fb6")
 position = Vector2(-7866, -10058)
 texture = ExtResource("7_u1ox0")
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="StaircaseBg" type="Sprite2D" parent="image"]
 position = Vector2(14858, -2197)
@@ -570,9 +574,6 @@ _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 position = Vector2(26036, -4526)
 scale = Vector2(1.25, 1.25)
 
-[node name="HealArea" parent="." instance=ExtResource("26_wfr1f")]
-position = Vector2(-7414, -9826)
-
 [node name="ProgressBlocker" type="StaticBody2D" parent="."]
 position = Vector2(13658, 464)
 script = ExtResource("27_0n67v")
@@ -581,26 +582,48 @@ script = ExtResource("27_0n67v")
 position = Vector2(37, -50)
 shape = SubResource("RectangleShape2D_ecjm0")
 
-[node name="NPC" parent="." instance=ExtResource("28_0cjw6")]
-position = Vector2(-7758, -9754)
-_dialogue = Array[String](["I am an NPC.", "Testing, testing."])
+[node name="HR_NPC" parent="." instance=ExtResource("28_g3kh2")]
+position = Vector2(-7712, -9692)
+_dialogue = Array[String](["Don't get comfortable."])
+
+[node name="Creep_NPC" type="Area2D" parent="."]
+position = Vector2(12166, -9670)
+script = ExtResource("29_rtxg4")
+_dialogue = Array[String](["[i] heavy breathing..."])
 _delayMS = 2000
+
+[node name="Creep" type="Sprite2D" parent="Creep_NPC"]
+position = Vector2(-16, 0)
+scale = Vector2(0.527344, 0.527344)
+texture = ExtResource("33_gxyyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creep_NPC"]
+position = Vector2(-20, 0)
+shape = SubResource("RectangleShape2D_shlqa")
+
+[node name="DialogueBubble" type="Polygon2D" parent="Creep_NPC"]
+position = Vector2(-68, -110)
+polygon = PackedVector2Array(2, -4, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Creep_NPC/DialogueBubble"]
+offset_left = -488.0
+offset_top = -535.0
+offset_right = 129.0
+offset_bottom = -287.0
+theme = ExtResource("30_a5nkd")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]
+
+. . ."
+metadata/_edit_use_anchors_ = true
 
 [node name="CutsceneZone" parent="." instance=ExtResource("29_ef0ed")]
 position = Vector2(27032, -4252)
 scale = Vector2(2.5, 2)
 Cutscene = ExtResource("30_up1a5")
 FLAG_ACQUIRED_CROWN = true
-
-[node name="EyeballGuy" type="Sprite2D" parent="."]
-position = Vector2(-7720, -9712)
-scale = Vector2(0.376952, 0.376952)
-texture = ExtResource("32_f58um")
-
-[node name="Creep" type="Sprite2D" parent="."]
-position = Vector2(12150, -9670)
-scale = Vector2(0.527344, 0.527344)
-texture = ExtResource("33_gxyyq")
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]

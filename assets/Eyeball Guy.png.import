@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6vccoo8p1fxa"
-path="res://.godot/imported/Eyeball Guy.png-5ea46b4408eea3d6450f3158cf6190f6.ctex"
+path="res://.godot/imported/Eyeball Guy.png-001747214b7a16a9d0065a55f4dc1cc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/scenes/combat/subscenes/enemy/assets/Eyeball Guy.png"
-dest_files=["res://.godot/imported/Eyeball Guy.png-5ea46b4408eea3d6450f3158cf6190f6.ctex"]
+source_file="res://assets/Eyeball Guy.png"
+dest_files=["res://.godot/imported/Eyeball Guy.png-001747214b7a16a9d0065a55f4dc1cc7.ctex"]
 
 [params]
 
