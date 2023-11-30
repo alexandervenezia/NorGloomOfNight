@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c6thwoiv7wpds"]
+[gd_scene load_steps=31 format=3 uid="uid://c6thwoiv7wpds"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/Credits.cs" id="1_dt5wu"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="2_wo2cs"]
@@ -9,11 +9,12 @@
 [ext_resource type="SpriteFrames" uid="uid://cpobpuyh1fysh" path="res://res/scenes/overworld/hell/pride/QueenPride/PrideFrames.tres" id="5_gmv38"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="5_vw65y"]
 [ext_resource type="SpriteFrames" uid="uid://b36ublg73homd" path="res://res/scenes/overworld/purgatory/subscenes/PokerGuy/img/PokerFrames.tres" id="6_fveo1"]
-[ext_resource type="Theme" uid="uid://djnljen80b82f" path="res://assets/fonts/card_theme.tres" id="6_pdlbh"]
 [ext_resource type="SpriteFrames" uid="uid://c8jvh06yi0frh" path="res://res/scenes/overworld/hell/pride/Cerberus/CerberusFrames.tres" id="7_djhg3"]
 [ext_resource type="Theme" uid="uid://dfieef5xnsvti" path="res://assets/fonts/IrishGrover/IrishGrover.tres" id="7_pqx5m"]
 [ext_resource type="SpriteFrames" uid="uid://dxxh86rsob4o1" path="res://res/scenes/overworld/hell/pride/Devin/DevinFrames.tres" id="7_qkgon"]
+[ext_resource type="Texture2D" uid="uid://1qn40hr44nwg" path="res://res/scenes/MainMenu/assets/ScaleLevel.png" id="8_2i14c"]
 [ext_resource type="SpriteFrames" uid="uid://ctvchwiw4nfd5" path="res://res/scenes/overworld/hell/pride/Leatherface/LeatherfaceOverworldFrames.tres" id="8_3lkyg"]
+[ext_resource type="Texture2D" uid="uid://ci7c04ig20o8p" path="res://res/scenes/MainMenu/assets/Group 59.png" id="8_o72ph"]
 [ext_resource type="SpriteFrames" uid="uid://d1qxf1j13278r" path="res://res/scenes/overworld/hell/pride/Kerog/KerogOverworldFrames.tres" id="9_fs6dy"]
 [ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="9_xlli2"]
 [ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/Eyeball Guy.png" id="10_4b8v1"]
@@ -22,6 +23,7 @@
 [ext_resource type="SpriteFrames" uid="uid://20u3u0j7h4xj" path="res://res/scenes/overworld/hell/pride/Grabby/GrabbyFrames.tres" id="13_hotx8"]
 [ext_resource type="SpriteFrames" uid="uid://ba64747tac201" path="res://res/scenes/overworld/hell/pride/Sid/SidFrames.tres" id="15_l72n1"]
 [ext_resource type="Texture2D" uid="uid://bx56yjdh8g4fi" path="res://res/scenes/combat/subscenes/player/asset/Boi.png" id="19_wxvxc"]
+[ext_resource type="Texture2D" uid="uid://d0dv2ngsxhqv5" path="res://res/scenes/MainMenu/assets/Thanks for playing.png" id="22_vlb3k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqkqw"]
 shader = ExtResource("3_bdaw0")
@@ -372,63 +374,28 @@ theme = ExtResource("7_pqx5m")
 bbcode_enabled = true
 text = "[font_size=50][center]A Game By"
 
-[node name="Header19" type="RichTextLabel" parent="ColorRect/TextOffset"]
-offset_top = 8718.0
-offset_right = 1920.0
-offset_bottom = 8832.0
-theme = ExtResource("7_pqx5m")
-bbcode_enabled = true
-text = "[font_size=50][center]Thanks for playing!"
-
 [node name="NorGloomOfNightTitle" type="Sprite2D" parent="ColorRect/TextOffset"]
-position = Vector2(960, 1536)
+position = Vector2(960, 1605)
 texture = ExtResource("5_4ycxu")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/TextOffset"]
-offset_top = 343.0
-offset_right = 1920.0
-offset_bottom = 920.0
-theme = ExtResource("6_pdlbh")
-bbcode_enabled = true
-text = "[color=gold][font_size=55][center]Neither snow nor rain nor heat nor gloom of night stays these couriers
-from the swift completion of their appointed rounds.
-
- - Herodotus"
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/TextOffset"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 573.0
-offset_top = 282.0
-offset_right = 1347.0
-offset_bottom = 286.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.701961, 0.701961, 0.701961, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="ColorRect/TextOffset"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 573.0
-offset_top = 687.0
-offset_right = 1347.0
-offset_bottom = 691.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.701961, 0.701961, 0.701961, 1)
 
 [node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="ColorRect/TextOffset"]
 position = Vector2(960, 8165)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_wo2cs")
 
+[node name="ScaleLevel" type="Sprite2D" parent="ColorRect/TextOffset"]
+modulate = Color(0.219608, 0.219608, 0.219608, 1)
+position = Vector2(960, 582)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_2i14c")
+
+[node name="Group59" type="Sprite2D" parent="ColorRect/TextOffset"]
+position = Vector2(960, 547)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_o72ph")
+
 [node name="CharacterOffset" type="Marker2D" parent="ColorRect"]
+position = Vector2(0, 175)
 
 [node name="Right" type="AnimatedSprite2D" parent="ColorRect/CharacterOffset"]
 position = Vector2(1582, 2850)
@@ -501,9 +468,14 @@ sprite_frames = ExtResource("15_l72n1")
 autoplay = "default"
 
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect/CharacterOffset"]
-position = Vector2(960, 1975)
+position = Vector2(960, 1980)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_wxvxc")
+
+[node name="ThanksForPlaying" type="Sprite2D" parent="ColorRect"]
+position = Vector2(960, 10390)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("22_vlb3k")
 
 [node name="Back" type="Button" parent="."]
 z_index = 100
