@@ -1467,6 +1467,8 @@ _dialogue = Array[String](["Jobs not done", "You good? Get goin."])
 scale = Vector2(1.8, 1.8)
 _doorOnePos = Vector2i(-6855, 2970)
 _doorTwoPos = Vector2i(-2600, 12225)
+_showDoorOne = true
+_showDoorTwo = true
 
 [node name="ColorRect" type="ColorRect" parent="HealDoor1"]
 z_index = -1
@@ -1481,6 +1483,8 @@ metadata/_edit_lock_ = true
 scale = Vector2(1.8, 1.8)
 _doorOnePos = Vector2i(33000, 4410)
 _doorTwoPos = Vector2i(23700, 12405)
+_showDoorOne = true
+_showDoorTwo = true
 
 [node name="ColorRect2" type="ColorRect" parent="HealDoor2"]
 z_index = -1

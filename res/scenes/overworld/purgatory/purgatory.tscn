@@ -48,13 +48,13 @@ size = Vector2(7497.5, 216)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvv1h"]
 size = Vector2(10446, 152)
 
-[sub_resource type="Gradient" id="Gradient_o3sdl"]
+[sub_resource type="Gradient" id="Gradient_ftfnc"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.572848, 0.794702)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ujr6k"]
-gradient = SubResource("Gradient_o3sdl")
+gradient = SubResource("Gradient_ftfnc")
 fill_from = Vector2(1, 0.5)
 fill_to = Vector2(0, 0.5)
 

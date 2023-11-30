@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=29 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
@@ -36,6 +36,16 @@ fill_to = Vector2(0, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jepx"]
 radius = 32.0
+
+[sub_resource type="Gradient" id="Gradient_o3sdl"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.572848, 0.794702)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jor7j"]
+gradient = SubResource("Gradient_o3sdl")
+fill_from = Vector2(1, 0.5)
+fill_to = Vector2(0, 0.5)
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_gps4y")
@@ -211,6 +221,12 @@ volume_db = 1.0
 bus = &"SFX"
 
 [node name="Rewards" type="Node2D" parent="."]
+
+[node name="QuestGradient" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(810, 348)
+scale = Vector2(19.6245, 6.34662)
+texture = SubResource("GradientTexture2D_jor7j")
 
 [connection signal="input_event" from="EndTurn" to="Player" method="OnEndTurnButtonInput"]
 [connection signal="input_event" from="EndTurn" to="EndTurn" method="OnInputEvent"]
