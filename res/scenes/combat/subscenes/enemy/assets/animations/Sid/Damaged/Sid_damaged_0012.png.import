@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx501pc8wjtcv"
-path="res://.godot/imported/Sid_damaged_0012.png-c2a02f2666522a84d0793dfcf3e1e3f9.ctex"
+path.s3tc="res://.godot/imported/Sid_damaged_0012.png-c2a02f2666522a84d0793dfcf3e1e3f9.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/Sid/Damaged/Sid_damaged_0012.png"
-dest_files=["res://.godot/imported/Sid_damaged_0012.png-c2a02f2666522a84d0793dfcf3e1e3f9.ctex"]
+dest_files=["res://.godot/imported/Sid_damaged_0012.png-c2a02f2666522a84d0793dfcf3e1e3f9.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

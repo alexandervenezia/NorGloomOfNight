@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=65 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://df1motfq4vj8s" path="res://res/scenes/overworld/purgatory/img/Room 1.PNG" id="7_u1ox0"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/CutscenePlayer.cs" id="8_eebr5"]
 [ext_resource type="Texture2D" uid="uid://brbc3efcree06" path="res://res/scenes/overworld/purgatory/img/Staircase bg.PNG" id="8_lg4mg"]
+[ext_resource type="Texture2D" uid="uid://1qn40hr44nwg" path="res://res/scenes/MainMenu/assets/ScaleLevel.png" id="8_nmcbv"]
 [ext_resource type="AudioStream" uid="uid://dy5m5f7oxljjf" path="res://assets/audio/key.ogg" id="9_htqbp"]
 [ext_resource type="Texture2D" uid="uid://bj1r3yk4i5qgx" path="res://res/scenes/overworld/purgatory/img/Room 2.PNG" id="9_nhmri"]
 [ext_resource type="FontFile" uid="uid://g3ct3ts30737" path="res://assets/fonts/Baskerville/LibreBaskerville-Regular.ttf" id="10_tw26m"]
@@ -67,60 +68,37 @@ gradient = SubResource("Gradient_ftfnc")
 fill_from = Vector2(1, 0.5)
 fill_to = Vector2(0, 0.5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4andh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eopa3"]
+bg_color = Color(0.235294, 0.188235, 0.341176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j28nq"]
+bg_color = Color(0.113725, 0.117647, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clbst"]
+bg_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41iph"]
+bg_color = Color(0.517647, 0.517647, 0.694118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7duuu"]
+bg_color = Color(0.113725, 0.117647, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6l65n"]
+bg_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5v0m"]
+bg_color = Color(0.184314, 0.192157, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oinm0"]
+bg_color = Color(0.113725, 0.117647, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxrr6"]
+bg_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcs4p"]
 shader = ExtResource("16_5x30j")
-
-[sub_resource type="Shader" id="Shader_wc5ra"]
-code = "shader_type canvas_item;
-
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
-
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
-
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4andh"]
-shader = SubResource("Shader_wc5ra")
-shader_parameter/isHighlighted = null
-
-[sub_resource type="Shader" id="Shader_4bewk"]
-code = "shader_type canvas_item;
-
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
-
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
-
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_noruu"]
-shader = SubResource("Shader_4bewk")
-shader_parameter/isHighlighted = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecjm0"]
 size = Vector2(254, 960)
@@ -255,14 +233,13 @@ script = ExtResource("4_yy1ep")
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelSelect" type="Control" parent="OverworldPlayer/Camera2D"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(4, 4)
 mouse_filter = 1
 
-[node name="LevelSelectMenu" type="Panel" parent="OverworldPlayer/Camera2D/LevelSelect"]
-material = SubResource("ShaderMaterial_tcs4p")
+[node name="LevelSelectMenu" type="ColorRect" parent="OverworldPlayer/Camera2D/LevelSelect"]
+self_modulate = Color(0.0117647, 0.0117647, 0.0196078, 0.929412)
 custom_minimum_size = Vector2(1000, 1000)
 layout_mode = 1
 anchors_preset = 8
@@ -270,10 +247,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -500.0
-offset_right = 500.0
-offset_bottom = 500.0
+offset_left = -994.0
+offset_top = -546.0
+offset_right = 994.0
+offset_bottom = 561.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -287,13 +264,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -54.5
-offset_right = 500.0
-offset_bottom = 45.5
+offset_left = -936.0
+offset_top = -28.5
+offset_right = -236.0
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_eopa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j28nq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_clbst")
 script = ExtResource("18_qdqg5")
 _uid = "uid://bk7mufkqeug2p"
 _lockedUntilTutorialComplete = true
@@ -305,9 +285,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
+offset_left = -350.0
 offset_top = -26.0
-offset_right = 500.0
+offset_right = 349.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -317,7 +297,6 @@ bbcode_enabled = true
 text = "[center][font_size=50]Pride"
 
 [node name="Management" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
-material = SubResource("ShaderMaterial_noruu")
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -325,13 +304,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -259.0
-offset_right = 500.0
-offset_bottom = -159.0
+offset_left = -936.0
+offset_top = -328.5
+offset_right = -237.0
+offset_bottom = -228.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_41iph")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7duuu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6l65n")
 script = ExtResource("18_qdqg5")
 _uid = "uid://dpku0u2ogjvbb"
 
@@ -342,9 +324,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
+offset_left = -347.5
 offset_top = -26.0
-offset_right = 500.0
+offset_right = 349.5
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -353,23 +335,116 @@ theme = ExtResource("18_1vjvr")
 bbcode_enabled = true
 text = "[center][font_size=50]Middle Management"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+[node name="Purgatory" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+custom_minimum_size = Vector2(500, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -128.0
-offset_right = 500.0
-offset_bottom = -66.0
+offset_left = -936.0
+offset_top = -178.5
+offset_right = -237.0
+offset_bottom = -78.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_x5v0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oinm0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kxrr6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Purgatory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.5
+offset_top = -26.0
+offset_right = 349.5
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("18_1vjvr")
 bbcode_enabled = true
-text = "[center][font_size=50]~ Hell ~"
+text = "[center][font_size=50]Purgatory"
+
+[node name="Unknown" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -936.5
+offset_top = 121.5
+offset_right = -237.5
+offset_bottom = 221.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Unknown"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.5
+offset_top = -26.0
+offset_right = 349.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]? ? ?"
+
+[node name="Unknown2" type="Button" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -936.5
+offset_top = 271.5
+offset_right = -237.5
+offset_bottom = 371.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Unknown2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.5
+offset_top = -26.0
+offset_right = 349.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("18_1vjvr")
+bbcode_enabled = true
+text = "[center][font_size=50]? ? ?"
+
+[node name="ScaleLevel" type="Sprite2D" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(1358, 691)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_nmcbv")
 
 [node name="BackToPurgatory" type="Control" parent="OverworldPlayer/Camera2D"]
 visible = false
@@ -467,6 +542,7 @@ text = "[right][font_size=125]Quest Here"
 metadata/_edit_use_anchors_ = true
 
 [node name="CutscenePlayer" type="ColorRect" parent="OverworldPlayer/Camera2D"]
+visible = false
 z_index = 2
 offset_left = -3854.0
 offset_top = 974.0
@@ -499,6 +575,7 @@ position = Vector2(-3258, -1982)
 scale = Vector2(4, 4)
 
 [node name="Journal" parent="OverworldPlayer/Camera2D" instance=ExtResource("15_60gpt")]
+visible = false
 z_index = 100
 scale = Vector2(4, 4)
 

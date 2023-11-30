@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf0anijr5lfva"
-path="res://.godot/imported/Pride_attack_0007.png-a711ec005ef891e95d960be3f873f120.ctex"
+path.s3tc="res://.godot/imported/Pride_attack_0007.png-a711ec005ef891e95d960be3f873f120.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/Attack/Pride_attack_0007.png"
-dest_files=["res://.godot/imported/Pride_attack_0007.png-a711ec005ef891e95d960be3f873f120.ctex"]
+dest_files=["res://.godot/imported/Pride_attack_0007.png-a711ec005ef891e95d960be3f873f120.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

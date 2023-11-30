@@ -4,7 +4,7 @@ using System;
 
 public partial class LevelSelectOption : Button
 {
-    
+    [Export] private bool _useShader;
     [Export] private string _uid;
     [Export] private bool _returnToPurgatory;
     [Export] bool _middleManagement;
@@ -23,10 +23,14 @@ public partial class LevelSelectOption : Button
         Enabled = true;
         _level = GetOwnerOrNull<ILevel>();
         _purgatory = _level;
-        (Material as ShaderMaterial).SetShaderParameter("isHighlighted", 0f);        
+        
+        if (_useShader)            
+            (Material as ShaderMaterial).SetShaderParameter("isHighlighted", 0f);        
     }
     public void OnMouseEntered()
     {
+        if (!_useShader)
+            return;
         if ((_lockedUntilTutorialComplete && !QuestManager.GetInstance().FLAG_ACQUIRED_CROWN) || !Enabled)
             (Material as ShaderMaterial).SetShaderParameter("isHighlighted", 0f);
         else
@@ -35,7 +39,8 @@ public partial class LevelSelectOption : Button
 
     public void OnMouseExited()
     {
-
+        if (!_useShader)
+            return;
         (Material as ShaderMaterial).SetShaderParameter("isHighlighted", 0f);
     }
 
