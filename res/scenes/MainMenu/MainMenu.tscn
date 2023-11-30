@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://res/scenes/MainMenu/ExitGame.cs" id="4_2hi36"]
 [ext_resource type="Texture2D" uid="uid://b5hkvlaw06ph8" path="res://res/scenes/MainMenu/assets/NOR GLOOM OF NIGHT title.png" id="5_6lnj2"]
 [ext_resource type="Texture2D" uid="uid://d0ok3krhmgw01" path="res://res/scenes/MainMenu/assets/Title screen border.png" id="5_dxjwr"]
-[ext_resource type="Texture2D" uid="uid://cacfyfaji28nl" path="res://res/scenes/MainMenu/assets/TITLE SCREEN BG.png" id="6_0c2tu"]
+[ext_resource type="Texture2D" uid="uid://cacfyfaji28nl" path="res://res/scenes/MainMenu/assets/Title screen bg.png" id="6_0c2tu"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="6_mdm88"]
 [ext_resource type="Texture2D" uid="uid://dytl26e35towi" path="res://res/scenes/MainMenu/assets/GitHub Lost souls label.png" id="7_67vmm"]
 

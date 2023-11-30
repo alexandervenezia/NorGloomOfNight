@@ -119,7 +119,10 @@ public partial class Purgatory : Node2D, ILevel
 			_player.Die();
 		}
 		else
+		{
 			_enemyInCombat?.Die();
+			_enemyInCombat = null;
+		}
 	}
 
 	public Node UseElevator(string dest = "")

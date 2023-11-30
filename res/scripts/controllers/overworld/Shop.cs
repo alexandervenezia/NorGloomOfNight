@@ -113,6 +113,8 @@ public partial class Shop : Node2D
         if (MasterScene.GetInstance().TotalCoins < GetUpgradeCost(_active.Data))
             return;
 
+        GD.Print("OnUpgradeButtonPressed called");
+
         MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);
         MasterDeck.PlayerDeck.AddCard(_active.Data.Upgrade);
         MasterScene.GetInstance().AddCoins(-GetUpgradeCost(_active.Data));
@@ -291,6 +293,8 @@ public partial class Shop : Node2D
 
         _stock.Remove(_selectedCard.Data);
         CardBought?.Invoke(_selectedCard.Data);
+
+        GD.Print("BuyCard called");
 
         MasterDeck.PlayerDeck.AddCard(card);
         MasterScene.GetInstance().AddCoins(-card.Price);

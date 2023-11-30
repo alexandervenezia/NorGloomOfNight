@@ -92,6 +92,13 @@ public partial class MasterDeck : Node
 
 			GD.Print(c);
 		}
+
+		GD.Print("! - !");
+
+		foreach (CardData c in _playerDeck.CardDict.Keys)
+		{
+			GD.Print(c + "; " + _playerDeck.CardDict[c]);
+		}
 	}
 
 }

@@ -118,6 +118,7 @@ bbcode_enabled = true
 text = "[center][font_size=50]Do Your Job"
 
 [node name="MiddleManagementBg" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(1, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_6mnbm")
