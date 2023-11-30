@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=58 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -29,12 +29,21 @@
 [ext_resource type="Resource" uid="uid://b36mco8oh3sqg" path="res://res/resources/cards/PridesCrown.tres" id="25_bma53"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
 [ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="28_g3kh2"]
+[ext_resource type="Resource" uid="uid://cshi2h1ynw2rp" path="res://res/resources/cards/HolyWord.tres" id="28_skj2b"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="29_rtxg4"]
+[ext_resource type="Resource" uid="uid://cfc5bwbj41lg6" path="res://res/resources/cards/ScatterShot.tres" id="29_vj53b"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="30_a5nkd"]
+[ext_resource type="Resource" uid="uid://bl13iumdm4bdd" path="res://res/resources/cards/LetterOpener.tres" id="30_h4k4w"]
 [ext_resource type="Resource" uid="uid://3qmogeo45ns3" path="res://res/resources/cutscenes/KerPoCutsceneEnd.tres" id="30_up1a5"]
+[ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="31_1ucbg"]
+[ext_resource type="Resource" uid="uid://dgckoph83bovr" path="res://res/resources/cards/Sparks.tres" id="32_4uqdy"]
+[ext_resource type="Resource" uid="uid://cho1urgipfpeg" path="res://res/resources/cards/KillShot.tres" id="33_650he"]
 [ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://res/scenes/combat/subscenes/enemy/assets/Creep.png" id="33_gxyyq"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="34_5ep4q"]
+[ext_resource type="Resource" uid="uid://doee82i4iixls" path="res://res/resources/cards/GodsLight.tres" id="34_5xlx7"]
+[ext_resource type="Resource" uid="uid://c3x74yanv8dns" path="res://res/resources/cards/GodsUniform.tres" id="35_d0osv"]
+[ext_resource type="Resource" uid="uid://r2yjeslnymxq" path="res://res/resources/cards/DistractingShot.tres" id="36_kbv1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -576,6 +585,7 @@ _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
 position = Vector2(26036, -4526)
 scale = Vector2(1.25, 1.25)
+_startingStock = [ExtResource("28_skj2b"), ExtResource("28_skj2b"), ExtResource("29_vj53b"), ExtResource("30_h4k4w"), ExtResource("30_h4k4w"), ExtResource("31_1ucbg"), ExtResource("32_4uqdy"), ExtResource("33_650he"), ExtResource("34_5xlx7"), ExtResource("35_d0osv"), ExtResource("35_d0osv"), ExtResource("36_kbv1o")]
 
 [node name="ProgressBlocker" type="StaticBody2D" parent="."]
 position = Vector2(13658, 464)
