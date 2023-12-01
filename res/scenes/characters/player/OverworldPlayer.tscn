@@ -23,8 +23,10 @@ _coyoteBuffer = 0.3
 shape = SubResource("CapsuleShape2D_207lw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, 0)
 sprite_frames = ExtResource("1_vpm6o")
 animation = &"jump"
+flip_h = true
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 10

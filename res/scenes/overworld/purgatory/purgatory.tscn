@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=74 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -12,9 +12,10 @@
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/CutscenePlayer.cs" id="8_eebr5"]
 [ext_resource type="Texture2D" uid="uid://qdrg0gqtuqds" path="res://assets/UI/hat.png" id="8_lfoog"]
 [ext_resource type="Texture2D" uid="uid://brbc3efcree06" path="res://res/scenes/overworld/purgatory/img/Staircase bg.PNG" id="8_lg4mg"]
-[ext_resource type="Texture2D" uid="uid://1qn40hr44nwg" path="res://res/scenes/MainMenu/assets/ScaleLevel.png" id="8_nmcbv"]
+[ext_resource type="Texture2D" uid="uid://nxogmeihqxje" path="res://res/scenes/overworld/UIScale/scale_balanced.png" id="9_3r73l"]
 [ext_resource type="AudioStream" uid="uid://dy5m5f7oxljjf" path="res://assets/audio/key.ogg" id="9_htqbp"]
 [ext_resource type="Texture2D" uid="uid://bj1r3yk4i5qgx" path="res://res/scenes/overworld/purgatory/img/Room 2.PNG" id="9_nhmri"]
+[ext_resource type="Texture2D" uid="uid://uc1372lvh72m" path="res://res/scenes/overworld/UIScale/scale_unbalanced.png" id="10_imyui"]
 [ext_resource type="FontFile" uid="uid://g3ct3ts30737" path="res://assets/fonts/Baskerville/LibreBaskerville-Regular.ttf" id="10_tw26m"]
 [ext_resource type="PackedScene" uid="uid://md0lwaor2nke" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/MediumPlatform.tscn" id="11_73qlx"]
 [ext_resource type="Texture2D" uid="uid://cftpbsyujo7sg" path="res://assets/black_dot.png" id="11_g3usj"]
@@ -207,9 +208,9 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(15320, 510)
 scale = Vector2(2.75, 2.75)
 
-[node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI") instance=ExtResource("3_g155m")]
+[node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI", "_balancedScale", "_unbalancedScale") instance=ExtResource("3_g155m")]
 z_index = 5
-position = Vector2(-1798, 668)
+position = Vector2(-5014, 672)
 _questUI = NodePath("Camera2D/QuestElement")
 _walkSpeed = 3000.0
 _sprintSpeed = 5100.0
@@ -218,6 +219,8 @@ _gravityFallMultiplier = 1.75
 _accelerationStrength = 0.03
 _gravityMult = 3.5
 _gameOverScene = "uid://cjtyftqstb1xo"
+_balancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleBalanced")
+_unbalancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleUnbalanced")
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -600)
@@ -467,11 +470,16 @@ theme = ExtResource("18_1vjvr")
 bbcode_enabled = true
 text = "[center][font_size=50]? ? ?"
 
-[node name="ScaleLevel" type="Sprite2D" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
-modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(1358, 691)
+[node name="ScaleBalanced" type="Sprite2D" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+position = Vector2(1345, 621)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_nmcbv")
+texture = ExtResource("9_3r73l")
+
+[node name="ScaleUnbalanced" type="Sprite2D" parent="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu"]
+visible = false
+position = Vector2(1345, 621)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_imyui")
 
 [node name="BackToPurgatory" type="Control" parent="OverworldPlayer/Camera2D"]
 visible = false
@@ -701,11 +709,10 @@ theme = ExtResource("18_1vjvr")
 bbcode_enabled = true
 text = "[center][font_size=50]? ? ?"
 
-[node name="ScaleLevel" type="Sprite2D" parent="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu"]
-modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(1358, 691)
+[node name="ScaleUnbalanced2" type="Sprite2D" parent="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu"]
+position = Vector2(1345, 621)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_nmcbv")
+texture = ExtResource("10_imyui")
 
 [node name="QuestElement" type="Node2D" parent="OverworldPlayer/Camera2D"]
 z_index = 15
@@ -874,7 +881,7 @@ shape = SubResource("RectangleShape2D_ecjm0")
 
 [node name="HR_NPC" parent="." instance=ExtResource("28_g3kh2")]
 position = Vector2(-7712, -9692)
-_dialogue = Array[String](["Don't get comfortable."])
+script = null
 
 [node name="Creep_NPC" type="Area2D" parent="."]
 position = Vector2(12166, -9670)
@@ -995,6 +1002,11 @@ text = "[center][font_size=40]
 [color=black]
 Break Room"
 metadata/_edit_use_anchors_ = true
+
+[node name="CutsceneZone2" parent="." instance=ExtResource("29_ef0ed")]
+position = Vector2(-7890, -9988)
+scale = Vector2(2, 2)
+RequireInteraction = true
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]

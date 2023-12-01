@@ -12,6 +12,7 @@ public partial class Purgatory : Node2D, ILevel
 	[Export] private string _journalID; // No longer used
 	[Export] private string _introMusicUID;
 	[Export] private string _loopMusicUID;
+	
 	private Player _player;
 	public Player Player => _player;
 	private Vector2 _playerSpawn;
@@ -34,7 +35,7 @@ public partial class Purgatory : Node2D, ILevel
 		if (_player != null)
 			_player.EnemyAggroed += OnAggro;
 		_playerSpawn = _player.GlobalPosition;
-		_playerSpawn += Vector2.Right * 1800; // Hardcoded elevator offset; dumb
+		_playerSpawn += Vector2.Right * 1675; // Hardcoded elevator offset; dumb
 	}
 
 	private async void OnAggro(ICombatable enemy)

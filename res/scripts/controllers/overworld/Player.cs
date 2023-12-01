@@ -41,6 +41,9 @@ public partial class Player : CharacterBody2D
 
 	[Export] private string _gameOverScene;
 
+	[Export] private Sprite2D _balancedScale;
+	[Export] private Sprite2D _unbalancedScale;
+
 	private float _coyoteTimer;
 	private float _gravityDefault;
 	private State _state;
@@ -64,6 +67,8 @@ public partial class Player : CharacterBody2D
 	private bool _glideState = false;
 
 	private bool _interactableOnForThisFrame;
+
+	private CutsceneZone _cutsceneZoneWithin;
 
 	public override void _Ready()
 	{
@@ -100,6 +105,12 @@ public partial class Player : CharacterBody2D
 			_quest = _quests[Array.IndexOf(_quests, _quest) + 1];
 		}
 		UpdateQuestUI();
+
+		if (QuestManager.GetInstance().FLAG_ACQUIRED_CROWN)
+		{
+			_balancedScale.Visible = false;
+			_unbalancedScale.Visible = true;
+		}
 
 	}
 
@@ -161,6 +172,8 @@ public partial class Player : CharacterBody2D
 			if (!_walkSound.Playing)
 				_walkSound.Play();
 		}
+
+		
 
 		//Shop shop = (Shop)_level.UseElevator(_shopUID);
 	}
@@ -261,6 +274,12 @@ public partial class Player : CharacterBody2D
 		_interactionIcon.Visible = _interactableOnForThisFrame;
 		_interactableOnForThisFrame = false;
 		UpdateInteractionIcon(fDelta);
+
+		if (IsInstanceValid(_cutsceneZoneWithin))
+		{
+			if (Input.IsActionJustReleased("ui_interact"))
+				PlayCutscene(_cutsceneZoneWithin.Cutscene);
+		}
 	}
 
 	private void UpdateInteractionIcon(float delta)
@@ -382,6 +401,11 @@ public partial class Player : CharacterBody2D
 				PlayCutscene((area as CutsceneZone).Cutscene);
 				(area as CutsceneZone).Burned = true;
 			}
+			
+			if ((area as CutsceneZone).RequireInteraction)
+			{
+				_cutsceneZoneWithin = ((CutsceneZone)area);
+			}
 		}
 	}
 
@@ -396,6 +420,10 @@ public partial class Player : CharacterBody2D
 		{
 			GD.Print("HealExit");
 			((HealArea)area).Exit();
+		}
+		if (area == _cutsceneZoneWithin)
+		{
+			_cutsceneZoneWithin = null;
 		}
 
 	}
