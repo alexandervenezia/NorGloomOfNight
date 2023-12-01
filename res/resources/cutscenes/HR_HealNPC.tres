@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dq4ck45c2apqn"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Cutscene.cs" id="1_av157"]
+
+[resource]
+script = ExtResource("1_av157")
+SpeakerName = "[color=#666611]Your Supervisor"
+Lines = PackedStringArray("[color=white] HR Manager: [/color]<br>“... keep it up.”")

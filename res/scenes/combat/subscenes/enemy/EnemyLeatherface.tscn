@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhgwcft6ty4ut"]
+[gd_scene load_steps=11 format=3 uid="uid://bhgwcft6ty4ut"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/combat/subscene_logic/Enemy.cs" id="1_wlg8l"]
 [ext_resource type="Resource" uid="uid://wx4osec25bsp" path="res://res/resources/cards/Slash.tres" id="2_gh664"]
 [ext_resource type="Resource" uid="uid://c1yn05oitqoe0" path="res://res/resources/cards/Demon Fury.tres" id="3_j4xej"]
-[ext_resource type="Resource" uid="uid://cagkcsnwq2qr0" path="res://res/resources/cards/HellsGrasp.tres" id="4_228i8"]
+[ext_resource type="Resource" uid="uid://fd8m1rbhp44u" path="res://res/resources/cards/HellsGrasp+.tres" id="4_cm3pb"]
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="4_ie0h5"]
 [ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="4_k8rwb"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="5_f43yq"]
+[ext_resource type="Resource" uid="uid://co0kox2bspho1" path="res://res/resources/cards/HellishEnslavement.tres" id="5_xekyf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shunw"]
 radius = 105.0
@@ -21,10 +22,11 @@ shader_parameter/draining_factor = null
 [node name="EnemyLeatherface" type="Area2D"]
 collision_layer = 4
 script = ExtResource("1_wlg8l")
-_deck = [ExtResource("2_gh664"), ExtResource("3_j4xej"), ExtResource("4_228i8"), ExtResource("3_j4xej")]
+_deck = [ExtResource("2_gh664"), ExtResource("3_j4xej"), ExtResource("4_cm3pb"), ExtResource("3_j4xej")]
 _ID = 4
-_goldDrop = 5
-_cardDrops = Array[Resource]([])
+_goldDrop = 25
+_percentChanceOfCardDrop = 20
+_cardDrops = Array[Resource]([ExtResource("5_xekyf")])
 _maxHealth = 20
 _startingActionPoints = 2
 _startingMovementPoints = 0

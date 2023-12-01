@@ -56,7 +56,14 @@ public class QuestManager
         return _instance;
     }
 
-    private QuestManager() {}
+    private QuestManager() 
+    {
+        FLAG_TALKED_TO_MANAGER = false;
+        FLAG_ACQUIRED_CROWN = false;
+        FLAG_BEAT_DOG = false;
+        FLAG_DELIVERED_CROWN = false;
+        GD.Print("Reset quest flags");
+    }
 
     private void SignalFlagChange()
     {
@@ -69,5 +76,7 @@ public class QuestManager
         _flagAcquiredCrown = false;
         _flagDeliveredCrown = false;
         _beatDog = false;
+        GD.Print("Reset quest flags");
     }
+
 }
