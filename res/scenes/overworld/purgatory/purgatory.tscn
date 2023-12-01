@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=75 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dliwgg0bumx0s" path="res://res/scenes/overworld/purgatory/img/Hallway piece 1.PNG" id="4_5e3f8"]
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="4_wm0r4"]
 [ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_yy1ep"]
+[ext_resource type="Resource" uid="uid://c1ye1homjnu3b" path="res://res/resources/cutscenes/PrideOutroCutscene.tres" id="5_dbs0v"]
 [ext_resource type="Texture2D" uid="uid://bgo7loeositdr" path="res://res/scenes/overworld/purgatory/img/Hallway piece 2.PNG" id="5_n5mx7"]
 [ext_resource type="Texture2D" uid="uid://duwp8iosphge7" path="res://res/scenes/overworld/purgatory/img/Mailroom bg flat.PNG" id="6_x0fb6"]
 [ext_resource type="Texture2D" uid="uid://df1motfq4vj8s" path="res://res/scenes/overworld/purgatory/img/Room 1.PNG" id="7_u1ox0"]
@@ -219,8 +220,10 @@ _gravityFallMultiplier = 1.75
 _accelerationStrength = 0.03
 _gravityMult = 3.5
 _gameOverScene = "uid://cjtyftqstb1xo"
+_creditsScene = "uid://c6thwoiv7wpds"
 _balancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleBalanced")
 _unbalancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleUnbalanced")
+_cutsceneCreditsTrigger = ExtResource("5_dbs0v")
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -600)

@@ -40,9 +40,13 @@ public partial class Player : CharacterBody2D
 	[Export] private float _gravityMult = 3;
 
 	[Export] private string _gameOverScene;
+	[Export] private string _creditsScene;
 
 	[Export] private Sprite2D _balancedScale;
 	[Export] private Sprite2D _unbalancedScale;
+
+	[Export] private Cutscene _cutsceneCreditsTrigger;
+	
 
 	private float _coyoteTimer;
 	private float _gravityDefault;
@@ -278,7 +282,7 @@ public partial class Player : CharacterBody2D
 		if (IsInstanceValid(_cutsceneZoneWithin))
 		{
 			if (Input.IsActionJustReleased("ui_interact"))
-				PlayCutscene(_cutsceneZoneWithin.Cutscene);
+				_ = PlayCutscene(_cutsceneZoneWithin.Cutscene);
 		}
 	}
 
@@ -398,7 +402,7 @@ public partial class Player : CharacterBody2D
 			GD.Print("Cutscene zone");
 			if ((area as CutsceneZone).ShouldRun())
 			{
-				PlayCutscene((area as CutsceneZone).Cutscene);
+				_ = PlayCutscene((area as CutsceneZone).Cutscene);
 				(area as CutsceneZone).Burned = true;
 			}
 			
@@ -466,6 +470,16 @@ public partial class Player : CharacterBody2D
 			});
 
 		_cutscenePlayer.Visible = false;
+
+		if (cutscene == _cutsceneCreditsTrigger)
+		{
+			GD.Print("Roll credits");
+
+			MasterAudio.GetInstance().ClearQueue();
+			MasterScene.GetInstance().ResetVars();
+			MasterScene.GetInstance().CallDeferred("ActivateScene", _creditsScene, true, true);
+		}
+		
 	}
 
 	public void SetHealth(int hp)

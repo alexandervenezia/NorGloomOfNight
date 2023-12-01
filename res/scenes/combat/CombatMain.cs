@@ -302,16 +302,12 @@ public partial class CombatMain : Node2D
 
 	}
 
-	private async void AnimateRewardCards(Card chosen)
+	private void AnimateRewardCards(Card chosen)
 	{
 		foreach (Node2D card in _rewardsNode.GetChildren())
 		{
 			if (card != chosen)
 				card.QueueFree();
-			else
-			{
-
-			}
 		}
 	}
 
