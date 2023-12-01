@@ -941,7 +941,7 @@ scale = Vector2(0.507719, 0.507719)
 texture = ExtResource("47_0lrkl")
 
 [node name="Cardfight_controls_poster" type="Sprite2D" parent="."]
-position = Vector2(20402, -4584)
+position = Vector2(19980, -4600)
 scale = Vector2(0.495803, 0.495803)
 texture = ExtResource("48_6kxop")
 
@@ -979,6 +979,38 @@ text = "[center][font_size=40]
 [color=black]
 Welcome Back
 You're here forever!"
+metadata/_edit_use_anchors_ = true
+
+[node name="TheSign4" type="Sprite2D" parent="."]
+position = Vector2(13706, 286)
+texture = ExtResource("49_8g2xj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TheSign4"]
+offset_left = -208.0
+offset_top = -174.0
+offset_right = 208.0
+offset_bottom = 72.0
+bbcode_enabled = true
+text = "[center][font_size=40] 
+[color=black]
+To Mailroom & Equitment Storage
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TheSign5" type="Sprite2D" parent="."]
+position = Vector2(21434, -4140)
+texture = ExtResource("49_8g2xj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TheSign5"]
+offset_left = -210.0
+offset_top = -170.0
+offset_right = 206.0
+offset_bottom = 76.0
+bbcode_enabled = true
+text = "[center][font_size=40] 
+[color=black]
+To Mailroom & Equitment Storage
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="TheSign2" type="Sprite2D" parent="."]
