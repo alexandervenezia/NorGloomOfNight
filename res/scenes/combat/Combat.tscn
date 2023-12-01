@@ -73,7 +73,7 @@ _actionPointLabel = NodePath("../Energy/ActionPoint/Label")
 _movementPointLabel = NodePath("../Energy/MovementPoint/Label")
 _deck = NodePath("../Deck")
 _discard = NodePath("../Discard")
-_maxHealth = 30
+_maxHealth = 35
 
 [node name="Background" parent="." instance=ExtResource("1_5pl1x")]
 scale = Vector2(0.5, 0.5)

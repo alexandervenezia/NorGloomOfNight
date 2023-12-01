@@ -72,6 +72,7 @@ public partial class Player : CharacterBody2D
 	private bool _cutsceneFinished = false;
 	private bool _glideState = false;
 	private bool _playingCutscene = false;
+	public bool PlayingCutscene => _playingCutscene;
 
 	private bool _interactableOnForThisFrame;
 
@@ -195,6 +196,11 @@ public partial class Player : CharacterBody2D
 			MoveAndCollide(Velocity * 0.01f);
 			return;
 		}
+		else if (Engine.TimeScale < 0.01f)
+		{
+			return;
+		}
+
 		float fDelta = (float)delta;
 		Godot.Vector2 movementInput = GetMovementInput();
 
@@ -410,7 +416,7 @@ public partial class Player : CharacterBody2D
 				(area as CutsceneZone).Burned = true;
 			}
 			
-			if ((area as CutsceneZone).RequireInteraction)
+			else if ((area as CutsceneZone).RequireInteraction)
 			{
 				_cutsceneZoneWithin = ((CutsceneZone)area);
 			}
