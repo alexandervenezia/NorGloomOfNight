@@ -20,9 +20,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6u7f"]
 
-[node name="Settings" type="Node2D" node_paths=PackedStringArray("_fullscreen", "_masterVolume", "_effectsVolume", "_uiVolume", "_musicVolume")]
+[node name="Settings" type="Node2D" node_paths=PackedStringArray("_fullscreen", "_vsync", "_masterVolume", "_effectsVolume", "_uiVolume", "_musicVolume")]
 script = ExtResource("1_s22vn")
 _fullscreen = NodePath("ColorRect/Fullscreen/FullscreenCheck")
+_vsync = NodePath("ColorRect/V-Sync/VSyncCheck")
 _masterVolume = NodePath("ColorRect/Volume/Master/HSlider")
 _effectsVolume = NodePath("ColorRect/Volume/Sfx/HSlider")
 _uiVolume = NodePath("ColorRect/Volume/UI/HSlider")
@@ -109,7 +110,7 @@ anchor_bottom = 0.5
 offset_left = -288.0
 offset_top = -550.0
 offset_right = 208.0
-offset_bottom = -322.0
+offset_bottom = -436.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -150,6 +151,58 @@ theme_override_constants/shadow_outline_size = 8
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[font_size=80][color=#111145]Fullscreen[/color]"
+
+[node name="V-Sync" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -447.0
+offset_right = 208.0
+offset_bottom = -333.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VSyncCheck" type="CheckButton" parent="ColorRect/V-Sync"]
+modulate = Color(0, 0.603922, 1, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -13.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2mqcn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k6u7f")
+action_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/V-Sync"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -47.0
+offset_right = 448.0
+offset_bottom = 51.0
+grow_vertical = 2
+theme = ExtResource("6_8asa4")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.560784)
+theme_override_colors/font_outline_color = Color(0.592157, 0.792157, 0.862745, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "[font_size=80][color=#111145]VSync[/color]"
 
 [node name="Volume" type="Control" parent="ColorRect"]
 layout_mode = 1

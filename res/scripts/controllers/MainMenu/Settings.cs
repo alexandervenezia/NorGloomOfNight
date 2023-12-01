@@ -14,6 +14,7 @@ public enum VolumeTypes
 public partial class Settings : Node
 {
     [Export] private CheckButton _fullscreen;
+    [Export] private CheckButton _vsync;
     [Export] private HSlider _masterVolume;
     [Export] private HSlider _effectsVolume;
     [Export] private HSlider _uiVolume;
@@ -33,7 +34,9 @@ public partial class Settings : Node
     {
         MasterAudio.GetInstance().SetNoRestart();
         _fullscreen.ButtonPressed = DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen;
+        _vsync.ButtonPressed = DisplayServer.WindowGetVsyncMode() == DisplayServer.VSyncMode.Adaptive;
         _fullscreen.Toggled += OnFullscreenPressed;
+        _vsync.Toggled += OnVsyncPressed;
 
         _masterVolume.ValueChanged += (double x) => {
             VolumeChanged((float)x, VolumeTypes.MASTER);
@@ -80,6 +83,14 @@ public partial class Settings : Node
             DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
         else
             DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+    }
+
+    private void OnVsyncPressed(bool toggled)
+    {
+        if (toggled)
+            DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Adaptive);
+        else
+            DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
     }
 
     private void VolumeChanged(float newVol, VolumeTypes type)
