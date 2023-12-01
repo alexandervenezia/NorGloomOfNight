@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_vx2pk")
 _name = "Sparks+"
-_description = ""
+_description = "Energy builds within you, causing a chain reaction as you grow stronger."
 _artwork = ExtResource("1_0xn0r")
 _type = 2
 _rarity = 2

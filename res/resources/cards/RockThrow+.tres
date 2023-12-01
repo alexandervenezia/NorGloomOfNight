@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_a01g7")
 _name = "Rock Throw+"
-_description = ""
+_description = "It’s a rock man. You throw it."
 _artwork = ExtResource("1_hx6md")
 _type = 2
 _rarity = 1
