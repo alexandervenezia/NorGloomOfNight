@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cpobpuyh1fysh" path="res://res/scenes/overworld/hell/pride/QueenPride/PrideFrames.tres" id="2_hluvy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
-size = Vector2(3408, 3528)
+size = Vector2(5622, 3364)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glj0n"]
 
@@ -29,7 +29,7 @@ sprite_frames = ExtResource("2_hluvy")
 [node name="Aggro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
-position = Vector2(-8, 332)
+position = Vector2(-664, 162)
 shape = SubResource("RectangleShape2D_qqlln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -337,13 +337,13 @@ size = Vector2(572.5, 3160.5)
 size = Vector2(4607.63, 864.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xms38"]
-size = Vector2(2194, 640)
+size = Vector2(2240, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64r0a"]
-size = Vector2(1348, 640)
+size = Vector2(1676, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve0ld"]
-size = Vector2(6120, 640)
+size = Vector2(6178, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x35di"]
 size = Vector2(512, 800)
@@ -1389,7 +1389,7 @@ script = ExtResource("15_ps8to")
 _warningTimeMS = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
-position = Vector2(83, -16)
+position = Vector2(60, -16)
 shape = SubResource("RectangleShape2D_xms38")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby2"]
@@ -1401,7 +1401,7 @@ script = ExtResource("15_ps8to")
 _warningTimeMS = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
-position = Vector2(6, -16)
+position = Vector2(50, -16)
 shape = SubResource("RectangleShape2D_64r0a")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby3"]
@@ -1413,7 +1413,7 @@ script = ExtResource("15_ps8to")
 _warningTimeMS = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
-position = Vector2(36, -16)
+position = Vector2(6, -16)
 shape = SubResource("RectangleShape2D_64r0a")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby4"]
@@ -1425,7 +1425,7 @@ script = ExtResource("15_ps8to")
 _warningTimeMS = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby5"]
-position = Vector2(368, -16)
+position = Vector2(347, -16)
 shape = SubResource("RectangleShape2D_ve0ld")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Grabby5"]
