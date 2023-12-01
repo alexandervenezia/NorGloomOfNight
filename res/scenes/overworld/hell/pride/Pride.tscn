@@ -1268,7 +1268,8 @@ gizmo_extents = 229.0
 script = ExtResource("6_b5q6i")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("7_no0g4")]
-position = Vector2(20068, -3576)
+position = Vector2(20084, -3624)
+scale = Vector2(0.35, 1.4)
 _startingStock = [ExtResource("20_iwwuw"), ExtResource("21_dysgv"), ExtResource("22_fnuvt"), ExtResource("23_3ui1q"), ExtResource("24_a21pa"), ExtResource("25_3sgq1"), ExtResource("26_28ilh")]
 _identifier = 1
 
@@ -1494,7 +1495,7 @@ _isBoss = false
 
 [node name="CutsceneZone8" parent="Pride" instance=ExtResource("30_u83yh")]
 position = Vector2(500, 100)
-scale = Vector2(1.23, 0.616)
+scale = Vector2(5.99, 3)
 RequireInteraction = true
 Cutscene = ExtResource("38_efr12")
 
@@ -1627,8 +1628,8 @@ script = ExtResource("35_ao0lc")
 position = Vector2(-18798, -1968)
 
 [node name="CutsceneZone4" parent="Wanderer_NPC" instance=ExtResource("30_u83yh")]
-position = Vector2(32, -872)
-scale = Vector2(1.5, 1)
+position = Vector2(318, -736)
+scale = Vector2(7.5, 5)
 RequireInteraction = true
 Cutscene = ExtResource("48_po0s6")
 
@@ -1670,8 +1671,8 @@ texture = ExtResource("49_8nq2f")
 flip_h = true
 
 [node name="CutsceneZone5" parent="Scroog" instance=ExtResource("30_u83yh")]
-position = Vector2(228, -102)
-scale = Vector2(0.8, 0.4)
+position = Vector2(286, -216)
+scale = Vector2(4, 2)
 RequireInteraction = true
 Cutscene = ExtResource("50_6bauw")
 
@@ -1686,7 +1687,7 @@ flip_h = true
 
 [node name="CutsceneZone6" parent="Thing1" instance=ExtResource("30_u83yh")]
 position = Vector2(248, -16)
-scale = Vector2(0.8, 0.4)
+scale = Vector2(4, 2)
 RequireInteraction = true
 Cutscene = ExtResource("53_vasrj")
 
@@ -1698,6 +1699,6 @@ flip_h = true
 
 [node name="CutsceneZone7" parent="Merchant" instance=ExtResource("30_u83yh")]
 position = Vector2(856, -152)
-scale = Vector2(1.6, 0.8)
+scale = Vector2(5, 2.5)
 RequireInteraction = true
 Cutscene = ExtResource("53_h52dk")
