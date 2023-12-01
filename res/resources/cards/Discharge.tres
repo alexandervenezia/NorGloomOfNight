@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_40kdq")
 _name = "Discharge"
-_description = ""
+_description = "The built up chaos of energy inside of you bursts out, hitting all foes surrounding you."
 _artwork = ExtResource("1_1nklb")
 _type = 2
 _rarity = 4

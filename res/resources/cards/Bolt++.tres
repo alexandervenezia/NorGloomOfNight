@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_pjw4p")
 _name = "Bolt++"
-_description = ""
+_description = "Energy fills your fingers, as you release it towards a single foe."
 _artwork = ExtResource("1_xg1sc")
 _type = 2
 _rarity = 2

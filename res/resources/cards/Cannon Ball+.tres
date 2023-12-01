@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_b3eac")
 _name = "Cannon Ball+"
-_description = ""
+_description = "Sometimes all you need to do is throw something heavy, really hard."
 _artwork = ExtResource("1_ap3j4")
 _type = 2
 _rarity = 4

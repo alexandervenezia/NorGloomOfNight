@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_4nxem")
 _name = "Blessed"
-_description = ""
+_description = "Your angelic origins are not wasted, recovering what you can in a pinch."
 _artwork = ExtResource("1_d6rg6")
 _type = 2
 _rarity = 1
