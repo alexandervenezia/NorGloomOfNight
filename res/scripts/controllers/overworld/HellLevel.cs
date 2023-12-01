@@ -51,6 +51,7 @@ public partial class HellLevel : Node2D, ILevel
 			await Task.Delay(16);
 		}
 		
+		await Task.Delay(500);
 
 		_player.GetNode<Camera2D>("Camera2D").Zoom = oldZoom;
 		Engine.TimeScale = 1f;

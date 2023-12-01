@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=75 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="4_wm0r4"]
 [ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_yy1ep"]
 [ext_resource type="Texture2D" uid="uid://bgo7loeositdr" path="res://res/scenes/overworld/purgatory/img/Hallway piece 2.PNG" id="5_n5mx7"]
+[ext_resource type="Resource" uid="uid://c1ye1homjnu3b" path="res://res/resources/cutscenes/PrideOutroCutscene.tres" id="5_v06h5"]
 [ext_resource type="Texture2D" uid="uid://duwp8iosphge7" path="res://res/scenes/overworld/purgatory/img/Mailroom bg flat.PNG" id="6_x0fb6"]
 [ext_resource type="Texture2D" uid="uid://df1motfq4vj8s" path="res://res/scenes/overworld/purgatory/img/Room 1.PNG" id="7_u1ox0"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/CutscenePlayer.cs" id="8_eebr5"]
@@ -208,7 +209,7 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(15320, 510)
 scale = Vector2(2.75, 2.75)
 
-[node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI") instance=ExtResource("3_g155m")]
+[node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI", "_balancedScale", "_unbalancedScale") instance=ExtResource("3_g155m")]
 z_index = 5
 position = Vector2(-5014, 672)
 _questUI = NodePath("Camera2D/QuestElement")
@@ -219,6 +220,10 @@ _gravityFallMultiplier = 1.75
 _accelerationStrength = 0.03
 _gravityMult = 3.5
 _gameOverScene = "uid://cjtyftqstb1xo"
+_creditsScene = "uid://c6thwoiv7wpds"
+_balancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleBalanced")
+_unbalancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleUnbalanced")
+_cutsceneCreditsTrigger = ExtResource("5_v06h5")
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -600)

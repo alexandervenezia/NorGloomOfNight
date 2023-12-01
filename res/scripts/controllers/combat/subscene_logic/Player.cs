@@ -278,6 +278,21 @@ public partial class Player : Combatant
 				_targetHighlight.GlobalPosition = GlobalPosition - new Vector2(rect.Size[0]/2f, rect.Size[1]/2f);
 			}
 		}
+
+		
+
+		if (Input.IsActionJustPressed("EndTurn"))
+		{
+			if (_state == PlayerState.DISCARDING_CARDS || _state == PlayerState.RETURNING_CARDS || _state == PlayerState.WAIT)
+				return;
+
+			if (_isTurn)
+			{
+				_isTurn = false;
+				EndTargeting();
+				this.EndTurn();
+			}
+		}
 	}
 
 	private async void PlayCard(ICombatant[] targets, Card card)
