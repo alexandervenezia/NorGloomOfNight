@@ -111,7 +111,7 @@ _damageIcons = {
 
 [node name="MasterAudio" type="Node" parent="."]
 script = ExtResource("19_pwt8m")
-_volume = -12.0
+_volume = -10.0
 _fadeTimeSeconds = 0.5
 _musicPath = "res://assets/audio/music/"
 

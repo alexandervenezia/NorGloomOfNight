@@ -1485,7 +1485,6 @@ sprite_frames = ExtResource("27_efq1q")
 [node name="Pride" parent="." instance=ExtResource("29_2pin4")]
 position = Vector2(78064, -3138)
 scale = Vector2(1.3, 1.3)
-_isBoss = true
 
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)

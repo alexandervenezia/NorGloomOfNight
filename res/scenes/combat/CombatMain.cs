@@ -29,6 +29,7 @@ public partial class CombatMain : Node2D
 	[Export] private PackedScene _coinValueResource;
 	[Export] private string _music;
 	[Export] private string _bossMusic;
+	[Export] private string _winMusic;
 	[Export] private Texture2D _rejectButtonImg;
 	private Dictionary<int, PackedScene> _enemyTypesByUID;
 
@@ -207,6 +208,8 @@ public partial class CombatMain : Node2D
 		_isOver = true;
 		GD.Print("Is over - " + result);
 
+		MasterAudio.GetInstance().ClearQueue();
+		MasterAudio.GetInstance().PlaySong(_winMusic);
 		
 		MasterDeck.PlayerDeck.ForceFullReshuffle();
 

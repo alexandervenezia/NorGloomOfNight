@@ -60,6 +60,7 @@ _nullCardResource = ExtResource("3_lhf3j")
 _coinValueResource = ExtResource("3_xuif3")
 _music = "uid://dx6xjve5fnmpr"
 _bossMusic = "uid://dadtaljwfhnvi"
+_winMusic = "uid://ctwr6fg6q4dm0"
 _rejectButtonImg = ExtResource("16_qdhf3")
 
 [node name="Player" parent="." node_paths=PackedStringArray("_hand", "_combatInstructions", "_actionPointLabel", "_movementPointLabel", "_deck", "_discard") instance=ExtResource("4_rn6c5")]
