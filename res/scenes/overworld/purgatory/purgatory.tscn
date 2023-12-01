@@ -556,6 +556,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7duuu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6l65n")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lautj")
 script = ExtResource("18_qdqg5")
+_uid = "uid://dpku0u2ogjvbb"
+_lockAfterTutorialComplete = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Management"]
 layout_mode = 1
