@@ -317,9 +317,6 @@ visible = false
 z_index = 102
 position = Vector2(1757, 929)
 
-[connection signal="mouse_entered" from="Pride" to="Pride" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="Pride" to="Pride" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="Pride" to="Pride" method="OnPressed" flags=18]
 [connection signal="mouse_entered" from="Upgrade" to="Upgrade" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="Upgrade" to="Upgrade" method="OnMouseExited" flags=18]
 [connection signal="pressed" from="Upgrade" to="Upgrade" method="OnPressed" flags=18]
