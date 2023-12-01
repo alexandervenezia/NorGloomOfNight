@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_gl0j1")
 _name = "Angelic Glide+"
-_description = ""
+_description = "Using your angelic grace, you reposition to have a better approach."
 _artwork = ExtResource("1_ihp8r")
 _type = 0
 _rarity = 3

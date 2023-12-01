@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_po0ls")
 _name = "Distracting Shot+"
-_description = ""
+_description = "Firing your bow into a weak spot, catching the foe off guard, you manage to quickly reposition safely."
 _artwork = ExtResource("1_rs5a7")
 _type = 0
 _rarity = 3

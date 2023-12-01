@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_7gkuo")
 _name = "God's Fury"
-_description = ""
+_description = "The power released is akin to that of a lightning bolt, striking through a single target before they can even react."
 _artwork = ExtResource("1_v2uou")
 _type = 2
 _rarity = 3

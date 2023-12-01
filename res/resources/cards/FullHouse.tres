@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_iiyds")
 _name = "Full House"
-_description = ""
+_description = "Po & Ker didn’t teach you to play just for fun. (They kind of did)."
 _artwork = ExtResource("1_sv7ap")
 _type = 2
 _rarity = 2

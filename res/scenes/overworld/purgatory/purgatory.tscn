@@ -42,7 +42,7 @@
 [ext_resource type="Resource" uid="uid://cho1urgipfpeg" path="res://res/resources/cards/KillShot.tres" id="33_650he"]
 [ext_resource type="Script" path="res://res/scenes/combat/FloatingTextFactory.cs" id="34_5ep4q"]
 [ext_resource type="Resource" uid="uid://doee82i4iixls" path="res://res/resources/cards/GodsLight.tres" id="34_5xlx7"]
-[ext_resource type="Resource" uid="uid://c3x74yanv8dns" path="res://res/resources/cards/GodsUniform.tres" id="35_d0osv"]
+[ext_resource type="Resource" uid="uid://c3x74yanv8dns" path="res://res/resources/cards/GodsUniform.tres" id="36_cnl0t"]
 [ext_resource type="Resource" uid="uid://r2yjeslnymxq" path="res://res/resources/cards/DistractingShot.tres" id="36_kbv1o"]
 [ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://assets/npcs/Creep.png" id="41_rsf3d"]
 
@@ -857,7 +857,7 @@ _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
 position = Vector2(26036, -4526)
 scale = Vector2(1.25, 1.25)
-_startingStock = [ExtResource("28_skj2b"), ExtResource("28_skj2b"), ExtResource("29_vj53b"), ExtResource("30_h4k4w"), ExtResource("30_h4k4w"), ExtResource("31_1ucbg"), ExtResource("32_4uqdy"), ExtResource("33_650he"), ExtResource("34_5xlx7"), ExtResource("35_d0osv"), ExtResource("35_d0osv"), ExtResource("36_kbv1o")]
+_startingStock = [ExtResource("28_skj2b"), ExtResource("28_skj2b"), ExtResource("29_vj53b"), ExtResource("30_h4k4w"), ExtResource("30_h4k4w"), ExtResource("31_1ucbg"), ExtResource("32_4uqdy"), ExtResource("33_650he"), ExtResource("34_5xlx7"), ExtResource("36_cnl0t"), ExtResource("36_cnl0t"), ExtResource("36_kbv1o")]
 
 [node name="ProgressBlocker" type="StaticBody2D" parent="."]
 position = Vector2(13658, 464)

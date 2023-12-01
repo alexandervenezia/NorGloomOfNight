@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_o7dnw")
 _name = "Arrow Storm"
-_description = ""
+_description = "Overwhelming the 3 opponents in front of you with the sheer number of shots."
 _artwork = ExtResource("1_eo3e1")
 _type = 2
 _rarity = 4

@@ -212,15 +212,15 @@ public partial class Card : Area2D
 		_animating = false;
 	}
 
-    public override void _Process(double delta)
-    {
-        if (_animating)
+	public override void _Process(double delta)
+	{
+		if (_animating)
 		{
 			Position = _playAnimationPosition;
 		}
-    }
+	}
 
-    public void SetMouseOverStatus(bool moused)
+	public void SetMouseOverStatus(bool moused)
 	{		
 		if (moused == _isMoused)
 			return;

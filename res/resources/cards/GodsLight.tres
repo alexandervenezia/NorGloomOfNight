@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_64noo")
 _name = "God's Light"
-_description = ""
+_description = "The light of the heavens is more than enough to oppress and reveal such lost souls."
 _artwork = ExtResource("1_b0dib")
 _type = 0
 _rarity = 2
@@ -22,7 +22,7 @@ _buffs = []
 _buffDuration = []
 _resistanceType = []
 _debuffs = [5]
-_debuffDuration = [0]
+_debuffDuration = [1]
 _price = 20
 _upgrade = ExtResource("2_ax6vt")
 _unremovableByPlayer = false
