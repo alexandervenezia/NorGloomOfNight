@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://brhw6iyqd5tbr"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Cutscene.cs" id="1_uux8p"]
+
+[resource]
+script = ExtResource("1_uux8p")
+SpeakerName = "[color=#666611]Your Supervisor"
+Lines = PackedStringArray("[color=#023020] Creep: [/color]<br><narration>Heavy Breathing…</narration>")

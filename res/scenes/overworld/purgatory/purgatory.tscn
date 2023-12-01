@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=74 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dliwgg0bumx0s" path="res://res/scenes/overworld/purgatory/img/Hallway piece 1.PNG" id="4_5e3f8"]
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="4_wm0r4"]
 [ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_yy1ep"]
-[ext_resource type="Resource" uid="uid://c1ye1homjnu3b" path="res://res/resources/cutscenes/PrideOutroCutscene.tres" id="5_dbs0v"]
 [ext_resource type="Texture2D" uid="uid://bgo7loeositdr" path="res://res/scenes/overworld/purgatory/img/Hallway piece 2.PNG" id="5_n5mx7"]
+[ext_resource type="Resource" uid="uid://c1ye1homjnu3b" path="res://res/resources/cutscenes/PrideOutroCutscene.tres" id="5_v06h5"]
 [ext_resource type="Texture2D" uid="uid://duwp8iosphge7" path="res://res/scenes/overworld/purgatory/img/Mailroom bg flat.PNG" id="6_x0fb6"]
 [ext_resource type="Texture2D" uid="uid://df1motfq4vj8s" path="res://res/scenes/overworld/purgatory/img/Room 1.PNG" id="7_u1ox0"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/CutscenePlayer.cs" id="8_eebr5"]
@@ -31,12 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
 [ext_resource type="Resource" uid="uid://b36mco8oh3sqg" path="res://res/resources/cards/PridesCrown.tres" id="25_bma53"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
-[ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="28_g3kh2"]
 [ext_resource type="Resource" uid="uid://cshi2h1ynw2rp" path="res://res/resources/cards/HolyWord.tres" id="28_skj2b"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
-[ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="29_rtxg4"]
 [ext_resource type="Resource" uid="uid://cfc5bwbj41lg6" path="res://res/resources/cards/ScatterShot.tres" id="29_vj53b"]
-[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="30_a5nkd"]
 [ext_resource type="Resource" uid="uid://bl13iumdm4bdd" path="res://res/resources/cards/LetterOpener.tres" id="30_h4k4w"]
 [ext_resource type="Resource" uid="uid://3qmogeo45ns3" path="res://res/resources/cutscenes/KerPoCutsceneEnd.tres" id="30_up1a5"]
 [ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="31_1ucbg"]
@@ -47,10 +44,13 @@
 [ext_resource type="Resource" uid="uid://c3x74yanv8dns" path="res://res/resources/cards/GodsUniform.tres" id="36_cnl0t"]
 [ext_resource type="Resource" uid="uid://r2yjeslnymxq" path="res://res/resources/cards/DistractingShot.tres" id="36_kbv1o"]
 [ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://assets/npcs/Creep.png" id="41_rsf3d"]
+[ext_resource type="Resource" uid="uid://brhw6iyqd5tbr" path="res://res/resources/cutscenes/Creep_NPC.tres" id="43_tly6u"]
 [ext_resource type="Texture2D" uid="uid://bntoc8a1tk67v" path="res://res/scenes/overworld/purgatory/img/poster_HR.png" id="46_ttt1f"]
 [ext_resource type="Texture2D" uid="uid://d1d823w4d23am" path="res://res/scenes/overworld/purgatory/img/CONTROLSPOSTER.png" id="47_0lrkl"]
 [ext_resource type="Texture2D" uid="uid://ccnubhs86ckv7" path="res://res/scenes/overworld/purgatory/img/CARDFIGHT.CONTROLS.POSTER.png" id="48_6kxop"]
 [ext_resource type="Texture2D" uid="uid://dq7dxosx8b7ef" path="res://res/scenes/overworld/purgatory/img/The sign .PNG" id="49_8g2xj"]
+[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/npcs/Eyeball Guy.png" id="51_unide"]
+[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="52_hu4xq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -115,9 +115,6 @@ bg_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecjm0"]
 size = Vector2(254, 960)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_shlqa"]
-size = Vector2(512, 800)
 
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -223,7 +220,7 @@ _gameOverScene = "uid://cjtyftqstb1xo"
 _creditsScene = "uid://c6thwoiv7wpds"
 _balancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleBalanced")
 _unbalancedScale = NodePath("Camera2D/LevelSelect/LevelSelectMenu/ScaleUnbalanced")
-_cutsceneCreditsTrigger = ExtResource("5_dbs0v")
+_cutsceneCreditsTrigger = ExtResource("5_v06h5")
 
 [node name="Camera2D" type="Camera2D" parent="OverworldPlayer"]
 position = Vector2(0, -600)
@@ -871,7 +868,7 @@ script = ExtResource("15_lu01w")
 _levelSelect = NodePath("../OverworldPlayer/Camera2D/LevelSelect")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("19_8x8qi")]
-position = Vector2(26036, -4526)
+position = Vector2(26232, -4510)
 scale = Vector2(1.25, 1.25)
 _startingStock = [ExtResource("28_skj2b"), ExtResource("28_skj2b"), ExtResource("29_vj53b"), ExtResource("30_h4k4w"), ExtResource("30_h4k4w"), ExtResource("31_1ucbg"), ExtResource("32_4uqdy"), ExtResource("33_650he"), ExtResource("34_5xlx7"), ExtResource("36_cnl0t"), ExtResource("36_cnl0t"), ExtResource("36_kbv1o")]
 
@@ -883,45 +880,20 @@ script = ExtResource("27_0n67v")
 position = Vector2(37, -50)
 shape = SubResource("RectangleShape2D_ecjm0")
 
-[node name="HR_NPC" parent="." instance=ExtResource("28_g3kh2")]
-position = Vector2(-7712, -9692)
-script = null
-
-[node name="Creep_NPC" type="Area2D" parent="."]
-position = Vector2(12166, -9670)
-script = ExtResource("29_rtxg4")
-_dialogue = Array[String](["*heavy breathing*d"])
-_delayMS = 2000
-
-[node name="Creep" type="Sprite2D" parent="Creep_NPC"]
-position = Vector2(-16, 0)
+[node name="Creep" type="Sprite2D" parent="."]
+position = Vector2(12150, -9670)
 scale = Vector2(0.527344, 0.527344)
 texture = ExtResource("41_rsf3d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Creep_NPC"]
-position = Vector2(-20, 0)
-shape = SubResource("RectangleShape2D_shlqa")
-
-[node name="DialogueBubble" type="Polygon2D" parent="Creep_NPC"]
-position = Vector2(-68, -110)
-polygon = PackedVector2Array(2, -4, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Creep_NPC/DialogueBubble"]
-offset_left = -488.0
-offset_top = -535.0
-offset_right = 129.0
-offset_bottom = -287.0
-theme = ExtResource("30_a5nkd")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "[center]
-
-. . ."
-metadata/_edit_use_anchors_ = true
+[node name="CutsceneZone2" parent="Creep" instance=ExtResource("29_ef0ed")]
+position = Vector2(-3.79102, 41.7188)
+scale = Vector2(1.8963, 1.51704)
+RequireInteraction = true
+Cutscene = ExtResource("43_tly6u")
+FLAG_ACQUIRED_CROWN = true
 
 [node name="CutsceneZone" parent="." instance=ExtResource("29_ef0ed")]
-position = Vector2(27032, -4252)
+position = Vector2(26202, -4272)
 scale = Vector2(2.5, 2)
 Cutscene = ExtResource("30_up1a5")
 FLAG_ACQUIRED_CROWN = true
@@ -931,19 +903,19 @@ script = ExtResource("34_5ep4q")
 _theme = ExtResource("18_1vjvr")
 _fontSize = 50
 
-[node name="PosterHr" type="Sprite2D" parent="."]
-position = Vector2(-7074, -10194)
-scale = Vector2(0.432854, 0.432854)
+[node name="PosterHr2" type="Sprite2D" parent="."]
+position = Vector2(4126, -6)
+scale = Vector2(1.38369, 1.38369)
 texture = ExtResource("46_ttt1f")
 
-[node name="PosterHr2" type="Sprite2D" parent="."]
-position = Vector2(3840, -154)
-scale = Vector2(2, 2)
+[node name="PosterHr3" type="Sprite2D" parent="."]
+position = Vector2(-7068, -10206)
+scale = Vector2(1.35012, 1.35012)
 texture = ExtResource("46_ttt1f")
 
 [node name="Controlsposter" type="Sprite2D" parent="."]
-position = Vector2(438, -192)
-scale = Vector2(2, 2)
+position = Vector2(214, -128)
+scale = Vector2(2.23741, 2.23741)
 texture = ExtResource("47_0lrkl")
 
 [node name="Controlsposter2" type="Sprite2D" parent="."]
@@ -952,13 +924,13 @@ scale = Vector2(2, 2)
 texture = ExtResource("47_0lrkl")
 
 [node name="Cardfight_controls_poster" type="Sprite2D" parent="."]
-position = Vector2(20402, -4584)
-scale = Vector2(2, 2)
+position = Vector2(19910, -4494)
+scale = Vector2(1.96403, 1.96403)
 texture = ExtResource("48_6kxop")
 
 [node name="Cardfight_controls_poster2" type="Sprite2D" parent="."]
-position = Vector2(12138, -86)
-scale = Vector2(2, 2)
+position = Vector2(12166.5, -126.802)
+scale = Vector2(1.86331, 1.86331)
 texture = ExtResource("48_6kxop")
 
 [node name="TheSign" type="Sprite2D" parent="."]
@@ -992,6 +964,38 @@ Welcome Back
 You're here forever!"
 metadata/_edit_use_anchors_ = true
 
+[node name="TheSign4" type="Sprite2D" parent="."]
+position = Vector2(13706, 286)
+texture = ExtResource("49_8g2xj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TheSign4"]
+offset_left = -208.0
+offset_top = -174.0
+offset_right = 208.0
+offset_bottom = 72.0
+bbcode_enabled = true
+text = "[center][font_size=40] 
+[color=black]
+To Mailroom & Equitment Storage
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TheSign5" type="Sprite2D" parent="."]
+position = Vector2(21434, -4140)
+texture = ExtResource("49_8g2xj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TheSign5"]
+offset_left = -210.0
+offset_top = -170.0
+offset_right = 206.0
+offset_bottom = 76.0
+bbcode_enabled = true
+text = "[center][font_size=40] 
+[color=black]
+To Mailroom & Equitment Storage
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="TheSign2" type="Sprite2D" parent="."]
 position = Vector2(6508, 338)
 texture = ExtResource("49_8g2xj")
@@ -1007,10 +1011,14 @@ text = "[center][font_size=40]
 Break Room"
 metadata/_edit_use_anchors_ = true
 
-[node name="CutsceneZone2" parent="." instance=ExtResource("29_ef0ed")]
-position = Vector2(-7890, -9988)
-scale = Vector2(2, 2)
-RequireInteraction = true
+[node name="EyeballGuy" type="Sprite2D" parent="."]
+position = Vector2(-7850, -9618)
+scale = Vector2(0.376952, 0.376952)
+texture = ExtResource("51_unide")
+
+[node name="HealArea" parent="EyeballGuy" instance=ExtResource("52_hu4xq")]
+position = Vector2(716.266, -360.789)
+scale = Vector2(8, 2.653)
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]

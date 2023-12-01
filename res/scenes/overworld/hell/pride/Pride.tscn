@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=156 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -38,15 +38,23 @@
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="30_u83yh"]
 [ext_resource type="Resource" uid="uid://5cia644ch3cd" path="res://res/resources/cutscenes/PipCutscene.tres" id="31_yoly0"]
 [ext_resource type="Resource" uid="uid://qrkpsc32vgin" path="res://res/resources/cutscenes/CerberusOutroCutscene.tres" id="32_cvc36"]
-[ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="33_5ymb0"]
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="33_dpfwx"]
 [ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="34_2hdk6"]
 [ext_resource type="Script" path="res://Pip.cs" id="35_ao0lc"]
+[ext_resource type="Resource" uid="uid://ds0vinul3vaw4" path="res://res/resources/cutscenes/Pride_NPC.tres" id="38_efr12"]
 [ext_resource type="Resource" uid="uid://c1ye1homjnu3b" path="res://res/resources/cutscenes/PrideOutroCutscene.tres" id="40_hhyj4"]
-[ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="41_25wxu"]
 [ext_resource type="Texture2D" uid="uid://dn4577wf4lhh0" path="res://assets/npcs/Merchant .png" id="42_w24qw"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="43_bnbyh"]
 [ext_resource type="Texture2D" uid="uid://c8bftanflcy25" path="res://assets/npcs/Wanderer_npc.png" id="44_evg8a"]
+[ext_resource type="Resource" uid="uid://clq4rxtc7ppu" path="res://res/resources/cutscenes/Wanderer_NPC.tres" id="48_po0s6"]
+[ext_resource type="Texture2D" uid="uid://cwuaxn1g73gm1" path="res://assets/npcs/Scroog.png" id="49_8nq2f"]
+[ext_resource type="Resource" uid="uid://b78oh3iyr2dsj" path="res://res/resources/cutscenes/Scroog_NPC.tres" id="50_6bauw"]
+[ext_resource type="Texture2D" uid="uid://cnsf6uglvx84w" path="res://assets/npcs/Thing 1.png" id="51_mkm0c"]
+[ext_resource type="Texture2D" uid="uid://cptg261r6eg2r" path="res://assets/npcs/Thing.2.png" id="52_7sjkl"]
+[ext_resource type="Resource" uid="uid://c6dnyfpk8vjik" path="res://res/resources/cutscenes/Merchant_NPC.tres" id="53_h52dk"]
+[ext_resource type="Resource" uid="uid://c0fmk34e6n35d" path="res://res/resources/cutscenes/Thing1&2_NPC.tres" id="53_vasrj"]
+[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/npcs/Eyeball Guy.png" id="54_51bk3"]
+[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="55_ebkib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -347,12 +355,6 @@ size = Vector2(1676, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve0ld"]
 size = Vector2(6178, 640)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x35di"]
-size = Vector2(512, 800)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmm1t"]
-size = Vector2(1678, 2714)
 
 [node name="Pride" type="Node2D" node_paths=PackedStringArray("_backgroundMarkers")]
 scale = Vector2(0.5, 0.5)
@@ -1264,7 +1266,8 @@ gizmo_extents = 229.0
 script = ExtResource("6_b5q6i")
 
 [node name="ShopEntrance" parent="." instance=ExtResource("7_no0g4")]
-position = Vector2(20068, -3576)
+position = Vector2(20084, -3624)
+scale = Vector2(0.35, 1.4)
 _startingStock = [ExtResource("20_iwwuw"), ExtResource("21_dysgv"), ExtResource("22_fnuvt"), ExtResource("23_3ui1q"), ExtResource("24_a21pa"), ExtResource("25_3sgq1"), ExtResource("26_28ilh")]
 _identifier = 1
 
@@ -1488,6 +1491,12 @@ position = Vector2(78064, -3138)
 scale = Vector2(1.3, 1.3)
 _isBoss = false
 
+[node name="CutsceneZone8" parent="Pride" instance=ExtResource("30_u83yh")]
+position = Vector2(500, 100)
+scale = Vector2(5.99, 3)
+RequireInteraction = true
+Cutscene = ExtResource("38_efr12")
+
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)
 scale = Vector2(1, 4)
@@ -1555,14 +1564,6 @@ position = Vector2(17594, 366)
 scale = Vector2(3.35, 3.35)
 texture = ExtResource("25_5wymd")
 
-[node name="HR_NPC_Cave" parent="." instance=ExtResource("33_5ymb0")]
-position = Vector2(-5712, 22094)
-_dialogue = Array[String](["I hate remote calls."])
-
-[node name="HR_NPC_Castle" parent="." instance=ExtResource("33_5ymb0")]
-position = Vector2(41662, 22568)
-_dialogue = Array[String](["Jobs not done", "You good? Get goin."])
-
 [node name="HealDoor1" parent="." instance=ExtResource("33_dpfwx")]
 scale = Vector2(1.8, 1.8)
 _doorOnePos = Vector2i(-6855, 2970)
@@ -1613,70 +1614,69 @@ scale = Vector2(2, 2)
 sprite_frames = ExtResource("34_2hdk6")
 script = ExtResource("35_ao0lc")
 
-[node name="Merchant_NPC" type="Area2D" parent="."]
-position = Vector2(21302, -3784)
-script = ExtResource("41_25wxu")
-_dialogue = Array[String](["Please, Good Sir, Enter my shop."])
-_delayMS = 2000
-
-[node name="Merchant" type="Sprite2D" parent="Merchant_NPC"]
-position = Vector2(-16, 0)
-scale = Vector2(0.527344, 0.527344)
-texture = ExtResource("42_w24qw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant_NPC"]
-position = Vector2(-20, 0)
-shape = SubResource("RectangleShape2D_x35di")
-
-[node name="DialogueBubble" type="Polygon2D" parent="Merchant_NPC"]
-position = Vector2(-226, -362)
-polygon = PackedVector2Array(2, -4, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Merchant_NPC/DialogueBubble"]
-offset_left = -480.0
-offset_top = -529.0
-offset_right = 137.0
-offset_bottom = -281.0
-theme = ExtResource("43_bnbyh")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "[center]
-
-. . ."
-metadata/_edit_use_anchors_ = true
-
-[node name="Wanderer_NPC" type="Area2D" parent="."]
-position = Vector2(-18798, -1968)
-script = ExtResource("41_25wxu")
-_dialogue = Array[String](["Oh, prides castle? Just keep going...", "The caves below will take you there...", "If you head straight though, you'll hit old man riggies shop...", "Bye n", ""])
-_delayMS = 2000
-
-[node name="Wanderer" type="Sprite2D" parent="Wanderer_NPC"]
-position = Vector2(604, -966)
+[node name="Wanderer" type="Sprite2D" parent="."]
+position = Vector2(-18194, -2934)
 scale = Vector2(2, 2)
 texture = ExtResource("44_evg8a")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wanderer_NPC"]
-position = Vector2(496, -853)
-shape = SubResource("RectangleShape2D_hmm1t")
+[node name="CutsceneZone4" parent="Wanderer" instance=ExtResource("30_u83yh")]
+position = Vector2(-143, 115)
+scale = Vector2(3.75, 2.5)
+RequireInteraction = true
+Cutscene = ExtResource("48_po0s6")
 
-[node name="DialogueBubble" type="Polygon2D" parent="Wanderer_NPC"]
-position = Vector2(-682, -1152)
-rotation = 3.14159
-polygon = PackedVector2Array(-370, -33.9999, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
+[node name="Scroog" type="Sprite2D" parent="."]
+position = Vector2(-26714, -1270)
+texture = ExtResource("49_8nq2f")
+flip_h = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Wanderer_NPC/DialogueBubble"]
-offset_left = 136.0
-offset_top = -272.0
-offset_right = 753.0
-offset_bottom = -23.9995
-scale = Vector2(-1, -1)
-theme = ExtResource("43_bnbyh")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "[center]
+[node name="CutsceneZone5" parent="Scroog" instance=ExtResource("30_u83yh")]
+position = Vector2(286, -216)
+scale = Vector2(4, 2)
+RequireInteraction = true
+Cutscene = ExtResource("50_6bauw")
 
-. . ."
-metadata/_edit_use_anchors_ = true
+[node name="Thing1" type="Sprite2D" parent="."]
+position = Vector2(-15472, -1800)
+texture = ExtResource("51_mkm0c")
+
+[node name="Thing_2" type="Sprite2D" parent="Thing1"]
+position = Vector2(410, -62)
+texture = ExtResource("52_7sjkl")
+flip_h = true
+
+[node name="CutsceneZone6" parent="Thing1" instance=ExtResource("30_u83yh")]
+position = Vector2(248, -16)
+scale = Vector2(4, 2)
+RequireInteraction = true
+Cutscene = ExtResource("53_vasrj")
+
+[node name="Merchant" type="Sprite2D" parent="."]
+position = Vector2(21168, -3716)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("42_w24qw")
+flip_h = true
+
+[node name="CutsceneZone7" parent="Merchant" instance=ExtResource("30_u83yh")]
+position = Vector2(856, -152)
+scale = Vector2(5, 2.5)
+RequireInteraction = true
+Cutscene = ExtResource("53_h52dk")
+
+[node name="EyeballGuy" type="Sprite2D" parent="."]
+position = Vector2(-5850, 22262)
+scale = Vector2(0.376952, 0.376952)
+texture = ExtResource("54_51bk3")
+
+[node name="HealArea" parent="EyeballGuy" instance=ExtResource("55_ebkib")]
+position = Vector2(716.266, -360.789)
+scale = Vector2(8, 2.653)
+
+[node name="EyeballGuy2" type="Sprite2D" parent="."]
+position = Vector2(41498, 22668)
+scale = Vector2(0.376952, 0.376952)
+texture = ExtResource("54_51bk3")
+
+[node name="HealArea" parent="EyeballGuy2" instance=ExtResource("55_ebkib")]
+position = Vector2(716.266, -360.789)
+scale = Vector2(8, 2.653)
