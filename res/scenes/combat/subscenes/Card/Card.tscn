@@ -62,10 +62,10 @@ text = "[center]Take No Card"
 threaded = true
 
 [node name="DescriptionLabel" type="RichTextLabel" parent="."]
-offset_left = -306.0
-offset_top = -375.0
-offset_right = 306.0
-offset_bottom = -232.0
+offset_left = -354.0
+offset_top = -425.0
+offset_right = 354.0
+offset_bottom = -237.0
 theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 35
@@ -73,10 +73,10 @@ bbcode_enabled = true
 threaded = true
 
 [node name="DamageLabel" type="RichTextLabel" parent="."]
-offset_left = -334.0
+offset_left = -345.0
 offset_top = -233.0
-offset_right = 28.0
-offset_bottom = -23.0
+offset_right = 82.0
+offset_bottom = 8.0
 theme = ExtResource("5_k86js")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 35
