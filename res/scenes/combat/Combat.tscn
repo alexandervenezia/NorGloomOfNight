@@ -83,6 +83,7 @@ script = ExtResource("8_5rcct")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="FPS" type="Label" parent="Camera2D"]
+visible = false
 offset_left = -960.0
 offset_top = -556.0
 offset_right = 288.0
@@ -187,7 +188,6 @@ offset_top = -94.0
 offset_right = 958.0
 offset_bottom = 286.0
 theme = ExtResource("16_icain")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.560784)
 theme_override_colors/font_outline_color = Color(0.592157, 0.792157, 0.862745, 1)
 theme_override_constants/shadow_offset_x = 25
 theme_override_constants/shadow_offset_y = 25

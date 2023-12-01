@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=75 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://dq7dxosx8b7ef" path="res://res/scenes/overworld/purgatory/img/The sign .PNG" id="49_8g2xj"]
 [ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/npcs/Eyeball Guy.png" id="51_unide"]
 [ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="52_hu4xq"]
+[ext_resource type="Texture2D" uid="uid://bu835i3sj4xf1" path="res://res/scenes/overworld/purgatory/img/Glide_poster.png" id="52_o3t3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -903,23 +904,18 @@ script = ExtResource("34_5ep4q")
 _theme = ExtResource("18_1vjvr")
 _fontSize = 50
 
-[node name="PosterHr2" type="Sprite2D" parent="."]
-position = Vector2(4126, -6)
-scale = Vector2(1.38369, 1.38369)
-texture = ExtResource("46_ttt1f")
-
 [node name="PosterHr3" type="Sprite2D" parent="."]
 position = Vector2(-7068, -10206)
 scale = Vector2(1.35012, 1.35012)
 texture = ExtResource("46_ttt1f")
 
 [node name="Controlsposter" type="Sprite2D" parent="."]
-position = Vector2(214, -128)
-scale = Vector2(2.23741, 2.23741)
+position = Vector2(-4344, -270)
+scale = Vector2(1.73576, 1.73576)
 texture = ExtResource("47_0lrkl")
 
 [node name="Controlsposter2" type="Sprite2D" parent="."]
-position = Vector2(16318, -122)
+position = Vector2(14892, -692)
 scale = Vector2(2, 2)
 texture = ExtResource("47_0lrkl")
 
@@ -930,6 +926,11 @@ texture = ExtResource("48_6kxop")
 
 [node name="Cardfight_controls_poster2" type="Sprite2D" parent="."]
 position = Vector2(12166.5, -126.802)
+scale = Vector2(1.86331, 1.86331)
+texture = ExtResource("48_6kxop")
+
+[node name="Cardfight_controls_poster3" type="Sprite2D" parent="."]
+position = Vector2(424, -104)
 scale = Vector2(1.86331, 1.86331)
 texture = ExtResource("48_6kxop")
 
@@ -946,22 +947,6 @@ bbcode_enabled = true
 text = "[center][font_size=40] 
 [color=black]
 Human Resources"
-metadata/_edit_use_anchors_ = true
-
-[node name="TheSign3" type="Sprite2D" parent="."]
-position = Vector2(-4478, 348)
-texture = ExtResource("49_8g2xj")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TheSign3"]
-offset_left = -208.0
-offset_top = -182.0
-offset_right = 208.0
-offset_bottom = 64.0
-bbcode_enabled = true
-text = "[center][font_size=40] 
-[color=black]
-Welcome Back
-You're here forever!"
 metadata/_edit_use_anchors_ = true
 
 [node name="TheSign4" type="Sprite2D" parent="."]
@@ -1017,8 +1002,18 @@ scale = Vector2(0.376952, 0.376952)
 texture = ExtResource("51_unide")
 
 [node name="HealArea" parent="EyeballGuy" instance=ExtResource("52_hu4xq")]
-position = Vector2(716.266, -360.789)
+position = Vector2(1559.88, -328.955)
 scale = Vector2(8, 2.653)
+
+[node name="GlidePoster" type="Sprite2D" parent="."]
+position = Vector2(5014, -126)
+scale = Vector2(0.489208, 0.489208)
+texture = ExtResource("52_o3t3l")
+
+[node name="GlidePoster2" type="Sprite2D" parent="."]
+position = Vector2(16810, -2272)
+scale = Vector2(0.489208, 0.489208)
+texture = ExtResource("52_o3t3l")
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]

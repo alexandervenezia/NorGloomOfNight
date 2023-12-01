@@ -1465,7 +1465,7 @@ sprite_frames = ExtResource("27_efq1q")
 [node name="Grabby4" type="Area2D" parent="."]
 position = Vector2(-27482, 7642)
 script = ExtResource("15_ps8to")
-_warningTimeMS = 400
+_warningTimeMS = 600
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
 position = Vector2(6, -16)
@@ -1637,15 +1637,16 @@ RequireInteraction = true
 Cutscene = ExtResource("50_6bauw")
 
 [node name="Thing1" type="Sprite2D" parent="."]
-position = Vector2(-15472, -1800)
+position = Vector2(-15370, -1804)
 texture = ExtResource("51_mkm0c")
 
 [node name="Thing_2" type="Sprite2D" parent="Thing1"]
-position = Vector2(410, -62)
+position = Vector2(610, -50)
 texture = ExtResource("52_7sjkl")
 flip_h = true
 
 [node name="CutsceneZone6" parent="Thing1" instance=ExtResource("30_u83yh")]
+visible = false
 position = Vector2(248, -16)
 scale = Vector2(4, 2)
 RequireInteraction = true
@@ -1669,7 +1670,7 @@ scale = Vector2(0.376952, 0.376952)
 texture = ExtResource("54_51bk3")
 
 [node name="HealArea" parent="EyeballGuy" instance=ExtResource("55_ebkib")]
-position = Vector2(716.266, -360.789)
+position = Vector2(-26.5293, -281.203)
 scale = Vector2(8, 2.653)
 
 [node name="EyeballGuy2" type="Sprite2D" parent="."]
@@ -1678,5 +1679,5 @@ scale = Vector2(0.376952, 0.376952)
 texture = ExtResource("54_51bk3")
 
 [node name="HealArea" parent="EyeballGuy2" instance=ExtResource("55_ebkib")]
-position = Vector2(716.266, -360.789)
+position = Vector2(-350.18, -137.949)
 scale = Vector2(8, 2.653)
