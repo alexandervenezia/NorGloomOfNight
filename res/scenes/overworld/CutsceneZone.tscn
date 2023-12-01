@@ -3,13 +3,12 @@
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/CutsceneZone.cs" id="1_xfkun"]
 [ext_resource type="Resource" uid="uid://b4grubao7sdb7" path="res://res/resources/cutscenes/KerPoCutscene.tres" id="2_jk5wu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrdkf"]
-size = Vector2(1305, 748)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knbbw"]
+size = Vector2(512, 800)
 
 [node name="CutsceneZone" type="Area2D"]
 script = ExtResource("1_xfkun")
 Cutscene = ExtResource("2_jk5wu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -1)
-shape = SubResource("RectangleShape2D_nrdkf")
+shape = SubResource("RectangleShape2D_knbbw")
