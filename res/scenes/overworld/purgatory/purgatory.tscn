@@ -209,7 +209,7 @@ scale = Vector2(2.75, 2.75)
 
 [node name="OverworldPlayer" parent="." node_paths=PackedStringArray("_questUI") instance=ExtResource("3_g155m")]
 z_index = 5
-position = Vector2(-5006, 652)
+position = Vector2(-1798, 668)
 _questUI = NodePath("Camera2D/QuestElement")
 _walkSpeed = 3000.0
 _sprintSpeed = 5100.0
