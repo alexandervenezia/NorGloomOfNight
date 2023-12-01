@@ -806,7 +806,6 @@ _doorTwoPos = Vector2i(7820, -7450)
 
 [node name="HallwayPiece1" type="Sprite2D" parent="image"]
 texture = ExtResource("4_5e3f8")
-metadata/_edit_lock_ = true
 
 [node name="HallwayPiece2" type="Sprite2D" parent="image"]
 position = Vector2(9754, 0)
@@ -977,7 +976,7 @@ offset_bottom = 76.0
 bbcode_enabled = true
 text = "[center][font_size=40] 
 [color=black]
-To Mailroom & Equitment Storage
+Mailroom & Equitment Storage
 "
 metadata/_edit_use_anchors_ = true
 
