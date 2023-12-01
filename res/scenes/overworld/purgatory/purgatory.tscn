@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=76 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -31,7 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="19_8x8qi"]
 [ext_resource type="Resource" uid="uid://b36mco8oh3sqg" path="res://res/resources/cards/PridesCrown.tres" id="25_bma53"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/ProgressBlocker.cs" id="27_0n67v"]
-[ext_resource type="PackedScene" uid="uid://dffsyqy2wwdfy" path="res://HR_NPC.tscn" id="28_g3kh2"]
 [ext_resource type="Resource" uid="uid://cshi2h1ynw2rp" path="res://res/resources/cards/HolyWord.tres" id="28_skj2b"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
 [ext_resource type="Resource" uid="uid://cfc5bwbj41lg6" path="res://res/resources/cards/ScatterShot.tres" id="29_vj53b"]
@@ -51,6 +50,8 @@
 [ext_resource type="Texture2D" uid="uid://d1d823w4d23am" path="res://res/scenes/overworld/purgatory/img/CONTROLSPOSTER.png" id="47_0lrkl"]
 [ext_resource type="Texture2D" uid="uid://ccnubhs86ckv7" path="res://res/scenes/overworld/purgatory/img/CARDFIGHT.CONTROLS.POSTER.png" id="48_6kxop"]
 [ext_resource type="Texture2D" uid="uid://dq7dxosx8b7ef" path="res://res/scenes/overworld/purgatory/img/The sign .PNG" id="49_8g2xj"]
+[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/npcs/Eyeball Guy.png" id="51_unide"]
+[ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="52_hu4xq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -883,10 +884,6 @@ script = ExtResource("27_0n67v")
 position = Vector2(37, -50)
 shape = SubResource("RectangleShape2D_ecjm0")
 
-[node name="HR_NPC" parent="." instance=ExtResource("28_g3kh2")]
-position = Vector2(-7742, -9620)
-script = null
-
 [node name="Creep_NPC" type="Area2D" parent="."]
 position = Vector2(12166, -9670)
 
@@ -1044,6 +1041,15 @@ text = "[center][font_size=40]
 [color=black]
 Break Room"
 metadata/_edit_use_anchors_ = true
+
+[node name="EyeballGuy" type="Sprite2D" parent="."]
+position = Vector2(-7850, -9618)
+scale = Vector2(0.376952, 0.376952)
+texture = ExtResource("51_unide")
+
+[node name="HealArea" parent="EyeballGuy" instance=ExtResource("52_hu4xq")]
+position = Vector2(716.266, -360.789)
+scale = Vector2(8, 2.653)
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
