@@ -1,39 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://bj4hsghr8uitx"]
+[gd_scene load_steps=18 format=3 uid="uid://bj4hsghr8uitx"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Shop.cs" id="1_cvpoc"]
 [ext_resource type="PackedScene" uid="uid://dqskjl6vsej8" path="res://res/scenes/combat/subscenes/Card/Card.tscn" id="2_31mrp"]
 [ext_resource type="PackedScene" uid="uid://bnlrlncqe7voq" path="res://res/scenes/overworld/Price.tscn" id="3_1o72j"]
+[ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="4_6e4pe"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="4_rp0un"]
+[ext_resource type="StyleBox" uid="uid://bksf2mmcd16j2" path="res://res/scenes/MainMenu/ButtonHover.tres" id="5_at02m"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="5_da61q"]
+[ext_resource type="StyleBox" uid="uid://ckfc3wipf7287" path="res://res/scenes/MainMenu/ButtonPressed.tres" id="6_8gg47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iag32"]
 size = Vector2(1933, 271)
 
-[sub_resource type="Shader" id="Shader_lslmm"]
-code = "shader_type canvas_item;
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0ib3"]
 
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
-
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
-
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hxfc"]
-shader = SubResource("Shader_lslmm")
-shader_parameter/isHighlighted = null
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0oir6"]
 
 [sub_resource type="Shader" id="Shader_60nyj"]
 code = "shader_type canvas_item;
@@ -148,7 +129,6 @@ shape = SubResource("RectangleShape2D_iag32")
 
 [node name="Pride" type="Button" parent="."]
 z_index = 100
-material = SubResource("ShaderMaterial_0hxfc")
 custom_minimum_size = Vector2(500, 100)
 anchors_preset = 8
 anchor_left = 0.5
@@ -162,6 +142,11 @@ offset_bottom = 1069.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = ExtResource("4_6e4pe")
+theme_override_styles/hover = ExtResource("5_at02m")
+theme_override_styles/pressed = ExtResource("6_8gg47")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j0ib3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0oir6")
 script = ExtResource("4_rp0un")
 _uid = "uid://bk7mufkqeug2p"
 _returnToPurgatory = true

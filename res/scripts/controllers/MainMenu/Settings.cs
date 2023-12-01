@@ -24,8 +24,14 @@ public partial class Settings : Node
     private static int _effectsServer = -1;
     private static int _uiServer = -1;
 
+    private static float _musicServerDbOffset;
+    private static float _masterServerDbOffset;
+    private static float _effectsServerDbOffset;
+    private static float _uiServerDbOffset;
+
     public override void _Ready()
     {
+        MasterAudio.GetInstance().SetNoRestart();
         _fullscreen.ButtonPressed = DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen;
         _fullscreen.Toggled += OnFullscreenPressed;
 
@@ -49,6 +55,11 @@ public partial class Settings : Node
             _uiServer = AudioServer.GetBusIndex("UI");
             _musicServer = AudioServer.GetBusIndex("Music");
 
+            _masterServerDbOffset = AudioServer.GetBusVolumeDb(_masterServer) ;
+            _effectsServerDbOffset = AudioServer.GetBusVolumeDb(_effectsServer);
+            _uiServerDbOffset = AudioServer.GetBusVolumeDb(_uiServer);
+            _musicServerDbOffset = AudioServer.GetBusVolumeDb(_musicServer);
+
             _masterVolume.Value = 50;
             _effectsVolume.Value = 50;
             _uiVolume.Value = 50;
@@ -56,10 +67,10 @@ public partial class Settings : Node
         }
         else
         {
-            _masterVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_masterServer)) * 50f;
-            _effectsVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_effectsServer)) * 50f;
-            _uiVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_uiServer)) * 50f;
-            _musicVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_musicServer)) * 50f;
+            _masterVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_masterServer) - _masterServerDbOffset) * 50f;
+            _effectsVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_effectsServer) - _effectsServerDbOffset) * 50f;
+            _uiVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_uiServer) - _uiServerDbOffset) * 50f;
+            _musicVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_musicServer) - _musicServerDbOffset) * 50f;
         }
     }
 
@@ -79,16 +90,16 @@ public partial class Settings : Node
         switch (type)
         {
             case VolumeTypes.MASTER:
-            AudioServer.SetBusVolumeDb(_masterServer, Mathf.LinearToDb(newVol * 0.02f));
+            AudioServer.SetBusVolumeDb(_masterServer, Mathf.LinearToDb(newVol * 0.02f) + _masterServerDbOffset);
             break;
             case VolumeTypes.EFFECTS:
-            AudioServer.SetBusVolumeDb(_effectsServer, Mathf.LinearToDb(newVol * 0.02f));
+            AudioServer.SetBusVolumeDb(_effectsServer, Mathf.LinearToDb(newVol * 0.02f) + _effectsServerDbOffset);
             break;
             case VolumeTypes.UI:
-            AudioServer.SetBusVolumeDb(_uiServer, Mathf.LinearToDb(newVol * 0.02f));
+            AudioServer.SetBusVolumeDb(_uiServer, Mathf.LinearToDb(newVol * 0.02f) + _uiServerDbOffset);
             break;
             case VolumeTypes.MUSIC:
-            AudioServer.SetBusVolumeDb(_musicServer, Mathf.LinearToDb(newVol * 0.02f));
+            AudioServer.SetBusVolumeDb(_musicServer, Mathf.LinearToDb(newVol * 0.02f) + _musicServerDbOffset);
             break;
         }
 

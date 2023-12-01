@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cl5g1vaq6dkm3" path="res://res/scenes/MainMenu/assets/MenuBackground.png" id="5_al52y"]
 [ext_resource type="StyleBox" uid="uid://bksf2mmcd16j2" path="res://res/scenes/MainMenu/ButtonHover.tres" id="5_rb38u"]
 [ext_resource type="Theme" uid="uid://dfieef5xnsvti" path="res://assets/fonts/IrishGrover/IrishGrover.tres" id="6_8asa4"]
-[ext_resource type="StyleBox" path="res://res/scenes/MainMenu/ButtonPressed" id="6_hhc5y"]
+[ext_resource type="StyleBox" uid="uid://ckfc3wipf7287" path="res://res/scenes/MainMenu/ButtonPressed.tres" id="6_20xnt"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="7_qv3ny"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4ocg"]
@@ -72,11 +72,12 @@ grow_vertical = 0
 mouse_filter = 1
 theme_override_styles/normal = ExtResource("2_rip1t")
 theme_override_styles/hover = ExtResource("5_rb38u")
-theme_override_styles/pressed = ExtResource("6_hhc5y")
+theme_override_styles/pressed = ExtResource("6_20xnt")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
 script = ExtResource("2_qnvx5")
 _destinationScene = "uid://bw7twakv1byy7"
+_loadLastScene = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/Panel/Back"]
 layout_mode = 1

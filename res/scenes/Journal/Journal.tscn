@@ -48,6 +48,7 @@ size = Vector2(3306.67, 553.333)
 [node name="Journal" type="Node2D"]
 script = ExtResource("1_ki4kg")
 _inventoryUID = "uid://bj4hsghr8uitx"
+_settingsUID = "uid://byg6nypf333lj"
 _mainMenuUID = "uid://d204n4ckwe72x"
 
 [node name="ColorRect" type="ColorRect" parent="."]
