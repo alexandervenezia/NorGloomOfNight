@@ -66,6 +66,8 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer _jumpSound;
 	private AudioStreamPlayer _landSound;
 	private AudioStreamPlayer _hurtSound;
+	private AudioStreamPlayer _encounterSound;
+	public AudioStreamPlayer EncounterSong => _encounterSound;
 
 	private bool _cutsceneFinished = false;
 	private bool _glideState = false;
@@ -91,6 +93,7 @@ public partial class Player : CharacterBody2D
 		_jumpSound = (AudioStreamPlayer)GetNode("JumpSound");
 		_landSound = (AudioStreamPlayer)GetNode("LandSound");
 		_hurtSound = GetNode<AudioStreamPlayer>("DmgPhysical");
+		_encounterSound = GetNode<AudioStreamPlayer>("EncounterSound");
 
 		_quest = _quests[0];
 		UpdateQuestUI();
