@@ -74,20 +74,22 @@ public partial class Card : Area2D
 		{
 			Texture2D icon = MasterDeck.GetDamageIcon(dt);
 			string path = icon.ResourcePath;
-			diceText += data.Damage[dt].ToString() + " " + dt + " [img color=black width=80]" + path + "[/img]\n";
+			diceText += data.Damage[dt].ToString() + " " + EnumStringWrapper.DamageToString(dt)
+				+ " [img color=black width=80]" + path + "[/img]\n";
 		}
 		foreach (DrawEffect de in data.DrawEffects.Keys)
 		{
-			diceText += de + " " + data.DrawEffects[de] + "\n";
+			diceText += EnumStringWrapper.DrawEffectToString(de) + " " + data.DrawEffects[de] + "\n";
 		}
 		foreach (Buff b in Data.Buffs)
 		{
-			string type = (b.Type == BuffType.RESISTANCE) ? Enum.GetName(b.ResistanceType) : "";
-			diceText += "[color=#227733]" + ((b.Type == BuffType.RESISTANCE) ? "RES" : b.Type) + " " + type + ": " + b.Value + "[/color]\n";
+			string type = (b.Type == BuffType.RESISTANCE) ? EnumStringWrapper.DamageToString(b.ResistanceType) : "";
+			diceText += "[color=#227733]" + ((b.Type == BuffType.RESISTANCE) ? "Resist" : EnumStringWrapper.BuffToString(b.Type))
+				 + " " + type + ": " + b.Value + "[/color]\n";
 		}
 		foreach (Debuff d in Data.Debuffs)
 		{
-			diceText += "[color=#772233]" + d.Type + ": " + d.Duration + "[/color]\n";
+			diceText += "[color=#772233]" + EnumStringWrapper.DebuffToString(d.Type) + ": " + d.Duration + "[/color]\n";
  		}
 		((RichTextLabel)GetNode("DamageLabel")).Text = "[font_size=50]" + diceText + "[/font_size]";
 
