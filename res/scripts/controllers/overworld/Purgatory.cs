@@ -58,10 +58,16 @@ public partial class Purgatory : Node2D, ILevel
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);		
 
+		GD.Print("PlayerPos: ", _player.Position);
+		GD.Print("PlayerVel: ", _player.Velocity);
+		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
+		
+		Vector2 storedPlayerPos = _player.Position;;
 		Engine.TimeScale = 0f;
 
 		Tween introTween = GetTree().CreateTween();
 		Vector2 oldZoom = _player.GetNode<Camera2D>("Camera2D").Zoom;
+		GD.Print(oldZoom);
 		introTween.TweenProperty(_player.GetNode<Camera2D>("Camera2D"), "zoom", new Vector2(1f, 1f), 1.0f).SetTrans(Tween.TransitionType.Circ);
 
 		_player.EncounterSong.Play();
@@ -69,12 +75,28 @@ public partial class Purgatory : Node2D, ILevel
 		while (introTween.CustomStep(0.016))
 		{
 			await Task.Delay(16);
+			_player.Position = storedPlayerPos;
+			_player.Velocity = Vector2.Zero;
 		}
 		
+		GD.Print("PlayerPos: ", _player.Position);
+		GD.Print("PlayerVel: ", _player.Velocity);
+		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 		await Task.Delay(500);
+		GD.Print("PlayerPos: ", _player.Position);
+		GD.Print("PlayerVel: ", _player.Velocity);
+		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
+		_player.Position = storedPlayerPos;
+		_player.Velocity = Vector2.Zero;
+		GD.Print("PlayerPos: ", _player.Position);
+		GD.Print("PlayerVel: ", _player.Velocity);
+		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 
 		_player.GetNode<Camera2D>("Camera2D").Zoom = oldZoom;
 		Engine.TimeScale = 1f;
+		GD.Print("PlayerPos: ", _player.Position);
+		GD.Print("PlayerVel: ", _player.Velocity);
+		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
 
@@ -110,7 +132,7 @@ public partial class Purgatory : Node2D, ILevel
 			QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
 		}
 
-		if (Input.IsActionJustPressed("Escape"))
+		if (Input.IsActionJustPressed("Escape") && !_player.PlayingCutscene)
 		{
 			if (!_journal.Visible)
 				_journal.Open();				

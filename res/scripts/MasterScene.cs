@@ -5,6 +5,7 @@
 using Combat;
 using Data;
 using Godot;
+using Overworld;
 using System;
 using System.Collections.Generic;
 
@@ -53,6 +54,7 @@ public partial class MasterScene : Node
 		LoadEnemyIDs();
 		_playerHP = _playerMaxHP;
 		CollectCoins();
+		QuestManager.GetInstance().Reset();
 		MasterDeck.ResetPlayerDeck();
 
 	}

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c0fmk34e6n35d"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Cutscene.cs" id="1_ab70i"]
+
+[resource]
+script = ExtResource("1_ab70i")
+SpeakerName = "[color=#666611]The Wanderer: [/color]"
+Lines = PackedStringArray("[color=#666611]Thing 1: [/color]<br>“So . . . how’s the castle life treating you and your wife?”", "[color=#5C4033]<br>Thing 2: [/color]<br>“Ah . . . she fell in a pit in the underpass on the way . . . ”", "[color=#666611]Thing 1: [/color]<br>“That’s the 5th one this week . . .”")

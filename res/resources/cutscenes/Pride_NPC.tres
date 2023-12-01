@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ds0vinul3vaw4"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Cutscene.cs" id="1_oibuk"]
+
+[resource]
+script = ExtResource("1_oibuk")
+SpeakerName = "[color=#666611]The Wanderer: [/color]"
+Lines = PackedStringArray("[color=purple]Lucille:[/color]<br><narrative> Her breaths deepen as you approach, but [color=purple]Lucille[/color] refuses to acknowledge your presence. Staying here is unlikely to convince her to do otherwise…</narration>")

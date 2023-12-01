@@ -41,8 +41,8 @@ gradient = SubResource("Gradient_t2vwa")
 fill_from = Vector2(1, 0.5)
 fill_to = Vector2(0, 0.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1jepx"]
-radius = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e3lj"]
+size = Vector2(66, 70)
 
 [sub_resource type="Gradient" id="Gradient_o3sdl"]
 interpolation_mode = 2
@@ -73,7 +73,7 @@ _actionPointLabel = NodePath("../Energy/ActionPoint/Label")
 _movementPointLabel = NodePath("../Energy/MovementPoint/Label")
 _deck = NodePath("../Deck")
 _discard = NodePath("../Discard")
-_maxHealth = 30
+_maxHealth = 35
 
 [node name="Background" parent="." instance=ExtResource("1_5pl1x")]
 scale = Vector2(0.5, 0.5)
@@ -83,6 +83,7 @@ script = ExtResource("8_5rcct")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="FPS" type="Label" parent="Camera2D"]
+visible = false
 offset_left = -960.0
 offset_top = -556.0
 offset_right = 288.0
@@ -152,6 +153,7 @@ offset_right = 17.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 100
 text = "1"
+metadata/_edit_use_anchors_ = true
 
 [node name="ActionPoint" type="Sprite2D" parent="Energy"]
 position = Vector2(690, 392)
@@ -165,6 +167,7 @@ offset_right = 23.6665
 offset_bottom = 133.333
 theme_override_font_sizes/font_size = 100
 text = "3"
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Energy"]
 visible = false
@@ -185,7 +188,6 @@ offset_top = -94.0
 offset_right = 958.0
 offset_bottom = 286.0
 theme = ExtResource("16_icain")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.560784)
 theme_override_colors/font_outline_color = Color(0.592157, 0.792157, 0.862745, 1)
 theme_override_constants/shadow_offset_x = 25
 theme_override_constants/shadow_offset_y = 25
@@ -197,13 +199,15 @@ text = "[font_size=200][center][color=#111145]Select Targets[/color]
 "
 
 [node name="EndTurnlabel" type="RichTextLabel" parent="."]
-offset_left = 502.0
-offset_top = 456.0
-offset_right = 655.0
-offset_bottom = 496.0
+offset_left = 605.0
+offset_top = 501.0
+offset_right = 758.0
+offset_bottom = 541.0
+mouse_filter = 1
 theme = ExtResource("21_hc16y")
 bbcode_enabled = true
 text = "[font_size=25][right][color=red]End Turn[/color]"
+metadata/_edit_use_anchors_ = true
 
 [node name="EndTurn" type="Area2D" parent="."]
 position = Vector2(690, 475)
@@ -214,7 +218,9 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("12_y8ifr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndTurn"]
-shape = SubResource("CircleShape2D_1jepx")
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1e3lj")
 
 [node name="FloatingTextFactory" type="Node2D" parent="."]
 script = ExtResource("14_46n5p")
@@ -234,6 +240,7 @@ offset_bottom = 392.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("18_617ga")
 stretch_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Audio" type="Node2D" parent="."]
 

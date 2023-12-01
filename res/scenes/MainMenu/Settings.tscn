@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://byg6nypf333lj"]
+[gd_scene load_steps=16 format=3 uid="uid://byg6nypf333lj"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/Settings.cs" id="1_s22vn"]
 [ext_resource type="Script" path="res://res/scripts/controllers/MainMenu/ChangeSceneButton.cs" id="2_qnvx5"]
 [ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="2_rip1t"]
+[ext_resource type="Texture2D" uid="uid://bkq6ihend887o" path="res://res/scenes/Journal/assets/Clipboard only.png" id="4_mr0t0"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="4_wy64s"]
 [ext_resource type="Texture2D" uid="uid://cl5g1vaq6dkm3" path="res://res/scenes/MainMenu/assets/MenuBackground.png" id="5_al52y"]
 [ext_resource type="StyleBox" uid="uid://bksf2mmcd16j2" path="res://res/scenes/MainMenu/ButtonHover.tres" id="5_rb38u"]
@@ -10,24 +11,24 @@
 [ext_resource type="StyleBox" uid="uid://ckfc3wipf7287" path="res://res/scenes/MainMenu/ButtonPressed.tres" id="6_20xnt"]
 [ext_resource type="Texture2D" uid="uid://btr646ng3kcbb" path="res://res/scenes/MainMenu/assets/lost souls logo ver 5.1.png" id="7_qv3ny"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mqcn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6u7f"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4ocg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n724u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udywp"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mqcn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6u7f"]
-
 [node name="Settings" type="Node2D" node_paths=PackedStringArray("_fullscreen", "_vsync", "_masterVolume", "_effectsVolume", "_uiVolume", "_musicVolume")]
 script = ExtResource("1_s22vn")
-_fullscreen = NodePath("ColorRect/Fullscreen/FullscreenCheck")
-_vsync = NodePath("ColorRect/V-Sync/VSyncCheck")
-_masterVolume = NodePath("ColorRect/Volume/Master/HSlider")
-_effectsVolume = NodePath("ColorRect/Volume/Sfx/HSlider")
-_uiVolume = NodePath("ColorRect/Volume/UI/HSlider")
-_musicVolume = NodePath("ColorRect/Volume/Music/HSlider")
+_fullscreen = NodePath("ClipboardOnly/Fullscreen/FullscreenCheck")
+_vsync = NodePath("ClipboardOnly/V-Sync/VSyncCheck")
+_masterVolume = NodePath("ClipboardOnly/Volume/Master/HSlider")
+_effectsVolume = NodePath("ClipboardOnly/Volume/Sfx/HSlider")
+_uiVolume = NodePath("ClipboardOnly/Volume/UI/HSlider")
+_musicVolume = NodePath("ClipboardOnly/Volume/Music/HSlider")
 
 [node name="MenuBackground" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -36,11 +37,12 @@ texture = ExtResource("5_al52y")
 metadata/_edit_lock_ = true
 
 [node name="LostSoulsLogoVer5_1" type="Sprite2D" parent="."]
-position = Vector2(1813, 958)
-scale = Vector2(0.1, 0.1)
+position = Vector2(1868.99, 1017.99)
+scale = Vector2(0.0452925, 0.0452925)
 texture = ExtResource("7_qv3ny")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = 235.0
 offset_top = 5.0
 offset_right = 1675.0
@@ -48,74 +50,35 @@ offset_bottom = 1177.0
 mouse_filter = 1
 color = Color(0.137255, 0.137255, 0.137255, 1)
 
-[node name="Panel" type="Panel" parent="ColorRect"]
-layout_mode = 0
-offset_right = 1441.0
-offset_bottom = 1171.0
+[node name="ClipboardOnly" type="Sprite2D" parent="."]
+position = Vector2(960, 750)
+scale = Vector2(0.782445, 0.782445)
+texture = ExtResource("4_mr0t0")
+
+[node name="Panel" type="Panel" parent="ClipboardOnly"]
+visible = false
+offset_left = -703.0
+offset_top = -765.0
+offset_right = 738.0
+offset_bottom = 406.0
 mouse_filter = 1
 
-[node name="Back" type="Button" parent="ColorRect/Panel"]
-z_index = 100
-material = SubResource("ShaderMaterial_v4ocg")
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -125.0
-offset_top = -178.0
-offset_right = 125.0
-offset_bottom = -128.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 1
-theme_override_styles/normal = ExtResource("2_rip1t")
-theme_override_styles/hover = ExtResource("5_rb38u")
-theme_override_styles/pressed = ExtResource("6_20xnt")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
-script = ExtResource("2_qnvx5")
-_destinationScene = "uid://bw7twakv1byy7"
-_loadLastScene = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/Panel/Back"]
-layout_mode = 1
+[node name="Fullscreen" type="Control" parent="ClipboardOnly"]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -238.0
-offset_top = -31.0
-offset_right = 238.0
-offset_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme = ExtResource("4_wy64s")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[center][font_size=45]Back"
-metadata/_edit_lock_ = true
-
-[node name="Fullscreen" type="Control" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -288.0
-offset_top = -550.0
-offset_right = 208.0
-offset_bottom = -436.0
+offset_left = -1148.41
+offset_top = -1609.25
+offset_right = -652.413
+offset_bottom = -1495.25
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="FullscreenCheck" type="CheckButton" parent="ColorRect/Fullscreen"]
+[node name="FullscreenCheck" type="CheckButton" parent="ClipboardOnly/Fullscreen"]
 modulate = Color(0, 0.603922, 1, 1)
 layout_mode = 1
 anchors_preset = 6
@@ -133,7 +96,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_2mqcn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_k6u7f")
 action_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/Fullscreen"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ClipboardOnly/Fullscreen"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -152,22 +115,22 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[font_size=80][color=#111145]Fullscreen[/color]"
 
-[node name="V-Sync" type="Control" parent="ColorRect"]
-layout_mode = 1
+[node name="V-Sync" type="Control" parent="ClipboardOnly"]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -288.0
-offset_top = -447.0
-offset_right = 208.0
-offset_bottom = -333.0
+offset_left = -1148.41
+offset_top = -1506.25
+offset_right = -652.413
+offset_bottom = -1392.25
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="VSyncCheck" type="CheckButton" parent="ColorRect/V-Sync"]
+[node name="VSyncCheck" type="CheckButton" parent="ClipboardOnly/V-Sync"]
 modulate = Color(0, 0.603922, 1, 1)
 layout_mode = 1
 anchors_preset = 6
@@ -185,7 +148,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_2mqcn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_k6u7f")
 action_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/V-Sync"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ClipboardOnly/V-Sync"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -204,28 +167,28 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[font_size=80][color=#111145]VSync[/color]"
 
-[node name="Volume" type="Control" parent="ColorRect"]
-layout_mode = 1
+[node name="Volume" type="Control" parent="ClipboardOnly"]
+layout_mode = 3
 anchor_left = 0.38
 anchor_top = 0.603
 anchor_right = 0.38
 anchor_bottom = 0.603
-offset_left = -213.2
-offset_top = -401.716
-offset_right = 600.8
-offset_bottom = 181.284
+offset_left = -1039.29
+offset_top = -1538.01
+offset_right = -225.293
+offset_bottom = -955.007
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Master" type="Panel" parent="ColorRect/Volume"]
+[node name="Master" type="Panel" parent="ClipboardOnly/Volume"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 offset_right = 720.0
 offset_bottom = 121.0
 mouse_filter = 1
 
-[node name="Header" type="RichTextLabel" parent="ColorRect/Volume/Master"]
+[node name="Header" type="RichTextLabel" parent="ClipboardOnly/Volume/Master"]
 layout_mode = 1
 offset_right = 715.0
 offset_bottom = 98.0
@@ -239,7 +202,7 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[font_size=80][color=#111145]Master Volume[/color]"
 
-[node name="HSlider" type="HSlider" parent="ColorRect/Volume/Master"]
+[node name="HSlider" type="HSlider" parent="ClipboardOnly/Volume/Master"]
 modulate = Color(0, 0.603922, 1, 1)
 layout_mode = 1
 anchors_preset = 12
@@ -250,7 +213,7 @@ offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Sfx" type="Panel" parent="ColorRect/Volume"]
+[node name="Sfx" type="Panel" parent="ClipboardOnly/Volume"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 offset_top = 150.0
@@ -258,7 +221,7 @@ offset_right = 720.0
 offset_bottom = 271.0
 mouse_filter = 1
 
-[node name="Header" type="RichTextLabel" parent="ColorRect/Volume/Sfx"]
+[node name="Header" type="RichTextLabel" parent="ClipboardOnly/Volume/Sfx"]
 layout_mode = 1
 offset_right = 616.0
 offset_bottom = 98.0
@@ -272,7 +235,7 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[font_size=80][color=#111145]Effects Volume[/color]"
 
-[node name="HSlider" type="HSlider" parent="ColorRect/Volume/Sfx"]
+[node name="HSlider" type="HSlider" parent="ClipboardOnly/Volume/Sfx"]
 modulate = Color(0, 0.603922, 1, 1)
 layout_mode = 1
 anchors_preset = 12
@@ -283,7 +246,7 @@ offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="UI" type="Panel" parent="ColorRect/Volume"]
+[node name="UI" type="Panel" parent="ClipboardOnly/Volume"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 offset_top = 300.0
@@ -291,7 +254,7 @@ offset_right = 720.0
 offset_bottom = 421.0
 mouse_filter = 1
 
-[node name="Header" type="RichTextLabel" parent="ColorRect/Volume/UI"]
+[node name="Header" type="RichTextLabel" parent="ClipboardOnly/Volume/UI"]
 layout_mode = 1
 offset_right = 719.0
 offset_bottom = 98.0
@@ -305,7 +268,7 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[font_size=80][color=#111145]Interface Volume[/color]"
 
-[node name="HSlider" type="HSlider" parent="ColorRect/Volume/UI"]
+[node name="HSlider" type="HSlider" parent="ClipboardOnly/Volume/UI"]
 modulate = Color(0, 0.603922, 1, 1)
 layout_mode = 1
 anchors_preset = 12
@@ -316,7 +279,7 @@ offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Music" type="Panel" parent="ColorRect/Volume"]
+[node name="Music" type="Panel" parent="ClipboardOnly/Volume"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 offset_top = 450.0
@@ -324,7 +287,7 @@ offset_right = 720.0
 offset_bottom = 571.0
 mouse_filter = 1
 
-[node name="Header" type="RichTextLabel" parent="ColorRect/Volume/Music"]
+[node name="Header" type="RichTextLabel" parent="ClipboardOnly/Volume/Music"]
 layout_mode = 1
 offset_right = 616.0
 offset_bottom = 98.0
@@ -338,7 +301,7 @@ theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[font_size=80][color=#111145]Music Volume[/color]"
 
-[node name="HSlider" type="HSlider" parent="ColorRect/Volume/Music"]
+[node name="HSlider" type="HSlider" parent="ClipboardOnly/Volume/Music"]
 modulate = Color(0, 0.603922, 1, 1)
 layout_mode = 1
 anchors_preset = 12
@@ -348,3 +311,48 @@ anchor_bottom = 1.0
 offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Back" type="Button" parent="ClipboardOnly"]
+z_index = 100
+material = SubResource("ShaderMaterial_v4ocg")
+custom_minimum_size = Vector2(250, 75)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -978.024
+offset_top = -1622.22
+offset_right = -728.024
+offset_bottom = -1547.22
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("2_rip1t")
+theme_override_styles/hover = ExtResource("5_rb38u")
+theme_override_styles/pressed = ExtResource("6_20xnt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
+script = ExtResource("2_qnvx5")
+_destinationScene = "uid://bw7twakv1byy7"
+_loadLastScene = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ClipboardOnly/Back"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -31.0
+offset_right = 238.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_wy64s")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][font_size=45]Back"
+metadata/_edit_lock_ = true
