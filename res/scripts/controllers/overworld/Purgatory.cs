@@ -1,3 +1,5 @@
+namespace Overworld;
+
 using Godot;
 using Overworld;
 using System;
@@ -32,7 +34,7 @@ public partial class Purgatory : Node2D, ILevel
 		if (_player != null)
 			_player.EnemyAggroed += OnAggro;
 		_playerSpawn = _player.GlobalPosition;
-
+		_playerSpawn += Vector2.Right * 1800; // Hardcoded elevator offset; dumb
 	}
 
 	private async void OnAggro(ICombatable enemy)
@@ -77,6 +79,12 @@ public partial class Purgatory : Node2D, ILevel
 			RemoveChild(_player);
 			pride.AddChild(_player);
 			((Pride)pride).SetPlayer(_player);
+		}
+
+		if (OS.IsDebugBuild() && Input.IsKeyLabelPressed(Key.T))
+		{
+			QuestManager.GetInstance().FLAG_TALKED_TO_MANAGER = true;
+			QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
 		}
 
 		if (Input.IsActionJustPressed("Escape"))

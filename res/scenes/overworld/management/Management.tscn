@@ -122,7 +122,3 @@ z_index = -1
 position = Vector2(1, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_6mnbm")
-
-[connection signal="mouse_entered" from="Pride" to="Pride" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="Pride" to="Pride" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="Pride" to="Pride" method="OnPressed" flags=18]

@@ -146,6 +146,7 @@ public partial class MasterScene : Node
 		if (_activeScene != "")
 		{
 			GD.Print("Removing " + _activeScene);
+			GD.Print(_loadedScenes[_activeScene].Name);
 			RemoveChild(_loadedScenes[_activeScene]);
 		}
 		_activeScene = uid;
