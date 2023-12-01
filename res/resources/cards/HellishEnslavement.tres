@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_dmiq8")
 _name = "Hellish Enslavement"
-_description = ""
+_description = "Your darkened soul, in harmony with the evil surrounding you, sends out chains to bind your prey."
 _artwork = ExtResource("1_koegg")
 _type = 0
 _rarity = 4

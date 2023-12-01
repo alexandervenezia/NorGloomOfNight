@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_upqck")
 _name = "God's Uniform"
-_description = ""
+_description = "The strength of conformity protects your soul from any material harm."
 _artwork = ExtResource("1_kofnm")
 _type = 0
 _rarity = 2
