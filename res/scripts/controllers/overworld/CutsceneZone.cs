@@ -4,6 +4,7 @@ using System;
 
 public partial class CutsceneZone : Area2D
 {
+	[Export] public bool RequireInteraction;
 	[Export] public Cutscene Cutscene;
 	// This is terrible.
 	[Export] public bool FLAG_TALKED_TO_MANAGER;
@@ -15,6 +16,9 @@ public partial class CutsceneZone : Area2D
 
 	public bool ShouldRun()
 	{
+		if (RequireInteraction)
+			return false;
+
 		bool talkedToManager = !FLAG_TALKED_TO_MANAGER || QuestManager.GetInstance().FLAG_TALKED_TO_MANAGER;
 		bool acquiredCrown = !FLAG_ACQUIRED_CROWN || QuestManager.GetInstance().FLAG_ACQUIRED_CROWN;
 		bool beatDog = !FLAG_BEAT_DOG || QuestManager.GetInstance().FLAG_BEAT_DOG;
