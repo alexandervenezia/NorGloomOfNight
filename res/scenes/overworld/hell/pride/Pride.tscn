@@ -1,12 +1,14 @@
-[gd_scene load_steps=147 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=149 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
+[ext_resource type="Texture2D" uid="uid://dff84m43tr626" path="res://res/scenes/overworld/hell/pride/sign_castle.png" id="3_mxbg8"]
 [ext_resource type="Texture2D" uid="uid://bil8e3t3otquk" path="res://res/scenes/overworld/hell/pride/Castle Background.PNG" id="3_wg328"]
 [ext_resource type="PackedScene" uid="uid://qgfm7rnaf6ti" path="res://res/scenes/overworld/hell/pride/Kerog/KerogWorld.tscn" id="4_g25tj"]
 [ext_resource type="Texture2D" uid="uid://cdoj1vv18gm7f" path="res://res/scenes/overworld/hell/pride/Castle healing .PNG" id="5_kr7o0"]
 [ext_resource type="PackedScene" uid="uid://s1opn526goo4" path="res://res/scenes/overworld/hell/pride/Devin/DevinWorld.tscn" id="5_y1ghh"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Elevator.cs" id="6_b5q6i"]
+[ext_resource type="Texture2D" uid="uid://udwusv2ege27" path="res://res/scenes/overworld/hell/pride/IMG_4357.png" id="6_oe0b5"]
 [ext_resource type="Texture2D" uid="uid://b653dhnflji1s" path="res://res/scenes/overworld/hell/pride/Cave healing.PNG" id="6_t80vn"]
 [ext_resource type="PackedScene" uid="uid://bwpcv0wc0o32u" path="res://res/scenes/overworld/ShopEntrance.tscn" id="7_no0g4"]
 [ext_resource type="PackedScene" uid="uid://cb5fb4m2d5w2f" path="res://res/scenes/overworld/Spike.tscn" id="11_16ymw"]
@@ -365,6 +367,53 @@ _loopMusicUID = "uid://c2yi1m6vo7vfm"
 position = Vector2(57776, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("3_wg328")
+metadata/_edit_lock_ = true
+
+[node name="SignCastle" type="Sprite2D" parent="."]
+position = Vector2(59458, 4998)
+scale = Vector2(1.89842, 1.89842)
+texture = ExtResource("3_mxbg8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SignCastle"]
+offset_left = -113.781
+offset_top = -101.137
+offset_right = 52.2188
+offset_bottom = -24.1367
+scale = Vector2(1.4, 1.4)
+theme = ExtResource("43_bnbyh")
+bbcode_enabled = true
+text = "[center][color=Black]Throne room above
+
+Post office below"
+
+[node name="Sign - Shop & Castle" type="Sprite2D" parent="."]
+position = Vector2(770, -2088)
+rotation = -0.418879
+scale = Vector2(1.60559, 1.60559)
+texture = ExtResource("6_oe0b5")
+flip_h = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sign - Shop & Castle"]
+offset_left = -117.351
+offset_top = -105.396
+offset_right = 51.6495
+offset_bottom = -73.3956
+scale = Vector2(1.4, 1.4)
+theme = ExtResource("43_bnbyh")
+bbcode_enabled = true
+text = "[center][color=Black]Shop"
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Sign - Shop & Castle"]
+offset_left = -127.732
+offset_top = -13.2371
+offset_right = 41.2677
+offset_bottom = 18.7629
+rotation = 0.1309
+scale = Vector2(1.6, 1.6)
+theme = ExtResource("43_bnbyh")
+bbcode_enabled = true
+text = "[center][color=Black]Underpass"
 metadata/_edit_lock_ = true
 
 [node name="OutskirtsBackground" type="Sprite2D" parent="."]
