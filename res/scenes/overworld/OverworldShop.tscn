@@ -256,13 +256,13 @@ text = "[center][font_size=50]Modify Deck"
 
 [node name="RemovePrice" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
-position = Vector2(479, 895)
-scale = Vector2(1e-05, 1e-05)
+position = Vector2(479, 892)
+scale = Vector2(0.4, 0.4)
 
 [node name="UpgradePrice" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
-position = Vector2(479, 1004)
-scale = Vector2(1e-05, 1e-05)
+position = Vector2(479, 1000)
+scale = Vector2(0.4, 0.4)
 
 [node name="PlayerCoins" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
