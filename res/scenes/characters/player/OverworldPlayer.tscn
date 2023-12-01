@@ -17,7 +17,7 @@ height = 410.0
 [node name="OverworldPlayer" type="CharacterBody2D"]
 texture_filter = 6
 script = ExtResource("1_tiyfm")
-_maxHealth = 35
+_maxHealth = 30
 _coyoteBuffer = 0.3
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
