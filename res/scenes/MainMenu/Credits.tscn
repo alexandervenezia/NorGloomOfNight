@@ -71,7 +71,7 @@ anchor_right = 0.5
 offset_left = -960.0
 offset_top = -550.0
 offset_right = 960.0
-offset_bottom = 12450.0
+offset_bottom = 15700.0
 grow_horizontal = 2
 mouse_filter = 1
 color = Color(0.137255, 0.137255, 0.137255, 1)
@@ -373,6 +373,14 @@ offset_bottom = 7832.0
 theme = ExtResource("7_pqx5m")
 bbcode_enabled = true
 text = "[font_size=50][center]A Game By"
+
+[node name="Header19" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 14282.0
+offset_right = 1920.0
+offset_bottom = 14396.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Game Got Done."
 
 [node name="NorGloomOfNightTitle" type="Sprite2D" parent="ColorRect/TextOffset"]
 position = Vector2(960, 1605)
