@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcvqobb78lgqa"
-path="res://.godot/imported/LightningDamage.png-b275b4624bf4877373dc1736b5e8b604.ctex"
+path.s3tc="res://.godot/imported/LightningDamage.png-b275b4624bf4877373dc1736b5e8b604.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/Card/images/icons/LightningDamage.png"
-dest_files=["res://.godot/imported/LightningDamage.png-b275b4624bf4877373dc1736b5e8b604.ctex"]
+dest_files=["res://.godot/imported/LightningDamage.png-b275b4624bf4877373dc1736b5e8b604.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

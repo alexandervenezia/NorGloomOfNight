@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=35 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://wjxj3k8humbl" path="res://res/scenes/combat/subscenes/Card/images/Cancel.png" id="18_617ga"]
 [ext_resource type="Texture2D" uid="uid://bwve8o8s016n8" path="res://res/scenes/combat/subscenes/Card/images/Group 63.png" id="23_uyb8k"]
 [ext_resource type="AudioStream" uid="uid://b8u5gvmp87bf8" path="res://assets/audio/Attack Resist.mp3" id="27_f0vce"]
+[ext_resource type="Texture2D" uid="uid://b56gdbgpq3tnn" path="res://res/scenes/combat/subscenes/Card/images/icons/Discard.png" id="29_1gdjf"]
 
 [sub_resource type="Gradient" id="Gradient_t2vwa"]
 interpolation_mode = 2
@@ -260,6 +261,21 @@ z_index = -1
 position = Vector2(810, 348)
 scale = Vector2(19.6245, 6.34662)
 texture = SubResource("GradientTexture2D_jor7j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -5
+offset_left = -1282.0
+offset_top = -748.0
+offset_right = 1216.0
+offset_bottom = 796.0
+color = Color(0.129412, 0.129412, 0.129412, 1)
+
+[node name="Discard2" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(-879, 367)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("29_1gdjf")
 
 [connection signal="input_event" from="EndTurn" to="Player" method="OnEndTurnButtonInput"]
 [connection signal="input_event" from="EndTurn" to="EndTurn" method="OnInputEvent"]

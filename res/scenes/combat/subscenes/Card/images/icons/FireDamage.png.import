@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ixrpajpkl4yk"
-path="res://.godot/imported/FireDamage.png-061dc1d8e00ec800eadca9b0a7b92e8e.ctex"
+path.s3tc="res://.godot/imported/FireDamage.png-061dc1d8e00ec800eadca9b0a7b92e8e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/Card/images/icons/FireDamage.png"
-dest_files=["res://.godot/imported/FireDamage.png-061dc1d8e00ec800eadca9b0a7b92e8e.ctex"]
+dest_files=["res://.godot/imported/FireDamage.png-061dc1d8e00ec800eadca9b0a7b92e8e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
