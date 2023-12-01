@@ -8,6 +8,7 @@ size = Vector2(1696, 640)
 
 [node name="Grabby" type="Area2D"]
 script = ExtResource("1_pm68n")
+_warningTimeMS = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qlov1")

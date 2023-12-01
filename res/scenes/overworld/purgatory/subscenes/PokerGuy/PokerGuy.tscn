@@ -15,7 +15,7 @@ _introCutscene = ExtResource("2_0b7ke")
 position = Vector2(0, -479)
 scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("1_spedo")
-animation = &"combat"
+animation = &"idle"
 
 [node name="Aggro" type="Area2D" parent="."]
 

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_utx2n")
 SpeakerName = "[color=#666611]Your Supervisor"
-Lines = PackedStringArray("<narration>An ear-shattering roar hits your eardrums.</narration>", " <narration>A strange suspicion overcomes you that you may have just found the source of the noise.</narration>")
+Lines = PackedStringArray("<narration>An ear-shattering roar hits your eardrums.</narration>", "<pan=2500x-0x1.5>", " <narration>A strange suspicion overcomes you that you may have just found the source of the noise.</narration>")

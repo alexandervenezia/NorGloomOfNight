@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://c184qoklhcr83" path="res://res/resources/cutscenes/CerberusIntroCutscene.tres" id="2_my3vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqlln"]
-size = Vector2(3128, 2029)
+size = Vector2(6467, 2069)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k64dc"]
 
@@ -26,7 +26,7 @@ sprite_frames = ExtResource("2_adg2l")
 [node name="Aggro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
-position = Vector2(156, -605.5)
+position = Vector2(-1513.5, -585.5)
 shape = SubResource("RectangleShape2D_qqlln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
