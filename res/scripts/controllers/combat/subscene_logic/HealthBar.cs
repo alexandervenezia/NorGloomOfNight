@@ -64,13 +64,13 @@ public partial class HealthBar : Sprite2D
 		if (_overworld)
 			return;
 
-		string text = "[color=#22BB22]";
+		string text = "[right][color=#22BB22]";
 
 		foreach (BuffType b in _parent.Buffs.Keys)
 		{
 			if (_parent.Buffs[b] > 0)
 			{
-				text += b + " : " + _parent.Buffs[b] + "\n";
+				text += Data.EnumStringWrapper.BuffToString(b) + " : " + _parent.Buffs[b] + "\n";
 			}
 		}
 
@@ -79,22 +79,23 @@ public partial class HealthBar : Sprite2D
 		{
 			if (resistances[resistance] >= 999) // permanent resistance
 			{
-				text += "RESIST " + resistance + "\n";
+				text += "Resist: " + Data.EnumStringWrapper.DamageToString(resistance) + "\n";
 			}
 			else if (resistances[resistance] > 0)
 			{
-				text += "RESIST " + resistance + " : " + resistances[resistance] + "\n";
+				text += "Resist: " + Data.EnumStringWrapper.DamageToString(resistance) + 
+					" : " + resistances[resistance] + "\n";
 			}
 		}
 		text += "[/color]";
 		buffs.Text = text;
 
-		text = "[right][color=#BB2222]";
+		text = "[left][color=#BB2222]";
 
 		foreach (DebuffType d in _parent.Debuffs.Keys)
 		{
 			if (_parent.Debuffs[d] > 0)
-				text += d + " : " + _parent.Debuffs[d] + "\n";
+				text += Data.EnumStringWrapper.DebuffToString(d) + " : " + _parent.Debuffs[d] + "\n";
 		}
 		text += "[/color]";
 		debuffs.Text = text;

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("3_gq57i")
 _name = "Crown of Pride"
-_description = ""
+_description = "The package you are tasked to deliver safely. You feel its power, its darkness, seeping into you."
 _artwork = ExtResource("1_gf6hd")
 _type = 3
 _rarity = 4

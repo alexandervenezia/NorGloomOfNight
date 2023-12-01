@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_clpvg")
 _name = "Keen Eye"
-_description = ""
+_description = "Your hunting instincts watch carefully for an opening in your opponent. Your senses are sharp."
 _artwork = ExtResource("1_64l26")
 _type = 2
 _rarity = 2

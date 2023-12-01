@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_6gw2p")
 _name = "Scattershot"
-_description = ""
+_description = "A quick volley in the direction of your foes. "
 _artwork = ExtResource("1_0sgmh")
 _type = 2
 _rarity = 1

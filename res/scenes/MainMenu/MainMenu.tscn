@@ -77,7 +77,7 @@ corner_radius_bottom_left = 25
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_visdm")
-_music = "uid://cjd6hk6cpgr6l"
+_music = "uid://c1rgv3h1m7vyl"
 
 [node name="NewGame" type="Button" parent="."]
 z_index = 100

@@ -46,6 +46,7 @@ public partial class Combatant : Area2D, ICombatant
     private AudioStreamPlayer _critPhysical;
     private AudioStreamPlayer _dmgMagic;
     private AudioStreamPlayer _critMagic;
+    private AudioStreamPlayer _dmgResist;
 
     public override void _Ready()
     {
@@ -59,7 +60,7 @@ public partial class Combatant : Area2D, ICombatant
         _critPhysical = (AudioStreamPlayer)root.GetNode("Audio/CritPhysical");
         _dmgMagic = (AudioStreamPlayer)root.GetNode("Audio/DmgMagic");
         _critMagic = (AudioStreamPlayer)root.GetNode("Audio/CritMagic");
-        
+        _dmgResist = root.GetNode<AudioStreamPlayer>("Audio/DmgResist");
         
         /*
         _dmgPhysical = (AudioStreamPlayer)GetOwner<CombatMain>().GetNode("Audio/DmgPhysical");
@@ -193,14 +194,18 @@ public partial class Combatant : Area2D, ICombatant
 
         if (type == DamageType.SHARP || type == DamageType.BLUNT || type == DamageType.PIERCING)
         {
-            if (isCrit)
+            if (isResisted != 0 && !isCrit)
+                _dmgResist.Play();
+            else if (isCrit)
                 _critPhysical.Play();
             else
                 _dmgPhysical.Play();
         }
         else
         {
-            if (isCrit)
+            if (isResisted != 0 && !isCrit)
+                _dmgResist.Play();
+            else if (isCrit)
                 _critMagic.Play();
             else
                 _dmgMagic.Play();

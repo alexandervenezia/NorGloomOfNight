@@ -27,11 +27,12 @@ public partial class Door : Sprite2D
             Enter();
             GD.Print("Entering");
         }
+
+        _level.GetPlayer().SetInteractable(InRange());
     }
 
     private bool InRange()
     {
-        GD.Print(GlobalPosition.DistanceSquaredTo(_level.GetPlayer().GlobalPosition));
         return GlobalPosition.DistanceSquaredTo(_level.GetPlayer().GlobalPosition) < 50000;
     }
 

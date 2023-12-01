@@ -28,7 +28,7 @@ public partial class Player : CharacterBody2D
 	public int MaxHealth => _maxHealth;
 	private int _currentHealth;
 	public int CurrentHealth => _currentHealth;
-	private int _coins = 25; // TODO: Set to zero
+	private int _coins; // TODO: Set to zero
 	public int Coins => _coins;
 	[Export] private float _walkSpeed = 500f;
 	[Export] private float _sprintSpeed = 1700f;
@@ -40,6 +40,13 @@ public partial class Player : CharacterBody2D
 	[Export] private float _gravityMult = 3;
 
 	[Export] private string _gameOverScene;
+	[Export] private string _creditsScene;
+
+	[Export] private Sprite2D _balancedScale;
+	[Export] private Sprite2D _unbalancedScale;
+
+	[Export] private Cutscene _cutsceneCreditsTrigger;
+	
 
 	private float _coyoteTimer;
 	private float _gravityDefault;
@@ -47,6 +54,9 @@ public partial class Player : CharacterBody2D
 	private AnimatedSprite2D _playerSprite;
 	private CharacterBody2D _charcterBody;
 	private CutscenePlayer _cutscenePlayer;
+	private Sprite2D _interactionIcon;
+	private Vector2 _interactionIconBasePos;
+	private float _interactionIconBob;
 
 	public delegate void CombatStart(ICombatable enemy);
 	public event CombatStart EnemyAggroed;
@@ -55,9 +65,17 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer _runSound;
 	private AudioStreamPlayer _jumpSound;
 	private AudioStreamPlayer _landSound;
+	private AudioStreamPlayer _hurtSound;
+	private AudioStreamPlayer _encounterSound;
+	public AudioStreamPlayer EncounterSong => _encounterSound;
 
 	private bool _cutsceneFinished = false;
 	private bool _glideState = false;
+	private bool _playingCutscene = false;
+
+	private bool _interactableOnForThisFrame;
+
+	private CutsceneZone _cutsceneZoneWithin;
 
 	public override void _Ready()
 	{
@@ -68,11 +86,15 @@ public partial class Player : CharacterBody2D
 				
 		_playerSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_cutscenePlayer = GetNode<CutscenePlayer>("Camera2D/CutscenePlayer");
+		_interactionIcon = GetNode<Sprite2D>("E");
+		_interactionIcon.Visible = false;
 
 		_walkSound = (AudioStreamPlayer)GetNode("WalkSound");
 		_runSound = (AudioStreamPlayer)GetNode("RunSound");
 		_jumpSound = (AudioStreamPlayer)GetNode("JumpSound");
 		_landSound = (AudioStreamPlayer)GetNode("LandSound");
+		_hurtSound = GetNode<AudioStreamPlayer>("DmgPhysical");
+		_encounterSound = GetNode<AudioStreamPlayer>("EncounterSound");
 
 		_quest = _quests[0];
 		UpdateQuestUI();
@@ -80,6 +102,8 @@ public partial class Player : CharacterBody2D
 		_cutscenePlayer.OnEnd += OnCutsceneEnd;
 
 		// PlayFootsteps();
+		_interactableOnForThisFrame = false;
+		_interactionIconBasePos = _interactionIcon.Position;
 	}
 
 	private void QuestFlagUpdated()
@@ -89,6 +113,12 @@ public partial class Player : CharacterBody2D
 			_quest = _quests[Array.IndexOf(_quests, _quest) + 1];
 		}
 		UpdateQuestUI();
+
+		if (QuestManager.GetInstance().FLAG_ACQUIRED_CROWN)
+		{
+			_balancedScale.Visible = false;
+			_unbalancedScale.Visible = true;
+		}
 
 	}
 
@@ -151,12 +181,14 @@ public partial class Player : CharacterBody2D
 				_walkSound.Play();
 		}
 
+		
+
 		//Shop shop = (Shop)_level.UseElevator(_shopUID);
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (Engine.TimeScale < 0.01f)
+		if (Engine.TimeScale < 0.01f && _playingCutscene)
 		{
 			_playerSprite.Play("idle");
 			Velocity = new Vector2(0, Velocity.Y + _gravityDefault);
@@ -246,6 +278,22 @@ public partial class Player : CharacterBody2D
 		Velocity = vel;
 
 		MoveAndSlide();
+
+		_interactionIcon.Visible = _interactableOnForThisFrame || (_cutsceneZoneWithin != null && _cutsceneZoneWithin.RequireInteraction);
+		_interactableOnForThisFrame = false;
+		UpdateInteractionIcon(fDelta);
+
+		if (IsInstanceValid(_cutsceneZoneWithin))
+		{
+			if (Input.IsActionJustReleased("ui_interact"))
+				_ = PlayCutscene(_cutsceneZoneWithin.Cutscene);
+		}
+	}
+
+	private void UpdateInteractionIcon(float delta)
+	{
+		_interactionIcon.Position = _interactionIconBasePos + new Vector2(0, Mathf.Sin(_interactionIconBob) * 20f);
+		_interactionIconBob += delta * 4f;
 	}
 
 	private Godot.Vector2 GetMovementInput()
@@ -358,8 +406,13 @@ public partial class Player : CharacterBody2D
 			GD.Print("Cutscene zone");
 			if ((area as CutsceneZone).ShouldRun())
 			{
-				PlayCutscene((area as CutsceneZone).Cutscene);
+				_ = PlayCutscene((area as CutsceneZone).Cutscene);
 				(area as CutsceneZone).Burned = true;
+			}
+			
+			if ((area as CutsceneZone).RequireInteraction)
+			{
+				_cutsceneZoneWithin = ((CutsceneZone)area);
 			}
 		}
 	}
@@ -376,11 +429,17 @@ public partial class Player : CharacterBody2D
 			GD.Print("HealExit");
 			((HealArea)area).Exit();
 		}
+		if (area == _cutsceneZoneWithin)
+		{
+			_cutsceneZoneWithin = null;
+		}
 
 	}
 
 	public async void TakeDamage(int dmg, bool spawnText=true)
 	{
+		_hurtSound.Play();
+
 		if (spawnText)
 			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red", sizeMult:5f);
 		_currentHealth -= dmg;
@@ -400,6 +459,7 @@ public partial class Player : CharacterBody2D
 
 	public async Task PlayCutscene(Cutscene cutscene)
 	{
+		_playingCutscene = true;
 		_cutscenePlayer.Visible = true;
 		_cutsceneFinished = false;
 		_cutscenePlayer.SetCutscene(cutscene);
@@ -415,6 +475,18 @@ public partial class Player : CharacterBody2D
 			});
 
 		_cutscenePlayer.Visible = false;
+		_playingCutscene = false;
+
+		if (cutscene == _cutsceneCreditsTrigger)
+		{
+			GD.Print("Roll credits");
+
+			MasterAudio.GetInstance().ClearQueue();
+			MasterScene.GetInstance().ResetVars();
+			MasterScene.GetInstance().CallDeferred("ActivateScene", _creditsScene, true, true);
+		}
+		
+		
 	}
 
 	public void SetHealth(int hp)
@@ -462,6 +534,12 @@ public partial class Player : CharacterBody2D
 		//MasterScene.GetInstance().GetActiveScene<ILevel>().UseElevator(_gameOverScene);
 		MasterScene.GetInstance().CallDeferred("ActivateScene", _gameOverScene, true, true);
 		// TODO: Implement death screen
+	}
+
+	public void SetInteractable(bool canInteract)
+	{
+		_interactableOnForThisFrame = _interactableOnForThisFrame || canInteract;
+		// _interactionIndicator.Visible = canInteract;
 	}
 }
 

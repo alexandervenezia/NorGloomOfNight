@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_57q48")
 _name = "Hells Grasp"
-_description = ""
+_description = "The darkness surrounds your soul, letting you lash out with its clutches."
 _artwork = ExtResource("1_2xklw")
 _type = 0
 _rarity = 3

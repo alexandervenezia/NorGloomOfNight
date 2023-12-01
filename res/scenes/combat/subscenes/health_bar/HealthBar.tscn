@@ -67,7 +67,7 @@ vertical_alignment = 1
 position = Vector2(-73, 16)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Buffs"]
-offset_left = -32.0
+offset_left = -109.0
 offset_right = 71.0
 offset_bottom = 87.0
 bbcode_enabled = true
@@ -76,9 +76,9 @@ bbcode_enabled = true
 position = Vector2(72, 16)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Debuffs"]
-offset_left = -64.0
+offset_left = -67.0
 offset_top = 4.0
-offset_right = 39.0
+offset_right = 110.0
 offset_bottom = 88.0
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true

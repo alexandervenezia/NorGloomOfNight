@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c1ye1homjnu3b"]
+
+[ext_resource type="Script" path="res://res/scripts/controllers/overworld/Cutscene.cs" id="1_sq1iw"]
+
+[resource]
+script = ExtResource("1_sq1iw")
+SpeakerName = "[color=#666611Pride"
+Lines = PackedStringArray("TEST LUCILLE CUTSCENE")

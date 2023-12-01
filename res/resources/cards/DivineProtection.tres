@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_p0hg4")
 _name = "Divine Protection"
-_description = ""
+_description = "Your angelic ancestors watch over you closely, sheltering you in a time of need."
 _artwork = ExtResource("1_n4cdr")
 _type = 2
 _rarity = 4

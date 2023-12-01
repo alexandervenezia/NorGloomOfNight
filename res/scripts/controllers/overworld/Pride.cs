@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public partial class Pride : HellLevel
 {
 	//[Export] private Godot.Collections.Dictionary<int, Marker2D> _backgroundChangeMarkers;
+	[Export] private string _castleMusicUID;
 	[Export] private Godot.Collections.Array<int> _backgroundIDs;
 	[Export] private Godot.Collections.Array<Marker2D> _backgroundMarkers;
 
@@ -15,6 +16,7 @@ public partial class Pride : HellLevel
 	// Changing to two "Arrays" magically fixes this. Thanks, Godot.
 	private Dictionary<int, Marker2D> _nonStupidChangeMarkers;
 
+	private string _currentLoopMusic;
 
 	public override void _Ready()
 	{
@@ -29,6 +31,9 @@ public partial class Pride : HellLevel
 			GD.Print(_backgroundMarkers[i]);
 			_nonStupidChangeMarkers.Add(_backgroundIDs[i], _backgroundMarkers[i]);
 		}
+
+		_currentLoopMusic = _loopMusicUID;
+
 	}
 
 	public override void _Process(double delta)
@@ -45,6 +50,23 @@ public partial class Pride : HellLevel
 			{
 				_player.DebugTeleport(_player.GetLocalMousePosition());
 			}
+		}
+
+		string nextTrack = "";
+		if (_player.Position.X > _nonStupidChangeMarkers[2].Position.X)
+		{
+			nextTrack = _castleMusicUID;
+		}
+		else
+		{
+			nextTrack = _loopMusicUID;
+		}
+
+		if (nextTrack != _currentLoopMusic)
+		{
+			_currentLoopMusic = nextTrack;
+			MasterAudio.GetInstance().ClearQueue();
+			MasterAudio.GetInstance().PlaySong(_currentLoopMusic);
 		}
 	}
 

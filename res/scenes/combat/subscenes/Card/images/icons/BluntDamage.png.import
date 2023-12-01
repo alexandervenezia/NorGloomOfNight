@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw3y6vdwvv4fn"
-path="res://.godot/imported/BluntDamage.png-c1991dfc941197f9198271acc0a90faf.ctex"
+path.s3tc="res://.godot/imported/BluntDamage.png-c1991dfc941197f9198271acc0a90faf.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/combat/subscenes/Card/images/icons/BluntDamage.png"
-dest_files=["res://.godot/imported/BluntDamage.png-c1991dfc941197f9198271acc0a90faf.ctex"]
+dest_files=["res://.godot/imported/BluntDamage.png-c1991dfc941197f9198271acc0a90faf.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

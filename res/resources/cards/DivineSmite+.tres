@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_ccvmo")
 _name = "Divine Smite+"
-_description = ""
+_description = "You exact your judgment on a poor soul, as the heavens above make their mark."
 _artwork = ExtResource("1_wxr1q")
 _type = 2
 _rarity = 4

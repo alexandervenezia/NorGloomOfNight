@@ -15,6 +15,7 @@ public partial class HealArea : Area2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		_level.GetPlayer().SetInteractable(_playerInArea);
 		if (_playerInArea)
 		{
 			if (Input.IsActionJustPressed("ui_interact"))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://g80bp206jwbw"]
+[gd_scene load_steps=11 format=3 uid="uid://g80bp206jwbw"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Player.cs" id="1_tiyfm"]
 [ext_resource type="SpriteFrames" uid="uid://d2icecwt8r80n" path="res://res/scenes/characters/player/OverworldPlayerFrames.tres" id="1_vpm6o"]
@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://dcnd1fcq1c7qq" path="res://assets/audio/Run.wav" id="4_p6svo"]
 [ext_resource type="AudioStream" uid="uid://dtpp0cl6llar1" path="res://assets/audio/Jump 1.wav" id="5_nm4fh"]
 [ext_resource type="AudioStream" uid="uid://b6ewl8lsftyr1" path="res://assets/audio/Player Land.wav" id="6_tk2ai"]
+[ext_resource type="Texture2D" uid="uid://bbntbaw0lr7hf" path="res://res/scenes/overworld/purgatory/EEEEEE.png" id="7_s8qle"]
+[ext_resource type="AudioStream" uid="uid://cfsptp38y7lk1" path="res://res/scenes/combat/audio/Dmg nrm.wav" id="8_uwq18"]
+[ext_resource type="AudioStream" uid="uid://bx4gfxk55arcp" path="res://assets/audio/music/Encounter.mp3" id="9_tqu62"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_207lw"]
 radius = 81.0
@@ -21,8 +24,10 @@ _coyoteBuffer = 0.3
 shape = SubResource("CapsuleShape2D_207lw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, 0)
 sprite_frames = ExtResource("1_vpm6o")
 animation = &"jump"
+flip_h = true
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 10
@@ -49,6 +54,22 @@ bus = &"SFX"
 [node name="LandSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_tk2ai")
 volume_db = 4.0
+bus = &"SFX"
+
+[node name="E" type="Sprite2D" parent="."]
+z_index = 25
+position = Vector2(0, -367)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_s8qle")
+
+[node name="DmgPhysical" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_uwq18")
+volume_db = 1.0
+bus = &"SFX"
+
+[node name="EncounterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tqu62")
+volume_db = 8.0
 bus = &"SFX"
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="FrameChange"]

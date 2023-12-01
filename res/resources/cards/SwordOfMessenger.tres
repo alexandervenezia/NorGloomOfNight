@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_dpe2k")
 _name = "Sword of Messenger"
-_description = ""
+_description = "The sword of God’s chosen, the righteous and the true. (Given to employee of the month)."
 _artwork = ExtResource("1_0hy1l")
 _type = 2
 _rarity = 3

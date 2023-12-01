@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpku0u2ogjvbb"]
+[gd_scene load_steps=17 format=3 uid="uid://dpku0u2ogjvbb"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Management.cs" id="1_6ryuy"]
 [ext_resource type="Texture2D" uid="uid://crm20xqyp1pyu" path="res://res/scenes/overworld/management/Slug_Girl.png" id="1_74e3u"]
@@ -10,39 +10,44 @@
 [ext_resource type="FontFile" uid="uid://cpas8aathdyao" path="res://assets/fonts/Baskerville/LibreBaskerville-Bold.ttf" id="5_dqfsd"]
 [ext_resource type="AudioStream" uid="uid://dy5m5f7oxljjf" path="res://assets/audio/key.ogg" id="5_i3os1"]
 [ext_resource type="FontFile" uid="uid://thmue4emd3x5" path="res://assets/fonts/Baskerville/LibreBaskerville-Italic.ttf" id="6_6qoo2"]
+[ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="9_utcx8"]
 [ext_resource type="Texture2D" uid="uid://dprtt82pbqjye" path="res://res/scenes/overworld/management/Middle management bg.png" id="11_6mnbm"]
 
-[sub_resource type="Shader" id="Shader_5iyii"]
-code = "shader_type canvas_item;
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wss3x"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.356863, 0.639216, 0.717647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4h56"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12549, 0.247059, 0.333333, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n724u"]
 
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pf13t"]
-shader = SubResource("Shader_5iyii")
-shader_parameter/isHighlighted = null
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udywp"]
 
 [node name="Management_tscn" type="Node2D" node_paths=PackedStringArray("_cutscenePlayer", "_returnButton")]
 script = ExtResource("1_6ryuy")
 _cutscene = ExtResource("2_343nj")
 _cutscenePlayer = NodePath("Camera2D/CutscenePlayer")
-_returnButton = NodePath("Pride")
+_returnButton = NodePath("BackToWork")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -80,28 +85,31 @@ position = Vector2(-522, 130)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_74e3u")
 
-[node name="Pride" type="Button" parent="."]
-material = SubResource("ShaderMaterial_pf13t")
-use_parent_material = true
+[node name="BackToWork" type="Button" parent="."]
 custom_minimum_size = Vector2(500, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -126.0
-offset_top = 369.0
-offset_right = 874.0
-offset_bottom = 469.0
+offset_left = -36.0
+offset_top = 342.0
+offset_right = 964.0
+offset_bottom = 442.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = ExtResource("9_utcx8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wss3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p4h56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
 script = ExtResource("2_4d8jk")
 _uid = "uid://bk7mufkqeug2p"
 _returnToPurgatory = true
 _middleManagement = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Pride"]
+[node name="RichTextLabel" type="RichTextLabel" parent="BackToWork"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -124,8 +132,3 @@ z_index = -1
 position = Vector2(1, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_6mnbm")
-metadata/_edit_lock_ = true
-
-[connection signal="mouse_entered" from="Pride" to="Pride" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="Pride" to="Pride" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="Pride" to="Pride" method="OnPressed" flags=18]

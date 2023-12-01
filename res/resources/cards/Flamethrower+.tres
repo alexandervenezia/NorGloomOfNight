@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_ut8a4")
 _name = "Flamethrower+"
-_description = ""
+_description = "The flames overflow, exploding in front of you on the poor souls caught nearby."
 _artwork = ExtResource("1_a1h4l")
 _type = 2
 _rarity = 4

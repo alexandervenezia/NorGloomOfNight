@@ -1,7 +1,11 @@
+namespace Overworld;
+
 using Godot;
 using Overworld;
 using System;
 using System.Security.AccessControl;
+using System.Threading.Tasks;
+
 
 public partial class Purgatory : Node2D, ILevel
 {
@@ -10,6 +14,7 @@ public partial class Purgatory : Node2D, ILevel
 	[Export] private string _journalID; // No longer used
 	[Export] private string _introMusicUID;
 	[Export] private string _loopMusicUID;
+	
 	private Player _player;
 	public Player Player => _player;
 	private Vector2 _playerSpawn;
@@ -32,7 +37,7 @@ public partial class Purgatory : Node2D, ILevel
 		if (_player != null)
 			_player.EnemyAggroed += OnAggro;
 		_playerSpawn = _player.GlobalPosition;
-
+		_playerSpawn += Vector2.Right * 1675; // Hardcoded elevator offset; dumb
 	}
 
 	private async void OnAggro(ICombatable enemy)
@@ -47,10 +52,30 @@ public partial class Purgatory : Node2D, ILevel
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
-		// Either begin combat immediately or after cutscene
+		// Either begin combat immediately or after cutscene	
 		MasterScene master = MasterScene.GetInstance();
+		master.SetIsBoss(enemy.IsBoss());
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
-		master.SetPlayerHP(_player.CurrentHealth);
+		master.SetPlayerHP(_player.CurrentHealth);		
+
+		Engine.TimeScale = 0f;
+
+		Tween introTween = GetTree().CreateTween();
+		Vector2 oldZoom = _player.GetNode<Camera2D>("Camera2D").Zoom;
+		introTween.TweenProperty(_player.GetNode<Camera2D>("Camera2D"), "zoom", new Vector2(1f, 1f), 1.0f).SetTrans(Tween.TransitionType.Circ);
+
+		_player.EncounterSong.Play();
+
+		while (introTween.CustomStep(0.016))
+		{
+			await Task.Delay(16);
+		}
+		
+		await Task.Delay(500);
+
+		_player.GetNode<Camera2D>("Camera2D").Zoom = oldZoom;
+		Engine.TimeScale = 1f;
+
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
 
 	}
@@ -77,6 +102,12 @@ public partial class Purgatory : Node2D, ILevel
 			RemoveChild(_player);
 			pride.AddChild(_player);
 			((Pride)pride).SetPlayer(_player);
+		}
+
+		if (OS.IsDebugBuild() && Input.IsKeyLabelPressed(Key.T))
+		{
+			QuestManager.GetInstance().FLAG_TALKED_TO_MANAGER = true;
+			QuestManager.GetInstance().FLAG_ACQUIRED_CROWN = true;
 		}
 
 		if (Input.IsActionJustPressed("Escape"))

@@ -1,117 +1,59 @@
-[gd_scene load_steps=15 format=3 uid="uid://sivcy18p638c"]
+[gd_scene load_steps=21 format=3 uid="uid://sivcy18p638c"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Shop.cs" id="1_u44o4"]
 [ext_resource type="PackedScene" uid="uid://dqskjl6vsej8" path="res://res/scenes/combat/subscenes/Card/Card.tscn" id="2_cg1kr"]
 [ext_resource type="PackedScene" uid="uid://bnlrlncqe7voq" path="res://res/scenes/overworld/Price.tscn" id="3_53ipl"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="4_08kbr"]
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/LevelSelectOption.cs" id="4_rqe1u"]
+[ext_resource type="StyleBox" uid="uid://bksf2mmcd16j2" path="res://res/scenes/MainMenu/ButtonHover.tres" id="5_ifdp2"]
+[ext_resource type="StyleBox" uid="uid://oo338v2yviw7" path="res://res/scenes/MainMenu/ButtonNormal.tres" id="6_0jh1x"]
+[ext_resource type="StyleBox" uid="uid://ckfc3wipf7287" path="res://res/scenes/MainMenu/ButtonPressed.tres" id="6_4o7cr"]
+[ext_resource type="AudioStream" uid="uid://be8aca58gqfm2" path="res://assets/audio/Card Hover.wav" id="9_ckyn7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iag32"]
 size = Vector2(1933, 271)
 
-[sub_resource type="Shader" id="Shader_lslmm"]
-code = "shader_type canvas_item;
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdb4x"]
 
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdlrc"]
 
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n8a5"]
 
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpydi"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hxfc"]
-shader = SubResource("Shader_lslmm")
-shader_parameter/isHighlighted = null
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udug8"]
 
-[sub_resource type="Shader" id="Shader_60nyj"]
-code = "shader_type canvas_item;
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ba53f"]
 
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wss3x"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.356863, 0.639216, 0.717647, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4h56"]
+resource_name = "ButtonNormal"
+bg_color = Color(0.729412, 0.815686, 0.890196, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12549, 0.247059, 0.333333, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n724u"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j6thr"]
-shader = SubResource("Shader_60nyj")
-shader_parameter/isHighlighted = null
-
-[sub_resource type="Shader" id="Shader_71vnv"]
-code = "shader_type canvas_item;
-
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
-
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
-
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2t4p"]
-shader = SubResource("Shader_71vnv")
-shader_parameter/isHighlighted = null
-
-[sub_resource type="Shader" id="Shader_8oxal"]
-code = "shader_type canvas_item;
-
-uniform float isHighlighted;
-const vec4 BRIGHT = vec4(0.4, 0.4, 0.4, 1);
-const vec4 DARK = vec4(0.1, 0.1, 0.1, 1);
-
-float gradient(float x)
-{
-	return pow( 6.0*x*(1.0-x), 1 );
-}
-
-void fragment() {
-	vec4 col = mix(DARK, BRIGHT, step(0.5f, isHighlighted));
-	
-	col.a = (1.0 - gradient(UV.y));
-	
-	
-	COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_42rml"]
-shader = SubResource("Shader_8oxal")
-shader_parameter/isHighlighted = null
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udywp"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_u44o4")
@@ -131,7 +73,7 @@ color = Color(0.364706, 0.266667, 0.184314, 1)
 z_index = 99
 offset_top = 812.0
 offset_right = 1920.0
-offset_bottom = 1079.0
+offset_bottom = 1123.0
 color = Color(0.313726, 0.184314, 0.14902, 1)
 
 [node name="Cards" type="Node2D" parent="Overlay"]
@@ -147,20 +89,24 @@ shape = SubResource("RectangleShape2D_iag32")
 
 [node name="Pride" type="Button" parent="."]
 z_index = 100
-material = SubResource("ShaderMaterial_0hxfc")
 custom_minimum_size = Vector2(500, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 460.0
-offset_top = 969.0
-offset_right = 1460.0
-offset_bottom = 1069.0
+offset_left = 570.0
+offset_top = 961.0
+offset_right = 1570.0
+offset_bottom = 1061.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = ExtResource("6_0jh1x")
+theme_override_styles/hover = ExtResource("5_ifdp2")
+theme_override_styles/pressed = ExtResource("6_4o7cr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wdb4x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wdlrc")
 script = ExtResource("4_rqe1u")
 _uid = "uid://bk7mufkqeug2p"
 _returnToPurgatory = true
@@ -185,20 +131,24 @@ text = "[center][font_size=50]Back to Work"
 
 [node name="Upgrade" type="Button" parent="."]
 z_index = 100
-material = SubResource("ShaderMaterial_j6thr")
 custom_minimum_size = Vector2(500, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = 969.0
-offset_right = 461.0
-offset_bottom = 1069.0
+offset_left = 30.0
+offset_top = 961.0
+offset_right = 530.0
+offset_bottom = 1061.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = ExtResource("6_0jh1x")
+theme_override_styles/hover = ExtResource("5_ifdp2")
+theme_override_styles/pressed = ExtResource("6_4o7cr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5n8a5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wpydi")
 script = ExtResource("4_rqe1u")
 _uid = "uid://bk7mufkqeug2p"
 _externallyControlled = true
@@ -223,20 +173,24 @@ text = "[center][font_size=50]Upgrade Card"
 
 [node name="Remove" type="Button" parent="."]
 z_index = 100
-material = SubResource("ShaderMaterial_a2t4p")
 custom_minimum_size = Vector2(500, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = 860.0
-offset_right = 461.0
-offset_bottom = 960.0
+offset_left = 30.0
+offset_top = 852.0
+offset_right = 530.0
+offset_bottom = 952.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = ExtResource("6_0jh1x")
+theme_override_styles/hover = ExtResource("5_ifdp2")
+theme_override_styles/pressed = ExtResource("6_4o7cr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_udug8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ba53f")
 script = ExtResource("4_rqe1u")
 _uid = "uid://bk7mufkqeug2p"
 _externallyControlled = true
@@ -261,20 +215,24 @@ text = "[center][font_size=50]Remove Card"
 
 [node name="ModifyDeck" type="Button" parent="."]
 z_index = 100
-material = SubResource("ShaderMaterial_42rml")
 custom_minimum_size = Vector2(500, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 460.0
-offset_top = 860.0
-offset_right = 1460.0
-offset_bottom = 960.0
+offset_left = 570.0
+offset_top = 852.0
+offset_right = 1570.0
+offset_bottom = 952.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = ExtResource("6_0jh1x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wss3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p4h56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n724u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udywp")
 script = ExtResource("4_rqe1u")
 _externallyControlled = true
 
@@ -298,27 +256,19 @@ text = "[center][font_size=50]Modify Deck"
 
 [node name="RemovePrice" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
-position = Vector2(417, 895)
-scale = Vector2(0.5, 0.5)
+position = Vector2(479, 892)
+scale = Vector2(0.4, 0.4)
 
 [node name="UpgradePrice" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
-position = Vector2(417, 1004)
-scale = Vector2(0.5, 0.5)
+position = Vector2(479, 1000)
+scale = Vector2(0.4, 0.4)
 
 [node name="PlayerCoins" parent="." instance=ExtResource("3_53ipl")]
 z_index = 102
 position = Vector2(1757, 929)
 
-[connection signal="mouse_entered" from="Pride" to="Pride" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="Pride" to="Pride" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="Pride" to="Pride" method="OnPressed" flags=18]
-[connection signal="mouse_entered" from="Upgrade" to="Upgrade" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="Upgrade" to="Upgrade" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="Upgrade" to="Upgrade" method="OnPressed" flags=18]
-[connection signal="mouse_entered" from="Remove" to="Remove" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="Remove" to="Remove" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="Remove" to="Remove" method="OnPressed" flags=18]
-[connection signal="mouse_entered" from="ModifyDeck" to="ModifyDeck" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="ModifyDeck" to="ModifyDeck" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="ModifyDeck" to="ModifyDeck" method="OnPressed" flags=18]
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ckyn7")
+volume_db = -6.0
+bus = &"UI"

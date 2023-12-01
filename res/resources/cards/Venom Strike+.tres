@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_lsg05")
 _name = "Venom Strike+"
-_description = ""
+_description = "Speed and precision, with deadly coatings of toxins. The pain inflicted will be both short and prolonged."
 _artwork = ExtResource("1_21exh")
 _type = 2
 _rarity = 4

@@ -16,6 +16,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	private static Random RNG = new();
 	[Export] protected string _name;
 	[Export] protected int _id; // Must match UID of combat equivalent
+	[Export] protected bool _isBoss;
 	[Export] protected float _speed;
 	[Export] protected float _acceleration;
 
@@ -143,7 +144,10 @@ public partial class Enemy : CharacterBody2D, ICombatable
 		return _introCutscene;
 	}
 
-
+	public bool IsBoss()
+	{
+		return _isBoss;
+	}
 	
 
 }

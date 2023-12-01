@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ci7c04ig20o8p" path="res://res/scenes/MainMenu/assets/Group 59.png" id="8_o72ph"]
 [ext_resource type="SpriteFrames" uid="uid://d1qxf1j13278r" path="res://res/scenes/overworld/hell/pride/Kerog/KerogOverworldFrames.tres" id="9_fs6dy"]
 [ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="9_xlli2"]
-[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/Eyeball Guy.png" id="10_4b8v1"]
+[ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/npcs/Eyeball Guy.png" id="10_4b8v1"]
 [ext_resource type="SpriteFrames" uid="uid://deiun403jddj3" path="res://res/scenes/overworld/hell/pride/Sluggy/SluggyOverworldFrames.tres" id="11_a8cc3"]
 [ext_resource type="Texture2D" uid="uid://crm20xqyp1pyu" path="res://res/scenes/overworld/management/Slug_Girl.png" id="11_y52ho"]
 [ext_resource type="SpriteFrames" uid="uid://20u3u0j7h4xj" path="res://res/scenes/overworld/hell/pride/Grabby/GrabbyFrames.tres" id="13_hotx8"]
@@ -71,7 +71,7 @@ anchor_right = 0.5
 offset_left = -960.0
 offset_top = -550.0
 offset_right = 960.0
-offset_bottom = 12450.0
+offset_bottom = 15700.0
 grow_horizontal = 2
 mouse_filter = 1
 color = Color(0.137255, 0.137255, 0.137255, 1)
@@ -182,10 +182,11 @@ text = "[font_size=40][center][color=#AAA]Arru"
 [node name="Content12" type="RichTextLabel" parent="ColorRect/TextOffset"]
 offset_top = 5193.0
 offset_right = 1920.0
-offset_bottom = 5289.0
+offset_bottom = 5314.0
 theme = ExtResource("5_vw65y")
 bbcode_enabled = true
-text = "[font_size=40][center][color=#AAA]Blunderguy"
+text = "[font_size=40][center][color=#AAA]Blunderguy
+Perplexer"
 
 [node name="Content13" type="RichTextLabel" parent="ColorRect/TextOffset"]
 offset_top = 5493.0
@@ -217,7 +218,7 @@ Space Nerd"
 [node name="Content16" type="RichTextLabel" parent="ColorRect/TextOffset"]
 offset_top = 6393.0
 offset_right = 1920.0
-offset_bottom = 6489.0
+offset_bottom = 6559.0
 theme = ExtResource("5_vw65y")
 bbcode_enabled = true
 text = "[font_size=40][center][color=#AAA]Spencer"
@@ -373,6 +374,14 @@ offset_bottom = 7832.0
 theme = ExtResource("7_pqx5m")
 bbcode_enabled = true
 text = "[font_size=50][center]A Game By"
+
+[node name="Header19" type="RichTextLabel" parent="ColorRect/TextOffset"]
+offset_top = 14282.0
+offset_right = 1920.0
+offset_bottom = 14396.0
+theme = ExtResource("7_pqx5m")
+bbcode_enabled = true
+text = "[font_size=50][center]Game Got Done."
 
 [node name="NorGloomOfNightTitle" type="Sprite2D" parent="ColorRect/TextOffset"]
 position = Vector2(960, 1605)

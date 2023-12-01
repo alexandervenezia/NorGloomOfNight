@@ -28,6 +28,8 @@ public partial class CombatMain : Node2D
 	[Export] private PackedScene _nullCardResource;
 	[Export] private PackedScene _coinValueResource;
 	[Export] private string _music;
+	[Export] private string _bossMusic;
+	[Export] private string _winMusic;
 	[Export] private Texture2D _rejectButtonImg;
 	private Dictionary<int, PackedScene> _enemyTypesByUID;
 
@@ -169,7 +171,11 @@ public partial class CombatMain : Node2D
 		GD.Print("Background ID: " + combatBGID);
 		GetNode<Background>("Background").SetBG(EnemyAssetLookup.GetInstance().GetCombatBackground(combatBGID));
 		MasterAudio.GetInstance().ClearQueue();
-		MasterAudio.GetInstance().PlaySong(_music);
+
+		if (MasterScene.GetInstance().GetIsBoss())
+			MasterAudio.GetInstance().PlaySong(_bossMusic);
+		else
+			MasterAudio.GetInstance().PlaySong(_music);
 		
 		_rewardsNode = GetNode<Node2D>("Rewards");
 
@@ -202,6 +208,8 @@ public partial class CombatMain : Node2D
 		_isOver = true;
 		GD.Print("Is over - " + result);
 
+		MasterAudio.GetInstance().ClearQueue();
+		MasterAudio.GetInstance().PlaySong(_winMusic);
 		
 		MasterDeck.PlayerDeck.ForceFullReshuffle();
 
@@ -294,16 +302,12 @@ public partial class CombatMain : Node2D
 
 	}
 
-	private async void AnimateRewardCards(Card chosen)
+	private void AnimateRewardCards(Card chosen)
 	{
 		foreach (Node2D card in _rewardsNode.GetChildren())
 		{
 			if (card != chosen)
 				card.QueueFree();
-			else
-			{
-
-			}
 		}
 	}
 

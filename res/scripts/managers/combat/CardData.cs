@@ -6,7 +6,9 @@ namespace Data;
 
 using Godot;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 
@@ -133,6 +135,93 @@ public struct Debuff
 {
     public DebuffType Type;
     public int Duration;
+}
+
+public static class EnumStringWrapper
+{
+    public static string DamageToString(DamageType damage)
+    {
+        switch (damage)
+        {
+            case DamageType.DIVINE:
+            return "Divine";
+            case DamageType.DEMONIC:
+            return "Demonic";
+            case DamageType.LIGHTNING:
+            return "Lightning";
+            case DamageType.FIRE:
+            return "Fire";
+            case DamageType.POISON:
+            return "Poison";
+            case DamageType.BLUNT:
+            return "Blunt";
+            case DamageType.SHARP:
+            return "Sharp";
+            case DamageType.PIERCING:
+            return "Piercing";
+            case DamageType.HEAL:
+            return "Healing";
+            default:
+            return "Invalid";
+        }
+    }
+
+    public static string BuffToString(BuffType buff)
+    {
+        switch (buff)
+        {
+            case BuffType.ARMOR:
+            return "Armor";
+            case BuffType.RESISTANCE:
+            return "Resist";
+            case BuffType.CRIT_DMG_INCREASE:
+            return "Crit Mult";
+            case BuffType.CRIT_CHANCE_INCREASE:
+            return "Crit Chance";
+            case BuffType.PURIFY:
+            return "Purify";
+            default:
+            return "Invalid";
+        }
+    }
+
+    public static string DebuffToString(DebuffType debuff)
+    {
+        switch (debuff)
+        {
+            case DebuffType.POISONED:
+            return "Poisoned";
+            case DebuffType.CRIPPLED:
+            return "Cripple";
+            case DebuffType.TRAUMATIZED:
+            return "Traumatize";
+            case DebuffType.SHOCKED:
+            return "Shock";
+            case DebuffType.EXPOSED:
+            return "Expose";
+            case DebuffType.WITHER:
+            return "Wither";
+            default:
+            return "Invalid";
+        }
+    }
+
+    public static string DrawEffectToString(DrawEffect draw)
+    {
+        switch (draw)
+        {
+            case DrawEffect.DRAW:
+            return "Draw";
+            case DrawEffect.RETURN:
+            return "Return";
+            case DrawEffect.DISCARD:
+            return "Discard";
+            case DrawEffect.GRAB:
+            return "Grab";
+            default:
+            return "Invalid";
+        }
+    }
 }
 
 

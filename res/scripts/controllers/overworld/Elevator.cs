@@ -21,6 +21,9 @@ public partial class Elevator : Marker2D
     {
         bool inRange = InRange();
         if (!inRange) _levelSelect.Visible = false;
+
+        _level.GetPlayer().SetInteractable(inRange);
+
         if (Input.IsActionJustPressed("ui_interact"))
         {
             if (inRange)                

@@ -13,6 +13,7 @@ size = Vector2(6467, 2069)
 script = ExtResource("1_yduwu")
 _name = "Cerberus"
 _id = 92
+_isBoss = true
 _firstSlotSpawn = {
 92: 100
 }

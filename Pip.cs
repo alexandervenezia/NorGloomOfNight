@@ -17,13 +17,13 @@ public partial class Pip : AnimatedSprite2D
     }
 
     private async void Animate()
-    {
+    {      
+        await Task.Delay(1000 / Framerate);
         if (!IsInstanceValid(this))
         {
             return;
         }
 
-        await Task.Delay(1000 / Framerate);
         SetFrameAndProgress(frame, 0f);
 
         frame++;
