@@ -116,6 +116,7 @@ _fadeTimeSeconds = 0.5
 _musicPath = "res://assets/audio/music/"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MasterAudio"]
+bus = &"Music"
 
 [node name="MasterAssetLoader" type="Node" parent="."]
 

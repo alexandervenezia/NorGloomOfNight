@@ -74,7 +74,7 @@ public partial class Card : Area2D
 		{
 			Texture2D icon = MasterDeck.GetDamageIcon(dt);
 			string path = icon.ResourcePath;
-			diceText += data.Damage[dt].ToString() + " " + dt + " [img color=black width=65]" + path + "[/img]\n";
+			diceText += data.Damage[dt].ToString() + " " + dt + " [img color=black width=80]" + path + "[/img]\n";
 		}
 		foreach (DrawEffect de in data.DrawEffects.Keys)
 		{

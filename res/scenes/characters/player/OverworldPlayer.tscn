@@ -51,6 +51,8 @@ stream = ExtResource("6_tk2ai")
 volume_db = 4.0
 bus = &"SFX"
 
+[node name="E" type="Sprite2D" parent="."]
+
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="FrameChange"]
 [connection signal="area_entered" from="Area2D" to="." method="OnArea2DEntered"]
 [connection signal="area_exited" from="Area2D" to="." method="OnArea2DExited"]
