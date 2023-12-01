@@ -28,6 +28,7 @@ public partial class CombatMain : Node2D
 	[Export] private PackedScene _nullCardResource;
 	[Export] private PackedScene _coinValueResource;
 	[Export] private string _music;
+	[Export] private string _bossMusic;
 	[Export] private Texture2D _rejectButtonImg;
 	private Dictionary<int, PackedScene> _enemyTypesByUID;
 
@@ -169,7 +170,11 @@ public partial class CombatMain : Node2D
 		GD.Print("Background ID: " + combatBGID);
 		GetNode<Background>("Background").SetBG(EnemyAssetLookup.GetInstance().GetCombatBackground(combatBGID));
 		MasterAudio.GetInstance().ClearQueue();
-		MasterAudio.GetInstance().PlaySong(_music);
+
+		if (MasterScene.GetInstance().GetIsBoss())
+			MasterAudio.GetInstance().PlaySong(_bossMusic);
+		else
+			MasterAudio.GetInstance().PlaySong(_music);
 		
 		_rewardsNode = GetNode<Node2D>("Rewards");
 

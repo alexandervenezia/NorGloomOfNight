@@ -10,4 +10,5 @@ public interface ICombatable
     public void Die();
     public bool HasIntroCutscene();
     public Cutscene GetIntroCutscene();
+    public bool IsBoss();
 }

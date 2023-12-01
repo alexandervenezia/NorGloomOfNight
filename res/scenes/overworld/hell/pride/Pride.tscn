@@ -357,6 +357,7 @@ size = Vector2(1678, 2714)
 [node name="Pride" type="Node2D" node_paths=PackedStringArray("_backgroundMarkers")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7nkhc")
+_castleMusicUID = "uid://c1rgv3h1m7vyl"
 _backgroundIDs = Array[int]([2, 3])
 _backgroundMarkers = [NodePath("BackgroundChangeMarkers/Gatehouse"), NodePath("BackgroundChangeMarkers/Pride")]
 _playerSpawn = Vector2(-22070.7, -2279.27)
@@ -1484,6 +1485,7 @@ sprite_frames = ExtResource("27_efq1q")
 [node name="Pride" parent="." instance=ExtResource("29_2pin4")]
 position = Vector2(78064, -3138)
 scale = Vector2(1.3, 1.3)
+_isBoss = true
 
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)

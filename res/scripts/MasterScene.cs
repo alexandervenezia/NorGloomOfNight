@@ -24,6 +24,7 @@ public partial class MasterScene : Node
 	private int _playerHP = -1;
 	private int _coinsFound;
 	public int TotalCoins;
+	private bool _isBoss;
 
 	private int _playerMaxHP = -1;
 
@@ -73,6 +74,18 @@ public partial class MasterScene : Node
 			_playerMaxHP = hp;
 
 		_playerHP = hp;
+	}
+
+	public bool GetIsBoss()
+	{
+		bool temp = _isBoss;
+		_isBoss = false;
+		return temp;
+	}
+
+	public void SetIsBoss(bool boss)
+	{
+		_isBoss = boss;
 	}
 
 	public int LoadPlayerHP()

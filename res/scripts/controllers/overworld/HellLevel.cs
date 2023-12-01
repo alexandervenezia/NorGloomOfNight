@@ -7,8 +7,8 @@ public partial class HellLevel : Node2D, ILevel
 {
 	[Export] protected Vector2 _playerSpawn;
 	[Export] protected string _journalID; // No longer used
-	[Export] private string _introMusicUID;
-	[Export] private string _loopMusicUID;
+	[Export] protected string _introMusicUID;
+	[Export] protected string _loopMusicUID;
 	protected Player _player;
 	protected Journal _journal;
 	protected ICombatable _enemyInCombat;
@@ -29,8 +29,10 @@ public partial class HellLevel : Node2D, ILevel
 		GD.Print("Aggroed");
 		// Either begin combat immediately or after cutscene
 		// TODO: Begin combat here
-		MasterScene.GetInstance().SetCombatBackground(GetBackgroundID());
+		
 		MasterScene master = MasterScene.GetInstance();
+		master.SetCombatBackground(GetBackgroundID());
+		master.SetIsBoss(enemy.IsBoss());
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);

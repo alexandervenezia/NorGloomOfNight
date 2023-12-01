@@ -51,6 +51,7 @@ public partial class Purgatory : Node2D, ILevel
 		GD.Print("Aggroed");
 		// Either begin combat immediately or after cutscene
 		MasterScene master = MasterScene.GetInstance();
+		master.SetIsBoss(enemy.IsBoss());
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
 		master.SetPlayerHP(_player.CurrentHealth);
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);

@@ -62,4 +62,9 @@ public partial class PokerGuy : Node2D, ICombatable
 		return _introCutscene;
 	}
 
+	public bool IsBoss()
+	{
+		return true;
+	}
+
 }
