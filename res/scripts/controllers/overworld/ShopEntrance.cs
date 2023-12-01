@@ -41,6 +41,9 @@ public partial class ShopEntrance : Area2D
 			return;
 		}
 		Visible = true;
+
+		_level.GetPlayer().SetInteractable(_playerInside);
+		
 		if (_playerInside)
 		{
 			if (Input.IsActionJustPressed("ui_interact"))

@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdrygqh7oyy75"
-path="res://.godot/imported/EEEEEE.png-450bfa09edd0abc3449903d0c2cc0438.ctex"
+uid="uid://bbntbaw0lr7hf"
+path.s3tc="res://.godot/imported/EEEEEE.png-6e7639d228d327ff26a311cedc2a703b.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://res/scenes/overworld/purgatory/img/EEEEEE.png"
-dest_files=["res://.godot/imported/EEEEEE.png-450bfa09edd0abc3449903d0c2cc0438.ctex"]
+source_file="res://res/scenes/overworld/purgatory/EEEEEE.png"
+dest_files=["res://.godot/imported/EEEEEE.png-6e7639d228d327ff26a311cedc2a703b.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

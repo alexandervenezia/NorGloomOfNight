@@ -42,6 +42,7 @@ public partial class NPC : Area2D
 			GD.Print("Dialogue started");
 			StartDialogue();
 		}
+		_level.GetPlayer().SetInteractable(_playerInArea);
 	}
 
 	public void OnAreaEntered(Area2D area)

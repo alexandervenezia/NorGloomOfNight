@@ -47,6 +47,9 @@ public partial class Player : CharacterBody2D
 	private AnimatedSprite2D _playerSprite;
 	private CharacterBody2D _charcterBody;
 	private CutscenePlayer _cutscenePlayer;
+	private Sprite2D _interactionIcon;
+	private Vector2 _interactionIconBasePos;
+	private float _interactionIconBob;
 
 	public delegate void CombatStart(ICombatable enemy);
 	public event CombatStart EnemyAggroed;
@@ -59,6 +62,8 @@ public partial class Player : CharacterBody2D
 	private bool _cutsceneFinished = false;
 	private bool _glideState = false;
 
+	private bool _interactableOnForThisFrame;
+
 	public override void _Ready()
 	{
 		_gravityDefault = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -68,6 +73,8 @@ public partial class Player : CharacterBody2D
 				
 		_playerSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_cutscenePlayer = GetNode<CutscenePlayer>("Camera2D/CutscenePlayer");
+		_interactionIcon = GetNode<Sprite2D>("E");
+		_interactionIcon.Visible = false;
 
 		_walkSound = (AudioStreamPlayer)GetNode("WalkSound");
 		_runSound = (AudioStreamPlayer)GetNode("RunSound");
@@ -80,6 +87,8 @@ public partial class Player : CharacterBody2D
 		_cutscenePlayer.OnEnd += OnCutsceneEnd;
 
 		// PlayFootsteps();
+		_interactableOnForThisFrame = false;
+		_interactionIconBasePos = _interactionIcon.Position;
 	}
 
 	private void QuestFlagUpdated()
@@ -246,6 +255,16 @@ public partial class Player : CharacterBody2D
 		Velocity = vel;
 
 		MoveAndSlide();
+
+		_interactionIcon.Visible = _interactableOnForThisFrame;
+		_interactableOnForThisFrame = false;
+		UpdateInteractionIcon(fDelta);
+	}
+
+	private void UpdateInteractionIcon(float delta)
+	{
+		_interactionIcon.Position = _interactionIconBasePos + new Vector2(0, Mathf.Sin(_interactionIconBob) * 20f);
+		_interactionIconBob += delta * 4f;
 	}
 
 	private Godot.Vector2 GetMovementInput()
@@ -462,6 +481,12 @@ public partial class Player : CharacterBody2D
 		//MasterScene.GetInstance().GetActiveScene<ILevel>().UseElevator(_gameOverScene);
 		MasterScene.GetInstance().CallDeferred("ActivateScene", _gameOverScene, true, true);
 		// TODO: Implement death screen
+	}
+
+	public void SetInteractable(bool canInteract)
+	{
+		_interactableOnForThisFrame = _interactableOnForThisFrame || canInteract;
+		// _interactionIndicator.Visible = canInteract;
 	}
 }
 

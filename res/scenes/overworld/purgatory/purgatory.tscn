@@ -240,13 +240,13 @@ script = ExtResource("4_yy1ep")
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelSelect" type="Control" parent="OverworldPlayer/Camera2D"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(4, 4)
 mouse_filter = 1
 
 [node name="LevelSelectMenu" type="ColorRect" parent="OverworldPlayer/Camera2D/LevelSelect"]
-visible = false
 self_modulate = Color(0.0117647, 0.0117647, 0.0196078, 0.929412)
 custom_minimum_size = Vector2(1000, 1000)
 layout_mode = 1

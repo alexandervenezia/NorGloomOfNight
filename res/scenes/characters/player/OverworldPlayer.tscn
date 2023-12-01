@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dcnd1fcq1c7qq" path="res://assets/audio/Run.wav" id="4_p6svo"]
 [ext_resource type="AudioStream" uid="uid://dtpp0cl6llar1" path="res://assets/audio/Jump 1.wav" id="5_nm4fh"]
 [ext_resource type="AudioStream" uid="uid://b6ewl8lsftyr1" path="res://assets/audio/Player Land.wav" id="6_tk2ai"]
-[ext_resource type="Texture2D" uid="uid://bdrygqh7oyy75" path="res://res/scenes/overworld/purgatory/img/EEEEEE.png" id="7_xfjv0"]
+[ext_resource type="Texture2D" uid="uid://bbntbaw0lr7hf" path="res://res/scenes/overworld/purgatory/EEEEEE.png" id="7_s8qle"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_207lw"]
 radius = 81.0
@@ -53,9 +53,10 @@ volume_db = 4.0
 bus = &"SFX"
 
 [node name="E" type="Sprite2D" parent="."]
+z_index = 25
 position = Vector2(0, -367)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_xfjv0")
+texture = ExtResource("7_s8qle")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="FrameChange"]
 [connection signal="area_entered" from="Area2D" to="." method="OnArea2DEntered"]
