@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=74 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -34,7 +34,6 @@
 [ext_resource type="Resource" uid="uid://cshi2h1ynw2rp" path="res://res/resources/cards/HolyWord.tres" id="28_skj2b"]
 [ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="29_ef0ed"]
 [ext_resource type="Resource" uid="uid://cfc5bwbj41lg6" path="res://res/resources/cards/ScatterShot.tres" id="29_vj53b"]
-[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="30_a5nkd"]
 [ext_resource type="Resource" uid="uid://bl13iumdm4bdd" path="res://res/resources/cards/LetterOpener.tres" id="30_h4k4w"]
 [ext_resource type="Resource" uid="uid://3qmogeo45ns3" path="res://res/resources/cutscenes/KerPoCutsceneEnd.tres" id="30_up1a5"]
 [ext_resource type="Resource" uid="uid://he6fbgb3ossq" path="res://res/resources/cards/Blessed.tres" id="31_1ucbg"]
@@ -116,9 +115,6 @@ bg_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecjm0"]
 size = Vector2(254, 960)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_shlqa"]
-size = Vector2(512, 800)
 
 [node name="Purgatory" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -884,44 +880,17 @@ script = ExtResource("27_0n67v")
 position = Vector2(37, -50)
 shape = SubResource("RectangleShape2D_ecjm0")
 
-[node name="Creep_NPC" type="Area2D" parent="."]
-position = Vector2(12166, -9670)
+[node name="Creep" type="Sprite2D" parent="."]
+position = Vector2(12150, -9670)
+scale = Vector2(0.527344, 0.527344)
+texture = ExtResource("41_rsf3d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Creep_NPC"]
-position = Vector2(-20, 0)
-shape = SubResource("RectangleShape2D_shlqa")
-
-[node name="CutsceneZone" parent="Creep_NPC" instance=ExtResource("29_ef0ed")]
-position = Vector2(-18, 22)
-scale = Vector2(1, 0.8)
+[node name="CutsceneZone2" parent="Creep" instance=ExtResource("29_ef0ed")]
+position = Vector2(-3.79102, 41.7188)
+scale = Vector2(1.8963, 1.51704)
 RequireInteraction = true
 Cutscene = ExtResource("43_tly6u")
 FLAG_ACQUIRED_CROWN = true
-
-[node name="DialogueBubble" type="Polygon2D" parent="Creep_NPC"]
-visible = false
-position = Vector2(-68, -110)
-polygon = PackedVector2Array(2, -4, -217, -240, -477, -246, -504, -278, -503, -555, 130, -556, 158, -530, 158.873, -279.497, 159, -243, -137, -243)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Creep_NPC/DialogueBubble"]
-visible = false
-offset_left = -488.0
-offset_top = -535.0
-offset_right = 129.0
-offset_bottom = -287.0
-theme = ExtResource("30_a5nkd")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "[center]
-
-. . ."
-metadata/_edit_use_anchors_ = true
-
-[node name="Creep" type="Sprite2D" parent="Creep_NPC"]
-position = Vector2(-16, 0)
-scale = Vector2(0.527344, 0.527344)
-texture = ExtResource("41_rsf3d")
 
 [node name="CutsceneZone" parent="." instance=ExtResource("29_ef0ed")]
 position = Vector2(26202, -4272)
