@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_hlgdi")
 _name = "Letter Opener++"
-_description = ""
+_description = "Office Stationery, the old reliable."
 _artwork = ExtResource("1_xfmxh")
 _type = 2
 _rarity = 2

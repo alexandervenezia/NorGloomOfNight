@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_rwad4")
 _name = "Kill Shot"
-_description = ""
+_description = "You take the shot. Let it fly straight, fly true. It will pierce through any defense should it land."
 _artwork = ExtResource("1_vddxi")
 _type = 2
 _rarity = 3

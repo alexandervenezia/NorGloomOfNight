@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_loysg")
 _name = "Holy Water++"
-_description = ""
+_description = "The pure spring of the heavens makes you refreshed, and light on your feet."
 _artwork = ExtResource("1_0dvve")
 _type = 0
 _rarity = 4

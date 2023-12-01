@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_vjo34")
 _name = "Tactical Roll"
-_description = ""
+_description = "Your training pays off, as you gracefully roll to safety, and reassess your situation."
 _artwork = ExtResource("1_syo6d")
 _type = 0
 _rarity = 2

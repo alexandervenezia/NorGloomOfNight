@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_brcmc")
 _name = "Tremors+"
-_description = ""
+_description = "A hail mary, in an attempt to catch your enemies off balance. Sometimes battle isn’t pretty, but a calculated risk."
 _artwork = ExtResource("1_g2i5q")
 _type = 2
 _rarity = 3

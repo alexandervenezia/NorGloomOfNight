@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_itoch")
 _name = "Pride's Resolve"
-_description = ""
+_description = "The echoes of spirit shown by the ruler of the castle realm."
 _artwork = ExtResource("1_qtw5k")
 _type = 2
 _rarity = 4

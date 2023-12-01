@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_m7761")
 _name = "Torch+"
-_description = ""
+_description = "The flames lick at the world around them, scorching your foe to charcoal."
 _artwork = ExtResource("1_i71bq")
 _type = 2
 _rarity = 1

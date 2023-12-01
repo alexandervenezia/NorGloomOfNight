@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_d73ep")
 _name = "Holy Word+"
-_description = ""
+_description = "The choirs of the enlightened fills the air, and cripples the poor individual that they are directed at."
 _artwork = ExtResource("1_cp1fi")
 _type = 2
 _rarity = 1

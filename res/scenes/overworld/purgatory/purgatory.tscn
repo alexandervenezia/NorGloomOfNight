@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=70 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -45,6 +45,7 @@
 [ext_resource type="Resource" uid="uid://c3x74yanv8dns" path="res://res/resources/cards/GodsUniform.tres" id="36_cnl0t"]
 [ext_resource type="Resource" uid="uid://r2yjeslnymxq" path="res://res/resources/cards/DistractingShot.tres" id="36_kbv1o"]
 [ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://assets/npcs/Creep.png" id="41_rsf3d"]
+[ext_resource type="Texture2D" uid="uid://bntoc8a1tk67v" path="res://res/scenes/overworld/purgatory/img/poster_HR.png" id="46_ttt1f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4f1m"]
 size = Vector2(24438, 289.25)
@@ -914,6 +915,11 @@ FLAG_ACQUIRED_CROWN = true
 script = ExtResource("34_5ep4q")
 _theme = ExtResource("18_1vjvr")
 _fontSize = 50
+
+[node name="PosterHr" type="Sprite2D" parent="."]
+position = Vector2(-7074, -10194)
+scale = Vector2(0.432854, 0.432854)
+texture = ExtResource("46_ttt1f")
 
 [connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
 [connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
