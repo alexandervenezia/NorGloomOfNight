@@ -210,7 +210,7 @@ public class CombatManager
 
     public void EndTurn(ICombatant current)
     {
-        /*
+        
         if (_player.IsDead())
         {
             _isOver = true;
@@ -231,7 +231,7 @@ public class CombatManager
             _isOver = true;
             _player.EndFight(EndState.VICTORY);
             return;
-        }*/
+        }
 
         if (_moveOrder[_currentToMove] == current)
             AdvanceInitiative();

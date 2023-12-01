@@ -182,10 +182,11 @@ text = "[font_size=40][center][color=#AAA]Arru"
 [node name="Content12" type="RichTextLabel" parent="ColorRect/TextOffset"]
 offset_top = 5193.0
 offset_right = 1920.0
-offset_bottom = 5289.0
+offset_bottom = 5314.0
 theme = ExtResource("5_vw65y")
 bbcode_enabled = true
-text = "[font_size=40][center][color=#AAA]Blunderguy"
+text = "[font_size=40][center][color=#AAA]Blunderguy
+Perplexer"
 
 [node name="Content13" type="RichTextLabel" parent="ColorRect/TextOffset"]
 offset_top = 5493.0
@@ -217,7 +218,7 @@ Space Nerd"
 [node name="Content16" type="RichTextLabel" parent="ColorRect/TextOffset"]
 offset_top = 6393.0
 offset_right = 1920.0
-offset_bottom = 6489.0
+offset_bottom = 6559.0
 theme = ExtResource("5_vw65y")
 bbcode_enabled = true
 text = "[font_size=40][center][color=#AAA]Spencer"

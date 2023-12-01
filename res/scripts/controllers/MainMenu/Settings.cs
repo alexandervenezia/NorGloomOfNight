@@ -77,7 +77,7 @@ public partial class Settings : Node
     private void OnFullscreenPressed(bool toggled)
     {
         if (toggled)
-            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
         else
             DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
     }

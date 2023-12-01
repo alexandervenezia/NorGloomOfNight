@@ -4,6 +4,8 @@ using Godot;
 using Overworld;
 using System;
 using System.Security.AccessControl;
+using System.Threading.Tasks;
+
 
 public partial class Purgatory : Node2D, ILevel
 {
@@ -50,11 +52,30 @@ public partial class Purgatory : Node2D, ILevel
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
-		// Either begin combat immediately or after cutscene
+		// Either begin combat immediately or after cutscene	
 		MasterScene master = MasterScene.GetInstance();
 		master.SetIsBoss(enemy.IsBoss());
 		master.SetEnemyIDs(enemy.GetEnemyIDs());
-		master.SetPlayerHP(_player.CurrentHealth);
+		master.SetPlayerHP(_player.CurrentHealth);		
+
+		Engine.TimeScale = 0f;
+
+		Tween introTween = GetTree().CreateTween();
+		Vector2 oldZoom = _player.GetNode<Camera2D>("Camera2D").Zoom;
+		introTween.TweenProperty(_player.GetNode<Camera2D>("Camera2D"), "zoom", new Vector2(1f, 1f), 1.0f).SetTrans(Tween.TransitionType.Circ);
+
+		_player.EncounterSong.Play();
+
+		while (introTween.CustomStep(0.016))
+		{
+			await Task.Delay(16);
+		}
+		
+		await Task.Delay(500);
+
+		_player.GetNode<Camera2D>("Camera2D").Zoom = oldZoom;
+		Engine.TimeScale = 1f;
+
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
 
 	}

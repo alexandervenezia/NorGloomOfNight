@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccnubhs86ckv7"
-path="res://.godot/imported/CARDFIGHT.CONTROLS.POSTER.png-b1de8b8c729abad8b25900f208c0faea.ctex"
+path.s3tc="res://.godot/imported/CARDFIGHT.CONTROLS.POSTER.png-b1de8b8c729abad8b25900f208c0faea.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/purgatory/img/CARDFIGHT.CONTROLS.POSTER.png"
-dest_files=["res://.godot/imported/CARDFIGHT.CONTROLS.POSTER.png-b1de8b8c729abad8b25900f208c0faea.ctex"]
+dest_files=["res://.godot/imported/CARDFIGHT.CONTROLS.POSTER.png-b1de8b8c729abad8b25900f208c0faea.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

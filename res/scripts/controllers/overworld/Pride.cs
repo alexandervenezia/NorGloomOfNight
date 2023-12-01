@@ -33,6 +33,7 @@ public partial class Pride : HellLevel
 		}
 
 		_currentLoopMusic = _loopMusicUID;
+
 	}
 
 	public override void _Process(double delta)
