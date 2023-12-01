@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=156 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://486veyqu4ba6" path="res://res/scenes/overworld/purgatory/subscenes/Door/DoorPair.tscn" id="33_dpfwx"]
 [ext_resource type="SpriteFrames" uid="uid://c1gdpd3mxicgm" path="res://res/scenes/overworld/hell/pride/Pip/PipFrames.tres" id="34_2hdk6"]
 [ext_resource type="Script" path="res://Pip.cs" id="35_ao0lc"]
+[ext_resource type="Resource" uid="uid://ds0vinul3vaw4" path="res://res/resources/cutscenes/Pride_NPC.tres" id="38_efr12"]
 [ext_resource type="Resource" uid="uid://c1ye1homjnu3b" path="res://res/resources/cutscenes/PrideOutroCutscene.tres" id="40_hhyj4"]
 [ext_resource type="Texture2D" uid="uid://dn4577wf4lhh0" path="res://assets/npcs/Merchant .png" id="42_w24qw"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="43_bnbyh"]
@@ -1490,6 +1491,12 @@ position = Vector2(78064, -3138)
 scale = Vector2(1.3, 1.3)
 _isBoss = false
 
+[node name="CutsceneZone8" parent="Pride" instance=ExtResource("30_u83yh")]
+position = Vector2(500, 100)
+scale = Vector2(1.23, 0.616)
+RequireInteraction = true
+Cutscene = ExtResource("38_efr12")
+
 [node name="CutsceneZone" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(16208, 7200)
 scale = Vector2(1, 4)
@@ -1689,7 +1696,7 @@ texture = ExtResource("42_w24qw")
 flip_h = true
 
 [node name="CutsceneZone7" parent="Merchant" instance=ExtResource("30_u83yh")]
-position = Vector2(716, -20)
+position = Vector2(856, -152)
 scale = Vector2(1.6, 0.8)
 RequireInteraction = true
 Cutscene = ExtResource("53_h52dk")
