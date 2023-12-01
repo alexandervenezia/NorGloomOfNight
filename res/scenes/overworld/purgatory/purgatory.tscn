@@ -909,28 +909,13 @@ scale = Vector2(1.35012, 1.35012)
 texture = ExtResource("46_ttt1f")
 
 [node name="Controlsposter" type="Sprite2D" parent="."]
-position = Vector2(-4344, -270)
+position = Vector2(-2584, -82.0001)
 scale = Vector2(1.73576, 1.73576)
-texture = ExtResource("47_0lrkl")
-
-[node name="Controlsposter2" type="Sprite2D" parent="."]
-position = Vector2(14892, -692)
-scale = Vector2(2, 2)
 texture = ExtResource("47_0lrkl")
 
 [node name="Cardfight_controls_poster" type="Sprite2D" parent="."]
 position = Vector2(19910, -4494)
 scale = Vector2(1.96403, 1.96403)
-texture = ExtResource("48_6kxop")
-
-[node name="Cardfight_controls_poster2" type="Sprite2D" parent="."]
-position = Vector2(12166.5, -126.802)
-scale = Vector2(1.86331, 1.86331)
-texture = ExtResource("48_6kxop")
-
-[node name="Cardfight_controls_poster3" type="Sprite2D" parent="."]
-position = Vector2(424, -104)
-scale = Vector2(1.86331, 1.86331)
 texture = ExtResource("48_6kxop")
 
 [node name="TheSign" type="Sprite2D" parent="."]
@@ -1004,13 +989,8 @@ texture = ExtResource("51_unide")
 position = Vector2(1559.88, -328.955)
 scale = Vector2(8, 2.653)
 
-[node name="GlidePoster" type="Sprite2D" parent="."]
-position = Vector2(5014, -126)
-scale = Vector2(0.489208, 0.489208)
-texture = ExtResource("52_o3t3l")
-
 [node name="GlidePoster2" type="Sprite2D" parent="."]
-position = Vector2(16810, -2272)
+position = Vector2(12828, -122)
 scale = Vector2(0.489208, 0.489208)
 texture = ExtResource("52_o3t3l")
 
