@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_nkwpr")
 _name = "Toxic Spike"
-_description = ""
+_description = "Small but deadly, the toxins seep into the flesh. Given enough time, will bring down even the biggest of foes."
 _artwork = ExtResource("1_ujcdc")
 _type = 2
 _rarity = 0
