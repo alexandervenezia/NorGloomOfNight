@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 public partial class Journal : Node2D
 {
 	[Export] private string _inventoryUID;
+	[Export] private string _settingsUID;
 	[Export] private string _mainMenuUID;
 	private ChangeSceneButton _returnButton;
 	private JournalLine _openDeck;
@@ -73,6 +74,6 @@ public partial class Journal : Node2D
 
 	private void OpenSettings()
 	{
-		
+		MasterScene.GetInstance().GetActiveScene<ILevel>().UseElevator(_settingsUID);		
 	}
 }

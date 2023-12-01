@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=34 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://res/scenes/overworld/purgatory/FPS.cs" id="4_wlm2t"]
 [ext_resource type="Script" path="res://res/scenes/combat/subscenes/background/Background.cs" id="8_5rcct"]
 [ext_resource type="PackedScene" uid="uid://de6otae1c7bon" path="res://res/scenes/combat/subscenes/deck/Deck.tscn" id="9_5f4rp"]
+[ext_resource type="AudioStream" uid="uid://be8aca58gqfm2" path="res://assets/audio/Card Hover.wav" id="11_lv25s"]
 [ext_resource type="Theme" uid="uid://cggsc5a61dg71" path="res://assets/fonts/hunck_theme.tres" id="12_0sia7"]
 [ext_resource type="Script" path="res://res/scenes/combat/EndTurn.cs" id="12_atut3"]
 [ext_resource type="Texture2D" uid="uid://cmd0yww32e0eg" path="res://res/scenes/combat/subscenes/EndTurn.png" id="12_y8ifr"]
@@ -26,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://6nbaw18ep3i5" path="res://res/scenes/combat/audio/Dmg Mag Crit.wav" id="17_dd106"]
 [ext_resource type="Texture2D" uid="uid://wjxj3k8humbl" path="res://res/scenes/combat/subscenes/Card/images/Cancel.png" id="18_617ga"]
 [ext_resource type="Texture2D" uid="uid://bwve8o8s016n8" path="res://res/scenes/combat/subscenes/Card/images/Group 63.png" id="23_uyb8k"]
+[ext_resource type="AudioStream" uid="uid://b8u5gvmp87bf8" path="res://assets/audio/Attack Resist.mp3" id="27_f0vce"]
 
 [sub_resource type="Gradient" id="Gradient_t2vwa"]
 interpolation_mode = 2
@@ -97,6 +99,11 @@ _cardResource = ExtResource("3_6gjep")
 _scale = Vector2(0.3, 0.3)
 _handArc = 25.0
 _radius = 900.0
+
+[node name="Hover" type="AudioStreamPlayer" parent="Hand"]
+stream = ExtResource("11_lv25s")
+volume_db = -6.0
+bus = &"UI"
 
 [node name="Enemies" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -235,6 +242,11 @@ bus = &"SFX"
 [node name="CritMagic" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("17_dd106")
 volume_db = 1.0
+bus = &"SFX"
+
+[node name="DmgResist" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("27_f0vce")
+volume_db = 3.0
 bus = &"SFX"
 
 [node name="Rewards" type="Node2D" parent="."]
