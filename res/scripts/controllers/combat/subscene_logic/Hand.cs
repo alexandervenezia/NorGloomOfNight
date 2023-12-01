@@ -25,11 +25,15 @@ public partial class Hand : Marker2D
     private int _selectedCardIndex;
     private bool _frozen;
 
+    private AudioStreamPlayer _hoverSound;
+
     public override void _Ready()
     {
         _selectedCardIndex = -1;
         _cards = new();
         _frozen = false;
+
+        _hoverSound = GetNode<AudioStreamPlayer>("Hover");
 
         // FillHandDefault();
     }
@@ -129,6 +133,8 @@ public partial class Hand : Marker2D
         Card highestZ = null;
         Card nextCard = null;
 
+        int lastSelected = _selectedCardIndex;
+
         foreach (var h in hits)
         {
             nextCard = (Card)(h["collider"]);
@@ -140,6 +146,11 @@ public partial class Hand : Marker2D
             _selectedCardIndex = _cards.IndexOf(highestZ);
         else
             _selectedCardIndex = -1;
+
+        if (_selectedCardIndex != lastSelected && _selectedCardIndex != -1)
+        {
+            _hoverSound.Play();
+        }
 
         UpdateCardProtrusion();
         OrderCards();

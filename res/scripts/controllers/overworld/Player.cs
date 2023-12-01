@@ -58,6 +58,7 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer _runSound;
 	private AudioStreamPlayer _jumpSound;
 	private AudioStreamPlayer _landSound;
+	private AudioStreamPlayer _hurtSound;
 
 	private bool _cutsceneFinished = false;
 	private bool _glideState = false;
@@ -80,6 +81,7 @@ public partial class Player : CharacterBody2D
 		_runSound = (AudioStreamPlayer)GetNode("RunSound");
 		_jumpSound = (AudioStreamPlayer)GetNode("JumpSound");
 		_landSound = (AudioStreamPlayer)GetNode("LandSound");
+		_hurtSound = GetNode<AudioStreamPlayer>("DmgPhysical");
 
 		_quest = _quests[0];
 		UpdateQuestUI();
@@ -400,6 +402,8 @@ public partial class Player : CharacterBody2D
 
 	public async void TakeDamage(int dmg, bool spawnText=true)
 	{
+		_hurtSound.Play();
+
 		if (spawnText)
 			FloatingTextFactory.GetInstance().CreateFloatingText(dmg.ToString(), Position-Godot.Vector2.Left*50 + Godot.Vector2.Up * 100, fontSize:150, color:"red", sizeMult:5f);
 		_currentHealth -= dmg;

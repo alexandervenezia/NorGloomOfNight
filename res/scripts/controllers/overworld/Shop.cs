@@ -43,6 +43,8 @@ public partial class Shop : Node2D
 
     private Card _active;
 
+    private AudioStreamPlayer _hoverSound;
+
     public override void _Ready()
     {
         MasterAudio.GetInstance().SetNoRestart();
@@ -74,6 +76,8 @@ public partial class Shop : Node2D
             _state = ShopState.MODIFYING;     
             UpdateSelection();       
         }
+
+        _hoverSound = GetNode<AudioStreamPlayer>("Hover");
     }
 
     private void OnModifyCardButtonPressed()
@@ -177,6 +181,7 @@ public partial class Shop : Node2D
             _selectedCard.ZIndex = _storedZIndex;
         }
 
+        Card lastSelected = _selectedCard;
         _selectedCard = null;
         foreach (var h in hits)
         {
@@ -204,6 +209,11 @@ public partial class Shop : Node2D
         {
             _storedZIndex = _selectedCard.ZIndex;
             _selectedCard.ZIndex = 91;
+        }
+
+        if (_selectedCard != lastSelected && _selectedCard != null)
+        {
+            _hoverSound.Play();
         }
 
         if (_state == ShopState.MODIFYING)
