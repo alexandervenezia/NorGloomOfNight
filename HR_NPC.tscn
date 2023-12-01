@@ -1,29 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://dffsyqy2wwdfy"]
+[gd_scene load_steps=8 format=3 uid="uid://dffsyqy2wwdfy"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/NPC.cs" id="1_1te63"]
 [ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="2_beysk"]
 [ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/npcs/Eyeball Guy.png" id="3_fomqs"]
 [ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="4_woovp"]
+[ext_resource type="PackedScene" uid="uid://ci4vkgrma4ext" path="res://res/scenes/overworld/CutsceneZone.tscn" id="5_q2e57"]
+[ext_resource type="Resource" uid="uid://dq4ck45c2apqn" path="res://res/resources/cutscenes/HR_HealNPC.tres" id="6_c1x51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shlqa"]
 size = Vector2(512, 800)
 
 [node name="NPC" type="Area2D"]
-position = Vector2(279, 307)
+position = Vector2(258, 402)
 script = ExtResource("1_1te63")
 _dialogue = Array[String](["I am an NPC.", "Testing, testing."])
 _delayMS = 2000
 
 [node name="HealArea" parent="." instance=ExtResource("2_beysk")]
-position = Vector2(-100, 152)
+position = Vector2(85, -95)
 
 [node name="EyeballGuy" type="Sprite2D" parent="."]
-position = Vector2(-80, 78)
 scale = Vector2(0.376952, 0.376952)
 texture = ExtResource("3_fomqs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-86, 94)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_shlqa")
 
 [node name="DialogueBubble" type="Polygon2D" parent="."]
@@ -44,3 +45,8 @@ text = "[center]
 
 . . ."
 metadata/_edit_use_anchors_ = true
+
+[node name="CutsceneZone" parent="." instance=ExtResource("5_q2e57")]
+position = Vector2(-1, -1)
+RequireInteraction = true
+Cutscene = ExtResource("6_c1x51")
