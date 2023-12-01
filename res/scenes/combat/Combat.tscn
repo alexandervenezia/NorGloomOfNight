@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bk6mw4uwgd1yl"]
+[gd_scene load_steps=36 format=3 uid="uid://bk6mw4uwgd1yl"]
 
 [ext_resource type="PackedScene" uid="uid://5xfakfw8o7lh" path="res://res/scenes/combat/subscenes/background/Background.tscn" id="1_5pl1x"]
 [ext_resource type="Script" path="res://res/scenes/combat/CombatMain.cs" id="1_gps4y"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://btu5t7qeg8uof" path="res://res/scenes/combat/subscenes/XButton.png" id="16_qdhf3"]
 [ext_resource type="AudioStream" uid="uid://6nbaw18ep3i5" path="res://res/scenes/combat/audio/Dmg Mag Crit.wav" id="17_dd106"]
 [ext_resource type="Texture2D" uid="uid://wjxj3k8humbl" path="res://res/scenes/combat/subscenes/Card/images/Cancel.png" id="18_617ga"]
+[ext_resource type="Theme" uid="uid://df3eik155xc2s" path="res://assets/fonts/BaskervilleTheme.tres" id="21_hc16y"]
 [ext_resource type="Texture2D" uid="uid://bwve8o8s016n8" path="res://res/scenes/combat/subscenes/Card/images/Group 63.png" id="23_uyb8k"]
 [ext_resource type="AudioStream" uid="uid://b8u5gvmp87bf8" path="res://assets/audio/Attack Resist.mp3" id="27_f0vce"]
 [ext_resource type="Texture2D" uid="uid://b56gdbgpq3tnn" path="res://res/scenes/combat/subscenes/Card/images/icons/Discard.png" id="29_1gdjf"]
@@ -194,6 +195,15 @@ theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[font_size=200][center][color=#111145]Select Targets[/color]
 "
+
+[node name="EndTurnlabel" type="RichTextLabel" parent="."]
+offset_left = 502.0
+offset_top = 456.0
+offset_right = 655.0
+offset_bottom = 496.0
+theme = ExtResource("21_hc16y")
+bbcode_enabled = true
+text = "[font_size=25][right][color=red]End Turn[/color]"
 
 [node name="EndTurn" type="Area2D" parent="."]
 position = Vector2(690, 475)

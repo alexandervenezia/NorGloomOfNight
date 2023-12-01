@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1d823w4d23am"
-path="res://.godot/imported/CONTROLSPOSTER.png-03d1ea565423792fe7ba1f9059dbed44.ctex"
+path.s3tc="res://.godot/imported/CONTROLSPOSTER.png-03d1ea565423792fe7ba1f9059dbed44.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/purgatory/img/CONTROLSPOSTER.png"
-dest_files=["res://.godot/imported/CONTROLSPOSTER.png-03d1ea565423792fe7ba1f9059dbed44.ctex"]
+dest_files=["res://.godot/imported/CONTROLSPOSTER.png-03d1ea565423792fe7ba1f9059dbed44.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

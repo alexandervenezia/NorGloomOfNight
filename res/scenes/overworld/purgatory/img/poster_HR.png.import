@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bntoc8a1tk67v"
-path="res://.godot/imported/poster_HR.png-9a13737198c49a1fee133af57a2ab91b.ctex"
+path.s3tc="res://.godot/imported/poster_HR.png-9a13737198c49a1fee133af57a2ab91b.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://res/scenes/overworld/purgatory/img/poster_HR.png"
-dest_files=["res://.godot/imported/poster_HR.png-9a13737198c49a1fee133af57a2ab91b.ctex"]
+dest_files=["res://.godot/imported/poster_HR.png-9a13737198c49a1fee133af57a2ab91b.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

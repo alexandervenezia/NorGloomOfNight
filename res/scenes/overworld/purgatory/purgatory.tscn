@@ -236,6 +236,7 @@ scale = Vector2(72.7422, 12.8232)
 texture = SubResource("GradientTexture2D_ujr6k")
 
 [node name="FPS" type="Label" parent="OverworldPlayer/Camera2D"]
+visible = false
 z_index = 10
 offset_left = -3738.0
 offset_top = -1460.0
@@ -937,27 +938,27 @@ texture = ExtResource("46_ttt1f")
 
 [node name="PosterHr2" type="Sprite2D" parent="."]
 position = Vector2(3840, -154)
-scale = Vector2(0.432854, 0.432854)
+scale = Vector2(2, 2)
 texture = ExtResource("46_ttt1f")
 
 [node name="Controlsposter" type="Sprite2D" parent="."]
 position = Vector2(438, -192)
-scale = Vector2(0.507719, 0.507719)
+scale = Vector2(2, 2)
 texture = ExtResource("47_0lrkl")
 
 [node name="Controlsposter2" type="Sprite2D" parent="."]
 position = Vector2(16318, -122)
-scale = Vector2(0.507719, 0.507719)
+scale = Vector2(2, 2)
 texture = ExtResource("47_0lrkl")
 
 [node name="Cardfight_controls_poster" type="Sprite2D" parent="."]
 position = Vector2(20402, -4584)
-scale = Vector2(0.495803, 0.495803)
+scale = Vector2(2, 2)
 texture = ExtResource("48_6kxop")
 
 [node name="Cardfight_controls_poster2" type="Sprite2D" parent="."]
 position = Vector2(12138, -86)
-scale = Vector2(0.495803, 0.495803)
+scale = Vector2(2, 2)
 texture = ExtResource("48_6kxop")
 
 [node name="TheSign" type="Sprite2D" parent="."]

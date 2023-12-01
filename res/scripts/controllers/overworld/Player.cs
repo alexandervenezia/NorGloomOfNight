@@ -28,7 +28,7 @@ public partial class Player : CharacterBody2D
 	public int MaxHealth => _maxHealth;
 	private int _currentHealth;
 	public int CurrentHealth => _currentHealth;
-	private int _coins = 25; // TODO: Set to zero
+	private int _coins; // TODO: Set to zero
 	public int Coins => _coins;
 	[Export] private float _walkSpeed = 500f;
 	[Export] private float _sprintSpeed = 1700f;
@@ -71,6 +71,7 @@ public partial class Player : CharacterBody2D
 
 	private bool _cutsceneFinished = false;
 	private bool _glideState = false;
+	private bool _playingCutscene = false;
 
 	private bool _interactableOnForThisFrame;
 
@@ -187,7 +188,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (Engine.TimeScale < 0.01f)
+		if (Engine.TimeScale < 0.01f && _playingCutscene)
 		{
 			_playerSprite.Play("idle");
 			Velocity = new Vector2(0, Velocity.Y + _gravityDefault);
@@ -278,7 +279,7 @@ public partial class Player : CharacterBody2D
 
 		MoveAndSlide();
 
-		_interactionIcon.Visible = _interactableOnForThisFrame;
+		_interactionIcon.Visible = _interactableOnForThisFrame || (_cutsceneZoneWithin != null && _cutsceneZoneWithin.RequireInteraction);
 		_interactableOnForThisFrame = false;
 		UpdateInteractionIcon(fDelta);
 
@@ -458,6 +459,7 @@ public partial class Player : CharacterBody2D
 
 	public async Task PlayCutscene(Cutscene cutscene)
 	{
+		_playingCutscene = true;
 		_cutscenePlayer.Visible = true;
 		_cutsceneFinished = false;
 		_cutscenePlayer.SetCutscene(cutscene);
@@ -473,6 +475,7 @@ public partial class Player : CharacterBody2D
 			});
 
 		_cutscenePlayer.Visible = false;
+		_playingCutscene = false;
 
 		if (cutscene == _cutsceneCreditsTrigger)
 		{
@@ -482,6 +485,7 @@ public partial class Player : CharacterBody2D
 			MasterScene.GetInstance().ResetVars();
 			MasterScene.GetInstance().CallDeferred("ActivateScene", _creditsScene, true, true);
 		}
+		
 		
 	}
 
