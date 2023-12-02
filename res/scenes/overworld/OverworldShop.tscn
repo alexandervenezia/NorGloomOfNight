@@ -21,7 +21,8 @@ size = Vector2(1933, 271)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpydi"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udug8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn5d4"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ba53f"]
 
@@ -189,7 +190,7 @@ mouse_filter = 1
 theme_override_styles/normal = ExtResource("6_0jh1x")
 theme_override_styles/hover = ExtResource("5_ifdp2")
 theme_override_styles/pressed = ExtResource("6_4o7cr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_udug8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yn5d4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ba53f")
 script = ExtResource("4_rqe1u")
 _uid = "uid://bk7mufkqeug2p"

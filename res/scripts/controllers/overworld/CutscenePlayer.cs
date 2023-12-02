@@ -17,6 +17,7 @@ public partial class CutscenePlayer : ColorRect
     private bool _skipped = false;
 
     private Vector2I _cameraOffset;
+    private Vector2 _cameraBasePos;
     
 
     public delegate void CutsceneEndingInformer();
@@ -25,6 +26,7 @@ public partial class CutscenePlayer : ColorRect
 
     public override void _Ready()
     {
+        
         _dialogue = GetNode<RichTextLabel>("Dialogue");
         _clickSound = GetNode<AudioStreamPlayer>("Click");
         _dialoguePrefix = _dialogue.Text;
@@ -35,6 +37,8 @@ public partial class CutscenePlayer : ColorRect
         _camera = GetNodeOrNull<Camera2D>("..");
         if (_camera == null)
             GD.Print("WARNING: _camera of CutscenePlayer is null; panning not supported");
+        else
+            _cameraBasePos = _camera.Position;
     }
 
     public void SetCutscene(Cutscene cutscene)
@@ -106,7 +110,7 @@ public partial class CutscenePlayer : ColorRect
     }
 
     private async void HandlePan(string command)
-    {
+    {        
         _panning = true;
         string parsed = command;
         parsed = parsed.Replace("<", "");
@@ -120,8 +124,8 @@ public partial class CutscenePlayer : ColorRect
 
         if (coords[0].StartsWith("return"))
         {
-            x = 0; //-_cameraOffset.X;
-            y = 0; //-_cameraOffset.Y;
+            x = (int)_cameraBasePos.X; //-_cameraOffset.X;
+            y = (int)_cameraBasePos.Y; //-_cameraOffset.Y;
             duration = coords[1].ToFloat();
         }
         else

@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://bk7mufkqeug2p"]
+[gd_scene load_steps=157 format=3 uid="uid://bk7mufkqeug2p"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Pride.cs" id="1_7nkhc"]
 [ext_resource type="Texture2D" uid="uid://dscq88ns0cd7j" path="res://res/scenes/overworld/hell/pride/PrideBG1.png" id="2_ef77q"]
@@ -55,6 +55,7 @@
 [ext_resource type="Resource" uid="uid://c0fmk34e6n35d" path="res://res/resources/cutscenes/Thing1&2_NPC.tres" id="53_vasrj"]
 [ext_resource type="Texture2D" uid="uid://b6vccoo8p1fxa" path="res://assets/npcs/Eyeball Guy.png" id="54_51bk3"]
 [ext_resource type="PackedScene" uid="uid://cua70len5ptgn" path="res://res/scenes/overworld/HealArea.tscn" id="55_ebkib"]
+[ext_resource type="Resource" uid="uid://dq4ck45c2apqn" path="res://res/resources/cutscenes/HR_HealNPC.tres" id="56_2yxgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt4nr"]
 size = Vector2(1851.5, 330)
@@ -1510,7 +1511,7 @@ FLAG_BEAT_DOG = true
 
 [node name="CutsceneZone3" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(76480, -2560)
-scale = Vector2(6.074, 4.598)
+scale = Vector2(12.238, 4.598)
 Cutscene = ExtResource("40_hhyj4")
 FLAG_DELIVERED_CROWN = true
 
@@ -1681,3 +1682,15 @@ texture = ExtResource("54_51bk3")
 [node name="HealArea" parent="EyeballGuy2" instance=ExtResource("55_ebkib")]
 position = Vector2(-350.18, -137.949)
 scale = Vector2(8, 2.653)
+
+[node name="HRCutZone2" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(-5824, 22256)
+scale = Vector2(1.25, 1)
+RequireInteraction = true
+Cutscene = ExtResource("56_2yxgt")
+
+[node name="HRCutZone3" parent="." instance=ExtResource("30_u83yh")]
+position = Vector2(41488, 22672)
+scale = Vector2(1.25, 1)
+RequireInteraction = true
+Cutscene = ExtResource("56_2yxgt")

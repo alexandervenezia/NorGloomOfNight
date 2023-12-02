@@ -129,19 +129,27 @@ public partial class HellLevel : Node2D, ILevel
 
 		_player?.SetHealth(MasterScene.GetInstance().LoadPlayerHP());
 		_player?.AddCoins(MasterScene.GetInstance().CollectCoins());
+
+		GD.Print("Hell Reactivate");
 		
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
+			GD.Print("Player exists at: ", _player.Position);
 			_enemyInCombat?.Enable();
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
 
 			_player.Die();
 		}
-		else
+		else if (_player != null)
 		{
+			GD.Print("Player exists at: ", _player.Position);
 			_enemyInCombat?.Die();
 			_enemyInCombat = null;
+		}
+		else
+		{
+			GD.Print("Player doesn't exist");
 		}
 	}
 

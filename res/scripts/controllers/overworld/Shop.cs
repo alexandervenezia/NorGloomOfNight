@@ -17,6 +17,7 @@ public enum ShopState
 
 public partial class Shop : Node2D
 {
+    private const int MIN_DECK_SIZE = 14;
     [Export] private bool _isInventory;
     private const float SCROLL_SPEED = 800f;
     private const int MAX_PER_ROW = 4;
@@ -127,7 +128,7 @@ public partial class Shop : Node2D
     }
 
     private void OnRemoveButtonPressed()
-    {
+    {  
         if (_active == null)
             return;
 
@@ -135,6 +136,9 @@ public partial class Shop : Node2D
             return;
         
         if (MasterScene.GetInstance().TotalCoins < GetRemoveCost(_active.Data))
+            return;
+
+        if (MasterDeck.PlayerDeck.GetCardCount() <= MIN_DECK_SIZE)
             return;
 
         MasterDeck.PlayerDeck.RemoveCard(_active.Data, true);       
@@ -249,6 +253,10 @@ public partial class Shop : Node2D
                 else
                     _active = null;
             }
+
+            
+            _removeCardButton.Disabled = MasterDeck.PlayerDeck.GetCardCount() <= MIN_DECK_SIZE;
+
         }
 
         if (Input.IsActionJustReleased("Deselect"))

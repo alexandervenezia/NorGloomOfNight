@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b6a77ow3dkibo"]
+[gd_scene load_steps=76 format=3 uid="uid://b6a77ow3dkibo"]
 
 [ext_resource type="Script" path="res://res/scripts/controllers/overworld/Purgatory.cs" id="1_8mid8"]
 [ext_resource type="PackedScene" uid="uid://bhrjd5inhxhuo" path="res://res/scripts/controllers/overworld/Platforms/Purgatory/SmallPlatform.tscn" id="2_a1ok3"]
@@ -45,6 +45,7 @@
 [ext_resource type="Resource" uid="uid://r2yjeslnymxq" path="res://res/resources/cards/DistractingShot.tres" id="36_kbv1o"]
 [ext_resource type="Texture2D" uid="uid://dq16r6v1i74bi" path="res://assets/npcs/Creep.png" id="41_rsf3d"]
 [ext_resource type="Resource" uid="uid://brhw6iyqd5tbr" path="res://res/resources/cutscenes/Creep_NPC.tres" id="43_tly6u"]
+[ext_resource type="Resource" uid="uid://dq4ck45c2apqn" path="res://res/resources/cutscenes/HR_HealNPC.tres" id="44_gjnpt"]
 [ext_resource type="Texture2D" uid="uid://bntoc8a1tk67v" path="res://res/scenes/overworld/purgatory/img/poster_HR.png" id="46_ttt1f"]
 [ext_resource type="Texture2D" uid="uid://d1d823w4d23am" path="res://res/scenes/overworld/purgatory/img/CONTROLSPOSTER.png" id="47_0lrkl"]
 [ext_resource type="Texture2D" uid="uid://ccnubhs86ckv7" path="res://res/scenes/overworld/purgatory/img/CARDFIGHT.CONTROLS.POSTER.png" id="48_6kxop"]
@@ -897,6 +898,12 @@ position = Vector2(26202, -4272)
 scale = Vector2(2.5, 2)
 Cutscene = ExtResource("30_up1a5")
 FLAG_ACQUIRED_CROWN = true
+
+[node name="HRCutZone" parent="." instance=ExtResource("29_ef0ed")]
+position = Vector2(-7864, -9620)
+scale = Vector2(1.25, 1)
+RequireInteraction = true
+Cutscene = ExtResource("44_gjnpt")
 
 [node name="FloatingTextFactory" type="Node2D" parent="."]
 script = ExtResource("34_5ep4q")

@@ -29,8 +29,7 @@ _ID = 93
 _goldDrop = 100
 _percentChanceOfCardDrop = 100
 _cardDrops = Array[Resource]([ExtResource("3_isins")])
-_maxHealth = 45
-_startingActionPoints = 2
+_maxHealth = 66
 _startingMovementPoints = 0
 _startingArmor = 12
 
