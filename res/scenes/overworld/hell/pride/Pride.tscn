@@ -1505,7 +1505,7 @@ Cutscene = ExtResource("31_yoly0")
 
 [node name="CutsceneZone2" parent="." instance=ExtResource("30_u83yh")]
 position = Vector2(22992, 7440)
-scale = Vector2(6.074, 4.598)
+scale = Vector2(20.394, 4.598)
 Cutscene = ExtResource("32_cvc36")
 FLAG_BEAT_DOG = true
 

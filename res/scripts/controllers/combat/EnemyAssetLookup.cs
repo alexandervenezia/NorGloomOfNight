@@ -33,6 +33,20 @@ public partial class EnemyAssetLookup : Node
         }
     }
 
+    public void FreeMemory(out bool complete)
+    {
+        foreach (SpriteFrames frame in Frames.Values)
+        {
+            frame.CallDeferred("Dispose");
+        }
+        foreach (Texture2D tex in BackgroundLookup.Values)
+        {
+            tex.CallDeferred("Dispose");
+        }
+
+        complete = true;
+    }
+
     public SpriteFrames GetAsset(int id)
     {
         if (!Frames.ContainsKey(id))

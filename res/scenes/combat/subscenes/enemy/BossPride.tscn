@@ -29,9 +29,9 @@ _ID = 93
 _goldDrop = 100
 _percentChanceOfCardDrop = 100
 _cardDrops = Array[Resource]([ExtResource("3_isins")])
-_maxHealth = 66
+_maxHealth = 76
 _startingMovementPoints = 0
-_startingArmor = 12
+_startingArmor = 16
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true

@@ -8,6 +8,7 @@ using Godot;
 using Overworld;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public partial class MasterScene : Node
 {
@@ -31,6 +32,30 @@ public partial class MasterScene : Node
 
 	private static MasterScene _instance;
 
+	public override void _Notification(int what)
+	{
+		if (what == NotificationWMCloseRequest)
+		{
+			HandleQuit();			
+		}
+	}
+
+	private async void HandleQuit()
+	{
+		bool complete = false;
+		EnemyAssetLookup.GetInstance().FreeMemory(out complete);
+
+		GD.Print("Freeing memory");
+		while (!complete)
+		{
+			await Task.Delay(100);
+		}
+		GD.Print("Memory freed");
+
+		//Free();
+		GetTree().Quit(); // default behavior
+	}
+
 	public static MasterScene GetInstance()
 	{
 		return _instance;
@@ -38,6 +63,8 @@ public partial class MasterScene : Node
 
 	public override void _Ready()
 	{
+		GetTree().AutoAcceptQuit = false;
+
 		_instance = this;
 		_loadedScenes = new();
 

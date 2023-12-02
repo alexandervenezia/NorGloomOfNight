@@ -29,7 +29,7 @@ _permanentResistances = [0]
 _goldDrop = 60
 _percentChanceOfCardDrop = 100
 _cardDrops = Array[Resource]([ExtResource("5_l1gsm")])
-_maxHealth = 40
+_maxHealth = 55
 _startingMovementPoints = 0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
