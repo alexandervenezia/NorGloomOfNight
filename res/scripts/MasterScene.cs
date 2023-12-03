@@ -82,6 +82,7 @@ public partial class MasterScene : Node
 		_playerHP = _playerMaxHP;
 		CollectCoins();
 		QuestManager.GetInstance().Reset();
+		ShopEntrance.ResetShops();
 		MasterDeck.ResetPlayerDeck();
 
 	}

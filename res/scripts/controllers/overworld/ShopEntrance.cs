@@ -70,4 +70,9 @@ public partial class ShopEntrance : Area2D
 	{
 		_playerInside = false;
 	}
+
+	public static void ResetShops()
+	{
+		_stock = new();
+	}
 }
