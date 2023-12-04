@@ -63,8 +63,9 @@ public partial class Purgatory : Node2D, ILevel
 		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 		
 		Vector2 storedPlayerPos = _player.Position;
-		Engine.TimeScale = 0f;
 		_player.SetPhysicsProcess(false);
+		Engine.TimeScale = 0f;
+		
 
 		Tween introTween = GetTree().CreateTween();
 		Vector2 oldZoom = _player.GetNode<Camera2D>("Camera2D").Zoom;
@@ -99,7 +100,7 @@ public partial class Purgatory : Node2D, ILevel
 		GD.Print("PlayerVel: ", _player.Velocity);
 		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 
-		_player.SetPhysicsProcess(true);
+		//_player.SetPhysicsProcess(true);
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
 
 	}
@@ -167,6 +168,7 @@ public partial class Purgatory : Node2D, ILevel
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			GD.Print("Respawn: " + _player.CurrentHealth);
+			_player.SetPhysicsProcess(true);
 			_enemyInCombat?.Enable();
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);

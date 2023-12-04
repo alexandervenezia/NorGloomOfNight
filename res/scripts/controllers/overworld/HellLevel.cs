@@ -26,6 +26,8 @@ public partial class HellLevel : Node2D, ILevel
 			await _player.PlayCutscene(enemy.GetIntroCutscene());
 		}
 
+		
+
 		((Node)enemy).CallDeferred("Disable");
 		_enemyInCombat = enemy;
 		GD.Print("Aggroed");
@@ -42,7 +44,8 @@ public partial class HellLevel : Node2D, ILevel
 		GD.Print("PlayerVel: ", _player.Velocity);
 		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 		
-		Vector2 storedPlayerPos = _player.Position;;
+		Vector2 storedPlayerPos = _player.Position;
+		_player.SetPhysicsProcess(false);
 		Engine.TimeScale = 0f;
 
 		Tween introTween = GetTree().CreateTween();
@@ -78,7 +81,6 @@ public partial class HellLevel : Node2D, ILevel
 		GD.Print("PlayerVel: ", _player.Velocity);
 		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 
-		
 		
 		master.CallDeferred("ActivateScene", master.CombatSceneUID, true, true);
 
@@ -135,6 +137,8 @@ public partial class HellLevel : Node2D, ILevel
 		if (_player != null && _player.CurrentHealth <= 0)
 		{
 			GD.Print("Player exists at: ", _player.Position);
+			_player.SetPhysicsProcess(true);
+			GD.Print("Player exists at: ", _player.Position);
 			_enemyInCombat?.Enable();
 			_player.GlobalPosition = _playerSpawn;
 			_player.SetHealth(_player.MaxHealth);
@@ -143,6 +147,10 @@ public partial class HellLevel : Node2D, ILevel
 		}
 		else if (_player != null)
 		{
+			GD.Print("Player exists at: ", _player.Position);
+			if (_player.Position.X == Mathf.NaN)
+				GD.PrintErr("NAN ERR");
+			_player.SetPhysicsProcess(true);
 			GD.Print("Player exists at: ", _player.Position);
 			_enemyInCombat?.Die();
 			_enemyInCombat = null;

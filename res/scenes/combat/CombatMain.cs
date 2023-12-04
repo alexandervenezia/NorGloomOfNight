@@ -105,6 +105,15 @@ public partial class CombatMain : Node2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+
+		if (Input.IsActionJustReleased("Debug"))
+		{
+			foreach (Enemy e in CombatManager.GetInstance().Enemies)
+			{
+				if (!e.IsDead())
+					e.TakeDamage(DamageType.PIERCING, 10, 0f, false, false);
+			}
+		}
 		Vector2 mousePos = GetGlobalMousePosition();
 		PhysicsDirectSpaceState2D spaceState = GetWorld2D().DirectSpaceState;
 		PhysicsPointQueryParameters2D query = new();

@@ -35,15 +35,16 @@ public partial class EnemyAssetLookup : Node
 
     public void FreeMemory(out bool complete)
     {
-        foreach (SpriteFrames frame in Frames.Values)
+        foreach (int frame in Frames.Keys)
         {
-            frame.CallDeferred("Dispose");
+            Frames[frame] = null;
         }
-        foreach (Texture2D tex in BackgroundLookup.Values)
+        foreach (int tex in BackgroundLookup.Keys)
         {
-            tex.CallDeferred("Dispose");
+            BackgroundLookup[tex] = null;
         }
 
+        GC.Collect();
         complete = true;
     }
 

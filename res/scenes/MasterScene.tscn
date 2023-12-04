@@ -140,4 +140,18 @@ Backgrounds = {
 3: "uid://bejriwo6em027"
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+z_index = 500
+z_as_relative = false
+offset_left = 2.0
+offset_top = 1048.0
+offset_right = 157.0
+offset_bottom = 1089.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Build: 0.2.1"
+
 [connection signal="finished" from="MasterAudio/AudioStreamPlayer" to="MasterAudio" method="MusicFinished"]
