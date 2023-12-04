@@ -177,6 +177,7 @@ public partial class Purgatory : Node2D, ILevel
 		}
 		else
 		{
+			_player.SetPhysicsProcess(true);
 			_enemyInCombat?.Die();
 			_enemyInCombat = null;
 		}

@@ -106,7 +106,7 @@ public partial class CombatMain : Node2D
 	public override void _PhysicsProcess(double delta)
 	{
 
-		if (Input.IsActionJustReleased("Debug"))
+		if (Input.IsActionJustReleased("Debug") && OS.IsDebugBuild())
 		{
 			foreach (Enemy e in CombatManager.GetInstance().Enemies)
 			{

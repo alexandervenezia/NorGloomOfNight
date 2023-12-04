@@ -152,6 +152,6 @@ offset_bottom = 1089.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 25
-text = "Build: 0.2.1"
+text = "Build: 0.2.2.2"
 
 [connection signal="finished" from="MasterAudio/AudioStreamPlayer" to="MasterAudio" method="MusicFinished"]
