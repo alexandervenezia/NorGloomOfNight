@@ -128,6 +128,7 @@ offset_left = -1553.0
 offset_top = -153.0
 offset_right = 1573.0
 offset_bottom = 221.0
+mouse_filter = 1
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
 text = "[center][color=#111][font_size=250]Inventory"
@@ -154,6 +155,7 @@ offset_left = -1553.0
 offset_top = -153.667
 offset_right = 1573.0
 offset_bottom = 266.333
+mouse_filter = 1
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
 text = "[center][color=#111][font_size=250]Settings"
@@ -180,6 +182,7 @@ offset_left = -1553.0
 offset_top = -153.667
 offset_right = 1573.0
 offset_bottom = 233.333
+mouse_filter = 1
 theme = ExtResource("5_jqsyg")
 bbcode_enabled = true
 text = "[center][color=#111][font_size=250]Clock Out"

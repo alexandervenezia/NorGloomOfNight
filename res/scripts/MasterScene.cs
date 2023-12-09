@@ -251,7 +251,7 @@ public partial class MasterScene : Node
 		{
 			if (child is IPausable)
 			{
-				(child as IPausable).Pause();
+				(child as IPausable).Unpause();
 			}
 
 			Unpause(child);

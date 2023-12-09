@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 
 [Tool]
-public partial class GroundEnemy : Enemy
+public partial class GroundEnemy : Enemy, IPausable
 {
 	[Export] Vector2 _relativePatrolBounds;
 	[Export] float _aggroSpeedBuff = 1.5f;
@@ -40,6 +40,9 @@ public partial class GroundEnemy : Enemy
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (_paused)
+			return;
+			
 		if (Engine.IsEditorHint())
 		{
 			UpdateMarkers();

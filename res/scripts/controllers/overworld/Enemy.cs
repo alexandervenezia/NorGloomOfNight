@@ -11,7 +11,7 @@ using Systems.Combat;
 
 
 
-public partial class Enemy : CharacterBody2D, ICombatable
+public partial class Enemy : CharacterBody2D, ICombatable, IPausable
 {
 	private static Random RNG = new();
 	[Export] protected string _name;
@@ -19,6 +19,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	[Export] protected bool _isBoss;
 	[Export] protected float _speed;
 	[Export] protected float _acceleration;
+	protected bool _paused;
 
 	[Export] protected Godot.Collections.Dictionary<int, int> _firstSlotSpawn;
 	[Export] protected Godot.Collections.Dictionary<int, int> _secondSlotSpawn;
@@ -32,6 +33,7 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	protected Vector2 _spawnPoint;
 
 	private bool _enabled;
+	
 	
 
 	public override void _Ready()
@@ -148,6 +150,14 @@ public partial class Enemy : CharacterBody2D, ICombatable
 	{
 		return _isBoss;
 	}
-	
 
+	public void Pause()
+	{
+		_paused = true;
+	}
+	
+	public void Unpause()
+	{
+		_paused = false;
+	}
 }

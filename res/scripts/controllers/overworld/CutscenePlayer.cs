@@ -46,7 +46,7 @@ public partial class CutscenePlayer : ColorRect
         Visible = true;
         _lineIndex = 0;
         _data = cutscene;
-        Engine.TimeScale = 0f;
+        MasterScene.GetInstance().Pause();
         LoadNextLine();
     }
 
@@ -70,7 +70,7 @@ public partial class CutscenePlayer : ColorRect
     {
         if (_lineIndex >= _data.Lines.Length)
         {
-            Engine.TimeScale = 1f;
+            MasterScene.GetInstance().Unpause();
             Visible = false;
             _data = null;
             OnEnd?.Invoke();

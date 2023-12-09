@@ -40,7 +40,8 @@ public partial class GameLevel : Node2D, ILevel
 		
 		Vector2 storedPlayerPos = _player.Position;
 		_player.SetPhysicsProcess(false);
-		Engine.TimeScale = 0f;
+		//Engine.TimeScale = 0f;
+        MasterScene.GetInstance().Pause();
 
 		Tween introTween = GetTree().CreateTween();
 		Vector2 oldZoom = _player.GetNode<Camera2D>("Camera2D").Zoom;
@@ -70,7 +71,9 @@ public partial class GameLevel : Node2D, ILevel
 		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());
 
 		_player.GetNode<Camera2D>("Camera2D").Zoom = oldZoom;
-		Engine.TimeScale = 1f;
+		
+        //Engine.TimeScale = 1f;
+        MasterScene.GetInstance().Unpause();
 		GD.Print("PlayerPos: ", _player.Position);
 		GD.Print("PlayerVel: ", _player.Velocity);
 		GD.Print("PlayerRealVel: ", _player.GetRealVelocity());

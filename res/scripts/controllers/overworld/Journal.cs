@@ -44,7 +44,7 @@ public partial class Journal : Node2D
 		MasterScene newMaster = GD.Load<PackedScene>(_mainMenuUID).Instantiate<MasterScene>();
 
 		await Task.Delay(500);
-		Engine.TimeScale = 1f;
+		MasterScene.GetInstance().Unpause();
 		
 		GD.Print("Assigning");
 
@@ -57,12 +57,12 @@ public partial class Journal : Node2D
 	public void Open()
 	{
 		Visible = true;
-		Engine.TimeScale = 0f;
+		MasterScene.GetInstance().Pause();
 	}
 	public void Close()
 	{
 		Visible = false;
-		Engine.TimeScale = 1f;
+		MasterScene.GetInstance().Unpause();
 		// QueueFree();        
 	}
 

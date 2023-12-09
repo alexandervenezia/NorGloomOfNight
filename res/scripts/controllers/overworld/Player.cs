@@ -144,7 +144,7 @@ public partial class Player : CharacterBody2D, IPausable
 
 	public override void _Process(double delta)
 	{
-		if (Engine.TimeScale < 0.01f)
+		if (_paused)
 		{
 			return;
 		}
@@ -187,14 +187,14 @@ public partial class Player : CharacterBody2D, IPausable
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (Engine.TimeScale < 0.01f && _playingCutscene)
+		if (_paused && _playingCutscene)
 		{
 			_playerSprite.Play("idle");
 			Velocity = new Vector2(0, Velocity.Y + _gravityDefault);
 			MoveAndCollide(Velocity * 0.01f);
 			return;
 		}
-		else if (Engine.TimeScale < 0.01f)
+		else if (_paused)
 		{
 			return;
 		}
@@ -552,6 +552,7 @@ public partial class Player : CharacterBody2D, IPausable
 
 	public void Unpause()
 	{
+		GD.Print("Unpaused");
 		_paused = false;
 	}
 }

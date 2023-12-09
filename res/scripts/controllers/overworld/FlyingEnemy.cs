@@ -3,7 +3,7 @@ namespace Overworld;
 using Godot;
 using System;
 
-public partial class FlyingEnemy : Overworld.Enemy
+public partial class FlyingEnemy : Enemy, IPausable
 {
 	[Export] float _aggroRadius;
 	[Export] float _deAggroRange;
@@ -33,6 +33,9 @@ public partial class FlyingEnemy : Overworld.Enemy
 	private Vector2 destTest;
 	public override void _PhysicsProcess(double delta)
 	{        
+		if (_paused)
+			return;
+			
 		if (_player == null)
 			_player = GetOwner<ILevel>().GetPlayer();
 

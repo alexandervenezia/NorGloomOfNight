@@ -1442,6 +1442,7 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(-6560, -1280)
 script = ExtResource("15_ps8to")
 _warningTimeMS = 400
+_attackRange = 125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby2"]
 position = Vector2(60, -16)
@@ -1454,6 +1455,7 @@ sprite_frames = ExtResource("27_efq1q")
 position = Vector2(-8800, -1856)
 script = ExtResource("15_ps8to")
 _warningTimeMS = 400
+_attackRange = 125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby3"]
 position = Vector2(50, -16)
@@ -1466,6 +1468,7 @@ sprite_frames = ExtResource("27_efq1q")
 position = Vector2(-27482, 7642)
 script = ExtResource("15_ps8to")
 _warningTimeMS = 600
+_attackRange = 125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby4"]
 position = Vector2(6, -16)
@@ -1478,6 +1481,7 @@ sprite_frames = ExtResource("27_efq1q")
 position = Vector2(-22640, 7632)
 script = ExtResource("15_ps8to")
 _warningTimeMS = 400
+_attackRange = 125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grabby5"]
 position = Vector2(347, -16)

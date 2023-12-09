@@ -5,10 +5,10 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Threading.Tasks;
 
-public partial class GrabbyHand : Area2D
+public partial class GrabbyHand : Area2D, IPausable
 {
 	[Export] private int _warningTimeMS = 1000;
-	[Export] private int _attackRange = 150;
+	[Export] private int _attackRange = 125;
 	[Export] private int _damage = 5;
 	private bool _abortAttack;
 	private Player _player;
@@ -18,8 +18,19 @@ public partial class GrabbyHand : Area2D
 	private Vector2 _grabberSpawn;
 
 	private bool _runningAsync;
+	private bool _paused;
 
-	public override void _Ready()
+    public void Pause()
+    {
+        _paused = true;
+    }
+
+    public void Unpause()
+    {
+        _paused = false;
+    }
+
+    public override void _Ready()
 	{
 		AreaEntered += OnAreaEntered;
 		AreaExited += OnAreaExited;
@@ -75,6 +86,8 @@ public partial class GrabbyHand : Area2D
 		_grabber.Play("default");
 		Visible = true;        
 		await Task.Delay(_warningTimeMS);
+		while (_paused)
+			await Task.Delay(50);
 
 		if (_grabber.GlobalPosition.DistanceTo(_player.GlobalPosition) < _attackRange)
 		{
@@ -86,12 +99,16 @@ public partial class GrabbyHand : Area2D
 
 		_grabber.Play("closed");
 		await Task.Delay(500);
+		while (_paused)
+			await Task.Delay(50);
 
 		Visible = false;
 		_grabber.GlobalPosition = _grabberSpawn;
 		GD.Print("GrabbyPos: ", _grabber.GlobalPosition);
 
 		await Task.Delay(1000);
+		while (_paused)
+			await Task.Delay(50);
 		
 		if (_abortAttack)
 		{
