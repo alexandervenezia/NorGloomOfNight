@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ogl7y7epfib" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.tscn" id="7_cko4m"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="8_y4q4u"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8h1jx"]
 resource_local_to_scene = true
 shader = ExtResource("8_y4q4u")
 shader_parameter/health_factor = 0.4
@@ -40,7 +40,7 @@ sprite_frames = ExtResource("6_oecpp")
 
 [node name="HealthBar" parent="." instance=ExtResource("7_cko4m")]
 z_index = 1
-material = SubResource("ShaderMaterial_do74u")
+material = SubResource("ShaderMaterial_8h1jx")
 position = Vector2(-0.666669, 302.857)
 scale = Vector2(2, 2)
 

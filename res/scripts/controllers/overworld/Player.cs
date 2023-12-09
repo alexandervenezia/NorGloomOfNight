@@ -14,7 +14,7 @@ public enum State
 	AIRBORNE
 }
 
-public partial class Player : CharacterBody2D
+public partial class Player : CharacterBody2D, IPausable
 {
 	private readonly IQuest[] _quests = {
 		new TalkToManager(),
@@ -72,6 +72,7 @@ public partial class Player : CharacterBody2D
 	private bool _cutsceneFinished = false;
 	private bool _glideState = false;
 	private bool _playingCutscene = false;
+	private bool _paused;
 	public bool PlayingCutscene => _playingCutscene;
 
 	private bool _interactableOnForThisFrame;
@@ -182,9 +183,6 @@ public partial class Player : CharacterBody2D
 				_walkSound.Play();
 		}
 
-		
-
-		//Shop shop = (Shop)_level.UseElevator(_shopUID);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -539,13 +537,22 @@ public partial class Player : CharacterBody2D
 		MasterScene.GetInstance().ResetVars();
 		//MasterScene.GetInstance().GetActiveScene<ILevel>().UseElevator(_gameOverScene);
 		MasterScene.GetInstance().CallDeferred("ActivateScene", _gameOverScene, true, true);
-		// TODO: Implement death screen
 	}
 
 	public void SetInteractable(bool canInteract)
 	{
 		_interactableOnForThisFrame = _interactableOnForThisFrame || canInteract;
 		// _interactionIndicator.Visible = canInteract;
+	}
+
+	public void Pause()
+	{
+		_paused = true;
+	}
+
+	public void Unpause()
+	{
+		_paused = false;
 	}
 }
 

@@ -153,12 +153,6 @@ public partial class MasterScene : Node
 		return _activeScene == _combatSceneUID;
 	}
 
-	/*
-	TODO: Implement rewards for combat.
-	public void SetPlayerReward();
-	public void LoadPlayerReward();
-	*/
-
 
 	public void LoadScene(string sceneUID)
 	{
@@ -226,6 +220,42 @@ public partial class MasterScene : Node
 
 		_loadedScenes[uid].QueueFree();
 		_loadedScenes.Remove(uid);
+	}
+
+	public void Pause()
+	{
+		Pause(this);
+	}
+
+	private void Pause(Node curr)
+	{
+		foreach (Node child in curr.GetChildren())
+		{
+			if (child is IPausable)
+			{
+				(child as IPausable).Pause();
+			}
+
+			Pause(child);
+		}
+	}
+
+	public void Unpause()
+	{
+		Unpause(this);
+	}
+
+	private void Unpause(Node curr)
+	{
+		foreach (Node child in curr.GetChildren())
+		{
+			if (child is IPausable)
+			{
+				(child as IPausable).Pause();
+			}
+
+			Unpause(child);
+		}
 	}
 
 	public T GetActiveScene<T>()

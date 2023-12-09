@@ -364,7 +364,6 @@ _castleMusicUID = "uid://c1rgv3h1m7vyl"
 _backgroundIDs = Array[int]([2, 3])
 _backgroundMarkers = [NodePath("BackgroundChangeMarkers/Gatehouse"), NodePath("BackgroundChangeMarkers/Pride")]
 _playerSpawn = Vector2(-22070.7, -2279.27)
-_journalID = "uid://24f70lj4w2nt"
 _introMusicUID = "uid://bcwav3q4c5png"
 _loopMusicUID = "uid://c2yi1m6vo7vfm"
 

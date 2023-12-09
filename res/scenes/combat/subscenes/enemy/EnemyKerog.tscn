@@ -11,7 +11,7 @@
 radius = 91.0
 height = 324.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sg37"]
 resource_local_to_scene = true
 shader = ExtResource("6_p2fnk")
 shader_parameter/health_factor = 0.4
@@ -42,5 +42,5 @@ scale = Vector2(-0.5, 0.5)
 sprite_frames = ExtResource("4_6v3om")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_l6jft")]
-material = SubResource("ShaderMaterial_do74u")
+material = SubResource("ShaderMaterial_8sg37")
 position = Vector2(0, 179)

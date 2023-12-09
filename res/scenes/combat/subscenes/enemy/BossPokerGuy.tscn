@@ -8,7 +8,7 @@
 [ext_resource type="SpriteFrames" uid="uid://caem4co85rjx5" path="res://res/scenes/combat/subscenes/enemy/assets/BlankFrames.tres" id="6_dfvlg"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="6_oawnf"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptxig"]
 resource_local_to_scene = true
 shader = ExtResource("6_oawnf")
 shader_parameter/health_factor = 0.4
@@ -41,7 +41,7 @@ sprite_frames = ExtResource("6_dfvlg")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_r7tin")]
 z_index = 1
-material = SubResource("ShaderMaterial_do74u")
+material = SubResource("ShaderMaterial_ptxig")
 position = Vector2(15, 266)
 scale = Vector2(2, 2)
 

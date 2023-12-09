@@ -76,17 +76,6 @@ public partial class GrabbyHand : Area2D
 		Visible = true;        
 		await Task.Delay(_warningTimeMS);
 
-		/*
-		if (_abortAttack)
-		{
-			GD.Print("Aborting attack");
-			Visible = false;
-			_grabber.GlobalPosition = _grabberSpawn;
-			_abortAttack = false;
-			_runningAsync = false;
-			return;
-		}*/
-
 		if (_grabber.GlobalPosition.DistanceTo(_player.GlobalPosition) < _attackRange)
 		{
 			_player.TakeDamage(_damage);

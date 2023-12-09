@@ -10,7 +10,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c1oq7s843f4qi" path="res://res/scenes/combat/subscenes/enemy/assets/animations/Pride/PrideCombatAnimation.tres" id="7_qtvb0"]
 [ext_resource type="Shader" path="res://res/scenes/combat/subscenes/health_bar/HealthBar.gdshader" id="8_o6sj7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_do74u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlfbh"]
 resource_local_to_scene = true
 shader = ExtResource("8_o6sj7")
 shader_parameter/health_factor = 0.4
@@ -42,7 +42,7 @@ animation = &"attack"
 
 [node name="HealthBar" parent="." instance=ExtResource("7_171uv")]
 z_index = 1
-material = SubResource("ShaderMaterial_do74u")
+material = SubResource("ShaderMaterial_vlfbh")
 position = Vector2(9.286, 366)
 scale = Vector2(2, 2)
 

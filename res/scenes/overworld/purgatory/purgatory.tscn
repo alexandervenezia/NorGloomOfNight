@@ -123,7 +123,6 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8mid8")
 _managementUID = "uid://dpku0u2ogjvbb"
 _prideUID = "uid://bk7mufkqeug2p"
-_journalID = "uid://24f70lj4w2nt"
 _introMusicUID = "uid://bov4p35dowy3b"
 _loopMusicUID = "uid://cjd6hk6cpgr6l"
 
@@ -1001,9 +1000,9 @@ position = Vector2(12828, -122)
 scale = Vector2(0.489208, 0.489208)
 texture = ExtResource("52_o3t3l")
 
-[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnPressed" flags=18]
-[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" method="OnMouseEntered" flags=18]
-[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" method="OnMouseExited" flags=18]
-[connection signal="pressed" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" method="OnPressed" flags=18]
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseEntered"]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnMouseExited"]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/LevelSelect/LevelSelectMenu/Pride" method="OnPressed"]
+[connection signal="mouse_entered" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" method="OnMouseEntered"]
+[connection signal="mouse_exited" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" method="OnMouseExited"]
+[connection signal="pressed" from="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" to="OverworldPlayer/Camera2D/BackToPurgatory/LevelSelectMenu/Pride" method="OnPressed"]
